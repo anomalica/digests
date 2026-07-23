@@ -5,3 +5,11 @@ rerun.log
 
 # Model comparison runs are exploratory, not canonical output
 model-compare/
+
+# variants/ is NOT ignored - it IS canonical and tracked. ADR 0039 specifies
+# variants/{record}/{model}.{prompt_sha8}.yaml as the variant store layout, and a
+# specified location in a data repo is repo membership. It went untracked by
+# oversight, not decision: one `git clean -fd` would have destroyed the entire
+# input to the model-choice programme, re-creatable only by re-spending model
+# allowance. Stated here explicitly so the contrast with model-compare/ above
+# reads as a decision rather than an absence.
