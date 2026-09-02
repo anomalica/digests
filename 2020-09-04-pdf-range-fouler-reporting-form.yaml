@@ -3,27 +3,35 @@ schema: anomalica/digest/1
 extracted_at: '2026-08-01T00:34:51.266674+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 299892
-      output: 11975
-      real_input: 10
-      cache_read: 48693
-      cache_write: 251189
-      calls: 2
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 299892
+    output: 11975
+    real_input: 10
+    cache_read: 48693
+    cache_write: 251189
+    calls: 2
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 12.4
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: 7b4ca375ed1a0e38695933304ba992551a9791887e91f5ef18b7944464dfe65f
   prep_version: 6
@@ -37,409 +45,533 @@ record:
   review:
     state: none
     sidecar: absent
-  release: {control_number: USCENTCOM 26-0028, declassified_by: Richard A. Harrison, declassified_by_title: 'MG, USCENTCOM Chief of Staff', handling: [FOUO, PA applies], markings: ['Declassified by MG Richard A. Harrison, USCENTCOM Chief of Staff', USCENTCOM 26-0028, FOUO / Privacy Act applies, Approved for Release to AARO - FOUO / PA applies, 03/16/26], release_date: 2026-03-16, released_to: AARO}
+  release:
+    control_number: USCENTCOM 26-0028
+    declassified_by: Richard A. Harrison
+    declassified_by_title: MG, USCENTCOM Chief of Staff
+    handling:
+    - FOUO
+    - PA applies
+    markings:
+    - Declassified by MG Richard A. Harrison, USCENTCOM Chief of Staff
+    - USCENTCOM 26-0028
+    - FOUO / Privacy Act applies
+    - Approved for Release to AARO - FOUO / PA applies
+    - 03/16/26
+    release_date: 2026-03-16
+    released_to: AARO
   pages: 1
   copyright_status: public_domain
 terminology:
   main_subject: 2020-09-04 Gulf of Aden IR sensor contact
   acronyms:
-    - acronym: SPEAR
-      expansion: SPEAR (aircrew report sanitization/analysis office, full name not given)
-    - acronym: SIPR
-      expansion: Secret Internet Protocol Router Network (SIPR)
-    - acronym: LFE
-      expansion: LFE (term not expanded in document)
-    - acronym: CAS
-      expansion: Close Air Support (CAS)
-    - acronym: BFM
-      expansion: Basic Fighter Maneuvers (BFM)
-    - acronym: ISR
-      expansion: Intelligence, Surveillance and Reconnaissance (ISR)
-    - acronym: HAT
-      expansion: Height Above Terrain (HAT)
-    - acronym: MGRS
-      expansion: Military Grid Reference System (MGRS)
-    - acronym: ECM
-      expansion: Electronic Countermeasures (ECM)
-    - acronym: EA
-      expansion: Electronic Attack (EA)
-    - acronym: ATFLIR
-      expansion: Advanced Targeting Forward-Looking Infrared (ATFLIR)
-    - acronym: JMPS
-      expansion: Joint Mission Planning System (JMPS)
-    - acronym: NM
-      expansion: Nautical Miles (NM)
-    - acronym: KM
-      expansion: Kilometres (KM)
+  - acronym: SPEAR
+    expansion: SPEAR (aircrew report sanitization/analysis office, full name not given)
+  - acronym: SIPR
+    expansion: Secret Internet Protocol Router Network (SIPR)
+  - acronym: LFE
+    expansion: LFE (term not expanded in document)
+  - acronym: CAS
+    expansion: Close Air Support (CAS)
+  - acronym: BFM
+    expansion: Basic Fighter Maneuvers (BFM)
+  - acronym: ISR
+    expansion: Intelligence, Surveillance and Reconnaissance (ISR)
+  - acronym: HAT
+    expansion: Height Above Terrain (HAT)
+  - acronym: MGRS
+    expansion: Military Grid Reference System (MGRS)
+  - acronym: ECM
+    expansion: Electronic Countermeasures (ECM)
+  - acronym: EA
+    expansion: Electronic Attack (EA)
+  - acronym: ATFLIR
+    expansion: Advanced Targeting Forward-Looking Infrared (ATFLIR)
+  - acronym: JMPS
+    expansion: Joint Mission Planning System (JMPS)
+  - acronym: NM
+    expansion: Nautical Miles (NM)
+  - acronym: KM
+    expansion: Kilometres (KM)
 nodes:
-  - id: 097d795d-c922-4395-80d9-358c63664746
-    type: document
-    name: Range Fouler Reporting Form
-  - id: 6d90823a-cfc3-4fb6-b83c-d49214e883c6
-    type: organisation
-    name: 172nd Attack Squadron (172 ATKS)
-  - id: 089b830f-9bcd-4766-a87a-d8711228ff5c
-    type: place
-    name: Gulf of Aden
-  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-    type: event
-    name: 2020-09-04 Gulf of Aden IR sensor contact
-    metadata:
-      date_start: '2020-09-04'
-  - id: 74a4da9e-f31d-4b54-9d11-951a4a3d3aa8
-    type: topic
-    name: Unidentified Aerial Phenomena (UAP)
-  - id: c6a49799-9f97-43fb-a553-d3d6fde46ea3
-    type: object
-    name: Joint Mission Planning System (JMPS)
-  - id: 9f31d779-b971-4ac2-881f-8b0281a321ca
-    type: object
-    name: AIM-9X Sidewinder
-  - id: 36775552-02de-46c4-a0f2-717ddeecbe2d
-    type: object
-    name: Advanced Targeting Forward-Looking Infrared (ATFLIR)
+- id: 097d795d-c922-4395-80d9-358c63664746
+  type: document
+  name: Range Fouler Reporting Form
+- id: 6d90823a-cfc3-4fb6-b83c-d49214e883c6
+  type: organisation
+  name: 172nd Attack Squadron (172 ATKS)
+- id: 089b830f-9bcd-4766-a87a-d8711228ff5c
+  type: place
+  name: Gulf of Aden
+- id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+  type: event
+  name: 2020-09-04 Gulf of Aden IR sensor contact
+  metadata:
+    date_start: '2020-09-04'
+- id: 74a4da9e-f31d-4b54-9d11-951a4a3d3aa8
+  type: topic
+  name: Unidentified Aerial Phenomena (UAP)
+- id: c6a49799-9f97-43fb-a553-d3d6fde46ea3
+  type: object
+  name: Joint Mission Planning System (JMPS)
+- id: 9f31d779-b971-4ac2-881f-8b0281a321ca
+  type: object
+  name: AIM-9X Sidewinder
+- id: 36775552-02de-46c4-a0f2-717ddeecbe2d
+  type: object
+  name: Advanced Targeting Forward-Looking Infrared (ATFLIR)
 domain_claims:
-  - id: c5a645d1-773f-4906-a615-93373eac4613
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:643-665
-    date: '2020-09-04'
-    refs:
-      - id: 6d90823a-cfc3-4fb6-b83c-d49214e883c6
-        name: 172nd Attack Squadron (172 ATKS)
-    quote: |-
-      Rank O-3
-      Squadron 172 ATKS
-    text: |-
-      An aircrew member of the 172nd Attack Squadron (172 ATKS) held the rank of O-3 at the time of the report.
-  - id: 577d243d-54dc-4c82-a92b-a73e885bfe58
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:689-703
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-      - id: 6d90823a-cfc3-4fb6-b83c-d49214e883c6
-        name: 172nd Attack Squadron (172 ATKS)
-    quote: Crew Position Other
-    text: |-
-      The 2020-09-04 Gulf of Aden IR sensor contact involved an aircrew member whose crew position was listed as "Other".
-  - id: 8c1232f2-3cd5-4c77-9948-10c82b11ba57
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:748-791
-    refs:
-      - id: 097d795d-c922-4395-80d9-358c63664746
-        name: Range Fouler Reporting Form
-    quote: SPEAR sanitizes all reports of identifying information.
-    text: |-
-      SPEAR sanitizes all Range Fouler reports of identifying information before analysis.
-  - id: cc1fa4bb-2501-426e-975c-93d8695ee20c
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:806-889
-    refs:
-      - id: 097d795d-c922-4395-80d9-358c63664746
-        name: Range Fouler Reporting Form
-    quote: |-
-      Absolutely no identifying information for aircrew or squadron will be recorded for analysis.
-    text: |-
-      No identifying information for aircrew or squadron is recorded for analysis on the Range Fouler Reporting Form.
-  - id: 5ebf3412-936c-4ca2-9fdd-7615e1d7c822
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:901-963
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: |-
-      Date (mm/dd/yy) 09/04/20
-      Time of detection (hh:mm:ss Z) 21:09:00
-    text: |-
-      The 2020-09-04 Gulf of Aden IR sensor contact occurred on 2020-09-04, with detection time recorded as 21:09:00 Zulu.
-  - id: f0ce221d-e0bd-4583-aa80-4b15d089e04a
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:966-978
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: Day / Night Night
-    text: The 2020-09-04 Gulf of Aden IR sensor contact occurred at night.
-  - id: 45b03c17-0d7b-4ff8-a536-df4dc9acf6db
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:998-1034
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: Mission Description (CAS, BFM, etc) ISR
-    text: |-
-      The mission during the 2020-09-04 Gulf of Aden IR sensor contact was an Intelligence, Surveillance and Reconnaissance (ISR) mission.
-  - id: c57e1fc5-6d4e-44b4-b2a6-3922261ae91b
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:1148-1177
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: 'Contact Altitude (Ex: 22000) 23819'
-    text: |-
-      The recorded altitude at contact during the 2020-09-04 Gulf of Aden IR sensor contact was approximately 7,260 metres.
-  - id: 83d83168-986d-4adb-900a-68ba2d0e190b
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:1325-1435
-    refs:
-      - id: 097d795d-c922-4395-80d9-358c63664746
-        name: Range Fouler Reporting Form
-      - id: c6a49799-9f97-43fb-a553-d3d6fde46ea3
-        name: Joint Mission Planning System (JMPS)
-    quote: |-
-      We recommend using JMPS to reference the sensor-derived bearing and range relative to the bullseye you had in use.
-    text: |-
-      The Range Fouler Reporting Form recommends using the Joint Mission Planning System (JMPS) to reference the sensor-derived bearing and range relative to the bullseye in use, in order to determine a latitude/longitude for a contact at initial detection.
-  - id: 576717a2-1f84-44f3-b904-db2b6a9b24e0
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:1663-1687
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: Was the contact moving? Yes
-    text: |-
-      During the 2020-09-04 Gulf of Aden IR sensor contact, the contact was determined to be moving.
-  - id: d0b7c8f9-2fdf-42a1-a775-24381e63d834
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:1691-1724
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: Direction/Speed (Ex. 090/15) 168/277
-    text: |-
-      During the 2020-09-04 Gulf of Aden IR sensor contact, the object was tracked moving on a bearing of 168 degrees at approximately 446 kilometres per hour.
-  - id: 340556e2-e5ef-4d7b-bede-157415902c6f
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:1796-1851
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-      - id: 36775552-02de-46c4-a0f2-717ddeecbe2d
-        name: Advanced Targeting Forward-Looking Infrared (ATFLIR)
-    quote: |-
-      Stable Trackfile?:
-      ATFLIR Autotrack: ☐
-      Round: ☑ Moving Parts: ☐
-    text: |-
-      During the 2020-09-04 Gulf of Aden IR sensor contact, the trackfile of the object was characterised as round.
-  - id: a6d1d9c2-f9e9-47f6-a838-cf72b2fcecdb
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:1863-1887
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: '# of Contacts in "Group": 1'
-    text: |-
-      The number of contacts in the "group" for the 2020-09-04 Gulf of Aden IR sensor contact was recorded as 1.
-  - id: c5ddec0a-cd65-439b-8f16-38eb1e001fe2
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:2363-2391
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: Contact at 21:09z to 21:17z 04SEP2020.
-    text: |-
-      The 2020-09-04 Gulf of Aden IR sensor contact was detected and tracked from 21:09 Zulu to 21:17 Zulu on 2020-09-04.
-  - id: 6d6af9c4-5692-462f-aaa1-c44069137196
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:2402-2488
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: |-
-      MGRS location 38P LT {{redacted: (b)(1)1.4a}} (estimated lat/long {{redacted: (b)(1)1.4a}}).
-    text: |-
-      The 2020-09-04 Gulf of Aden IR sensor contact was located at Military Grid Reference System (MGRS) grid 38P LT, with the specific coordinates redacted.
-  - id: 2091ad5e-a262-4845-981b-52835f2d0ef3
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the reporting aircrew
-    attribution_in_text: false
-    location: char:2495-2604
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-      - id: 089b830f-9bcd-4766-a87a-d8711228ff5c
-        name: Gulf of Aden
-    quote: |-
-      While at 23,819 HAT over the Gulf of Aden we tracked a round, cold object in IR traveling 168 degrees at 277 mph.
-    text: |-
-      During the 2020-09-04 Gulf of Aden IR sensor contact, the aircrew tracked a round, cold object in infrared while at approximately 7,260 metres Height Above Terrain (HAT) over the Gulf of Aden.
-  - id: a9c109ce-c4e2-4e21-b205-a9a05a84e2d5
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the reporting aircrew
-    attribution_in_text: false
-    location: char:2609-2670
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: It made a few abrupt directional changes during the 8 minute contact.
-    text: |-
-      During the 2020-09-04 Gulf of Aden IR sensor contact, the object made a few abrupt directional changes during the 8-minute contact.
-  - id: 02ae3f66-d72d-4f87-858a-8f7a58fddaf8
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the reporting aircrew
-    attribution_in_text: false
-    location: char:2679-2782
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: |-
-      Our sensor was aimed -39 degrees below our altitude with a slant range of 6.17NM and ground range of 8.81KM.
-    text: |-
-      During the 2020-09-04 Gulf of Aden IR sensor contact, the aircrew's sensor was aimed 39 degrees below their altitude.
-  - id: 77acec77-6c50-4d87-9625-0b3ebcaaeb99
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the reporting aircrew
-    attribution_in_text: false
-    location: char:2731-2782
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: with a slant range of 6.17NM and ground range of 8.81KM.
-    text: |-
-      During the 2020-09-04 Gulf of Aden IR sensor contact, the slant range to the object was approximately 11.4 kilometres.
-  - id: ed739109-a62f-4379-8608-b818a5bd8112
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the reporting aircrew
-    attribution_in_text: false
-    location: char:2731-2782
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: with a slant range of 6.17NM and ground range of 8.81KM.
-    text: |-
-      During the 2020-09-04 Gulf of Aden IR sensor contact, the ground range to the object was approximately 8.81 kilometres.
-  - id: aac8f655-eeb8-4954-90a6-c36eb8171aad
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the reporting aircrew
-    attribution_in_text: false
-    location: char:2788-2863
-    date: '2020-09-04'
-    refs:
-      - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
-        name: 2020-09-04 Gulf of Aden IR sensor contact
-    quote: |-
-      The IR sensor was set to black hot and the object in question was a bright white.
-    text: |-
-      During the 2020-09-04 Gulf of Aden IR sensor contact, the infrared sensor was set to black hot and the object appeared as bright white.
-  - id: 55721250-b355-42cf-a4f9-76e9ee6cf403
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Range Fouler Reporting Form
-    attribution_in_text: false
-    location: char:3106-3322
-    refs:
-      - id: 097d795d-c922-4395-80d9-358c63664746
-        name: Range Fouler Reporting Form
-    quote: |-
-      Please ensure all display tapes are ripped for the entire time of interaction and saved as a .wmv (Example: 4 May VFA-106 HUD.wmv). Squadron intel personnel shall upload those files to the repository located at this link.
-    text: |-
-      The Range Fouler Reporting Form instructs squadron intel personnel to upload display-tape recordings of the entire interaction, ripped and saved as .wmv files, to a designated repository.
+- id: c5a645d1-773f-4906-a615-93373eac4613
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:643-665
+  date: '2020-09-04'
+  refs:
+  - id: 6d90823a-cfc3-4fb6-b83c-d49214e883c6
+    name: 172nd Attack Squadron (172 ATKS)
+  quote: |-
+    Rank O-3
+    Squadron 172 ATKS
+  text: |-
+    An aircrew member of the 172nd Attack Squadron (172 ATKS) held the rank of O-3 at the time of the report.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 577d243d-54dc-4c82-a92b-a73e885bfe58
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:689-703
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  - id: 6d90823a-cfc3-4fb6-b83c-d49214e883c6
+    name: 172nd Attack Squadron (172 ATKS)
+  quote: Crew Position Other
+  text: |-
+    The 2020-09-04 Gulf of Aden IR sensor contact involved an aircrew member whose crew position was listed as "Other".
+  entailment:
+    label: entails
+    score: 0.468
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8c1232f2-3cd5-4c77-9948-10c82b11ba57
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:748-791
+  refs:
+  - id: 097d795d-c922-4395-80d9-358c63664746
+    name: Range Fouler Reporting Form
+  quote: SPEAR sanitizes all reports of identifying information.
+  text: |-
+    SPEAR sanitizes all Range Fouler reports of identifying information before analysis.
+  entailment:
+    label: entails
+    score: 0.738
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: cc1fa4bb-2501-426e-975c-93d8695ee20c
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:806-889
+  refs:
+  - id: 097d795d-c922-4395-80d9-358c63664746
+    name: Range Fouler Reporting Form
+  quote: |-
+    Absolutely no identifying information for aircrew or squadron will be recorded for analysis.
+  text: |-
+    No identifying information for aircrew or squadron is recorded for analysis on the Range Fouler Reporting Form.
+  entailment:
+    label: entails
+    score: 0.483
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5ebf3412-936c-4ca2-9fdd-7615e1d7c822
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:901-963
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: |-
+    Date (mm/dd/yy) 09/04/20
+    Time of detection (hh:mm:ss Z) 21:09:00
+  text: |-
+    The 2020-09-04 Gulf of Aden IR sensor contact occurred on 2020-09-04, with detection time recorded as 21:09:00 Zulu.
+  entailment:
+    label: entails
+    score: 0.735
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: f0ce221d-e0bd-4583-aa80-4b15d089e04a
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:966-978
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: Day / Night Night
+  text: The 2020-09-04 Gulf of Aden IR sensor contact occurred at night.
+  entailment:
+    label: entails
+    score: 0.433
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 45b03c17-0d7b-4ff8-a536-df4dc9acf6db
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:998-1034
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: Mission Description (CAS, BFM, etc) ISR
+  text: |-
+    The mission during the 2020-09-04 Gulf of Aden IR sensor contact was an Intelligence, Surveillance and Reconnaissance (ISR) mission.
+  entailment:
+    label: entails
+    score: 0.467
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c57e1fc5-6d4e-44b4-b2a6-3922261ae91b
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:1148-1177
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: 'Contact Altitude (Ex: 22000) 23819'
+  text: |-
+    The recorded altitude at contact during the 2020-09-04 Gulf of Aden IR sensor contact was approximately 7,260 metres.
+  entailment:
+    label: entails
+    score: 0.445
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 83d83168-986d-4adb-900a-68ba2d0e190b
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:1325-1435
+  refs:
+  - id: 097d795d-c922-4395-80d9-358c63664746
+    name: Range Fouler Reporting Form
+  - id: c6a49799-9f97-43fb-a553-d3d6fde46ea3
+    name: Joint Mission Planning System (JMPS)
+  quote: |-
+    We recommend using JMPS to reference the sensor-derived bearing and range relative to the bullseye you had in use.
+  text: |-
+    The Range Fouler Reporting Form recommends using the Joint Mission Planning System (JMPS) to reference the sensor-derived bearing and range relative to the bullseye in use, in order to determine a latitude/longitude for a contact at initial detection.
+  entailment:
+    label: entails
+    score: 0.444
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 576717a2-1f84-44f3-b904-db2b6a9b24e0
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:1663-1687
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: Was the contact moving? Yes
+  text: |-
+    During the 2020-09-04 Gulf of Aden IR sensor contact, the contact was determined to be moving.
+  entailment:
+    label: entails
+    score: 0.475
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d0b7c8f9-2fdf-42a1-a775-24381e63d834
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:1691-1724
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: Direction/Speed (Ex. 090/15) 168/277
+  text: |-
+    During the 2020-09-04 Gulf of Aden IR sensor contact, the object was tracked moving on a bearing of 168 degrees at approximately 446 kilometres per hour.
+  entailment:
+    label: entails
+    score: 0.458
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 340556e2-e5ef-4d7b-bede-157415902c6f
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:1796-1851
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  - id: 36775552-02de-46c4-a0f2-717ddeecbe2d
+    name: Advanced Targeting Forward-Looking Infrared (ATFLIR)
+  quote: |-
+    Stable Trackfile?:
+    ATFLIR Autotrack: ☐
+    Round: ☑ Moving Parts: ☐
+  text: |-
+    During the 2020-09-04 Gulf of Aden IR sensor contact, the trackfile of the object was characterised as round.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a6d1d9c2-f9e9-47f6-a838-cf72b2fcecdb
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:1863-1887
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: '# of Contacts in "Group": 1'
+  text: |-
+    The number of contacts in the "group" for the 2020-09-04 Gulf of Aden IR sensor contact was recorded as 1.
+  entailment:
+    label: entails
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c5ddec0a-cd65-439b-8f16-38eb1e001fe2
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:2363-2391
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: Contact at 21:09z to 21:17z 04SEP2020.
+  text: |-
+    The 2020-09-04 Gulf of Aden IR sensor contact was detected and tracked from 21:09 Zulu to 21:17 Zulu on 2020-09-04.
+  entailment:
+    label: entails
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6d6af9c4-5692-462f-aaa1-c44069137196
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:2402-2488
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: |-
+    MGRS location 38P LT {{redacted: (b)(1)1.4a}} (estimated lat/long {{redacted: (b)(1)1.4a}}).
+  text: |-
+    The 2020-09-04 Gulf of Aden IR sensor contact was located at Military Grid Reference System (MGRS) grid 38P LT, with the specific coordinates redacted.
+  entailment:
+    label: entails
+    score: 0.522
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2091ad5e-a262-4845-981b-52835f2d0ef3
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the reporting aircrew
+  attribution_in_text: false
+  location: char:2495-2604
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  - id: 089b830f-9bcd-4766-a87a-d8711228ff5c
+    name: Gulf of Aden
+  quote: |-
+    While at 23,819 HAT over the Gulf of Aden we tracked a round, cold object in IR traveling 168 degrees at 277 mph.
+  text: |-
+    During the 2020-09-04 Gulf of Aden IR sensor contact, the aircrew tracked a round, cold object in infrared while at approximately 7,260 metres Height Above Terrain (HAT) over the Gulf of Aden.
+  entailment:
+    label: entails
+    score: 0.721
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a9c109ce-c4e2-4e21-b205-a9a05a84e2d5
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the reporting aircrew
+  attribution_in_text: false
+  location: char:2609-2670
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: It made a few abrupt directional changes during the 8 minute contact.
+  text: |-
+    During the 2020-09-04 Gulf of Aden IR sensor contact, the object made a few abrupt directional changes during the 8-minute contact.
+  entailment:
+    label: entails
+    score: 0.579
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 02ae3f66-d72d-4f87-858a-8f7a58fddaf8
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the reporting aircrew
+  attribution_in_text: false
+  location: char:2679-2782
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: |-
+    Our sensor was aimed -39 degrees below our altitude with a slant range of 6.17NM and ground range of 8.81KM.
+  text: |-
+    During the 2020-09-04 Gulf of Aden IR sensor contact, the aircrew's sensor was aimed 39 degrees below their altitude.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 77acec77-6c50-4d87-9625-0b3ebcaaeb99
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the reporting aircrew
+  attribution_in_text: false
+  location: char:2731-2782
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: with a slant range of 6.17NM and ground range of 8.81KM.
+  text: |-
+    During the 2020-09-04 Gulf of Aden IR sensor contact, the slant range to the object was approximately 11.4 kilometres.
+  entailment:
+    label: contradicts
+    score: 0.695
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ed739109-a62f-4379-8608-b818a5bd8112
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the reporting aircrew
+  attribution_in_text: false
+  location: char:2731-2782
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: with a slant range of 6.17NM and ground range of 8.81KM.
+  text: |-
+    During the 2020-09-04 Gulf of Aden IR sensor contact, the ground range to the object was approximately 8.81 kilometres.
+  entailment:
+    label: entails
+    score: 0.601
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: aac8f655-eeb8-4954-90a6-c36eb8171aad
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the reporting aircrew
+  attribution_in_text: false
+  location: char:2788-2863
+  date: '2020-09-04'
+  refs:
+  - id: 5c7ced4d-e328-4444-818c-98d9a68d1dad
+    name: 2020-09-04 Gulf of Aden IR sensor contact
+  quote: |-
+    The IR sensor was set to black hot and the object in question was a bright white.
+  text: |-
+    During the 2020-09-04 Gulf of Aden IR sensor contact, the infrared sensor was set to black hot and the object appeared as bright white.
+  entailment:
+    label: entails
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 55721250-b355-42cf-a4f9-76e9ee6cf403
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Range Fouler Reporting Form
+  attribution_in_text: false
+  location: char:3106-3322
+  refs:
+  - id: 097d795d-c922-4395-80d9-358c63664746
+    name: Range Fouler Reporting Form
+  quote: |-
+    Please ensure all display tapes are ripped for the entire time of interaction and saved as a .wmv (Example: 4 May VFA-106 HUD.wmv). Squadron intel personnel shall upload those files to the repository located at this link.
+  text: |-
+    The Range Fouler Reporting Form instructs squadron intel personnel to upload display-tape recordings of the entire interaction, ripped and saved as .wmv files, to a designated repository.
+  entailment:
+    label: entails
+    score: 0.69
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

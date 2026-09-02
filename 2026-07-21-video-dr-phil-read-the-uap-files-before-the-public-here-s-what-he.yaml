@@ -3,27 +3,35 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-31T20:41:09.126393+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 423813
-      output: 22359
-      real_input: 14
-      cache_read: 13009
-      cache_write: 410790
-      calls: 3
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 423813
+    output: 22359
+    real_input: 14
+    cache_read: 13009
+    cache_write: 410790
+    calls: 3
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 25.3
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: d5fe2a2ec5be4b8742edd55b40a2ff0d37ff1e00a6b167a948f120a1bc5bf8cb
   prep_version: 6
@@ -46,1803 +54,2238 @@ record:
 terminology:
   main_subject: Phil McGraw
   acronyms:
-    - acronym: UAP
-      expansion: Unidentified Aerial Phenomena
-    - acronym: UFO
-      expansion: Unidentified Flying Object
-    - acronym: AAV
-      expansion: Anomalous Aerial Vehicle
-    - acronym: CIA
-      expansion: Central Intelligence Agency
-    - acronym: DoD
-      expansion: Department of Defense
-    - acronym: JNAP
-      expansion: Joint Notice to Airmen Policy (as referenced in transcript)
+  - acronym: UAP
+    expansion: Unidentified Aerial Phenomena
+  - acronym: UFO
+    expansion: Unidentified Flying Object
+  - acronym: AAV
+    expansion: Anomalous Aerial Vehicle
+  - acronym: CIA
+    expansion: Central Intelligence Agency
+  - acronym: DoD
+    expansion: Department of Defense
+  - acronym: JNAP
+    expansion: Joint Notice to Airmen Policy (as referenced in transcript)
 nodes:
-  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-    type: person
+- id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+  type: person
+  name: Phil McGraw
+  metadata:
+    aliases:
+    - Dr. Phil
+- id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+  type: person
+  name: Ross Coulthart
+- id: 63cf3d89-5f27-46d8-8486-59697a08a991
+  type: person
+  name: Bryce Zabel
+- id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
+  type: person
+  name: Donald Trump
+- id: 0fa1ad84-17e7-4a4c-adbc-9d43d7751572
+  type: person
+  name: David Grusch
+- id: c8f7c237-9f4b-4b08-a1ed-826d2b9bc552
+  type: person
+  name: Nathan Twining
+- id: 5d9c2329-5317-4e13-8b37-5dfac35bce5a
+  type: person
+  name: Tim Burchett
+- id: 5f9f8927-e590-494d-a5c8-8d85edf01680
+  type: person
+  name: Maria Elvira Salazar
+  metadata:
+    note: uncertain - see Luna
+- id: 8da57777-4476-4eea-9ab9-79c9c9dfc403
+  type: document
+  name: Reality Check
+  metadata:
+    format: podcast/video series
+- id: 4a69977d-4eef-4feb-9d38-5d2a4662945e
+  type: document
+  name: |-
+    Dr. Phil read the UAP files before the public, here's what he found | Reality Check
+  metadata:
+    date: '2026-07-21'
+- id: e059d388-021b-434e-bce6-0a336e914c05
+  type: organisation
+  name: The Dr. Phil Podcast
+- id: f8a3d2e7-9ab1-42cb-a934-7c840f37079e
+  type: organisation
+  name: News Nation
+- id: 5cf85949-31cc-498a-a6a7-fc83645bacb2
+  type: organisation
+  name: White House
+- id: 5befb472-c1fb-4ccc-b3b9-4a04f8d1d92d
+  type: organisation
+  name: United States Department of Justice
+- id: 6f1baffa-e0e5-4368-adaa-0ea80a4e78b5
+  type: organisation
+  name: Presidential Commission for Religious Liberty
+- id: 5000de32-b5b8-40aa-a47d-3fe297619508
+  type: organisation
+  name: United States Air Force
+- id: cefc9472-2fc0-4ff4-8fc8-a56a776598e5
+  type: organisation
+  name: United States Army Air Forces
+- id: 3cc384ad-f605-44ca-8b71-bc920856dd9c
+  type: organisation
+  name: Central Intelligence Agency (CIA)
+- id: 858e2dd6-0405-4bd0-92cf-7a59393097be
+  type: organisation
+  name: United States Congress
+- id: df1bb1df-7d2b-44ce-a6c0-ec3d8ab33bde
+  type: organisation
+  name: United States Department of Defense (DoD)
+- id: 885f84cf-8e8e-4339-967d-e52be612bb9d
+  type: organisation
+  name: Meta
+- id: d7587553-c111-4b7e-bb79-b0f5a85f95ea
+  type: project
+  name: Robertson Panel
+- id: d7313e7e-52c5-4a4d-b32d-98e43533a4c8
+  type: project
+  name: Manhattan Project
+- id: a53520d5-34fe-4fd7-b701-d6c14b82d3e8
+  type: project
+  name: UFO non-human technology retrieval and reverse engineering program
+- id: 1874dd82-5a6e-4fa4-9e6e-ecb5e72f0fe6
+  type: event
+  name: |-
+    1949 Los Alamos classified conference on unexplained sightings over nuclear sites
+  metadata:
+    date_start: '1949'
+- id: a3925bc9-a1e4-4bb1-be08-39fd69b91bac
+  type: event
+  name: 1947 Nathan Twining assessment to the Army Air Forces
+  metadata:
+    date_start: '1947'
+- id: 7b205c4a-aec5-40c3-b791-720527a39e42
+  type: event
+  name: 1953 CIA Robertson Panel convening
+  metadata:
+    date_start: '1953'
+- id: 94cd6ab0-a1eb-413b-ac31-12f6b18390c0
+  type: place
+  name: USA, New Mexico, Los Alamos
+- id: 7a8c7e46-0a25-4ddc-8b26-f9682570837c
+  type: place
+  name: USA, Texas, Pantex Plant, Amarillo
+- id: 9e9c2e16-97de-4d8b-b997-06d50898500b
+  type: place
+  name: USA, Washington, D.C.
+  metadata:
+    note: White House location, uncertain use
+- id: 4341e6e9-f49b-4a5f-9775-b6211950d1b6
+  type: place
+  name: Andromeda Galaxy
+- id: 692319d3-61a0-4dc2-b489-f95504702531
+  type: topic
+  name: Unidentified Aerial Phenomena (UAP)
+- id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+  type: topic
+  name: Unidentified Flying Object (UFO)
+- id: b04e0397-92e3-4582-923e-67d65edc5412
+  type: topic
+  name: anomalous aerial vehicle (AAV)
+- id: e8b69fee-5da8-420b-bdbf-d772209653c2
+  type: topic
+  name: time dilation
+- id: 8ac38b9c-f8dd-4127-975a-781be2ab8ab2
+  type: document
+  name: Espionage Act
+- id: 8a62fefe-a6d0-478f-adb4-e3c139373740
+  type: document
+  name: JNAP 146
+- id: 43733c83-a2d2-4cb1-97a5-01d53af679b7
+  type: document
+  name: JNAP 146E
+- id: b7c5eee3-2752-4099-9a5c-ab5bf48ed6a4
+  type: document
+  name: Fourth tranche of UFO files (2026)
+- id: 35fbce00-9df6-4cb4-a547-5286477dd95e
+  type: organisation
+  name: Blue Angels
+domain_claims:
+- id: 4e52d57d-71be-4cd8-8668-0cd5bdc8e70d
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
     name: Phil McGraw
-    metadata:
-      aliases:
-        - Dr. Phil
-  - id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-    type: person
-    name: Ross Coulthart
-  - id: 63cf3d89-5f27-46d8-8486-59697a08a991
-    type: person
-    name: Bryce Zabel
-  - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
-    type: person
-    name: Donald Trump
-  - id: 0fa1ad84-17e7-4a4c-adbc-9d43d7751572
-    type: person
-    name: David Grusch
-  - id: c8f7c237-9f4b-4b08-a1ed-826d2b9bc552
-    type: person
-    name: Nathan Twining
-  - id: 5d9c2329-5317-4e13-8b37-5dfac35bce5a
-    type: person
-    name: Tim Burchett
-  - id: 5f9f8927-e590-494d-a5c8-8d85edf01680
-    type: person
-    name: Maria Elvira Salazar
-    metadata:
-      note: uncertain - see Luna
-  - id: 8da57777-4476-4eea-9ab9-79c9c9dfc403
-    type: document
-    name: Reality Check
-    metadata:
-      format: podcast/video series
-  - id: 4a69977d-4eef-4feb-9d38-5d2a4662945e
-    type: document
-    name: |-
-      Dr. Phil read the UAP files before the public, here's what he found | Reality Check
-    metadata:
-      date: '2026-07-21'
-  - id: e059d388-021b-434e-bce6-0a336e914c05
-    type: organisation
-    name: The Dr. Phil Podcast
-  - id: f8a3d2e7-9ab1-42cb-a934-7c840f37079e
-    type: organisation
-    name: News Nation
-  - id: 5cf85949-31cc-498a-a6a7-fc83645bacb2
-    type: organisation
-    name: White House
-  - id: 5befb472-c1fb-4ccc-b3b9-4a04f8d1d92d
-    type: organisation
-    name: United States Department of Justice
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:02:17.3-00:02:24.0
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    As many as 71% of the adults in America say they believe that we're not alone in the universe.
+  text: |-
+    As many as 71% of adults in America say they believe humanity is not alone in the universe.
+  entailment:
+    label: entails
+    score: 0.757
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 6914b312-cf50-44f9-987e-9ab47c38644f
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:04:06.6-00:04:19.8
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
   - id: 6f1baffa-e0e5-4368-adaa-0ea80a4e78b5
-    type: organisation
     name: Presidential Commission for Religious Liberty
-  - id: 5000de32-b5b8-40aa-a47d-3fe297619508
-    type: organisation
-    name: United States Air Force
-  - id: cefc9472-2fc0-4ff4-8fc8-a56a776598e5
-    type: organisation
-    name: United States Army Air Forces
-  - id: 3cc384ad-f605-44ca-8b71-bc920856dd9c
-    type: organisation
-    name: Central Intelligence Agency (CIA)
-  - id: 858e2dd6-0405-4bd0-92cf-7a59393097be
-    type: organisation
-    name: United States Congress
-  - id: df1bb1df-7d2b-44ce-a6c0-ec3d8ab33bde
-    type: organisation
-    name: United States Department of Defense (DoD)
-  - id: 885f84cf-8e8e-4339-967d-e52be612bb9d
-    type: organisation
-    name: Meta
-  - id: d7587553-c111-4b7e-bb79-b0f5a85f95ea
-    type: project
-    name: Robertson Panel
-  - id: d7313e7e-52c5-4a4d-b32d-98e43533a4c8
-    type: project
-    name: Manhattan Project
-  - id: a53520d5-34fe-4fd7-b701-d6c14b82d3e8
-    type: project
-    name: UFO non-human technology retrieval and reverse engineering program
-  - id: 1874dd82-5a6e-4fa4-9e6e-ecb5e72f0fe6
-    type: event
-    name: |-
-      1949 Los Alamos classified conference on unexplained sightings over nuclear sites
-    metadata:
-      date_start: '1949'
-  - id: a3925bc9-a1e4-4bb1-be08-39fd69b91bac
-    type: event
-    name: 1947 Nathan Twining assessment to the Army Air Forces
-    metadata:
-      date_start: '1947'
-  - id: 7b205c4a-aec5-40c3-b791-720527a39e42
-    type: event
-    name: 1953 CIA Robertson Panel convening
-    metadata:
-      date_start: '1953'
-  - id: 94cd6ab0-a1eb-413b-ac31-12f6b18390c0
-    type: place
-    name: USA, New Mexico, Los Alamos
-  - id: 7a8c7e46-0a25-4ddc-8b26-f9682570837c
-    type: place
-    name: USA, Texas, Pantex Plant, Amarillo
-  - id: 9e9c2e16-97de-4d8b-b997-06d50898500b
-    type: place
-    name: USA, Washington, D.C.
-    metadata:
-      note: White House location, uncertain use
-  - id: 4341e6e9-f49b-4a5f-9775-b6211950d1b6
-    type: place
-    name: Andromeda Galaxy
+  quote: |-
+    I serve on the Presidential Commission for Religious Liberty, and that involves the Department of Justice and other departments that have to do with constitutional rights.
+  text: Phil McGraw serves on the Presidential Commission for Religious Liberty.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 2b6785c6-f934-413c-bde2-08cbafde5c26
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:04:06.6-00:04:19.8
+  refs:
+  - id: 6f1baffa-e0e5-4368-adaa-0ea80a4e78b5
+    name: Presidential Commission for Religious Liberty
+  - id: 5befb472-c1fb-4ccc-b3b9-4a04f8d1d92d
+    name: United States Department of Justice
+  quote: |-
+    I serve on the Presidential Commission for Religious Liberty, and that involves the Department of Justice and other departments that have to do with constitutional rights.
+  text: |-
+    The Presidential Commission for Religious Liberty involves the United States Department of Justice.
+  entailment:
+    label: entails
+    score: 0.87
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d32623af-bef2-434b-a08f-ed8f6705fae1
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:04:29.1-00:04:35.2
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    I've been on the air here 25 years talking about things that matter to people who care.
+  text: Phil McGraw has been broadcasting his television programme for 25 years.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 98ee8fd3-84aa-4e99-aacf-771eb89cc49f
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:05:56.7-00:06:06.7
+  refs:
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    In fact, they were being threatened with prison time, with substantial fines, even with the Espionage Act.
+  text: Witnesses reporting UFO sightings were sometimes threatened with prison time.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 73171fb7-4491-491a-82b4-3028e82a0da1
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:05:56.7-00:06:06.7
+  refs:
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    In fact, they were being threatened with prison time, with substantial fines, even with the Espionage Act.
+  text: |-
+    Witnesses reporting UFO sightings were sometimes threatened with substantial fines.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: bc9e5bc7-b770-4e12-807c-7c2d26bddc51
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:05:56.7-00:06:06.7
+  refs:
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  - id: 8ac38b9c-f8dd-4127-975a-781be2ab8ab2
+    name: Espionage Act
+  quote: |-
+    In fact, they were being threatened with prison time, with substantial fines, even with the Espionage Act.
+  text: |-
+    Witnesses reporting UFO sightings were sometimes threatened with prosecution under the Espionage Act.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2f56d684-e8b8-4063-874e-1473fce23c99
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:05:43.1-00:05:55.6
+  refs:
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    We had credible people, military pilots, commercial pilots, people with trained instrumentation that were making observations that were being suppressed.
+  text: |-
+    Credible people, including military pilots, commercial pilots, and people with trained instrumentation, made observations of UFOs that were being suppressed.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 83c1bcc4-2c33-4587-acd7-e3097a9edef2
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:06:08.1-00:06:22.7
+  refs:
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    they certainly know that all of that is contained in the documents that are going to be released and the gun cameras, the radar tracks that are going to be released.
+  text: |-
+    Documents due to be released contain gun camera footage relevant to UFO sightings.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0aa874f1-e8d3-4187-b50d-dbf95db27a4c
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:06:08.1-00:06:22.7
+  refs:
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    they certainly know that all of that is contained in the documents that are going to be released and the gun cameras, the radar tracks that are going to be released.
+  text: Documents due to be released contain radar tracks relevant to UFO sightings.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0ef893ff-11bb-4c84-b2a6-61cfd6991325
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:06:33.3-00:06:58.2
+  refs:
   - id: 692319d3-61a0-4dc2-b489-f95504702531
-    type: topic
     name: Unidentified Aerial Phenomena (UAP)
   - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-    type: topic
     name: Unidentified Flying Object (UFO)
-  - id: b04e0397-92e3-4582-923e-67d65edc5412
-    type: topic
-    name: anomalous aerial vehicle (AAV)
-  - id: e8b69fee-5da8-420b-bdbf-d772209653c2
-    type: topic
-    name: time dilation
-  - id: 8ac38b9c-f8dd-4127-975a-781be2ab8ab2
-    type: document
-    name: Espionage Act
+  quote: |-
+    It's like a psyop that we've seen previously in war efforts when the entire media machine was co-opted into convincing people to get behind the war effort by mimicking war atrocities that were completely made up just to get people behind the war effort, that the same thing was going on concerning UAPs and UFOs.
+  text: |-
+    Phil McGraw considers the historical suppression of UFO reports comparable to a psyop like those seen in past war efforts where the media machine was co-opted to fabricate atrocities to gain public support.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 31e03982-fda7-473a-aa86-ae441cea2282
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:07:37.3-00:07:46.1
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    there's something that's going on here that there's a fragmentation of this information within the United States government.
+  text: |-
+    Phil McGraw considers there to be a fragmentation of UFO-related information within the United States government.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f306f25a-ca43-4d25-96c3-484414dab022
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:07:47.2-00:08:07.8
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
+    name: Donald Trump
+  quote: |-
+    I think some of the people that are in control of this information kind of treat the president of the United States as though he's a temp employee... I'm not sure how candid some of the people in control of this information are with the boss, with the president of the United States
+  text: |-
+    Phil McGraw considers that some people controlling UFO-related information treat the President of the United States as though he were a temporary employee not given full candour.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2ede72f4-086e-41fc-b564-ca9252cc3ecb
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: anonymous
+    origin: people claiming to be inside the government UFO cover-up
+    origin_ref: coulthart-cover-up-sources
+    relay:
+    - told to Ross Coulthart
+  attribution_in_text: true
+  location: 00:08:14.4-00:08:25.2
+  refs:
+  - id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
+    name: Donald Trump
+  quote: |-
+    I mean, I think there has been times where people I've spoken to inside this cover up have told me the president is regarded as a temporary employee.
+  text: |-
+    People inside the government's UFO cover-up have told Ross Coulthart the President of the United States is regarded as a temporary employee by those controlling the information.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1cbcd809-d1c5-4716-9f0d-17acdee3b36b
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:08:57.9-00:09:01.6
+  refs:
+  - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
+    name: Donald Trump
+  quote: I think he has decided it's time for transparency.
+  text: Donald Trump has decided it is time for transparency regarding UFO disclosure.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e68d2a8f-fb60-4834-8612-79a5c21ecc5e
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:09:15.4-00:09:23.3
+  refs:
+  - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
+    name: Donald Trump
+  quote: |-
+    his executive order about this was very clear to declassify this information and disclose it to the American public.
+  text: |-
+    Donald Trump signed an executive order to declassify and disclose UFO-related information to the American public.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1760ef96-cd9a-4400-869a-58f84aac5d92
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:11:00.3-00:11:04.6
+  refs:
+  - id: b7c5eee3-2752-4099-9a5c-ab5bf48ed6a4
+    name: Fourth tranche of UFO files (2026)
+  quote: We've got the fourth tranche of information out there right now.
+  text: A fourth tranche of UFO files has been released.
+  entailment:
+    label: entails
+    score: 0.53
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2c758af2-c69a-4106-ab64-7d1d41080884
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:11:12.4-00:11:16.7
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: b7c5eee3-2752-4099-9a5c-ab5bf48ed6a4
+    name: Fourth tranche of UFO files (2026)
+  quote: |-
+    certainly in the one that we had the opportunity to dig into before it became public
+  text: Phil McGraw reviewed the fourth tranche of UFO files before it became public.
+  entailment:
+    label: neutral
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: abc8af2a-8e77-42a4-b960-0a36f39f27ce
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:11:19.2-00:11:21.0
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: Number one, there has been a massive cover-up.
+  text: |-
+    Phil McGraw concludes from his review of the UFO files that there has been a massive cover-up.
+  entailment:
+    label: neutral
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 33773c86-2867-47eb-8409-2557eff0d055
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:11:23.6-00:11:31.7
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    there's no question there are unexplained phenomenon happening in our atmosphere here.
+  text: |-
+    Phil McGraw concludes there is no question there are unexplained phenomena occurring in the Earth's atmosphere.
+  entailment:
+    label: entails
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5dd00e4b-7340-4241-b171-af99dbfccf40
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: document
+    origin: internal Meta documents
+    relay:
+    - reviewed by Phil McGraw
+  attribution_in_text: false
+  location: 00:12:11.0-00:12:17.1
+  refs:
+  - id: 885f84cf-8e8e-4339-967d-e52be612bb9d
+    name: Meta
+  quote: |-
+    we got into their documents and we read their words where they say, we know this is addictive.
+  text: |-
+    Meta documented internally that it knew its social media platform was addictive to teenage users.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 81475e7c-eecd-44ea-b073-95f1c65a2325
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: document
+    origin: internal Meta documents
+    relay:
+    - reviewed by Phil McGraw
+  attribution_in_text: false
+  location: 00:12:17.7-00:12:28.2
+  refs:
+  - id: 885f84cf-8e8e-4339-967d-e52be612bb9d
+    name: Meta
+  quote: |-
+    We know this is contributing to poor mental health of our preteens and teens, but we're doing it anyway.
+  text: |-
+    Meta documented internally that it knew its platform was contributing to poor mental health among preteens and teens.
+  entailment:
+    label: neutral
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 770f3c59-13d2-48be-a8cc-e507a8a2faf6
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: document
+    origin: the 1947 Nathan Twining assessment
+    relay:
+    - read by Phil McGraw
+  attribution_in_text: false
+  location: 00:12:45.2-00:12:58.5
+  date: '1947'
+  refs:
+  - id: c8f7c237-9f4b-4b08-a1ed-826d2b9bc552
+    name: Nathan Twining
+  - id: cefc9472-2fc0-4ff4-8fc8-a56a776598e5
+    name: United States Army Air Forces
+  - id: a3925bc9-a1e4-4bb1-be08-39fd69b91bac
+    name: 1947 Nathan Twining assessment to the Army Air Forces
+  quote: |-
+    In 1947, Lieutenant General Nathan Twining told the Army Air Forces the phenomenon was, quote, something real and not visionary or fictitious was going on.
+  text: |-
+    In 1947, Lieutenant General Nathan Twining told the United States Army Air Forces that the phenomenon under investigation was 'something real and not visionary or fictitious'.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: de814c2e-12f9-458d-b92f-819d4aac1bc6
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:12:58.6-00:13:05.8
+  refs:
+  - id: 5000de32-b5b8-40aa-a47d-3fe297619508
+    name: United States Air Force
+  - id: a3925bc9-a1e4-4bb1-be08-39fd69b91bac
+    name: 1947 Nathan Twining assessment to the Army Air Forces
+  quote: Well, the Air Force denied for decades that any such assessment even existed.
+  text: |-
+    The United States Air Force denied for decades that Nathan Twining's 1947 assessment even existed.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ec36506f-4715-4398-ac9b-00f3dba02351
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:13:17.9-00:13:30.7
+  date: '1949'
+  refs:
+  - id: 1874dd82-5a6e-4fa4-9e6e-ecb5e72f0fe6
+    name: |-
+      1949 Los Alamos classified conference on unexplained sightings over nuclear sites
+  - id: 94cd6ab0-a1eb-413b-ac31-12f6b18390c0
+    name: USA, New Mexico, Los Alamos
+  - id: d7313e7e-52c5-4a4d-b32d-98e43533a4c8
+    name: Manhattan Project
+  quote: |-
+    Then in 1949, a classified conference was convened at Los Alamos, home of the Manhattan Project, to address a wave of unexplained sightings over America's nuclear weapon sites.
+  text: |-
+    In 1949, a classified conference was convened at Los Alamos, New Mexico, home of the Manhattan Project, to address a wave of unexplained sightings over America's nuclear weapon sites.
+  entailment:
+    label: entails
+    score: 0.572
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 557c0935-d59b-429b-ae5e-d126db7d1084
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:13:33.6-00:13:46.0
+  refs:
+  - id: 7a8c7e46-0a25-4ddc-8b26-f9682570837c
+    name: USA, Texas, Pantex Plant, Amarillo
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    This has continued as recently as just the last few years we've had sightings over Pantex up in Amarillo, a nuclear site.
+  text: |-
+    There have been sightings of anomalous phenomena over the Pantex Plant nuclear site in Amarillo, Texas, in recent years.
+  entailment:
+    label: entails
+    score: 0.838
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 38ee9e58-9c8f-4384-a506-2c6430f2d061
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:13:47.2-00:13:55.8
+  refs:
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    We've got five cities with nuclear concentrations and they've had a high incidence of verified sightings over our nuclear installations.
+  text: |-
+    Five cities with nuclear concentrations have had a high incidence of verified UFO sightings over nuclear installations.
+  entailment:
+    label: entails
+    score: 0.562
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: cb7d4b21-18e8-439d-99c7-b2bd71c62ab9
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:14:01.2-00:14:17.4
+  date: '1953'
+  refs:
+  - id: 3cc384ad-f605-44ca-8b71-bc920856dd9c
+    name: Central Intelligence Agency (CIA)
+  - id: d7587553-c111-4b7e-bb79-b0f5a85f95ea
+    name: Robertson Panel
+  - id: 7b205c4a-aec5-40c3-b791-720527a39e42
+    name: 1953 CIA Robertson Panel convening
+  quote: |-
+    So 1953, the CIA's Robertson panel of scientists convened and recommended a public education campaign built on one strategy, publicize the cases that have already been debunked and say nothing about the ones that haven't.
+  text: |-
+    In 1953, the Central Intelligence Agency's Robertson Panel of scientists convened and recommended a public education campaign built on publicising already-debunked UFO cases while saying nothing about unexplained ones.
+  entailment:
+    label: entails
+    score: 0.781
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 436abef4-1dfa-4d42-af6a-55052a818f04
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ross Coulthart
+  attribution_in_text: false
+  location: 00:14:26.8-00:14:39.3
+  refs:
   - id: 8a62fefe-a6d0-478f-adb4-e3c139373740
-    type: document
+    name: JNAP 146
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    what's called JNAP 146, where it essentially criminalised military and civilian pilots in the US and unbelievably also in Canada from even talking about UFO sightings.
+  text: |-
+    JNAP 146 criminalised military and civilian pilots in the United States and Canada from talking about UFO sightings.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: bc03950c-07aa-4311-b11f-ca3b9dc83a58
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:14:52.6-00:15:07.2
+  refs:
+  - id: 8a62fefe-a6d0-478f-adb4-e3c139373740
     name: JNAP 146
   - id: 43733c83-a2d2-4cb1-97a5-01d53af679b7
-    type: document
     name: JNAP 146E
-  - id: b7c5eee3-2752-4099-9a5c-ab5bf48ed6a4
-    type: document
-    name: Fourth tranche of UFO files (2026)
+  quote: |-
+    So they quickly did JNAP 146E, which did two things. It covered the retired and it imposed the Espionage Act, which upped all of the stakes across the board.
+  text: |-
+    After realising that retired pilots fell outside their jurisdiction under JNAP 146, authorities issued JNAP 146E, which extended restrictions to retired pilots.
+  entailment:
+    label: neutral
+    score: 0.733
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: fcd86ba8-d286-476a-a47f-5a0d29a06981
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:14:52.6-00:15:07.2
+  refs:
+  - id: 43733c83-a2d2-4cb1-97a5-01d53af679b7
+    name: JNAP 146E
+  - id: 8ac38b9c-f8dd-4127-975a-781be2ab8ab2
+    name: Espionage Act
+  quote: |-
+    So they quickly did JNAP 146E, which did two things. It covered the retired and it imposed the Espionage Act, which upped all of the stakes across the board.
+  text: |-
+    JNAP 146E imposed the Espionage Act on the pilots it covered, increasing the legal stakes for disclosure.
+  entailment:
+    label: neutral
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5cc1aed6-9af9-4251-907c-1b3db968ffc5
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:15:43.8-00:15:55.5
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    I believe that the redactions and the cherry picking of what's being put out right now, I think it's still a tug of war to get to the absolute truth of what they know.
+  text: |-
+    Phil McGraw believes the redactions and cherry-picking of currently released UFO disclosures indicate an ongoing tug-of-war to get to the full truth of what the government knows.
+  entailment:
+    label: entails
+    score: 0.837
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5e92ffe6-af92-4e4b-8cd5-fcc4d5e44bd3
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ross Coulthart
+  attribution_in_text: false
+  location: 00:16:57.8-00:17:05.2
+  refs:
+  - id: 0fa1ad84-17e7-4a4c-adbc-9d43d7751572
+    name: David Grusch
+  - id: df1bb1df-7d2b-44ce-a6c0-ec3d8ab33bde
+    name: United States Department of Defense (DoD)
+  quote: |-
+    David Grusch is a whistleblower who goes much further. He's come from inside the Defense Department, the intelligence community
+  text: |-
+    David Grusch is a whistleblower who came from inside the United States Department of Defense and the intelligence community.
+  entailment:
+    label: entails
+    score: 0.685
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 48a9b1f7-427c-4644-bfef-9482e2dced6d
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: named
+    origin: David Grusch
+    relay:
+    - reported by Ross Coulthart
+  attribution_in_text: false
+  location: 00:17:06.4-00:17:16.7
+  refs:
+  - id: 0fa1ad84-17e7-4a4c-adbc-9d43d7751572
+    name: David Grusch
+  - id: a53520d5-34fe-4fd7-b701-d6c14b82d3e8
+    name: UFO non-human technology retrieval and reverse engineering program
+  quote: |-
+    he revealed the existence of a legacy UFO non-human technology retrieval and reverse engineering program.
+  text: |-
+    David Grusch revealed the existence of a legacy UFO non-human technology retrieval and reverse engineering programme.
+  entailment:
+    label: contradicts
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: d68c95c1-5a1f-4ec0-9556-768c7fbca7b1
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: named
+    origin: David Grusch
+    relay:
+    - reported by Ross Coulthart
+  attribution_in_text: false
+  location: 00:17:17.8-00:17:24.1
+  refs:
+  - id: a53520d5-34fe-4fd7-b701-d6c14b82d3e8
+    name: UFO non-human technology retrieval and reverse engineering program
+  quote: |-
+    The idea being that the United States has recovered alien technology, non-human technology.
+  text: |-
+    The idea behind the alleged programme is that the United States has recovered alien, non-human technology.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f806e866-8378-4237-a62f-fa9b36f39f24
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:19:08.0-00:19:14.2
+  refs:
+  - id: 4341e6e9-f49b-4a5f-9775-b6211950d1b6
+    name: Andromeda Galaxy
+  quote: |-
+    to travel to the nearest galaxy, Andromeda, it would take two and a half million years traveling at the speed of light.
+  text: |-
+    Travelling to the Andromeda Galaxy at the speed of light would take approximately two and a half million years.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 96001f4f-50bc-464a-88a5-67338a6682dc
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:19:14.9-00:19:18.1
+  quote: And that's 186,282 miles an hour.
+  text: The speed of light is approximately 300,000 kilometres per second.
+  entailment:
+    label: contradicts
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: edc95677-34ff-4a93-890d-103ff05f1141
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:19:25.8-00:19:40.6
+  refs:
+  - id: e8b69fee-5da8-420b-bdbf-d772209653c2
+    name: time dilation
+  - id: 4341e6e9-f49b-4a5f-9775-b6211950d1b6
+    name: Andromeda Galaxy
+  quote: |-
+    I know there's the time dilation theory where there's a theory under which you could actually get there and two and a half decades or whatever but two and a half million years would have passed on earth if you did so
+  text: |-
+    There is a time dilation theory under which a traveller could reach the Andromeda Galaxy in approximately two and a half decades of subjective travel time, while roughly two and a half million years would pass on Earth.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e148a5de-ff0d-4c86-82ab-72b01859ba35
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:19:47.0-00:20:12.0
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    It that suggests that if someone has traveled here from outside our galaxy, you have to conclude that they're technologically superior to us or they packed a hell of a lunch because it takes a long time to get here. And that's technology we don't have. So that means they are technologically superior.
+  text: |-
+    Phil McGraw concludes that if a non-human entity has travelled here from outside our galaxy, it must be technologically superior to humanity given the travel time involved.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: f5a13b04-4f2c-48db-9bed-67a704ecd8da
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:20:15.2-00:20:22.7
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    you can't and this is already happening just with what's been given so far is it's being provided without context
+  text: |-
+    Phil McGraw considers the UFO information disclosed so far to have been provided without adequate context.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 166bdcf9-ed1f-46d2-942a-518d976f2f25
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:20:30.1-00:20:31.6
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: i've been a pilot since i was 16
+  text: Phil McGraw has been a pilot since he was 16 years old.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 67cc27b1-7764-4117-9f04-b152b8e000c1
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:20:43.5-00:20:46.8
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
+    name: Unidentified Flying Object (UFO)
+  quote: I look at these, and by the way, they're, I think, intentionally grainy.
+  text: |-
+    Phil McGraw considers the publicly released UFO videos to be intentionally grainy.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 65a65ce2-725e-41b6-be09-48ceccd73cae
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:20:49.0-00:20:59.2
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    I know that there is existence of very high resolution gun camera video and radar tracks that can be provided.
+  text: |-
+    Phil McGraw knows that very high resolution gun camera video and radar tracks exist that could be released.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b425cd99-89b3-4aec-9311-aa3bc4f5e7b5
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:21:49.7-00:22:04.4
+  refs:
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    We have things that within context appear to be moving close to 40,000 miles an hour and making a right turn. I mean a 90 degree right turn.
+  text: |-
+    Some UAP have been recorded on radar appearing to move at approximately 64,000 kilometres per hour and execute a 90-degree turn.
+  entailment:
+    label: contradicts
+    score: 0.399
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 40f317ed-338a-4ed5-b86c-335f1a40fc7f
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:22:06.4-00:22:13.2
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
   - id: 35fbce00-9df6-4cb4-a547-5286477dd95e
-    type: organisation
     name: Blue Angels
-domain_claims:
-  - id: 4e52d57d-71be-4cd8-8668-0cd5bdc8e70d
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:02:17.3-00:02:24.0
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      As many as 71% of the adults in America say they believe that we're not alone in the universe.
-    text: |-
-      As many as 71% of adults in America say they believe humanity is not alone in the universe.
-  - id: 6914b312-cf50-44f9-987e-9ab47c38644f
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:04:06.6-00:04:19.8
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 6f1baffa-e0e5-4368-adaa-0ea80a4e78b5
-        name: Presidential Commission for Religious Liberty
-    quote: |-
-      I serve on the Presidential Commission for Religious Liberty, and that involves the Department of Justice and other departments that have to do with constitutional rights.
-    text: Phil McGraw serves on the Presidential Commission for Religious Liberty.
-  - id: 2b6785c6-f934-413c-bde2-08cbafde5c26
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:04:06.6-00:04:19.8
-    refs:
-      - id: 6f1baffa-e0e5-4368-adaa-0ea80a4e78b5
-        name: Presidential Commission for Religious Liberty
-      - id: 5befb472-c1fb-4ccc-b3b9-4a04f8d1d92d
-        name: United States Department of Justice
-    quote: |-
-      I serve on the Presidential Commission for Religious Liberty, and that involves the Department of Justice and other departments that have to do with constitutional rights.
-    text: |-
-      The Presidential Commission for Religious Liberty involves the United States Department of Justice.
-  - id: d32623af-bef2-434b-a08f-ed8f6705fae1
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:04:29.1-00:04:35.2
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      I've been on the air here 25 years talking about things that matter to people who care.
-    text: Phil McGraw has been broadcasting his television programme for 25 years.
-  - id: 98ee8fd3-84aa-4e99-aacf-771eb89cc49f
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:05:56.7-00:06:06.7
-    refs:
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      In fact, they were being threatened with prison time, with substantial fines, even with the Espionage Act.
-    text: Witnesses reporting UFO sightings were sometimes threatened with prison time.
-  - id: 73171fb7-4491-491a-82b4-3028e82a0da1
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:05:56.7-00:06:06.7
-    refs:
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      In fact, they were being threatened with prison time, with substantial fines, even with the Espionage Act.
-    text: |-
-      Witnesses reporting UFO sightings were sometimes threatened with substantial fines.
-  - id: bc9e5bc7-b770-4e12-807c-7c2d26bddc51
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:05:56.7-00:06:06.7
-    refs:
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-      - id: 8ac38b9c-f8dd-4127-975a-781be2ab8ab2
-        name: Espionage Act
-    quote: |-
-      In fact, they were being threatened with prison time, with substantial fines, even with the Espionage Act.
-    text: |-
-      Witnesses reporting UFO sightings were sometimes threatened with prosecution under the Espionage Act.
-  - id: 2f56d684-e8b8-4063-874e-1473fce23c99
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:05:43.1-00:05:55.6
-    refs:
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      We had credible people, military pilots, commercial pilots, people with trained instrumentation that were making observations that were being suppressed.
-    text: |-
-      Credible people, including military pilots, commercial pilots, and people with trained instrumentation, made observations of UFOs that were being suppressed.
-  - id: 83c1bcc4-2c33-4587-acd7-e3097a9edef2
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:06:08.1-00:06:22.7
-    refs:
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      they certainly know that all of that is contained in the documents that are going to be released and the gun cameras, the radar tracks that are going to be released.
-    text: |-
-      Documents due to be released contain gun camera footage relevant to UFO sightings.
-  - id: 0aa874f1-e8d3-4187-b50d-dbf95db27a4c
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:06:08.1-00:06:22.7
-    refs:
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      they certainly know that all of that is contained in the documents that are going to be released and the gun cameras, the radar tracks that are going to be released.
-    text: Documents due to be released contain radar tracks relevant to UFO sightings.
-  - id: 0ef893ff-11bb-4c84-b2a6-61cfd6991325
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:06:33.3-00:06:58.2
-    refs:
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      It's like a psyop that we've seen previously in war efforts when the entire media machine was co-opted into convincing people to get behind the war effort by mimicking war atrocities that were completely made up just to get people behind the war effort, that the same thing was going on concerning UAPs and UFOs.
-    text: |-
-      Phil McGraw considers the historical suppression of UFO reports comparable to a psyop like those seen in past war efforts where the media machine was co-opted to fabricate atrocities to gain public support.
-  - id: 31e03982-fda7-473a-aa86-ae441cea2282
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:07:37.3-00:07:46.1
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      there's something that's going on here that there's a fragmentation of this information within the United States government.
-    text: |-
-      Phil McGraw considers there to be a fragmentation of UFO-related information within the United States government.
-  - id: f306f25a-ca43-4d25-96c3-484414dab022
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:07:47.2-00:08:07.8
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
-        name: Donald Trump
-    quote: |-
-      I think some of the people that are in control of this information kind of treat the president of the United States as though he's a temp employee... I'm not sure how candid some of the people in control of this information are with the boss, with the president of the United States
-    text: |-
-      Phil McGraw considers that some people controlling UFO-related information treat the President of the United States as though he were a temporary employee not given full candour.
-  - id: 2ede72f4-086e-41fc-b564-ca9252cc3ecb
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: anonymous
-      origin: people claiming to be inside the government UFO cover-up
-      origin_ref: coulthart-cover-up-sources
-      relay:
-        - told to Ross Coulthart
-    attribution_in_text: true
-    location: 00:08:14.4-00:08:25.2
-    refs:
-      - id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-        name: Ross Coulthart
-      - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
-        name: Donald Trump
-    quote: |-
-      I mean, I think there has been times where people I've spoken to inside this cover up have told me the president is regarded as a temporary employee.
-    text: |-
-      People inside the government's UFO cover-up have told Ross Coulthart the President of the United States is regarded as a temporary employee by those controlling the information.
-  - id: 1cbcd809-d1c5-4716-9f0d-17acdee3b36b
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:08:57.9-00:09:01.6
-    refs:
-      - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
-        name: Donald Trump
-    quote: I think he has decided it's time for transparency.
-    text: Donald Trump has decided it is time for transparency regarding UFO disclosure.
-  - id: e68d2a8f-fb60-4834-8612-79a5c21ecc5e
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:09:15.4-00:09:23.3
-    refs:
-      - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
-        name: Donald Trump
-    quote: |-
-      his executive order about this was very clear to declassify this information and disclose it to the American public.
-    text: |-
-      Donald Trump signed an executive order to declassify and disclose UFO-related information to the American public.
-  - id: 1760ef96-cd9a-4400-869a-58f84aac5d92
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:11:00.3-00:11:04.6
-    refs:
-      - id: b7c5eee3-2752-4099-9a5c-ab5bf48ed6a4
-        name: Fourth tranche of UFO files (2026)
-    quote: We've got the fourth tranche of information out there right now.
-    text: A fourth tranche of UFO files has been released.
-  - id: 2c758af2-c69a-4106-ab64-7d1d41080884
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:11:12.4-00:11:16.7
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: b7c5eee3-2752-4099-9a5c-ab5bf48ed6a4
-        name: Fourth tranche of UFO files (2026)
-    quote: |-
-      certainly in the one that we had the opportunity to dig into before it became public
-    text: Phil McGraw reviewed the fourth tranche of UFO files before it became public.
-  - id: abc8af2a-8e77-42a4-b960-0a36f39f27ce
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:11:19.2-00:11:21.0
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: Number one, there has been a massive cover-up.
-    text: |-
-      Phil McGraw concludes from his review of the UFO files that there has been a massive cover-up.
-  - id: 33773c86-2867-47eb-8409-2557eff0d055
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:11:23.6-00:11:31.7
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      there's no question there are unexplained phenomenon happening in our atmosphere here.
-    text: |-
-      Phil McGraw concludes there is no question there are unexplained phenomena occurring in the Earth's atmosphere.
-  - id: 5dd00e4b-7340-4241-b171-af99dbfccf40
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: document
-      origin: internal Meta documents
-      relay:
-        - reviewed by Phil McGraw
-    attribution_in_text: false
-    location: 00:12:11.0-00:12:17.1
-    refs:
-      - id: 885f84cf-8e8e-4339-967d-e52be612bb9d
-        name: Meta
-    quote: |-
-      we got into their documents and we read their words where they say, we know this is addictive.
-    text: |-
-      Meta documented internally that it knew its social media platform was addictive to teenage users.
-  - id: 81475e7c-eecd-44ea-b073-95f1c65a2325
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: document
-      origin: internal Meta documents
-      relay:
-        - reviewed by Phil McGraw
-    attribution_in_text: false
-    location: 00:12:17.7-00:12:28.2
-    refs:
-      - id: 885f84cf-8e8e-4339-967d-e52be612bb9d
-        name: Meta
-    quote: |-
-      We know this is contributing to poor mental health of our preteens and teens, but we're doing it anyway.
-    text: |-
-      Meta documented internally that it knew its platform was contributing to poor mental health among preteens and teens.
-  - id: 770f3c59-13d2-48be-a8cc-e507a8a2faf6
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: document
-      origin: the 1947 Nathan Twining assessment
-      relay:
-        - read by Phil McGraw
-    attribution_in_text: false
-    location: 00:12:45.2-00:12:58.5
-    date: '1947'
-    refs:
-      - id: c8f7c237-9f4b-4b08-a1ed-826d2b9bc552
-        name: Nathan Twining
-      - id: cefc9472-2fc0-4ff4-8fc8-a56a776598e5
-        name: United States Army Air Forces
-      - id: a3925bc9-a1e4-4bb1-be08-39fd69b91bac
-        name: 1947 Nathan Twining assessment to the Army Air Forces
-    quote: |-
-      In 1947, Lieutenant General Nathan Twining told the Army Air Forces the phenomenon was, quote, something real and not visionary or fictitious was going on.
-    text: |-
-      In 1947, Lieutenant General Nathan Twining told the United States Army Air Forces that the phenomenon under investigation was 'something real and not visionary or fictitious'.
-  - id: de814c2e-12f9-458d-b92f-819d4aac1bc6
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:12:58.6-00:13:05.8
-    refs:
-      - id: 5000de32-b5b8-40aa-a47d-3fe297619508
-        name: United States Air Force
-      - id: a3925bc9-a1e4-4bb1-be08-39fd69b91bac
-        name: 1947 Nathan Twining assessment to the Army Air Forces
-    quote: Well, the Air Force denied for decades that any such assessment even existed.
-    text: |-
-      The United States Air Force denied for decades that Nathan Twining's 1947 assessment even existed.
-  - id: ec36506f-4715-4398-ac9b-00f3dba02351
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:13:17.9-00:13:30.7
-    date: '1949'
-    refs:
-      - id: 1874dd82-5a6e-4fa4-9e6e-ecb5e72f0fe6
-        name: |-
-          1949 Los Alamos classified conference on unexplained sightings over nuclear sites
-      - id: 94cd6ab0-a1eb-413b-ac31-12f6b18390c0
-        name: USA, New Mexico, Los Alamos
-      - id: d7313e7e-52c5-4a4d-b32d-98e43533a4c8
-        name: Manhattan Project
-    quote: |-
-      Then in 1949, a classified conference was convened at Los Alamos, home of the Manhattan Project, to address a wave of unexplained sightings over America's nuclear weapon sites.
-    text: |-
-      In 1949, a classified conference was convened at Los Alamos, New Mexico, home of the Manhattan Project, to address a wave of unexplained sightings over America's nuclear weapon sites.
-  - id: 557c0935-d59b-429b-ae5e-d126db7d1084
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:13:33.6-00:13:46.0
-    refs:
-      - id: 7a8c7e46-0a25-4ddc-8b26-f9682570837c
-        name: USA, Texas, Pantex Plant, Amarillo
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      This has continued as recently as just the last few years we've had sightings over Pantex up in Amarillo, a nuclear site.
-    text: |-
-      There have been sightings of anomalous phenomena over the Pantex Plant nuclear site in Amarillo, Texas, in recent years.
-  - id: 38ee9e58-9c8f-4384-a506-2c6430f2d061
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:13:47.2-00:13:55.8
-    refs:
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      We've got five cities with nuclear concentrations and they've had a high incidence of verified sightings over our nuclear installations.
-    text: |-
-      Five cities with nuclear concentrations have had a high incidence of verified UFO sightings over nuclear installations.
-  - id: cb7d4b21-18e8-439d-99c7-b2bd71c62ab9
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:14:01.2-00:14:17.4
-    date: '1953'
-    refs:
-      - id: 3cc384ad-f605-44ca-8b71-bc920856dd9c
-        name: Central Intelligence Agency (CIA)
-      - id: d7587553-c111-4b7e-bb79-b0f5a85f95ea
-        name: Robertson Panel
-      - id: 7b205c4a-aec5-40c3-b791-720527a39e42
-        name: 1953 CIA Robertson Panel convening
-    quote: |-
-      So 1953, the CIA's Robertson panel of scientists convened and recommended a public education campaign built on one strategy, publicize the cases that have already been debunked and say nothing about the ones that haven't.
-    text: |-
-      In 1953, the Central Intelligence Agency's Robertson Panel of scientists convened and recommended a public education campaign built on publicising already-debunked UFO cases while saying nothing about unexplained ones.
-  - id: 436abef4-1dfa-4d42-af6a-55052a818f04
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ross Coulthart
-    attribution_in_text: false
-    location: 00:14:26.8-00:14:39.3
-    refs:
-      - id: 8a62fefe-a6d0-478f-adb4-e3c139373740
-        name: JNAP 146
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      what's called JNAP 146, where it essentially criminalised military and civilian pilots in the US and unbelievably also in Canada from even talking about UFO sightings.
-    text: |-
-      JNAP 146 criminalised military and civilian pilots in the United States and Canada from talking about UFO sightings.
-  - id: bc03950c-07aa-4311-b11f-ca3b9dc83a58
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:14:52.6-00:15:07.2
-    refs:
-      - id: 8a62fefe-a6d0-478f-adb4-e3c139373740
-        name: JNAP 146
-      - id: 43733c83-a2d2-4cb1-97a5-01d53af679b7
-        name: JNAP 146E
-    quote: |-
-      So they quickly did JNAP 146E, which did two things. It covered the retired and it imposed the Espionage Act, which upped all of the stakes across the board.
-    text: |-
-      After realising that retired pilots fell outside their jurisdiction under JNAP 146, authorities issued JNAP 146E, which extended restrictions to retired pilots.
-  - id: fcd86ba8-d286-476a-a47f-5a0d29a06981
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:14:52.6-00:15:07.2
-    refs:
-      - id: 43733c83-a2d2-4cb1-97a5-01d53af679b7
-        name: JNAP 146E
-      - id: 8ac38b9c-f8dd-4127-975a-781be2ab8ab2
-        name: Espionage Act
-    quote: |-
-      So they quickly did JNAP 146E, which did two things. It covered the retired and it imposed the Espionage Act, which upped all of the stakes across the board.
-    text: |-
-      JNAP 146E imposed the Espionage Act on the pilots it covered, increasing the legal stakes for disclosure.
-  - id: 5cc1aed6-9af9-4251-907c-1b3db968ffc5
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:15:43.8-00:15:55.5
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      I believe that the redactions and the cherry picking of what's being put out right now, I think it's still a tug of war to get to the absolute truth of what they know.
-    text: |-
-      Phil McGraw believes the redactions and cherry-picking of currently released UFO disclosures indicate an ongoing tug-of-war to get to the full truth of what the government knows.
-  - id: 5e92ffe6-af92-4e4b-8cd5-fcc4d5e44bd3
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ross Coulthart
-    attribution_in_text: false
-    location: 00:16:57.8-00:17:05.2
-    refs:
-      - id: 0fa1ad84-17e7-4a4c-adbc-9d43d7751572
-        name: David Grusch
-      - id: df1bb1df-7d2b-44ce-a6c0-ec3d8ab33bde
-        name: United States Department of Defense (DoD)
-    quote: |-
-      David Grusch is a whistleblower who goes much further. He's come from inside the Defense Department, the intelligence community
-    text: |-
-      David Grusch is a whistleblower who came from inside the United States Department of Defense and the intelligence community.
-  - id: 48a9b1f7-427c-4644-bfef-9482e2dced6d
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: named
-      origin: David Grusch
-      relay:
-        - reported by Ross Coulthart
-    attribution_in_text: false
-    location: 00:17:06.4-00:17:16.7
-    refs:
-      - id: 0fa1ad84-17e7-4a4c-adbc-9d43d7751572
-        name: David Grusch
-      - id: a53520d5-34fe-4fd7-b701-d6c14b82d3e8
-        name: UFO non-human technology retrieval and reverse engineering program
-    quote: |-
-      he revealed the existence of a legacy UFO non-human technology retrieval and reverse engineering program.
-    text: |-
-      David Grusch revealed the existence of a legacy UFO non-human technology retrieval and reverse engineering programme.
-  - id: d68c95c1-5a1f-4ec0-9556-768c7fbca7b1
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: named
-      origin: David Grusch
-      relay:
-        - reported by Ross Coulthart
-    attribution_in_text: false
-    location: 00:17:17.8-00:17:24.1
-    refs:
-      - id: a53520d5-34fe-4fd7-b701-d6c14b82d3e8
-        name: UFO non-human technology retrieval and reverse engineering program
-    quote: |-
-      The idea being that the United States has recovered alien technology, non-human technology.
-    text: |-
-      The idea behind the alleged programme is that the United States has recovered alien, non-human technology.
-  - id: f806e866-8378-4237-a62f-fa9b36f39f24
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:19:08.0-00:19:14.2
-    refs:
-      - id: 4341e6e9-f49b-4a5f-9775-b6211950d1b6
-        name: Andromeda Galaxy
-    quote: |-
-      to travel to the nearest galaxy, Andromeda, it would take two and a half million years traveling at the speed of light.
-    text: |-
-      Travelling to the Andromeda Galaxy at the speed of light would take approximately two and a half million years.
-  - id: 96001f4f-50bc-464a-88a5-67338a6682dc
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:19:14.9-00:19:18.1
-    quote: And that's 186,282 miles an hour.
-    text: The speed of light is approximately 300,000 kilometres per second.
-  - id: edc95677-34ff-4a93-890d-103ff05f1141
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:19:25.8-00:19:40.6
-    refs:
-      - id: e8b69fee-5da8-420b-bdbf-d772209653c2
-        name: time dilation
-      - id: 4341e6e9-f49b-4a5f-9775-b6211950d1b6
-        name: Andromeda Galaxy
-    quote: |-
-      I know there's the time dilation theory where there's a theory under which you could actually get there and two and a half decades or whatever but two and a half million years would have passed on earth if you did so
-    text: |-
-      There is a time dilation theory under which a traveller could reach the Andromeda Galaxy in approximately two and a half decades of subjective travel time, while roughly two and a half million years would pass on Earth.
-  - id: e148a5de-ff0d-4c86-82ab-72b01859ba35
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:19:47.0-00:20:12.0
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      It that suggests that if someone has traveled here from outside our galaxy, you have to conclude that they're technologically superior to us or they packed a hell of a lunch because it takes a long time to get here. And that's technology we don't have. So that means they are technologically superior.
-    text: |-
-      Phil McGraw concludes that if a non-human entity has travelled here from outside our galaxy, it must be technologically superior to humanity given the travel time involved.
-  - id: f5a13b04-4f2c-48db-9bed-67a704ecd8da
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:20:15.2-00:20:22.7
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      you can't and this is already happening just with what's been given so far is it's being provided without context
-    text: |-
-      Phil McGraw considers the UFO information disclosed so far to have been provided without adequate context.
-  - id: 166bdcf9-ed1f-46d2-942a-518d976f2f25
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:20:30.1-00:20:31.6
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: i've been a pilot since i was 16
-    text: Phil McGraw has been a pilot since he was 16 years old.
-  - id: 67cc27b1-7764-4117-9f04-b152b8e000c1
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:20:43.5-00:20:46.8
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 466f7da1-c8ae-474d-89fb-d4ca0c25bbc9
-        name: Unidentified Flying Object (UFO)
-    quote: I look at these, and by the way, they're, I think, intentionally grainy.
-    text: |-
-      Phil McGraw considers the publicly released UFO videos to be intentionally grainy.
-  - id: 65a65ce2-725e-41b6-be09-48ceccd73cae
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:20:49.0-00:20:59.2
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      I know that there is existence of very high resolution gun camera video and radar tracks that can be provided.
-    text: |-
-      Phil McGraw knows that very high resolution gun camera video and radar tracks exist that could be released.
-  - id: b425cd99-89b3-4aec-9311-aa3bc4f5e7b5
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:21:49.7-00:22:04.4
-    refs:
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      We have things that within context appear to be moving close to 40,000 miles an hour and making a right turn. I mean a 90 degree right turn.
-    text: |-
-      Some UAP have been recorded on radar appearing to move at approximately 64,000 kilometres per hour and execute a 90-degree turn.
-  - id: 40f317ed-338a-4ed5-b86c-335f1a40fc7f
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:22:06.4-00:22:13.2
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 35fbce00-9df6-4cb4-a547-5286477dd95e
-        name: Blue Angels
-    quote: I've flown with the Blue Angels and we were pulling like 7.49 Gs at times.
-    text: |-
-      Phil McGraw has flown with the Blue Angels and experienced forces of approximately 7.49 G.
-  - id: 0a1a1255-9d9e-40fe-b9b1-62ac3941291b
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:22:25.2-00:22:32.8
-    refs:
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      the estimates are, depending on how things were configured, that the G-forces would be somewhere between 10,000 and a million.
-    text: |-
-      Estimates of the G-forces some UAP would experience, depending on configuration, range between 10,000 and one million G.
-  - id: 7ee9bae0-2d42-4e9b-92c0-fcf3ff6ef0b0
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:22:37.7-00:22:48.0
-    quote: |-
-      I think the most that's ever been tracked was on a sled at around 25 G's for a half of a second or something.
-    text: |-
-      The highest G-force ever tracked on a rocket sled was approximately 25 G for about half a second.
-  - id: 6c7b0f36-cad5-4c25-9b28-25944b5df2a9
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:22:48.5-00:22:55.5
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      I think you get anywhere near what they're talking about. we would liquefy inside that.
-    text: |-
-      Phil McGraw considers that a human being would liquefy internally under the G-forces attributed to some UAP.
-  - id: c1136e41-f7ee-49d5-8416-c55179df3e05
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:22:55.8-00:23:03.0
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      we also don't have the metallurgy to have any kind of aircraft that it would look like a yard sale if we turn.
-    text: |-
-      Phil McGraw considers that current human metallurgy could not withstand the manoeuvres attributed to some UAP.
-  - id: 2373da46-02de-4e3e-b8f3-cc62a0bc4174
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ross Coulthart
-    attribution_in_text: true
-    location: 00:23:45.3-00:23:49.7
-    refs:
-      - id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-        name: Ross Coulthart
-    quote: |-
-      I happen to think that that's a very patronizing view and that Americans are ready.
-    text: |-
-      Phil McGraw considers it a patronising view that the American public is too fragile to be told about non-human intelligence.
-  - id: 71df0c61-8608-4bb6-b167-fc6d6b846d2a
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:23:56.8-00:23:58.8
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: I've been doing this for close to 50 years.
-    text: Phil McGraw has been practising as a psychologist for close to 50 years.
-  - id: a116b3b8-5189-4897-a287-d5d2680d8915
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: true
-    location: 00:24:32.3-00:24:42.4
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      the highest stress within that category is sudden loss of a child. And then number one within that subset is violent and sudden loss of a child.
-    text: |-
-      Phil McGraw considers sudden, violent loss of a child to be the most severe stressor a person can experience.
-  - id: 0dc8393e-84ef-42b9-8dd1-fb6143ab579b
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:25:13.8-00:25:21.5
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      One of the most fundamental principles of psychological science is that the best predictor of future behavior is relevant past behavior.
-    text: |-
-      Phil McGraw considers the best predictor of future behaviour to be relevant past behaviour, a fundamental principle of psychological science.
-  - id: a4f50c62-4a54-4b56-96ff-45273ebc0c63
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:26:28.2-00:26:36.1
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      So far as we know, they have perpetrated no horrible, evil acts of violence on us.
-    text: |-
-      Phil McGraw considers non-earth, non-earthly origin intelligence to have perpetrated no horrible or evil acts of violence against humanity so far as is known.
-  - id: 1d1bbe41-80a7-46f7-b6f3-4be29151a4df
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:27:00.5-00:27:09.3
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      So I think we have to rely on an inference of non-aggression from whatever this presence may be.
-    text: |-
-      Phil McGraw infers non-aggression from whatever non-human presence may be engaging with the earth, based on its past behaviour.
-  - id: ed425a88-7352-4f5c-94d2-9beab1741c52
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ross Coulthart
-    attribution_in_text: false
-    location: 00:27:13.8-00:27:20.7
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      I was amused to see that searches for UAPs, I think it went up 400% when you started talking about it.
-    text: |-
-      Searches for Unidentified Aerial Phenomena (UAP) increased by approximately 400% after Phil McGraw began discussing the topic.
-  - id: 80f1659f-ea2a-432f-9ba0-102f44a29758
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ross Coulthart
-    attribution_in_text: false
-    location: 00:27:39.8-00:27:43.3
-    refs:
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: But it's quite clear that there has been a cover up of the UAP issue.
-    text: |-
-      Phil McGraw considers that there has been a cover-up of the Unidentified Aerial Phenomena (UAP) issue by the government, which the government continues to deny.
-  - id: 756ae442-7d44-40f6-8405-e6e98cc1f707
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:27:57.8-00:28:05.0
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: Well, I guess it goes back to follow the money and follow the power.
-    text: |-
-      Phil McGraw considers that some observed unidentified phenomena, if reverse engineered, could relate to the concealment of non-human intelligences engaging with the planet driven by money and power.
-  - id: 953e05b9-5590-45d9-b3b6-fd3fdacb0007
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: anonymous
-      origin: unnamed experts consulted by Phil McGraw
-      origin_ref: mcgraw-experts
-      relay:
-        - Phil McGraw
-    attribution_in_text: true
-    location: 00:28:05.8-00:28:20.8
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      I guess if you could, in fact, reverse engineer some of the things that we have observed, some of these things don't leave a heat signature.
-    text: |-
-      Unnamed experts told Phil McGraw that some of the observed unidentified phenomena do not leave a heat signature.
-  - id: 5ad1db6f-3b16-4799-ae46-80a56631b28f
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: anonymous
-      origin: unnamed experts consulted by Phil McGraw
-      origin_ref: mcgraw-experts
-      relay:
-        - Phil McGraw
-    attribution_in_text: true
-    location: 00:28:22.4-00:28:34.4
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      Some of them don't exhibit... obvious or known methods of propulsion. And I'm just going on what the experts are telling me.
-    text: |-
-      Unnamed experts told Phil McGraw that some of the observed unidentified phenomena do not exhibit obvious or known methods of propulsion.
-  - id: 92802c11-027f-4635-844b-16b5ac10e02f
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:28:34.7-00:28:43.3
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      As I say, I'm not a quantitative scientist. I can't add two and two and get five every time. So that's not my area.
-    text: |-
-      Phil McGraw states that he is not a quantitative scientist and that quantitative analysis is not his area of expertise.
-  - id: ef303487-d0f4-4843-aebc-0d8d46894cb7
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:28:43.8-00:28:58.1
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      But I do know how to seek out and find people that know more about it than I do. And I'm a pretty good judge of horseflesh in determining whether they're legitimate and are telling the truth or not.
-    text: |-
-      Phil McGraw considers himself skilled at seeking out and finding people who know more about unidentified phenomena than he does, and at judging whether they are legitimate and telling the truth.
-  - id: f10d4927-fcce-403a-a341-69df0ecb5fbb
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: anonymous
-      origin: unnamed credible people who spoke to Phil McGraw
-      origin_ref: mcgraw-credible-sources
-      relay:
-        - Phil McGraw
-    attribution_in_text: true
-    location: 00:28:58.8-00:29:08.9
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      And credible people are telling me that we truly do have some unexplainable things going on.
-    text: |-
-      Credible people have told Phil McGraw that there are genuinely unexplainable things going on regarding Unidentified Aerial Phenomena (UAP).
-  - id: 24fdb2eb-4ae7-48c4-b920-f810a0d71122
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:29:09.0-00:29:36.0
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      Now think about if you could reverse engineer and then replicate these propulsion navigation systems, all of this ability to make these turns and not leave a heat signature and do all the things that they're doing, my God, that would wipe out the oil and gas industry.
-    text: |-
-      Phil McGraw considers that reverse engineering and replicating the propulsion and navigation systems of the observed phenomena could wipe out the oil and gas industry.
-  - id: 7defba88-0803-4367-8c10-8eedb1f46546
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:29:36.5-00:29:38.4
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: It could wipe out nuclear power energy.
-    text: |-
-      Phil McGraw considers that reverse engineering the observed phenomena's propulsion systems could wipe out nuclear power energy.
-  - id: 6a56d1ec-70ca-4dee-a010-c3c0979e716b
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:29:39.1-00:30:05.0
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      It could replace everything and you could rule the world this is a this is a power play waiting to happen and so i suppose maybe there are people that are hoping that if they have captured if they have recovered a spaceship spacecraft of some sort and they can reverse engineer that
-    text: |-
-      Phil McGraw considers that someone hoping to reverse engineer a recovered spacecraft could use it as a power play to rule the world.
-  - id: 19bacad6-81d9-4046-a769-a7e45dccbdde
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:30:22.7-00:30:28.3
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      But I think they're hiding it, and I think maybe there's been some good motives for it.
-    text: |-
-      Phil McGraw considers that the government is hiding information about Unidentified Aerial Phenomena (UAP), possibly for some good motives.
-  - id: 2e1a2a00-0b39-4573-8c63-e434f2a64694
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:30:34.1-00:30:45.6
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      Why are they concentrating around our nuclear sites? Maybe they're learning something. Maybe they're making sure we don't do something stupid.
-    text: |-
-      Phil McGraw speculates that unidentified phenomena concentrating around nuclear sites may be learning something or ensuring humanity does not do something stupid.
-  - id: 3dfd2dd8-e42c-4b15-8d5b-e099d3b9f6fe
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:30:52.6-00:31:02.1
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      And if you, Ross, if you look back, it's usually the private sector that solves the problems. It's not the government. It's the private sector that solves the problem when the government gets the hell out of the way.
-    text: |-
-      Phil McGraw considers that it is usually the private sector, not the government, that solves problems when the government gets out of the way.
-  - id: e85da0bf-ccbb-4ef8-a2a4-ec2c3fb806a2
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ross Coulthart
-    attribution_in_text: false
-    location: 00:31:05.0-00:31:10.2
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
-        name: Donald Trump
-    quote: |-
-      You're very likely, sir, to get an opportunity at some stage in the next few months to speak with President Trump.
-    text: |-
-      Ross Coulthart considers it likely that Phil McGraw will get an opportunity in the next few months to speak with President Donald Trump.
-  - id: 376c8caa-6f94-451f-bd60-60eae39b4178
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ross Coulthart
-    attribution_in_text: false
-    location: 00:31:20.9-00:31:34.5
-    refs:
-      - id: 5cf85949-31cc-498a-a6a7-fc83645bacb2
-        name: White House
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      I do know that there are people in the White House administration. I suspect we've spoken to the same people who are toying with the idea of giving the American public information about what the government knows.
-    text: |-
-      Ross Coulthart knows of people in the White House administration who are considering giving the American public information about what the government knows regarding Unidentified Aerial Phenomena (UAP).
-  - id: 34a14087-a641-451d-b8d3-5c7a07c9f153
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:31:39.5-00:31:51.8
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      Well, I think what I'm doing right now, I think the reason they're giving me access to this is because they want me doing exactly what I'm doing.
-    text: |-
-      Phil McGraw believes he has been given access to Unidentified Aerial Phenomena (UAP) information because those granting access want him doing exactly what he is doing.
-  - id: 6131bfda-f2c1-4f85-8010-da79040ff2cf
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:31:54.0-00:32:11.4
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      and i have maintained independence uh in what i'm doing they're not scripting me they're not telling me what to say or not say they're just trusting me to be authentic transparent and um and candid with the american people
-    text: |-
-      Phil McGraw has maintained independence in his coverage of Unidentified Aerial Phenomena (UAP), stating that those granting him access are not scripting him or telling him what to say, but trusting him to be authentic, transparent and candid with the American people.
-  - id: 89cacfc3-5e76-4364-a2bf-84a34d2831ef
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:32:21.7-00:32:40.2
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      at the risk of being indelicate, I don't want to create a Fauci moment. I'm not going to say one thing today and then be contradicted by something that is disclosed tomorrow, which is why I say I'm going to tell you guys what I've seen so far
-    text: |-
-      Phil McGraw states he does not want to create a 'Fauci moment' by saying one thing and being contradicted by a later disclosure.
-  - id: 08dc7010-9875-4aa2-9ce9-2eecc48959f4
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:32:41.9-00:32:50.9
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      And I'm not going to tell you that that's all there is to see or know. I'm telling you that I don't believe it's all there is to see or know.
-    text: |-
-      Phil McGraw states he does not believe that what he has been shown so far about Unidentified Aerial Phenomena (UAP) is all there is to see or know.
-  - id: 3b9de311-764d-4cc6-b6c6-f3db77651347
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:33:28.0-00:33:42.2
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      That's why I've said the two things that I can say with confidence to the American people and to the rest of the world is there has been a huge cover up and there are things going on in our atmosphere that we cannot explain.
-    text: |-
-      Phil McGraw states he can say with confidence to the American people and the world that there has been a huge cover-up regarding Unidentified Aerial Phenomena (UAP).
-  - id: da78f1c6-b040-4d68-b735-cad3d05af75e
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:33:39.0-00:33:42.2
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: there are things going on in our atmosphere that we cannot explain.
-    text: |-
-      Phil McGraw states he can say with confidence that there are things going on in the atmosphere that cannot be explained.
-  - id: 578fbdf0-00db-4f40-92f0-06fe3136a9c5
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:33:43.8-00:33:49.8
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      And I don't think we have some secret technology that is starting to leak out. I don't believe that at all.
-    text: |-
-      Phil McGraw does not believe that the unexplained aerial phenomena are secret human-made technology starting to leak out.
-  - id: c81adfcb-a05f-4d17-a089-c758ed7ca070
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:33:51.5-00:33:58.6
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      I think there are things that we didn't create, we didn't make happen. So it came from somewhere, not here.
-    text: |-
-      Phil McGraw believes that the unexplained aerial phenomena were not created by humans and came from somewhere other than earth.
-  - id: 5c06213c-d739-4baa-9649-c4e65b7d2988
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:34:37.0-00:34:42.1
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: And I think that the American public is prepared to handle that.
-    text: |-
-      Phil McGraw considers the American public prepared to handle disclosure that non-human intelligences have been engaging with the planet, provided it is given context.
-  - id: 434950fd-6793-41c2-93b7-bada6f86d6cf
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:34:52.2-00:35:10.6
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      If we have those that are easily destabilized mentally and emotionally, we have those that maybe struggle with mental illness, whether it's paranoia, schizophrenia, a difficult time maintaining their balance in this world
-    text: |-
-      Phil McGraw considers that the government needs to be prepared to help those with mental illness, such as paranoia or schizophrenia, who may have difficulty coping with disclosure about non-human intelligences.
-  - id: 168ad2e2-3429-4234-8329-db7187624540
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:35:38.3-00:35:45.8
-    quote: |-
-      The teens and preteens are having the highest levels of anxiety, depression, and loneliness since we started keeping records.
-    text: |-
-      Teens and preteens in America are having the highest levels of anxiety, depression, and loneliness since records began.
-  - id: 35c470f9-3893-4a8a-946f-b4791408579f
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:36:37.2-00:36:48.5
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-    quote: |-
-      Now, others might look at that and go, oh, my God, they're coming for us. And those people, we need to help. They may be right, by the way. I don't think so.
-    text: |-
-      Phil McGraw considers that some people might react to disclosure of non-human intelligence with fear, believing 'they're coming for us', and that those people may be right.
-  - id: 22a03301-53de-4325-8b55-2d83c5291ced
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:37:41.8-00:37:46.6
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 692319d3-61a0-4dc2-b489-f95504702531
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: And I think 40% of these phenomenon have not been explained.
-    text: |-
-      Phil McGraw considers approximately 40% of Unidentified Aerial Phenomena (UAP) sightings to remain unexplained.
+  quote: I've flown with the Blue Angels and we were pulling like 7.49 Gs at times.
+  text: |-
+    Phil McGraw has flown with the Blue Angels and experienced forces of approximately 7.49 G.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 0a1a1255-9d9e-40fe-b9b1-62ac3941291b
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:22:25.2-00:22:32.8
+  refs:
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    the estimates are, depending on how things were configured, that the G-forces would be somewhere between 10,000 and a million.
+  text: |-
+    Estimates of the G-forces some UAP would experience, depending on configuration, range between 10,000 and one million G.
+  entailment:
+    label: entails
+    score: 0.932
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 7ee9bae0-2d42-4e9b-92c0-fcf3ff6ef0b0
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:22:37.7-00:22:48.0
+  quote: |-
+    I think the most that's ever been tracked was on a sled at around 25 G's for a half of a second or something.
+  text: |-
+    The highest G-force ever tracked on a rocket sled was approximately 25 G for about half a second.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6c7b0f36-cad5-4c25-9b28-25944b5df2a9
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:22:48.5-00:22:55.5
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    I think you get anywhere near what they're talking about. we would liquefy inside that.
+  text: |-
+    Phil McGraw considers that a human being would liquefy internally under the G-forces attributed to some UAP.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: c1136e41-f7ee-49d5-8416-c55179df3e05
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:22:55.8-00:23:03.0
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    we also don't have the metallurgy to have any kind of aircraft that it would look like a yard sale if we turn.
+  text: |-
+    Phil McGraw considers that current human metallurgy could not withstand the manoeuvres attributed to some UAP.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2373da46-02de-4e3e-b8f3-cc62a0bc4174
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ross Coulthart
+  attribution_in_text: true
+  location: 00:23:45.3-00:23:49.7
+  refs:
+  - id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  quote: |-
+    I happen to think that that's a very patronizing view and that Americans are ready.
+  text: |-
+    Phil McGraw considers it a patronising view that the American public is too fragile to be told about non-human intelligence.
+  entailment:
+    label: contradicts
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 71df0c61-8608-4bb6-b167-fc6d6b846d2a
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:23:56.8-00:23:58.8
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: I've been doing this for close to 50 years.
+  text: Phil McGraw has been practising as a psychologist for close to 50 years.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a116b3b8-5189-4897-a287-d5d2680d8915
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: true
+  location: 00:24:32.3-00:24:42.4
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    the highest stress within that category is sudden loss of a child. And then number one within that subset is violent and sudden loss of a child.
+  text: |-
+    Phil McGraw considers sudden, violent loss of a child to be the most severe stressor a person can experience.
+  entailment:
+    label: entails
+    score: 0.622
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 0dc8393e-84ef-42b9-8dd1-fb6143ab579b
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:25:13.8-00:25:21.5
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    One of the most fundamental principles of psychological science is that the best predictor of future behavior is relevant past behavior.
+  text: |-
+    Phil McGraw considers the best predictor of future behaviour to be relevant past behaviour, a fundamental principle of psychological science.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a4f50c62-4a54-4b56-96ff-45273ebc0c63
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:26:28.2-00:26:36.1
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    So far as we know, they have perpetrated no horrible, evil acts of violence on us.
+  text: |-
+    Phil McGraw considers non-earth, non-earthly origin intelligence to have perpetrated no horrible or evil acts of violence against humanity so far as is known.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1d1bbe41-80a7-46f7-b6f3-4be29151a4df
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:27:00.5-00:27:09.3
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    So I think we have to rely on an inference of non-aggression from whatever this presence may be.
+  text: |-
+    Phil McGraw infers non-aggression from whatever non-human presence may be engaging with the earth, based on its past behaviour.
+  entailment:
+    label: entails
+    score: 0.865
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ed425a88-7352-4f5c-94d2-9beab1741c52
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ross Coulthart
+  attribution_in_text: false
+  location: 00:27:13.8-00:27:20.7
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    I was amused to see that searches for UAPs, I think it went up 400% when you started talking about it.
+  text: |-
+    Searches for Unidentified Aerial Phenomena (UAP) increased by approximately 400% after Phil McGraw began discussing the topic.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 80f1659f-ea2a-432f-9ba0-102f44a29758
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ross Coulthart
+  attribution_in_text: false
+  location: 00:27:39.8-00:27:43.3
+  refs:
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: But it's quite clear that there has been a cover up of the UAP issue.
+  text: |-
+    Phil McGraw considers that there has been a cover-up of the Unidentified Aerial Phenomena (UAP) issue by the government, which the government continues to deny.
+  entailment:
+    label: entails
+    score: 0.876
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 756ae442-7d44-40f6-8405-e6e98cc1f707
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:27:57.8-00:28:05.0
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: Well, I guess it goes back to follow the money and follow the power.
+  text: |-
+    Phil McGraw considers that some observed unidentified phenomena, if reverse engineered, could relate to the concealment of non-human intelligences engaging with the planet driven by money and power.
+  entailment:
+    label: entails
+    score: 0.759
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 953e05b9-5590-45d9-b3b6-fd3fdacb0007
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: anonymous
+    origin: unnamed experts consulted by Phil McGraw
+    origin_ref: mcgraw-experts
+    relay:
+    - Phil McGraw
+  attribution_in_text: true
+  location: 00:28:05.8-00:28:20.8
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    I guess if you could, in fact, reverse engineer some of the things that we have observed, some of these things don't leave a heat signature.
+  text: |-
+    Unnamed experts told Phil McGraw that some of the observed unidentified phenomena do not leave a heat signature.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5ad1db6f-3b16-4799-ae46-80a56631b28f
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: anonymous
+    origin: unnamed experts consulted by Phil McGraw
+    origin_ref: mcgraw-experts
+    relay:
+    - Phil McGraw
+  attribution_in_text: true
+  location: 00:28:22.4-00:28:34.4
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    Some of them don't exhibit... obvious or known methods of propulsion. And I'm just going on what the experts are telling me.
+  text: |-
+    Unnamed experts told Phil McGraw that some of the observed unidentified phenomena do not exhibit obvious or known methods of propulsion.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 92802c11-027f-4635-844b-16b5ac10e02f
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:28:34.7-00:28:43.3
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    As I say, I'm not a quantitative scientist. I can't add two and two and get five every time. So that's not my area.
+  text: |-
+    Phil McGraw states that he is not a quantitative scientist and that quantitative analysis is not his area of expertise.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ef303487-d0f4-4843-aebc-0d8d46894cb7
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:28:43.8-00:28:58.1
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    But I do know how to seek out and find people that know more about it than I do. And I'm a pretty good judge of horseflesh in determining whether they're legitimate and are telling the truth or not.
+  text: |-
+    Phil McGraw considers himself skilled at seeking out and finding people who know more about unidentified phenomena than he does, and at judging whether they are legitimate and telling the truth.
+  entailment:
+    label: entails
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: f10d4927-fcce-403a-a341-69df0ecb5fbb
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: anonymous
+    origin: unnamed credible people who spoke to Phil McGraw
+    origin_ref: mcgraw-credible-sources
+    relay:
+    - Phil McGraw
+  attribution_in_text: true
+  location: 00:28:58.8-00:29:08.9
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    And credible people are telling me that we truly do have some unexplainable things going on.
+  text: |-
+    Credible people have told Phil McGraw that there are genuinely unexplainable things going on regarding Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 24fdb2eb-4ae7-48c4-b920-f810a0d71122
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:29:09.0-00:29:36.0
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    Now think about if you could reverse engineer and then replicate these propulsion navigation systems, all of this ability to make these turns and not leave a heat signature and do all the things that they're doing, my God, that would wipe out the oil and gas industry.
+  text: |-
+    Phil McGraw considers that reverse engineering and replicating the propulsion and navigation systems of the observed phenomena could wipe out the oil and gas industry.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 7defba88-0803-4367-8c10-8eedb1f46546
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:29:36.5-00:29:38.4
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: It could wipe out nuclear power energy.
+  text: |-
+    Phil McGraw considers that reverse engineering the observed phenomena's propulsion systems could wipe out nuclear power energy.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6a56d1ec-70ca-4dee-a010-c3c0979e716b
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:29:39.1-00:30:05.0
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    It could replace everything and you could rule the world this is a this is a power play waiting to happen and so i suppose maybe there are people that are hoping that if they have captured if they have recovered a spaceship spacecraft of some sort and they can reverse engineer that
+  text: |-
+    Phil McGraw considers that someone hoping to reverse engineer a recovered spacecraft could use it as a power play to rule the world.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 19bacad6-81d9-4046-a769-a7e45dccbdde
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:30:22.7-00:30:28.3
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    But I think they're hiding it, and I think maybe there's been some good motives for it.
+  text: |-
+    Phil McGraw considers that the government is hiding information about Unidentified Aerial Phenomena (UAP), possibly for some good motives.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2e1a2a00-0b39-4573-8c63-e434f2a64694
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:30:34.1-00:30:45.6
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    Why are they concentrating around our nuclear sites? Maybe they're learning something. Maybe they're making sure we don't do something stupid.
+  text: |-
+    Phil McGraw speculates that unidentified phenomena concentrating around nuclear sites may be learning something or ensuring humanity does not do something stupid.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 3dfd2dd8-e42c-4b15-8d5b-e099d3b9f6fe
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:30:52.6-00:31:02.1
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    And if you, Ross, if you look back, it's usually the private sector that solves the problems. It's not the government. It's the private sector that solves the problem when the government gets the hell out of the way.
+  text: |-
+    Phil McGraw considers that it is usually the private sector, not the government, that solves problems when the government gets out of the way.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: e85da0bf-ccbb-4ef8-a2a4-ec2c3fb806a2
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ross Coulthart
+  attribution_in_text: false
+  location: 00:31:05.0-00:31:10.2
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 398e9a0c-74a5-4c7d-a354-5af5738dad94
+    name: Donald Trump
+  quote: |-
+    You're very likely, sir, to get an opportunity at some stage in the next few months to speak with President Trump.
+  text: |-
+    Ross Coulthart considers it likely that Phil McGraw will get an opportunity in the next few months to speak with President Donald Trump.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 376c8caa-6f94-451f-bd60-60eae39b4178
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ross Coulthart
+  attribution_in_text: false
+  location: 00:31:20.9-00:31:34.5
+  refs:
+  - id: 5cf85949-31cc-498a-a6a7-fc83645bacb2
+    name: White House
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    I do know that there are people in the White House administration. I suspect we've spoken to the same people who are toying with the idea of giving the American public information about what the government knows.
+  text: |-
+    Ross Coulthart knows of people in the White House administration who are considering giving the American public information about what the government knows regarding Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 34a14087-a641-451d-b8d3-5c7a07c9f153
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:31:39.5-00:31:51.8
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    Well, I think what I'm doing right now, I think the reason they're giving me access to this is because they want me doing exactly what I'm doing.
+  text: |-
+    Phil McGraw believes he has been given access to Unidentified Aerial Phenomena (UAP) information because those granting access want him doing exactly what he is doing.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6131bfda-f2c1-4f85-8010-da79040ff2cf
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:31:54.0-00:32:11.4
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    and i have maintained independence uh in what i'm doing they're not scripting me they're not telling me what to say or not say they're just trusting me to be authentic transparent and um and candid with the american people
+  text: |-
+    Phil McGraw has maintained independence in his coverage of Unidentified Aerial Phenomena (UAP), stating that those granting him access are not scripting him or telling him what to say, but trusting him to be authentic, transparent and candid with the American people.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 89cacfc3-5e76-4364-a2bf-84a34d2831ef
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:32:21.7-00:32:40.2
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    at the risk of being indelicate, I don't want to create a Fauci moment. I'm not going to say one thing today and then be contradicted by something that is disclosed tomorrow, which is why I say I'm going to tell you guys what I've seen so far
+  text: |-
+    Phil McGraw states he does not want to create a 'Fauci moment' by saying one thing and being contradicted by a later disclosure.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 08dc7010-9875-4aa2-9ce9-2eecc48959f4
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:32:41.9-00:32:50.9
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    And I'm not going to tell you that that's all there is to see or know. I'm telling you that I don't believe it's all there is to see or know.
+  text: |-
+    Phil McGraw states he does not believe that what he has been shown so far about Unidentified Aerial Phenomena (UAP) is all there is to see or know.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 3b9de311-764d-4cc6-b6c6-f3db77651347
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:33:28.0-00:33:42.2
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    That's why I've said the two things that I can say with confidence to the American people and to the rest of the world is there has been a huge cover up and there are things going on in our atmosphere that we cannot explain.
+  text: |-
+    Phil McGraw states he can say with confidence to the American people and the world that there has been a huge cover-up regarding Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: da78f1c6-b040-4d68-b735-cad3d05af75e
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:33:39.0-00:33:42.2
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: there are things going on in our atmosphere that we cannot explain.
+  text: |-
+    Phil McGraw states he can say with confidence that there are things going on in the atmosphere that cannot be explained.
+  entailment:
+    label: entails
+    score: 0.854
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 578fbdf0-00db-4f40-92f0-06fe3136a9c5
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:33:43.8-00:33:49.8
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    And I don't think we have some secret technology that is starting to leak out. I don't believe that at all.
+  text: |-
+    Phil McGraw does not believe that the unexplained aerial phenomena are secret human-made technology starting to leak out.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: c81adfcb-a05f-4d17-a089-c758ed7ca070
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:33:51.5-00:33:58.6
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    I think there are things that we didn't create, we didn't make happen. So it came from somewhere, not here.
+  text: |-
+    Phil McGraw believes that the unexplained aerial phenomena were not created by humans and came from somewhere other than earth.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5c06213c-d739-4baa-9649-c4e65b7d2988
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:34:37.0-00:34:42.1
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: And I think that the American public is prepared to handle that.
+  text: |-
+    Phil McGraw considers the American public prepared to handle disclosure that non-human intelligences have been engaging with the planet, provided it is given context.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 434950fd-6793-41c2-93b7-bada6f86d6cf
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:34:52.2-00:35:10.6
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    If we have those that are easily destabilized mentally and emotionally, we have those that maybe struggle with mental illness, whether it's paranoia, schizophrenia, a difficult time maintaining their balance in this world
+  text: |-
+    Phil McGraw considers that the government needs to be prepared to help those with mental illness, such as paranoia or schizophrenia, who may have difficulty coping with disclosure about non-human intelligences.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 168ad2e2-3429-4234-8329-db7187624540
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:35:38.3-00:35:45.8
+  quote: |-
+    The teens and preteens are having the highest levels of anxiety, depression, and loneliness since we started keeping records.
+  text: |-
+    Teens and preteens in America are having the highest levels of anxiety, depression, and loneliness since records began.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 35c470f9-3893-4a8a-946f-b4791408579f
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:36:37.2-00:36:48.5
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  quote: |-
+    Now, others might look at that and go, oh, my God, they're coming for us. And those people, we need to help. They may be right, by the way. I don't think so.
+  text: |-
+    Phil McGraw considers that some people might react to disclosure of non-human intelligence with fear, believing 'they're coming for us', and that those people may be right.
+  entailment:
+    label: neutral
+    score: 0.679
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 22a03301-53de-4325-8b55-2d83c5291ced
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:37:41.8-00:37:46.6
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 692319d3-61a0-4dc2-b489-f95504702531
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: And I think 40% of these phenomenon have not been explained.
+  text: |-
+    Phil McGraw considers approximately 40% of Unidentified Aerial Phenomena (UAP) sightings to remain unexplained.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
-  - id: 290174aa-9b7e-40bc-93a0-b9d987ebf110
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ross Coulthart
-    attribution_in_text: false
-    location: 00:16:51.0-00:16:56.6
-    date: 2023-06
-    refs:
-      - id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-        name: Ross Coulthart
-      - id: 0fa1ad84-17e7-4a4c-adbc-9d43d7751572
-        name: David Grusch
-      - id: f8a3d2e7-9ab1-42cb-a934-7c840f37079e
-        name: News Nation
-    quote: |-
-      I know you raised David Grusch, who's a guy we interviewed exclusively on News Nation in June 2023.
-    text: |-
-      Ross Coulthart and Phil McGraw interviewed David Grusch exclusively on News Nation in June 2023.
-  - id: 1c7494f0-0a9b-4442-97c9-e72ec40afb24
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-      name: Phil McGraw
-    provenance_chain:
-      origin_kind: speaker
-      origin: Phil McGraw
-    attribution_in_text: false
-    location: 00:21:10.1-00:21:26.8
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: 5d9c2329-5317-4e13-8b37-5dfac35bce5a
-        name: Tim Burchett
-      - id: 5f9f8927-e590-494d-a5c8-8d85edf01680
-        name: Maria Elvira Salazar
-    quote: |-
-      I've spoken with some of those on the committee, Congressman Burchett, Congressman Luna. They have been very cooperative with me and are helping to get better images
-    text: |-
-      Phil McGraw has spoken with committee members including Congressman Tim Burchett and Congresswoman Maria Elvira Salazar, who have been cooperative in helping to get better UFO images released.
-  - id: 31d8f3aa-dbdf-4a9e-a152-2f5324508e15
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-      name: Ross Coulthart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ross Coulthart
-    attribution_in_text: false
-    location: 00:37:19.0-00:37:22.3
-    refs:
-      - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
-        name: Phil McGraw
-      - id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
-        name: Ross Coulthart
-      - id: 8da57777-4476-4eea-9ab9-79c9c9dfc403
-        name: Reality Check
-    quote: Dr. Phil McGraw, thank you so much for joining Reality Check.
-    text: |-
-      Phil McGraw appeared as a guest on Reality Check, hosted by Ross Coulthart, to discuss Unidentified Aerial Phenomena (UAP).
+- id: 290174aa-9b7e-40bc-93a0-b9d987ebf110
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ross Coulthart
+  attribution_in_text: false
+  location: 00:16:51.0-00:16:56.6
+  date: 2023-06
+  refs:
+  - id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  - id: 0fa1ad84-17e7-4a4c-adbc-9d43d7751572
+    name: David Grusch
+  - id: f8a3d2e7-9ab1-42cb-a934-7c840f37079e
+    name: News Nation
+  quote: |-
+    I know you raised David Grusch, who's a guy we interviewed exclusively on News Nation in June 2023.
+  text: |-
+    Ross Coulthart and Phil McGraw interviewed David Grusch exclusively on News Nation in June 2023.
+  entailment:
+    label: entails
+    score: 0.7
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1c7494f0-0a9b-4442-97c9-e72ec40afb24
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  provenance_chain:
+    origin_kind: speaker
+    origin: Phil McGraw
+  attribution_in_text: false
+  location: 00:21:10.1-00:21:26.8
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: 5d9c2329-5317-4e13-8b37-5dfac35bce5a
+    name: Tim Burchett
+  - id: 5f9f8927-e590-494d-a5c8-8d85edf01680
+    name: Maria Elvira Salazar
+  quote: |-
+    I've spoken with some of those on the committee, Congressman Burchett, Congressman Luna. They have been very cooperative with me and are helping to get better images
+  text: |-
+    Phil McGraw has spoken with committee members including Congressman Tim Burchett and Congresswoman Maria Elvira Salazar, who have been cooperative in helping to get better UFO images released.
+  entailment:
+    label: neutral
+    score: 0.717
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 31d8f3aa-dbdf-4a9e-a152-2f5324508e15
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ross Coulthart
+  attribution_in_text: false
+  location: 00:37:19.0-00:37:22.3
+  refs:
+  - id: b26a5e2e-9cb8-484e-92f8-d332245917b5
+    name: Phil McGraw
+  - id: d64ac71f-ef56-4e82-b02a-a6fdcbae0475
+    name: Ross Coulthart
+  - id: 8da57777-4476-4eea-9ab9-79c9c9dfc403
+    name: Reality Check
+  quote: Dr. Phil McGraw, thank you so much for joining Reality Check.
+  text: |-
+    Phil McGraw appeared as a guest on Reality Check, hosted by Ross Coulthart, to discuss Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.544
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

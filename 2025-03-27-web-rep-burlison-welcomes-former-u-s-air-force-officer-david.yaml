@@ -13,6 +13,14 @@ ai_usage:
     cache_read: 74385
     cache_write: 124768
     calls: 1
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 6.6
 prompts:
 - pass: nodes
   id: nodes
@@ -137,6 +145,11 @@ domain_claims:
   quote: |-
     Congressman Eric Burlison (R-MO-07) is pleased to announce David Grusch, a decorated former U.S. Air Force officer and senior civilian intelligence official, as a Special Advisor.
   text: Eric Burlison announced David Grusch as a Special Advisor.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e2f5c4cc-f681-4be3-9641-302cce83ee32
   type: administrative
   provenance_chain:
@@ -149,6 +162,11 @@ domain_claims:
   quote: |-
     David Grusch, a decorated former U.S. Air Force officer and senior civilian intelligence official
   text: David Grusch is a decorated former U.S. Air Force officer.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 36ab95a0-a3b5-4507-85d1-ba66715565d9
   type: administrative
   provenance_chain:
@@ -161,6 +179,11 @@ domain_claims:
   quote: |-
     David Grusch, a decorated former U.S. Air Force officer and senior civilian intelligence official
   text: David Grusch is a senior civilian intelligence official.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7f85fdb1-6199-4790-a229-a40018eb8905
   type: administrative
   provenance_chain:
@@ -178,6 +201,11 @@ domain_claims:
     Grusch, recognized for his previous sworn testimony before House Oversight & Accountability Committee about the federal government's Unidentified Anomalous Phenomena (UAP) activities
   text: |-
     David Grusch previously gave sworn testimony before the US House Oversight & Accountability Committee about the federal government's Unidentified Anomalous Phenomena (UAP) activities.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aca2c343-62fc-4a9b-a375-d55eb5e1488e
   type: administrative
   provenance_chain:
@@ -197,6 +225,11 @@ domain_claims:
     will contribute his expertise to Rep. Burlison's efforts to promote transparency regarding UAP and other matters on the Task Force on the Declassification of Federal Secrets
   text: |-
     David Grusch will contribute his expertise to Eric Burlison's efforts to promote transparency regarding Unidentified Anomalous Phenomena (UAP) and other matters on the Task Force on the Declassification of Federal Secrets.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3dc20078-d173-4aae-8334-3f378c4aa134
   type: opinion
   attestation: first_hand
@@ -214,6 +247,11 @@ domain_claims:
   quote: '"The American people deserve answers about UAPs," said Rep. Burlison.'
   text: |-
     The American people deserve answers about Unidentified Anomalous Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f13877ef-b5f2-4f6a-9404-af14301f7784
   type: opinion
   attestation: first_hand
@@ -230,6 +268,11 @@ domain_claims:
     name: David Grusch
   quote: '"David Grusch has risked his career to expose critical information."'
   text: David Grusch has risked his career to expose critical information.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bbfdcf11-0549-4c24-b17a-68d8fa3022d4
   type: opinion
   attestation: first_hand
@@ -250,6 +293,11 @@ domain_claims:
     "His expertise will be vital as we work to uncover the truth and hold the government accountable."
   text: |-
     Eric Burlison considers David Grusch's expertise vital to efforts to uncover the truth about Unidentified Anomalous Phenomena (UAP) and hold the government accountable.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0ef85ca7-1c55-4d50-8a4b-3488f5bb5407
   type: administrative
   provenance_chain:
@@ -261,6 +309,11 @@ domain_claims:
     name: David Grusch
   quote: Grusch served 14 years in the Air Force, reaching the rank of Major
   text: David Grusch served 14 years in the US Air Force.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2ded5097-aec2-4267-8b72-9610fe12f5f4
   type: administrative
   provenance_chain:
@@ -272,6 +325,11 @@ domain_claims:
     name: David Grusch
   quote: Grusch served 14 years in the Air Force, reaching the rank of Major
   text: David Grusch reached the rank of Major in the US Air Force.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bc54ce8b-888e-44b2-a33a-d04312ed30e1
   type: administrative
   provenance_chain:
@@ -291,6 +349,11 @@ domain_claims:
     with a combat tour of duty in Afghanistan supporting counter-illicit finance, drug, and arms-trafficking operations with Joint Special Operations Command (JSOC) and ISAF
   text: |-
     David Grusch had a combat tour of duty in Afghanistan supporting counter-illicit finance, drug, and arms-trafficking operations with Joint Special Operations Command (JSOC) and International Security Assistance Force (ISAF).
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 24f37c8b-c898-4c03-bf64-d6de2e0a19c3
   type: administrative
   provenance_chain:
@@ -308,6 +371,11 @@ domain_claims:
     He later worked as a senior intelligence officer at the National Geospatial-Intelligence Agency (NGA) and National Reconnaissance Office (NRO)
   text: |-
     David Grusch later worked as a senior intelligence officer at the National Geospatial-Intelligence Agency (NGA) and the National Reconnaissance Office (NRO).
+  entailment:
+    label: entails
+    score: 0.686
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2ec50b70-65d7-4f7c-8f35-cf05fbd0beb3
   type: administrative
   provenance_chain:
@@ -325,6 +393,11 @@ domain_claims:
   quote: from 2019-2021 officially represented the NRO on the UAP Task Force
   text: |-
     From 2019 to 2021, David Grusch officially represented the National Reconnaissance Office (NRO) on the Unidentified Anomalous Phenomena Task Force (UAP Task Force).
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a22fa3f-9847-41c9-9713-18526071d93e
   type: administrative
   provenance_chain:
@@ -345,6 +418,11 @@ domain_claims:
     In 2022 while at NGA, Mr. Grusch filed a federal whistleblower complaint with the Intelligence Community Inspector General (ICIG)
   text: |-
     In 2022, while at the National Geospatial-Intelligence Agency (NGA), David Grusch filed a federal whistleblower complaint with the Intelligence Community Inspector General (ICIG).
+  entailment:
+    label: entails
+    score: 0.81
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 26813151-57c3-44c8-a598-b4fba1eac080
   type: administrative
   provenance_chain:
@@ -361,6 +439,11 @@ domain_claims:
     which was found "credible and urgent" for reporting to the Congressional intelligence committees
   text: |-
     David Grusch's 2022 federal whistleblower complaint to the Intelligence Community Inspector General (ICIG) was found credible and urgent for reporting to the Congressional intelligence committees.
+  entailment:
+    label: entails
+    score: 0.503
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3691e063-ba38-411b-99a0-a6d4bd28b428
   type: administrative
   provenance_chain:
@@ -377,6 +460,11 @@ domain_claims:
     name: David Grusch's 2023 congressional testimony on UAP crash retrieval programs
   quote: In 2023, he testified before Congress
   text: In 2023, David Grusch testified before Congress.
+  entailment:
+    label: entails
+    score: 0.476
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 37b1d9e8-675c-4550-bbd3-1ceb2742ba33
   type: testimony
   attestation: first_hand
@@ -400,6 +488,11 @@ domain_claims:
     alleging that elements of the U.S. government had thwarted Congressional oversight, withheld information from proper Executive Branch officials and illegally concealed programs tied to the recovery and reverse engineering of craft of unknown, non-human origin
   text: |-
     In his 2023 congressional testimony, David Grusch alleged that elements of the U.S. government had thwarted Congressional oversight of programmes related to the recovery and reverse engineering of craft of unknown, non-human origin.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dbf5e04b-20e3-42e9-97aa-655b4fff48ba
   type: testimony
   attestation: first_hand
@@ -421,6 +514,11 @@ domain_claims:
     withheld information from proper Executive Branch officials and illegally concealed programs tied to the recovery and reverse engineering of craft of unknown, non-human origin
   text: |-
     In his 2023 congressional testimony, David Grusch alleged that elements of the U.S. government withheld information from proper Executive Branch officials regarding programmes tied to craft of unknown, non-human origin.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e733f001-6549-4c5f-8da4-ce71f0ef32b9
   type: testimony
   attestation: first_hand
@@ -442,6 +540,11 @@ domain_claims:
     illegally concealed programs tied to the recovery and reverse engineering of craft of unknown, non-human origin
   text: |-
     In his 2023 congressional testimony, David Grusch alleged that elements of the U.S. government illegally concealed programmes tied to the recovery and reverse engineering of craft of unknown, non-human origin.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 166a21c8-313a-4461-b5d6-75968472d2b1
   type: opinion
   attestation: first_hand
@@ -462,6 +565,11 @@ domain_claims:
     "I'm both immensely humbled and deeply honored to join Congressman Burlison and his amazing team of professionals in pushing for government transparency," said Grusch.
   text: |-
     David Grusch is immensely humbled and deeply honoured to join Eric Burlison and his team of professionals in pushing for government transparency.
+  entailment:
+    label: neutral
+    score: 0.773
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 45334181-cfe9-4519-b7d2-5cbc55e0418d
   type: opinion
   attestation: first_hand
@@ -488,6 +596,11 @@ domain_claims:
     I will use all my expertise to support Rep. Burlison and help the US Congress restore full oversight while enabling the Legislative Branch's ability to investigate and hold those accountable who have broken the law and lied not only to our Congress, but also to the Executive Office of the President, Director of National Intelligence, and Department of Justice
   text: |-
     David Grusch will use his expertise to support Eric Burlison and help the United States Congress restore full oversight while enabling the Legislative Branch's ability to investigate and hold accountable those who broke the law and lied to Congress, the Executive Office of the President, the Office of the Director of National Intelligence, and the United States Department of Justice.
+  entailment:
+    label: entails
+    score: 0.706
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e5e86c40-924b-46e9-b878-093e4272e207
   type: opinion
   attestation: first_hand
@@ -506,6 +619,11 @@ domain_claims:
     "The public is rightfully demanding to know the truth and it is my true privilege for me to serve the people of this country once again."
   text: |-
     The public is rightfully demanding to know the truth about Unidentified Anomalous Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bb5045aa-883d-4765-b6ab-e9812961d7df
   type: administrative
   provenance_chain:
@@ -518,6 +636,11 @@ domain_claims:
   quote: |-
     Rep. Burlison, a strong advocate for government transparency, underscores his commitment to government accountability and transparency on the UAP topic with this appointment.
   text: Eric Burlison is a strong advocate for government transparency.
+  entailment:
+    label: entails
+    score: 0.578
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bc59b51f-7498-4aff-a6c9-26b9f606d413
   type: administrative
   provenance_chain:
@@ -535,6 +658,11 @@ domain_claims:
     underscores his commitment to government accountability and transparency on the UAP topic with this appointment
   text: |-
     Eric Burlison underscores his commitment to government accountability and transparency on the Unidentified Anomalous Phenomena (UAP) topic with the appointment of David Grusch as Special Advisor.
+  entailment:
+    label: entails
+    score: 0.432
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

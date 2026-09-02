@@ -3,27 +3,35 @@ schema: anomalica/digest/1
 extracted_at: '2026-08-01T00:56:30.460323+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 357343
-      output: 21429
-      real_input: 12
-      cache_read: 68272
-      cache_write: 289059
-      calls: 3
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 357343
+    output: 21429
+    real_input: 12
+    cache_read: 68272
+    cache_write: 289059
+    calls: 3
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 13.4
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: 653f99df5725256b17a2b2b88c309d1942a07b5a95e8b0d49faaadf10070d368
   prep_version: 6
@@ -44,1142 +52,1367 @@ record:
 terminology:
   main_subject: UAP-23
   codenames:
-    - codename: UAP-23
-      refers_to: UAP-23
+  - codename: UAP-23
+    refers_to: UAP-23
   acronyms:
-    - acronym: UAP
-      expansion: Unidentified Aerial Phenomena
-    - acronym: UFO
-      expansion: Unidentified Flying Object
-    - acronym: NHI
-      expansion: Non-Human Intelligence
-    - acronym: AARO
-      expansion: All-Domain Anomaly Resolution Office
-    - acronym: AATIP
-      expansion: Advanced Aerospace Threat Identification Program
-    - acronym: RCMP
-      expansion: Royal Canadian Mounted Police
-    - acronym: NORAD
-      expansion: North American Aerospace Defense Command
-    - acronym: FAA
-      expansion: Federal Aviation Administration
-    - acronym: NASA
-      expansion: National Aeronautics and Space Administration
-    - acronym: MUFON
-      expansion: Mutual UFO Network
+  - acronym: UAP
+    expansion: Unidentified Aerial Phenomena
+  - acronym: UFO
+    expansion: Unidentified Flying Object
+  - acronym: NHI
+    expansion: Non-Human Intelligence
+  - acronym: AARO
+    expansion: All-Domain Anomaly Resolution Office
+  - acronym: AATIP
+    expansion: Advanced Aerospace Threat Identification Program
+  - acronym: RCMP
+    expansion: Royal Canadian Mounted Police
+  - acronym: NORAD
+    expansion: North American Aerospace Defense Command
+  - acronym: FAA
+    expansion: Federal Aviation Administration
+  - acronym: NASA
+    expansion: National Aeronautics and Space Administration
+  - acronym: MUFON
+    expansion: Mutual UFO Network
 nodes:
-  - id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-    type: person
+- id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+  type: person
+  name: Chris Ramsey
+  metadata:
+    role: host of Debriefed
+- id: bf6134ad-bf9b-4c01-889a-e8a3a029731f
+  type: person
+  name: Ryder
+  metadata:
+    role: Pentagon Press Secretary, Brigadier General
+- id: 84ccf755-b56c-4e1a-9d9d-a28fb0dbf2c5
+  type: person
+  name: Patricia Carroll
+  metadata:
+    role: witness, 2007 Roswell sighting
+- id: 0168ec45-f850-404b-bd5a-d4f5eec3d00d
+  type: person
+  name: James Fox
+  metadata:
+    role: filmmaker and director
+- id: 11c1d962-d676-48cf-9379-6f31c842f0db
+  type: person
+  name: Luigi Vendatelli
+- id: 61d6e5c2-7c29-47ef-83c3-133077d7d4a0
+  type: person
+  name: Bob Lazar
+- id: d610b99e-0cd6-4504-a7d7-2ba324bd38aa
+  type: person
+  name: Mitch McConnell
+  metadata:
+    role: US Senator
+- id: d4d4ded5-3bd2-48da-bc82-fdcbed544ae8
+  type: person
+  name: Spidey
+  metadata:
+    role: behavioral analyst, pseudonym
+- id: ee058e96-28f2-483e-afd0-755175e43495
+  type: person
+  name: UAP Juan
+  metadata:
+    role: Twitter account, pseudonym
+- id: 591a4fd3-db2c-4d17-a607-535704eeaa0c
+  type: organisation
+  name: Canadian Armed Forces
+- id: a80cf485-fcc9-4f41-8eb8-446547110c81
+  type: organisation
+  name: North American Aerospace Defense Command (NORAD)
+- id: 5221b405-74c4-4f4b-9183-4aee9cc67382
+  type: organisation
+  name: United States Air Force
+- id: 1968ea40-082e-40a2-8e6f-7c0d48b63ea0
+  type: organisation
+  name: Department of National Defence (Canada)
+- id: 80494cf2-302f-4535-ac56-96a4441dbc5e
+  type: organisation
+  name: Royal Canadian Mounted Police (RCMP)
+- id: befb7362-3c66-4a0d-b6bf-6aec3d41a207
+  type: organisation
+  name: Federal Aviation Administration (FAA)
+- id: 8fc70544-71d2-417f-a124-a23db9bf2c72
+  type: organisation
+  name: National Aeronautics and Space Administration (NASA)
+- id: 57ca1244-3178-481d-996e-a05cefa1f653
+  type: organisation
+  name: CTV
+  metadata:
+    description: Canadian news outlet
+- id: 2aaade54-24f6-48c3-a0fe-a4048d970dfc
+  type: organisation
+  name: Mutual UFO Network (MUFON)
+- id: 944f868b-d956-4816-bec1-35b374d8aacf
+  type: organisation
+  name: Ocean X Team
+  metadata:
+    description: treasure hunter group that discovered the Baltic Sea anomaly
+- id: 38955735-e135-476e-9c67-42c2dd3c8e7a
+  type: organisation
+  name: Secure Team 10
+  metadata:
+    description: YouTube channel
+- id: 23a81904-2d00-440c-94a7-b0fb32d73e71
+  type: organisation
+  name: All-Domain Anomaly Resolution Office (AARO)
+- id: 11da72a8-3686-464d-90b3-21928a6fa8f1
+  type: organisation
+  name: United States Senate
+- id: 12d8d62f-fa31-43b7-89ca-bab31e4d7982
+  type: project
+  name: Advanced Aerospace Threat Identification Program (AATIP)
+- id: 18680c06-80e8-45f5-821f-4fa002718d14
+  type: project
+  name: Project Gravator
+  metadata:
+    description: documentary project about S4 and Bob Lazar
+- id: ccbc869b-fda1-4fbd-9f25-cbdd333efeba
+  type: document
+  name: Moment of Contact
+  metadata:
+    type: documentary film
+- id: cf5c4bdf-a9b9-4a7b-a74e-0dbc5f4deb89
+  type: document
+  name: The Program
+  metadata:
+    type: documentary film, upcoming release
+- id: fb0a56b4-1c54-43b4-831b-378e2495aa1e
+  type: document
+  name: UAP Disclosure Act
+  metadata:
+    type: proposed legislation
+- id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
+  type: object
+  name: UAP-23
+  metadata:
+    description: horseshoe-shaped object downed over Yukon
+- id: 77a70d51-feb8-451f-8b53-6c90a1010cd1
+  type: object
+  name: F-22
+- id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
+  type: object
+  name: Baltic Sea anomaly
+  metadata:
+    description: disc-shaped sonar formation discovered on the Baltic seabed
+- id: 51f1790a-ab54-4ddf-b0a7-88612c411b7a
+  type: place
+  name: Canada, Yukon
+- id: 67c76c88-f352-4dac-8a96-3dccecb7e63e
+  type: place
+  name: USA, South Carolina
+- id: d2231655-9521-4592-a3f2-5a20b87ce3b5
+  type: place
+  name: USA, Alaska
+- id: cb8a101a-0f41-4d5a-9912-d4682dd2a984
+  type: place
+  name: South Korea, Busan
+- id: eafcf383-82f9-454d-8b99-c768cd82b184
+  type: place
+  name: USA, New Mexico, Roswell
+- id: 2fd744ed-24d8-4b60-8caa-60505716ef71
+  type: place
+  name: USA, Massachusetts, Boston
+- id: 070fc3e4-5118-4e43-8a56-54fa9a7b0754
+  type: place
+  name: Brazil, Varginha
+- id: c7d94198-c3cd-4159-8f92-2a39857ab6d8
+  type: place
+  name: Baltic Sea
+- id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+  type: event
+  name: 2023 Yukon UAP shootdown
+  metadata:
+    date_start: 2023-02
+- id: 693e2a43-eddd-430c-be6b-ea595dcc2fe6
+  type: event
+  name: Varginha UFO incident
+  metadata:
+    date_start: '1996'
+- id: 01d60144-0223-429a-be05-68c1b613b870
+  type: event
+  name: 2007 Roswell horseshoe-object sighting
+  metadata:
+    date_start: '2007'
+- id: 34ec31f6-08fb-473a-bffd-dc84b34880b0
+  type: event
+  name: 2005 Boston horseshoe-object sighting
+  metadata:
+    date_start: 2005-06
+- id: 3ec16a44-bb09-4b0c-ad3b-ed38a6a10d84
+  type: event
+  name: 1998 Boston horseshoe-object sighting
+  metadata:
+    date_start: '1998'
+- id: 22bd746a-0503-45aa-ad60-42904bd1812c
+  type: event
+  name: 2011 Baltic Sea anomaly discovery
+  metadata:
+    date_start: 2011-06
+- id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
+  type: topic
+  name: Unidentified Aerial Phenomena (UAP)
+- id: 8f861d90-f401-436a-a4b4-b65fdf89a0b4
+  type: topic
+  name: Unidentified Flying Object (UFO)
+- id: e7fb68a0-b2a6-42aa-ad8d-e4c01cb74984
+  type: topic
+  name: Non-Human Intelligence (NHI)
+domain_claims:
+- id: 361ac38c-7dc3-4ef4-b82d-19813f697ed9
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: news broadcast narration
+  attribution_in_text: false
+  location: 00:00:00.2-00:00:05.2
+  date: '2023'
+  refs:
+  - id: 51f1790a-ab54-4ddf-b0a7-88612c411b7a
+    name: Canada, Yukon
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  quote: |-
+    We can now show you an exclusive image of that unidentified object shot down over Yukon last year.
+  text: An unidentified object was shot down over Canada, Yukon in 2023.
+  entailment:
+    label: contradicts
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 32f2525c-c8a1-4373-9d3d-42d17437615e
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: news broadcast narration
+  attribution_in_text: false
+  location: 00:00:05.7-00:00:16.3
+  date: '2023-02-04'
+  refs:
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  - id: 67c76c88-f352-4dac-8a96-3dccecb7e63e
+    name: USA, South Carolina
+  quote: |-
+    The object was about the size of a small car, so not similar in size or shape to the high altitude surveillance balloon that was taken down off the coast of South Carolina on February 4.
+  text: |-
+    The object shot down in the 2023 Yukon UAP shootdown was about the size of a small car and was not similar in size or shape to the high-altitude surveillance balloon taken down off the coast of USA, South Carolina on 2023-02-04.
+  entailment:
+    label: entails
+    score: 0.836
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 09fbcc22-967a-4b6f-9328-b449259d1698
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
     name: Chris Ramsey
-    metadata:
-      role: host of Debriefed
-  - id: bf6134ad-bf9b-4c01-889a-e8a3a029731f
-    type: person
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:02:53.8-00:03:00.1
+  date: '2023-01-04'
+  refs:
+  - id: 67c76c88-f352-4dac-8a96-3dccecb7e63e
+    name: USA, South Carolina
+  - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    there was a streak of these quote unquote spy balloons that were taken down starting on January 4th in South Carolina.
+  text: |-
+    A streak of unidentified aerial phenomena were taken down by US and Canadian authorities starting on 2023-01-04 in USA, South Carolina.
+  entailment:
+    label: neutral
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9667939a-b960-4493-ad38-4e10bf9d2cc1
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:03:21.9-00:03:33.8
+  date: '2024'
+  refs:
+  - id: 591a4fd3-db2c-4d17-a607-535704eeaa0c
+    name: Canadian Armed Forces
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  quote: |-
+    This, folks, is the image released by a Freedom of Information request or the equivalent to a Freedom of Information request. submitted to the Canadian Armed Forces.
+  text: |-
+    The image of the craft downed in the 2023 Yukon UAP shootdown was released via a Freedom of Information request, or its Canadian equivalent, submitted to the Canadian Armed Forces.
+  entailment:
+    label: neutral
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5fd130f2-23e2-4c8e-84c6-92216626fab6
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:03:37.8-00:03:49.5
+  date: '2023'
+  refs:
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
+    name: USA, Alaska
+  quote: |-
+    Now, there were multiple crafts that were downed during this time period, so it's important to know which one is which. The one over Alaska that was downed that was as small as a car, that was a different one than this one.
+  text: |-
+    Multiple craft were downed by North American authorities during the same period in early 2023 as the 2023 Yukon UAP shootdown, and the object downed over USA, Alaska was a separate object from the one downed in Canada, Yukon.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ed3a26c7-1b81-4441-adad-728ce8ce2d98
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:03:52.9-00:04:01.9
+  date: '2023'
+  refs:
+  - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
+    name: USA, Alaska
+  - id: 77a70d51-feb8-451f-8b53-6c90a1010cd1
+    name: F-22
+  quote: |-
+    That one was spotted at 40,000 feet and was tracked for about 24 hours going over some sensitive airspace in Alaska before it was taken down by an F-22.
+  text: |-
+    The object downed over USA, Alaska in early 2023 was spotted at approximately 12,000 metres altitude and was tracked for about 24 hours over sensitive airspace in Alaska before being taken down by an F-22.
+  entailment:
+    label: contradicts
+    score: 0.797
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b080fb79-56f5-47b7-a9cb-cb990fa2d940
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:04:07.2-00:04:13.4
+  date: '2023'
+  refs:
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  - id: 51f1790a-ab54-4ddf-b0a7-88612c411b7a
+    name: Canada, Yukon
+  - id: a80cf485-fcc9-4f41-8eb8-446547110c81
+    name: North American Aerospace Defense Command (NORAD)
+  quote: |-
+    This is one that went over Canadian skies... It was swiftly taken down. as well with the help of NORAD.
+  text: |-
+    The craft in the 2023 Yukon UAP shootdown passed over Canadian skies and was swiftly taken down with the help of North American Aerospace Defense Command (NORAD).
+  entailment:
+    label: entails
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 20bf75b6-6ad0-4005-9e8b-e39915c18edf
+  type: administrative
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: unattributed
+    origin: Canadian government sources relayed via Chris Ramsey
+  attribution_in_text: false
+  location: 00:04:17.2-00:04:23.8
+  date: '2023'
+  refs:
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  quote: |-
+    This and the others apparently have not been recovered. The terrain was allegedly too rugged.
+  text: |-
+    The craft from the 2023 Yukon UAP shootdown and other craft taken down during the same period have apparently not been recovered, allegedly because the terrain was too rugged.
+  entailment:
+    label: neutral
+    score: 0.942
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: dc44d793-1894-4853-9b7c-ba08553e7136
+  type: administrative
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: unattributed
+    origin: internal Canadian government correspondence obtained by CTV
+    relay:
+    - CTV
+  attribution_in_text: false
+  location: 00:04:44.9-00:05:01.3
+  date: 2023-02
+  refs:
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  quote: |-
+    this went back and forth internally in the Canadian government, and it was poised to be released, to be tweeted, actually, maybe a few days after it was taken. However, someone stepped in and said, no, we cannot release this. This might be a breach of national security. It might be against protocol.
+  text: |-
+    An internal Canadian government email exchange regarding the 2023 Yukon UAP shootdown was poised to be released publicly, possibly via a tweet, a few days after the object was taken down, but someone in the government stepped in and blocked its release, citing a possible breach of national security or protocol.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ef29450b-4cd0-4e9e-8a5d-269c3942d7a0
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: news broadcast narration
+  attribution_in_text: false
+  location: 00:05:02.3-00:05:06.7
+  date: '2023'
+  refs:
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  quote: |-
+    So this image was actually cleared to be made public shortly after the object was shot down, but then it was held back.
+  text: |-
+    The image of the craft from the 2023 Yukon UAP shootdown was cleared to be made public shortly after the object was shot down, but its release was then held back.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 59c779bb-6a0f-43aa-9a45-8ade77ffb0cf
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: Department of National Defence (Canada)
+  attribution_in_text: true
+  location: 00:05:07.4-00:05:10.4
+  date: '2023'
+  refs:
+  - id: 1968ea40-082e-40a2-8e6f-7c0d48b63ea0
+    name: Department of National Defence (Canada)
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  quote: The Department of National Defense thought it may cause more confusion.
+  text: |-
+    The Department of National Defence (Canada) thought that releasing the image of the craft from the 2023 Yukon UAP shootdown may cause more confusion.
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 81edb63a-6a86-475d-8271-d1842c7b0f90
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:06:08.8-00:06:15.0
+  date: '2023'
+  refs:
+  - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
+    name: USA, Alaska
+  quote: |-
+    Now, it's also important to note that the object taken down in Alaska was not a balloon.
+  text: The object taken down over USA, Alaska in early 2023 was not a balloon.
+  entailment:
+    label: neutral
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c3bcc777-a172-44cb-84bd-22737be1c3eb
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: bf6134ad-bf9b-4c01-889a-e8a3a029731f
     name: Ryder
-    metadata:
-      role: Pentagon Press Secretary, Brigadier General
-  - id: 84ccf755-b56c-4e1a-9d9d-a28fb0dbf2c5
-    type: person
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ryder
+  attribution_in_text: true
+  location: 00:06:19.1-00:06:38.5
+  date: '2023-02-04'
+  refs:
+  - id: bf6134ad-bf9b-4c01-889a-e8a3a029731f
+    name: Ryder
+  - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
+    name: USA, Alaska
+  - id: 67c76c88-f352-4dac-8a96-3dccecb7e63e
+    name: USA, South Carolina
+  quote: |-
+    Actually, the Brigadier General Ryder himself in a press conference at the Pentagon revealed that, and I quote, The object was about the size of a small car, so not similar in size or shape to the high altitude surveillance balloon that was taken down off the coast of South Carolina on February 4.
+  text: |-
+    At a press conference at the Pentagon, Ryder said the object taken down over USA, Alaska in early 2023 was about the size of a small car, and was not similar in size or shape to the high-altitude surveillance balloon taken down off the coast of USA, South Carolina on 2023-02-04.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 40a17e5a-6c96-449b-a3b3-5f8dd09363b0
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: an unnamed North American Aerospace Defense Command (NORAD) general
+  attribution_in_text: true
+  location: 00:06:40.9-00:06:49.8
+  date: '2023'
+  refs:
+  - id: a80cf485-fcc9-4f41-8eb8-446547110c81
+    name: North American Aerospace Defense Command (NORAD)
+  - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
+    name: USA, Alaska
+  quote: |-
+    we're calling it an object for a reason. It's not a balloon. We don't know how it's staying aloft, yet it is. That... is from the norad general
+  text: |-
+    A North American Aerospace Defense Command (NORAD) general said that the object taken down over USA, Alaska in early 2023 was being called an object rather than a balloon, that it was not a balloon, and that its manner of staying aloft was unknown despite the fact that it was doing so.
+  entailment:
+    label: neutral
+    score: 0.627
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b897aa93-707c-4009-ac21-0d32990d8938
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: an unnamed North American Aerospace Defense Command (NORAD) general
+  attribution_in_text: true
+  location: 00:06:50.9-00:06:55.9
+  date: '2023'
+  refs:
+  - id: a80cf485-fcc9-4f41-8eb8-446547110c81
+    name: North American Aerospace Defense Command (NORAD)
+  - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
+    name: USA, Alaska
+  - id: e7fb68a0-b2a6-42aa-ad8d-e4c01cb74984
+    name: Non-Human Intelligence (NHI)
+  quote: |-
+    the reporter asked are these extraterrestrial general and the answer was i'm not ruling anything out
+  text: |-
+    When a reporter asked a North American Aerospace Defense Command (NORAD) general whether the object taken down over USA, Alaska in early 2023 was extraterrestrial, the general answered that he was not ruling anything out.
+  entailment:
+    label: neutral
+    score: 0.769
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 920c6d43-76af-444f-965c-5d5601df1f59
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:07:19.3-00:07:25.1
+  date: 2023-02
+  refs:
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  - id: 51f1790a-ab54-4ddf-b0a7-88612c411b7a
+    name: Canada, Yukon
+  quote: |-
+    The engagement took place and the object was downed at 341 Eastern Time over Yukon, which is a Canadian territory.
+  text: |-
+    The 2023 Yukon UAP shootdown engagement took place and the object was downed at 3:41pm Eastern Time over Canada, Yukon.
+  entailment:
+    label: neutral
+    score: 0.594
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2ccf9c44-bcbc-4b14-b253-91b8289a5c58
+  type: administrative
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: unattributed
+    origin: official Canadian government correspondence relayed by Chris Ramsey
+  attribution_in_text: false
+  location: 00:07:25.8-00:07:34.8
+  date: '2023'
+  refs:
+  - id: 591a4fd3-db2c-4d17-a607-535704eeaa0c
+    name: Canadian Armed Forces
+  - id: 80494cf2-302f-4535-ac56-96a4441dbc5e
+    name: Royal Canadian Mounted Police (RCMP)
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  quote: |-
+    Canadian Armed Forces members and assets at the request and under the lead of public safety RCMP are now en route to proceed with the recovery.
+  text: |-
+    Canadian Armed Forces members and assets were sent en route to attempt recovery of the craft from the 2023 Yukon UAP shootdown, under the lead of the Royal Canadian Mounted Police (RCMP) at the request of public safety authorities.
+  entailment:
+    label: contradicts
+    score: 0.496
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: bd644e7e-7a4a-44dd-93f6-95d7243c2c2a
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:07:35.5-00:07:43.6
+  date: '2023'
+  refs:
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  quote: |-
+    So there was a recovery attempt made. Did they find anything? Apparently not. They called it off a little bit later.
+  text: |-
+    A recovery attempt was made for the craft from the 2023 Yukon UAP shootdown, but nothing was apparently found, and the attempt was called off.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 81164f91-28b0-4344-bf29-55cb060eba79
+  type: observation
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: unattributed
+    origin: official Canadian government description relayed by Chris Ramsey
+  attribution_in_text: false
+  location: 00:07:45.6-00:07:56.2
+  date: '2023'
+  refs:
+  - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
+    name: UAP-23
+  quote: |-
+    The best description that we have is visual, a cylindrical object. Top quarter is metallic. Remainder is white.
+  text: |-
+    The best available description of UAP-23 is that it was a visually observed cylindrical object with a metallic top quarter and a white remainder.
+  entailment:
+    label: neutral
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 884408dc-ae92-4679-8d99-f3124242b8cf
+  type: measurement
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: unattributed
+    origin: official Canadian government description relayed by Chris Ramsey
+  attribution_in_text: false
+  location: 00:07:57.7-00:08:02.4
+  date: '2023'
+  refs:
+  - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
+    name: UAP-23
+  quote: 20 foot wire hanging below with a package of some sort suspended from it.
+  text: |-
+    UAP-23 had a wire approximately 6 metres long hanging below it, with a package of some sort suspended from the wire.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ad43ab69-6ea0-4576-b229-f41c0e6fe451
+  type: administrative
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: unattributed
+    origin: official Canadian government naming relayed by Chris Ramsey
+  attribution_in_text: false
+  location: 00:08:57.3-00:09:11.0
+  date: '2023'
+  refs:
+  - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
+    name: UAP-23
+  - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    They even call it UAP-23 because this is the 23rd sighting in that short amount of time that they've had of a UAP. So this is UAP-23. That is the official name of this craft, by the way.
+  text: |-
+    The craft downed in the 2023 Yukon UAP shootdown was officially named UAP-23 because it was the 23rd sighting of a UAP in that short period of time.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d9c18663-dc02-4308-bee7-b435b7f93a03
+  type: observation
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: unattributed
+    origin: online video footage
+  attribution_in_text: false
+  location: 00:11:09.2-00:11:49.0
+  date: '2012'
+  refs:
+  - id: cb8a101a-0f41-4d5a-9912-d4682dd2a984
+    name: South Korea, Busan
+  - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
+    name: UAP-23
+  quote: |-
+    The second piece of evidence that I present to you folks is this video here. This was uploaded in 2012, flown over Busan, South Korea.
+  text: |-
+    A video purporting to show a fast-moving craft resembling UAP-23 was uploaded in 2012 and was filmed over South Korea, Busan.
+  entailment:
+    label: neutral
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5a971661-10b4-47ae-916c-906ee8ade654
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 84ccf755-b56c-4e1a-9d9d-a28fb0dbf2c5
     name: Patricia Carroll
-    metadata:
-      role: witness, 2007 Roswell sighting
+  provenance_chain:
+    origin_kind: speaker
+    origin: Patricia Carroll
+  attribution_in_text: true
+  location: 00:13:29.6-00:13:43.7
+  date: '2007'
+  refs:
+  - id: 01d60144-0223-429a-be05-68c1b613b870
+    name: 2007 Roswell horseshoe-object sighting
+  - id: eafcf383-82f9-454d-8b99-c768cd82b184
+    name: USA, New Mexico, Roswell
+  - id: 84ccf755-b56c-4e1a-9d9d-a28fb0dbf2c5
+    name: Patricia Carroll
+  quote: |-
+    in Roswell, New Mexico, 2007, not 1947, Patricia Carroll reported seeing a triangular or possibly horseshoe shaped dimly lit object that looked ghostly or smoky and seemed to be dimming and brightening in and out of visibility.
+  text: |-
+    During the 2007 Roswell horseshoe-object sighting, Patricia Carroll reported seeing a triangular or possibly horseshoe-shaped, dimly lit object that looked ghostly or smoky and seemed to be dimming and brightening in and out of visibility.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a56e84c1-f131-4139-afad-6f1e602b0e6e
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: an unnamed airline passenger and his daughter
+  attribution_in_text: true
+  location: 00:13:45.3-00:14:06.2
+  date: 2005-06
+  refs:
+  - id: 34ec31f6-08fb-473a-bffd-dc84b34880b0
+    name: 2005 Boston horseshoe-object sighting
+  - id: 2fd744ed-24d8-4b60-8caa-60505716ef71
+    name: USA, Massachusetts, Boston
+  quote: |-
+    also near Boston, Massachusetts in June 2005, the passenger and his daughter were flying in an AA 757 to Europe. The witness states that 20 minutes after takeoff, a horseshoe crab-shaped silver object was quickly overtaken by our aircraft at 8.14 PM, but it was definitely not a plane.
+  text: |-
+    During the 2005 Boston horseshoe-object sighting, a passenger and his daughter were flying near USA, Massachusetts, Boston in an American Airlines 757 to Europe when the witness reported that, 20 minutes after takeoff, a horseshoe crab-shaped silver object was quickly overtaken by their aircraft at 8:14pm, and that it was definitely not a plane.
+  entailment:
+    label: entails
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 4c60c6ff-f1b4-422f-84d3-ecdcc6208473
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: an unnamed witness
+  attribution_in_text: true
+  location: 00:14:12.0-00:14:23.1
+  date: '1998'
+  refs:
+  - id: 3ec16a44-bb09-4b0c-ad3b-ed38a6a10d84
+    name: 1998 Boston horseshoe-object sighting
+  - id: 2fd744ed-24d8-4b60-8caa-60505716ef71
+    name: USA, Massachusetts, Boston
+  quote: |-
+    my attention soon changed to our moon that was visible at this point during the day to the right of the moon sat a silver horseshoe shaped object it looked like the moon in silver form in three dimensions
+  text: |-
+    During the 1998 Boston horseshoe-object sighting, a witness reported that their attention shifted to the moon, which was visible during the day, and that to the right of the moon sat a silver horseshoe-shaped object that looked like the moon in silver form in three dimensions.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 871d3537-bd5b-471e-90b7-54d7f3221ef4
+  type: administrative
+  attestation: second_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: named
+    origin: Ocean X Team
+    relay:
+    - Chris Ramsey
+  attribution_in_text: true
+  location: 00:15:23.2-00:15:29.0
+  date: 2011-06
+  refs:
+  - id: 22bd746a-0503-45aa-ad60-42904bd1812c
+    name: 2011 Baltic Sea anomaly discovery
+  - id: 944f868b-d956-4816-bec1-35b374d8aacf
+    name: Ocean X Team
+  - id: c7d94198-c3cd-4159-8f92-2a39857ab6d8
+    name: Baltic Sea
+  - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
+    name: Baltic Sea anomaly
+  quote: |-
+    this was discovered in june of 2011 by a group of treasure hunters known as the ocean x team while searching for shipwrecks
+  text: |-
+    The Baltic Sea anomaly was discovered in June 2011 by the Ocean X Team, a group of treasure hunters, while they were searching for shipwrecks in the Baltic Sea.
+  entailment:
+    label: entails
+    score: 0.818
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d0fd5811-ea83-46e0-a492-860719cf4951
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: Ocean X Team
+    relay:
+    - Chris Ramsey
+  attribution_in_text: true
+  location: 00:15:29.5-00:15:35.4
+  date: 2011-06
+  refs:
+  - id: 944f868b-d956-4816-bec1-35b374d8aacf
+    name: Ocean X Team
+  - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
+    name: Baltic Sea anomaly
+  - id: c7d94198-c3cd-4159-8f92-2a39857ab6d8
+    name: Baltic Sea
+  quote: |-
+    they found a strange circular formation about 60 meters in diameter at a depth of around 90 meters
+  text: |-
+    The Ocean X Team found a strange circular formation about 60 metres in diameter at a depth of around 90 metres in the Baltic Sea.
+  entailment:
+    label: entails
+    score: 0.904
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b9240516-418c-41f4-9632-841b59693bf6
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: Ocean X Team
+    relay:
+    - Chris Ramsey
+  attribution_in_text: true
+  location: 00:15:36.2-00:15:46.9
+  date: '2011'
+  refs:
+  - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
+    name: Baltic Sea anomaly
+  quote: |-
+    the sonar scans revealed a large disc-shaped object with a tail-like structure leading away from it, almost as if this object crashed and left a trail.
+  text: |-
+    Sonar scans of the Baltic Sea anomaly revealed a large disc-shaped object with a tail-like structure leading away from it, as if the object had crashed and left a trail.
+  entailment:
+    label: entails
+    score: 0.847
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b5550525-5b11-4658-aa44-039a51c0badc
+  type: opinion
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      unnamed researchers who interpreted the Baltic Sea anomaly's patterns as artificial
+    relay:
+    - Chris Ramsey
+  attribution_in_text: true
+  location: 00:15:47.5-00:15:55.1
+  date: '2011'
+  refs:
+  - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
+    name: Baltic Sea anomaly
+  quote: |-
+    It does seem to also have unnatural geometric patterns, which some have interpreted that as being evidence of it being an artificial structure.
+  text: |-
+    The Baltic Sea anomaly has unnatural geometric patterns, which some have interpreted as evidence that it is an artificial structure.
+  entailment:
+    label: entails
+    score: 0.519
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 72a2f51d-0d72-4bd7-a413-511977a4ddca
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: Ocean X Team
+    relay:
+    - Chris Ramsey
+  attribution_in_text: true
+  location: 00:16:27.7-00:16:36.0
+  date: '2012'
+  refs:
+  - id: 944f868b-d956-4816-bec1-35b374d8aacf
+    name: Ocean X Team
+  - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
+    name: Baltic Sea anomaly
+  quote: |-
+    But in 2012, they did send a team down there. A few things happened, one being that electrical equipment would malfunction when they got close to this thing
+  text: |-
+    In 2012, the Ocean X Team sent a team down to the Baltic Sea anomaly, during which electrical equipment reportedly malfunctioned when the team got close to the object.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 427d36d4-a683-43d2-8ea0-26c1416f0ab0
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: Ocean X Team
+    relay:
+    - Chris Ramsey
+  attribution_in_text: true
+  location: 00:16:40.2-00:16:44.5
+  date: '2012'
+  refs:
+  - id: 944f868b-d956-4816-bec1-35b374d8aacf
+    name: Ocean X Team
+  - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
+    name: Baltic Sea anomaly
+  quote: a lot of the samples that they took back turned out to be volcanic rock.
+  text: |-
+    Samples taken from the Baltic Sea anomaly by the Ocean X Team turned out to be volcanic rock.
+  entailment:
+    label: entails
+    score: 0.812
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 09cafe5b-2688-4171-a51a-d12add81d81c
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:18:01.1-00:18:15.5
+  date: '2024'
+  refs:
+  - id: 8fc70544-71d2-417f-a124-a23db9bf2c72
+    name: National Aeronautics and Space Administration (NASA)
+  - id: 23a81904-2d00-440c-94a7-b0fb32d73e71
+    name: All-Domain Anomaly Resolution Office (AARO)
+  - id: 12d8d62f-fa31-43b7-89ca-bab31e4d7982
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    There are divisions of the government that are dedicated to finding out what these UAP are, whether that's through NASA or through Arrow, the All Domain Anomaly Resolution Office. or even through the former ATIP program.
+  text: |-
+    There are divisions of the United States government dedicated to finding out what unidentified aerial phenomena are, including the National Aeronautics and Space Administration (NASA), the All-Domain Anomaly Resolution Office (AARO), and the former Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: df625775-a083-460a-8980-e7871c45a40d
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:19:30.4-00:19:37.8
+  date: '1996'
+  refs:
+  - id: ccbc869b-fda1-4fbd-9f25-cbdd333efeba
+    name: Moment of Contact
+  - id: 693e2a43-eddd-430c-be6b-ea595dcc2fe6
+    name: Varginha UFO incident
+  - id: 070fc3e4-5118-4e43-8a56-54fa9a7b0754
+    name: Brazil, Varginha
+  quote: |-
+    It's the story of this crash retrieval that happened in Virginia, Brazil, involving the entire town, dozens, if not hundreds of witnesses.
+  text: |-
+    Moment of Contact tells the story of the Varginha UFO incident, a crash retrieval that involved the entire town of Brazil, Varginha, with dozens if not hundreds of witnesses.
+  entailment:
+    label: contradicts
+    score: 0.859
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 17cccf5e-79c2-42d9-ba83-1656322e338b
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:19:38.4-00:19:40.5
+  date: '1996'
+  refs:
+  - id: 693e2a43-eddd-430c-be6b-ea595dcc2fe6
+    name: Varginha UFO incident
+  - id: 5221b405-74c4-4f4b-9183-4aee9cc67382
+    name: United States Air Force
+  quote: The US military was involved, the Brazilian military.
+  text: |-
+    Both the United States military and the Brazilian military were involved in the Varginha UFO incident.
+  entailment:
+    label: neutral
+    score: 0.743
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f375717b-c4bf-4ac7-9e37-5a2b64fd2f40
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:19:41.3-00:19:48.4
+  date: '1996'
+  refs:
+  - id: 693e2a43-eddd-430c-be6b-ea595dcc2fe6
+    name: Varginha UFO incident
+  quote: |-
+    There was cover ups. There was payoffs. There was bodies. There was doctors studying these bodies, an incredible documentary.
+  text: |-
+    There were cover-ups, payoffs, and bodies involved in the Varginha UFO incident, with doctors studying the bodies.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ed3655e8-3359-45d6-840a-2333bcd2e474
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:19:59.4-00:20:07.5
+  date: '2024'
+  refs:
+  - id: fb0a56b4-1c54-43b4-831b-378e2495aa1e
+    name: UAP Disclosure Act
+  - id: d610b99e-0cd6-4504-a7d7-2ba324bd38aa
+    name: Mitch McConnell
+  - id: 11da72a8-3686-464d-90b3-21928a6fa8f1
+    name: United States Senate
+  quote: |-
+    We also found out recently that the UAP Disclosure Act had been pushed back yet again, this time by Senator Mitch McConnell.
+  text: |-
+    The UAP Disclosure Act was pushed back again, this time by Senator Mitch McConnell.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: cbbc563e-ca4d-48b6-a994-2c0377490b73
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: false
+  location: 00:20:08.6-00:20:18.4
+  date: '2024'
+  refs:
+  - id: fb0a56b4-1c54-43b4-831b-378e2495aa1e
+    name: UAP Disclosure Act
+  - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    this disclosure act if passed would mean that we can look into past uap events and disclose them to the public much like they would with the jfk assassination
+  text: |-
+    If passed, the UAP Disclosure Act would allow investigation and disclosure of past UAP events to the public, similar to the release of the JFK assassination records.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+infrastructure_claims:
+- id: b0779aeb-8b93-4fdd-a8f8-e9e3c154d6d3
+  type: administrative
+  attestation: second_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: named
+    origin: CTV
+  attribution_in_text: true
+  location: 00:04:35.9-00:04:43.7
+  date: 2023-02
+  refs:
+  - id: 57ca1244-3178-481d-996e-a05cefa1f653
+    name: CTV
+  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
+    name: 2023 Yukon UAP shootdown
+  quote: |-
+    CTV actually obtained the email exchange, which happened back in February 2023, preceding the takedown of this craft.
+  text: |-
+    CTV obtained an internal Canadian government email exchange dated February 2023 that preceded the takedown of the craft in the 2023 Yukon UAP shootdown.
+  entailment:
+    label: neutral
+    score: 0.883
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4177ff08-f241-4aba-acf8-4e96726c1fb8
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: true
+  location: 00:12:26.3-00:12:30.7
+  date: '2024'
+  refs:
+  - id: 57ca1244-3178-481d-996e-a05cefa1f653
+    name: CTV
+  - id: cb8a101a-0f41-4d5a-9912-d4682dd2a984
+    name: South Korea, Busan
+  - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
+    name: UAP-23
+  quote: |-
+    it really is interesting that this video only resurfaced due to the photo that was released by CTV.
+  text: |-
+    The 2012 video filmed over South Korea, Busan of a fast-moving craft resurfaced only after the photo of UAP-23 was released by CTV.
+  entailment:
+    label: entails
+    score: 0.653
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c4606814-ded1-49f2-8563-a1b1b05b535d
+  type: administrative
+  attestation: second_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: named
+    origin: UAP Juan
+    relay:
+    - Chris Ramsey
+  attribution_in_text: true
+  location: 00:13:17.7-00:13:26.6
+  date: '2024'
+  refs:
+  - id: ee058e96-28f2-483e-afd0-755175e43495
+    name: UAP Juan
+  - id: 8f861d90-f401-436a-a4b4-b65fdf89a0b4
+    name: Unidentified Flying Object (UFO)
+  - id: 2aaade54-24f6-48c3-a0fe-a4048d970dfc
+    name: Mutual UFO Network (MUFON)
+  quote: |-
+    UAP Juan on Twitter posted recently three cases that my guess is probably from like some MUFON archives of sightings that revolved around UFOs.
+  text: |-
+    UAP Juan posted on Twitter three cases of horseshoe-shaped unidentified flying objects sourced from archives of prior sightings.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 67d48dcb-cbc7-47fb-b86e-6b2725c396a7
+  type: administrative
+  attestation: second_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: named
+    origin: Secure Team 10
+    relay:
+    - Chris Ramsey
+  attribution_in_text: true
+  location: 00:14:45.5-00:15:00.8
+  date: '2016'
+  refs:
+  - id: 38955735-e135-476e-9c67-42c2dd3c8e7a
+    name: Secure Team 10
+  - id: 8fc70544-71d2-417f-a124-a23db9bf2c72
+    name: National Aeronautics and Space Administration (NASA)
+  - id: 8f861d90-f401-436a-a4b4-b65fdf89a0b4
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    about eight years ago, Secure Team 10 reported on this, their YouTube channel, they cover a lot of this UAP stuff, but there is this seemingly horseshoe shaped UFO that appears on an ISS feed from NASA shortly after apparently the feed was cut.
+  text: |-
+    Secure Team 10 reported on their YouTube channel, approximately eight years before 2024, on a seemingly horseshoe-shaped unidentified flying object that appeared on an International Space Station feed from the National Aeronautics and Space Administration (NASA) shortly after the feed was apparently cut.
+  entailment:
+    label: entails
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a5f56d72-2bf3-4102-bcf6-88b1abfcdf67
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: true
+  location: 00:19:10.3-00:19:20.7
+  date: '2024-10-23'
+  refs:
   - id: 0168ec45-f850-404b-bd5a-d4f5eec3d00d
-    type: person
     name: James Fox
-    metadata:
-      role: filmmaker and director
+  - id: ccbc869b-fda1-4fbd-9f25-cbdd333efeba
+    name: Moment of Contact
+  - id: cf5c4bdf-a9b9-4a7b-a74e-0dbc5f4deb89
+    name: The Program
+  quote: |-
+    Something I want to put on your radar as well is October 23rd, James Fox, the filmmaker and director who made Moment of Contact, will be releasing a new film entitled The Program.
+  text: |-
+    James Fox, the filmmaker and director who made Moment of Contact, will release a new film entitled The Program on 2024-10-23.
+  entailment:
+    label: contradicts
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5f732c34-1fc8-477a-976b-4ddb8a7b5ed1
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: true
+  location: 00:19:21.5-00:19:29.4
+  date: '2024'
+  refs:
+  - id: 0168ec45-f850-404b-bd5a-d4f5eec3d00d
+    name: James Fox
+  - id: ccbc869b-fda1-4fbd-9f25-cbdd333efeba
+    name: Moment of Contact
+  - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    James Fox is known for his multiple documentaries regarding UAP, including Moment of Contact, which was one of my favorite documentaries regarding UAP.
+  text: |-
+    James Fox is known for multiple documentaries regarding unidentified aerial phenomena, including Moment of Contact.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 486dfc9e-42b2-4f0f-b11b-71bd840829c2
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: true
+  location: 00:20:31.2-00:20:46.3
+  date: '2024'
+  refs:
   - id: 11c1d962-d676-48cf-9379-6f31c842f0db
-    type: person
     name: Luigi Vendatelli
   - id: 61d6e5c2-7c29-47ef-83c3-133077d7d4a0
-    type: person
     name: Bob Lazar
-  - id: d610b99e-0cd6-4504-a7d7-2ba324bd38aa
-    type: person
-    name: Mitch McConnell
-    metadata:
-      role: US Senator
-  - id: d4d4ded5-3bd2-48da-bc82-fdcbed544ae8
-    type: person
-    name: Spidey
-    metadata:
-      role: behavioral analyst, pseudonym
-  - id: ee058e96-28f2-483e-afd0-755175e43495
-    type: person
-    name: UAP Juan
-    metadata:
-      role: Twitter account, pseudonym
-  - id: 591a4fd3-db2c-4d17-a607-535704eeaa0c
-    type: organisation
-    name: Canadian Armed Forces
-  - id: a80cf485-fcc9-4f41-8eb8-446547110c81
-    type: organisation
-    name: North American Aerospace Defense Command (NORAD)
-  - id: 5221b405-74c4-4f4b-9183-4aee9cc67382
-    type: organisation
-    name: United States Air Force
-  - id: 1968ea40-082e-40a2-8e6f-7c0d48b63ea0
-    type: organisation
-    name: Department of National Defence (Canada)
-  - id: 80494cf2-302f-4535-ac56-96a4441dbc5e
-    type: organisation
-    name: Royal Canadian Mounted Police (RCMP)
-  - id: befb7362-3c66-4a0d-b6bf-6aec3d41a207
-    type: organisation
-    name: Federal Aviation Administration (FAA)
-  - id: 8fc70544-71d2-417f-a124-a23db9bf2c72
-    type: organisation
-    name: National Aeronautics and Space Administration (NASA)
-  - id: 57ca1244-3178-481d-996e-a05cefa1f653
-    type: organisation
-    name: CTV
-    metadata:
-      description: Canadian news outlet
-  - id: 2aaade54-24f6-48c3-a0fe-a4048d970dfc
-    type: organisation
-    name: Mutual UFO Network (MUFON)
-  - id: 944f868b-d956-4816-bec1-35b374d8aacf
-    type: organisation
-    name: Ocean X Team
-    metadata:
-      description: treasure hunter group that discovered the Baltic Sea anomaly
-  - id: 38955735-e135-476e-9c67-42c2dd3c8e7a
-    type: organisation
-    name: Secure Team 10
-    metadata:
-      description: YouTube channel
-  - id: 23a81904-2d00-440c-94a7-b0fb32d73e71
-    type: organisation
-    name: All-Domain Anomaly Resolution Office (AARO)
-  - id: 11da72a8-3686-464d-90b3-21928a6fa8f1
-    type: organisation
-    name: United States Senate
-  - id: 12d8d62f-fa31-43b7-89ca-bab31e4d7982
-    type: project
-    name: Advanced Aerospace Threat Identification Program (AATIP)
   - id: 18680c06-80e8-45f5-821f-4fa002718d14
-    type: project
     name: Project Gravator
-    metadata:
-      description: documentary project about S4 and Bob Lazar
-  - id: ccbc869b-fda1-4fbd-9f25-cbdd333efeba
-    type: document
-    name: Moment of Contact
-    metadata:
-      type: documentary film
-  - id: cf5c4bdf-a9b9-4a7b-a74e-0dbc5f4deb89
-    type: document
-    name: The Program
-    metadata:
-      type: documentary film, upcoming release
-  - id: fb0a56b4-1c54-43b4-831b-378e2495aa1e
-    type: document
-    name: UAP Disclosure Act
-    metadata:
-      type: proposed legislation
-  - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
-    type: object
-    name: UAP-23
-    metadata:
-      description: horseshoe-shaped object downed over Yukon
-  - id: 77a70d51-feb8-451f-8b53-6c90a1010cd1
-    type: object
-    name: F-22
-  - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
-    type: object
-    name: Baltic Sea anomaly
-    metadata:
-      description: disc-shaped sonar formation discovered on the Baltic seabed
-  - id: 51f1790a-ab54-4ddf-b0a7-88612c411b7a
-    type: place
-    name: Canada, Yukon
-  - id: 67c76c88-f352-4dac-8a96-3dccecb7e63e
-    type: place
-    name: USA, South Carolina
-  - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
-    type: place
-    name: USA, Alaska
-  - id: cb8a101a-0f41-4d5a-9912-d4682dd2a984
-    type: place
-    name: South Korea, Busan
-  - id: eafcf383-82f9-454d-8b99-c768cd82b184
-    type: place
-    name: USA, New Mexico, Roswell
-  - id: 2fd744ed-24d8-4b60-8caa-60505716ef71
-    type: place
-    name: USA, Massachusetts, Boston
-  - id: 070fc3e4-5118-4e43-8a56-54fa9a7b0754
-    type: place
-    name: Brazil, Varginha
-  - id: c7d94198-c3cd-4159-8f92-2a39857ab6d8
-    type: place
-    name: Baltic Sea
-  - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-    type: event
-    name: 2023 Yukon UAP shootdown
-    metadata:
-      date_start: 2023-02
-  - id: 693e2a43-eddd-430c-be6b-ea595dcc2fe6
-    type: event
-    name: Varginha UFO incident
-    metadata:
-      date_start: '1996'
-  - id: 01d60144-0223-429a-be05-68c1b613b870
-    type: event
-    name: 2007 Roswell horseshoe-object sighting
-    metadata:
-      date_start: '2007'
-  - id: 34ec31f6-08fb-473a-bffd-dc84b34880b0
-    type: event
-    name: 2005 Boston horseshoe-object sighting
-    metadata:
-      date_start: 2005-06
-  - id: 3ec16a44-bb09-4b0c-ad3b-ed38a6a10d84
-    type: event
-    name: 1998 Boston horseshoe-object sighting
-    metadata:
-      date_start: '1998'
-  - id: 22bd746a-0503-45aa-ad60-42904bd1812c
-    type: event
-    name: 2011 Baltic Sea anomaly discovery
-    metadata:
-      date_start: 2011-06
-  - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
-    type: topic
-    name: Unidentified Aerial Phenomena (UAP)
-  - id: 8f861d90-f401-436a-a4b4-b65fdf89a0b4
-    type: topic
-    name: Unidentified Flying Object (UFO)
-  - id: e7fb68a0-b2a6-42aa-ad8d-e4c01cb74984
-    type: topic
-    name: Non-Human Intelligence (NHI)
-domain_claims:
-  - id: 361ac38c-7dc3-4ef4-b82d-19813f697ed9
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: news broadcast narration
-    attribution_in_text: false
-    location: 00:00:00.2-00:00:05.2
-    date: '2023'
-    refs:
-      - id: 51f1790a-ab54-4ddf-b0a7-88612c411b7a
-        name: Canada, Yukon
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-    quote: |-
-      We can now show you an exclusive image of that unidentified object shot down over Yukon last year.
-    text: An unidentified object was shot down over Canada, Yukon in 2023.
-  - id: 32f2525c-c8a1-4373-9d3d-42d17437615e
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: news broadcast narration
-    attribution_in_text: false
-    location: 00:00:05.7-00:00:16.3
-    date: '2023-02-04'
-    refs:
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-      - id: 67c76c88-f352-4dac-8a96-3dccecb7e63e
-        name: USA, South Carolina
-    quote: |-
-      The object was about the size of a small car, so not similar in size or shape to the high altitude surveillance balloon that was taken down off the coast of South Carolina on February 4.
-    text: |-
-      The object shot down in the 2023 Yukon UAP shootdown was about the size of a small car and was not similar in size or shape to the high-altitude surveillance balloon taken down off the coast of USA, South Carolina on 2023-02-04.
-  - id: 09fbcc22-967a-4b6f-9328-b449259d1698
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:02:53.8-00:03:00.1
-    date: '2023-01-04'
-    refs:
-      - id: 67c76c88-f352-4dac-8a96-3dccecb7e63e
-        name: USA, South Carolina
-      - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      there was a streak of these quote unquote spy balloons that were taken down starting on January 4th in South Carolina.
-    text: |-
-      A streak of unidentified aerial phenomena were taken down by US and Canadian authorities starting on 2023-01-04 in USA, South Carolina.
-  - id: 9667939a-b960-4493-ad38-4e10bf9d2cc1
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:03:21.9-00:03:33.8
-    date: '2024'
-    refs:
-      - id: 591a4fd3-db2c-4d17-a607-535704eeaa0c
-        name: Canadian Armed Forces
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-    quote: |-
-      This, folks, is the image released by a Freedom of Information request or the equivalent to a Freedom of Information request. submitted to the Canadian Armed Forces.
-    text: |-
-      The image of the craft downed in the 2023 Yukon UAP shootdown was released via a Freedom of Information request, or its Canadian equivalent, submitted to the Canadian Armed Forces.
-  - id: 5fd130f2-23e2-4c8e-84c6-92216626fab6
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:03:37.8-00:03:49.5
-    date: '2023'
-    refs:
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-      - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
-        name: USA, Alaska
-    quote: |-
-      Now, there were multiple crafts that were downed during this time period, so it's important to know which one is which. The one over Alaska that was downed that was as small as a car, that was a different one than this one.
-    text: |-
-      Multiple craft were downed by North American authorities during the same period in early 2023 as the 2023 Yukon UAP shootdown, and the object downed over USA, Alaska was a separate object from the one downed in Canada, Yukon.
-  - id: ed3a26c7-1b81-4441-adad-728ce8ce2d98
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:03:52.9-00:04:01.9
-    date: '2023'
-    refs:
-      - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
-        name: USA, Alaska
-      - id: 77a70d51-feb8-451f-8b53-6c90a1010cd1
-        name: F-22
-    quote: |-
-      That one was spotted at 40,000 feet and was tracked for about 24 hours going over some sensitive airspace in Alaska before it was taken down by an F-22.
-    text: |-
-      The object downed over USA, Alaska in early 2023 was spotted at approximately 12,000 metres altitude and was tracked for about 24 hours over sensitive airspace in Alaska before being taken down by an F-22.
-  - id: b080fb79-56f5-47b7-a9cb-cb990fa2d940
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:04:07.2-00:04:13.4
-    date: '2023'
-    refs:
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-      - id: 51f1790a-ab54-4ddf-b0a7-88612c411b7a
-        name: Canada, Yukon
-      - id: a80cf485-fcc9-4f41-8eb8-446547110c81
-        name: North American Aerospace Defense Command (NORAD)
-    quote: |-
-      This is one that went over Canadian skies... It was swiftly taken down. as well with the help of NORAD.
-    text: |-
-      The craft in the 2023 Yukon UAP shootdown passed over Canadian skies and was swiftly taken down with the help of North American Aerospace Defense Command (NORAD).
-  - id: 20bf75b6-6ad0-4005-9e8b-e39915c18edf
-    type: administrative
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: unattributed
-      origin: Canadian government sources relayed via Chris Ramsey
-    attribution_in_text: false
-    location: 00:04:17.2-00:04:23.8
-    date: '2023'
-    refs:
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-    quote: |-
-      This and the others apparently have not been recovered. The terrain was allegedly too rugged.
-    text: |-
-      The craft from the 2023 Yukon UAP shootdown and other craft taken down during the same period have apparently not been recovered, allegedly because the terrain was too rugged.
-  - id: dc44d793-1894-4853-9b7c-ba08553e7136
-    type: administrative
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: unattributed
-      origin: internal Canadian government correspondence obtained by CTV
-      relay:
-        - CTV
-    attribution_in_text: false
-    location: 00:04:44.9-00:05:01.3
-    date: 2023-02
-    refs:
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-    quote: |-
-      this went back and forth internally in the Canadian government, and it was poised to be released, to be tweeted, actually, maybe a few days after it was taken. However, someone stepped in and said, no, we cannot release this. This might be a breach of national security. It might be against protocol.
-    text: |-
-      An internal Canadian government email exchange regarding the 2023 Yukon UAP shootdown was poised to be released publicly, possibly via a tweet, a few days after the object was taken down, but someone in the government stepped in and blocked its release, citing a possible breach of national security or protocol.
-  - id: ef29450b-4cd0-4e9e-8a5d-269c3942d7a0
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: news broadcast narration
-    attribution_in_text: false
-    location: 00:05:02.3-00:05:06.7
-    date: '2023'
-    refs:
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-    quote: |-
-      So this image was actually cleared to be made public shortly after the object was shot down, but then it was held back.
-    text: |-
-      The image of the craft from the 2023 Yukon UAP shootdown was cleared to be made public shortly after the object was shot down, but its release was then held back.
-  - id: 59c779bb-6a0f-43aa-9a45-8ade77ffb0cf
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: Department of National Defence (Canada)
-    attribution_in_text: true
-    location: 00:05:07.4-00:05:10.4
-    date: '2023'
-    refs:
-      - id: 1968ea40-082e-40a2-8e6f-7c0d48b63ea0
-        name: Department of National Defence (Canada)
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-    quote: The Department of National Defense thought it may cause more confusion.
-    text: |-
-      The Department of National Defence (Canada) thought that releasing the image of the craft from the 2023 Yukon UAP shootdown may cause more confusion.
-  - id: 81edb63a-6a86-475d-8271-d1842c7b0f90
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:06:08.8-00:06:15.0
-    date: '2023'
-    refs:
-      - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
-        name: USA, Alaska
-    quote: |-
-      Now, it's also important to note that the object taken down in Alaska was not a balloon.
-    text: The object taken down over USA, Alaska in early 2023 was not a balloon.
-  - id: c3bcc777-a172-44cb-84bd-22737be1c3eb
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: bf6134ad-bf9b-4c01-889a-e8a3a029731f
-      name: Ryder
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ryder
-    attribution_in_text: true
-    location: 00:06:19.1-00:06:38.5
-    date: '2023-02-04'
-    refs:
-      - id: bf6134ad-bf9b-4c01-889a-e8a3a029731f
-        name: Ryder
-      - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
-        name: USA, Alaska
-      - id: 67c76c88-f352-4dac-8a96-3dccecb7e63e
-        name: USA, South Carolina
-    quote: |-
-      Actually, the Brigadier General Ryder himself in a press conference at the Pentagon revealed that, and I quote, The object was about the size of a small car, so not similar in size or shape to the high altitude surveillance balloon that was taken down off the coast of South Carolina on February 4.
-    text: |-
-      At a press conference at the Pentagon, Ryder said the object taken down over USA, Alaska in early 2023 was about the size of a small car, and was not similar in size or shape to the high-altitude surveillance balloon taken down off the coast of USA, South Carolina on 2023-02-04.
-  - id: 40a17e5a-6c96-449b-a3b3-5f8dd09363b0
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: an unnamed North American Aerospace Defense Command (NORAD) general
-    attribution_in_text: true
-    location: 00:06:40.9-00:06:49.8
-    date: '2023'
-    refs:
-      - id: a80cf485-fcc9-4f41-8eb8-446547110c81
-        name: North American Aerospace Defense Command (NORAD)
-      - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
-        name: USA, Alaska
-    quote: |-
-      we're calling it an object for a reason. It's not a balloon. We don't know how it's staying aloft, yet it is. That... is from the norad general
-    text: |-
-      A North American Aerospace Defense Command (NORAD) general said that the object taken down over USA, Alaska in early 2023 was being called an object rather than a balloon, that it was not a balloon, and that its manner of staying aloft was unknown despite the fact that it was doing so.
-  - id: b897aa93-707c-4009-ac21-0d32990d8938
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: an unnamed North American Aerospace Defense Command (NORAD) general
-    attribution_in_text: true
-    location: 00:06:50.9-00:06:55.9
-    date: '2023'
-    refs:
-      - id: a80cf485-fcc9-4f41-8eb8-446547110c81
-        name: North American Aerospace Defense Command (NORAD)
-      - id: d2231655-9521-4592-a3f2-5a20b87ce3b5
-        name: USA, Alaska
-      - id: e7fb68a0-b2a6-42aa-ad8d-e4c01cb74984
-        name: Non-Human Intelligence (NHI)
-    quote: |-
-      the reporter asked are these extraterrestrial general and the answer was i'm not ruling anything out
-    text: |-
-      When a reporter asked a North American Aerospace Defense Command (NORAD) general whether the object taken down over USA, Alaska in early 2023 was extraterrestrial, the general answered that he was not ruling anything out.
-  - id: 920c6d43-76af-444f-965c-5d5601df1f59
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:07:19.3-00:07:25.1
-    date: 2023-02
-    refs:
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-      - id: 51f1790a-ab54-4ddf-b0a7-88612c411b7a
-        name: Canada, Yukon
-    quote: |-
-      The engagement took place and the object was downed at 341 Eastern Time over Yukon, which is a Canadian territory.
-    text: |-
-      The 2023 Yukon UAP shootdown engagement took place and the object was downed at 3:41pm Eastern Time over Canada, Yukon.
-  - id: 2ccf9c44-bcbc-4b14-b253-91b8289a5c58
-    type: administrative
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: unattributed
-      origin: official Canadian government correspondence relayed by Chris Ramsey
-    attribution_in_text: false
-    location: 00:07:25.8-00:07:34.8
-    date: '2023'
-    refs:
-      - id: 591a4fd3-db2c-4d17-a607-535704eeaa0c
-        name: Canadian Armed Forces
-      - id: 80494cf2-302f-4535-ac56-96a4441dbc5e
-        name: Royal Canadian Mounted Police (RCMP)
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-    quote: |-
-      Canadian Armed Forces members and assets at the request and under the lead of public safety RCMP are now en route to proceed with the recovery.
-    text: |-
-      Canadian Armed Forces members and assets were sent en route to attempt recovery of the craft from the 2023 Yukon UAP shootdown, under the lead of the Royal Canadian Mounted Police (RCMP) at the request of public safety authorities.
-  - id: bd644e7e-7a4a-44dd-93f6-95d7243c2c2a
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:07:35.5-00:07:43.6
-    date: '2023'
-    refs:
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-    quote: |-
-      So there was a recovery attempt made. Did they find anything? Apparently not. They called it off a little bit later.
-    text: |-
-      A recovery attempt was made for the craft from the 2023 Yukon UAP shootdown, but nothing was apparently found, and the attempt was called off.
-  - id: 81164f91-28b0-4344-bf29-55cb060eba79
-    type: observation
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: unattributed
-      origin: official Canadian government description relayed by Chris Ramsey
-    attribution_in_text: false
-    location: 00:07:45.6-00:07:56.2
-    date: '2023'
-    refs:
-      - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
-        name: UAP-23
-    quote: |-
-      The best description that we have is visual, a cylindrical object. Top quarter is metallic. Remainder is white.
-    text: |-
-      The best available description of UAP-23 is that it was a visually observed cylindrical object with a metallic top quarter and a white remainder.
-  - id: 884408dc-ae92-4679-8d99-f3124242b8cf
-    type: measurement
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: unattributed
-      origin: official Canadian government description relayed by Chris Ramsey
-    attribution_in_text: false
-    location: 00:07:57.7-00:08:02.4
-    date: '2023'
-    refs:
-      - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
-        name: UAP-23
-    quote: 20 foot wire hanging below with a package of some sort suspended from it.
-    text: |-
-      UAP-23 had a wire approximately 6 metres long hanging below it, with a package of some sort suspended from the wire.
-  - id: ad43ab69-6ea0-4576-b229-f41c0e6fe451
-    type: administrative
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: unattributed
-      origin: official Canadian government naming relayed by Chris Ramsey
-    attribution_in_text: false
-    location: 00:08:57.3-00:09:11.0
-    date: '2023'
-    refs:
-      - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
-        name: UAP-23
-      - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      They even call it UAP-23 because this is the 23rd sighting in that short amount of time that they've had of a UAP. So this is UAP-23. That is the official name of this craft, by the way.
-    text: |-
-      The craft downed in the 2023 Yukon UAP shootdown was officially named UAP-23 because it was the 23rd sighting of a UAP in that short period of time.
-  - id: d9c18663-dc02-4308-bee7-b435b7f93a03
-    type: observation
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: unattributed
-      origin: online video footage
-    attribution_in_text: false
-    location: 00:11:09.2-00:11:49.0
-    date: '2012'
-    refs:
-      - id: cb8a101a-0f41-4d5a-9912-d4682dd2a984
-        name: South Korea, Busan
-      - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
-        name: UAP-23
-    quote: |-
-      The second piece of evidence that I present to you folks is this video here. This was uploaded in 2012, flown over Busan, South Korea.
-    text: |-
-      A video purporting to show a fast-moving craft resembling UAP-23 was uploaded in 2012 and was filmed over South Korea, Busan.
-  - id: 5a971661-10b4-47ae-916c-906ee8ade654
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 84ccf755-b56c-4e1a-9d9d-a28fb0dbf2c5
-      name: Patricia Carroll
-    provenance_chain:
-      origin_kind: speaker
-      origin: Patricia Carroll
-    attribution_in_text: true
-    location: 00:13:29.6-00:13:43.7
-    date: '2007'
-    refs:
-      - id: 01d60144-0223-429a-be05-68c1b613b870
-        name: 2007 Roswell horseshoe-object sighting
-      - id: eafcf383-82f9-454d-8b99-c768cd82b184
-        name: USA, New Mexico, Roswell
-      - id: 84ccf755-b56c-4e1a-9d9d-a28fb0dbf2c5
-        name: Patricia Carroll
-    quote: |-
-      in Roswell, New Mexico, 2007, not 1947, Patricia Carroll reported seeing a triangular or possibly horseshoe shaped dimly lit object that looked ghostly or smoky and seemed to be dimming and brightening in and out of visibility.
-    text: |-
-      During the 2007 Roswell horseshoe-object sighting, Patricia Carroll reported seeing a triangular or possibly horseshoe-shaped, dimly lit object that looked ghostly or smoky and seemed to be dimming and brightening in and out of visibility.
-  - id: a56e84c1-f131-4139-afad-6f1e602b0e6e
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: an unnamed airline passenger and his daughter
-    attribution_in_text: true
-    location: 00:13:45.3-00:14:06.2
-    date: 2005-06
-    refs:
-      - id: 34ec31f6-08fb-473a-bffd-dc84b34880b0
-        name: 2005 Boston horseshoe-object sighting
-      - id: 2fd744ed-24d8-4b60-8caa-60505716ef71
-        name: USA, Massachusetts, Boston
-    quote: |-
-      also near Boston, Massachusetts in June 2005, the passenger and his daughter were flying in an AA 757 to Europe. The witness states that 20 minutes after takeoff, a horseshoe crab-shaped silver object was quickly overtaken by our aircraft at 8.14 PM, but it was definitely not a plane.
-    text: |-
-      During the 2005 Boston horseshoe-object sighting, a passenger and his daughter were flying near USA, Massachusetts, Boston in an American Airlines 757 to Europe when the witness reported that, 20 minutes after takeoff, a horseshoe crab-shaped silver object was quickly overtaken by their aircraft at 8:14pm, and that it was definitely not a plane.
-  - id: 4c60c6ff-f1b4-422f-84d3-ecdcc6208473
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: an unnamed witness
-    attribution_in_text: true
-    location: 00:14:12.0-00:14:23.1
-    date: '1998'
-    refs:
-      - id: 3ec16a44-bb09-4b0c-ad3b-ed38a6a10d84
-        name: 1998 Boston horseshoe-object sighting
-      - id: 2fd744ed-24d8-4b60-8caa-60505716ef71
-        name: USA, Massachusetts, Boston
-    quote: |-
-      my attention soon changed to our moon that was visible at this point during the day to the right of the moon sat a silver horseshoe shaped object it looked like the moon in silver form in three dimensions
-    text: |-
-      During the 1998 Boston horseshoe-object sighting, a witness reported that their attention shifted to the moon, which was visible during the day, and that to the right of the moon sat a silver horseshoe-shaped object that looked like the moon in silver form in three dimensions.
-  - id: 871d3537-bd5b-471e-90b7-54d7f3221ef4
-    type: administrative
-    attestation: second_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: named
-      origin: Ocean X Team
-      relay:
-        - Chris Ramsey
-    attribution_in_text: true
-    location: 00:15:23.2-00:15:29.0
-    date: 2011-06
-    refs:
-      - id: 22bd746a-0503-45aa-ad60-42904bd1812c
-        name: 2011 Baltic Sea anomaly discovery
-      - id: 944f868b-d956-4816-bec1-35b374d8aacf
-        name: Ocean X Team
-      - id: c7d94198-c3cd-4159-8f92-2a39857ab6d8
-        name: Baltic Sea
-      - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
-        name: Baltic Sea anomaly
-    quote: |-
-      this was discovered in june of 2011 by a group of treasure hunters known as the ocean x team while searching for shipwrecks
-    text: |-
-      The Baltic Sea anomaly was discovered in June 2011 by the Ocean X Team, a group of treasure hunters, while they were searching for shipwrecks in the Baltic Sea.
-  - id: d0fd5811-ea83-46e0-a492-860719cf4951
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: Ocean X Team
-      relay:
-        - Chris Ramsey
-    attribution_in_text: true
-    location: 00:15:29.5-00:15:35.4
-    date: 2011-06
-    refs:
-      - id: 944f868b-d956-4816-bec1-35b374d8aacf
-        name: Ocean X Team
-      - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
-        name: Baltic Sea anomaly
-      - id: c7d94198-c3cd-4159-8f92-2a39857ab6d8
-        name: Baltic Sea
-    quote: |-
-      they found a strange circular formation about 60 meters in diameter at a depth of around 90 meters
-    text: |-
-      The Ocean X Team found a strange circular formation about 60 metres in diameter at a depth of around 90 metres in the Baltic Sea.
-  - id: b9240516-418c-41f4-9632-841b59693bf6
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: Ocean X Team
-      relay:
-        - Chris Ramsey
-    attribution_in_text: true
-    location: 00:15:36.2-00:15:46.9
-    date: '2011'
-    refs:
-      - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
-        name: Baltic Sea anomaly
-    quote: |-
-      the sonar scans revealed a large disc-shaped object with a tail-like structure leading away from it, almost as if this object crashed and left a trail.
-    text: |-
-      Sonar scans of the Baltic Sea anomaly revealed a large disc-shaped object with a tail-like structure leading away from it, as if the object had crashed and left a trail.
-  - id: b5550525-5b11-4658-aa44-039a51c0badc
-    type: opinion
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        unnamed researchers who interpreted the Baltic Sea anomaly's patterns as artificial
-      relay:
-        - Chris Ramsey
-    attribution_in_text: true
-    location: 00:15:47.5-00:15:55.1
-    date: '2011'
-    refs:
-      - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
-        name: Baltic Sea anomaly
-    quote: |-
-      It does seem to also have unnatural geometric patterns, which some have interpreted that as being evidence of it being an artificial structure.
-    text: |-
-      The Baltic Sea anomaly has unnatural geometric patterns, which some have interpreted as evidence that it is an artificial structure.
-  - id: 72a2f51d-0d72-4bd7-a413-511977a4ddca
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: Ocean X Team
-      relay:
-        - Chris Ramsey
-    attribution_in_text: true
-    location: 00:16:27.7-00:16:36.0
-    date: '2012'
-    refs:
-      - id: 944f868b-d956-4816-bec1-35b374d8aacf
-        name: Ocean X Team
-      - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
-        name: Baltic Sea anomaly
-    quote: |-
-      But in 2012, they did send a team down there. A few things happened, one being that electrical equipment would malfunction when they got close to this thing
-    text: |-
-      In 2012, the Ocean X Team sent a team down to the Baltic Sea anomaly, during which electrical equipment reportedly malfunctioned when the team got close to the object.
-  - id: 427d36d4-a683-43d2-8ea0-26c1416f0ab0
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: Ocean X Team
-      relay:
-        - Chris Ramsey
-    attribution_in_text: true
-    location: 00:16:40.2-00:16:44.5
-    date: '2012'
-    refs:
-      - id: 944f868b-d956-4816-bec1-35b374d8aacf
-        name: Ocean X Team
-      - id: 7d93e155-b9ad-4f9a-833f-5cf9be7ef411
-        name: Baltic Sea anomaly
-    quote: a lot of the samples that they took back turned out to be volcanic rock.
-    text: |-
-      Samples taken from the Baltic Sea anomaly by the Ocean X Team turned out to be volcanic rock.
-  - id: 09cafe5b-2688-4171-a51a-d12add81d81c
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:18:01.1-00:18:15.5
-    date: '2024'
-    refs:
-      - id: 8fc70544-71d2-417f-a124-a23db9bf2c72
-        name: National Aeronautics and Space Administration (NASA)
-      - id: 23a81904-2d00-440c-94a7-b0fb32d73e71
-        name: All-Domain Anomaly Resolution Office (AARO)
-      - id: 12d8d62f-fa31-43b7-89ca-bab31e4d7982
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-      - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      There are divisions of the government that are dedicated to finding out what these UAP are, whether that's through NASA or through Arrow, the All Domain Anomaly Resolution Office. or even through the former ATIP program.
-    text: |-
-      There are divisions of the United States government dedicated to finding out what unidentified aerial phenomena are, including the National Aeronautics and Space Administration (NASA), the All-Domain Anomaly Resolution Office (AARO), and the former Advanced Aerospace Threat Identification Program (AATIP).
-  - id: df625775-a083-460a-8980-e7871c45a40d
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:19:30.4-00:19:37.8
-    date: '1996'
-    refs:
-      - id: ccbc869b-fda1-4fbd-9f25-cbdd333efeba
-        name: Moment of Contact
-      - id: 693e2a43-eddd-430c-be6b-ea595dcc2fe6
-        name: Varginha UFO incident
-      - id: 070fc3e4-5118-4e43-8a56-54fa9a7b0754
-        name: Brazil, Varginha
-    quote: |-
-      It's the story of this crash retrieval that happened in Virginia, Brazil, involving the entire town, dozens, if not hundreds of witnesses.
-    text: |-
-      Moment of Contact tells the story of the Varginha UFO incident, a crash retrieval that involved the entire town of Brazil, Varginha, with dozens if not hundreds of witnesses.
-  - id: 17cccf5e-79c2-42d9-ba83-1656322e338b
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:19:38.4-00:19:40.5
-    date: '1996'
-    refs:
-      - id: 693e2a43-eddd-430c-be6b-ea595dcc2fe6
-        name: Varginha UFO incident
-      - id: 5221b405-74c4-4f4b-9183-4aee9cc67382
-        name: United States Air Force
-    quote: The US military was involved, the Brazilian military.
-    text: |-
-      Both the United States military and the Brazilian military were involved in the Varginha UFO incident.
-  - id: f375717b-c4bf-4ac7-9e37-5a2b64fd2f40
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:19:41.3-00:19:48.4
-    date: '1996'
-    refs:
-      - id: 693e2a43-eddd-430c-be6b-ea595dcc2fe6
-        name: Varginha UFO incident
-    quote: |-
-      There was cover ups. There was payoffs. There was bodies. There was doctors studying these bodies, an incredible documentary.
-    text: |-
-      There were cover-ups, payoffs, and bodies involved in the Varginha UFO incident, with doctors studying the bodies.
-  - id: ed3655e8-3359-45d6-840a-2333bcd2e474
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:19:59.4-00:20:07.5
-    date: '2024'
-    refs:
-      - id: fb0a56b4-1c54-43b4-831b-378e2495aa1e
-        name: UAP Disclosure Act
-      - id: d610b99e-0cd6-4504-a7d7-2ba324bd38aa
-        name: Mitch McConnell
-      - id: 11da72a8-3686-464d-90b3-21928a6fa8f1
-        name: United States Senate
-    quote: |-
-      We also found out recently that the UAP Disclosure Act had been pushed back yet again, this time by Senator Mitch McConnell.
-    text: |-
-      The UAP Disclosure Act was pushed back again, this time by Senator Mitch McConnell.
-  - id: cbbc563e-ca4d-48b6-a994-2c0377490b73
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: false
-    location: 00:20:08.6-00:20:18.4
-    date: '2024'
-    refs:
-      - id: fb0a56b4-1c54-43b4-831b-378e2495aa1e
-        name: UAP Disclosure Act
-      - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      this disclosure act if passed would mean that we can look into past uap events and disclose them to the public much like they would with the jfk assassination
-    text: |-
-      If passed, the UAP Disclosure Act would allow investigation and disclosure of past UAP events to the public, similar to the release of the JFK assassination records.
-infrastructure_claims:
-  - id: b0779aeb-8b93-4fdd-a8f8-e9e3c154d6d3
-    type: administrative
-    attestation: second_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: named
-      origin: CTV
-    attribution_in_text: true
-    location: 00:04:35.9-00:04:43.7
-    date: 2023-02
-    refs:
-      - id: 57ca1244-3178-481d-996e-a05cefa1f653
-        name: CTV
-      - id: 2f305ebf-f633-41ac-ac1a-b26bb18577ee
-        name: 2023 Yukon UAP shootdown
-    quote: |-
-      CTV actually obtained the email exchange, which happened back in February 2023, preceding the takedown of this craft.
-    text: |-
-      CTV obtained an internal Canadian government email exchange dated February 2023 that preceded the takedown of the craft in the 2023 Yukon UAP shootdown.
-  - id: 4177ff08-f241-4aba-acf8-4e96726c1fb8
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: true
-    location: 00:12:26.3-00:12:30.7
-    date: '2024'
-    refs:
-      - id: 57ca1244-3178-481d-996e-a05cefa1f653
-        name: CTV
-      - id: cb8a101a-0f41-4d5a-9912-d4682dd2a984
-        name: South Korea, Busan
-      - id: d8a4a348-a266-42d6-8fbf-b290c7e4663e
-        name: UAP-23
-    quote: |-
-      it really is interesting that this video only resurfaced due to the photo that was released by CTV.
-    text: |-
-      The 2012 video filmed over South Korea, Busan of a fast-moving craft resurfaced only after the photo of UAP-23 was released by CTV.
-  - id: c4606814-ded1-49f2-8563-a1b1b05b535d
-    type: administrative
-    attestation: second_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: named
-      origin: UAP Juan
-      relay:
-        - Chris Ramsey
-    attribution_in_text: true
-    location: 00:13:17.7-00:13:26.6
-    date: '2024'
-    refs:
-      - id: ee058e96-28f2-483e-afd0-755175e43495
-        name: UAP Juan
-      - id: 8f861d90-f401-436a-a4b4-b65fdf89a0b4
-        name: Unidentified Flying Object (UFO)
-      - id: 2aaade54-24f6-48c3-a0fe-a4048d970dfc
-        name: Mutual UFO Network (MUFON)
-    quote: |-
-      UAP Juan on Twitter posted recently three cases that my guess is probably from like some MUFON archives of sightings that revolved around UFOs.
-    text: |-
-      UAP Juan posted on Twitter three cases of horseshoe-shaped unidentified flying objects sourced from archives of prior sightings.
-  - id: 67d48dcb-cbc7-47fb-b86e-6b2725c396a7
-    type: administrative
-    attestation: second_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: named
-      origin: Secure Team 10
-      relay:
-        - Chris Ramsey
-    attribution_in_text: true
-    location: 00:14:45.5-00:15:00.8
-    date: '2016'
-    refs:
-      - id: 38955735-e135-476e-9c67-42c2dd3c8e7a
-        name: Secure Team 10
-      - id: 8fc70544-71d2-417f-a124-a23db9bf2c72
-        name: National Aeronautics and Space Administration (NASA)
-      - id: 8f861d90-f401-436a-a4b4-b65fdf89a0b4
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      about eight years ago, Secure Team 10 reported on this, their YouTube channel, they cover a lot of this UAP stuff, but there is this seemingly horseshoe shaped UFO that appears on an ISS feed from NASA shortly after apparently the feed was cut.
-    text: |-
-      Secure Team 10 reported on their YouTube channel, approximately eight years before 2024, on a seemingly horseshoe-shaped unidentified flying object that appeared on an International Space Station feed from the National Aeronautics and Space Administration (NASA) shortly after the feed was apparently cut.
-  - id: a5f56d72-2bf3-4102-bcf6-88b1abfcdf67
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: true
-    location: 00:19:10.3-00:19:20.7
-    date: '2024-10-23'
-    refs:
-      - id: 0168ec45-f850-404b-bd5a-d4f5eec3d00d
-        name: James Fox
-      - id: ccbc869b-fda1-4fbd-9f25-cbdd333efeba
-        name: Moment of Contact
-      - id: cf5c4bdf-a9b9-4a7b-a74e-0dbc5f4deb89
-        name: The Program
-    quote: |-
-      Something I want to put on your radar as well is October 23rd, James Fox, the filmmaker and director who made Moment of Contact, will be releasing a new film entitled The Program.
-    text: |-
-      James Fox, the filmmaker and director who made Moment of Contact, will release a new film entitled The Program on 2024-10-23.
-  - id: 5f732c34-1fc8-477a-976b-4ddb8a7b5ed1
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: true
-    location: 00:19:21.5-00:19:29.4
-    date: '2024'
-    refs:
-      - id: 0168ec45-f850-404b-bd5a-d4f5eec3d00d
-        name: James Fox
-      - id: ccbc869b-fda1-4fbd-9f25-cbdd333efeba
-        name: Moment of Contact
-      - id: 8cb88168-9045-4dfb-b9eb-c6c9af0da859
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      James Fox is known for his multiple documentaries regarding UAP, including Moment of Contact, which was one of my favorite documentaries regarding UAP.
-    text: |-
-      James Fox is known for multiple documentaries regarding unidentified aerial phenomena, including Moment of Contact.
-  - id: 486dfc9e-42b2-4f0f-b11b-71bd840829c2
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: true
-    location: 00:20:31.2-00:20:46.3
-    date: '2024'
-    refs:
-      - id: 11c1d962-d676-48cf-9379-6f31c842f0db
-        name: Luigi Vendatelli
-      - id: 61d6e5c2-7c29-47ef-83c3-133077d7d4a0
-        name: Bob Lazar
-      - id: 18680c06-80e8-45f5-821f-4fa002718d14
-        name: Project Gravator
-    quote: |-
-      including a conversation I had with Luigi Vendatelli, highly anticipated documentary project about S4 and Bob Lazar. This is three years in the making... I got to sit down with Luigi, but also go to his studio and talk shop. about project gravator
-    text: |-
-      Chris Ramsey conducted a conversation with Luigi Vendatelli for a highly anticipated documentary project about S4 and Bob Lazar, three years in the making, during which Ramsey visited Vendatelli's studio and discussed Project Gravator.
-  - id: 30069607-199c-432d-bc20-7c0484ed79b5
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
-      name: Chris Ramsey
-    provenance_chain:
-      origin_kind: speaker
-      origin: Chris Ramsey
-    attribution_in_text: true
-    location: 00:22:14.4-00:22:21.6
-    date: '2024'
-    refs:
-      - id: 61d6e5c2-7c29-47ef-83c3-133077d7d4a0
-        name: Bob Lazar
-      - id: d4d4ded5-3bd2-48da-bc82-fdcbed544ae8
-        name: Spidey
-    quote: |-
-      some of Bob Lazar's old footage with a behavioral analyst, Spidey, and we put that on the Patreon last week.
-    text: |-
-      Some of Bob Lazar's old footage was reviewed with behavioural analyst Spidey and posted on Chris Ramsey's Patreon the week before this episode.
+  quote: |-
+    including a conversation I had with Luigi Vendatelli, highly anticipated documentary project about S4 and Bob Lazar. This is three years in the making... I got to sit down with Luigi, but also go to his studio and talk shop. about project gravator
+  text: |-
+    Chris Ramsey conducted a conversation with Luigi Vendatelli for a highly anticipated documentary project about S4 and Bob Lazar, three years in the making, during which Ramsey visited Vendatelli's studio and discussed Project Gravator.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 30069607-199c-432d-bc20-7c0484ed79b5
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 6d5b8d08-b334-47e8-a6a5-4115536bfaed
+    name: Chris Ramsey
+  provenance_chain:
+    origin_kind: speaker
+    origin: Chris Ramsey
+  attribution_in_text: true
+  location: 00:22:14.4-00:22:21.6
+  date: '2024'
+  refs:
+  - id: 61d6e5c2-7c29-47ef-83c3-133077d7d4a0
+    name: Bob Lazar
+  - id: d4d4ded5-3bd2-48da-bc82-fdcbed544ae8
+    name: Spidey
+  quote: |-
+    some of Bob Lazar's old footage with a behavioral analyst, Spidey, and we put that on the Patreon last week.
+  text: |-
+    Some of Bob Lazar's old footage was reviewed with behavioural analyst Spidey and posted on Chris Ramsey's Patreon the week before this episode.
+  entailment:
+    label: entails
+    score: 0.724
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

@@ -2,23 +2,31 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:30:32.820280+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 222995
-      output: 11601
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 222995
+    output: 11601
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 1.2
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: 65b2daaa227574c0616f401162f24ebf3f89043b39999bbb306b35d9aa821e35
   prep_version: 6
@@ -39,633 +47,773 @@ record:
 terminology:
   main_subject: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
   acronyms:
-    - acronym: UFO
-      expansion: Unidentified Flying Object
-    - acronym: AMCIT
-      expansion: American Citizen
-    - acronym: CIA
-      expansion: Central Intelligence Agency
-    - acronym: DIA
-      expansion: Defense Intelligence Agency
-    - acronym: MRN
-      expansion: Message Reference Number
-    - acronym: DTG
-      expansion: Date-Time Group
+  - acronym: UFO
+    expansion: Unidentified Flying Object
+  - acronym: AMCIT
+    expansion: American Citizen
+  - acronym: CIA
+    expansion: Central Intelligence Agency
+  - acronym: DIA
+    expansion: Defense Intelligence Agency
+  - acronym: MRN
+    expansion: Message Reference Number
+  - acronym: DTG
+    expansion: Date-Time Group
 nodes:
+- id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+  type: person
+  name: Ed Rhodes
+  metadata:
+    family_name: Rhodes
+    aliases:
+    - Rhodes, Ed
+- id: b216f1e6-1315-426d-9349-b1499f867cf4
+  type: person
+  name: Escudero
+- id: c2d4e0bc-0a15-41b7-874a-0bb4d670b5c9
+  type: person
+  name: Lowry Taylor
+  metadata:
+    family_name: Taylor
+    aliases:
+    - Taylor, Lowry
+- id: d851a442-ec9f-425d-9311-f2d3b11d847d
+  type: person
+  name: John Powers
+  metadata:
+    family_name: Powers
+    aliases:
+    - Powers, John
+- id: 6a73ea31-7f74-4ed0-a10e-6d91c356220d
+  type: organisation
+  name: Tajik Air
+- id: 4ca1bd91-93d3-4a0a-ae9d-1ca407f3e761
+  type: organisation
+  name: United States Department of State
+- id: 82c11345-9074-4caf-8b7d-d29704a99e8f
+  type: organisation
+  name: Central Intelligence Agency (CIA)
+- id: c60207bb-4156-4b9e-8c86-4b22f81879d7
+  type: organisation
+  name: Defense Intelligence Agency (DIA)
+- id: b622d319-2f3c-45d2-a9b7-9e9a0f007a1c
+  type: organisation
+  name: American Embassy Dushanbe
+- id: b7242082-5453-4de1-b3ec-d84c22aa6800
+  type: organisation
+  name: Pan American World Airways (Pan Am)
+- id: 5b5d4421-213b-4c8d-91e0-c2939276f56d
+  type: place
+  name: Tajikistan, Dushanbe
+- id: c6e39c5b-dd87-4936-87de-e15e9d9767f1
+  type: place
+  name: Kazakhstan, Almaty
+- id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+  type: event
+  name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  metadata:
+    date_start: '1994-01-27'
+- id: 56f0fa5e-d16e-48fc-8525-462510e4f204
+  type: object
+  name: Boeing 747SP
+- id: fdd24a0a-cda8-491e-b6f3-169c9b02d29d
+  type: object
+  name: Olympus pocket camera
+- id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+  type: topic
+  name: Unidentified Flying Object (UFO)
+- id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
+  type: document
+  name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+domain_claims:
+- id: c203ccf6-7f99-4809-bc46-9461ad8e53a3
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:965-997
+  date: '1994-01-31'
+  refs:
   - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-    type: person
     name: Ed Rhodes
-    metadata:
-      family_name: Rhodes
-      aliases:
-        - Rhodes, Ed
-  - id: b216f1e6-1315-426d-9349-b1499f867cf4
-    type: person
-    name: Escudero
-  - id: c2d4e0bc-0a15-41b7-874a-0bb4d670b5c9
-    type: person
-    name: Lowry Taylor
-    metadata:
-      family_name: Taylor
-      aliases:
-        - Taylor, Lowry
-  - id: d851a442-ec9f-425d-9311-f2d3b11d847d
-    type: person
-    name: John Powers
-    metadata:
-      family_name: Powers
-      aliases:
-        - Powers, John
   - id: 6a73ea31-7f74-4ed0-a10e-6d91c356220d
-    type: organisation
     name: Tajik Air
+  quote: TAJIK AIR CHIEF PILOT, AMCIT ED RHODES
+  text: Ed Rhodes was Tajik Air's chief pilot and an American citizen (AMCIT).
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 309a5f8e-6d62-472a-bb84-d97c87c3bb14
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:988-1148
+  date: '1994-01-27'
+  refs:
+  - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  - id: 56f0fa5e-d16e-48fc-8525-462510e4f204
+    name: Boeing 747SP
+  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+    name: Unidentified Flying Object (UFO)
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  quote: |-
+    AMCIT ED RHODES, AND HIS TWO AMERICAN PILOT COLLEAGUES REPORTED JANUARY 29 THAT, ON JANUARY 27, THEY HAD ENCOUNTERED A UFO WHILE FLYING AT 41,000 FEET IN THEIR BOEING 747SP
+  text: |-
+    On 1994-01-29, Ed Rhodes and his two American pilot colleagues reported that on 1994-01-27 they had encountered a UFO while flying at approximately 12,500 metres in their Boeing 747SP.
+  entailment:
+    label: entails
+    score: 0.907
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 420959e3-f4de-45d9-96ac-4a1ffdda42ce
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:1352-1391
+  date: '1994-01-27'
+  refs:
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  - id: c6e39c5b-dd87-4936-87de-e15e9d9767f1
+    name: Kazakhstan, Almaty
+  quote: AT LAT 45 NORTH AND LONG 55 EAST, OVER KAZAKHSTAN
+  text: |-
+    During the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan, the encounter occurred at latitude 45 north and longitude 55 east, over Kazakhstan.
+  entailment:
+    label: entails
+    score: 0.594
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: e7813bfa-6b0e-40d2-af55-6a3b0754ba59
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:1403-1595
+  date: '1994-01-27'
+  refs:
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    THEY FIRST ENCOUNTERED THE OBJECT AS A BRIGHT LIGHT OF ENORMOUS INTENSITY, APPROACHING THEM FROM OVER THE HORIZON TO THE EAST AT A GREAT RATE OF SPEED AND AT A MUCH HIGHER ALTITUDE THAN THEIR OWN
+  text: |-
+    The Tajik Air crew first encountered the object as a bright light of enormous intensity, approaching them from over the horizon to the east at a great rate of speed and at a much higher altitude than their own aircraft.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a87fe97a-f90b-4786-a00d-5c9b31707760
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:1600-1758
+  date: '1994-01-27'
+  refs:
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    THEY WATCHED THE OBJECT FOR SOME FORTY MINUTES AS IT MANEUVERED IN CIRCLES, CORKSCREWS AND MADE 90-DEGREE TURNS AT RAPID RATES OF SPEED AND UNDER VERY HIGH G'S
+  text: |-
+    The Tajik Air crew watched the object for approximately forty minutes as it manoeuvred in circles, corkscrews, and made 90-degree turns at rapid rates of speed and under very high g-forces.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2ad52a1b-a612-4046-af4e-7bcf8cedec52
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:1761-1818
+  date: '1994-01-27'
+  refs:
+  - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  - id: fdd24a0a-cda8-491e-b6f3-169c9b02d29d
+    name: Olympus pocket camera
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  quote: CAPTAIN RHODES TOOK SEVERAL PHOTOS WITH A POCKET OLYMPUS CAMERA
+  text: |-
+    Ed Rhodes took several photographs of the object during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan using an Olympus pocket camera.
+  entailment:
+    label: entails
+    score: 0.687
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ffe2e7c4-14c1-4e7f-af27-b6cfa741c72e
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:1829-1932
+  date: '1994-01-27'
+  refs:
+  - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  - id: b622d319-2f3c-45d2-a9b7-9e9a0f007a1c
+    name: American Embassy Dushanbe
+  - id: c2d4e0bc-0a15-41b7-874a-0bb4d670b5c9
+    name: Lowry Taylor
   - id: 4ca1bd91-93d3-4a0a-ae9d-1ca407f3e761
-    type: organisation
     name: United States Department of State
+  quote: |-
+    WILL SEND COPIES TO THE EMBASSY AND THE TAJIKISTAN DESK (LOWRY TAYLOR) IN THE DEPARTMENT, IF THEY COME OUT
+  text: |-
+    Ed Rhodes intended to send copies of his photographs of the object to the American Embassy Dushanbe and to Lowry Taylor at the Tajikistan Desk in the Department of State, if they came out.
+  entailment:
+    label: entails
+    score: 0.955
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0654e7ed-4491-42a7-bbd2-2fa02400a625
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:1865-1907
+  date: '1994-01-31'
+  refs:
+  - id: c2d4e0bc-0a15-41b7-874a-0bb4d670b5c9
+    name: Lowry Taylor
+  - id: 4ca1bd91-93d3-4a0a-ae9d-1ca407f3e761
+    name: United States Department of State
+  quote: THE TAJIKISTAN DESK (LOWRY TAYLOR) IN THE DEPARTMENT
+  text: |-
+    Lowry Taylor worked on the Tajikistan Desk within the United States Department of State.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 57128cb3-ade2-43f0-a8e3-bc0ce0fc841a
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:1937-2029
+  date: '1994-01-27'
+  refs:
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    AFTER SOME TIME, THE OBJECT ADOPTED A HORIZONTAL HIGH-SPEED COURSE AND DISAPPEARED OVER THE HORIZON
+  text: |-
+    After some time, the object observed during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan adopted a horizontal high-speed course and disappeared over the horizon.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3dca78d4-b3e6-4a34-8d53-a89d8107352a
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:2042-2123
+  date: '1994-01-27'
+  refs:
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    AS IT WAS DARK WHEN THE OBJECT WAS OBSERVED, THE CREW WERE UNABLE TO DISCERN ITS SHAPE
+  text: |-
+    Because it was dark when the object was observed during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan, the crew were unable to discern the object's shape.
+  entailment:
+    label: entails
+    score: 0.829
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: cb2f2fcb-ed83-41c7-a6d2-7e0112884a35
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:2130-2324
+  date: '1994-01-27'
+  refs:
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    THEY DESCRIBED THE LIGHT IT EMITTED AS HAVING A "BOW WAVE" AND AS RESEMBLING A HIGH-SPEED PHOTO OF A BULLET IN FLIGHT, IN WHICH A VERY SMALL OBJECT GIVES OFF A MUCH LARGER TRAILING WAVE OF HEAT/LIGHT
+  text: |-
+    The Tajik Air crew described the light emitted by the object during the 1994-01-27 sighting as having a bow wave, resembling a high-speed photo of a bullet in flight, in which a very small object gives off a much larger trailing wave of heat and light.
+  entailment:
+    label: neutral
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ff1dc309-9ea0-41c3-8812-99664be329c2
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:2331-2470
+  date: '1994-01-27'
+  refs:
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  quote: |-
+    SOME FORTY-FIVE MINUTES AFTER THE INITIAL SIGHTING, AS THE SUN WAS RISING, THE AIRCRAFT FLEW UNDER THE CONTRAILS WHICH THE OBJECT HAD LEFT BEHIND
+  text: |-
+    Approximately forty-five minutes after the initial sighting during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan, as the sun was rising, the aircraft flew under the contrails which the object had left behind.
+  entailment:
+    label: entails
+    score: 0.585
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e610dc9d-6cfa-4e54-98d4-1f5538e18771
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:2478-2508
+  date: '1994-01-27'
+  refs:
+  - id: 56f0fa5e-d16e-48fc-8525-462510e4f204
+    name: Boeing 747SP
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  quote: THE PLANE WAS MAKING OVER 500 KNOTS
+  text: |-
+    During the 1994-01-27 sighting, the Boeing 747SP was travelling at over approximately 930 kilometres per hour when it flew under the contrails.
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b121d947-23d1-44ac-af9a-c212d6bce44a
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:2515-2587
+  date: '1994-01-27'
+  refs:
+  - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  quote: RHODES ESTIMATED THE ALTITUDE OF THE CONTRAILS AT APPROXIMATELY 100,000 FEET
+  text: |-
+    Ed Rhodes estimated the altitude of the contrails from the 1994-01-27 sighting at approximately 30,000 metres.
+  entailment:
+    label: contradicts
+    score: 0.368
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8b6536e9-6b23-4b56-8bcc-d13f01d35581
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:2593-2783
+  date: '1994-01-27'
+  refs:
+  - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  quote: |-
+    NOTING THAT THERE IS TOO LITTLE AIR/MOISTURE AT THAT EXTREME ALTITUDE TO ENABLE THE CREATION OF CONTRAILS BY THE PROPULSION MECHANISMS OF ORDINARY AIRCRAFT WHICH MIGHT BE ABLE TO REACH THAT HEIGHT
+  text: |-
+    Ed Rhodes noted that there is too little air and moisture at an altitude of approximately 30,000 metres to enable the creation of contrails by the propulsion mechanisms of ordinary aircraft that might be able to reach that height.
+  entailment:
+    label: entails
+    score: 0.636
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: bd8adff9-cea5-4c83-b505-b3133cde45da
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:2791-2884
+  date: '1994-01-27'
+  refs:
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    THE PATHS OF THE CONTRAILS REFLECTED THE MANEUVERS OF THE OBJECT, I.E., CIRCLES, CORKSCREWS, ETC.
+  text: |-
+    The paths of the contrails observed after the 1994-01-27 sighting reflected the manoeuvres of the object, including circles and corkscrews.
+  entailment:
+    label: entails
+    score: 0.533
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 480abf1f-d711-4f88-b840-d83b92aa0061
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:2893-3254
+  date: '1994-01-27'
+  refs:
+  - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  - id: b7242082-5453-4de1-b3ec-d84c22aa6800
+    name: Pan American World Airways (Pan Am)
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  quote: |-
+    TO OUR SUGGESTION THAT THE OBJECT MIGHT HAVE BEEN A METEOR ENTERING AND SKIPPING OFF THE EARTH'S ATMOSPHERE, RHODES AND HIS CREW WERE ADAMANT THAT THEY HAD SEEN THOUSANDS OF "FALLING STARS" AND OTHER SPACE JUNK ENTERING THE ATMOSPHERE IN THEIR YEARS OF FLYING PASSENGER AIRCRAFT FOR PANAM. THIS, THEY INSISTED, WAS NOTHING LIKE A METEOR.
+  text: |-
+    When asked whether the object might have been a meteor entering and skipping off the earth's atmosphere, Ed Rhodes and his crew were adamant that they had seen thousands of falling stars and other space junk entering the atmosphere in their years of flying passenger aircraft for Pan American World Airways (Pan Am), and insisted this was nothing like a meteor.
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a59bfad9-2f89-48e1-b843-1b625f292f9c
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:3159-3207
+  date: '1994-01-31'
+  refs:
+  - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  - id: b7242082-5453-4de1-b3ec-d84c22aa6800
+    name: Pan American World Airways (Pan Am)
+  quote: IN THEIR YEARS OF FLYING PASSENGER AIRCRAFT FOR PANAM
+  text: |-
+    Ed Rhodes and his crew flew passenger aircraft for Pan American World Airways (Pan Am) prior to the 1994-01-27 sighting.
+  entailment:
+    label: neutral
+    score: 0.897
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 34efd764-6f56-47da-96d4-2bc88072ad75
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  provenance_chain:
+    origin_kind: speaker
+    origin: Rhodes, Ed
+  attribution_in_text: false
+  location: char:3262-3432
+  date: '1994-01-27'
+  refs:
+  - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
+    name: Ed Rhodes
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    ON THE BASIS OF ITS SPEED AND MANEUVERABILITY, RHODES EXPRESSED THE OPINION, WHICH HIS CREW SEEMED TO SUPPORT, THAT THE OBJECT WAS EXTRATERRESTRIAL AND UNDER INTELLIGENT CONTROL
+  text: |-
+    On the basis of the object's speed and manoeuvrability during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan, Ed Rhodes considers the object to have been extraterrestrial and under intelligent control.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 15594b43-0237-4838-9dd3-8efe4a758462
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:3339-3364
+  date: '1994-01-27'
+  refs:
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
+    name: Unidentified Flying Object (UFO)
+  quote: WHICH HIS CREW SEEMED TO SUPPORT
+  text: |-
+    Ed Rhodes's crew appeared to support his opinion that the object encountered on 1994-01-27 was extraterrestrial and under intelligent control.
+  entailment:
+    label: entails
+    score: 0.451
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f1ad84e6-6d33-450d-a574-49e0ed1853f7
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b216f1e6-1315-426d-9349-b1499f867cf4
+    name: Escudero
+  provenance_chain:
+    origin_kind: speaker
+    origin: Escudero
+  attribution_in_text: false
+  location: char:3454-3513
+  date: '1994-01-31'
+  refs:
+  - id: b622d319-2f3c-45d2-a9b7-9e9a0f007a1c
+    name: American Embassy Dushanbe
+  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
+    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
+  quote: 'COMMENT: WE HAVE NO OPINION AND REPORT THE ABOVE FOR WHAT IT MAY BE WORTH.'
+  text: |-
+    The American Embassy Dushanbe stated it had no opinion on the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan and reported it for what it may be worth.
+  entailment:
+    label: neutral
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+infrastructure_claims:
+- id: 82c2d581-e152-4834-8760-deaf5c89e2bb
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  attribution_in_text: false
+  location: char:88-100
+  date: '1994-01-31'
+  refs:
+  - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
+    name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  quote: 'MRN: 94 DUSHANBE 259'
+  text: |-
+    The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) has message reference number 94 DUSHANBE 259.
+  entailment:
+    label: entails
+    score: 0.792
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 963a18f3-7015-4663-a3ff-17d60c3680c2
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  attribution_in_text: false
+  location: char:106-145
+  date: '1994-01-31'
+  refs:
+  - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
+    name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  quote: 'Date/DTG: Jan 31, 1994 / 310000Z Jan 94'
+  text: |-
+    The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was dated 1994-01-31 with a date-time group of 310000Z Jan 94.
+  entailment:
+    label: entails
+    score: 0.885
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: d2c8f13c-77d0-4cbb-a8d7-22095da3ea83
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  attribution_in_text: false
+  location: char:158-168
+  date: '1994-01-31'
+  refs:
+  - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
+    name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  - id: b622d319-2f3c-45d2-a9b7-9e9a0f007a1c
+    name: American Embassy Dushanbe
+  quote: 'From: AMEMBASSY DUSHANBE'
+  text: |-
+    The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was sent from the American Embassy Dushanbe.
+  entailment:
+    label: contradicts
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5eefe67c-99bb-4467-b05a-93deade979ea
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  attribution_in_text: false
+  location: char:189-233
+  date: '1994-01-31'
+  refs:
+  - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
+    name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  - id: 4ca1bd91-93d3-4a0a-ae9d-1ca407f3e761
+    name: United States Department of State
+  quote: 'Action: WASHDC, SECSTATE ROUTINE; MOSCOW, AMEMBASSY ROUTINE'
+  text: |-
+    The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was routed for action to the United States Department of State (WASHDC/SECSTATE) and for information to the American Embassy in Moscow.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 68629248-5f53-42be-aca0-176859d06899
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  attribution_in_text: false
+  location: char:786-813
+  date: '1994-01-31'
+  refs:
+  - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
+    name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
   - id: 82c11345-9074-4caf-8b7d-d29704a99e8f
-    type: organisation
     name: Central Intelligence Agency (CIA)
   - id: c60207bb-4156-4b9e-8c86-4b22f81879d7
-    type: organisation
     name: Defense Intelligence Agency (DIA)
-  - id: b622d319-2f3c-45d2-a9b7-9e9a0f007a1c
-    type: organisation
-    name: American Embassy Dushanbe
-  - id: b7242082-5453-4de1-b3ec-d84c22aa6800
-    type: organisation
-    name: Pan American World Airways (Pan Am)
-  - id: 5b5d4421-213b-4c8d-91e0-c2939276f56d
-    type: place
-    name: Tajikistan, Dushanbe
-  - id: c6e39c5b-dd87-4936-87de-e15e9d9767f1
-    type: place
-    name: Kazakhstan, Almaty
-  - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-    type: event
-    name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-    metadata:
-      date_start: '1994-01-27'
-  - id: 56f0fa5e-d16e-48fc-8525-462510e4f204
-    type: object
-    name: Boeing 747SP
-  - id: fdd24a0a-cda8-491e-b6f3-169c9b02d29d
-    type: object
-    name: Olympus pocket camera
-  - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-    type: topic
-    name: Unidentified Flying Object (UFO)
+  quote: |-
+    CIA WASHDC 0224
+    DIA WASHDC 0232
+  text: |-
+    The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was also sent for information to the Central Intelligence Agency (CIA) and the Defense Intelligence Agency (DIA) in Washington DC.
+  entailment:
+    label: entails
+    score: 0.896
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 19336bf0-396e-47f7-8d76-d2bc3d92de4b
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b216f1e6-1315-426d-9349-b1499f867cf4
+    name: Escudero
+  provenance_chain:
+    origin_kind: speaker
+    origin: Escudero
+  attribution_in_text: false
+  location: char:3521-3521
+  date: '1994-01-31'
+  refs:
+  - id: b216f1e6-1315-426d-9349-b1499f867cf4
+    name: Escudero
   - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
-    type: document
     name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-domain_claims:
-  - id: c203ccf6-7f99-4809-bc46-9461ad8e53a3
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:965-997
-    date: '1994-01-31'
-    refs:
-      - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-        name: Ed Rhodes
-      - id: 6a73ea31-7f74-4ed0-a10e-6d91c356220d
-        name: Tajik Air
-    quote: TAJIK AIR CHIEF PILOT, AMCIT ED RHODES
-    text: Ed Rhodes was Tajik Air's chief pilot and an American citizen (AMCIT).
-  - id: 309a5f8e-6d62-472a-bb84-d97c87c3bb14
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:988-1148
-    date: '1994-01-27'
-    refs:
-      - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-        name: Ed Rhodes
-      - id: 56f0fa5e-d16e-48fc-8525-462510e4f204
-        name: Boeing 747SP
-      - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-        name: Unidentified Flying Object (UFO)
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-    quote: |-
-      AMCIT ED RHODES, AND HIS TWO AMERICAN PILOT COLLEAGUES REPORTED JANUARY 29 THAT, ON JANUARY 27, THEY HAD ENCOUNTERED A UFO WHILE FLYING AT 41,000 FEET IN THEIR BOEING 747SP
-    text: |-
-      On 1994-01-29, Ed Rhodes and his two American pilot colleagues reported that on 1994-01-27 they had encountered a UFO while flying at approximately 12,500 metres in their Boeing 747SP.
-  - id: 420959e3-f4de-45d9-96ac-4a1ffdda42ce
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:1352-1391
-    date: '1994-01-27'
-    refs:
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-      - id: c6e39c5b-dd87-4936-87de-e15e9d9767f1
-        name: Kazakhstan, Almaty
-    quote: AT LAT 45 NORTH AND LONG 55 EAST, OVER KAZAKHSTAN
-    text: |-
-      During the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan, the encounter occurred at latitude 45 north and longitude 55 east, over Kazakhstan.
-  - id: e7813bfa-6b0e-40d2-af55-6a3b0754ba59
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:1403-1595
-    date: '1994-01-27'
-    refs:
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-      - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      THEY FIRST ENCOUNTERED THE OBJECT AS A BRIGHT LIGHT OF ENORMOUS INTENSITY, APPROACHING THEM FROM OVER THE HORIZON TO THE EAST AT A GREAT RATE OF SPEED AND AT A MUCH HIGHER ALTITUDE THAN THEIR OWN
-    text: |-
-      The Tajik Air crew first encountered the object as a bright light of enormous intensity, approaching them from over the horizon to the east at a great rate of speed and at a much higher altitude than their own aircraft.
-  - id: a87fe97a-f90b-4786-a00d-5c9b31707760
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:1600-1758
-    date: '1994-01-27'
-    refs:
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-      - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      THEY WATCHED THE OBJECT FOR SOME FORTY MINUTES AS IT MANEUVERED IN CIRCLES, CORKSCREWS AND MADE 90-DEGREE TURNS AT RAPID RATES OF SPEED AND UNDER VERY HIGH G'S
-    text: |-
-      The Tajik Air crew watched the object for approximately forty minutes as it manoeuvred in circles, corkscrews, and made 90-degree turns at rapid rates of speed and under very high g-forces.
-  - id: 2ad52a1b-a612-4046-af4e-7bcf8cedec52
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:1761-1818
-    date: '1994-01-27'
-    refs:
-      - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-        name: Ed Rhodes
-      - id: fdd24a0a-cda8-491e-b6f3-169c9b02d29d
-        name: Olympus pocket camera
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-    quote: CAPTAIN RHODES TOOK SEVERAL PHOTOS WITH A POCKET OLYMPUS CAMERA
-    text: |-
-      Ed Rhodes took several photographs of the object during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan using an Olympus pocket camera.
-  - id: ffe2e7c4-14c1-4e7f-af27-b6cfa741c72e
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:1829-1932
-    date: '1994-01-27'
-    refs:
-      - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-        name: Ed Rhodes
-      - id: b622d319-2f3c-45d2-a9b7-9e9a0f007a1c
-        name: American Embassy Dushanbe
-      - id: c2d4e0bc-0a15-41b7-874a-0bb4d670b5c9
-        name: Lowry Taylor
-      - id: 4ca1bd91-93d3-4a0a-ae9d-1ca407f3e761
-        name: United States Department of State
-    quote: |-
-      WILL SEND COPIES TO THE EMBASSY AND THE TAJIKISTAN DESK (LOWRY TAYLOR) IN THE DEPARTMENT, IF THEY COME OUT
-    text: |-
-      Ed Rhodes intended to send copies of his photographs of the object to the American Embassy Dushanbe and to Lowry Taylor at the Tajikistan Desk in the Department of State, if they came out.
-  - id: 0654e7ed-4491-42a7-bbd2-2fa02400a625
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:1865-1907
-    date: '1994-01-31'
-    refs:
-      - id: c2d4e0bc-0a15-41b7-874a-0bb4d670b5c9
-        name: Lowry Taylor
-      - id: 4ca1bd91-93d3-4a0a-ae9d-1ca407f3e761
-        name: United States Department of State
-    quote: THE TAJIKISTAN DESK (LOWRY TAYLOR) IN THE DEPARTMENT
-    text: |-
-      Lowry Taylor worked on the Tajikistan Desk within the United States Department of State.
-  - id: 57128cb3-ade2-43f0-a8e3-bc0ce0fc841a
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:1937-2029
-    date: '1994-01-27'
-    refs:
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-      - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      AFTER SOME TIME, THE OBJECT ADOPTED A HORIZONTAL HIGH-SPEED COURSE AND DISAPPEARED OVER THE HORIZON
-    text: |-
-      After some time, the object observed during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan adopted a horizontal high-speed course and disappeared over the horizon.
-  - id: 3dca78d4-b3e6-4a34-8d53-a89d8107352a
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:2042-2123
-    date: '1994-01-27'
-    refs:
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-      - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      AS IT WAS DARK WHEN THE OBJECT WAS OBSERVED, THE CREW WERE UNABLE TO DISCERN ITS SHAPE
-    text: |-
-      Because it was dark when the object was observed during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan, the crew were unable to discern the object's shape.
-  - id: cb2f2fcb-ed83-41c7-a6d2-7e0112884a35
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:2130-2324
-    date: '1994-01-27'
-    refs:
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-      - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      THEY DESCRIBED THE LIGHT IT EMITTED AS HAVING A "BOW WAVE" AND AS RESEMBLING A HIGH-SPEED PHOTO OF A BULLET IN FLIGHT, IN WHICH A VERY SMALL OBJECT GIVES OFF A MUCH LARGER TRAILING WAVE OF HEAT/LIGHT
-    text: |-
-      The Tajik Air crew described the light emitted by the object during the 1994-01-27 sighting as having a bow wave, resembling a high-speed photo of a bullet in flight, in which a very small object gives off a much larger trailing wave of heat and light.
-  - id: ff1dc309-9ea0-41c3-8812-99664be329c2
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:2331-2470
-    date: '1994-01-27'
-    refs:
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-    quote: |-
-      SOME FORTY-FIVE MINUTES AFTER THE INITIAL SIGHTING, AS THE SUN WAS RISING, THE AIRCRAFT FLEW UNDER THE CONTRAILS WHICH THE OBJECT HAD LEFT BEHIND
-    text: |-
-      Approximately forty-five minutes after the initial sighting during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan, as the sun was rising, the aircraft flew under the contrails which the object had left behind.
-  - id: e610dc9d-6cfa-4e54-98d4-1f5538e18771
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:2478-2508
-    date: '1994-01-27'
-    refs:
-      - id: 56f0fa5e-d16e-48fc-8525-462510e4f204
-        name: Boeing 747SP
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-    quote: THE PLANE WAS MAKING OVER 500 KNOTS
-    text: |-
-      During the 1994-01-27 sighting, the Boeing 747SP was travelling at over approximately 930 kilometres per hour when it flew under the contrails.
-  - id: b121d947-23d1-44ac-af9a-c212d6bce44a
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:2515-2587
-    date: '1994-01-27'
-    refs:
-      - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-        name: Ed Rhodes
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-    quote: RHODES ESTIMATED THE ALTITUDE OF THE CONTRAILS AT APPROXIMATELY 100,000 FEET
-    text: |-
-      Ed Rhodes estimated the altitude of the contrails from the 1994-01-27 sighting at approximately 30,000 metres.
-  - id: 8b6536e9-6b23-4b56-8bcc-d13f01d35581
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:2593-2783
-    date: '1994-01-27'
-    refs:
-      - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-        name: Ed Rhodes
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-    quote: |-
-      NOTING THAT THERE IS TOO LITTLE AIR/MOISTURE AT THAT EXTREME ALTITUDE TO ENABLE THE CREATION OF CONTRAILS BY THE PROPULSION MECHANISMS OF ORDINARY AIRCRAFT WHICH MIGHT BE ABLE TO REACH THAT HEIGHT
-    text: |-
-      Ed Rhodes noted that there is too little air and moisture at an altitude of approximately 30,000 metres to enable the creation of contrails by the propulsion mechanisms of ordinary aircraft that might be able to reach that height.
-  - id: bd8adff9-cea5-4c83-b505-b3133cde45da
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:2791-2884
-    date: '1994-01-27'
-    refs:
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-      - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      THE PATHS OF THE CONTRAILS REFLECTED THE MANEUVERS OF THE OBJECT, I.E., CIRCLES, CORKSCREWS, ETC.
-    text: |-
-      The paths of the contrails observed after the 1994-01-27 sighting reflected the manoeuvres of the object, including circles and corkscrews.
-  - id: 480abf1f-d711-4f88-b840-d83b92aa0061
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:2893-3254
-    date: '1994-01-27'
-    refs:
-      - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-        name: Ed Rhodes
-      - id: b7242082-5453-4de1-b3ec-d84c22aa6800
-        name: Pan American World Airways (Pan Am)
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-    quote: |-
-      TO OUR SUGGESTION THAT THE OBJECT MIGHT HAVE BEEN A METEOR ENTERING AND SKIPPING OFF THE EARTH'S ATMOSPHERE, RHODES AND HIS CREW WERE ADAMANT THAT THEY HAD SEEN THOUSANDS OF "FALLING STARS" AND OTHER SPACE JUNK ENTERING THE ATMOSPHERE IN THEIR YEARS OF FLYING PASSENGER AIRCRAFT FOR PANAM. THIS, THEY INSISTED, WAS NOTHING LIKE A METEOR.
-    text: |-
-      When asked whether the object might have been a meteor entering and skipping off the earth's atmosphere, Ed Rhodes and his crew were adamant that they had seen thousands of falling stars and other space junk entering the atmosphere in their years of flying passenger aircraft for Pan American World Airways (Pan Am), and insisted this was nothing like a meteor.
-  - id: a59bfad9-2f89-48e1-b843-1b625f292f9c
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:3159-3207
-    date: '1994-01-31'
-    refs:
-      - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-        name: Ed Rhodes
-      - id: b7242082-5453-4de1-b3ec-d84c22aa6800
-        name: Pan American World Airways (Pan Am)
-    quote: IN THEIR YEARS OF FLYING PASSENGER AIRCRAFT FOR PANAM
-    text: |-
-      Ed Rhodes and his crew flew passenger aircraft for Pan American World Airways (Pan Am) prior to the 1994-01-27 sighting.
-  - id: 34efd764-6f56-47da-96d4-2bc88072ad75
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-      name: Ed Rhodes
-    provenance_chain:
-      origin_kind: speaker
-      origin: Rhodes, Ed
-    attribution_in_text: false
-    location: char:3262-3432
-    date: '1994-01-27'
-    refs:
-      - id: 4c424965-a275-4ad5-aa4c-12b189c0cc25
-        name: Ed Rhodes
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-      - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      ON THE BASIS OF ITS SPEED AND MANEUVERABILITY, RHODES EXPRESSED THE OPINION, WHICH HIS CREW SEEMED TO SUPPORT, THAT THE OBJECT WAS EXTRATERRESTRIAL AND UNDER INTELLIGENT CONTROL
-    text: |-
-      On the basis of the object's speed and manoeuvrability during the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan, Ed Rhodes considers the object to have been extraterrestrial and under intelligent control.
-  - id: 15594b43-0237-4838-9dd3-8efe4a758462
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:3339-3364
-    date: '1994-01-27'
-    refs:
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-      - id: 6e3d73f6-e089-4d0e-9a87-d5d1ce83b6d1
-        name: Unidentified Flying Object (UFO)
-    quote: WHICH HIS CREW SEEMED TO SUPPORT
-    text: |-
-      Ed Rhodes's crew appeared to support his opinion that the object encountered on 1994-01-27 was extraterrestrial and under intelligent control.
-  - id: f1ad84e6-6d33-450d-a574-49e0ed1853f7
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b216f1e6-1315-426d-9349-b1499f867cf4
-      name: Escudero
-    provenance_chain:
-      origin_kind: speaker
-      origin: Escudero
-    attribution_in_text: false
-    location: char:3454-3513
-    date: '1994-01-31'
-    refs:
-      - id: b622d319-2f3c-45d2-a9b7-9e9a0f007a1c
-        name: American Embassy Dushanbe
-      - id: 8dc9bfd0-e355-4e3c-93fe-83e88473e8d9
-        name: 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan
-    quote: 'COMMENT: WE HAVE NO OPINION AND REPORT THE ABOVE FOR WHAT IT MAY BE WORTH.'
-    text: |-
-      The American Embassy Dushanbe stated it had no opinion on the 1994-01-27 Tajik Air Boeing 747SP UFO sighting over Kazakhstan and reported it for what it may be worth.
-infrastructure_claims:
-  - id: 82c2d581-e152-4834-8760-deaf5c89e2bb
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    attribution_in_text: false
-    location: char:88-100
-    date: '1994-01-31'
-    refs:
-      - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
-        name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    quote: 'MRN: 94 DUSHANBE 259'
-    text: |-
-      The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) has message reference number 94 DUSHANBE 259.
-  - id: 963a18f3-7015-4663-a3ff-17d60c3680c2
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    attribution_in_text: false
-    location: char:106-145
-    date: '1994-01-31'
-    refs:
-      - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
-        name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    quote: 'Date/DTG: Jan 31, 1994 / 310000Z Jan 94'
-    text: |-
-      The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was dated 1994-01-31 with a date-time group of 310000Z Jan 94.
-  - id: d2c8f13c-77d0-4cbb-a8d7-22095da3ea83
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    attribution_in_text: false
-    location: char:158-168
-    date: '1994-01-31'
-    refs:
-      - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
-        name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-      - id: b622d319-2f3c-45d2-a9b7-9e9a0f007a1c
-        name: American Embassy Dushanbe
-    quote: 'From: AMEMBASSY DUSHANBE'
-    text: |-
-      The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was sent from the American Embassy Dushanbe.
-  - id: 5eefe67c-99bb-4467-b05a-93deade979ea
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    attribution_in_text: false
-    location: char:189-233
-    date: '1994-01-31'
-    refs:
-      - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
-        name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-      - id: 4ca1bd91-93d3-4a0a-ae9d-1ca407f3e761
-        name: United States Department of State
-    quote: 'Action: WASHDC, SECSTATE ROUTINE; MOSCOW, AMEMBASSY ROUTINE'
-    text: |-
-      The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was routed for action to the United States Department of State (WASHDC/SECSTATE) and for information to the American Embassy in Moscow.
-  - id: 68629248-5f53-42be-aca0-176859d06899
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    attribution_in_text: false
-    location: char:786-813
-    date: '1994-01-31'
-    refs:
-      - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
-        name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-      - id: 82c11345-9074-4caf-8b7d-d29704a99e8f
-        name: Central Intelligence Agency (CIA)
-      - id: c60207bb-4156-4b9e-8c86-4b22f81879d7
-        name: Defense Intelligence Agency (DIA)
-    quote: |-
-      CIA WASHDC 0224
-      DIA WASHDC 0232
-    text: |-
-      The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was also sent for information to the Central Intelligence Agency (CIA) and the Defense Intelligence Agency (DIA) in Washington DC.
-  - id: 19336bf0-396e-47f7-8d76-d2bc3d92de4b
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b216f1e6-1315-426d-9349-b1499f867cf4
-      name: Escudero
-    provenance_chain:
-      origin_kind: speaker
-      origin: Escudero
-    attribution_in_text: false
-    location: char:3521-3521
-    date: '1994-01-31'
-    refs:
-      - id: b216f1e6-1315-426d-9349-b1499f867cf4
-        name: Escudero
-      - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
-        name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    quote: ESCUDERO
-    text: |-
-      Escudero signed the cable Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259).
-  - id: cd8d6e85-5751-47e6-b206-48e71db02f71
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    attribution_in_text: false
-    location: char:1204-1284
-    date: '2026-02-25'
-    refs:
-      - id: d851a442-ec9f-425d-9311-f2d3b11d847d
-        name: John Powers
-      - id: 4ca1bd91-93d3-4a0a-ae9d-1ca407f3e761
-        name: United States Department of State
-      - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
-        name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
-    quote: |-
-      Released in Full / John Powers, Acting-Director / US Department of State / 2/25/2026
-    text: |-
-      The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was released in full by John Powers, Acting Director, US Department of State, on 2026-02-25.
+  quote: ESCUDERO
+  text: |-
+    Escudero signed the cable Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259).
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: cd8d6e85-5751-47e6-b206-48e71db02f71
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  attribution_in_text: false
+  location: char:1204-1284
+  date: '2026-02-25'
+  refs:
+  - id: d851a442-ec9f-425d-9311-f2d3b11d847d
+    name: John Powers
+  - id: 4ca1bd91-93d3-4a0a-ae9d-1ca407f3e761
+    name: United States Department of State
+  - id: 08629a77-ad2c-4c95-9af9-ea0c616f228f
+    name: Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259)
+  quote: |-
+    Released in Full / John Powers, Acting-Director / US Department of State / 2/25/2026
+  text: |-
+    The document Tajik Air Pilots Report Unidentified Flying Object (94 DUSHANBE 259) was released in full by John Powers, Acting Director, US Department of State, on 2026-02-25.
+  entailment:
+    label: entails
+    score: 0.842
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh
   changed:
   - record
-  why: Record block refreshed from current record frontmatter. No re-extraction; claims
-    and nodes untouched.
+  why: |-
+    Record block refreshed from current record frontmatter. No re-extraction; claims and nodes untouched.

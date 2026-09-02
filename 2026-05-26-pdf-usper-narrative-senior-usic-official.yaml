@@ -3,41 +3,52 @@ schema: anomalica/digest/1
 extracted_at: '2026-08-01T00:10:54.829213+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 210615
-      output: 28242
-      real_input: 6
-      cache_read: 75386
-      cache_write: 135223
-      calls: 1
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 210615
+    output: 28242
+    real_input: 6
+    cache_read: 75386
+    cache_write: 135223
+    calls: 1
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 14.1
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: 4f2a1b7d1fcc703c94f7934a5d0ee3b44f054c460b39f9e481e4653d017ee39b
   prep_version: 6
 curation:
-  - at: '2026-08-22T14:29:34+09:00'
-    by: assimilator
-    changed: [nodes]
-    why: >-
-      Anonymous person nodes rewritten to the bracketed description form (ingest-format.md). No re-extraction.
-  - at: '2026-08-22T14:44:10+09:00'
-    by: assimilator
-    changed: [nodes, claims]
-    why: >-
-      Corrects the preceding entry, which declared nodes only. That edit also rewrote provenance_chain.origin on claims.
+- at: '2026-08-22T14:29:34+09:00'
+  by: assimilator
+  changed:
+  - nodes
+  why: |-
+    Anonymous person nodes rewritten to the bracketed description form (ingest-format.md). No re-extraction.
+- at: '2026-08-22T14:44:10+09:00'
+  by: assimilator
+  changed:
+  - nodes
+  - claims
+  why: |-
+    Corrects the preceding entry, which declared nodes only. That edit also rewrote provenance_chain.origin on claims.
 record:
   id: 1b9775c6-6849-447b-a764-7425044c2fbc
   title: USPER Narrative, Senior USIC Official
@@ -55,951 +66,1161 @@ record:
 terminology:
   main_subject: Senior U.S. Intelligence Officer (Anonymous)
   acronyms:
-    - acronym: UAP
-      expansion: Unidentified Aerial Phenomena
-    - acronym: JOC
-      expansion: Joint Operations Center
-    - acronym: FLIR
-      expansion: Forward Looking Infrared
-    - acronym: NVG
-      expansion: Night Vision Goggles
-    - acronym: AGL
-      expansion: Above Ground Level
-    - acronym: ODNI
-      expansion: Office of the Director of National Intelligence
+  - acronym: UAP
+    expansion: Unidentified Aerial Phenomena
+  - acronym: JOC
+    expansion: Joint Operations Center
+  - acronym: FLIR
+    expansion: Forward Looking Infrared
+  - acronym: NVG
+    expansion: Night Vision Goggles
+  - acronym: AGL
+    expansion: Above Ground Level
+  - acronym: ODNI
+    expansion: Office of the Director of National Intelligence
 nodes:
-  - id: 6891455d-6000-4508-a97b-95bd73c49c64
-    type: person
+- id: 6891455d-6000-4508-a97b-95bd73c49c64
+  type: person
+  name: '[senior US intelligence officer]'
+  metadata:
+    note: unnamed author of this narrative
+- id: 432eea5b-da4c-49f6-aacf-707708840396
+  type: organisation
+  name: Joint Operations Center (JOC)
+- id: 2145883b-d012-4af7-a56f-29d2e3235e46
+  type: organisation
+  name: Office of the Director of National Intelligence (ODNI)
+- id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+  type: topic
+  name: Unidentified Aerial Phenomena (UAP)
+- id: b116db29-6596-49ff-b519-eeda6d7cfa69
+  type: project
+  name: PURSUE collection of UAP-related records
+- id: a91e97f8-576c-4cb6-bd50-d6b9b03d95e8
+  type: document
+  name: ODNI-UAP-D001, USPER Narrative, Senior USIC Official
+  metadata:
+    date: '2026-05-22'
+    correction_date: '2026-05-26'
+- id: b4cdd137-5b9b-44b5-97cd-cc6837a3ae17
+  type: object
+  name: Forward Looking Infrared (FLIR)
+- id: 8d2c043b-d7d4-4066-ba47-01074509e1e0
+  type: object
+  name: Night Vision Goggles (NVG)
+- id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+  type: event
+  name: Late 2025 UAP encounter at a U.S. weapons test range
+  metadata:
+    date_start: '2025'
+domain_claims:
+- id: 7915becf-95cb-424c-bd2b-b2c810ce9af8
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
     name: '[senior US intelligence officer]'
-    metadata:
-      note: unnamed author of this narrative
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:23-202
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
   - id: 432eea5b-da4c-49f6-aacf-707708840396
-    type: organisation
     name: Joint Operations Center (JOC)
-  - id: 2145883b-d012-4af7-a56f-29d2e3235e46
-    type: organisation
-    name: Office of the Director of National Intelligence (ODNI)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    In late 2025, during early evening daylight hours, I – a senior U.S. intelligence officer – along with a colleague and two pilots, departed our Joint Operations Center (JOC) in a helicopter.
+  text: |-
+    In late 2025, during early evening daylight hours, Senior U.S. Intelligence Officer (Anonymous) departed the Joint Operations Center (JOC) in a helicopter along with a colleague and two pilots.
+  entailment:
+    label: entails
+    score: 0.861
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 84f4ffd5-36f2-47f5-977f-eb934775eec5
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:214-400
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
   - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-    type: topic
     name: Unidentified Aerial Phenomena (UAP)
-  - id: b116db29-6596-49ff-b519-eeda6d7cfa69
-    type: project
-    name: PURSUE collection of UAP-related records
-  - id: a91e97f8-576c-4cb6-bd50-d6b9b03d95e8
-    type: document
-    name: ODNI-UAP-D001, USPER Narrative, Senior USIC Official
-    metadata:
-      date: '2026-05-22'
-      correction_date: '2026-05-26'
+  quote: |-
+    Our mission was to investigate loud thuds heard in the mountains on the test range, which coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights.
+  text: |-
+    The helicopter mission's purpose was to investigate loud thuds heard in the mountains on the weapons test range.
+  entailment:
+    label: entails
+    score: 0.567
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3cd7f990-94d0-4647-8bc7-3561a6e285b7
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:298-400
+  date: '2025'
+  refs:
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    which coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights
+  text: |-
+    The loud thuds heard in the mountains on the test range coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8578ef43-cf3c-48c0-a448-29cb03628759
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:408-512
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    We aimed to search remote mountain areas for possible debris or objects that might explain the orb-like sightings.
+  text: |-
+    The helicopter crew aimed to search remote mountain areas for possible debris or objects that might explain the orb-like UAP sightings on the test range.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b8992afb-e49a-472f-be99-2362e402f49f
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:547-620
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    we flew a low-altitude "nap-of-the-earth" ... route through the mountain range for several hours
+  text: |-
+    During the late 2025 encounter, the helicopter crew flew a low-altitude nap-of-the-earth route through the mountain range for several hours.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 98532723-8ef1-4093-9a02-25abe4b5c9fd
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:1091-1308
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    Multiple times, we spotted debris on the ground and descended for closer inspection. Each time, we determined it was remnants from rockets and other projectiles that had crashed during years of weapons testing on the range.
+  text: |-
+    During the low-altitude search of the mountain range, the crew spotted debris on the ground multiple times and descended for closer inspection, each time determining it was remnants from rockets and other projectiles that had crashed during years of weapons testing on the range.
+  entailment:
+    label: entails
+    score: 0.507
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: be87d0dc-24c8-42a7-9441-74d9272d2730
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:1315-1437
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    As we continued searching near areas of reported orb activity, we discovered a large cave entrance with no visible end in sight.
+  text: |-
+    While searching near areas of reported orb activity on the weapons test range, the crew discovered a large cave entrance with no visible end in sight.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: edde6683-fbe7-4f5b-8c6e-484f2cdd464f
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:1444-1562
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    The terrain around the entrance offered no safe landing spot, so I instructed the pilot to orbit it several times for observation.
+  text: |-
+    Senior U.S. Intelligence Officer (Anonymous) instructed the pilot to orbit the large cave entrance several times for observation because the surrounding terrain offered no safe landing spot.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 914f4fef-02bb-4419-9f1a-9d9e6bccd970
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:1619-1727
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    Running low on fuel, we headed to a prearranged rendezvous point to meet a ground team and let my colleague disembark.
+  text: |-
+    Running low on fuel, the helicopter crew headed to a prearranged rendezvous point to meet a ground team and let the colleague of Senior U.S. Intelligence Officer (Anonymous) disembark.
+  entailment:
+    label: entails
+    score: 0.6
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 29fa1030-5170-483c-975d-1a20b6aea7d9
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:1738-1859
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    The two pilots and I then proceeded to a prepositioned tanker on the range for refueling. Our plan was to return to base afterward
+  text: |-
+    After the colleague disembarked, the two pilots and Senior U.S. Intelligence Officer (Anonymous) proceeded to a prepositioned tanker on the weapons test range for refuelling, planning to return to base afterward.
+  entailment:
+    label: entails
+    score: 0.518
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e6155f09-de53-4c58-9fae-e72f4b33e83a
+  type: observation
+  attestation: second_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: named
+    origin: Joint Operations Center (JOC)
+  attribution_in_text: false
+  location: char:1870-1973
+  date: '2025'
+  refs:
+  - id: 432eea5b-da4c-49f6-aacf-707708840396
+    name: Joint Operations Center (JOC)
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    but the JOC radioed with a request to search a nearby mountain for debris spotted by one of the ground teams.
+  text: |-
+    The Joint Operations Center (JOC) radioed the helicopter crew with a request to search a nearby mountain for debris spotted by one of the ground teams.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b08a24ba-c76e-472a-b037-c0d3bdf2ebf4
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:1980-2144
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
   - id: b4cdd137-5b9b-44b5-97cd-cc6837a3ae17
-    type: object
     name: Forward Looking Infrared (FLIR)
   - id: 8d2c043b-d7d4-4066-ba47-01074509e1e0
-    type: object
     name: Night Vision Goggles (NVG)
   - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-    type: event
     name: Late 2025 UAP encounter at a U.S. weapons test range
-    metadata:
-      date_start: '2025'
-domain_claims:
-  - id: 7915becf-95cb-424c-bd2b-b2c810ce9af8
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:23-202
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: 432eea5b-da4c-49f6-aacf-707708840396
-        name: Joint Operations Center (JOC)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      In late 2025, during early evening daylight hours, I – a senior U.S. intelligence officer – along with a colleague and two pilots, departed our Joint Operations Center (JOC) in a helicopter.
-    text: |-
-      In late 2025, during early evening daylight hours, Senior U.S. Intelligence Officer (Anonymous) departed the Joint Operations Center (JOC) in a helicopter along with a colleague and two pilots.
-  - id: 84f4ffd5-36f2-47f5-977f-eb934775eec5
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:214-400
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      Our mission was to investigate loud thuds heard in the mountains on the test range, which coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights.
-    text: |-
-      The helicopter mission's purpose was to investigate loud thuds heard in the mountains on the weapons test range.
-  - id: 3cd7f990-94d0-4647-8bc7-3561a6e285b7
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:298-400
-    date: '2025'
-    refs:
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      which coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights
-    text: |-
-      The loud thuds heard in the mountains on the test range coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights.
-  - id: 8578ef43-cf3c-48c0-a448-29cb03628759
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:408-512
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      We aimed to search remote mountain areas for possible debris or objects that might explain the orb-like sightings.
-    text: |-
-      The helicopter crew aimed to search remote mountain areas for possible debris or objects that might explain the orb-like UAP sightings on the test range.
-  - id: b8992afb-e49a-472f-be99-2362e402f49f
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:547-620
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      we flew a low-altitude "nap-of-the-earth" ... route through the mountain range for several hours
-    text: |-
-      During the late 2025 encounter, the helicopter crew flew a low-altitude nap-of-the-earth route through the mountain range for several hours.
-  - id: 98532723-8ef1-4093-9a02-25abe4b5c9fd
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:1091-1308
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      Multiple times, we spotted debris on the ground and descended for closer inspection. Each time, we determined it was remnants from rockets and other projectiles that had crashed during years of weapons testing on the range.
-    text: |-
-      During the low-altitude search of the mountain range, the crew spotted debris on the ground multiple times and descended for closer inspection, each time determining it was remnants from rockets and other projectiles that had crashed during years of weapons testing on the range.
-  - id: be87d0dc-24c8-42a7-9441-74d9272d2730
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:1315-1437
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      As we continued searching near areas of reported orb activity, we discovered a large cave entrance with no visible end in sight.
-    text: |-
-      While searching near areas of reported orb activity on the weapons test range, the crew discovered a large cave entrance with no visible end in sight.
-  - id: edde6683-fbe7-4f5b-8c6e-484f2cdd464f
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:1444-1562
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      The terrain around the entrance offered no safe landing spot, so I instructed the pilot to orbit it several times for observation.
-    text: |-
-      Senior U.S. Intelligence Officer (Anonymous) instructed the pilot to orbit the large cave entrance several times for observation because the surrounding terrain offered no safe landing spot.
-  - id: 914f4fef-02bb-4419-9f1a-9d9e6bccd970
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:1619-1727
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      Running low on fuel, we headed to a prearranged rendezvous point to meet a ground team and let my colleague disembark.
-    text: |-
-      Running low on fuel, the helicopter crew headed to a prearranged rendezvous point to meet a ground team and let the colleague of Senior U.S. Intelligence Officer (Anonymous) disembark.
-  - id: 29fa1030-5170-483c-975d-1a20b6aea7d9
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:1738-1859
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      The two pilots and I then proceeded to a prepositioned tanker on the range for refueling. Our plan was to return to base afterward
-    text: |-
-      After the colleague disembarked, the two pilots and Senior U.S. Intelligence Officer (Anonymous) proceeded to a prepositioned tanker on the weapons test range for refuelling, planning to return to base afterward.
-  - id: e6155f09-de53-4c58-9fae-e72f4b33e83a
-    type: observation
-    attestation: second_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: named
-      origin: Joint Operations Center (JOC)
-    attribution_in_text: false
-    location: char:1870-1973
-    date: '2025'
-    refs:
-      - id: 432eea5b-da4c-49f6-aacf-707708840396
-        name: Joint Operations Center (JOC)
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      but the JOC radioed with a request to search a nearby mountain for debris spotted by one of the ground teams.
-    text: |-
-      The Joint Operations Center (JOC) radioed the helicopter crew with a request to search a nearby mountain for debris spotted by one of the ground teams.
-  - id: b08a24ba-c76e-472a-b037-c0d3bdf2ebf4
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:1980-2144
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: b4cdd137-5b9b-44b5-97cd-cc6837a3ae17
-        name: Forward Looking Infrared (FLIR)
-      - id: 8d2c043b-d7d4-4066-ba47-01074509e1e0
-        name: Night Vision Goggles (NVG)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      By this time, the sun had set, and the pilots switched to Forward Looking Infrared (FLIR) and Night Vision Goggles (NVG), while I continued using the unaided naked eye.
-    text: |-
-      After sunset during the search, the pilots switched to Forward Looking Infrared (FLIR) and Night Vision Goggles (NVG), while Senior U.S. Intelligence Officer (Anonymous) continued using the unaided naked eye.
-  - id: 23a64e44-dd45-44c3-8bea-a79c75826d7b
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:2150-2263
-    date: '2025'
-    refs:
-      - id: 432eea5b-da4c-49f6-aacf-707708840396
-        name: Joint Operations Center (JOC)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      After a brief search of the mountain yielded no findings, the pilots began navigating back to the JOC to end the mission.
-    text: |-
-      After a brief search of the mountain yielded no findings, the pilots began navigating back to the Joint Operations Center (JOC) to end the mission.
-  - id: 0fdd9ace-6347-437a-b912-61e38e75a0be
-    type: observation
-    attestation: second_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: named
-      origin: Joint Operations Center (JOC)
-    attribution_in_text: false
-    location: char:2272-2439
-    date: '2025'
-    refs:
-      - id: 432eea5b-da4c-49f6-aacf-707708840396
-        name: Joint Operations Center (JOC)
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      I then received a message from the JOC: radar had detected hits several miles up range from our position – the same area where UAP activity had been observed on prior nights.
-    text: |-
-      The Joint Operations Center (JOC) informed Senior U.S. Intelligence Officer (Anonymous) that radar had detected hits several miles up range from the helicopter's position, in the same area where UAP activity had been observed on prior nights.
-  - id: 5ef16d82-da47-458b-aea5-96eec2ab6a04
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:2447-2580
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      I relayed this to the pilots, and we altered course to intercept. What followed was a series of close UAP encounters lasting over an hour.
-    text: |-
-      Following the radar hit report, the helicopter altered course to intercept, beginning a series of close UAP encounters lasting over an hour.
-  - id: 32d31875-6fb5-4d41-acc0-26a00dad4d34
-    type: observation
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: unattributed
-      origin: unnamed ground teams present during the late 2025 encounter
-      relay:
-        - radio report to Senior U.S. Intelligence Officer (Anonymous)
-    attribution_in_text: false
-    location: char:2597-2727
-    date: '2025'
-    refs:
-      - id: b4cdd137-5b9b-44b5-97cd-cc6837a3ae17
-        name: Forward Looking Infrared (FLIR)
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      ground teams reported spotting a UAP on FLIR, describing it as "super-hot," low to the ground, and moving east then south at high speed.
-    text: |-
-      Ground teams reported spotting a UAP on Forward Looking Infrared (FLIR) during the late 2025 encounter, describing it as "super-hot," low to the ground, and moving east then south at high speed.
-  - id: be40771e-d34f-4ace-b03a-16bc6a99305f
-    type: observation
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: unattributed
-      origin: unnamed ground teams present during the late 2025 encounter
-      relay:
-        - radio report to Senior U.S. Intelligence Officer (Anonymous)
-    attribution_in_text: false
-    location: char:2734-2777
-    date: '2025'
-    refs:
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: The object then split into two and changed direction.
-    text: |-
-      The UAP observed by ground teams during the late 2025 encounter split into two objects and changed direction.
-  - id: a4944c44-a6f2-4c12-83f9-e4e3e062dd98
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:2788-2853
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: 8d2c043b-d7d4-4066-ba47-01074509e1e0
-        name: Night Vision Goggles (NVG)
-      - id: b4cdd137-5b9b-44b5-97cd-cc6837a3ae17
-        name: Forward Looking Infrared (FLIR)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: Upon arrival, we scanned the area using NVG, FLIR, and the naked eye.
-    text: |-
-      Upon arrival at the reported location, the helicopter crew scanned the area using Night Vision Goggles (NVG), Forward Looking Infrared (FLIR), and the naked eye.
-  - id: 92c015de-a22c-40f5-ad27-f21a016028cd
-    type: observation
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: unattributed
-      origin: unnamed ground team present during the late 2025 encounter
-      relay:
-        - radio report to Senior U.S. Intelligence Officer (Anonymous)
-    attribution_in_text: false
-    location: char:2858-3012
-    date: '2025'
-    refs:
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      The ground team suddenly radioed that the object had risen from the ground, approached within ten feet of the helicopter, dropped below us, and then sped away.
-    text: |-
-      The ground team radioed that the UAP had risen from the ground, approached to within approximately 3 metres of the helicopter, dropped below it, and then sped away.
-  - id: d23cfabe-f2f7-4acd-ab56-c01b66ba831b
-    type: observation
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: unattributed
-      origin: unnamed pilots aboard the helicopter during the late 2025 encounter
-    attribution_in_text: false
-    location: char:3018-3161
-    date: '2025'
-    refs:
-      - id: 8d2c043b-d7d4-4066-ba47-01074509e1e0
-        name: Night Vision Goggles (NVG)
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      The pilots observed it through NVGs and saw it split into two as a smaller object emerged before it accelerated out of sight.
-    text: |-
-      The pilots observed through Night Vision Goggles (NVG) that the UAP split into two, with a smaller object emerging before it accelerated out of sight.
-  - id: 2dde16a8-a1e5-4ecc-b4f4-af575820447e
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:3168-3222
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: We briefly pursued but broke off, unable to match its speed.
-    text: |-
-      The helicopter crew briefly pursued the UAP but broke off pursuit, unable to match its speed.
-  - id: 6851fe22-c12e-46ff-a59d-ea7834a76455
-    type: observation
-    attestation: second_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: named
-      origin: Joint Operations Center (JOC)
-    attribution_in_text: false
-    location: char:3243-3396
-    date: '2025'
-    refs:
-      - id: 432eea5b-da4c-49f6-aacf-707708840396
-        name: Joint Operations Center (JOC)
-      - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      the JOC informed us that several fighter jets had launched on a training mission in our operating area and requested their assistance in identifying the UAP.
-    text: |-
-      The Joint Operations Center (JOC) informed the helicopter crew that several fighter jets had launched on a training mission in their operating area and requested their assistance in identifying the UAP.
-  - id: d39b6692-c283-4a22-9ae7-c2447b1e3258
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:3402-3542
-    date: '2025'
-    refs:
-      - id: 432eea5b-da4c-49f6-aacf-707708840396
-        name: Joint Operations Center (JOC)
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      Minutes later, the JOC directed us to nearby radar detections. We took up a hovering position at approximately 700 feet above ground level (AGL).
-    text: |-
-      The Joint Operations Center (JOC) directed the helicopter crew to nearby radar detections, and the crew took up a hovering position at approximately 210 metres above ground level.
-  - id: 0e4cdf37-2dd9-45c6-adaf-fec4aa48e976
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:3548-3701
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      In the distance, we saw countless orange orbs swarming in all directions against the backdrop of the mountain. The display lasted several minutes before fading.
-    text: |-
-      While hovering, the helicopter crew saw countless orange orbs swarming in all directions against the backdrop of the mountain, a display that lasted several minutes before fading.
-  - id: 68f88b6a-dbbd-4dcb-97dd-3846d5845b8d
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:3709-3880
-    date: '2025'
-    refs:
-      - id: 432eea5b-da4c-49f6-aacf-707708840396
-        name: Joint Operations Center (JOC)
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      The JOC then redirected us to our previous position based on fresh radar hits. I provided coordinates to the pilots, and we moved to intercept, hovering again at 700 feet AGL.
-    text: |-
-      The Joint Operations Center (JOC) redirected the helicopter crew to their previous position based on fresh radar hits, and the crew hovered again at approximately 210 metres above ground level.
-  - id: 418bf63a-45da-4c8d-9ea8-c5ffd113fee7
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:3885-4059
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: 8d2c043b-d7d4-4066-ba47-01074509e1e0
-        name: Night Vision Goggles (NVG)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      Through NVGx, the pilots and I (using the naked eye) observed two large orbs flare up side-by-side, close to the helicopter – stationary and just above the rotor disk to our right.
-    text: |-
-      Through Night Vision Goggles (NVG) and the naked eye, Senior U.S. Intelligence Officer (Anonymous) and the pilots observed two large orbs flare up side-by-side close to the helicopter, stationary and just above the rotor disk to the right.
-  - id: 51593587-9406-452b-b658-e89623465b10
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:4066-4152
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      They were oval-shaped, orange with a white or yellow center, and emitted light in all directions.
-    text: |-
-      The two large orbs observed near the helicopter were oval-shaped, orange with a white or yellow centre, and emitted light in all directions.
-  - id: e90196b0-7fe2-42d4-9041-54ed791fd86f
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:4165-4327
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      After a few seconds, a third orb flared up below the pair, followed by a fourth below that, forming a total of four or five in a "T" formation under the original two.
-    text: |-
-      After a few seconds, a third orb flared up below the original pair of orbs near the helicopter, followed by a fourth below that, forming a total of four or five orbs in a "T" formation.
-  - id: 804f63f7-5df2-4c0a-b8eb-53f3f2311678
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:4332-4459
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      Moments later, they dimmed in reverse order, remaining stationary until they vanished from view. The entire event lasted 10-15 seconds.
-    text: |-
-      The orbs in the "T" formation dimmed in reverse order, remained stationary until they vanished from view, with the entire event lasting 10-15 seconds.
-  - id: 69b8e112-17f8-4bf0-b96f-40d537048aff
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:4468-4555
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      I didn't take photos, as I was focused on assessing what it was and whether it posed a threat.
-    text: |-
-      Senior U.S. Intelligence Officer (Anonymous) did not take photographs of the orb display, being focused instead on assessing what it was and whether it posed a threat.
-  - id: 0474f721-d31c-4760-b555-d6ba7d1c36d2
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:4564-4711
-    date: '2025'
-    refs:
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      After this encounter, the pilots briefly considered landing due to the objects' proximity but opted to remain hovering at 700 feet AGL for further observation.
-    text: |-
-      After the orb encounter, the pilots briefly considered landing due to the objects' proximity but opted to remain hovering at approximately 210 metres above ground level for further observation.
-  - id: 712a0d67-27a3-4ee9-94d4-d3cb8776bdd5
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:4724-4846
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      We then spotted the fighter jets entering visual range at about 23,00 feet AGL, identifiable by their blinking navigation lights.
-    text: |-
-      The helicopter crew spotted fighter jets entering visual range at approximately 700 metres above ground level, identifiable by their blinking navigation lights.
-  - id: ca277cf6-acda-48f0-9503-67462bada55d
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:4854-5028
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      As watched from afar, the same type of orbs appeared directly above the fighters. They flared up one at a time in a horizontal formation, matching the jets' speed and flight path.
-    text: |-
-      As the fighter jets were observed from afar, orbs of the same type as those previously encountered appeared directly above the fighters, flaring up one at a time in a horizontal formation matching the jets' speed and flight path.
-  - id: 71c8c8a8-693d-4372-8b8f-780e6fa3fddc
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:5034-5175
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      After 10-15 seconds, they dimmed sequentially and disappeared. This repeated several times as the jets transited the airspace and eventually landed.
-    text: |-
-      The orbs observed above the fighter jets dimmed sequentially and disappeared after 10-15 seconds, and this pattern repeated several times as the jets transited the airspace and eventually landed.
-  - id: 935391d1-b84c-45a4-8193-285eebbf22b4
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: true
-    location: char:5183-5279
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      I remarked to the pilots that it seemed the same orbs we had encountered were now "chasing" the fighters.
-    text: |-
-      Senior U.S. Intelligence Officer (Anonymous) considers it appeared that the same orbs encountered earlier were "chasing" the fighter jets.
-  - id: 21ad8f34-01bd-40fc-bc81-b4ca6750f9f2
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:5289-5404
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      We also observed orange orbs flaring up and down around us for several minutes, forming a distinct triangle before vanishing.
-    text: |-
-      During the encounter, orange orbs were also observed flaring up and down around the helicopter for several minutes, forming a distinct triangle before vanishing.
-  - id: a83568e7-28e9-49b7-aa0c-81dacb2eb5dd
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:5416-5465
-    date: '2025'
-    refs:
-      - id: 432eea5b-da4c-49f6-aacf-707708840396
-        name: Joint Operations Center (JOC)
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: Low on fuel, the pilots decided to return to the JOC.
-    text: |-
-      Low on fuel, the pilots decided to return to the Joint Operations Center (JOC), ending the encounter.
-  - id: 540dc138-1a8f-4c8b-a826-c912c12d6518
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:5470-5580
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
-        name: Late 2025 UAP encounter at a U.S. weapons test range
-    quote: |-
-      After landing, I briefly spoke with them – mostly to express thanks. We were virtually speechless after these observations.
-    text: |-
-      After landing, Senior U.S. Intelligence Officer (Anonymous) briefly spoke with the pilots mostly to express thanks, and the crew were virtually speechless after the observations.
-  - id: 9ce5ed46-53f0-4ff8-b680-0fb04630ad48
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 6891455d-6000-4508-a97b-95bd73c49c64
-      name: '[senior US intelligence officer]'
-    provenance_chain:
-      origin_kind: speaker
-      origin: '[senior US intelligence officer]'
-    attribution_in_text: false
-    location: char:5594-5652
-    date: '2025'
-    refs:
-      - id: 6891455d-6000-4508-a97b-95bd73c49c64
-        name: '[senior US intelligence officer]'
-      - id: 432eea5b-da4c-49f6-aacf-707708840396
-        name: Joint Operations Center (JOC)
-    quote: I then entered the JOC for a quick debrief before driving home.
-    text: |-
-      Senior U.S. Intelligence Officer (Anonymous) entered the Joint Operations Center (JOC) for a quick debrief before driving home.
+  quote: |-
+    By this time, the sun had set, and the pilots switched to Forward Looking Infrared (FLIR) and Night Vision Goggles (NVG), while I continued using the unaided naked eye.
+  text: |-
+    After sunset during the search, the pilots switched to Forward Looking Infrared (FLIR) and Night Vision Goggles (NVG), while Senior U.S. Intelligence Officer (Anonymous) continued using the unaided naked eye.
+  entailment:
+    label: entails
+    score: 0.736
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 23a64e44-dd45-44c3-8bea-a79c75826d7b
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:2150-2263
+  date: '2025'
+  refs:
+  - id: 432eea5b-da4c-49f6-aacf-707708840396
+    name: Joint Operations Center (JOC)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    After a brief search of the mountain yielded no findings, the pilots began navigating back to the JOC to end the mission.
+  text: |-
+    After a brief search of the mountain yielded no findings, the pilots began navigating back to the Joint Operations Center (JOC) to end the mission.
+  entailment:
+    label: entails
+    score: 0.852
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 0fdd9ace-6347-437a-b912-61e38e75a0be
+  type: observation
+  attestation: second_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: named
+    origin: Joint Operations Center (JOC)
+  attribution_in_text: false
+  location: char:2272-2439
+  date: '2025'
+  refs:
+  - id: 432eea5b-da4c-49f6-aacf-707708840396
+    name: Joint Operations Center (JOC)
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    I then received a message from the JOC: radar had detected hits several miles up range from our position – the same area where UAP activity had been observed on prior nights.
+  text: |-
+    The Joint Operations Center (JOC) informed Senior U.S. Intelligence Officer (Anonymous) that radar had detected hits several miles up range from the helicopter's position, in the same area where UAP activity had been observed on prior nights.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5ef16d82-da47-458b-aea5-96eec2ab6a04
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:2447-2580
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    I relayed this to the pilots, and we altered course to intercept. What followed was a series of close UAP encounters lasting over an hour.
+  text: |-
+    Following the radar hit report, the helicopter altered course to intercept, beginning a series of close UAP encounters lasting over an hour.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 32d31875-6fb5-4d41-acc0-26a00dad4d34
+  type: observation
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: unattributed
+    origin: unnamed ground teams present during the late 2025 encounter
+    relay:
+    - radio report to Senior U.S. Intelligence Officer (Anonymous)
+  attribution_in_text: false
+  location: char:2597-2727
+  date: '2025'
+  refs:
+  - id: b4cdd137-5b9b-44b5-97cd-cc6837a3ae17
+    name: Forward Looking Infrared (FLIR)
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    ground teams reported spotting a UAP on FLIR, describing it as "super-hot," low to the ground, and moving east then south at high speed.
+  text: |-
+    Ground teams reported spotting a UAP on Forward Looking Infrared (FLIR) during the late 2025 encounter, describing it as "super-hot," low to the ground, and moving east then south at high speed.
+  entailment:
+    label: neutral
+    score: 0.663
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: be40771e-d34f-4ace-b03a-16bc6a99305f
+  type: observation
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: unattributed
+    origin: unnamed ground teams present during the late 2025 encounter
+    relay:
+    - radio report to Senior U.S. Intelligence Officer (Anonymous)
+  attribution_in_text: false
+  location: char:2734-2777
+  date: '2025'
+  refs:
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: The object then split into two and changed direction.
+  text: |-
+    The UAP observed by ground teams during the late 2025 encounter split into two objects and changed direction.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a4944c44-a6f2-4c12-83f9-e4e3e062dd98
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:2788-2853
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: 8d2c043b-d7d4-4066-ba47-01074509e1e0
+    name: Night Vision Goggles (NVG)
+  - id: b4cdd137-5b9b-44b5-97cd-cc6837a3ae17
+    name: Forward Looking Infrared (FLIR)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: Upon arrival, we scanned the area using NVG, FLIR, and the naked eye.
+  text: |-
+    Upon arrival at the reported location, the helicopter crew scanned the area using Night Vision Goggles (NVG), Forward Looking Infrared (FLIR), and the naked eye.
+  entailment:
+    label: entails
+    score: 0.889
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 92c015de-a22c-40f5-ad27-f21a016028cd
+  type: observation
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: unattributed
+    origin: unnamed ground team present during the late 2025 encounter
+    relay:
+    - radio report to Senior U.S. Intelligence Officer (Anonymous)
+  attribution_in_text: false
+  location: char:2858-3012
+  date: '2025'
+  refs:
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    The ground team suddenly radioed that the object had risen from the ground, approached within ten feet of the helicopter, dropped below us, and then sped away.
+  text: |-
+    The ground team radioed that the UAP had risen from the ground, approached to within approximately 3 metres of the helicopter, dropped below it, and then sped away.
+  entailment:
+    label: entails
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d23cfabe-f2f7-4acd-ab56-c01b66ba831b
+  type: observation
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: unattributed
+    origin: unnamed pilots aboard the helicopter during the late 2025 encounter
+  attribution_in_text: false
+  location: char:3018-3161
+  date: '2025'
+  refs:
+  - id: 8d2c043b-d7d4-4066-ba47-01074509e1e0
+    name: Night Vision Goggles (NVG)
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    The pilots observed it through NVGs and saw it split into two as a smaller object emerged before it accelerated out of sight.
+  text: |-
+    The pilots observed through Night Vision Goggles (NVG) that the UAP split into two, with a smaller object emerging before it accelerated out of sight.
+  entailment:
+    label: entails
+    score: 0.954
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2dde16a8-a1e5-4ecc-b4f4-af575820447e
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:3168-3222
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: We briefly pursued but broke off, unable to match its speed.
+  text: |-
+    The helicopter crew briefly pursued the UAP but broke off pursuit, unable to match its speed.
+  entailment:
+    label: entails
+    score: 0.442
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6851fe22-c12e-46ff-a59d-ea7834a76455
+  type: observation
+  attestation: second_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: named
+    origin: Joint Operations Center (JOC)
+  attribution_in_text: false
+  location: char:3243-3396
+  date: '2025'
+  refs:
+  - id: 432eea5b-da4c-49f6-aacf-707708840396
+    name: Joint Operations Center (JOC)
+  - id: 379c25c6-b5b0-4c57-a0a9-3d3f202be094
+    name: Unidentified Aerial Phenomena (UAP)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    the JOC informed us that several fighter jets had launched on a training mission in our operating area and requested their assistance in identifying the UAP.
+  text: |-
+    The Joint Operations Center (JOC) informed the helicopter crew that several fighter jets had launched on a training mission in their operating area and requested their assistance in identifying the UAP.
+  entailment:
+    label: entails
+    score: 0.537
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d39b6692-c283-4a22-9ae7-c2447b1e3258
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:3402-3542
+  date: '2025'
+  refs:
+  - id: 432eea5b-da4c-49f6-aacf-707708840396
+    name: Joint Operations Center (JOC)
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    Minutes later, the JOC directed us to nearby radar detections. We took up a hovering position at approximately 700 feet above ground level (AGL).
+  text: |-
+    The Joint Operations Center (JOC) directed the helicopter crew to nearby radar detections, and the crew took up a hovering position at approximately 210 metres above ground level.
+  entailment:
+    label: entails
+    score: 0.459
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 0e4cdf37-2dd9-45c6-adaf-fec4aa48e976
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:3548-3701
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    In the distance, we saw countless orange orbs swarming in all directions against the backdrop of the mountain. The display lasted several minutes before fading.
+  text: |-
+    While hovering, the helicopter crew saw countless orange orbs swarming in all directions against the backdrop of the mountain, a display that lasted several minutes before fading.
+  entailment:
+    label: contradicts
+    score: 0.683
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 68f88b6a-dbbd-4dcb-97dd-3846d5845b8d
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:3709-3880
+  date: '2025'
+  refs:
+  - id: 432eea5b-da4c-49f6-aacf-707708840396
+    name: Joint Operations Center (JOC)
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    The JOC then redirected us to our previous position based on fresh radar hits. I provided coordinates to the pilots, and we moved to intercept, hovering again at 700 feet AGL.
+  text: |-
+    The Joint Operations Center (JOC) redirected the helicopter crew to their previous position based on fresh radar hits, and the crew hovered again at approximately 210 metres above ground level.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 418bf63a-45da-4c8d-9ea8-c5ffd113fee7
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:3885-4059
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: 8d2c043b-d7d4-4066-ba47-01074509e1e0
+    name: Night Vision Goggles (NVG)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    Through NVGx, the pilots and I (using the naked eye) observed two large orbs flare up side-by-side, close to the helicopter – stationary and just above the rotor disk to our right.
+  text: |-
+    Through Night Vision Goggles (NVG) and the naked eye, Senior U.S. Intelligence Officer (Anonymous) and the pilots observed two large orbs flare up side-by-side close to the helicopter, stationary and just above the rotor disk to the right.
+  entailment:
+    label: entails
+    score: 0.897
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 51593587-9406-452b-b658-e89623465b10
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:4066-4152
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    They were oval-shaped, orange with a white or yellow center, and emitted light in all directions.
+  text: |-
+    The two large orbs observed near the helicopter were oval-shaped, orange with a white or yellow centre, and emitted light in all directions.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e90196b0-7fe2-42d4-9041-54ed791fd86f
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:4165-4327
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    After a few seconds, a third orb flared up below the pair, followed by a fourth below that, forming a total of four or five in a "T" formation under the original two.
+  text: |-
+    After a few seconds, a third orb flared up below the original pair of orbs near the helicopter, followed by a fourth below that, forming a total of four or five orbs in a "T" formation.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 804f63f7-5df2-4c0a-b8eb-53f3f2311678
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:4332-4459
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    Moments later, they dimmed in reverse order, remaining stationary until they vanished from view. The entire event lasted 10-15 seconds.
+  text: |-
+    The orbs in the "T" formation dimmed in reverse order, remained stationary until they vanished from view, with the entire event lasting 10-15 seconds.
+  entailment:
+    label: entails
+    score: 0.421
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 69b8e112-17f8-4bf0-b96f-40d537048aff
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:4468-4555
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    I didn't take photos, as I was focused on assessing what it was and whether it posed a threat.
+  text: |-
+    Senior U.S. Intelligence Officer (Anonymous) did not take photographs of the orb display, being focused instead on assessing what it was and whether it posed a threat.
+  entailment:
+    label: entails
+    score: 0.569
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0474f721-d31c-4760-b555-d6ba7d1c36d2
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:4564-4711
+  date: '2025'
+  refs:
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    After this encounter, the pilots briefly considered landing due to the objects' proximity but opted to remain hovering at 700 feet AGL for further observation.
+  text: |-
+    After the orb encounter, the pilots briefly considered landing due to the objects' proximity but opted to remain hovering at approximately 210 metres above ground level for further observation.
+  entailment:
+    label: contradicts
+    score: 0.835
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 712a0d67-27a3-4ee9-94d4-d3cb8776bdd5
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:4724-4846
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    We then spotted the fighter jets entering visual range at about 23,00 feet AGL, identifiable by their blinking navigation lights.
+  text: |-
+    The helicopter crew spotted fighter jets entering visual range at approximately 700 metres above ground level, identifiable by their blinking navigation lights.
+  entailment:
+    label: contradicts
+    score: 0.767
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ca277cf6-acda-48f0-9503-67462bada55d
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:4854-5028
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    As watched from afar, the same type of orbs appeared directly above the fighters. They flared up one at a time in a horizontal formation, matching the jets' speed and flight path.
+  text: |-
+    As the fighter jets were observed from afar, orbs of the same type as those previously encountered appeared directly above the fighters, flaring up one at a time in a horizontal formation matching the jets' speed and flight path.
+  entailment:
+    label: entails
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 71c8c8a8-693d-4372-8b8f-780e6fa3fddc
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:5034-5175
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    After 10-15 seconds, they dimmed sequentially and disappeared. This repeated several times as the jets transited the airspace and eventually landed.
+  text: |-
+    The orbs observed above the fighter jets dimmed sequentially and disappeared after 10-15 seconds, and this pattern repeated several times as the jets transited the airspace and eventually landed.
+  entailment:
+    label: entails
+    score: 0.457
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 935391d1-b84c-45a4-8193-285eebbf22b4
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: true
+  location: char:5183-5279
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    I remarked to the pilots that it seemed the same orbs we had encountered were now "chasing" the fighters.
+  text: |-
+    Senior U.S. Intelligence Officer (Anonymous) considers it appeared that the same orbs encountered earlier were "chasing" the fighter jets.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 21ad8f34-01bd-40fc-bc81-b4ca6750f9f2
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:5289-5404
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    We also observed orange orbs flaring up and down around us for several minutes, forming a distinct triangle before vanishing.
+  text: |-
+    During the encounter, orange orbs were also observed flaring up and down around the helicopter for several minutes, forming a distinct triangle before vanishing.
+  entailment:
+    label: entails
+    score: 0.492
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a83568e7-28e9-49b7-aa0c-81dacb2eb5dd
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:5416-5465
+  date: '2025'
+  refs:
+  - id: 432eea5b-da4c-49f6-aacf-707708840396
+    name: Joint Operations Center (JOC)
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: Low on fuel, the pilots decided to return to the JOC.
+  text: |-
+    Low on fuel, the pilots decided to return to the Joint Operations Center (JOC), ending the encounter.
+  entailment:
+    label: neutral
+    score: 0.708
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 540dc138-1a8f-4c8b-a826-c912c12d6518
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:5470-5580
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: aa480c0d-df19-40b8-8f04-c464f0ce5233
+    name: Late 2025 UAP encounter at a U.S. weapons test range
+  quote: |-
+    After landing, I briefly spoke with them – mostly to express thanks. We were virtually speechless after these observations.
+  text: |-
+    After landing, Senior U.S. Intelligence Officer (Anonymous) briefly spoke with the pilots mostly to express thanks, and the crew were virtually speechless after the observations.
+  entailment:
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9ce5ed46-53f0-4ff8-b680-0fb04630ad48
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  provenance_chain:
+    origin_kind: speaker
+    origin: '[senior US intelligence officer]'
+  attribution_in_text: false
+  location: char:5594-5652
+  date: '2025'
+  refs:
+  - id: 6891455d-6000-4508-a97b-95bd73c49c64
+    name: '[senior US intelligence officer]'
+  - id: 432eea5b-da4c-49f6-aacf-707708840396
+    name: Joint Operations Center (JOC)
+  quote: I then entered the JOC for a quick debrief before driving home.
+  text: |-
+    Senior U.S. Intelligence Officer (Anonymous) entered the Joint Operations Center (JOC) for a quick debrief before driving home.
+  entailment:
+    label: entails
+    score: 0.726
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
-  - id: d4a00594-f52e-4f95-873f-0ae30d63bf35
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: ODNI-UAP-D001, USPER Narrative, Senior USIC Official (editorial correction note)
-    attribution_in_text: false
-    location: char:620-776
-    date: '2026-05-22'
-    refs:
-      - id: a91e97f8-576c-4cb6-bd50-d6b9b03d95e8
-        name: ODNI-UAP-D001, USPER Narrative, Senior USIC Official
-      - id: b116db29-6596-49ff-b519-eeda6d7cfa69
-        name: PURSUE collection of UAP-related records
-    quote: |-
-      The document originally posted to the PURSUE collection of UAP-related records on May 22, 2026, under the name "ODNI-UAP-D001, USPER Narrative, Senior USIC Official,"
-    text: |-
-      The document ODNI-UAP-D001, USPER Narrative, Senior USIC Official, was originally posted to the PURSUE collection of UAP-related records on 2026-05-22.
-  - id: 82ea4895-2954-484c-93be-77a1ad30915c
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: ODNI-UAP-D001, USPER Narrative, Senior USIC Official (editorial correction note)
-    attribution_in_text: false
-    location: char:787-971
-    date: '2026-05-26'
-    refs:
-      - id: a91e97f8-576c-4cb6-bd50-d6b9b03d95e8
-        name: ODNI-UAP-D001, USPER Narrative, Senior USIC Official
-    quote: |-
-      contained a typographic error in the second paragraph, describing a helicopter flight profile as "map-of-the-earth." The correct military aviation term for this profile is "nap-of-the-earth."
-    text: |-
-      The document ODNI-UAP-D001, USPER Narrative, Senior USIC Official, contained a typographic error in its second paragraph describing a helicopter flight profile as "map-of-the-earth" instead of the correct military aviation term "nap-of-the-earth."
-  - id: 0a96eaf9-af70-4ac3-a458-ba875d0012cc
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: ODNI-UAP-D001, USPER Narrative, Senior USIC Official (editorial correction note)
-    attribution_in_text: false
-    location: char:979-1026
-    date: '2026-05-26'
-    refs:
-      - id: a91e97f8-576c-4cb6-bd50-d6b9b03d95e8
-        name: ODNI-UAP-D001, USPER Narrative, Senior USIC Official
-    quote: This document has been updated to reflect this correction.
-    text: |-
-      The document ODNI-UAP-D001, USPER Narrative, Senior USIC Official, was updated on 2026-05-26 to correct the "map-of-the-earth" typographic error to "nap-of-the-earth."
+- id: d4a00594-f52e-4f95-873f-0ae30d63bf35
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: ODNI-UAP-D001, USPER Narrative, Senior USIC Official (editorial correction note)
+  attribution_in_text: false
+  location: char:620-776
+  date: '2026-05-22'
+  refs:
+  - id: a91e97f8-576c-4cb6-bd50-d6b9b03d95e8
+    name: ODNI-UAP-D001, USPER Narrative, Senior USIC Official
+  - id: b116db29-6596-49ff-b519-eeda6d7cfa69
+    name: PURSUE collection of UAP-related records
+  quote: |-
+    The document originally posted to the PURSUE collection of UAP-related records on May 22, 2026, under the name "ODNI-UAP-D001, USPER Narrative, Senior USIC Official,"
+  text: |-
+    The document ODNI-UAP-D001, USPER Narrative, Senior USIC Official, was originally posted to the PURSUE collection of UAP-related records on 2026-05-22.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 82ea4895-2954-484c-93be-77a1ad30915c
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: ODNI-UAP-D001, USPER Narrative, Senior USIC Official (editorial correction note)
+  attribution_in_text: false
+  location: char:787-971
+  date: '2026-05-26'
+  refs:
+  - id: a91e97f8-576c-4cb6-bd50-d6b9b03d95e8
+    name: ODNI-UAP-D001, USPER Narrative, Senior USIC Official
+  quote: |-
+    contained a typographic error in the second paragraph, describing a helicopter flight profile as "map-of-the-earth." The correct military aviation term for this profile is "nap-of-the-earth."
+  text: |-
+    The document ODNI-UAP-D001, USPER Narrative, Senior USIC Official, contained a typographic error in its second paragraph describing a helicopter flight profile as "map-of-the-earth" instead of the correct military aviation term "nap-of-the-earth."
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0a96eaf9-af70-4ac3-a458-ba875d0012cc
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: ODNI-UAP-D001, USPER Narrative, Senior USIC Official (editorial correction note)
+  attribution_in_text: false
+  location: char:979-1026
+  date: '2026-05-26'
+  refs:
+  - id: a91e97f8-576c-4cb6-bd50-d6b9b03d95e8
+    name: ODNI-UAP-D001, USPER Narrative, Senior USIC Official
+  quote: This document has been updated to reflect this correction.
+  text: |-
+    The document ODNI-UAP-D001, USPER Narrative, Senior USIC Official, was updated on 2026-05-26 to correct the "map-of-the-earth" typographic error to "nap-of-the-earth."
+  entailment:
+    label: entails
+    score: 0.602
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

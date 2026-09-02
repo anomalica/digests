@@ -3,23 +3,31 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:45:18.076631+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 222817
-      output: 6274
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 222817
+    output: 6274
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 10.4
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: 238ab6d2aeeec246e699a2a056031223a89f52ab9a7f45e11801db9cba5052ae
   prep_version: 6
@@ -40,405 +48,505 @@ record:
 terminology:
   main_subject: 1965 Gemini 7 unidentified object sighting
   codenames:
-    - codename: bogey
-      refers_to: 1965 Gemini 7 unidentified object sighting
-    - codename: Seven / Gemini 7 (callsign)
-      refers_to: Gemini 7 (spacecraft)
+  - codename: bogey
+    refers_to: 1965 Gemini 7 unidentified object sighting
+  - codename: Seven / Gemini 7 (callsign)
+    refers_to: Gemini 7 (spacecraft)
   acronyms:
-    - acronym: UAP
-      expansion: Unidentified Aerial Phenomena
-    - acronym: NASA
-      expansion: National Aeronautics and Space Administration
+  - acronym: UAP
+    expansion: Unidentified Aerial Phenomena
+  - acronym: NASA
+    expansion: National Aeronautics and Space Administration
 nodes:
-  - id: 775069c3-e9b5-48fb-b66d-e42749036182
-    type: person
-    name: Frank Borman
-    metadata:
-      family_name: Borman
-      aliases:
-        - Borman, Frank
-  - id: cd02423b-895b-4fe8-8929-7738d1069314
-    type: person
-    name: Jim Lovell
-    metadata:
-      family_name: Lovell
-      aliases:
-        - Lovell, Jim
-  - id: 23fe0704-0573-4f10-a90d-7600bcbfdea0
-    type: organisation
-    name: National Aeronautics and Space Administration (NASA)
-  - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
-    type: organisation
-    name: NASA Mission Control (Houston)
+- id: 775069c3-e9b5-48fb-b66d-e42749036182
+  type: person
+  name: Frank Borman
+  metadata:
+    family_name: Borman
+    aliases:
+    - Borman, Frank
+- id: cd02423b-895b-4fe8-8929-7738d1069314
+  type: person
+  name: Jim Lovell
+  metadata:
+    family_name: Lovell
+    aliases:
+    - Lovell, Jim
+- id: 23fe0704-0573-4f10-a90d-7600bcbfdea0
+  type: organisation
+  name: National Aeronautics and Space Administration (NASA)
+- id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
+  type: organisation
+  name: NASA Mission Control (Houston)
+- id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+  type: object
+  name: Gemini 7 (spacecraft)
+- id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
+  type: object
+  name: Titan II GLV booster
+- id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
+  type: event
+  name: 1965 Gemini 7 unidentified object sighting
+  metadata:
+    date_start: 1965-12
+- id: aa7e267a-3365-4064-874d-f680a927d294
+  type: place
+  name: USA, Antigua
+- id: a29c490e-46df-4ae0-aa4c-d69808555b97
+  type: topic
+  name: Unidentified Aerial Phenomena (UAP)
+domain_claims:
+- id: ca8f5f0c-c590-441e-967e-8c9433793ada
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:00:04.0-00:00:12.2
+  refs:
   - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-    type: object
+    name: Gemini 7 (spacecraft)
+  - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
+    name: 1965 Gemini 7 unidentified object sighting
+  quote: |-
+    Earlier in the flight, you'll recall, at the start of the second revolution, we had a reference to several objects that the crew spotted.
+  text: |-
+    Earlier in the flight of Gemini 7 (spacecraft), at the start of the second orbital revolution, the crew reported sighting several objects.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: addfcb75-1463-40cd-82f0-76e076fc6fe9
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:00:12.7-00:00:14.6
+  refs:
+  - id: aa7e267a-3365-4064-874d-f680a927d294
+    name: USA, Antigua
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  quote: This was in the area of Antigua.
+  text: |-
+    The objects sighted by the Gemini 7 (spacecraft) crew during the second revolution were reported in the area of USA, Antigua.
+  entailment:
+    label: contradicts
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2cc9f885-dbb0-4e68-a567-c31cf9b78ce9
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:00:16.7-00:00:23.6
+  refs:
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  quote: |-
+    Due to a mechanical breakdown, we did not have that portion of the tape available for you.
+  text: |-
+    Due to a mechanical breakdown, the portion of the audio tape recording the crew's report of the objects sighted during the second revolution of Gemini 7 (spacecraft) was not available for release at the time.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 15b64ea4-f10b-4cf6-af7b-b27efbf7b83d
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:00:24.5-00:00:30.0
+  refs:
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  - id: 23fe0704-0573-4f10-a90d-7600bcbfdea0
+    name: National Aeronautics and Space Administration (NASA)
+  quote: This was a line breakdown between Building 30 and our news center in Building 6.
+  text: |-
+    The mechanical breakdown that prevented release of the Gemini 7 (spacecraft) audio tape was a line breakdown between Building 30 and the NASA news center in Building 6.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 83ed19bf-7302-43f6-a477-a360e7ab7f85
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:00:33.3-00:00:41.7
+  refs:
+  - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
+    name: NASA Mission Control (Houston)
+  quote: |-
+    Since then, we have dubbed the tape off the master tape here in the control center, and we are now prepared to play it for you.
+  text: |-
+    NASA Mission Control (Houston) dubbed a copy of the missing audio tape from the master tape at the control center for release.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 46f372a2-56f4-4ce8-b716-6a66e736b2cb
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:00:42.8-00:00:53.6
+  refs:
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
     name: Gemini 7 (spacecraft)
   - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
-    type: object
     name: Titan II GLV booster
   - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-    type: event
     name: 1965 Gemini 7 unidentified object sighting
-    metadata:
-      date_start: 1965-12
-  - id: aa7e267a-3365-4064-874d-f680a927d294
-    type: place
-    name: USA, Antigua
-  - id: a29c490e-46df-4ae0-aa4c-d69808555b97
-    type: topic
-    name: Unidentified Aerial Phenomena (UAP)
-domain_claims:
-  - id: ca8f5f0c-c590-441e-967e-8c9433793ada
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:00:04.0-00:00:12.2
-    refs:
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-      - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-        name: 1965 Gemini 7 unidentified object sighting
-    quote: |-
-      Earlier in the flight, you'll recall, at the start of the second revolution, we had a reference to several objects that the crew spotted.
-    text: |-
-      Earlier in the flight of Gemini 7 (spacecraft), at the start of the second orbital revolution, the crew reported sighting several objects.
-  - id: addfcb75-1463-40cd-82f0-76e076fc6fe9
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:00:12.7-00:00:14.6
-    refs:
-      - id: aa7e267a-3365-4064-874d-f680a927d294
-        name: USA, Antigua
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-    quote: This was in the area of Antigua.
-    text: |-
-      The objects sighted by the Gemini 7 (spacecraft) crew during the second revolution were reported in the area of USA, Antigua.
-  - id: 2cc9f885-dbb0-4e68-a567-c31cf9b78ce9
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:00:16.7-00:00:23.6
-    refs:
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-    quote: |-
-      Due to a mechanical breakdown, we did not have that portion of the tape available for you.
-    text: |-
-      Due to a mechanical breakdown, the portion of the audio tape recording the crew's report of the objects sighted during the second revolution of Gemini 7 (spacecraft) was not available for release at the time.
-  - id: 15b64ea4-f10b-4cf6-af7b-b27efbf7b83d
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:00:24.5-00:00:30.0
-    refs:
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-      - id: 23fe0704-0573-4f10-a90d-7600bcbfdea0
-        name: National Aeronautics and Space Administration (NASA)
-    quote: This was a line breakdown between Building 30 and our news center in Building 6.
-    text: |-
-      The mechanical breakdown that prevented release of the Gemini 7 (spacecraft) audio tape was a line breakdown between Building 30 and the NASA news center in Building 6.
-  - id: 83ed19bf-7302-43f6-a477-a360e7ab7f85
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:00:33.3-00:00:41.7
-    refs:
-      - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
-        name: NASA Mission Control (Houston)
-    quote: |-
-      Since then, we have dubbed the tape off the master tape here in the control center, and we are now prepared to play it for you.
-    text: |-
-      NASA Mission Control (Houston) dubbed a copy of the missing audio tape from the master tape at the control center for release.
-  - id: 46f372a2-56f4-4ce8-b716-6a66e736b2cb
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:00:42.8-00:00:53.6
-    refs:
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-      - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
-        name: Titan II GLV booster
-      - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-        name: 1965 Gemini 7 unidentified object sighting
-    quote: |-
-      It contains references to sighting not only some particles, but as well as an unidentified object, plus the booster.
-    text: |-
-      The released Gemini 7 (spacecraft) audio tape contains references to a sighting of particles, an unidentified object, and the Titan II GLV booster.
-  - id: b723d5ad-7872-471e-bf24-e70e6d3a2348
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 775069c3-e9b5-48fb-b66d-e42749036182
-      name: Frank Borman
-    provenance_chain:
-      origin_kind: speaker
-      origin: Frank Borman
-    attribution_in_text: false
-    location: 00:01:04.0-00:01:05.2
-    refs:
-      - id: 775069c3-e9b5-48fb-b66d-e42749036182
-        name: Frank Borman
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-      - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
-        name: NASA Mission Control (Houston)
-      - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-        name: 1965 Gemini 7 unidentified object sighting
-    quote: We have a bogey at 10 o'clock high.
-    text: |-
-      Frank Borman, aboard Gemini 7 (spacecraft), reported to NASA Mission Control (Houston) that the crew had a bogey (the 1965 Gemini 7 unidentified object sighting) at 10 o'clock high.
-  - id: d39a82d5-589e-491e-957f-b08f7f197c81
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control transcript
-    attribution_in_text: false
-    location: 00:01:32.2-00:01:35.8
-    refs:
-      - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
-        name: NASA Mission Control (Houston)
-      - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
-        name: Titan II GLV booster
-      - id: 775069c3-e9b5-48fb-b66d-e42749036182
-        name: Frank Borman
-      - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-        name: 1965 Gemini 7 unidentified object sighting
-    quote: Gemini 7, is that the booster, or is that an actual sighting?
-    text: |-
-      During the 1965 Gemini 7 unidentified object sighting, NASA Mission Control (Houston) asked Frank Borman whether the object he sighted was the Titan II GLV booster or an actual sighting.
-  - id: e6e2ed12-6583-46fd-a059-a28a4aba27db
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 775069c3-e9b5-48fb-b66d-e42749036182
-      name: Frank Borman
-    provenance_chain:
-      origin_kind: speaker
-      origin: Frank Borman
-    attribution_in_text: false
-    location: 00:01:41.2-00:01:44.9
-    refs:
-      - id: 775069c3-e9b5-48fb-b66d-e42749036182
-        name: Frank Borman
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-      - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-        name: 1965 Gemini 7 unidentified object sighting
-    quote: We have several, looks like debris up here, actual sighting.
-    text: |-
-      Frank Borman reported that the crew of Gemini 7 (spacecraft) had several objects in sight that looked like debris, describing it as an actual sighting.
-  - id: 66cc45ee-66eb-428a-a291-661be3c6c243
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 775069c3-e9b5-48fb-b66d-e42749036182
-      name: Frank Borman
-    provenance_chain:
-      origin_kind: speaker
-      origin: Frank Borman
-    attribution_in_text: false
-    location: 00:01:52.5-00:01:54.0
-    refs:
-      - id: 775069c3-e9b5-48fb-b66d-e42749036182
-        name: Frank Borman
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-      - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
-        name: Titan II GLV booster
-    quote: We also have the booster in sight.
-    text: |-
-      Frank Borman reported that the crew of Gemini 7 (spacecraft) also had the Titan II GLV booster in sight.
-  - id: f9b082a2-6254-4913-82e7-41f6ff088219
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 775069c3-e9b5-48fb-b66d-e42749036182
-      name: Frank Borman
-    provenance_chain:
-      origin_kind: speaker
-      origin: Frank Borman
-    attribution_in_text: false
-    location: 00:01:59.3-00:02:08.7
-    refs:
-      - id: 775069c3-e9b5-48fb-b66d-e42749036182
-        name: Frank Borman
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-    quote: |-
-      We have very, very many it looks like hundreds of little particles going by from the left out about three to four miles.
-    text: |-
-      Frank Borman observed what looked like hundreds of little particles going by from the left, at an estimated distance of approximately 5 to 6.5 kilometres from Gemini 7 (spacecraft).
-  - id: e16ed030-fa0c-4f70-8d55-0a8b11cfd048
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 775069c3-e9b5-48fb-b66d-e42749036182
-      name: Frank Borman
-    provenance_chain:
-      origin_kind: speaker
-      origin: Frank Borman
-    attribution_in_text: false
-    location: 00:02:21.6-00:02:27.8
-    refs:
-      - id: 775069c3-e9b5-48fb-b66d-e42749036182
-        name: Frank Borman
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-    quote: '[inaudible] large uh... Looks like a perhaps a vehicle that''s disintegrated.'
-    text: |-
-      Frank Borman described the object near Gemini 7 (spacecraft) as looking like a vehicle that had disintegrated.
-  - id: de00c0bc-eb1c-4d42-a301-c9b15e044cb4
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control transcript
-    attribution_in_text: false
-    location: 00:02:30.4-00:02:32.1
-    refs:
-      - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
-        name: NASA Mission Control (Houston)
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-    quote: Understand they're about three to four miles away.
-    text: |-
-      NASA Mission Control (Houston) confirmed with Gemini 7 (spacecraft) that the particles observed by the crew were approximately 5 to 6.5 kilometres away.
-  - id: 290172d2-b406-45b2-81db-16473bf64488
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control transcript
-    attribution_in_text: false
-    location: 00:02:56.2-00:03:05.7
-    refs:
-      - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
-        name: NASA Mission Control (Houston)
-      - id: 775069c3-e9b5-48fb-b66d-e42749036182
-        name: Frank Borman
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-      - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
-        name: Titan II GLV booster
-      - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-        name: 1965 Gemini 7 unidentified object sighting
-    quote: |-
-      Gemini 7 Houston. Were these particles in addition to the booster and the bogey at 10 o'clock high?
-    text: |-
-      NASA Mission Control (Houston) asked Frank Borman aboard Gemini 7 (spacecraft) whether the particles sighted were in addition to the Titan II GLV booster and the bogey (the 1965 Gemini 7 unidentified object sighting) at 10 o'clock high.
-  - id: 760c2628-e966-4582-a91d-0e2d355d8352
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: cd02423b-895b-4fe8-8929-7738d1069314
-      name: Jim Lovell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Jim Lovell
-    attribution_in_text: false
-    location: 00:03:15.2-00:03:22.4
-    refs:
-      - id: cd02423b-895b-4fe8-8929-7738d1069314
-        name: Jim Lovell
-      - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
-        name: Titan II GLV booster
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-    quote: |-
-      I have the uh booster on my side there's a brilliant body of the sun [inaudible] back uh black background with various particles around it.
-    text: |-
-      Jim Lovell reported seeing the Titan II GLV booster on his side of Gemini 7 (spacecraft), appearing as a brilliant body against the sun with a black background and various particles around it.
-  - id: ec7f1ced-82dc-4e03-a072-90f0014721ce
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: cd02423b-895b-4fe8-8929-7738d1069314
-      name: Jim Lovell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Jim Lovell
-    attribution_in_text: false
-    location: 00:03:37.2-00:03:39.2
-    refs:
-      - id: cd02423b-895b-4fe8-8929-7738d1069314
-        name: Jim Lovell
-      - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
-        name: Titan II GLV booster
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-    quote: It's ahead of us at 2 o'clock, slowly tumbling.
-    text: |-
-      Jim Lovell reported that the Titan II GLV booster was at his 2 o'clock position, ahead of Gemini 7 (spacecraft) and slowly tumbling.
-  - id: e4d87fde-bdb7-4d97-96bb-58db04d01695
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:05:24.8-00:05:37.2
-    refs:
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-      - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-        name: 1965 Gemini 7 unidentified object sighting
-    quote: |-
-      Gemini Control here again. The reference in that conversation to the third unidentified object, of course, was, or the third object, was a bogey.
-    text: |-
-      The third unidentified object referenced in the Gemini 7 (spacecraft) conversation was the bogey of the 1965 Gemini 7 unidentified object sighting.
-  - id: 54fa0987-e4e7-43fc-b5bd-079a0c9e7105
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:05:41.4-00:05:53.6
-    refs:
-      - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-        name: 1965 Gemini 7 unidentified object sighting
-    quote: |-
-      This is the unidentified object in addition to particles which appear to be headed in a polar orbit, you heard Frank Borman say, plus Jim Lovell discussing the booster.
-    text: |-
-      The particles observed during the 1965 Gemini 7 unidentified object sighting appeared to be headed in a polar orbit.
-  - id: 94e34c05-b965-4cb9-b282-b848c3474ea1
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:05:54.7-00:05:57.9
-    refs:
-      - id: 775069c3-e9b5-48fb-b66d-e42749036182
-        name: Frank Borman
-      - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
-        name: 1965 Gemini 7 unidentified object sighting
-    quote: It was Borman who reported sighting the bogey.
-    text: |-
-      It was Frank Borman who reported sighting the bogey of the 1965 Gemini 7 unidentified object sighting.
-  - id: 649a2fda-fd6f-4118-bd69-6a341aa5efc0
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA Mission Control narration
-    attribution_in_text: false
-    location: 00:06:00.4-00:06:04.9
-    date: 1965-12
-    refs:
-      - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
-        name: Gemini 7 (spacecraft)
-    quote: This is Gemini-controlled Houston at four hours, 24 minutes into the flight.
-    text: |-
-      The Gemini 7 (spacecraft) audio tape describing the sighting was released four hours and 24 minutes into the flight.
+  quote: |-
+    It contains references to sighting not only some particles, but as well as an unidentified object, plus the booster.
+  text: |-
+    The released Gemini 7 (spacecraft) audio tape contains references to a sighting of particles, an unidentified object, and the Titan II GLV booster.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b723d5ad-7872-471e-bf24-e70e6d3a2348
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  provenance_chain:
+    origin_kind: speaker
+    origin: Frank Borman
+  attribution_in_text: false
+  location: 00:01:04.0-00:01:05.2
+  refs:
+  - id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
+    name: NASA Mission Control (Houston)
+  - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
+    name: 1965 Gemini 7 unidentified object sighting
+  quote: We have a bogey at 10 o'clock high.
+  text: |-
+    Frank Borman, aboard Gemini 7 (spacecraft), reported to NASA Mission Control (Houston) that the crew had a bogey (the 1965 Gemini 7 unidentified object sighting) at 10 o'clock high.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d39a82d5-589e-491e-957f-b08f7f197c81
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control transcript
+  attribution_in_text: false
+  location: 00:01:32.2-00:01:35.8
+  refs:
+  - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
+    name: NASA Mission Control (Houston)
+  - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
+    name: Titan II GLV booster
+  - id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
+    name: 1965 Gemini 7 unidentified object sighting
+  quote: Gemini 7, is that the booster, or is that an actual sighting?
+  text: |-
+    During the 1965 Gemini 7 unidentified object sighting, NASA Mission Control (Houston) asked Frank Borman whether the object he sighted was the Titan II GLV booster or an actual sighting.
+  entailment:
+    label: entails
+    score: 0.725
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e6e2ed12-6583-46fd-a059-a28a4aba27db
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  provenance_chain:
+    origin_kind: speaker
+    origin: Frank Borman
+  attribution_in_text: false
+  location: 00:01:41.2-00:01:44.9
+  refs:
+  - id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
+    name: 1965 Gemini 7 unidentified object sighting
+  quote: We have several, looks like debris up here, actual sighting.
+  text: |-
+    Frank Borman reported that the crew of Gemini 7 (spacecraft) had several objects in sight that looked like debris, describing it as an actual sighting.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 66cc45ee-66eb-428a-a291-661be3c6c243
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  provenance_chain:
+    origin_kind: speaker
+    origin: Frank Borman
+  attribution_in_text: false
+  location: 00:01:52.5-00:01:54.0
+  refs:
+  - id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
+    name: Titan II GLV booster
+  quote: We also have the booster in sight.
+  text: |-
+    Frank Borman reported that the crew of Gemini 7 (spacecraft) also had the Titan II GLV booster in sight.
+  entailment:
+    label: entails
+    score: 0.592
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f9b082a2-6254-4913-82e7-41f6ff088219
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  provenance_chain:
+    origin_kind: speaker
+    origin: Frank Borman
+  attribution_in_text: false
+  location: 00:01:59.3-00:02:08.7
+  refs:
+  - id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  quote: |-
+    We have very, very many it looks like hundreds of little particles going by from the left out about three to four miles.
+  text: |-
+    Frank Borman observed what looked like hundreds of little particles going by from the left, at an estimated distance of approximately 5 to 6.5 kilometres from Gemini 7 (spacecraft).
+  entailment:
+    label: neutral
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: e16ed030-fa0c-4f70-8d55-0a8b11cfd048
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  provenance_chain:
+    origin_kind: speaker
+    origin: Frank Borman
+  attribution_in_text: false
+  location: 00:02:21.6-00:02:27.8
+  refs:
+  - id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  quote: '[inaudible] large uh... Looks like a perhaps a vehicle that''s disintegrated.'
+  text: |-
+    Frank Borman described the object near Gemini 7 (spacecraft) as looking like a vehicle that had disintegrated.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: de00c0bc-eb1c-4d42-a301-c9b15e044cb4
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control transcript
+  attribution_in_text: false
+  location: 00:02:30.4-00:02:32.1
+  refs:
+  - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
+    name: NASA Mission Control (Houston)
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  quote: Understand they're about three to four miles away.
+  text: |-
+    NASA Mission Control (Houston) confirmed with Gemini 7 (spacecraft) that the particles observed by the crew were approximately 5 to 6.5 kilometres away.
+  entailment:
+    label: contradicts
+    score: 0.807
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 290172d2-b406-45b2-81db-16473bf64488
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control transcript
+  attribution_in_text: false
+  location: 00:02:56.2-00:03:05.7
+  refs:
+  - id: b37612df-bada-4913-8b79-8a1c1b7ff1ab
+    name: NASA Mission Control (Houston)
+  - id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
+    name: Titan II GLV booster
+  - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
+    name: 1965 Gemini 7 unidentified object sighting
+  quote: |-
+    Gemini 7 Houston. Were these particles in addition to the booster and the bogey at 10 o'clock high?
+  text: |-
+    NASA Mission Control (Houston) asked Frank Borman aboard Gemini 7 (spacecraft) whether the particles sighted were in addition to the Titan II GLV booster and the bogey (the 1965 Gemini 7 unidentified object sighting) at 10 o'clock high.
+  entailment:
+    label: entails
+    score: 0.929
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 760c2628-e966-4582-a91d-0e2d355d8352
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: cd02423b-895b-4fe8-8929-7738d1069314
+    name: Jim Lovell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Jim Lovell
+  attribution_in_text: false
+  location: 00:03:15.2-00:03:22.4
+  refs:
+  - id: cd02423b-895b-4fe8-8929-7738d1069314
+    name: Jim Lovell
+  - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
+    name: Titan II GLV booster
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  quote: |-
+    I have the uh booster on my side there's a brilliant body of the sun [inaudible] back uh black background with various particles around it.
+  text: |-
+    Jim Lovell reported seeing the Titan II GLV booster on his side of Gemini 7 (spacecraft), appearing as a brilliant body against the sun with a black background and various particles around it.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ec7f1ced-82dc-4e03-a072-90f0014721ce
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: cd02423b-895b-4fe8-8929-7738d1069314
+    name: Jim Lovell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Jim Lovell
+  attribution_in_text: false
+  location: 00:03:37.2-00:03:39.2
+  refs:
+  - id: cd02423b-895b-4fe8-8929-7738d1069314
+    name: Jim Lovell
+  - id: eaf4ccc7-67d6-4af3-96f0-4d0f552a1731
+    name: Titan II GLV booster
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  quote: It's ahead of us at 2 o'clock, slowly tumbling.
+  text: |-
+    Jim Lovell reported that the Titan II GLV booster was at his 2 o'clock position, ahead of Gemini 7 (spacecraft) and slowly tumbling.
+  entailment:
+    label: entails
+    score: 0.851
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e4d87fde-bdb7-4d97-96bb-58db04d01695
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:05:24.8-00:05:37.2
+  refs:
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
+    name: 1965 Gemini 7 unidentified object sighting
+  quote: |-
+    Gemini Control here again. The reference in that conversation to the third unidentified object, of course, was, or the third object, was a bogey.
+  text: |-
+    The third unidentified object referenced in the Gemini 7 (spacecraft) conversation was the bogey of the 1965 Gemini 7 unidentified object sighting.
+  entailment:
+    label: neutral
+    score: 0.767
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 54fa0987-e4e7-43fc-b5bd-079a0c9e7105
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:05:41.4-00:05:53.6
+  refs:
+  - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
+    name: 1965 Gemini 7 unidentified object sighting
+  quote: |-
+    This is the unidentified object in addition to particles which appear to be headed in a polar orbit, you heard Frank Borman say, plus Jim Lovell discussing the booster.
+  text: |-
+    The particles observed during the 1965 Gemini 7 unidentified object sighting appeared to be headed in a polar orbit.
+  entailment:
+    label: neutral
+    score: 0.808
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 94e34c05-b965-4cb9-b282-b848c3474ea1
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:05:54.7-00:05:57.9
+  refs:
+  - id: 775069c3-e9b5-48fb-b66d-e42749036182
+    name: Frank Borman
+  - id: c0dadb36-9e2e-46f4-ab89-5bd1d67767a2
+    name: 1965 Gemini 7 unidentified object sighting
+  quote: It was Borman who reported sighting the bogey.
+  text: |-
+    It was Frank Borman who reported sighting the bogey of the 1965 Gemini 7 unidentified object sighting.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 649a2fda-fd6f-4118-bd69-6a341aa5efc0
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA Mission Control narration
+  attribution_in_text: false
+  location: 00:06:00.4-00:06:04.9
+  date: 1965-12
+  refs:
+  - id: 270438b4-2665-4287-a4f3-98014bbd1ca3
+    name: Gemini 7 (spacecraft)
+  quote: This is Gemini-controlled Houston at four hours, 24 minutes into the flight.
+  text: |-
+    The Gemini 7 (spacecraft) audio tape describing the sighting was released four hours and 24 minutes into the flight.
+  entailment:
+    label: entails
+    score: 0.421
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

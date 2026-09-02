@@ -3,27 +3,35 @@ schema: anomalica/digest/1
 extracted_at: '2026-08-01T01:20:07.093256+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 555771
-      output: 53195
-      real_input: 16
-      cache_read: 151099
-      cache_write: 404656
-      calls: 3
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 555771
+    output: 53195
+    real_input: 16
+    cache_read: 151099
+    cache_write: 404656
+    calls: 3
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 25.4
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: 8bab65a9cdc489bad3cdb940761eea69ac53beb961d2106c62d6e32e428311c1
   prep_version: 6
@@ -54,1470 +62,1840 @@ record:
 terminology:
   main_subject: Apollo 14 Light Flashes Debriefing (1971)
   codenames:
-    - codename: Ed
-      refers_to: Edgar Mitchell
-    - codename: Stu
-      refers_to: Stuart Roosa
-    - codename: Al
-      refers_to: Alan Shepard
+  - codename: Ed
+    refers_to: Edgar Mitchell
+  - codename: Stu
+    refers_to: Stuart Roosa
+  - codename: Al
+    refers_to: Alan Shepard
   acronyms:
-    - acronym: GET
-      expansion: Ground Elapsed Time
-    - acronym: LEV
-      expansion: Lunar Excursion Vehicle
+  - acronym: GET
+    expansion: Ground Elapsed Time
+  - acronym: LEV
+    expansion: Lunar Excursion Vehicle
 nodes:
-  - id: 5b7e4b35-7650-4d20-b522-ae68ff311844
-    type: document
-    name: Apollo 14 Light Flashes Debriefing (1971)
-  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-    type: event
-    name: Apollo 14
-    metadata:
-      date_start: '1971-01-31'
-      date_end: '1971-02-09'
+- id: 5b7e4b35-7650-4d20-b522-ae68ff311844
+  type: document
+  name: Apollo 14 Light Flashes Debriefing (1971)
+- id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+  type: event
+  name: Apollo 14
+  metadata:
+    date_start: '1971-01-31'
+    date_end: '1971-02-09'
+- id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+  type: topic
+  name: cosmic ray visual phenomena (light flashes)
+- id: aadb716d-02ca-4ca0-99a2-cd9c2c6cb96c
+  type: organisation
+  name: National Aeronautics and Space Administration (NASA)
+- id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+  type: person
+  name: Edgar Mitchell
+- id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+  type: person
+  name: Stuart Roosa
+- id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+  type: person
+  name: Alan Shepard
+domain_claims:
+- id: 4cb67b21-6faa-4d2b-85e1-0a8547832671
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:00:02.8-00:00:05.3
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
   - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-    type: topic
     name: cosmic ray visual phenomena (light flashes)
-  - id: aadb716d-02ca-4ca0-99a2-cd9c2c6cb96c
-    type: organisation
-    name: National Aeronautics and Space Administration (NASA)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: Most of my streaks appeared to be on the periphery
+  text: |-
+    Stuart Roosa observed that most of the light-flash streaks he saw appeared on the periphery of his vision.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 272b238b-56bb-4ac1-bbf2-49520719dcc5
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:00:08.4-00:00:18.7
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    for the first several days I got the impression that this direction was predominant. Later on it appeared that I don't think I could get that good a pattern
+  text: |-
+    Stuart Roosa initially had the impression during the first few days that the light flashes had a predominant direction, but on further observation he concluded he could not identify a consistent directional pattern.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d8cbe084-f2a0-4939-9404-a2aa8d27afc1
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:00:39.1-00:00:56.0
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    in my case i couldn't really correlate a pattern out of it yeah i would think that the time period in which we tried to report them street by street flash by flash was representative and it was my feeling that it was generally random during that time period
+  text: |-
+    Alan Shepard felt that, during the period when the crew were doing a quantitative report of the light flashes, the flashes he observed appeared generally random in direction, without a consistent correlated pattern.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a06eb4bd-c73e-47e7-b2b4-b167bdd7c9d1
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:01:41.7-00:01:58.6
+  refs:
   - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-    type: person
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    what I saw, what I reported as a streak was simply that. Now, maybe the way we determined the direction subconsciously was that it was a ball of light moving in a direction leaving a tail. But I can't say that for sure.
+  text: |-
+    Edgar Mitchell reported a light-flash phenomenon he observed as a streak, and speculated it might subconsciously have been a ball of light moving in a direction and leaving a tail, though he was not certain of this.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 749f9efb-6fac-4b46-b626-0e05da9e82a6
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:02:31.5-00:02:35.0
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: it started out and it definitely progressed across the field of view.
+  text: |-
+    Edgar Mitchell observed a light-flash streak progressing across his field of view, moving from one direction to another.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 24951f03-3a85-41df-b32e-cd48a08ace2c
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:02:46.1-00:02:48.0
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: I never did see two simultaneously either.
+  text: Alan Shepard never observed two light-flash streaks occurring simultaneously.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2c625c17-2ad9-48f0-bbc7-86e6c1aa1cea
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:02:48.6-00:02:49.8
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: Neither did I.
+  text: |-
+    Edgar Mitchell also never observed two light-flash streaks occurring simultaneously.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5f46e887-1e74-4ba2-a3a6-8d1ca158659f
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:03:21.7-00:03:29.6
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    we discussed the various shapes prior to flight, and I concentrated pretty hard on trying to see the shapes
+  text: |-
+    Before the Apollo 14 mission, the crew discussed the various possible shapes that the light-flash phenomenon might take.
+  entailment:
+    label: entails
+    score: 0.419
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3b79a423-471a-4408-9bbf-50ecd88d2cd9
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:03:30.5-00:03:42.0
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    as I reported, no, it was either a streak, and just a rather simple streak, or it was a flash, and rather a simple flash, nothing too exotic about it
+  text: |-
+    Stuart Roosa reported the light-flash phenomena he observed as either a simple streak or a simple flash, with nothing too exotic about their appearance.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: c9d8a4aa-8ee8-4c79-90fe-4eeeabb259af
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:03:46.7-00:04:00.0
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    One would be maybe just a pinpoint of light for an instant rather than get the idea of a flash. There would just be a pinpoint for a second, and it would be gone. But that was more rare than the other two.
+  text: |-
+    On rarer occasions, Stuart Roosa observed a light flash as a pinpoint of light lasting for only an instant before disappearing.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 74e81a3b-19d8-4113-b0c2-6ef55d5de4ef
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:04:46.0-00:04:55.1
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    that to me would be the pinpoint that I'm describing. The eruption or the nova, as we call them, would be more of an explosion.
+  text: |-
+    Stuart Roosa distinguished light-flash pinpoints from what the crew termed a "nova," describing the nova as more of an explosion-like eruption.
+  entailment:
+    label: neutral
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 39322fed-adf7-43ce-ba30-090e0f4a989b
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:05:01.6-00:05:10.7
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    you've got a very, very bright center and a diffused edge... that's getting closer to what I would refer to as a NOVA or a flash.
+  text: |-
+    Stuart Roosa described a nova/flash light phenomenon as having a very bright centre with a diffused edge.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 4255c275-b9b5-4893-9dc6-c11260a8be95
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:05:33.6-00:05:44.0
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    what I called a NOVA was more of a blob that seemed to start with that and kind of expand. More diffused. Yeah, more diffused as the time went on.
+  text: |-
+    Edgar Mitchell described what he called a "nova" light-flash phenomenon as a blob that started and then expanded, becoming more diffused as time went on.
+  entailment:
+    label: contradicts
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9812db94-98d5-4e2b-95f1-a2a20da56b9c
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:06:01.4-00:06:04.5
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: your time frame that you're flashing, that's too long. It was faster than that.
+  text: |-
+    Edgar Mitchell observed that the light flashes he saw occurred faster than a comparison light being flashed by the interviewer during the demonstration.
+  entailment:
+    label: neutral
+    score: 0.863
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 95d2b7f0-1d85-4253-a70d-e4f7ca96664b
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: true
+  location: 00:06:30.0-00:06:40.2
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
     name: Edgar Mitchell
   - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-    type: person
     name: Stuart Roosa
-  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-    type: person
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    Okay, I think what Stu was calling a pinpoint was about what I'd call a star or a flash, and a Nova, to me, was a much bigger, brighter thing.
+  text: |-
+    Edgar Mitchell considered what Stuart Roosa called a "pinpoint" to be equivalent to what he called a "star" or "flash," and considered a "nova" to be a much bigger, brighter phenomenon by comparison.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 066158f7-6418-415c-a854-9ade701ea5fc
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: Apollo 14 crew member
+  attribution_in_text: false
+  location: 00:06:49.6-00:06:50.7
+  date: 1971-02
+  refs:
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: Absolutely dark. Absolutely dark.
+  text: |-
+    During the quantitative light-flash observation period aboard Apollo 14, the spacecraft cabin lighting was completely dark.
+  entailment:
+    label: neutral
+    score: 0.917
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 59cc4e9f-0392-4d86-ac99-8fd37cd090df
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
     name: Alan Shepard
-domain_claims:
-  - id: 4cb67b21-6faa-4d2b-85e1-0a8547832671
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:00:02.8-00:00:05.3
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: Most of my streaks appeared to be on the periphery
-    text: |-
-      Stuart Roosa observed that most of the light-flash streaks he saw appeared on the periphery of his vision.
-  - id: 272b238b-56bb-4ac1-bbf2-49520719dcc5
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:00:08.4-00:00:18.7
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      for the first several days I got the impression that this direction was predominant. Later on it appeared that I don't think I could get that good a pattern
-    text: |-
-      Stuart Roosa initially had the impression during the first few days that the light flashes had a predominant direction, but on further observation he concluded he could not identify a consistent directional pattern.
-  - id: d8cbe084-f2a0-4939-9404-a2aa8d27afc1
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:00:39.1-00:00:56.0
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      in my case i couldn't really correlate a pattern out of it yeah i would think that the time period in which we tried to report them street by street flash by flash was representative and it was my feeling that it was generally random during that time period
-    text: |-
-      Alan Shepard felt that, during the period when the crew were doing a quantitative report of the light flashes, the flashes he observed appeared generally random in direction, without a consistent correlated pattern.
-  - id: a06eb4bd-c73e-47e7-b2b4-b167bdd7c9d1
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:01:41.7-00:01:58.6
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      what I saw, what I reported as a streak was simply that. Now, maybe the way we determined the direction subconsciously was that it was a ball of light moving in a direction leaving a tail. But I can't say that for sure.
-    text: |-
-      Edgar Mitchell reported a light-flash phenomenon he observed as a streak, and speculated it might subconsciously have been a ball of light moving in a direction and leaving a tail, though he was not certain of this.
-  - id: 749f9efb-6fac-4b46-b626-0e05da9e82a6
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:02:31.5-00:02:35.0
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: it started out and it definitely progressed across the field of view.
-    text: |-
-      Edgar Mitchell observed a light-flash streak progressing across his field of view, moving from one direction to another.
-  - id: 24951f03-3a85-41df-b32e-cd48a08ace2c
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:02:46.1-00:02:48.0
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: I never did see two simultaneously either.
-    text: Alan Shepard never observed two light-flash streaks occurring simultaneously.
-  - id: 2c625c17-2ad9-48f0-bbc7-86e6c1aa1cea
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:02:48.6-00:02:49.8
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: Neither did I.
-    text: |-
-      Edgar Mitchell also never observed two light-flash streaks occurring simultaneously.
-  - id: 5f46e887-1e74-4ba2-a3a6-8d1ca158659f
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:03:21.7-00:03:29.6
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      we discussed the various shapes prior to flight, and I concentrated pretty hard on trying to see the shapes
-    text: |-
-      Before the Apollo 14 mission, the crew discussed the various possible shapes that the light-flash phenomenon might take.
-  - id: 3b79a423-471a-4408-9bbf-50ecd88d2cd9
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:03:30.5-00:03:42.0
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      as I reported, no, it was either a streak, and just a rather simple streak, or it was a flash, and rather a simple flash, nothing too exotic about it
-    text: |-
-      Stuart Roosa reported the light-flash phenomena he observed as either a simple streak or a simple flash, with nothing too exotic about their appearance.
-  - id: c9d8a4aa-8ee8-4c79-90fe-4eeeabb259af
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:03:46.7-00:04:00.0
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      One would be maybe just a pinpoint of light for an instant rather than get the idea of a flash. There would just be a pinpoint for a second, and it would be gone. But that was more rare than the other two.
-    text: |-
-      On rarer occasions, Stuart Roosa observed a light flash as a pinpoint of light lasting for only an instant before disappearing.
-  - id: 74e81a3b-19d8-4113-b0c2-6ef55d5de4ef
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:04:46.0-00:04:55.1
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      that to me would be the pinpoint that I'm describing. The eruption or the nova, as we call them, would be more of an explosion.
-    text: |-
-      Stuart Roosa distinguished light-flash pinpoints from what the crew termed a "nova," describing the nova as more of an explosion-like eruption.
-  - id: 39322fed-adf7-43ce-ba30-090e0f4a989b
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:05:01.6-00:05:10.7
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      you've got a very, very bright center and a diffused edge... that's getting closer to what I would refer to as a NOVA or a flash.
-    text: |-
-      Stuart Roosa described a nova/flash light phenomenon as having a very bright centre with a diffused edge.
-  - id: 4255c275-b9b5-4893-9dc6-c11260a8be95
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:05:33.6-00:05:44.0
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      what I called a NOVA was more of a blob that seemed to start with that and kind of expand. More diffused. Yeah, more diffused as the time went on.
-    text: |-
-      Edgar Mitchell described what he called a "nova" light-flash phenomenon as a blob that started and then expanded, becoming more diffused as time went on.
-  - id: 9812db94-98d5-4e2b-95f1-a2a20da56b9c
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:06:01.4-00:06:04.5
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: your time frame that you're flashing, that's too long. It was faster than that.
-    text: |-
-      Edgar Mitchell observed that the light flashes he saw occurred faster than a comparison light being flashed by the interviewer during the demonstration.
-  - id: 95d2b7f0-1d85-4253-a70d-e4f7ca96664b
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: true
-    location: 00:06:30.0-00:06:40.2
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      Okay, I think what Stu was calling a pinpoint was about what I'd call a star or a flash, and a Nova, to me, was a much bigger, brighter thing.
-    text: |-
-      Edgar Mitchell considered what Stuart Roosa called a "pinpoint" to be equivalent to what he called a "star" or "flash," and considered a "nova" to be a much bigger, brighter phenomenon by comparison.
-  - id: 066158f7-6418-415c-a854-9ade701ea5fc
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: Apollo 14 crew member
-    attribution_in_text: false
-    location: 00:06:49.6-00:06:50.7
-    date: 1971-02
-    refs:
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: Absolutely dark. Absolutely dark.
-    text: |-
-      During the quantitative light-flash observation period aboard Apollo 14, the spacecraft cabin lighting was completely dark.
-  - id: 59cc4e9f-0392-4d86-ac99-8fd37cd090df
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:07:09.2-00:07:14.5
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      Even though we had the window shades on, when we'd roll around so the sun would hit some of the windows, there'd be some light seepage around.
-    text: |-
-      Alan Shepard noted that despite the window shades being in place, light could seep in around their edges when the spacecraft rolled so that the sun struck some of the windows.
-  - id: 618d7c9f-a58a-49be-a580-8b1dc64a999c
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: true
-    location: 00:07:23.1-00:07:25.5
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: we closed our eyes when Ed flipped his flashlight on.
-    text: |-
-      The Apollo 14 crew closed their eyes when Edgar Mitchell turned on his flashlight during the light-flash observation sessions.
-  - id: 5cd10da0-769a-4b35-93e1-20eebb18f86a
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:07:17.4-00:07:23.8
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      During that time, at least I made the technique to keep my eyes closed, open otherwise... generally speaking, eyes were open.
-    text: |-
-      Alan Shepard generally kept his eyes open during the light-flash observation period, except when avoiding sunlight seepage.
-  - id: 75036429-d582-4745-a316-b73e9c7d791a
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:07:28.9-00:07:32.0
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: mine was almost closed all the time.
-    text: |-
-      Stuart Roosa kept his eyes almost completely closed throughout the light-flash observation period.
-  - id: 49690530-48c1-4970-bfb0-d2b90525e4f2
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:07:32.3-00:07:41.5
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      I was floating down the corner of the LED, but I kept my eyes closed because I didn't know when we might roll into the sun and I didn't want to pick up any light at all.
-    text: |-
-      Stuart Roosa was floating near the corner of the Lunar Excursion Vehicle (LEV) and kept his eyes closed to avoid picking up light if the spacecraft rolled toward the sun.
-  - id: 17fac835-1c4f-4ccd-9b8f-afff7d8ada10
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:07:50.4-00:07:55.0
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-    quote: I just kind of moved it across for, oh, five seconds or so. Five or six seconds.
-    text: |-
-      Edgar Mitchell shone a flashlight across his eyes for approximately five to six seconds during the debriefing demonstration.
-  - id: 699a2772-0f9c-4f1a-8f34-f7a27dafd611
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:07:55.4-00:07:56.8
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-    quote: It hurt. It was very bright.
-    text: |-
-      Edgar Mitchell found the flashlight painfully bright when shone in his eyes during the demonstration.
-  - id: eccb7920-3f7d-46cf-aa33-dc7544c82420
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:08:16.3-00:08:21.1
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: I was oriented this way with my head looking face up down in this corner.
-    text: |-
-      Stuart Roosa was oriented with his head looking face-up, positioned in a corner of the spacecraft, during the light-flash observation sessions.
-  - id: b81236c9-67ae-4d9a-a213-d62ad5571967
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:08:47.7-00:08:50.4
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: Yeah, I felt I was getting more on the left than the right for some reason.
-    text: |-
-      Edgar Mitchell had the impression that he was experiencing more light flashes in his left eye than in his right eye.
-  - id: 5f81748e-787b-4077-9b40-66143757e3cc
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the debriefing session interviewer, summarising tally of crew reports
-    attribution_in_text: true
-    location: 00:09:02.1-00:09:04.6
-    date: 1971-02
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: You had 12 right and 6 left
-    text: |-
-      Edgar Mitchell reported 12 light flashes in his right eye and 6 in his left eye during Apollo 14.
-  - id: c2506235-d73b-4fb5-bce9-8f701e942c67
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the debriefing session interviewer, summarising tally of crew reports
-    attribution_in_text: true
-    location: 00:09:05.9-00:09:07.7
-    date: 1971-02
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: Al, you had 10 right and 4 left
-    text: |-
-      Alan Shepard reported 10 light flashes in his right eye and 4 in his left eye during Apollo 14.
-  - id: af4077e2-5867-43d4-9ce2-e11ad495f9fc
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the debriefing session interviewer, summarising tally of crew reports
-    attribution_in_text: true
-    location: 00:09:09.7-00:09:12.2
-    date: 1971-02
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: of the ones you reported, Stu, you had 6 right and 2 left.
-    text: |-
-      Stuart Roosa reported 6 light flashes in his right eye and 2 in his left eye during Apollo 14.
-  - id: d0c207be-f098-4fb8-b965-0218cbc34710
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the debriefing session interviewer, summarising tally of crew reports
-    attribution_in_text: false
-    location: 00:08:52.8-00:08:59.5
-    date: 1971-02
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      you're all heavily biased towards the right on your reports... Very heavily, like three or four to one.
-    text: |-
-      Overall, the Apollo 14 crew's light-flash reports were heavily biased toward the right eye, by a ratio of roughly three or four to one.
-  - id: c5507779-7a27-4008-9a5c-fd96f26c8595
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the debriefing session interviewer, reviewing mission audio tapes
-      relay:
-        - mission audio tapes
-    attribution_in_text: false
-    location: 00:09:36.9-00:09:46.8
-    date: 1971-02
-    refs:
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: aadb716d-02ca-4ca0-99a2-cd9c2c6cb96c
-        name: National Aeronautics and Space Administration (NASA)
-    quote: |-
-      There were three, from listening to the tapes, three events, and it occurred in cases where different pairs were involved, which were coincidences
-    text: |-
-      During Apollo 14, there were three recorded instances, found by the debriefing team reviewing the mission tapes, where different pairs of crew members reported light flashes simultaneously.
-  - id: 0380c85a-c8c2-47e8-81ce-5e0444bcff4c
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the debriefing session interviewer, reviewing mission audio tapes
-      relay:
-        - mission audio tapes
-    attribution_in_text: true
-    location: 00:09:52.1-00:09:57.4
-    date: 1971-02
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      Ed, you said flash, and then Al, you said simultaneous with him, I had a flash in the whole right eye.
-    text: |-
-      In one instance during Apollo 14, Edgar Mitchell reported a light flash at the same time that Alan Shepard reported a flash in his right eye.
-  - id: 85497976-3544-47be-a989-e4a9f2fff837
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:10:09.7-00:10:12.2
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: certainly within a fraction of a second, I think it was simultaneous.
-    text: |-
-      Alan Shepard considered the simultaneous light-flash reports with Edgar Mitchell to have occurred within a fraction of a second of each other.
-  - id: 825deef7-396c-4b58-b435-f116d8c52a18
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:10:13.8-00:10:18.4
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      a couple of times it happened to me, it was his mark, or whoever's mark he was, was good enough.
-    text: |-
-      Edgar Mitchell experienced simultaneous light-flash coincidences with another crew member on a couple of occasions.
-  - id: 55e80ac2-717e-4577-a567-9fe4dd94c402
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:10:57.0-00:10:58.8
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: Only on what I call the nova or the supernova.
-    text: |-
-      Edgar Mitchell only noticed a halo or afterglow effect following light flashes that he classified as a "nova" or "supernova."
-  - id: a88e9f30-5dca-4dd5-956e-281af4ce2f56
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:11:04.7-00:11:07.6
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: I haven't really noticed a halo effect myself.
-    text: |-
-      Alan Shepard did not notice a halo effect following the light flashes he observed.
-  - id: a7deb50d-f3d7-49d2-a7b8-b17a519c50a7
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:11:19.6-00:11:21.6
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: Did I call any of those? I sure don't remember it.
-    text: |-
-      Stuart Roosa did not recall reporting any halo or afterglow effect associated with the light flashes.
-  - id: b6e5e3a4-2d0c-4e30-b715-ea9ed5eca5e8
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:11:44.8-00:11:57.8
-    date: 1971-02
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      I really don't remember seeing any flashes, but I didn't look for any either. So I guess the question would be I consciously did not see any... I wouldn't take that as a data point.
-    text: |-
-      Stuart Roosa did not recall seeing any light flashes during lunar orbit, noting he was very tired at the time and had not specifically looked for them, so he did not consider this a reliable data point.
-  - id: b7c4778d-0c8e-4a61-936c-09732efb1465
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the debriefing session interviewer
-    attribution_in_text: false
-    location: 00:12:02.5-00:12:10.3
-    date: 1971-02
-    refs:
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: aadb716d-02ca-4ca0-99a2-cd9c2c6cb96c
-        name: National Aeronautics and Space Administration (NASA)
-    quote: |-
-      after our formal session, it was in about 191 GET, you then had a sleep period later on.
-    text: |-
-      The formal Apollo 14 light-flash observation session concluded at approximately 191 hours Ground Elapsed Time (GET), after which the crew had a sleep period.
-  - id: 057ab682-3651-4293-9bf0-1b0fc2d95ca7
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:12:20.3-00:12:28.1
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      I don't really recall that there was any night except on the lunar surface. that I didn't at some time or another say some.
-    text: |-
-      Edgar Mitchell believed there was hardly any night during the Apollo 14 mission when he did not see at least some light flashes, with the possible exception of time spent on the lunar surface.
-  - id: 53f7dfff-a263-4ae1-900a-ffe0413c9542
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:12:31.5-00:12:33.7
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: I just, no, I don't remember about the lunar surface.
-    text: |-
-      Edgar Mitchell did not recall whether he saw light flashes while on the lunar surface.
-  - id: e3cc2d13-dfd5-40b2-b4a0-03849eb4eb4a
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:12:34.8-00:12:36.3
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: There was precious little sleep at night anyhow.
-    text: There was very little sleep at night during the Apollo 14 mission.
-  - id: 277a4d0a-a3ca-439f-a3be-6c9a6b67d347
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: Apollo 14 crew member
-    attribution_in_text: false
-    location: 00:12:47.0-00:12:54.8
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      Did you get the impression that light flashes could have been within the cabin or definitely within your eye? Definitely within the eye.
-    text: |-
-      The Apollo 14 crew had the impression that the light flashes occurred definitely within the eye rather than within the spacecraft cabin.
-  - id: 1c29e067-66ed-48f4-a1b7-ddff4e186722
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:13:42.9-00:13:54.6
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      the things, I would say, were three or four inches away from my plane, whatever that means, and were a couple inches long.
-    text: |-
-      Edgar Mitchell described the light-flash streaks he observed as appearing approximately 7.5 to 10 centimetres from his eye and about 5 centimetres long.
-  - id: 4a2ee552-f6e4-4039-9698-552921576424
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:14:33.8-00:14:41.3
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      take a radius of that, that I'd put a streak of about a half the radius would be the average streak.
-    text: |-
-      Stuart Roosa estimated the average light-flash streak length as roughly half the radius of the field of view of his right eye.
-  - id: 80610988-a8d8-4c28-93ce-3f4f0bab5b9b
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:14:42.6-00:14:43.2
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: Half or a little longer.
-    text: |-
-      Edgar Mitchell estimated the light-flash streak length as about half the radius of his field of view, or slightly longer.
-  - id: 26d5ce52-2d0e-46b0-8386-c59e8b988fb2
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:15:28.4-00:15:36.2
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      I think I had them from several directions and I reported them as moving from one direction to the other at that time. There were several of them though.
-    text: |-
-      Edgar Mitchell observed light flashes coming from several different directions, each moving from one direction to another.
-  - id: 33a23a49-fc99-4f9f-a271-8b5885f245dc
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:15:43.1-00:15:45.2
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: I didn't notice any preferred orientation.
-    text: |-
-      Alan Shepard did not notice a preferred orientation for the direction of the light flashes he observed.
-  - id: 48648d32-1411-4577-b990-9c896be84939
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:15:55.2-00:16:02.7
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-    quote: |-
-      if you're talking about a horizontal peripheral field as being somewhere in the vicinity of 50 to 160 degrees
-    text: |-
-      Alan Shepard estimated his horizontal peripheral field of view as roughly 50 to 160 degrees.
-  - id: e9b4550e-e04f-4ab6-8794-a6e7db6776f1
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:16:04.5-00:16:09.5
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      in some cases the light flashes would go across as much as 50 or 60 degrees of that.
-    text: |-
-      Alan Shepard observed that some light flashes spanned as much as 50 to 60 degrees of his peripheral field of view.
-  - id: defb876b-ea98-42f2-b47c-70829469e98a
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:16:16.2-00:16:25.0
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      In some cases I had the feeling it was two dots one immediately following the other, giving the impression of right to left, or top to bottom, or bottom to top, or left to right.
-    text: |-
-      In some cases, Alan Shepard observed a light flash appearing broken in the centre, giving the impression of two dots, one immediately following the other.
-  - id: 5da3ff3f-c4fb-4ac3-a9c1-1f6da804bee4
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:17:11.1-00:17:14.4
-    date: 1971-02
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      I think it occurred, I reported it a couple of times... it was just a diffuse lighting.
-    text: |-
-      Edgar Mitchell reported observing a diffuse cloud-like lighting phenomenon on a couple of occasions during Apollo 14.
-  - id: 1c7ec3f3-40dc-4b81-a2ef-bfa009df62d7
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:17:14.4-00:17:19.5
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: it appeared, as I recall, to be down low on one eye or the other
-    text: |-
-      Edgar Mitchell observed the diffuse cloud-like lighting phenomenon appearing low in his field of view, in one eye or the other.
-  - id: ef4eaea9-8fed-4f84-9c85-ee534dbddd3c
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:17:25.4-00:17:26.1
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: White, silver.
-    text: |-
-      Edgar Mitchell described the colour of the cloud-like lighting phenomenon as white or silver.
-  - id: 5d60d59b-70a6-4838-86db-569e4185a2c8
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:17:33.5-00:17:38.6
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      if you do that, you can see a streak behind the cloud. This, there was no streak. It was just a diffuse lighting.
-    text: |-
-      Unlike terrestrial lightning behind a cloud, which shows a visible streak, the cloud-like lighting phenomenon Edgar Mitchell observed showed no streak, only diffuse lighting.
-  - id: 53348c60-3b67-465f-97ca-89663eb6fe6b
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: false
-    location: 00:18:26.3-00:18:30.1
-    refs:
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: No, not necessarily. It was just a blob of light.
-    text: |-
-      Edgar Mitchell did not observe any relief or structure to the cloud-like light phenomenon; it appeared to him as just a blob of light.
-  - id: 4598dc0e-7faa-4324-8300-8dc227efe010
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-      name: Stuart Roosa
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stuart Roosa
-    attribution_in_text: false
-    location: 00:19:15.3-00:19:16.2
-    refs:
-      - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
-        name: Stuart Roosa
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: No. Never looked for it.
-    text: |-
-      Stuart Roosa did not notice any other physical sensation, such as tingling or twitching, associated with the light flashes, though he had not specifically looked for such sensations.
-  - id: e1e79838-8da6-4682-8cb4-abf54720c9c6
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the debriefing session interviewer
-    attribution_in_text: false
-    location: 00:20:00.1-00:20:08.0
-    date: 1971-02
-    refs:
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: aadb716d-02ca-4ca0-99a2-cd9c2c6cb96c
-        name: National Aeronautics and Space Administration (NASA)
-    quote: |-
-      I think I said to Ed yesterday that you really did provide an enormously improved amount of data on this phenomenon that we've had in any previous lives.
-    text: |-
-      The debriefing team considered that the Apollo 14 crew provided an enormously improved amount of data on the light-flash phenomenon compared to any previous mission.
-  - id: 83f33e96-7607-4576-8ede-90821747d7ee
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-      name: Alan Shepard
-    provenance_chain:
-      origin_kind: speaker
-      origin: Alan Shepard
-    attribution_in_text: false
-    location: 00:20:11.8-00:20:25.3
-    refs:
-      - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
-        name: Alan Shepard
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      I think that's the way you really have to go is to take a definite period, set it aside and do it because otherwise it's so random and so many other things going through your mind that It's the only way you can't even quantitate it.
-    text: |-
-      Alan Shepard considered that setting aside a definite period of time for observation was necessary, since without doing so the presence of other distracting thoughts made the light-flash phenomenon too random to quantify.
-  - id: dbd1cf67-4485-4e1f-8fab-77c342aaa9cf
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an unidentified Apollo 14 crew member speaker in the debriefing
-    attribution_in_text: false
-    location: 00:24:14.4-00:24:30.7
-    date: '1971-02-01'
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      I know during the formal hour, 40 minutes, whatever it was, that Ed was shining the light. But I don't know whether you picked it up on air to ground or not, but I had done that prior to that during one of the sleep periods. And there's just, you do not have to be dark adapted to see these.
-    text: |-
-      Speaker 1 reported that during one of the Apollo 14 sleep periods, prior to the formal light-flash observation period, he saw light flashes without being dark-adapted.
-  - id: 873ad309-586a-49ea-9740-74637c4244eb
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an unidentified debriefing participant
-    attribution_in_text: false
-    location: 00:24:33.9-00:24:40.4
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-    quote: |-
-      That's a very significant data point because it almost certainly proves that it's not a real light in your eye, generated in your eye. It's actually an interaction.
-    text: |-
-      A crew member considered it a significant data point that light flashes can be seen without being dark-adapted, taking it as strong evidence that the phenomenon is not a real light generated in the eye but instead results from an interaction.
-  - id: 7587f413-f142-49e4-95be-55813fd1e3ba
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: true
-    location: 00:22:54.7-00:23:07.7
-    date: '1971-02-01'
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      I was going to make the comment that with respect to the flashes, putting the flashlight in my eyes did not seem to destroy my dark adaptation. Now, what that means, I don't know.
-    text: |-
-      Edgar Mitchell reported that shining a flashlight across his closed eyes during the Apollo 14 light-flash experiment did not appear to destroy his dark adaptation.
-  - id: 8f3ce06f-d5d2-401a-84c7-f8309f1db037
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: true
-    location: 00:25:48.8-00:25:54.3
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-    quote: |-
-      When I did the flashlight across my eyes, they were still just as bright 30 seconds later as they had before I used the flashlight.
-    text: |-
-      Edgar Mitchell reported that he continued to see light flashes just as bright about 30 seconds after wiping a flashlight across his eyes as they had been before he used the flashlight.
-  - id: 10e07359-c0d9-452c-8673-88ba5bbdd8d2
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: true
-    location: 00:24:46.2-00:24:51.1
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-    quote: |-
-      And yet when I wiped the light across my eyes within 30 or 40 seconds, there they were again.
-    text: |-
-      Edgar Mitchell reported that he began seeing light flashes again within approximately 30 to 40 seconds after wiping a flashlight across his eyes.
-  - id: 57fe4305-44f3-49b8-91d3-dcef95f5549e
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the Apollo 14 light-flash experiment record
-    attribution_in_text: false
-    location: 00:24:51.3-00:24:55.8
-    date: '1971-02-01'
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: 17 minutes. Pardon? 17 minutes. No response from me.
-    text: |-
-      During the formal Apollo 14 light-flash observation period, approximately 17 minutes elapsed before a flash was first recorded.
-  - id: 1959eeed-a772-4dbb-8e08-1e6a5f9748d5
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: true
-    location: 00:26:00.3-00:26:13.6
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-    quote: |-
-      Either I didn't wipe the dark adaptation out, or there is something related to dark adaptation that influences the phenomenon. I don't understand it. It doesn't make sense.
-    text: |-
-      Edgar Mitchell found it puzzling that it took a long time to see the first flash at the start of the formal Apollo 14 light-flash experiment, yet after wiping a flashlight across his eyes flashes reappeared within 30 to 40 seconds, and did not know whether this meant his dark adaptation had not actually been wiped out or whether dark adaptation influences the phenomenon in some other way.
-  - id: c5c47b8f-fb88-42b5-9ff4-f3fa774c3c3a
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an unidentified Apollo 14 crew member speaker in the debriefing
-    attribution_in_text: false
-    location: 00:26:14.9-00:26:31.9
-    date: '1971-02-01'
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      That doggone time period that we did it and the few flashes we saw was very surprising to me... Boy, it seemed like, you know, you'd wake up during a sleep period and... They were all over the place... I was amazed when it took 17 minutes to see a flash.
-    text: |-
-      Speaker 1 reported that during a sleep-period wake-up on Apollo 14, he saw an abundance of light flashes that seemed to be all over the place, and was surprised that during the formal timed observation period only a few flashes were seen.
-  - id: 064d6970-7104-40d2-9cce-240b8ffe0c77
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an unidentified Apollo 14 crew member speaker in the debriefing
-    attribution_in_text: false
-    location: 00:28:37.5-00:28:49.0
-    date: '1971-02-01'
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      the flashes you see when you wake up in the middle of the night as a whole appear to be brighter than the flashes as a whole during that experiment that we did during the day.
-    text: |-
-      Speaker 1 reported that the light flashes seen upon waking during sleep periods on Apollo 14 appeared brighter overall than the flashes observed during the formal daytime observation experiment.
-  - id: 038b0b5c-1ad6-4029-8d61-497109d838d9
-    type: testimony
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an unidentified Apollo 14 crew member speaker in the debriefing
-    attribution_in_text: false
-    location: 00:28:52.5-00:29:05.4
-    date: '1971-02-01'
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      I was a little reluctant to call anything except a very positive flash during that during that time frame, uh, you know, I want to make really sure that that was indeed a mark at the time that I called it.
-    text: |-
-      Speaker 1 reported being reluctant during the formal Apollo 14 light-flash observation period to report anything other than a very definite flash.
-  - id: fc934658-370a-447c-8487-dece2cd38949
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: true
-    location: 00:29:24.4-00:29:35.7
-    date: '1971-02-01'
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-    quote: |-
-      Ed saw one blue flash. Did anyone else see color? / No... No, that wasn't blue. It was a silver, a blue-white sort of thing. Like a blue diamond, you said. Like a blue diamond.
-    text: |-
-      Edgar Mitchell saw one flash during the Apollo 14 light-flash observations that was silver, blue-white in colour, described as like a blue diamond, rather than plain blue.
-  - id: 27ae009e-3f68-4a94-a5ec-b23041ed590d
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: true
-    location: 00:29:36.9-00:29:38.8
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-    quote: Was that the brightest that you saw? / I don't recall.
-    text: |-
-      Edgar Mitchell could not recall whether the blue-white flash he saw was the brightest flash he observed during the Apollo 14 light-flash observations.
-  - id: cbfafc8c-2a92-4b58-adb8-f2c2fee7a03a
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the Apollo 14 debriefing exchange
-    attribution_in_text: false
-    location: 00:29:24.4-00:29:27.6
-    date: '1971-02-01'
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: Ed saw one blue flash. Did anyone else see color? / No.
-    text: |-
-      No crew member other than Edgar Mitchell reported seeing colour in the light flashes observed during Apollo 14.
-  - id: f1da9cc0-a93e-4cf8-9fb1-4146e502a062
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an unidentified researcher participant in the debriefing
-    attribution_in_text: false
-    location: 00:25:07.9-00:25:25.9
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      there definitely is a threshold effect of some sort because you saw twice as many during that period as the other two did... my guess was when you didn't see them and then you started to see them regularly, was that it was just that they seemed fainter than you expected.
-    text: |-
-      A researcher noted that during the formal quantitative Apollo 14 light-flash observation period, one crew member saw twice as many flashes as the other two crew members, and suggested this may reflect a threshold effect in which flashes seemed fainter than expected, requiring the observer to take time to attune to fainter flashes.
-  - id: 668ad73f-732b-46b1-b355-3121c4d7fa5f
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-      name: Edgar Mitchell
-    provenance_chain:
-      origin_kind: speaker
-      origin: Edgar Mitchell
-    attribution_in_text: true
-    location: 00:25:34.3-00:25:48.3
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
-        name: Edgar Mitchell
-    quote: |-
-      except they did indeed appear fainter in the beginning. And it wasn't a matter of looking for fainter objects. They were brighter after a while. And they didn't diminish in brightness.
-    text: |-
-      Edgar Mitchell reported that the light flashes he saw during the formal Apollo 14 experiment appeared fainter at the beginning, became brighter after a while, and did not diminish in brightness thereafter.
-  - id: e2758198-ce01-4c4b-885f-30c846b43804
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an unidentified researcher participant in the debriefing
-    attribution_in_text: false
-    location: 00:27:23.7-00:27:31.3
-    refs:
-      - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
-        name: cosmic ray visual phenomena (light flashes)
-      - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
-        name: Apollo 14
-    quote: |-
-      your subjective impression is not necessarily right. Like you felt that you saw more of them in your left side than you're right and that wasn't true. It was wrong.
-    text: |-
-      A researcher observed that a crew member's subjective impression of seeing more light flashes on his left side than his right side during the formal Apollo 14 observation was not borne out by the recorded data.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:07:09.2-00:07:14.5
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    Even though we had the window shades on, when we'd roll around so the sun would hit some of the windows, there'd be some light seepage around.
+  text: |-
+    Alan Shepard noted that despite the window shades being in place, light could seep in around their edges when the spacecraft rolled so that the sun struck some of the windows.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 618d7c9f-a58a-49be-a580-8b1dc64a999c
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: true
+  location: 00:07:23.1-00:07:25.5
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: we closed our eyes when Ed flipped his flashlight on.
+  text: |-
+    The Apollo 14 crew closed their eyes when Edgar Mitchell turned on his flashlight during the light-flash observation sessions.
+  entailment:
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5cd10da0-769a-4b35-93e1-20eebb18f86a
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:07:17.4-00:07:23.8
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    During that time, at least I made the technique to keep my eyes closed, open otherwise... generally speaking, eyes were open.
+  text: |-
+    Alan Shepard generally kept his eyes open during the light-flash observation period, except when avoiding sunlight seepage.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 75036429-d582-4745-a316-b73e9c7d791a
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:07:28.9-00:07:32.0
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: mine was almost closed all the time.
+  text: |-
+    Stuart Roosa kept his eyes almost completely closed throughout the light-flash observation period.
+  entailment:
+    label: entails
+    score: 0.887
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 49690530-48c1-4970-bfb0-d2b90525e4f2
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:07:32.3-00:07:41.5
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    I was floating down the corner of the LED, but I kept my eyes closed because I didn't know when we might roll into the sun and I didn't want to pick up any light at all.
+  text: |-
+    Stuart Roosa was floating near the corner of the Lunar Excursion Vehicle (LEV) and kept his eyes closed to avoid picking up light if the spacecraft rolled toward the sun.
+  entailment:
+    label: entails
+    score: 0.614
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 17fac835-1c4f-4ccd-9b8f-afff7d8ada10
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:07:50.4-00:07:55.0
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  quote: I just kind of moved it across for, oh, five seconds or so. Five or six seconds.
+  text: |-
+    Edgar Mitchell shone a flashlight across his eyes for approximately five to six seconds during the debriefing demonstration.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 699a2772-0f9c-4f1a-8f34-f7a27dafd611
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:07:55.4-00:07:56.8
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  quote: It hurt. It was very bright.
+  text: |-
+    Edgar Mitchell found the flashlight painfully bright when shone in his eyes during the demonstration.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: eccb7920-3f7d-46cf-aa33-dc7544c82420
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:08:16.3-00:08:21.1
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: I was oriented this way with my head looking face up down in this corner.
+  text: |-
+    Stuart Roosa was oriented with his head looking face-up, positioned in a corner of the spacecraft, during the light-flash observation sessions.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b81236c9-67ae-4d9a-a213-d62ad5571967
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:08:47.7-00:08:50.4
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: Yeah, I felt I was getting more on the left than the right for some reason.
+  text: |-
+    Edgar Mitchell had the impression that he was experiencing more light flashes in his left eye than in his right eye.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5f81748e-787b-4077-9b40-66143757e3cc
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the debriefing session interviewer, summarising tally of crew reports
+  attribution_in_text: true
+  location: 00:09:02.1-00:09:04.6
+  date: 1971-02
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: You had 12 right and 6 left
+  text: |-
+    Edgar Mitchell reported 12 light flashes in his right eye and 6 in his left eye during Apollo 14.
+  entailment:
+    label: entails
+    score: 0.389
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c2506235-d73b-4fb5-bce9-8f701e942c67
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the debriefing session interviewer, summarising tally of crew reports
+  attribution_in_text: true
+  location: 00:09:05.9-00:09:07.7
+  date: 1971-02
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: Al, you had 10 right and 4 left
+  text: |-
+    Alan Shepard reported 10 light flashes in his right eye and 4 in his left eye during Apollo 14.
+  entailment:
+    label: entails
+    score: 0.409
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: af4077e2-5867-43d4-9ce2-e11ad495f9fc
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the debriefing session interviewer, summarising tally of crew reports
+  attribution_in_text: true
+  location: 00:09:09.7-00:09:12.2
+  date: 1971-02
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: of the ones you reported, Stu, you had 6 right and 2 left.
+  text: |-
+    Stuart Roosa reported 6 light flashes in his right eye and 2 in his left eye during Apollo 14.
+  entailment:
+    label: entails
+    score: 0.402
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d0c207be-f098-4fb8-b965-0218cbc34710
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the debriefing session interviewer, summarising tally of crew reports
+  attribution_in_text: false
+  location: 00:08:52.8-00:08:59.5
+  date: 1971-02
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    you're all heavily biased towards the right on your reports... Very heavily, like three or four to one.
+  text: |-
+    Overall, the Apollo 14 crew's light-flash reports were heavily biased toward the right eye, by a ratio of roughly three or four to one.
+  entailment:
+    label: entails
+    score: 0.544
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c5507779-7a27-4008-9a5c-fd96f26c8595
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the debriefing session interviewer, reviewing mission audio tapes
+    relay:
+    - mission audio tapes
+  attribution_in_text: false
+  location: 00:09:36.9-00:09:46.8
+  date: 1971-02
+  refs:
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: aadb716d-02ca-4ca0-99a2-cd9c2c6cb96c
+    name: National Aeronautics and Space Administration (NASA)
+  quote: |-
+    There were three, from listening to the tapes, three events, and it occurred in cases where different pairs were involved, which were coincidences
+  text: |-
+    During Apollo 14, there were three recorded instances, found by the debriefing team reviewing the mission tapes, where different pairs of crew members reported light flashes simultaneously.
+  entailment:
+    label: entails
+    score: 0.442
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0380c85a-c8c2-47e8-81ce-5e0444bcff4c
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the debriefing session interviewer, reviewing mission audio tapes
+    relay:
+    - mission audio tapes
+  attribution_in_text: true
+  location: 00:09:52.1-00:09:57.4
+  date: 1971-02
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    Ed, you said flash, and then Al, you said simultaneous with him, I had a flash in the whole right eye.
+  text: |-
+    In one instance during Apollo 14, Edgar Mitchell reported a light flash at the same time that Alan Shepard reported a flash in his right eye.
+  entailment:
+    label: entails
+    score: 0.42
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 85497976-3544-47be-a989-e4a9f2fff837
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:10:09.7-00:10:12.2
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: certainly within a fraction of a second, I think it was simultaneous.
+  text: |-
+    Alan Shepard considered the simultaneous light-flash reports with Edgar Mitchell to have occurred within a fraction of a second of each other.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 825deef7-396c-4b58-b435-f116d8c52a18
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:10:13.8-00:10:18.4
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    a couple of times it happened to me, it was his mark, or whoever's mark he was, was good enough.
+  text: |-
+    Edgar Mitchell experienced simultaneous light-flash coincidences with another crew member on a couple of occasions.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 55e80ac2-717e-4577-a567-9fe4dd94c402
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:10:57.0-00:10:58.8
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: Only on what I call the nova or the supernova.
+  text: |-
+    Edgar Mitchell only noticed a halo or afterglow effect following light flashes that he classified as a "nova" or "supernova."
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a88e9f30-5dca-4dd5-956e-281af4ce2f56
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:11:04.7-00:11:07.6
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: I haven't really noticed a halo effect myself.
+  text: |-
+    Alan Shepard did not notice a halo effect following the light flashes he observed.
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a7deb50d-f3d7-49d2-a7b8-b17a519c50a7
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:11:19.6-00:11:21.6
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: Did I call any of those? I sure don't remember it.
+  text: |-
+    Stuart Roosa did not recall reporting any halo or afterglow effect associated with the light flashes.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b6e5e3a4-2d0c-4e30-b715-ea9ed5eca5e8
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:11:44.8-00:11:57.8
+  date: 1971-02
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    I really don't remember seeing any flashes, but I didn't look for any either. So I guess the question would be I consciously did not see any... I wouldn't take that as a data point.
+  text: |-
+    Stuart Roosa did not recall seeing any light flashes during lunar orbit, noting he was very tired at the time and had not specifically looked for them, so he did not consider this a reliable data point.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b7c4778d-0c8e-4a61-936c-09732efb1465
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the debriefing session interviewer
+  attribution_in_text: false
+  location: 00:12:02.5-00:12:10.3
+  date: 1971-02
+  refs:
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: aadb716d-02ca-4ca0-99a2-cd9c2c6cb96c
+    name: National Aeronautics and Space Administration (NASA)
+  quote: |-
+    after our formal session, it was in about 191 GET, you then had a sleep period later on.
+  text: |-
+    The formal Apollo 14 light-flash observation session concluded at approximately 191 hours Ground Elapsed Time (GET), after which the crew had a sleep period.
+  entailment:
+    label: entails
+    score: 0.68
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 057ab682-3651-4293-9bf0-1b0fc2d95ca7
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:12:20.3-00:12:28.1
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    I don't really recall that there was any night except on the lunar surface. that I didn't at some time or another say some.
+  text: |-
+    Edgar Mitchell believed there was hardly any night during the Apollo 14 mission when he did not see at least some light flashes, with the possible exception of time spent on the lunar surface.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 53f7dfff-a263-4ae1-900a-ffe0413c9542
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:12:31.5-00:12:33.7
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: I just, no, I don't remember about the lunar surface.
+  text: |-
+    Edgar Mitchell did not recall whether he saw light flashes while on the lunar surface.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e3cc2d13-dfd5-40b2-b4a0-03849eb4eb4a
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:12:34.8-00:12:36.3
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: There was precious little sleep at night anyhow.
+  text: There was very little sleep at night during the Apollo 14 mission.
+  entailment:
+    label: entails
+    score: 0.431
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 277a4d0a-a3ca-439f-a3be-6c9a6b67d347
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: Apollo 14 crew member
+  attribution_in_text: false
+  location: 00:12:47.0-00:12:54.8
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    Did you get the impression that light flashes could have been within the cabin or definitely within your eye? Definitely within the eye.
+  text: |-
+    The Apollo 14 crew had the impression that the light flashes occurred definitely within the eye rather than within the spacecraft cabin.
+  entailment:
+    label: entails
+    score: 0.46
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1c29e067-66ed-48f4-a1b7-ddff4e186722
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:13:42.9-00:13:54.6
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    the things, I would say, were three or four inches away from my plane, whatever that means, and were a couple inches long.
+  text: |-
+    Edgar Mitchell described the light-flash streaks he observed as appearing approximately 7.5 to 10 centimetres from his eye and about 5 centimetres long.
+  entailment:
+    label: contradicts
+    score: 0.79
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4a2ee552-f6e4-4039-9698-552921576424
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:14:33.8-00:14:41.3
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    take a radius of that, that I'd put a streak of about a half the radius would be the average streak.
+  text: |-
+    Stuart Roosa estimated the average light-flash streak length as roughly half the radius of the field of view of his right eye.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 80610988-a8d8-4c28-93ce-3f4f0bab5b9b
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:14:42.6-00:14:43.2
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: Half or a little longer.
+  text: |-
+    Edgar Mitchell estimated the light-flash streak length as about half the radius of his field of view, or slightly longer.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 26d5ce52-2d0e-46b0-8386-c59e8b988fb2
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:15:28.4-00:15:36.2
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    I think I had them from several directions and I reported them as moving from one direction to the other at that time. There were several of them though.
+  text: |-
+    Edgar Mitchell observed light flashes coming from several different directions, each moving from one direction to another.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 33a23a49-fc99-4f9f-a271-8b5885f245dc
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:15:43.1-00:15:45.2
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: I didn't notice any preferred orientation.
+  text: |-
+    Alan Shepard did not notice a preferred orientation for the direction of the light flashes he observed.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 48648d32-1411-4577-b990-9c896be84939
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:15:55.2-00:16:02.7
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  quote: |-
+    if you're talking about a horizontal peripheral field as being somewhere in the vicinity of 50 to 160 degrees
+  text: |-
+    Alan Shepard estimated his horizontal peripheral field of view as roughly 50 to 160 degrees.
+  entailment:
+    label: entails
+    score: 0.718
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: e9b4550e-e04f-4ab6-8794-a6e7db6776f1
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:16:04.5-00:16:09.5
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    in some cases the light flashes would go across as much as 50 or 60 degrees of that.
+  text: |-
+    Alan Shepard observed that some light flashes spanned as much as 50 to 60 degrees of his peripheral field of view.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: defb876b-ea98-42f2-b47c-70829469e98a
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:16:16.2-00:16:25.0
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    In some cases I had the feeling it was two dots one immediately following the other, giving the impression of right to left, or top to bottom, or bottom to top, or left to right.
+  text: |-
+    In some cases, Alan Shepard observed a light flash appearing broken in the centre, giving the impression of two dots, one immediately following the other.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5da3ff3f-c4fb-4ac3-a9c1-1f6da804bee4
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:17:11.1-00:17:14.4
+  date: 1971-02
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    I think it occurred, I reported it a couple of times... it was just a diffuse lighting.
+  text: |-
+    Edgar Mitchell reported observing a diffuse cloud-like lighting phenomenon on a couple of occasions during Apollo 14.
+  entailment:
+    label: neutral
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1c7ec3f3-40dc-4b81-a2ef-bfa009df62d7
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:17:14.4-00:17:19.5
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: it appeared, as I recall, to be down low on one eye or the other
+  text: |-
+    Edgar Mitchell observed the diffuse cloud-like lighting phenomenon appearing low in his field of view, in one eye or the other.
+  entailment:
+    label: entails
+    score: 0.956
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ef4eaea9-8fed-4f84-9c85-ee534dbddd3c
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:17:25.4-00:17:26.1
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: White, silver.
+  text: |-
+    Edgar Mitchell described the colour of the cloud-like lighting phenomenon as white or silver.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5d60d59b-70a6-4838-86db-569e4185a2c8
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:17:33.5-00:17:38.6
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    if you do that, you can see a streak behind the cloud. This, there was no streak. It was just a diffuse lighting.
+  text: |-
+    Unlike terrestrial lightning behind a cloud, which shows a visible streak, the cloud-like lighting phenomenon Edgar Mitchell observed showed no streak, only diffuse lighting.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 53348c60-3b67-465f-97ca-89663eb6fe6b
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: false
+  location: 00:18:26.3-00:18:30.1
+  refs:
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: No, not necessarily. It was just a blob of light.
+  text: |-
+    Edgar Mitchell did not observe any relief or structure to the cloud-like light phenomenon; it appeared to him as just a blob of light.
+  entailment:
+    label: neutral
+    score: 0.722
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 4598dc0e-7faa-4324-8300-8dc227efe010
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stuart Roosa
+  attribution_in_text: false
+  location: 00:19:15.3-00:19:16.2
+  refs:
+  - id: 469b5f26-8c0c-4498-819e-27be09b15bb8
+    name: Stuart Roosa
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: No. Never looked for it.
+  text: |-
+    Stuart Roosa did not notice any other physical sensation, such as tingling or twitching, associated with the light flashes, though he had not specifically looked for such sensations.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: e1e79838-8da6-4682-8cb4-abf54720c9c6
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the debriefing session interviewer
+  attribution_in_text: false
+  location: 00:20:00.1-00:20:08.0
+  date: 1971-02
+  refs:
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: aadb716d-02ca-4ca0-99a2-cd9c2c6cb96c
+    name: National Aeronautics and Space Administration (NASA)
+  quote: |-
+    I think I said to Ed yesterday that you really did provide an enormously improved amount of data on this phenomenon that we've had in any previous lives.
+  text: |-
+    The debriefing team considered that the Apollo 14 crew provided an enormously improved amount of data on the light-flash phenomenon compared to any previous mission.
+  entailment:
+    label: entails
+    score: 0.427
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 83f33e96-7607-4576-8ede-90821747d7ee
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  provenance_chain:
+    origin_kind: speaker
+    origin: Alan Shepard
+  attribution_in_text: false
+  location: 00:20:11.8-00:20:25.3
+  refs:
+  - id: fb8202a7-7e3e-4378-96e7-96d9ff6ca5cf
+    name: Alan Shepard
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    I think that's the way you really have to go is to take a definite period, set it aside and do it because otherwise it's so random and so many other things going through your mind that It's the only way you can't even quantitate it.
+  text: |-
+    Alan Shepard considered that setting aside a definite period of time for observation was necessary, since without doing so the presence of other distracting thoughts made the light-flash phenomenon too random to quantify.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: dbd1cf67-4485-4e1f-8fab-77c342aaa9cf
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an unidentified Apollo 14 crew member speaker in the debriefing
+  attribution_in_text: false
+  location: 00:24:14.4-00:24:30.7
+  date: '1971-02-01'
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    I know during the formal hour, 40 minutes, whatever it was, that Ed was shining the light. But I don't know whether you picked it up on air to ground or not, but I had done that prior to that during one of the sleep periods. And there's just, you do not have to be dark adapted to see these.
+  text: |-
+    Speaker 1 reported that during one of the Apollo 14 sleep periods, prior to the formal light-flash observation period, he saw light flashes without being dark-adapted.
+  entailment:
+    label: entails
+    score: 0.433
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 873ad309-586a-49ea-9740-74637c4244eb
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an unidentified debriefing participant
+  attribution_in_text: false
+  location: 00:24:33.9-00:24:40.4
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  quote: |-
+    That's a very significant data point because it almost certainly proves that it's not a real light in your eye, generated in your eye. It's actually an interaction.
+  text: |-
+    A crew member considered it a significant data point that light flashes can be seen without being dark-adapted, taking it as strong evidence that the phenomenon is not a real light generated in the eye but instead results from an interaction.
+  entailment:
+    label: entails
+    score: 0.533
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 7587f413-f142-49e4-95be-55813fd1e3ba
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: true
+  location: 00:22:54.7-00:23:07.7
+  date: '1971-02-01'
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    I was going to make the comment that with respect to the flashes, putting the flashlight in my eyes did not seem to destroy my dark adaptation. Now, what that means, I don't know.
+  text: |-
+    Edgar Mitchell reported that shining a flashlight across his closed eyes during the Apollo 14 light-flash experiment did not appear to destroy his dark adaptation.
+  entailment:
+    label: neutral
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8f3ce06f-d5d2-401a-84c7-f8309f1db037
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: true
+  location: 00:25:48.8-00:25:54.3
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  quote: |-
+    When I did the flashlight across my eyes, they were still just as bright 30 seconds later as they had before I used the flashlight.
+  text: |-
+    Edgar Mitchell reported that he continued to see light flashes just as bright about 30 seconds after wiping a flashlight across his eyes as they had been before he used the flashlight.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 10e07359-c0d9-452c-8673-88ba5bbdd8d2
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: true
+  location: 00:24:46.2-00:24:51.1
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  quote: |-
+    And yet when I wiped the light across my eyes within 30 or 40 seconds, there they were again.
+  text: |-
+    Edgar Mitchell reported that he began seeing light flashes again within approximately 30 to 40 seconds after wiping a flashlight across his eyes.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 57fe4305-44f3-49b8-91d3-dcef95f5549e
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the Apollo 14 light-flash experiment record
+  attribution_in_text: false
+  location: 00:24:51.3-00:24:55.8
+  date: '1971-02-01'
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: 17 minutes. Pardon? 17 minutes. No response from me.
+  text: |-
+    During the formal Apollo 14 light-flash observation period, approximately 17 minutes elapsed before a flash was first recorded.
+  entailment:
+    label: neutral
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1959eeed-a772-4dbb-8e08-1e6a5f9748d5
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: true
+  location: 00:26:00.3-00:26:13.6
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  quote: |-
+    Either I didn't wipe the dark adaptation out, or there is something related to dark adaptation that influences the phenomenon. I don't understand it. It doesn't make sense.
+  text: |-
+    Edgar Mitchell found it puzzling that it took a long time to see the first flash at the start of the formal Apollo 14 light-flash experiment, yet after wiping a flashlight across his eyes flashes reappeared within 30 to 40 seconds, and did not know whether this meant his dark adaptation had not actually been wiped out or whether dark adaptation influences the phenomenon in some other way.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c5c47b8f-fb88-42b5-9ff4-f3fa774c3c3a
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an unidentified Apollo 14 crew member speaker in the debriefing
+  attribution_in_text: false
+  location: 00:26:14.9-00:26:31.9
+  date: '1971-02-01'
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    That doggone time period that we did it and the few flashes we saw was very surprising to me... Boy, it seemed like, you know, you'd wake up during a sleep period and... They were all over the place... I was amazed when it took 17 minutes to see a flash.
+  text: |-
+    Speaker 1 reported that during a sleep-period wake-up on Apollo 14, he saw an abundance of light flashes that seemed to be all over the place, and was surprised that during the formal timed observation period only a few flashes were seen.
+  entailment:
+    label: entails
+    score: 0.78
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 064d6970-7104-40d2-9cce-240b8ffe0c77
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an unidentified Apollo 14 crew member speaker in the debriefing
+  attribution_in_text: false
+  location: 00:28:37.5-00:28:49.0
+  date: '1971-02-01'
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    the flashes you see when you wake up in the middle of the night as a whole appear to be brighter than the flashes as a whole during that experiment that we did during the day.
+  text: |-
+    Speaker 1 reported that the light flashes seen upon waking during sleep periods on Apollo 14 appeared brighter overall than the flashes observed during the formal daytime observation experiment.
+  entailment:
+    label: entails
+    score: 0.511
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 038b0b5c-1ad6-4029-8d61-497109d838d9
+  type: testimony
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an unidentified Apollo 14 crew member speaker in the debriefing
+  attribution_in_text: false
+  location: 00:28:52.5-00:29:05.4
+  date: '1971-02-01'
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    I was a little reluctant to call anything except a very positive flash during that during that time frame, uh, you know, I want to make really sure that that was indeed a mark at the time that I called it.
+  text: |-
+    Speaker 1 reported being reluctant during the formal Apollo 14 light-flash observation period to report anything other than a very definite flash.
+  entailment:
+    label: neutral
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: fc934658-370a-447c-8487-dece2cd38949
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: true
+  location: 00:29:24.4-00:29:35.7
+  date: '1971-02-01'
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  quote: |-
+    Ed saw one blue flash. Did anyone else see color? / No... No, that wasn't blue. It was a silver, a blue-white sort of thing. Like a blue diamond, you said. Like a blue diamond.
+  text: |-
+    Edgar Mitchell saw one flash during the Apollo 14 light-flash observations that was silver, blue-white in colour, described as like a blue diamond, rather than plain blue.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 27ae009e-3f68-4a94-a5ec-b23041ed590d
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: true
+  location: 00:29:36.9-00:29:38.8
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  quote: Was that the brightest that you saw? / I don't recall.
+  text: |-
+    Edgar Mitchell could not recall whether the blue-white flash he saw was the brightest flash he observed during the Apollo 14 light-flash observations.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: cbfafc8c-2a92-4b58-adb8-f2c2fee7a03a
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the Apollo 14 debriefing exchange
+  attribution_in_text: false
+  location: 00:29:24.4-00:29:27.6
+  date: '1971-02-01'
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: Ed saw one blue flash. Did anyone else see color? / No.
+  text: |-
+    No crew member other than Edgar Mitchell reported seeing colour in the light flashes observed during Apollo 14.
+  entailment:
+    label: neutral
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: f1da9cc0-a93e-4cf8-9fb1-4146e502a062
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an unidentified researcher participant in the debriefing
+  attribution_in_text: false
+  location: 00:25:07.9-00:25:25.9
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    there definitely is a threshold effect of some sort because you saw twice as many during that period as the other two did... my guess was when you didn't see them and then you started to see them regularly, was that it was just that they seemed fainter than you expected.
+  text: |-
+    A researcher noted that during the formal quantitative Apollo 14 light-flash observation period, one crew member saw twice as many flashes as the other two crew members, and suggested this may reflect a threshold effect in which flashes seemed fainter than expected, requiring the observer to take time to attune to fainter flashes.
+  entailment:
+    label: entails
+    score: 0.556
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 668ad73f-732b-46b1-b355-3121c4d7fa5f
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  provenance_chain:
+    origin_kind: speaker
+    origin: Edgar Mitchell
+  attribution_in_text: true
+  location: 00:25:34.3-00:25:48.3
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: 863269b1-3326-4f8f-8bb2-3da2175ff345
+    name: Edgar Mitchell
+  quote: |-
+    except they did indeed appear fainter in the beginning. And it wasn't a matter of looking for fainter objects. They were brighter after a while. And they didn't diminish in brightness.
+  text: |-
+    Edgar Mitchell reported that the light flashes he saw during the formal Apollo 14 experiment appeared fainter at the beginning, became brighter after a while, and did not diminish in brightness thereafter.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: e2758198-ce01-4c4b-885f-30c846b43804
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an unidentified researcher participant in the debriefing
+  attribution_in_text: false
+  location: 00:27:23.7-00:27:31.3
+  refs:
+  - id: 9ee2562c-f395-4def-a61a-d950cf28ef2b
+    name: cosmic ray visual phenomena (light flashes)
+  - id: d538b2d3-df5e-4278-8b99-f4eb3d3b1921
+    name: Apollo 14
+  quote: |-
+    your subjective impression is not necessarily right. Like you felt that you saw more of them in your left side than you're right and that wasn't true. It was wrong.
+  text: |-
+    A researcher observed that a crew member's subjective impression of seeing more light flashes on his left side than his right side during the formal Apollo 14 observation was not borne out by the recorded data.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

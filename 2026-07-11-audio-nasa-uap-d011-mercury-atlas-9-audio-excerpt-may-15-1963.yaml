@@ -3,23 +3,31 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:39:33.561935+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 305286
-      output: 14783
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 305286
+    output: 14783
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 6.5
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: 012a1c63105a6faffb012e79afe84110060dcf64320c58e099f24ae5dc1570d3
   prep_version: 6
@@ -40,461 +48,561 @@ record:
 terminology:
   main_subject: NASA-UAP-D011, Mercury Atlas 9 Audio Excerpt, May 15, 1963
   codenames:
-    - codename: Wally
-      refers_to: Schirra, Walter
-    - codename: Ground Control (Wally)
-      refers_to: Schirra, Walter
+  - codename: Wally
+    refers_to: Schirra, Walter
+  - codename: Ground Control (Wally)
+    refers_to: Schirra, Walter
   acronyms:
-    - acronym: TM
-      expansion: Telemetry
-    - acronym: DC
-      expansion: Direct Current
-    - acronym: TV
-      expansion: Television
+  - acronym: TM
+    expansion: Telemetry
+  - acronym: DC
+    expansion: Direct Current
+  - acronym: TV
+    expansion: Television
 nodes:
-  - id: 67b60827-13d5-49b3-86be-7e3ce3b295c2
-    type: document
-    name: NASA-UAP-D011, Mercury Atlas 9 Audio Excerpt, May 15, 1963
-    metadata:
-      date: '1963-05-15'
-  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-    type: event
-    name: Mercury-Atlas 9
-    metadata:
-      date_start: '1963-05-15'
-      date_end: '1963-05-16'
-  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-    type: person
-    name: L. Gordon Cooper Jr.
-    metadata:
-      family_name: Cooper
-      aliases:
-        - Cooper, L. Gordon Jr.
-  - id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
-    type: person
-    name: Walter Schirra
-    metadata:
-      family_name: Schirra
-      aliases:
-        - Schirra, Walter
-  - id: 26fee89d-ec0d-4ebe-8d96-b92b620bedbf
-    type: organisation
-    name: National Aeronautics and Space Administration (NASA)
-  - id: c8ee84eb-599f-45ee-ba91-fc37a509b505
-    type: place
-    name: USA, Hawaii
-  - id: b6513818-1eb4-45dd-b719-dda0d760d13d
-    type: place
-    name: USA, Florida
+- id: 67b60827-13d5-49b3-86be-7e3ce3b295c2
+  type: document
+  name: NASA-UAP-D011, Mercury Atlas 9 Audio Excerpt, May 15, 1963
+  metadata:
+    date: '1963-05-15'
+- id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+  type: event
+  name: Mercury-Atlas 9
+  metadata:
+    date_start: '1963-05-15'
+    date_end: '1963-05-16'
+- id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+  type: person
+  name: L. Gordon Cooper Jr.
+  metadata:
+    family_name: Cooper
+    aliases:
+    - Cooper, L. Gordon Jr.
+- id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
+  type: person
+  name: Walter Schirra
+  metadata:
+    family_name: Schirra
+    aliases:
+    - Schirra, Walter
+- id: 26fee89d-ec0d-4ebe-8d96-b92b620bedbf
+  type: organisation
+  name: National Aeronautics and Space Administration (NASA)
+- id: c8ee84eb-599f-45ee-ba91-fc37a509b505
+  type: place
+  name: USA, Hawaii
+- id: b6513818-1eb4-45dd-b719-dda0d760d13d
+  type: place
+  name: USA, Florida
 domain_claims:
-  - id: 503c430f-5608-491c-a5f4-f570f128b89d
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:00:00.4-00:00:12.5
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: |-
-      And I'm beginning to get the brilliant blue of sun rising in the east. Bright blue band underneath all this haze layer. I can see the haze layer.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. observed a brilliant blue band of light at sunrise in the east, with a haze layer visible beneath it.
-  - id: 1246da9d-31e7-462f-bb45-4c317c209ce9
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:01:24.8-00:01:34.1
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: |-
-      These small luminescent particles drift away from you. Small in forward. In this light they appear brilliant white without seeing it all in them.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. observed small luminescent particles drifting away from the spacecraft that appeared brilliant white.
-  - id: 81fbc5c9-9e2c-4d8f-9166-182a0a0c92bd
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:01:43.4-00:01:46.8
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: |-
-      Roger, you haven't seen the beacon at this time? Negative, I still haven't seen the beacon.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. had not seen the recovery beacon by that point in the mission.
-  - id: a9a25fcf-001f-4ded-8e57-795641db4f5c
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:01:54.3-00:01:56.5
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: There was considerable noise, though, as if something were departing.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. heard considerable noise, as if something were departing from the spacecraft.
-  - id: dc818a31-8e22-427b-82d3-f288831435c1
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:01:59.7-00:02:05.4
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: |-
-      There was considerable noise as the little doors sounded like the little doors blowing open, so I assume the beacon has departed.
-    text: |-
-      L. Gordon Cooper Jr. inferred that a recovery beacon aboard Mercury-Atlas 9 had departed, based on doors that sounded like they had blown open.
-  - id: e0d4ecb5-ca00-4b0e-ad06-ea532dfa9487
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA ground control personnel during Mercury-Atlas 9
-    attribution_in_text: false
-    location: 00:02:06.8-00:02:15.4
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-    quote: Roger, understand TM looks real good on the ground
-    text: |-
-      During Mercury-Atlas 9, ground control reported that telemetry (TM) readings looked good on the ground.
-  - id: b8621de8-e85b-474a-9e87-72003c575e8b
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:02:47.8-00:02:52.3
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: Okay, you confirm TV control switch to off. Roger. TV control is off.
-    text: |-
-      During Mercury-Atlas 9, the television (TV) control switch aboard the spacecraft was confirmed switched to off.
-  - id: 1aa6a18a-7cdd-48f8-93f3-4c9d2b7570e3
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:03:17.7-00:03:18.4
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: Main bus is 24.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. reported a Direct Current (DC) main bus reading of 24 volts.
-  - id: 7ddb2bd2-577e-46df-b894-731fdf7ea323
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:03:18.7-00:03:21.0
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: Isolated 28 and a half.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. reported an isolated Direct Current (DC) reading of 28.5 volts.
-  - id: 619475ee-2c5c-4fba-988c-3900223425e7
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
-      name: Walter Schirra
-    provenance_chain:
-      origin_kind: speaker
-      origin: Schirra, Walter
-    attribution_in_text: false
-    location: 00:04:00.8-00:04:10.9
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
-        name: Walter Schirra
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-      - id: c8ee84eb-599f-45ee-ba91-fc37a509b505
-        name: USA, Hawaii
-    quote: |-
-      systems last computations on fuel at Hawaii gave you 88 auto 98 manual, which is somewhat better than you're indicating on board.
-    text: |-
-      During Mercury-Atlas 9, Walter Schirra, serving as ground control ("Wally"), reported that the latest fuel computations at USA, Hawaii gave L. Gordon Cooper Jr. 88 percent fuel on automatic control.
-  - id: 6fa71bfc-ac57-4aed-8db7-b229d8c10cf1
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
-      name: Walter Schirra
-    provenance_chain:
-      origin_kind: speaker
-      origin: Schirra, Walter
-    attribution_in_text: false
-    location: 00:04:00.8-00:04:10.9
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
-        name: Walter Schirra
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-      - id: c8ee84eb-599f-45ee-ba91-fc37a509b505
-        name: USA, Hawaii
-    quote: |-
-      systems last computations on fuel at Hawaii gave you 88 auto 98 manual, which is somewhat better than you're indicating on board.
-    text: |-
-      During Mercury-Atlas 9, Walter Schirra, serving as ground control ("Wally"), reported that the latest fuel computations at USA, Hawaii gave L. Gordon Cooper Jr. 98 percent fuel on manual control.
-  - id: 26e6429b-f09a-4c4a-b8da-a1400868a8be
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:04:14.2-00:04:16.6
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: On board, I'm indicating 9-6 and 1-0-2.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr.'s onboard instruments indicated 96 percent fuel on automatic control.
-  - id: af907c7a-0851-4011-8b6c-c121f1b93145
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:04:14.2-00:04:16.6
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: On board, I'm indicating 9-6 and 1-0-2.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr.'s onboard instruments indicated 102 percent fuel on manual control.
-  - id: 32b57aa2-0f58-4c8d-bef8-2ad6f0a852db
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:04:43.4-00:04:51.0
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-      - id: b6513818-1eb4-45dd-b719-dda0d760d13d
-        name: USA, Florida
-    quote: |-
-      The whole state is clear. I can see I'm just about off. There's been a beautiful view coming over Florida.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. observed a clear view of the entire state of USA, Florida from orbit.
-  - id: 81d16d7c-099a-4335-a220-2b5204844866
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:07:19.7-00:07:26.5
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: It's light in sight. It is below me. It's quite a brownish, reddish-brown.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. observed a light below the spacecraft that was brownish, reddish-brown in colour.
-  - id: c9a7eb0a-b195-4bdc-b2ff-db2aa69deee0
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:07:28.4-00:07:31.6
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: and considerable altitude above the ground.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. observed that the reddish-brown light below the spacecraft appeared to be at considerable altitude above the ground.
-  - id: 93598793-ac04-4d76-af3f-f34bf2e4a8bd
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:07:33.0-00:07:37.8
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: On my fiery pitch-down thruster, I get a shower of these little fireflies.
-    text: |-
-      During Mercury-Atlas 9, when L. Gordon Cooper Jr. fired the spacecraft's pitch-down thruster, he observed a shower of small firefly-like particles.
-  - id: 98a40e3e-6cb3-4849-a349-f9240bb4c2cf
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:07:40.0-00:07:44.8
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: It is flashing now. It is the light. It's quite bright, quite discernible.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. observed that the reddish-brown light below the spacecraft was flashing and quite bright and discernible.
-  - id: 8110e892-5e07-4155-8f0e-f35fae1ede56
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:07:56.6-00:07:58.5
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: Must be about 10 to 12 miles away.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. estimated the flashing reddish-brown light was approximately 16 to 19 kilometres away.
-  - id: f7b458a5-a03a-438e-a0bc-59ab02c1d169
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-      name: L. Gordon Cooper Jr.
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cooper, L. Gordon Jr.
-    attribution_in_text: false
-    location: 00:08:05.8-00:08:08.1
-    date: '1963-05-15'
-    refs:
-      - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
-        name: Mercury-Atlas 9
-      - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
-        name: L. Gordon Cooper Jr.
-    quote: At the order of a second magnitude star now.
-    text: |-
-      During Mercury-Atlas 9, L. Gordon Cooper Jr. estimated the brightness of the flashing reddish-brown light as being on the order of a second magnitude star.
+- id: 503c430f-5608-491c-a5f4-f570f128b89d
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:00:00.4-00:00:12.5
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: |-
+    And I'm beginning to get the brilliant blue of sun rising in the east. Bright blue band underneath all this haze layer. I can see the haze layer.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. observed a brilliant blue band of light at sunrise in the east, with a haze layer visible beneath it.
+  entailment:
+    label: neutral
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1246da9d-31e7-462f-bb45-4c317c209ce9
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:01:24.8-00:01:34.1
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: |-
+    These small luminescent particles drift away from you. Small in forward. In this light they appear brilliant white without seeing it all in them.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. observed small luminescent particles drifting away from the spacecraft that appeared brilliant white.
+  entailment:
+    label: neutral
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 81fbc5c9-9e2c-4d8f-9166-182a0a0c92bd
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:01:43.4-00:01:46.8
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: |-
+    Roger, you haven't seen the beacon at this time? Negative, I still haven't seen the beacon.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. had not seen the recovery beacon by that point in the mission.
+  entailment:
+    label: neutral
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a9a25fcf-001f-4ded-8e57-795641db4f5c
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:01:54.3-00:01:56.5
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: There was considerable noise, though, as if something were departing.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. heard considerable noise, as if something were departing from the spacecraft.
+  entailment:
+    label: neutral
+    score: 0.655
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: dc818a31-8e22-427b-82d3-f288831435c1
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:01:59.7-00:02:05.4
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: |-
+    There was considerable noise as the little doors sounded like the little doors blowing open, so I assume the beacon has departed.
+  text: |-
+    L. Gordon Cooper Jr. inferred that a recovery beacon aboard Mercury-Atlas 9 had departed, based on doors that sounded like they had blown open.
+  entailment:
+    label: entails
+    score: 0.771
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e0d4ecb5-ca00-4b0e-ad06-ea532dfa9487
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA ground control personnel during Mercury-Atlas 9
+  attribution_in_text: false
+  location: 00:02:06.8-00:02:15.4
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  quote: Roger, understand TM looks real good on the ground
+  text: |-
+    During Mercury-Atlas 9, ground control reported that telemetry (TM) readings looked good on the ground.
+  entailment:
+    label: neutral
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b8621de8-e85b-474a-9e87-72003c575e8b
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:02:47.8-00:02:52.3
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: Okay, you confirm TV control switch to off. Roger. TV control is off.
+  text: |-
+    During Mercury-Atlas 9, the television (TV) control switch aboard the spacecraft was confirmed switched to off.
+  entailment:
+    label: neutral
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1aa6a18a-7cdd-48f8-93f3-4c9d2b7570e3
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:03:17.7-00:03:18.4
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: Main bus is 24.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. reported a Direct Current (DC) main bus reading of 24 volts.
+  entailment:
+    label: neutral
+    score: 0.696
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 7ddb2bd2-577e-46df-b894-731fdf7ea323
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:03:18.7-00:03:21.0
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: Isolated 28 and a half.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. reported an isolated Direct Current (DC) reading of 28.5 volts.
+  entailment:
+    label: entails
+    score: 0.643
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 619475ee-2c5c-4fba-988c-3900223425e7
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
+    name: Walter Schirra
+  provenance_chain:
+    origin_kind: speaker
+    origin: Schirra, Walter
+  attribution_in_text: false
+  location: 00:04:00.8-00:04:10.9
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
+    name: Walter Schirra
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  - id: c8ee84eb-599f-45ee-ba91-fc37a509b505
+    name: USA, Hawaii
+  quote: |-
+    systems last computations on fuel at Hawaii gave you 88 auto 98 manual, which is somewhat better than you're indicating on board.
+  text: |-
+    During Mercury-Atlas 9, Walter Schirra, serving as ground control ("Wally"), reported that the latest fuel computations at USA, Hawaii gave L. Gordon Cooper Jr. 88 percent fuel on automatic control.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6fa71bfc-ac57-4aed-8db7-b229d8c10cf1
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
+    name: Walter Schirra
+  provenance_chain:
+    origin_kind: speaker
+    origin: Schirra, Walter
+  attribution_in_text: false
+  location: 00:04:00.8-00:04:10.9
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 55e1f29c-ce7b-4096-9b18-99b6245fca56
+    name: Walter Schirra
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  - id: c8ee84eb-599f-45ee-ba91-fc37a509b505
+    name: USA, Hawaii
+  quote: |-
+    systems last computations on fuel at Hawaii gave you 88 auto 98 manual, which is somewhat better than you're indicating on board.
+  text: |-
+    During Mercury-Atlas 9, Walter Schirra, serving as ground control ("Wally"), reported that the latest fuel computations at USA, Hawaii gave L. Gordon Cooper Jr. 98 percent fuel on manual control.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 26e6429b-f09a-4c4a-b8da-a1400868a8be
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:04:14.2-00:04:16.6
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: On board, I'm indicating 9-6 and 1-0-2.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr.'s onboard instruments indicated 96 percent fuel on automatic control.
+  entailment:
+    label: neutral
+    score: 0.843
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: af907c7a-0851-4011-8b6c-c121f1b93145
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:04:14.2-00:04:16.6
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: On board, I'm indicating 9-6 and 1-0-2.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr.'s onboard instruments indicated 102 percent fuel on manual control.
+  entailment:
+    label: neutral
+    score: 0.755
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 32b57aa2-0f58-4c8d-bef8-2ad6f0a852db
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:04:43.4-00:04:51.0
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  - id: b6513818-1eb4-45dd-b719-dda0d760d13d
+    name: USA, Florida
+  quote: |-
+    The whole state is clear. I can see I'm just about off. There's been a beautiful view coming over Florida.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. observed a clear view of the entire state of USA, Florida from orbit.
+  entailment:
+    label: neutral
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 81d16d7c-099a-4335-a220-2b5204844866
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:07:19.7-00:07:26.5
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: It's light in sight. It is below me. It's quite a brownish, reddish-brown.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. observed a light below the spacecraft that was brownish, reddish-brown in colour.
+  entailment:
+    label: neutral
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: c9a7eb0a-b195-4bdc-b2ff-db2aa69deee0
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:07:28.4-00:07:31.6
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: and considerable altitude above the ground.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. observed that the reddish-brown light below the spacecraft appeared to be at considerable altitude above the ground.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 93598793-ac04-4d76-af3f-f34bf2e4a8bd
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:07:33.0-00:07:37.8
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: On my fiery pitch-down thruster, I get a shower of these little fireflies.
+  text: |-
+    During Mercury-Atlas 9, when L. Gordon Cooper Jr. fired the spacecraft's pitch-down thruster, he observed a shower of small firefly-like particles.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 98a40e3e-6cb3-4849-a349-f9240bb4c2cf
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:07:40.0-00:07:44.8
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: It is flashing now. It is the light. It's quite bright, quite discernible.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. observed that the reddish-brown light below the spacecraft was flashing and quite bright and discernible.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 8110e892-5e07-4155-8f0e-f35fae1ede56
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:07:56.6-00:07:58.5
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: Must be about 10 to 12 miles away.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. estimated the flashing reddish-brown light was approximately 16 to 19 kilometres away.
+  entailment:
+    label: contradicts
+    score: 0.896
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: f7b458a5-a03a-438e-a0bc-59ab02c1d169
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cooper, L. Gordon Jr.
+  attribution_in_text: false
+  location: 00:08:05.8-00:08:08.1
+  date: '1963-05-15'
+  refs:
+  - id: 31fce67a-60eb-43b2-b730-94c13caa90bc
+    name: Mercury-Atlas 9
+  - id: 9d37b80e-ef7a-46ce-a6a5-ab821c3a5cf2
+    name: L. Gordon Cooper Jr.
+  quote: At the order of a second magnitude star now.
+  text: |-
+    During Mercury-Atlas 9, L. Gordon Cooper Jr. estimated the brightness of the flashing reddish-brown light as being on the order of a second magnitude star.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

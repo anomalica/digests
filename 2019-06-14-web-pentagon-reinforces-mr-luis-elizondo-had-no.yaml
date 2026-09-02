@@ -8,6 +8,14 @@ ai_usage:
   tokens:
     input: 229923
     output: 13080
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 16.5
 prompts:
 - pass: nodes
   id: nodes
@@ -212,6 +220,11 @@ domain_claims:
     newly received statements from the Pentagon issued to The Black Vault specifically address a 2009 Harry Reid memo that is being offered by some supporters as proof of Mr. Elizondo’s alleged leadership of the program.
   text: |-
     The Pentagon issued statements to The Black Vault specifically addressing the 2009 Harry Reid memo, which some supporters offered as proof of Luis Elizondo's alleged leadership of the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b225c716-8209-4c04-ae64-4269fd7fe870
   type: administrative
   provenance_chain:
@@ -233,6 +246,11 @@ domain_claims:
     it is now revealed that the existence of this document does not alter the Pentagon’s original position about his claims.
   text: |-
     The existence of the 2009 Harry Reid memo does not alter the Pentagon's original position on Luis Elizondo's claims about AATIP leadership.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b70779df-8f42-4690-b9b2-b9b04750709c
   type: administrative
   attestation: second_hand
@@ -256,6 +274,11 @@ domain_claims:
   quote: |-
     I can confirm that the memo you’re referring to is authentic… It makes no change to previous statements.
   text: The 2009 Harry Reid memo referenced regarding Luis Elizondo's role is authentic.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9180952-4586-428d-a5f9-f32a5cecc0af
   type: administrative
   attestation: second_hand
@@ -283,6 +306,11 @@ domain_claims:
     Mr. Elizondo had no assigned responsibilities for AATIP while he was in OUSD(I) [the Office of Under Secretary of Defense for Intelligence].
   text: |-
     Luis Elizondo had no assigned responsibilities for the Advanced Aerospace Threat Identification Program (AATIP) while he was in the Office of the Under Secretary of Defense for Intelligence (OUSD(I)).
+  entailment:
+    label: entails
+    score: 0.573
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1e7c6906-d0c1-4bf4-b653-963e8b962c29
   type: administrative
   attestation: second_hand
@@ -309,6 +337,11 @@ domain_claims:
     as reported by Mr. Keith Kloor, the Pentagon had also said, in part, “Mr. Elizondo had no responsibilities with regard to the AATIP program while he worked in OUSDI, up until the time he resigned effective 10/4/2017.”
   text: |-
     On June 1, 2019, as reported by Keith Kloor, the Pentagon said Luis Elizondo had no responsibilities with regard to the Advanced Aerospace Threat Identification Program (AATIP) while he worked in the Office of the Under Secretary of Defense for Intelligence (OUSDI), up until the time he resigned effective 2017-10-04.
+  entailment:
+    label: contradicts
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ed8ef779-4bb6-408a-ac1e-3051ae93ebcd
   type: administrative
   attestation: second_hand
@@ -325,6 +358,11 @@ domain_claims:
     name: Luis Elizondo
   quote: up until the time he resigned effective 10/4/2017
   text: Luis Elizondo resigned from his position effective 2017-10-04.
+  entailment:
+    label: entails
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1b71bd40-b5a3-4af0-86ed-6bd0c48069b8
   type: administrative
   provenance_chain:
@@ -345,6 +383,11 @@ domain_claims:
     [caption: One page from the 2009 Harry Reid memo, showing Mr. Luis Elizondo and Dr. Hal Puthoff were redacted by KLAS-TV on the initial release, for unknown reasons.]
   text: |-
     One page of the 2009 Harry Reid memo shows that the names of Luis Elizondo and Hal Puthoff were redacted by KLAS-TV on its initial release, for unknown reasons.
+  entailment:
+    label: entails
+    score: 0.926
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9e441a3d-2bf2-46fa-b555-860f16fc39ac
   type: administrative
   provenance_chain:
@@ -360,6 +403,11 @@ domain_claims:
     name: USA, Nevada, Las Vegas
   quote: Mr. George Knapp, journalist from KLAS-TV in Las Vegas, Nevada
   text: George Knapp is a journalist from KLAS-TV in Las Vegas, Nevada.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a208080-8e03-4c2b-85be-748b98222722
   type: administrative
   attestation: second_hand
@@ -376,6 +424,11 @@ domain_claims:
       2009 Harry Reid Memo to William Lynn III Regarding AATIP Special Access Program Status
   quote: The document, dated July 24, 2009
   text: The 2009 Harry Reid memo is dated 2009-07-24.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 92f7b6af-56a1-4776-ba08-d83e49ad5bef
   type: administrative
   provenance_chain:
@@ -394,6 +447,11 @@ domain_claims:
     previously had the names of Mr. Elizondo, along with another name well-established to have worked within the program, Dr. Hal Puthoff, redacted.
   text: |-
     The 2009 Harry Reid memo previously had the names of Luis Elizondo and Hal Puthoff redacted.
+  entailment:
+    label: entails
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2587edb0-ffab-4553-8af7-2699c3f334d8
   type: administrative
   provenance_chain:
@@ -408,6 +466,11 @@ domain_claims:
   quote: another name well-established to have worked within the program, Dr. Hal Puthoff
   text: |-
     Hal Puthoff is well established to have worked within the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.477
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 911d37fc-4b7c-4d45-bd39-6dd0974d7a01
   type: administrative
   attestation: second_hand
@@ -434,6 +497,11 @@ domain_claims:
     The memo outlined Senator Reid’s request and reasoning to get the AATIP a “Special Access Program” or SAP status, and was written to the Deputy Secretary of Defense, William Lynn III.
   text: |-
     The 2009 Harry Reid memo outlined Senator Harry Reid's request and reasoning to get the Advanced Aerospace Threat Identification Program (AATIP) a "Special Access Program" (SAP) status, and was written to the Deputy Secretary of Defense, William Lynn III.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5685331e-b8ea-4d24-8b33-e71892b32711
   type: opinion
   provenance_chain:
@@ -455,6 +523,11 @@ domain_claims:
     but It remains unclear why both journalists, or their source, asked them to redact those two names in the first place.
   text: |-
     It remains unclear why George Knapp and Matt Adams, or their source, asked to redact the names of Luis Elizondo and Hal Puthoff in the July 25, 2018 KLAS-TV story on Pentagon UFO study documents.
+  entailment:
+    label: entails
+    score: 0.555
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a22b042-5ed5-4227-9c90-24b4bc617ad6
   type: opinion
   provenance_chain:
@@ -474,6 +547,11 @@ domain_claims:
     Not only does the date precede Mr. Elizondo’s claim by at least five months of heading the AATIP (thus not disproving the Pentagon’s original statement)
   text: |-
     The date of the 2009 Harry Reid memo, 2009-07-24, precedes Luis Elizondo's claimed start of heading the Advanced Aerospace Threat Identification Program (AATIP) by at least five months, so the memo does not disprove the Pentagon's original statement.
+  entailment:
+    label: entails
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d33cf7d-4534-459e-8e40-7a44cd1de185
   type: administrative
   provenance_chain:
@@ -494,6 +572,11 @@ domain_claims:
     the content therein “makes no change” to their previous statement issued by Pentagon spokesperson Mr. Christopher Sherwood to The Intercept.
   text: |-
     The Pentagon's previous statement on Luis Elizondo's AATIP role, that the 2009 Harry Reid memo makes no change to, had been issued to The Intercept by Pentagon spokesperson Christopher Sherwood.
+  entailment:
+    label: entails
+    score: 0.43
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 63804801-eb60-4ab6-a5b1-78c3ca89a6df
   type: administrative
   attestation: second_hand
@@ -521,6 +604,11 @@ domain_claims:
   quote: DOD received it and responded to Sen. Reid,” Ms. Gough said.
   text: |-
     The Department of Defense received the 2009 Harry Reid memo and responded to Senator Reid.
+  entailment:
+    label: neutral
+    score: 0.506
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0382a0ad-52b0-4b0e-b07a-6e7f2133345f
   type: administrative
   attestation: first_hand
@@ -546,6 +634,11 @@ domain_claims:
     She then explains that her office is unable to provide The Black Vault a full copy of the response, since the Public Affairs office does not release Congressional correspondence
   text: |-
     Susan Gough's office is unable to provide The Black Vault a full copy of the Department of Defense's response to Senator Harry Reid, since the Public Affairs office does not release Congressional correspondence.
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 66d595f4-434f-4b7e-873c-0e9500e329bf
   type: administrative
   attestation: second_hand
@@ -573,6 +666,11 @@ domain_claims:
     DIA [Defense Intelligence Agency] administered AATIP, and Elizondo was never assigned to DIA.
   text: |-
     The Defense Intelligence Agency (DIA) administered the Advanced Aerospace Threat Identification Program (AATIP), and Luis Elizondo was never assigned to the Defense Intelligence Agency.
+  entailment:
+    label: entails
+    score: 0.789
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 78ca86ac-7275-4292-b1e7-857a73689ebc
   type: administrative
   attestation: second_hand
@@ -600,6 +698,11 @@ domain_claims:
     Elizondo did interact with the DIA office managing the program while the program was still ongoing, but he did not lead it.
   text: |-
     Luis Elizondo did interact with the Defense Intelligence Agency office managing the Advanced Aerospace Threat Identification Program (AATIP) while the program was still ongoing, but he did not lead it.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f944325-163a-4caa-96e5-245772c3bc31
   type: administrative
   provenance_chain:
@@ -614,6 +717,11 @@ domain_claims:
     name: The Black Vault
   quote: Mr. Elizondo did not respond to a request for comment.
   text: Luis Elizondo did not respond to a request for comment from The Black Vault.
+  entailment:
+    label: entails
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 97f5716a-4ac5-44fd-b7ec-353db9fc3996
   type: opinion
   provenance_chain:
@@ -632,6 +740,11 @@ domain_claims:
     This statement, received on June 13, 2019, goes against many claims written online that a “new Pentagon statement” would be forthcoming that would further clarify the Pentagon’s stance, and confirm Mr. Elizondo’s directorship of the program.
   text: |-
     The Pentagon statement received on 2019-06-13 goes against claims written online that a new Pentagon statement would be forthcoming to clarify the Pentagon's stance and confirm Luis Elizondo's directorship of the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.482
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ce9c91ab-5bc2-4776-a7de-a2569ab2795b
   type: administrative
   provenance_chain:
@@ -645,6 +758,11 @@ domain_claims:
     name: Politico
   quote: Mr. Bryan Bender, defense editor for Politico
   text: Bryan Bender is the defense editor for Politico.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 753cf68d-74dc-489a-a037-205dcc70878a
   type: administrative
   provenance_chain:
@@ -662,6 +780,11 @@ domain_claims:
     Mr. Bender has since deleted this tweet, some time after it was pointed out the Pentagon statement was not issued the week that he claimed.
   text: |-
     Bryan Bender deleted his June 2, 2019 tweet predicting a forthcoming Pentagon statement, some time after it was pointed out that the Pentagon statement was not issued the week he claimed.
+  entailment:
+    label: entails
+    score: 0.586
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9d7a1a8b-2288-4852-92e7-b3b01c98f628
   type: administrative
   provenance_chain:
@@ -676,6 +799,11 @@ domain_claims:
   quote: Mr. Bender declined to comment on why he deleted the tweet.
   text: |-
     Bryan Bender declined to comment on why he deleted his tweet about a forthcoming Pentagon statement.
+  entailment:
+    label: entails
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ea7fb8d2-09f1-4356-be0c-dce426c9829d
   type: administrative
   provenance_chain:
@@ -693,6 +821,11 @@ domain_claims:
     Dr. Puthoff, co-founder of To The Stars Academy of Arts & Science where Mr. Elizondo is now employed
   text: |-
     Hal Puthoff is co-founder of To The Stars Academy of Arts & Science, where Luis Elizondo is employed.
+  entailment:
+    label: entails
+    score: 0.427
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3bf3c7b5-5c58-41de-a39e-9216f1ef9049
   type: opinion
   attestation: first_hand
@@ -717,6 +850,11 @@ domain_claims:
     Dr. Puthoff, co-founder of To The Stars Academy of Arts & Science where Mr. Elizondo is now employed, offered his support to counter the Pentagon’s assertions.
   text: |-
     Hal Puthoff offered his support to counter the Pentagon's assertions about Luis Elizondo's role in the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b66416e8-dd81-4130-873d-cc9433bb7263
   type: testimony
   attestation: first_hand
@@ -741,6 +879,11 @@ domain_claims:
     I have no problem asserting that as an AAWSAP [Advanced Aerospace Weapon System Applications Program]/AATIP Contractor & Senior Advisor I continued to attend meetings, provide briefings, gain access to videos, provide Proposed Program Plans, meet with staff, etc., all under the aegis of Elizondo’s leadership and responsibility for maintaining continuity of the Program effort and goals until he resigned.
   text: |-
     As an Advanced Aerospace Weapon System Applications Program (AAWSAP)/Advanced Aerospace Threat Identification Program (AATIP) Contractor and Senior Advisor, Hal Puthoff continued to attend meetings, provide briefings, gain access to videos, provide Proposed Program Plans, and meet with staff, all under the aegis of Luis Elizondo's leadership and responsibility for maintaining continuity of the program effort and goals until Elizondo resigned.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 17c2c823-3b97-4aa0-b7bd-8b1bb68fbc3c
   type: opinion
   attestation: first_hand
@@ -763,6 +906,11 @@ domain_claims:
     I have been following all the buzz back ‘n forth concerning Elizondo’s role in AATIP, and recognize that there are a number of misunderstandings – for reasonable reasons – given that the public doesn’t have detailed access to daily activities in Pentagon projects/offices. Unfortunately for the public, those not directly connected, e.g., in the Public Affairs Office, are often themselves sketchy about details concerning highly-classified sensitive programs for which they have little-to-no access for security reasons.
   text: |-
     Hal Puthoff considers that the public does not have detailed access to daily activities in Pentagon projects and offices, and that those not directly connected, such as staff in the Public Affairs Office, are often themselves unclear about details concerning highly classified sensitive programs for which they have little to no access.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9da0533c-2d91-4e51-91c4-2cb1195a49b2
   type: administrative
   provenance_chain:
@@ -780,6 +928,11 @@ domain_claims:
   quote: AAWSAP/AATIP contracted work began in 2008 at DIA
   text: |-
     Advanced Aerospace Weapon System Applications Program (AAWSAP)/Advanced Aerospace Threat Identification Program (AATIP) contracted work began in 2008 at the Defense Intelligence Agency (DIA).
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8b282c45-efaf-4670-bdd1-a10228f053d6
   type: administrative
   provenance_chain:
@@ -798,6 +951,11 @@ domain_claims:
     Mr. Elizondo’s alleged leadership began in 2010 at OUSDI when the program was transferred.
   text: |-
     Luis Elizondo's alleged leadership of the Advanced Aerospace Threat Identification Program (AATIP) began in 2010 at the Office of the Under Secretary of Defense for Intelligence (OUSDI), when the program was transferred there.
+  entailment:
+    label: entails
+    score: 0.69
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c69b7a94-6fe1-42b9-b60d-8b1606552a29
   type: opinion
   provenance_chain:
@@ -821,6 +979,11 @@ domain_claims:
     It is unclear how Dr. Puthoff could have worked under Mr. Elizondo’s leadership, since AAWSAP/AATIP contracted work began in 2008 at DIA and Mr. Elizondo’s alleged leadership began in 2010 at OUSDI when the program was transferred.
   text: |-
     It is unclear how Hal Puthoff could have worked under Luis Elizondo's leadership given that AAWSAP/AATIP contracted work began in 2008 at the Defense Intelligence Agency while Elizondo's alleged leadership began in 2010 at OUSDI.
+  entailment:
+    label: entails
+    score: 0.71
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f3bb0a7a-8872-40bb-beb8-b9c0735620f7
   type: administrative
   provenance_chain:
@@ -838,6 +1001,11 @@ domain_claims:
     the contracted work by Bigelow Aerospace Advanced Space Studies, LLC. who initially won the contract
   text: |-
     Bigelow Aerospace Advanced Space Studies, LLC initially won the contract for the Advanced Aerospace Weapon System Applications Program (AAWSAP)/Advanced Aerospace Threat Identification Program (AATIP) work.
+  entailment:
+    label: entails
+    score: 0.5
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 35f48fb6-b88b-408a-9f94-c251b02df22a
   type: administrative
   provenance_chain:
@@ -853,6 +1021,11 @@ domain_claims:
   quote: or after the 2012 date when funding was cut entirely
   text: |-
     Funding for the Advanced Aerospace Weapon System Applications Program (AAWSAP)/Advanced Aerospace Threat Identification Program (AATIP) contracted work was cut entirely in 2012.
+  entailment:
+    label: entails
+    score: 0.507
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0143a430-fefb-4bb5-bb88-2583bd700b32
   type: administrative
   provenance_chain:
@@ -868,6 +1041,11 @@ domain_claims:
     When asked about the discrepancy, or to clarify that the contracted work by Bigelow Aerospace Advanced Space Studies, LLC. who initially won the contract, continued after two years (or after the 2012 date when funding was cut entirely); Dr. Puthoff did not return the message.
   text: |-
     When asked about the discrepancy regarding when he worked under Luis Elizondo's leadership, Hal Puthoff did not return the message.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: d706e7c7-5e92-4fec-a7eb-7dc2c28101d4
   type: administrative
@@ -887,6 +1065,11 @@ infrastructure_claims:
     Nearly two weeks ago, The Intercept published a Pentagon denial about the involvement of Mr. Luis Elizondo, and his wide-spread claims about heading a “secret Pentagon UFO program” known as the Advanced Aerospace Threat Identification Program or AATIP.
   text: |-
     On June 1, 2019, The Intercept published a Pentagon denial about the involvement of Luis Elizondo and his claims about heading a "secret Pentagon UFO program" known as the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 710f14a4-2836-4942-93b0-e84223815a96
   type: administrative
   provenance_chain:
@@ -908,6 +1091,11 @@ infrastructure_claims:
     The week following this controversial article by The Intercept, Mr. George Knapp, journalist from KLAS-TV in Las Vegas, Nevada, re-issued a new version of a previously leaked memorandum written by Senator Harry Reid.
   text: |-
     The week following The Intercept's article, George Knapp re-issued a new version of a previously leaked memorandum written by Senator Harry Reid.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8a13a1a7-5cde-4095-b64a-8264849d97d1
   type: administrative
   provenance_chain:
@@ -929,6 +1117,11 @@ infrastructure_claims:
     That letter was first published in the July 25, 2018, KLAS-TV story written by Mr. Knapp and Mr. Matt Adams
   text: |-
     The 2009 Harry Reid memo was first published in the July 25, 2018 KLAS-TV story written by George Knapp and Matt Adams.
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5cee2284-9407-4dc2-b034-dc58d58213f4
   type: administrative
   provenance_chain:
@@ -947,6 +1140,11 @@ infrastructure_claims:
     Mr. Bryan Bender, defense editor for Politico who authored one of the main articles breaking the AATIP story in December 2017
   text: |-
     Bryan Bender authored one of the main articles breaking the Advanced Aerospace Threat Identification Program (AATIP) story in December 2017.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2530e1aa-5121-4af7-ad34-47d69f8292a1
   type: opinion
   attestation: first_hand
@@ -972,6 +1170,11 @@ infrastructure_claims:
     tweeted, “I’d stay tuned for a much more definitive statement from the Pentagon this week. The Intercept’s assertions and innuendo (it never definitively reported anything) were wrong. And the issue should be settled once and for all. Though with this crowd I won’t count on it.”
   text: |-
     On 2019-06-02, Bryan Bender tweeted that a much more definitive statement from the Pentagon was expected that week, that The Intercept's assertions and innuendo were wrong, and that the issue should be settled once and for all.
+  entailment:
+    label: entails
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

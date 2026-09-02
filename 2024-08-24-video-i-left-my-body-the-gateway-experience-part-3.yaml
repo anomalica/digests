@@ -3,27 +3,35 @@ schema: anomalica/digest/1
 extracted_at: '2026-08-01T01:47:41.298644+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 526544
-      output: 36287
-      real_input: 16
-      cache_read: 142144
-      cache_write: 384384
-      calls: 3
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 526544
+    output: 36287
+    real_input: 16
+    cache_read: 142144
+    cache_write: 384384
+    calls: 3
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 21.4
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: 088d1bba9337e698c88e463433b0eeb2fa5fadb707594d88e4b93ff269b3bec3
   prep_version: 6
@@ -44,1637 +52,2057 @@ record:
 terminology:
   main_subject: Gateway Experience (Monroe Institute program)
   acronyms:
-    - acronym: OBE
-      expansion: out-of-body experience
-    - acronym: CIA
-      expansion: Central Intelligence Agency
+  - acronym: OBE
+    expansion: out-of-body experience
+  - acronym: CIA
+    expansion: Central Intelligence Agency
 nodes:
+- id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+  type: person
+  name: Graham Nichols
+- id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+  type: person
+  name: Nelson Delis
+- id: bf502091-394a-4469-9dcc-1525b11c2236
+  type: person
+  name: John Zubek
+- id: 5ef4517f-4c2d-4b5e-9a1f-285675edbbf3
+  type: person
+  name: Rupert Sheldrake
+- id: 8ced5207-7a60-4b37-9f09-3f481e667990
+  type: person
+  name: Joe McMoneagle
+- id: 0deb44c4-f7c4-4fc7-b3bc-5e53ea5f6c65
+  type: person
+  name: Edwin May
+- id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
+  type: organisation
+  name: The Monroe Institute
+- id: d708124e-4deb-497b-8ff1-a6b2bc0d1db6
+  type: organisation
+  name: Central Intelligence Agency (CIA)
+- id: c84b2989-444d-49b3-afb8-2158fd22903c
+  type: organisation
+  name: University of Manitoba
+- id: e5d00791-52d4-40f4-9fb0-d37cb6297cfb
+  type: organisation
+  name: Canadian Department of National Defence
+- id: 3a66c80f-7593-412b-a421-660e38072960
+  type: organisation
+  name: United States Government
+- id: 443af19e-ede7-47e3-9b79-c81433061493
+  type: organisation
+  name: Area 52
+- id: 252d3fc0-1833-465a-b8b5-954936455fc3
+  type: project
+  name: Gateway Experience (Monroe Institute program)
+- id: 3889e585-eee1-4eef-b10a-6edfa6dd2a66
+  type: project
+  name: Project MKUltra
+- id: 21514793-0bcf-472d-8151-09d51a2fe2b8
+  type: topic
+  name: Focus 10
+- id: c2e17a1b-77c2-45b7-95c0-1bddc93ced2b
+  type: topic
+  name: Focus 12
+- id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+  type: topic
+  name: out-of-body experience (OBE)
+- id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
+  type: topic
+  name: remote viewing
+- id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
+  type: topic
+  name: precognition
+- id: 6abc7e34-35e0-416c-b0f5-a29f44683289
+  type: topic
+  name: Hemi-Sync audio technology
+- id: 564d6fab-49e5-4f40-a922-2089542f95b0
+  type: topic
+  name: sensory deprivation
+- id: 9c5c5195-ac9a-4da2-87b3-56c7ddfcec51
+  type: topic
+  name: telepathy
+- id: b5033b04-782c-4fac-904d-4b7159305af2
+  type: topic
+  name: the G Technique
+- id: 13e5cdcf-a38c-414e-9b70-cc8e5bfe58dd
+  type: object
+  name: infraliminal sound device
+- id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+  type: event
+  name: 1999 Admiral Duncan pub bombing
+  metadata:
+    date_start: '1999-04-30'
+- id: 3108348b-d286-4521-87c7-990050c18820
+  type: place
+  name: United Kingdom, England, London, Soho
+- id: 4af83358-958a-4db1-a9e8-01a486c7d91d
+  type: place
+  name: United Kingdom, England, London, Soho, Old Compton Street
+- id: 6a0b2721-dea1-4783-8331-4918eb6edb98
+  type: place
+  name: USA, Oregon, Portland
+- id: e50accd5-0eee-435a-8615-2a8b3f2a085a
+  type: object
+  name: Admiral Duncan (pub)
+domain_claims:
+- id: 54cee47d-9452-4930-8bdd-7b5d1dd8541e
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: a final assessment document on the gateway process training
+  attribution_in_text: false
+  location: 00:00:19.6-00:00:27.3
+  refs:
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    Final assessment of the gateway process training. The objective was to evaluate the effectiveness of the process as a potential means for intelligence collection.
+  text: |-
+    A classified assessment described the objective of the Gateway Experience process training as evaluating the effectiveness of the process as a potential means of intelligence collection.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5c9160c2-8e52-4f9d-a832-06fbd0e76573
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:05:56.5-00:05:59.3
+  refs:
   - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-    type: person
     name: Graham Nichols
-  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-    type: person
-    name: Nelson Delis
-  - id: bf502091-394a-4469-9dcc-1525b11c2236
-    type: person
-    name: John Zubek
-  - id: 5ef4517f-4c2d-4b5e-9a1f-285675edbbf3
-    type: person
-    name: Rupert Sheldrake
-  - id: 8ced5207-7a60-4b37-9f09-3f481e667990
-    type: person
-    name: Joe McMoneagle
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: Graham Nichols, a leading figure in the study of out-of-body experiences.
+  text: Graham Nichols is a leading figure in the study of out-of-body experiences.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a82eaf4d-00ee-479a-a351-4e9d0d37acc0
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:06:00.4-00:06:08.7
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    Over the past two decades, Graham has not only explored the outer edges of human consciousness, but has also developed innovative technology to aid in these experiences.
+  text: |-
+    Over the past two decades, Graham Nichols has explored the outer edges of human consciousness and developed technology to aid out-of-body experiences.
+  entailment:
+    label: entails
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a6ede444-049f-408d-b13e-d8364ed0901e
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:06:09.9-00:06:17.8
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 13e5cdcf-a38c-414e-9b70-cc8e5bfe58dd
+    name: infraliminal sound device
+  quote: |-
+    His creations, like the infraliminal sound device, has opened new possibilities for those seeking to explore consciousness beyond the physical realm.
+  text: |-
+    Graham Nichols developed the infraliminal sound device to aid people in exploring consciousness beyond the physical realm.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2aa52451-6dba-48d4-90b2-1a24ec9cc2bd
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:06:19.0-00:06:31.4
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  quote: |-
+    And in 1999, while developing some of his systematic techniques for achieving OBEs, he found himself leaving his body and witnessing an explosion in downtown London that would occur five days later.
+  text: |-
+    In 1999, while developing systematic techniques for achieving out-of-body experiences, Graham Nichols left his body and witnessed an explosion in downtown London that occurred five days later.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d56e4855-a2f5-4943-83f5-5880d38a56a8
+  type: testimony
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:06:32.4-00:06:37.5
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
+    name: precognition
+  quote: |-
+    And this case of precognition was unique in that it was also witnessed by five other people.
+  text: |-
+    Graham Nichols's 1999 precognitive experience of the London bombing was also witnessed by five other people.
+  entailment:
+    label: entails
+    score: 0.544
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0fc7d1c4-1fcf-472b-9321-9f4441e67253
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:06:39.4-00:06:44.4
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: My name is Graham Nichols and I am a specialist in our body experiences.
+  text: Graham Nichols is a specialist in out-of-body experiences.
+  entailment:
+    label: contradicts
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: be161c2d-d5c4-4dc3-bb84-6f198e2dd846
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:06:48.0-00:06:55.4
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: b5033b04-782c-4fac-904d-4b7159305af2
+    name: the G Technique
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    I just developed the G technique, which is one of the methods that I use for initiating our body experiences.
+  text: |-
+    Graham Nichols developed the G Technique, one of his methods for initiating out-of-body experiences.
+  entailment:
+    label: contradicts
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: d702e4ec-18ef-4507-b11d-60010152bedb
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:06:56.2-00:07:01.9
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: b5033b04-782c-4fac-904d-4b7159305af2
+    name: the G Technique
+  quote: |-
+    And I decided to teach this to a few of my friends. There was basically a group of five of us.
+  text: In 1999, Graham Nichols taught the G Technique to a group of five friends.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ebef2ccd-66fa-4de7-9cfc-15f9a5b28a93
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:07:23.3-00:07:39.6
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: b5033b04-782c-4fac-904d-4b7159305af2
+    name: the G Technique
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    it was like almost as soon as I thought that something just hit me like a like a ton of bricks I went into like a really deep state and I went down onto the ground and went into an hour body experience.
+  text: |-
+    While demonstrating the G Technique to friends in 1999, Graham Nichols entered a deep state and went onto the ground into an out-of-body experience.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 7979e262-8e73-499a-a6e2-52039b5effaf
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:07:57.5-00:08:03.5
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 4af83358-958a-4db1-a9e8-01a486c7d91d
+    name: United Kingdom, England, London, Soho, Old Compton Street
+  quote: |-
+    And then I found myself standing on the corner of Moore Street and on Compton Street in Soho. in central London.
+  text: |-
+    During his 1999 out-of-body experience, Graham Nichols found himself standing at the corner of Moore Street and Old Compton Street in Soho, central London.
+  entailment:
+    label: neutral
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: aac23d50-9253-454c-bf69-372f3bf127c0
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:08:13.2-00:08:28.8
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  - id: 4af83358-958a-4db1-a9e8-01a486c7d91d
+    name: United Kingdom, England, London, Soho, Old Compton Street
+  quote: |-
+    And then suddenly there was an explosion and a man ran past me towards the explosion it was almost like he was trying to go to help or something and then i saw all the chaos and the smoke and everything panicking
+  text: |-
+    During his 1999 out-of-body experience on Old Compton Street, Graham Nichols witnessed an explosion and saw a man run past him toward it.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 2be32a30-ad9b-4051-8f30-5d2dc17efa80
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:08:31.9-00:08:53.7
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    a few moments after the explosion i felt this energy sort of hit me in the chest that was quite physical and tangible kind of you know strike in my chest not painful again but just like a kind of pressure and very intense and as that happened that kind of pulled me back out of the experience and i went into a kind of void
+  text: |-
+    After witnessing the explosion during his out-of-body experience, Graham Nichols felt a physical pressure strike his chest, which pulled him back into a void-like state of rudimentary consciousness.
+  entailment:
+    label: entails
+    score: 0.906
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a58e6371-dc0f-4ecb-b366-885bd73181b3
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:09:32.1-00:09:41.4
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    I've had maybe four Different experiences that have had this blue-grey quality in each of them have been objective in terms of the information that I perceived.
+  text: |-
+    Graham Nichols has had approximately four different out-of-body experiences with a distinctive blue-grey quality, each of which has been objectively verified in terms of the information perceived.
+  entailment:
+    label: neutral
+    score: 0.653
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 03db061d-5f48-429e-b567-c0a258253b5f
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:09:42.3-00:09:54.8
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
+    name: precognition
+  - id: 4af83358-958a-4db1-a9e8-01a486c7d91d
+    name: United Kingdom, England, London, Soho, Old Compton Street
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  quote: |-
+    I said that I felt that it was precognitive and I'd seen this bombing on Old Compton Street at the far right of the street and that, you know, I had this, I didn't know why, but I had this conviction that I felt that it was going to happen.
+  text: |-
+    During his 1999 out-of-body experience, Graham Nichols had the conviction that a precognitive bombing was going to happen on Old Compton Street.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 17f3839d-71eb-4fcc-ad3c-d3a3db54958d
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: a television news broadcast
+  attribution_in_text: false
+  location: 00:10:38.5-00:10:45.4
+  date: '1999-04-30'
+  refs:
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  - id: 3108348b-d286-4521-87c7-990050c18820
+    name: United Kingdom, England, London, Soho
+  quote: |-
+    At least two people are now known to have died in tonight's bomb explosion in Soho in central London.
+  text: At least two people died in the 1999 bomb explosion in Soho, central London.
+  entailment:
+    label: entails
+    score: 0.403
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e5309579-cd74-410b-ad3f-c2bb82e4173b
+  type: observation
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: unattributed
+    origin: a television news broadcast
+  attribution_in_text: false
+  location: 00:11:06.8-00:11:08.3
+  date: '1999-04-30'
+  refs:
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  - id: e50accd5-0eee-435a-8615-2a8b3f2a085a
+    name: Admiral Duncan (pub)
+  quote: The device exploded around 6.30.
+  text: |-
+    The bomb at the Admiral Duncan pub in Soho exploded at approximately 18:30 in 1999.
+  entailment:
+    label: entails
+    score: 0.971
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 39f2c4f2-47ef-467d-9023-d9d38b66c1c8
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: a television news broadcast
+  attribution_in_text: false
+  location: 00:11:09.3-00:11:12.4
+  date: '1999-04-30'
+  refs:
+  - id: e50accd5-0eee-435a-8615-2a8b3f2a085a
+    name: Admiral Duncan (pub)
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  - id: 4af83358-958a-4db1-a9e8-01a486c7d91d
+    name: United Kingdom, England, London, Soho, Old Compton Street
+  quote: The target, the Admiral Duncan in Soho's Old Compton Street.
+  text: |-
+    The target of the 1999 bombing was the Admiral Duncan pub on Old Compton Street in Soho.
+  entailment:
+    label: entails
+    score: 0.662
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: dd85c7d1-c164-4c76-9a81-5fd2c287fd79
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:13:02.5-00:13:06.9
+  date: '1999-04-30'
+  refs:
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  - id: e50accd5-0eee-435a-8615-2a8b3f2a085a
+    name: Admiral Duncan (pub)
+  quote: There was, I think, 30 people injured and three people eventually passed away.
+  text: |-
+    Approximately 30 people were injured and three people eventually died as a result of the 1999 Admiral Duncan pub bombing.
+  entailment:
+    label: entails
+    score: 0.42
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4ddb9716-e057-4fa8-bbe8-9b9cf2ffd4f4
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:13:32.2-00:13:52.8
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
+    name: precognition
+  quote: |-
+    I got on a bus a few days after... I had a strong feeling of a friend who I'd known in the past and I hadn't seen for I think at least two years... he got onto the bus so that was a that was again like another sign
+  text: |-
+    A few days after the 1999 bombing, Graham Nichols got on a bus and, after having a strong feeling about a friend he had not seen in about two years, that same friend boarded the bus a few stops later.
+  entailment:
+    label: entails
+    score: 0.794
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 333732c5-26ff-4bd5-8e94-8537301d163c
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:14:30.2-00:14:40.5
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
+    name: precognition
+  quote: |-
+    i believe that i saw it on just on the the television on on the news... it's slowly dawning on me that oh this is exactly what i saw
+  text: |-
+    Graham Nichols first learned of the 1999 Admiral Duncan bombing through television news coverage, and only gradually realised the coverage matched what he had perceived during his precognitive out-of-body experience.
+  entailment:
+    label: entails
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 24deef41-5e81-4025-a33e-64f0480100c7
+  type: opinion
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: Edwin May and Joe McMoneagle
+  attribution_in_text: false
+  location: 00:15:35.9-00:15:51.0
+  refs:
   - id: 0deb44c4-f7c4-4fc7-b3bc-5e53ea5f6c65
-    type: person
     name: Edwin May
-  - id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
-    type: organisation
-    name: The Monroe Institute
-  - id: d708124e-4deb-497b-8ff1-a6b2bc0d1db6
-    type: organisation
-    name: Central Intelligence Agency (CIA)
+  - id: 8ced5207-7a60-4b37-9f09-3f481e667990
+    name: Joe McMoneagle
+  - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
+    name: remote viewing
+  quote: |-
+    in the work that Dr. May and Joe McMoneagle had done for years was the higher level of entropy and the more at risk a human life was, the clearer the target would become for them.
+  text: |-
+    In the remote viewing research conducted by Edwin May and Joe McMoneagle, the higher the entropy and the more a human life was at risk, the clearer the target would become for the remote viewer.
+  entailment:
+    label: entails
+    score: 0.481
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 92a54f95-936a-470b-8a83-bffbb99d637f
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:15:52.7-00:16:02.2
+  date: '1999'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
+    name: remote viewing
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
+    name: 1999 Admiral Duncan pub bombing
+  quote: |-
+    this being having all of those ingredients came in the form of a stronger session of remote viewing, which resulted in out of body.
+  text: |-
+    Graham Nichols considers his 1999 precognitive out-of-body experience of the Admiral Duncan bombing to be an unusually strong session of remote viewing that resulted in an out-of-body experience.
+  entailment:
+    label: neutral
+    score: 0.716
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9748223e-e5ef-488c-91f7-7af1f8a322a7
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:16:15.8-00:16:37.4
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 9c5c5195-ac9a-4da2-87b3-56c7ddfcec51
+    name: telepathy
+  - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
+    name: precognition
+  quote: |-
+    i tend to talk about it in terms of maybe emotional impact... when there's a strong bond between the two participants it tends to be more successful in terms of psychic research so I guess I tend to frame it in the sense of emotion or emotional impact
+  text: |-
+    Graham Nichols considers emotional bond or emotional impact between participants to be a key factor in the success of psychic phenomena such as precognition and telepathy.
+  entailment:
+    label: neutral
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1d80c210-e8ba-46ea-b54b-b3928228cd32
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:16:49.8-00:16:59.1
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 564d6fab-49e5-4f40-a922-2089542f95b0
+    name: sensory deprivation
+  - id: bf502091-394a-4469-9dcc-1525b11c2236
+    name: John Zubek
+  quote: |-
+    The technology came around because I was thinking a lot about sensory deprivation. I started researching a scientist called John Zubek.
+  text: |-
+    Graham Nichols began developing his out-of-body-experience technology after researching sensory deprivation and the scientist John Zubek.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f527ec54-8ba3-45dd-8b45-6064df773695
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:17:06.0-00:17:08.3
+  refs:
+  - id: bf502091-394a-4469-9dcc-1525b11c2236
+    name: John Zubek
+  - id: 564d6fab-49e5-4f40-a922-2089542f95b0
+    name: sensory deprivation
+  quote: Zubek devoted his career to researching sensory deprivation
+  text: John Zubek devoted his career to researching sensory deprivation.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3f31fe03-056a-4e5b-8d4e-46e4fcb7ad95
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:17:09.1-00:17:13.3
+  refs:
+  - id: bf502091-394a-4469-9dcc-1525b11c2236
+    name: John Zubek
   - id: c84b2989-444d-49b3-afb8-2158fd22903c
-    type: organisation
     name: University of Manitoba
+  - id: 564d6fab-49e5-4f40-a922-2089542f95b0
+    name: sensory deprivation
+  quote: |-
+    conducting over 15 years of experiments at the University of Manitoba on more than 500 individuals.
+  text: |-
+    John Zubek conducted over 15 years of sensory deprivation experiments at the University of Manitoba on more than 500 individuals.
+  entailment:
+    label: entails
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e00d36b8-5037-48d0-836b-342cfcff154a
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:17:15.3-00:17:18.5
+  refs:
+  - id: bf502091-394a-4469-9dcc-1525b11c2236
+    name: John Zubek
+  - id: 564d6fab-49e5-4f40-a922-2089542f95b0
+    name: sensory deprivation
+  quote: isolating them from all sensory input for up to two weeks.
+  text: |-
+    John Zubek isolated experiment subjects from all sensory input for up to two weeks at a time.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 083dedfc-9b6b-4b4c-bd11-70ec5a4b3989
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:17:19.2-00:17:24.7
+  refs:
+  - id: bf502091-394a-4469-9dcc-1525b11c2236
+    name: John Zubek
+  - id: d708124e-4deb-497b-8ff1-a6b2bc0d1db6
+    name: Central Intelligence Agency (CIA)
+  - id: 3889e585-eee1-4eef-b10a-6edfa6dd2a66
+    name: Project MKUltra
+  quote: |-
+    His work paralleled the CIA's MKUltra program, which sought to manipulate human behavior for interrogation purposes.
+  text: |-
+    John Zubek's sensory deprivation research paralleled the CIA's Project MKUltra, which sought to manipulate human behaviour for interrogation purposes.
+  entailment:
+    label: entails
+    score: 0.539
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6983a5b6-cb16-4b9f-a1f9-11799cd54def
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:17:25.8-00:17:33.1
+  refs:
+  - id: bf502091-394a-4469-9dcc-1525b11c2236
+    name: John Zubek
   - id: e5d00791-52d4-40f4-9fb0-d37cb6297cfb
-    type: organisation
     name: Canadian Department of National Defence
   - id: 3a66c80f-7593-412b-a421-660e38072960
-    type: organisation
     name: United States Government
+  quote: |-
+    Funded by both the Canadian Defense Department and the US government, Zubek emerged as a leading figure in sensory deprivation research.
+  text: |-
+    John Zubek's sensory deprivation research was funded by both the Canadian Department of National Defence and the United States Government.
+  entailment:
+    label: entails
+    score: 0.675
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 7506c615-94b4-4189-af49-9afd5e1bf070
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:17:35.4-00:17:39.2
+  date: '1974'
+  refs:
+  - id: bf502091-394a-4469-9dcc-1525b11c2236
+    name: John Zubek
+  quote: Zubek passed away in 1974 due to an apparent suicide by drowning.
+  text: John Zubek died in 1974 in an apparent suicide by drowning.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e236c9f0-42d6-4bb3-900c-5f05879a1d2d
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: named
+    origin: John Zubek
+    relay:
+    - Graham Nichols's account
+  attribution_in_text: false
+  location: 00:17:40.9-00:17:51.0
+  refs:
+  - id: bf502091-394a-4469-9dcc-1525b11c2236
+    name: John Zubek
+  - id: 564d6fab-49e5-4f40-a922-2089542f95b0
+    name: sensory deprivation
+  quote: |-
+    He did things like put himself into a giant sphere, white sphere, for two weeks with no sensory input whatsoever.
+  text: |-
+    John Zubek placed himself inside a giant white sphere for two weeks with no sensory input as part of his sensory deprivation research.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: aa8c284d-304b-4bfc-8c91-7af0c13acc5a
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:18:26.0-00:18:33.7
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    i started doing research into things like flow states and realized that the pre-state to an out-of-body experience is probably the key to the experience
+  text: |-
+    Graham Nichols considers the pre-state prior to an out-of-body experience to be the key to achieving the experience.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 642bf69a-1ff9-4722-a5fe-ae8330dd8b27
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:19:53.2-00:20:05.5
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    don't jump around in terms of techniques i would say don't even worry too much about techniques focus on the pre-state the state that you get into prior to having the out-of-body experience
+  text: |-
+    Graham Nichols advises people seeking their first out-of-body experience to focus on reaching the pre-state rather than jumping between different techniques.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 6dd110d0-0816-4576-8f70-e390832a6adb
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:20:38.0-00:20:43.6
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    work consistently. Pick a technique and work consistently with it... Ideally, at least about three times a week, I would say.
+  text: |-
+    Graham Nichols advises practising a chosen out-of-body-experience technique consistently, ideally at least about three times a week.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9070f713-cb22-482d-b069-9c8425e6ffe8
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:22:04.0-00:22:10.8
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
   - id: 443af19e-ede7-47e3-9b79-c81433061493
-    type: organisation
     name: Area 52
+  quote: |-
+    Now I wanna check in with Nelson Delis, who by the way is quickly becoming the unofficial Area 52 field agent at this point.
+  text: Nelson Delis is regarded as the unofficial Area 52 field agent.
+  entailment:
+    label: entails
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9bf1cfc0-9edd-459a-ab30-837e8c57a7f6
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:22:14.7-00:22:20.7
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
   - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-    type: project
     name: Gateway Experience (Monroe Institute program)
-  - id: 3889e585-eee1-4eef-b10a-6edfa6dd2a66
-    type: project
-    name: Project MKUltra
+  - id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
+    name: The Monroe Institute
+  quote: |-
+    Nelson decided to sign up for the following Gateway program after me, which we'll talk about more on an upcoming podcast.
+  text: |-
+    Nelson Delis signed up for a Gateway Experience program at the Monroe Institute after the narrator.
+  entailment:
+    label: entails
+    score: 0.426
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5fcde4c2-57d7-4faf-8eaf-7fc3a35759b9
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:22:21.5-00:22:27.8
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
+    name: remote viewing
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    But while there, he had one of the most remarkable remote viewing sessions I've ever heard about.
+  text: |-
+    Nelson Delis had one of the most remarkable remote viewing sessions during his time at the Gateway Experience program.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5c1d2d9b-cb64-430c-b6db-78c272d7610a
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:22:28.3-00:22:37.3
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
   - id: 21514793-0bcf-472d-8151-09d51a2fe2b8
-    type: topic
     name: Focus 10
   - id: c2e17a1b-77c2-45b7-95c0-1bddc93ced2b
-    type: topic
     name: Focus 12
+  quote: |-
+    It was pretty early on in the Gateway experience. I think it might have been on day two. And we had just kind of learned about Focus 10, and we're kind of experimenting with Focus 12, F12.
+  text: |-
+    During the Gateway Experience, on approximately day two of the program, Nelson Delis had just learned about Focus 10 and was experimenting with Focus 12.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 59538850-bd72-4f24-803c-e4298ad9f1cc
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:23:25.3-00:23:37.5
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    So one of the other members at The Experience, I asked them randomly... could you write down a four digit number on a piece of paper, clear as day, and put it on your desk by your little cubby unit, your bed.
+  text: |-
+    Nelson Delis asked another Gateway Experience participant to write down a four-digit number on a piece of paper and place it in her room before she went to her session.
+  entailment:
+    label: contradicts
+    score: 0.812
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 39f87e69-3f87-4c89-9731-6b7ee43166a4
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:23:43.1-00:23:53.5
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
   - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-    type: topic
+    name: out-of-body experience (OBE)
+  quote: |-
+    my goal was gonna be, I'm gonna go into my session and I'm gonna have an OBE, float over to her room, see the number, and then afterwards validate it with her that we have the same number.
+  text: |-
+    Nelson Delis's plan was to have an out-of-body experience (OBE) during his session, float to the other participant's room, view the number she had written, and validate it with her afterwards.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9f3949d4-ccc5-4a25-ae39-67a9b8adb07f
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:00:27-00:00:37
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  quote: |-
+    A little splotch out of the darkness shows up... at like a wooden wall... At the bottom angle of some thing, it seemed like an opening to some kind of bed... at a desk. Clear as day, there was a desk.
+  text: |-
+    During his attempt at the number-guessing exercise, Nelson Delis perceived a series of visual impressions including a wooden wall, an opening resembling a bed with scattered items on the floor, and finally a desk with a piece of paper on it.
+  entailment:
+    label: entails
+    score: 0.575
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: fdc84fb7-7d99-48ab-883e-e2deef31f9fa
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:25:37.8-00:25:48.7
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  quote: |-
+    there was this white piece of paper with four numbers on it, four digits on it. One, seven, three, six... that last digit... was kind of out of focus. So I guessed six.
+  text: |-
+    Nelson Delis perceived the number written on the paper as 1736, but was uncertain about the last digit, which appeared out of focus.
+  entailment:
+    label: entails
+    score: 0.537
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 7d317bce-bd9c-4456-8dae-7f5cfb65659c
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:26:19.3-00:26:23.9
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  quote: |-
+    what I also noticed on that desk, it wasn't just the paper. There were some other things scattered on the desk as well.
+  text: |-
+    Nelson Delis noticed other objects scattered on the desk in his vision, in addition to the paper with the number.
+  entailment:
+    label: neutral
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 38860b14-5723-4834-a5a4-ea2dbb46cdcb
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:26:59.3-00:27:05.6
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  quote: |-
+    the session ends, I write down the number 1736 and we go out and we go to the debriefing room
+  text: |-
+    Nelson Delis wrote down the number 1736 after his session before comparing it with the participant's written number.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d1cc9d8c-97cc-4536-ad26-1548a0305620
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:27:13.8-00:27:23.8
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  quote: there, as clear as day, was 173 and a four. A four... not a six
+  text: |-
+    The participant's actual written number was 1734, matching the first three digits (1, 7, 3) that Nelson Delis had perceived but differing on the fourth digit, which Nelson Delis had guessed as six rather than four.
+  entailment:
+    label: neutral
+    score: 0.733
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 164436dd-2483-46c1-badf-f6743dc29db7
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:27:28.6-00:27:40.2
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  quote: |-
+    odds of that you know to get three digits in the right spot it's really like one in a thousand right... still felt very... validating, I believe that I was there in that person's room.
+  text: |-
+    Nelson Delis considers correctly perceiving three of four digits in the number-guessing exercise to be roughly one-in-a-thousand odds by chance, and found the result validating that he had been present in the other participant's room during his experience.
+  entailment:
+    label: entails
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ed583c79-afdc-4920-bba8-1dd67ad27f5f
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:28:08.9-00:28:11.8
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  quote: we go up to the room, The wall, yeah, it was wood. I knew that.
+  text: |-
+    Nelson Delis later visited the participant's actual room and found the wall was made of wood, matching what he had perceived during his session.
+  entailment:
+    label: neutral
+    score: 0.662
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 55deeb84-53d3-4248-9c16-20ef824507a0
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:28:17.6-00:28:26.4
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  quote: |-
+    on the floor was littered all of her clothes and shoes and stuff from her suitcase. And even on the table... there were other things scattered around the desk.
+  text: |-
+    Nelson Delis found that the participant's room had clothes and shoes scattered on the floor and other items on the desk around where the number had been placed, matching details he had perceived during his session.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a3b8d53c-dd60-4741-a2a6-7470f425e24e
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:28:57.5-00:29:06.7
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  quote: |-
+    I checked other people's rooms to see. Nobody else was messy except her in that regard. So more evidence to me that I actually was in her room
+  text: |-
+    Nelson Delis checked other participants' rooms and found that none besides the one participant were similarly messy, which he considered further evidence that he had actually perceived her specific room.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9a7b224d-1ec1-4997-94fa-9714038037e7
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:29:32.2-00:29:37.6
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    Now in a twist of fate and about a week apart, Nelson and I both ended up having an out-of-body experience.
+  text: |-
+    Graham Nichols and Nelson Delis both had an out-of-body experience (OBE) about a week apart from each other, after returning from the Gateway Experience program.
+  entailment:
+    label: neutral
+    score: 0.583
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 80eb131e-f930-4f97-bd5a-a0756e12974e
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:29:39.0-00:29:42.5
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: This would be my fifth and latest and Nelson's first.
+  text: |-
+    The out-of-body experience (OBE) described was Graham Nichols's fifth and Nelson Delis's first.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8e95c55f-91ed-4662-8f4a-859fb0664b34
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:29:58.1-00:30:04.7
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    this would be my fifth out-of-body experience, including the two that I had last year, my third since getting back from Monroe.
+  text: |-
+    Graham Nichols's out-of-body experience described in this video was his fifth overall, including two from the previous year, and his third since returning from the Gateway Experience program.
+  entailment:
+    label: contradicts
+    score: 0.547
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1ab05995-60c5-41df-8afa-91b8848632f4
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:30:05.9-00:30:16.3
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 6a0b2721-dea1-4783-8331-4918eb6edb98
+    name: USA, Oregon, Portland
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    I was flying from the West Coast, Portland, Oregon, over to the East Coast on a red-eye flight. You know, I had just ran a 40-mile ultramarathon, so I was exhausted.
+  text: |-
+    Nelson Delis's out-of-body experience occurred while he was on a red-eye flight from Portland, Oregon, to the East Coast, after having just run a 40-mile (approximately 64-kilometre) ultramarathon.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d7dedc4e-2979-4bda-9d4b-ceac02765000
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:30:17.2-00:30:34.9
+  date: '2024-08-07'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
+    name: The Monroe Institute
+  quote: |-
+    August 7th, 5.35 a.m., I get up to go to the bathroom, come back into bed... I put the headphones on, and I open my Expand app, which is the app from Monroe Institute that has, you know, the sort of binaural beats and this Monroe sound science.
+  text: |-
+    On August 7th at 5:35 a.m., Graham Nichols got up, returned to bed, put on headphones, and opened the Expand app, a Monroe Institute app featuring binaural beats and Monroe sound science technology.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a456562a-a393-429f-a496-cc9d4596615a
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:30:44.0-00:30:53.3
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
+    name: The Monroe Institute
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    I should do one of the... exercises I got from, it was like a take home exercise from the Monroe Institute, the Gateway Experience. It's basically a 45 minute guided meditation.
+  text: |-
+    Nelson Delis performed a take-home exercise from the Monroe Institute's Gateway Experience program, a 45-minute guided meditation.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: aa948f13-9f29-4357-90a2-d07bfeff0782
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:30:54.3-00:31:01.3
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 21514793-0bcf-472d-8151-09d51a2fe2b8
+    name: Focus 10
+  quote: |-
+    I do a 60 minute focus 10 meditation. Great meditation, did not fall asleep, didn't click out. I was totally lucid the entire time.
+  text: |-
+    Graham Nichols did a 60-minute Focus 10 meditation, remaining fully lucid throughout without falling asleep.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 13f6e1b1-6f4d-4db2-bea0-b90d148001ba
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:31:12.6-00:31:37.8
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    felt that pre-OBE state, that vibratory state... As I'm transitioning and crossing this bridge, almost instantly there was a surge of, or jolt of electricity that went through me. And just like before, in my head, I say to myself, I deeply desire to leave my body... the third time I say it, I feel myself sinking further into the pillow
+  text: |-
+    During his out-of-body experience, Nelson Delis felt a pre-OBE vibratory state as he crossed an imagined bridge, followed by a surge of electricity through his body after mentally repeating the phrase "I deeply desire to leave my body" three times.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 33ea82e6-b1b6-4bbf-bb24-ed79756d96d3
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:31:59.4-00:32:03.6
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    I realized that I could suddenly see through my eyelids. Obviously my eyelids were closed... suddenly I could see through my eyes, through my eyelids.
+  text: |-
+    Nelson Delis reported that he could suddenly see through his closed eyelids during his out-of-body experience.
+  entailment:
+    label: neutral
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 0776890e-5ff3-4a1d-82fa-74233a5fb10e
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:32:39.3-00:32:50.0
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    I remember saying to myself the words, clarity now, demanding clarity. The second I said it, I could start seeing my room through my closed eyes.
+  text: |-
+    Graham Nichols said the words "clarity now, demanding clarity" to himself and, immediately after, began to see his room through his closed eyes.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5556f27f-8fc1-4a73-a2fe-e2e4e06a9a40
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:02:44-00:02:53
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    I had to check for a second. Are my eyes closed? Yes, they were closed... This is not my physical body. This is my non-physical body seeing. And I'm having an OBE, this is it.
+  text: |-
+    Nelson Delis checked and confirmed his eyes were physically closed while he reported being able to see clearly, which he interpreted as evidence that he was perceiving with a non-physical body rather than imagining it.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: c8930c1f-d38e-430b-a4f3-f7eb55f723bb
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:33:28.5-00:33:33.0
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: I knowingly and easily just kind of move forward out of my body two, three feet.
+  text: |-
+    Nelson Delis moved forward out of his body two to three feet (approximately one metre) during his out-of-body experience.
+  entailment:
+    label: entails
+    score: 0.513
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: aca6529b-e2cb-47bf-a9a2-06479a27efaf
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:33:33.7-00:33:38.3
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: I get up from out of my bed, look back, notice my body, ignore that,
+  text: |-
+    Graham Nichols reported getting up out of his bed during his out-of-body experience, looking back, and noticing his own physical body.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: af940879-2f7c-448f-be7c-3975ee7bd03e
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:33:47.7-00:34:04.1
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    Go to the window, but try to put my hand through the glass. Tonk. I could not go through the glass... I decided to open the window. I sort of thrust my body up very easily... and sort of leapt out the window halfway. And as I was halfway out the window, I hear a voice. What are you doing?
+  text: |-
+    Graham Nichols attempted to put his hand through a window during his out-of-body experience but was unable to pass through the glass, then opened the window and leapt halfway out, at which point he heard a voice ask "What are you doing?"
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 050b9def-4cd7-4813-a61a-b253ff8166ae
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:34:08.2-00:34:16.3
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    I was really excited. So excited, I guess, that after a few seconds, the excitement got too much and I kind of just like shot back into my body
+  text: |-
+    Nelson Delis's excitement during his out-of-body experience became too much after a few seconds and he was pulled back into his body.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 2bb60a52-767b-425a-bd33-a4be821641d8
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:34:31.0-00:34:36.4
+  date: '2024-08-07'
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: opened my eyes, and it was now 6.38 a.m. So I popped the meditation at 5.35.
+  text: |-
+    Graham Nichols opened his eyes and ended his out-of-body experience at 6:38 a.m., having started the meditation at 5:35 a.m.
+  entailment:
+    label: neutral
+    score: 0.645
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: bbe05a53-c656-409d-8450-5d372f383a6e
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:34:40.3-00:34:50.1
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    The time that I took to close my eyes, get out of my body, and come back was about two minutes, two and a half minutes. Not enough time for me to fall asleep. I was completely lucid the entire time.
+  text: |-
+    Graham Nichols estimated that the time from closing his eyes, leaving his body, and returning was about two to two and a half minutes, and he remained fully lucid throughout without falling asleep.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 27d3cc10-c9ca-4f31-b6db-0225f8778b30
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:34:57.2-00:35:17.9
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    as soon as I hit back, it was kind of paired with another really intense, euphoric, vibratory sensation of kind of being shot through like a portal, a wormhole or some kind of a tunnel... I verbally said out loud like, whoa, or like, oh man.
+  text: |-
+    As Nelson Delis returned to his body during his out-of-body experience, he felt an intense, euphoric, vibratory sensation like being pulled through a portal, wormhole, or tunnel, and verbally exclaimed out loud.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 6a6abdd4-633d-496a-956c-d27ba6443a64
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Delis
+  attribution_in_text: false
+  location: 00:35:35.1-00:35:38.8
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: it's just more proof to me that we are more than our physical bodies.
+  text: |-
+    Nelson Delis considers his out-of-body experience to be further proof that people are more than their physical bodies.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1d1ae1da-b0bc-42c9-8c13-27579d0e50b2
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:35:47.1-00:36:04.6
+  refs:
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    The objective, to evaluate the effectiveness of the Gateway process as a potential means of intelligence collection.
+  text: |-
+    A stated objective of the Gateway process was to evaluate its effectiveness as a potential means of intelligence collection.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1d451c78-1e40-42be-99c9-9b4421e1e7fd
+  type: testimony
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:36:05.6-00:36:10.1
+  refs:
+  - id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
+    name: The Monroe Institute
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    Over the course of one week, I underwent intensive training under the guidance of the Monroe Institute instructors.
+  text: |-
+    An individual underwent one week of intensive training under the guidance of Monroe Institute instructors as part of an evaluation of the Gateway process.
+  entailment:
+    label: entails
+    score: 0.491
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c844a2b8-00b8-4682-936e-45c3de115f3b
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:36:11.2-00:36:24.1
+  refs:
+  - id: 6abc7e34-35e0-416c-b0f5-a29f44683289
+    name: Hemi-Sync audio technology
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    The training involved the use of hemi-sync audio technology designed to synchronize the hemispheres of the brain, facilitating out-of-body experiences and altered consciousness, thereby inducing various states of consciousness.
+  text: |-
+    The training used hemi-sync audio technology designed to synchronise the hemispheres of the brain, facilitating out-of-body experiences (OBEs) and altered states of consciousness.
+  entailment:
+    label: entails
+    score: 0.482
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e2ddc8ad-0d06-4544-a6ee-e33b7c37f4a7
+  type: testimony
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:36:33.1-00:36:39.4
+  refs:
+  - id: 6abc7e34-35e0-416c-b0f5-a29f44683289
+    name: Hemi-Sync audio technology
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
+    name: out-of-body experience (OBE)
+  quote: |-
+    I consistently achieve deep meditative states and OBEs, thus validating the reliability of the Hemisync technology.
+  text: |-
+    A finding reported was that deep meditative states and out-of-body experiences (OBEs) were consistently achieved, which was said to validate the reliability of the Hemi-Sync technology.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 801f29cc-d349-4a03-a9a0-b8d2dee5bcb2
+  type: testimony
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:36:45.2-00:36:49.2
+  quote: |-
+    enhanced awareness and improved information retention, especially in deep relaxation.
+  text: |-
+    A finding reported was enhanced awareness and improved information retention, especially during deep relaxation.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ac58120f-c4f9-43db-a8d9-359e0ebe40e2
+  type: testimony
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:36:52.0-00:36:53.7
+  refs:
+  - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
     name: out-of-body experience (OBE)
   - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
-    type: topic
     name: remote viewing
-  - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
-    type: topic
-    name: precognition
-  - id: 6abc7e34-35e0-416c-b0f5-a29f44683289
-    type: topic
-    name: Hemi-Sync audio technology
-  - id: 564d6fab-49e5-4f40-a922-2089542f95b0
-    type: topic
-    name: sensory deprivation
-  - id: 9c5c5195-ac9a-4da2-87b3-56c7ddfcec51
-    type: topic
-    name: telepathy
-  - id: b5033b04-782c-4fac-904d-4b7159305af2
-    type: topic
-    name: the G Technique
-  - id: 13e5cdcf-a38c-414e-9b70-cc8e5bfe58dd
-    type: object
-    name: infraliminal sound device
-  - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-    type: event
-    name: 1999 Admiral Duncan pub bombing
-    metadata:
-      date_start: '1999-04-30'
-  - id: 3108348b-d286-4521-87c7-990050c18820
-    type: place
-    name: United Kingdom, England, London, Soho
-  - id: 4af83358-958a-4db1-a9e8-01a486c7d91d
-    type: place
-    name: United Kingdom, England, London, Soho, Old Compton Street
-  - id: 6a0b2721-dea1-4783-8331-4918eb6edb98
-    type: place
-    name: USA, Oregon, Portland
-  - id: e50accd5-0eee-435a-8615-2a8b3f2a085a
-    type: object
-    name: Admiral Duncan (pub)
-domain_claims:
-  - id: 54cee47d-9452-4930-8bdd-7b5d1dd8541e
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: a final assessment document on the gateway process training
-    attribution_in_text: false
-    location: 00:00:19.6-00:00:27.3
-    refs:
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      Final assessment of the gateway process training. The objective was to evaluate the effectiveness of the process as a potential means for intelligence collection.
-    text: |-
-      A classified assessment described the objective of the Gateway Experience process training as evaluating the effectiveness of the process as a potential means of intelligence collection.
-  - id: 5c9160c2-8e52-4f9d-a832-06fbd0e76573
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:05:56.5-00:05:59.3
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: Graham Nichols, a leading figure in the study of out-of-body experiences.
-    text: Graham Nichols is a leading figure in the study of out-of-body experiences.
-  - id: a82eaf4d-00ee-479a-a351-4e9d0d37acc0
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:06:00.4-00:06:08.7
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      Over the past two decades, Graham has not only explored the outer edges of human consciousness, but has also developed innovative technology to aid in these experiences.
-    text: |-
-      Over the past two decades, Graham Nichols has explored the outer edges of human consciousness and developed technology to aid out-of-body experiences.
-  - id: a6ede444-049f-408d-b13e-d8364ed0901e
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:06:09.9-00:06:17.8
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 13e5cdcf-a38c-414e-9b70-cc8e5bfe58dd
-        name: infraliminal sound device
-    quote: |-
-      His creations, like the infraliminal sound device, has opened new possibilities for those seeking to explore consciousness beyond the physical realm.
-    text: |-
-      Graham Nichols developed the infraliminal sound device to aid people in exploring consciousness beyond the physical realm.
-  - id: 2aa52451-6dba-48d4-90b2-1a24ec9cc2bd
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:06:19.0-00:06:31.4
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-    quote: |-
-      And in 1999, while developing some of his systematic techniques for achieving OBEs, he found himself leaving his body and witnessing an explosion in downtown London that would occur five days later.
-    text: |-
-      In 1999, while developing systematic techniques for achieving out-of-body experiences, Graham Nichols left his body and witnessed an explosion in downtown London that occurred five days later.
-  - id: d56e4855-a2f5-4943-83f5-5880d38a56a8
-    type: testimony
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:06:32.4-00:06:37.5
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-      - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
-        name: precognition
-    quote: |-
-      And this case of precognition was unique in that it was also witnessed by five other people.
-    text: |-
-      Graham Nichols's 1999 precognitive experience of the London bombing was also witnessed by five other people.
-  - id: 0fc7d1c4-1fcf-472b-9321-9f4441e67253
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:06:39.4-00:06:44.4
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: My name is Graham Nichols and I am a specialist in our body experiences.
-    text: Graham Nichols is a specialist in out-of-body experiences.
-  - id: be161c2d-d5c4-4dc3-bb84-6f198e2dd846
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:06:48.0-00:06:55.4
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: b5033b04-782c-4fac-904d-4b7159305af2
-        name: the G Technique
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      I just developed the G technique, which is one of the methods that I use for initiating our body experiences.
-    text: |-
-      Graham Nichols developed the G Technique, one of his methods for initiating out-of-body experiences.
-  - id: d702e4ec-18ef-4507-b11d-60010152bedb
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:06:56.2-00:07:01.9
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: b5033b04-782c-4fac-904d-4b7159305af2
-        name: the G Technique
-    quote: |-
-      And I decided to teach this to a few of my friends. There was basically a group of five of us.
-    text: In 1999, Graham Nichols taught the G Technique to a group of five friends.
-  - id: ebef2ccd-66fa-4de7-9cfc-15f9a5b28a93
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:07:23.3-00:07:39.6
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: b5033b04-782c-4fac-904d-4b7159305af2
-        name: the G Technique
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      it was like almost as soon as I thought that something just hit me like a like a ton of bricks I went into like a really deep state and I went down onto the ground and went into an hour body experience.
-    text: |-
-      While demonstrating the G Technique to friends in 1999, Graham Nichols entered a deep state and went onto the ground into an out-of-body experience.
-  - id: 7979e262-8e73-499a-a6e2-52039b5effaf
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:07:57.5-00:08:03.5
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 4af83358-958a-4db1-a9e8-01a486c7d91d
-        name: United Kingdom, England, London, Soho, Old Compton Street
-    quote: |-
-      And then I found myself standing on the corner of Moore Street and on Compton Street in Soho. in central London.
-    text: |-
-      During his 1999 out-of-body experience, Graham Nichols found himself standing at the corner of Moore Street and Old Compton Street in Soho, central London.
-  - id: aac23d50-9253-454c-bf69-372f3bf127c0
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:08:13.2-00:08:28.8
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-      - id: 4af83358-958a-4db1-a9e8-01a486c7d91d
-        name: United Kingdom, England, London, Soho, Old Compton Street
-    quote: |-
-      And then suddenly there was an explosion and a man ran past me towards the explosion it was almost like he was trying to go to help or something and then i saw all the chaos and the smoke and everything panicking
-    text: |-
-      During his 1999 out-of-body experience on Old Compton Street, Graham Nichols witnessed an explosion and saw a man run past him toward it.
-  - id: 2be32a30-ad9b-4051-8f30-5d2dc17efa80
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:08:31.9-00:08:53.7
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      a few moments after the explosion i felt this energy sort of hit me in the chest that was quite physical and tangible kind of you know strike in my chest not painful again but just like a kind of pressure and very intense and as that happened that kind of pulled me back out of the experience and i went into a kind of void
-    text: |-
-      After witnessing the explosion during his out-of-body experience, Graham Nichols felt a physical pressure strike his chest, which pulled him back into a void-like state of rudimentary consciousness.
-  - id: a58e6371-dc0f-4ecb-b366-885bd73181b3
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:09:32.1-00:09:41.4
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      I've had maybe four Different experiences that have had this blue-grey quality in each of them have been objective in terms of the information that I perceived.
-    text: |-
-      Graham Nichols has had approximately four different out-of-body experiences with a distinctive blue-grey quality, each of which has been objectively verified in terms of the information perceived.
-  - id: 03db061d-5f48-429e-b567-c0a258253b5f
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:09:42.3-00:09:54.8
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
-        name: precognition
-      - id: 4af83358-958a-4db1-a9e8-01a486c7d91d
-        name: United Kingdom, England, London, Soho, Old Compton Street
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-    quote: |-
-      I said that I felt that it was precognitive and I'd seen this bombing on Old Compton Street at the far right of the street and that, you know, I had this, I didn't know why, but I had this conviction that I felt that it was going to happen.
-    text: |-
-      During his 1999 out-of-body experience, Graham Nichols had the conviction that a precognitive bombing was going to happen on Old Compton Street.
-  - id: 17f3839d-71eb-4fcc-ad3c-d3a3db54958d
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: a television news broadcast
-    attribution_in_text: false
-    location: 00:10:38.5-00:10:45.4
-    date: '1999-04-30'
-    refs:
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-      - id: 3108348b-d286-4521-87c7-990050c18820
-        name: United Kingdom, England, London, Soho
-    quote: |-
-      At least two people are now known to have died in tonight's bomb explosion in Soho in central London.
-    text: At least two people died in the 1999 bomb explosion in Soho, central London.
-  - id: e5309579-cd74-410b-ad3f-c2bb82e4173b
-    type: observation
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: unattributed
-      origin: a television news broadcast
-    attribution_in_text: false
-    location: 00:11:06.8-00:11:08.3
-    date: '1999-04-30'
-    refs:
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-      - id: e50accd5-0eee-435a-8615-2a8b3f2a085a
-        name: Admiral Duncan (pub)
-    quote: The device exploded around 6.30.
-    text: |-
-      The bomb at the Admiral Duncan pub in Soho exploded at approximately 18:30 in 1999.
-  - id: 39f2c4f2-47ef-467d-9023-d9d38b66c1c8
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: a television news broadcast
-    attribution_in_text: false
-    location: 00:11:09.3-00:11:12.4
-    date: '1999-04-30'
-    refs:
-      - id: e50accd5-0eee-435a-8615-2a8b3f2a085a
-        name: Admiral Duncan (pub)
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-      - id: 4af83358-958a-4db1-a9e8-01a486c7d91d
-        name: United Kingdom, England, London, Soho, Old Compton Street
-    quote: The target, the Admiral Duncan in Soho's Old Compton Street.
-    text: |-
-      The target of the 1999 bombing was the Admiral Duncan pub on Old Compton Street in Soho.
-  - id: dd85c7d1-c164-4c76-9a81-5fd2c287fd79
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:13:02.5-00:13:06.9
-    date: '1999-04-30'
-    refs:
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-      - id: e50accd5-0eee-435a-8615-2a8b3f2a085a
-        name: Admiral Duncan (pub)
-    quote: There was, I think, 30 people injured and three people eventually passed away.
-    text: |-
-      Approximately 30 people were injured and three people eventually died as a result of the 1999 Admiral Duncan pub bombing.
-  - id: 4ddb9716-e057-4fa8-bbe8-9b9cf2ffd4f4
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:13:32.2-00:13:52.8
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
-        name: precognition
-    quote: |-
-      I got on a bus a few days after... I had a strong feeling of a friend who I'd known in the past and I hadn't seen for I think at least two years... he got onto the bus so that was a that was again like another sign
-    text: |-
-      A few days after the 1999 bombing, Graham Nichols got on a bus and, after having a strong feeling about a friend he had not seen in about two years, that same friend boarded the bus a few stops later.
-  - id: 333732c5-26ff-4bd5-8e94-8537301d163c
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:14:30.2-00:14:40.5
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-      - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
-        name: precognition
-    quote: |-
-      i believe that i saw it on just on the the television on on the news... it's slowly dawning on me that oh this is exactly what i saw
-    text: |-
-      Graham Nichols first learned of the 1999 Admiral Duncan bombing through television news coverage, and only gradually realised the coverage matched what he had perceived during his precognitive out-of-body experience.
-  - id: 24deef41-5e81-4025-a33e-64f0480100c7
-    type: opinion
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: Edwin May and Joe McMoneagle
-    attribution_in_text: false
-    location: 00:15:35.9-00:15:51.0
-    refs:
-      - id: 0deb44c4-f7c4-4fc7-b3bc-5e53ea5f6c65
-        name: Edwin May
-      - id: 8ced5207-7a60-4b37-9f09-3f481e667990
-        name: Joe McMoneagle
-      - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
-        name: remote viewing
-    quote: |-
-      in the work that Dr. May and Joe McMoneagle had done for years was the higher level of entropy and the more at risk a human life was, the clearer the target would become for them.
-    text: |-
-      In the remote viewing research conducted by Edwin May and Joe McMoneagle, the higher the entropy and the more a human life was at risk, the clearer the target would become for the remote viewer.
-  - id: 92a54f95-936a-470b-8a83-bffbb99d637f
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:15:52.7-00:16:02.2
-    date: '1999'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
-        name: remote viewing
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-      - id: 8b2d5e30-ca94-4926-98c5-70566c0988e4
-        name: 1999 Admiral Duncan pub bombing
-    quote: |-
-      this being having all of those ingredients came in the form of a stronger session of remote viewing, which resulted in out of body.
-    text: |-
-      Graham Nichols considers his 1999 precognitive out-of-body experience of the Admiral Duncan bombing to be an unusually strong session of remote viewing that resulted in an out-of-body experience.
-  - id: 9748223e-e5ef-488c-91f7-7af1f8a322a7
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:16:15.8-00:16:37.4
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 9c5c5195-ac9a-4da2-87b3-56c7ddfcec51
-        name: telepathy
-      - id: c48ba64d-f9f9-442a-93c3-6a93f2c308f3
-        name: precognition
-    quote: |-
-      i tend to talk about it in terms of maybe emotional impact... when there's a strong bond between the two participants it tends to be more successful in terms of psychic research so I guess I tend to frame it in the sense of emotion or emotional impact
-    text: |-
-      Graham Nichols considers emotional bond or emotional impact between participants to be a key factor in the success of psychic phenomena such as precognition and telepathy.
-  - id: 1d80c210-e8ba-46ea-b54b-b3928228cd32
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:16:49.8-00:16:59.1
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 564d6fab-49e5-4f40-a922-2089542f95b0
-        name: sensory deprivation
-      - id: bf502091-394a-4469-9dcc-1525b11c2236
-        name: John Zubek
-    quote: |-
-      The technology came around because I was thinking a lot about sensory deprivation. I started researching a scientist called John Zubek.
-    text: |-
-      Graham Nichols began developing his out-of-body-experience technology after researching sensory deprivation and the scientist John Zubek.
-  - id: f527ec54-8ba3-45dd-8b45-6064df773695
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:17:06.0-00:17:08.3
-    refs:
-      - id: bf502091-394a-4469-9dcc-1525b11c2236
-        name: John Zubek
-      - id: 564d6fab-49e5-4f40-a922-2089542f95b0
-        name: sensory deprivation
-    quote: Zubek devoted his career to researching sensory deprivation
-    text: John Zubek devoted his career to researching sensory deprivation.
-  - id: 3f31fe03-056a-4e5b-8d4e-46e4fcb7ad95
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:17:09.1-00:17:13.3
-    refs:
-      - id: bf502091-394a-4469-9dcc-1525b11c2236
-        name: John Zubek
-      - id: c84b2989-444d-49b3-afb8-2158fd22903c
-        name: University of Manitoba
-      - id: 564d6fab-49e5-4f40-a922-2089542f95b0
-        name: sensory deprivation
-    quote: |-
-      conducting over 15 years of experiments at the University of Manitoba on more than 500 individuals.
-    text: |-
-      John Zubek conducted over 15 years of sensory deprivation experiments at the University of Manitoba on more than 500 individuals.
-  - id: e00d36b8-5037-48d0-836b-342cfcff154a
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:17:15.3-00:17:18.5
-    refs:
-      - id: bf502091-394a-4469-9dcc-1525b11c2236
-        name: John Zubek
-      - id: 564d6fab-49e5-4f40-a922-2089542f95b0
-        name: sensory deprivation
-    quote: isolating them from all sensory input for up to two weeks.
-    text: |-
-      John Zubek isolated experiment subjects from all sensory input for up to two weeks at a time.
-  - id: 083dedfc-9b6b-4b4c-bd11-70ec5a4b3989
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:17:19.2-00:17:24.7
-    refs:
-      - id: bf502091-394a-4469-9dcc-1525b11c2236
-        name: John Zubek
-      - id: d708124e-4deb-497b-8ff1-a6b2bc0d1db6
-        name: Central Intelligence Agency (CIA)
-      - id: 3889e585-eee1-4eef-b10a-6edfa6dd2a66
-        name: Project MKUltra
-    quote: |-
-      His work paralleled the CIA's MKUltra program, which sought to manipulate human behavior for interrogation purposes.
-    text: |-
-      John Zubek's sensory deprivation research paralleled the CIA's Project MKUltra, which sought to manipulate human behaviour for interrogation purposes.
-  - id: 6983a5b6-cb16-4b9f-a1f9-11799cd54def
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:17:25.8-00:17:33.1
-    refs:
-      - id: bf502091-394a-4469-9dcc-1525b11c2236
-        name: John Zubek
-      - id: e5d00791-52d4-40f4-9fb0-d37cb6297cfb
-        name: Canadian Department of National Defence
-      - id: 3a66c80f-7593-412b-a421-660e38072960
-        name: United States Government
-    quote: |-
-      Funded by both the Canadian Defense Department and the US government, Zubek emerged as a leading figure in sensory deprivation research.
-    text: |-
-      John Zubek's sensory deprivation research was funded by both the Canadian Department of National Defence and the United States Government.
-  - id: 7506c615-94b4-4189-af49-9afd5e1bf070
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:17:35.4-00:17:39.2
-    date: '1974'
-    refs:
-      - id: bf502091-394a-4469-9dcc-1525b11c2236
-        name: John Zubek
-    quote: Zubek passed away in 1974 due to an apparent suicide by drowning.
-    text: John Zubek died in 1974 in an apparent suicide by drowning.
-  - id: e236c9f0-42d6-4bb3-900c-5f05879a1d2d
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: named
-      origin: John Zubek
-      relay:
-        - Graham Nichols's account
-    attribution_in_text: false
-    location: 00:17:40.9-00:17:51.0
-    refs:
-      - id: bf502091-394a-4469-9dcc-1525b11c2236
-        name: John Zubek
-      - id: 564d6fab-49e5-4f40-a922-2089542f95b0
-        name: sensory deprivation
-    quote: |-
-      He did things like put himself into a giant sphere, white sphere, for two weeks with no sensory input whatsoever.
-    text: |-
-      John Zubek placed himself inside a giant white sphere for two weeks with no sensory input as part of his sensory deprivation research.
-  - id: aa8c284d-304b-4bfc-8c91-7af0c13acc5a
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:18:26.0-00:18:33.7
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      i started doing research into things like flow states and realized that the pre-state to an out-of-body experience is probably the key to the experience
-    text: |-
-      Graham Nichols considers the pre-state prior to an out-of-body experience to be the key to achieving the experience.
-  - id: 642bf69a-1ff9-4722-a5fe-ae8330dd8b27
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:19:53.2-00:20:05.5
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      don't jump around in terms of techniques i would say don't even worry too much about techniques focus on the pre-state the state that you get into prior to having the out-of-body experience
-    text: |-
-      Graham Nichols advises people seeking their first out-of-body experience to focus on reaching the pre-state rather than jumping between different techniques.
-  - id: 6dd110d0-0816-4576-8f70-e390832a6adb
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:20:38.0-00:20:43.6
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      work consistently. Pick a technique and work consistently with it... Ideally, at least about three times a week, I would say.
-    text: |-
-      Graham Nichols advises practising a chosen out-of-body-experience technique consistently, ideally at least about three times a week.
-  - id: 9070f713-cb22-482d-b069-9c8425e6ffe8
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:22:04.0-00:22:10.8
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 443af19e-ede7-47e3-9b79-c81433061493
-        name: Area 52
-    quote: |-
-      Now I wanna check in with Nelson Delis, who by the way is quickly becoming the unofficial Area 52 field agent at this point.
-    text: Nelson Delis is regarded as the unofficial Area 52 field agent.
-  - id: 9bf1cfc0-9edd-459a-ab30-837e8c57a7f6
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:22:14.7-00:22:20.7
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-      - id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
-        name: The Monroe Institute
-    quote: |-
-      Nelson decided to sign up for the following Gateway program after me, which we'll talk about more on an upcoming podcast.
-    text: |-
-      Nelson Delis signed up for a Gateway Experience program at the Monroe Institute after the narrator.
-  - id: 5fcde4c2-57d7-4faf-8eaf-7fc3a35759b9
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:22:21.5-00:22:27.8
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
-        name: remote viewing
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      But while there, he had one of the most remarkable remote viewing sessions I've ever heard about.
-    text: |-
-      Nelson Delis had one of the most remarkable remote viewing sessions during his time at the Gateway Experience program.
-  - id: 5c1d2d9b-cb64-430c-b6db-78c272d7610a
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:22:28.3-00:22:37.3
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-      - id: 21514793-0bcf-472d-8151-09d51a2fe2b8
-        name: Focus 10
-      - id: c2e17a1b-77c2-45b7-95c0-1bddc93ced2b
-        name: Focus 12
-    quote: |-
-      It was pretty early on in the Gateway experience. I think it might have been on day two. And we had just kind of learned about Focus 10, and we're kind of experimenting with Focus 12, F12.
-    text: |-
-      During the Gateway Experience, on approximately day two of the program, Nelson Delis had just learned about Focus 10 and was experimenting with Focus 12.
-  - id: 59538850-bd72-4f24-803c-e4298ad9f1cc
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:23:25.3-00:23:37.5
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      So one of the other members at The Experience, I asked them randomly... could you write down a four digit number on a piece of paper, clear as day, and put it on your desk by your little cubby unit, your bed.
-    text: |-
-      Nelson Delis asked another Gateway Experience participant to write down a four-digit number on a piece of paper and place it in her room before she went to her session.
-  - id: 39f87e69-3f87-4c89-9731-6b7ee43166a4
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:23:43.1-00:23:53.5
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      my goal was gonna be, I'm gonna go into my session and I'm gonna have an OBE, float over to her room, see the number, and then afterwards validate it with her that we have the same number.
-    text: |-
-      Nelson Delis's plan was to have an out-of-body experience (OBE) during his session, float to the other participant's room, view the number she had written, and validate it with her afterwards.
-  - id: 9f3949d4-ccc5-4a25-ae39-67a9b8adb07f
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:00:27-00:00:37
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-    quote: |-
-      A little splotch out of the darkness shows up... at like a wooden wall... At the bottom angle of some thing, it seemed like an opening to some kind of bed... at a desk. Clear as day, there was a desk.
-    text: |-
-      During his attempt at the number-guessing exercise, Nelson Delis perceived a series of visual impressions including a wooden wall, an opening resembling a bed with scattered items on the floor, and finally a desk with a piece of paper on it.
-  - id: fdc84fb7-7d99-48ab-883e-e2deef31f9fa
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:25:37.8-00:25:48.7
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-    quote: |-
-      there was this white piece of paper with four numbers on it, four digits on it. One, seven, three, six... that last digit... was kind of out of focus. So I guessed six.
-    text: |-
-      Nelson Delis perceived the number written on the paper as 1736, but was uncertain about the last digit, which appeared out of focus.
-  - id: 7d317bce-bd9c-4456-8dae-7f5cfb65659c
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:26:19.3-00:26:23.9
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-    quote: |-
-      what I also noticed on that desk, it wasn't just the paper. There were some other things scattered on the desk as well.
-    text: |-
-      Nelson Delis noticed other objects scattered on the desk in his vision, in addition to the paper with the number.
-  - id: 38860b14-5723-4834-a5a4-ea2dbb46cdcb
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:26:59.3-00:27:05.6
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-    quote: |-
-      the session ends, I write down the number 1736 and we go out and we go to the debriefing room
-    text: |-
-      Nelson Delis wrote down the number 1736 after his session before comparing it with the participant's written number.
-  - id: d1cc9d8c-97cc-4536-ad26-1548a0305620
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:27:13.8-00:27:23.8
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-    quote: there, as clear as day, was 173 and a four. A four... not a six
-    text: |-
-      The participant's actual written number was 1734, matching the first three digits (1, 7, 3) that Nelson Delis had perceived but differing on the fourth digit, which Nelson Delis had guessed as six rather than four.
-  - id: 164436dd-2483-46c1-badf-f6743dc29db7
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:27:28.6-00:27:40.2
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-    quote: |-
-      odds of that you know to get three digits in the right spot it's really like one in a thousand right... still felt very... validating, I believe that I was there in that person's room.
-    text: |-
-      Nelson Delis considers correctly perceiving three of four digits in the number-guessing exercise to be roughly one-in-a-thousand odds by chance, and found the result validating that he had been present in the other participant's room during his experience.
-  - id: ed583c79-afdc-4920-bba8-1dd67ad27f5f
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:28:08.9-00:28:11.8
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-    quote: we go up to the room, The wall, yeah, it was wood. I knew that.
-    text: |-
-      Nelson Delis later visited the participant's actual room and found the wall was made of wood, matching what he had perceived during his session.
-  - id: 55deeb84-53d3-4248-9c16-20ef824507a0
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:28:17.6-00:28:26.4
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-    quote: |-
-      on the floor was littered all of her clothes and shoes and stuff from her suitcase. And even on the table... there were other things scattered around the desk.
-    text: |-
-      Nelson Delis found that the participant's room had clothes and shoes scattered on the floor and other items on the desk around where the number had been placed, matching details he had perceived during his session.
-  - id: a3b8d53c-dd60-4741-a2a6-7470f425e24e
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:28:57.5-00:29:06.7
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-    quote: |-
-      I checked other people's rooms to see. Nobody else was messy except her in that regard. So more evidence to me that I actually was in her room
-    text: |-
-      Nelson Delis checked other participants' rooms and found that none besides the one participant were similarly messy, which he considered further evidence that he had actually perceived her specific room.
-  - id: 9a7b224d-1ec1-4997-94fa-9714038037e7
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:29:32.2-00:29:37.6
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      Now in a twist of fate and about a week apart, Nelson and I both ended up having an out-of-body experience.
-    text: |-
-      Graham Nichols and Nelson Delis both had an out-of-body experience (OBE) about a week apart from each other, after returning from the Gateway Experience program.
-  - id: 80eb131e-f930-4f97-bd5a-a0756e12974e
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:29:39.0-00:29:42.5
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: This would be my fifth and latest and Nelson's first.
-    text: |-
-      The out-of-body experience (OBE) described was Graham Nichols's fifth and Nelson Delis's first.
-  - id: 8e95c55f-91ed-4662-8f4a-859fb0664b34
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:29:58.1-00:30:04.7
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      this would be my fifth out-of-body experience, including the two that I had last year, my third since getting back from Monroe.
-    text: |-
-      Graham Nichols's out-of-body experience described in this video was his fifth overall, including two from the previous year, and his third since returning from the Gateway Experience program.
-  - id: 1ab05995-60c5-41df-8afa-91b8848632f4
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:30:05.9-00:30:16.3
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 6a0b2721-dea1-4783-8331-4918eb6edb98
-        name: USA, Oregon, Portland
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      I was flying from the West Coast, Portland, Oregon, over to the East Coast on a red-eye flight. You know, I had just ran a 40-mile ultramarathon, so I was exhausted.
-    text: |-
-      Nelson Delis's out-of-body experience occurred while he was on a red-eye flight from Portland, Oregon, to the East Coast, after having just run a 40-mile (approximately 64-kilometre) ultramarathon.
-  - id: d7dedc4e-2979-4bda-9d4b-ceac02765000
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:30:17.2-00:30:34.9
-    date: '2024-08-07'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
-        name: The Monroe Institute
-    quote: |-
-      August 7th, 5.35 a.m., I get up to go to the bathroom, come back into bed... I put the headphones on, and I open my Expand app, which is the app from Monroe Institute that has, you know, the sort of binaural beats and this Monroe sound science.
-    text: |-
-      On August 7th at 5:35 a.m., Graham Nichols got up, returned to bed, put on headphones, and opened the Expand app, a Monroe Institute app featuring binaural beats and Monroe sound science technology.
-  - id: a456562a-a393-429f-a496-cc9d4596615a
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:30:44.0-00:30:53.3
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
-        name: The Monroe Institute
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      I should do one of the... exercises I got from, it was like a take home exercise from the Monroe Institute, the Gateway Experience. It's basically a 45 minute guided meditation.
-    text: |-
-      Nelson Delis performed a take-home exercise from the Monroe Institute's Gateway Experience program, a 45-minute guided meditation.
-  - id: aa948f13-9f29-4357-90a2-d07bfeff0782
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:30:54.3-00:31:01.3
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 21514793-0bcf-472d-8151-09d51a2fe2b8
-        name: Focus 10
-    quote: |-
-      I do a 60 minute focus 10 meditation. Great meditation, did not fall asleep, didn't click out. I was totally lucid the entire time.
-    text: |-
-      Graham Nichols did a 60-minute Focus 10 meditation, remaining fully lucid throughout without falling asleep.
-  - id: 13f6e1b1-6f4d-4db2-bea0-b90d148001ba
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:31:12.6-00:31:37.8
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      felt that pre-OBE state, that vibratory state... As I'm transitioning and crossing this bridge, almost instantly there was a surge of, or jolt of electricity that went through me. And just like before, in my head, I say to myself, I deeply desire to leave my body... the third time I say it, I feel myself sinking further into the pillow
-    text: |-
-      During his out-of-body experience, Nelson Delis felt a pre-OBE vibratory state as he crossed an imagined bridge, followed by a surge of electricity through his body after mentally repeating the phrase "I deeply desire to leave my body" three times.
-  - id: 33ea82e6-b1b6-4bbf-bb24-ed79756d96d3
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:31:59.4-00:32:03.6
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      I realized that I could suddenly see through my eyelids. Obviously my eyelids were closed... suddenly I could see through my eyes, through my eyelids.
-    text: |-
-      Nelson Delis reported that he could suddenly see through his closed eyelids during his out-of-body experience.
-  - id: 0776890e-5ff3-4a1d-82fa-74233a5fb10e
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:32:39.3-00:32:50.0
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      I remember saying to myself the words, clarity now, demanding clarity. The second I said it, I could start seeing my room through my closed eyes.
-    text: |-
-      Graham Nichols said the words "clarity now, demanding clarity" to himself and, immediately after, began to see his room through his closed eyes.
-  - id: 5556f27f-8fc1-4a73-a2fe-e2e4e06a9a40
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:02:44-00:02:53
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      I had to check for a second. Are my eyes closed? Yes, they were closed... This is not my physical body. This is my non-physical body seeing. And I'm having an OBE, this is it.
-    text: |-
-      Nelson Delis checked and confirmed his eyes were physically closed while he reported being able to see clearly, which he interpreted as evidence that he was perceiving with a non-physical body rather than imagining it.
-  - id: c8930c1f-d38e-430b-a4f3-f7eb55f723bb
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:33:28.5-00:33:33.0
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: I knowingly and easily just kind of move forward out of my body two, three feet.
-    text: |-
-      Nelson Delis moved forward out of his body two to three feet (approximately one metre) during his out-of-body experience.
-  - id: aca6529b-e2cb-47bf-a9a2-06479a27efaf
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:33:33.7-00:33:38.3
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: I get up from out of my bed, look back, notice my body, ignore that,
-    text: |-
-      Graham Nichols reported getting up out of his bed during his out-of-body experience, looking back, and noticing his own physical body.
-  - id: af940879-2f7c-448f-be7c-3975ee7bd03e
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:33:47.7-00:34:04.1
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      Go to the window, but try to put my hand through the glass. Tonk. I could not go through the glass... I decided to open the window. I sort of thrust my body up very easily... and sort of leapt out the window halfway. And as I was halfway out the window, I hear a voice. What are you doing?
-    text: |-
-      Graham Nichols attempted to put his hand through a window during his out-of-body experience but was unable to pass through the glass, then opened the window and leapt halfway out, at which point he heard a voice ask "What are you doing?"
-  - id: 050b9def-4cd7-4813-a61a-b253ff8166ae
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:34:08.2-00:34:16.3
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      I was really excited. So excited, I guess, that after a few seconds, the excitement got too much and I kind of just like shot back into my body
-    text: |-
-      Nelson Delis's excitement during his out-of-body experience became too much after a few seconds and he was pulled back into his body.
-  - id: 2bb60a52-767b-425a-bd33-a4be821641d8
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:34:31.0-00:34:36.4
-    date: '2024-08-07'
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: opened my eyes, and it was now 6.38 a.m. So I popped the meditation at 5.35.
-    text: |-
-      Graham Nichols opened his eyes and ended his out-of-body experience at 6:38 a.m., having started the meditation at 5:35 a.m.
-  - id: bbe05a53-c656-409d-8450-5d372f383a6e
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:34:40.3-00:34:50.1
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      The time that I took to close my eyes, get out of my body, and come back was about two minutes, two and a half minutes. Not enough time for me to fall asleep. I was completely lucid the entire time.
-    text: |-
-      Graham Nichols estimated that the time from closing his eyes, leaving his body, and returning was about two to two and a half minutes, and he remained fully lucid throughout without falling asleep.
-  - id: 27d3cc10-c9ca-4f31-b6db-0225f8778b30
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:34:57.2-00:35:17.9
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      as soon as I hit back, it was kind of paired with another really intense, euphoric, vibratory sensation of kind of being shot through like a portal, a wormhole or some kind of a tunnel... I verbally said out loud like, whoa, or like, oh man.
-    text: |-
-      As Nelson Delis returned to his body during his out-of-body experience, he felt an intense, euphoric, vibratory sensation like being pulled through a portal, wormhole, or tunnel, and verbally exclaimed out loud.
-  - id: 6a6abdd4-633d-496a-956c-d27ba6443a64
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-      name: Nelson Delis
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Delis
-    attribution_in_text: false
-    location: 00:35:35.1-00:35:38.8
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: it's just more proof to me that we are more than our physical bodies.
-    text: |-
-      Nelson Delis considers his out-of-body experience to be further proof that people are more than their physical bodies.
-  - id: 1d1ae1da-b0bc-42c9-8c13-27579d0e50b2
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:35:47.1-00:36:04.6
-    refs:
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      The objective, to evaluate the effectiveness of the Gateway process as a potential means of intelligence collection.
-    text: |-
-      A stated objective of the Gateway process was to evaluate its effectiveness as a potential means of intelligence collection.
-  - id: 1d451c78-1e40-42be-99c9-9b4421e1e7fd
-    type: testimony
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:36:05.6-00:36:10.1
-    refs:
-      - id: 7cfc6ae7-ace7-4f4c-9bfa-6e97add3119b
-        name: The Monroe Institute
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      Over the course of one week, I underwent intensive training under the guidance of the Monroe Institute instructors.
-    text: |-
-      An individual underwent one week of intensive training under the guidance of Monroe Institute instructors as part of an evaluation of the Gateway process.
-  - id: c844a2b8-00b8-4682-936e-45c3de115f3b
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:36:11.2-00:36:24.1
-    refs:
-      - id: 6abc7e34-35e0-416c-b0f5-a29f44683289
-        name: Hemi-Sync audio technology
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      The training involved the use of hemi-sync audio technology designed to synchronize the hemispheres of the brain, facilitating out-of-body experiences and altered consciousness, thereby inducing various states of consciousness.
-    text: |-
-      The training used hemi-sync audio technology designed to synchronise the hemispheres of the brain, facilitating out-of-body experiences (OBEs) and altered states of consciousness.
-  - id: e2ddc8ad-0d06-4544-a6ee-e33b7c37f4a7
-    type: testimony
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:36:33.1-00:36:39.4
-    refs:
-      - id: 6abc7e34-35e0-416c-b0f5-a29f44683289
-        name: Hemi-Sync audio technology
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-    quote: |-
-      I consistently achieve deep meditative states and OBEs, thus validating the reliability of the Hemisync technology.
-    text: |-
-      A finding reported was that deep meditative states and out-of-body experiences (OBEs) were consistently achieved, which was said to validate the reliability of the Hemi-Sync technology.
-  - id: 801f29cc-d349-4a03-a9a0-b8d2dee5bcb2
-    type: testimony
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:36:45.2-00:36:49.2
-    quote: |-
-      enhanced awareness and improved information retention, especially in deep relaxation.
-    text: |-
-      A finding reported was enhanced awareness and improved information retention, especially during deep relaxation.
-  - id: ac58120f-c4f9-43db-a8d9-359e0ebe40e2
-    type: testimony
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:36:52.0-00:36:53.7
-    refs:
-      - id: 7fca37fb-b7c4-44cc-b5e9-c3c266ca779b
-        name: out-of-body experience (OBE)
-      - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
-        name: remote viewing
-    quote: OBEs yielded accurate descriptions of targets.
-    text: |-
-      Out-of-body experiences (OBEs) reportedly yielded accurate descriptions of targets during remote viewing sessions.
-  - id: b53c3325-61b2-4fdd-b3c6-c6b8a4006cbe
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:37:00.0-00:37:05.1
-    refs:
-      - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
-        name: remote viewing
-    quote: |-
-      Frankly, the results that we received on the targets were baffling, to say the least.
-    text: |-
-      Results received on remote viewing targets during the evaluation were described as baffling.
-  - id: b591d547-c24a-45e1-b4b3-de86a2d851e0
-    type: testimony
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:37:09.3-00:37:17.4
-    quote: |-
-      Positive and psychological effects include reduced stress, increased focus, and increased focus. There were no adverse physical effects to report.
-    text: |-
-      Reported psychological effects of the training included reduced stress and increased focus, with no adverse physical effects reported.
-  - id: 4f6cf7a1-91ec-4e7c-9df7-44dda69f83fb
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:37:21.0-00:37:29.3
-    refs:
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      Extend the studies to assess long-term effectiveness and integrate the gateway process into intelligence gathering.
-    text: |-
-      A recommendation made was to extend research studies to assess the long-term effectiveness of the Gateway process and integrate it into intelligence gathering.
-  - id: ce36e5ee-b10a-4ffb-806c-5664d6e4edf9
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:37:32.0-00:37:35.8
-    quote: Create structured programs... Include potential interns with ongoing evaluation.
-    text: |-
-      A recommendation made was to create structured training programs that include potential interns with ongoing evaluation.
-  - id: 53a9e5dd-3146-4a61-b576-04dbe019745b
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:37:41.1-00:37:44.6
-    refs:
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      We need to assess the feasibility of the Gateway process in intelligence missions.
-    text: |-
-      A recommendation made was to assess the feasibility of the Gateway process for use in intelligence missions.
-  - id: 60a2cc88-85e7-4742-89ca-b57ffd9914a7
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an intelligence evaluation report of the Gateway process
-    attribution_in_text: false
-    location: 00:37:45.2-00:38:01.1
-    refs:
-      - id: 252d3fc0-1833-465a-b8b5-954936455fc3
-        name: Gateway Experience (Monroe Institute program)
-    quote: |-
-      The Gateway process presents a promising new frontier, a promising new frontier in the collection of intelligence. While preliminary findings are encouraging, further research and careful integration are essential to fully understand and harness its potential.
-    text: |-
-      The Gateway process was characterised as a promising new frontier in the collection of intelligence, with preliminary findings described as encouraging while further research and integration were considered necessary.
+  quote: OBEs yielded accurate descriptions of targets.
+  text: |-
+    Out-of-body experiences (OBEs) reportedly yielded accurate descriptions of targets during remote viewing sessions.
+  entailment:
+    label: entails
+    score: 0.819
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b53c3325-61b2-4fdd-b3c6-c6b8a4006cbe
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:37:00.0-00:37:05.1
+  refs:
+  - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
+    name: remote viewing
+  quote: |-
+    Frankly, the results that we received on the targets were baffling, to say the least.
+  text: |-
+    Results received on remote viewing targets during the evaluation were described as baffling.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b591d547-c24a-45e1-b4b3-de86a2d851e0
+  type: testimony
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:37:09.3-00:37:17.4
+  quote: |-
+    Positive and psychological effects include reduced stress, increased focus, and increased focus. There were no adverse physical effects to report.
+  text: |-
+    Reported psychological effects of the training included reduced stress and increased focus, with no adverse physical effects reported.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4f6cf7a1-91ec-4e7c-9df7-44dda69f83fb
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:37:21.0-00:37:29.3
+  refs:
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    Extend the studies to assess long-term effectiveness and integrate the gateway process into intelligence gathering.
+  text: |-
+    A recommendation made was to extend research studies to assess the long-term effectiveness of the Gateway process and integrate it into intelligence gathering.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ce36e5ee-b10a-4ffb-806c-5664d6e4edf9
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:37:32.0-00:37:35.8
+  quote: Create structured programs... Include potential interns with ongoing evaluation.
+  text: |-
+    A recommendation made was to create structured training programs that include potential interns with ongoing evaluation.
+  entailment:
+    label: entails
+    score: 0.787
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 53a9e5dd-3146-4a61-b576-04dbe019745b
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:37:41.1-00:37:44.6
+  refs:
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    We need to assess the feasibility of the Gateway process in intelligence missions.
+  text: |-
+    A recommendation made was to assess the feasibility of the Gateway process for use in intelligence missions.
+  entailment:
+    label: entails
+    score: 0.913
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 60a2cc88-85e7-4742-89ca-b57ffd9914a7
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an intelligence evaluation report of the Gateway process
+  attribution_in_text: false
+  location: 00:37:45.2-00:38:01.1
+  refs:
+  - id: 252d3fc0-1833-465a-b8b5-954936455fc3
+    name: Gateway Experience (Monroe Institute program)
+  quote: |-
+    The Gateway process presents a promising new frontier, a promising new frontier in the collection of intelligence. While preliminary findings are encouraging, further research and careful integration are essential to fully understand and harness its potential.
+  text: |-
+    The Gateway process was characterised as a promising new frontier in the collection of intelligence, with preliminary findings described as encouraging while further research and integration were considered necessary.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
-  - id: 9cd9cc3d-236a-45d1-977c-1f862b9455a2
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-      name: Graham Nichols
-    provenance_chain:
-      origin_kind: speaker
-      origin: Graham Nichols
-    attribution_in_text: false
-    location: 00:16:20.2-00:16:28.3
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 5ef4517f-4c2d-4b5e-9a1f-285675edbbf3
-        name: Rupert Sheldrake
-      - id: 9c5c5195-ac9a-4da2-87b3-56c7ddfcec51
-        name: telepathy
-    quote: |-
-      for example in telepathy research which I've been involved with as well mainly with Rupert Sheldrake within that kind of work
-    text: |-
-      Graham Nichols has been involved in telepathy research, mainly with Rupert Sheldrake.
-  - id: 739d2b92-1d50-4f31-b85e-a93ad87f35ef
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:21:43.4-00:21:53.0
-    refs:
-      - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
-        name: Graham Nichols
-      - id: 443af19e-ede7-47e3-9b79-c81433061493
-        name: Area 52
-    quote: |-
-      If you wanna watch the full hour long interview with Graham, you can do so by becoming an intern on our Patreon. It's thanks to patrons like you that we're able to keep Area 52 alive.
-    text: |-
-      The full hour-long interview with Graham Nichols is available to Area 52's Patreon subscribers.
-  - id: 511b87f7-e2b5-4914-a093-81758939b246
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:22:11.2-00:22:14.2
-    refs:
-      - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
-        name: Nelson Delis
-      - id: 443af19e-ede7-47e3-9b79-c81433061493
-        name: Area 52
-      - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
-        name: remote viewing
-    quote: You might remember Nelson from our previous investigation into remote viewing.
-    text: |-
-      Nelson Delis previously participated in an Area 52 investigation into remote viewing.
+- id: 9cd9cc3d-236a-45d1-977c-1f862b9455a2
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  provenance_chain:
+    origin_kind: speaker
+    origin: Graham Nichols
+  attribution_in_text: false
+  location: 00:16:20.2-00:16:28.3
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 5ef4517f-4c2d-4b5e-9a1f-285675edbbf3
+    name: Rupert Sheldrake
+  - id: 9c5c5195-ac9a-4da2-87b3-56c7ddfcec51
+    name: telepathy
+  quote: |-
+    for example in telepathy research which I've been involved with as well mainly with Rupert Sheldrake within that kind of work
+  text: |-
+    Graham Nichols has been involved in telepathy research, mainly with Rupert Sheldrake.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 739d2b92-1d50-4f31-b85e-a93ad87f35ef
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:21:43.4-00:21:53.0
+  refs:
+  - id: c3e9bb65-7e60-4ffd-a7b8-dc49ba4d39ae
+    name: Graham Nichols
+  - id: 443af19e-ede7-47e3-9b79-c81433061493
+    name: Area 52
+  quote: |-
+    If you wanna watch the full hour long interview with Graham, you can do so by becoming an intern on our Patreon. It's thanks to patrons like you that we're able to keep Area 52 alive.
+  text: |-
+    The full hour-long interview with Graham Nichols is available to Area 52's Patreon subscribers.
+  entailment:
+    label: entails
+    score: 0.725
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 511b87f7-e2b5-4914-a093-81758939b246
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:22:11.2-00:22:14.2
+  refs:
+  - id: b04d3560-eb7f-4aca-a163-dc7075f12f12
+    name: Nelson Delis
+  - id: 443af19e-ede7-47e3-9b79-c81433061493
+    name: Area 52
+  - id: e75ca398-8a5b-4fb8-ac5b-baf7f82463ea
+    name: remote viewing
+  quote: You might remember Nelson from our previous investigation into remote viewing.
+  text: |-
+    Nelson Delis previously participated in an Area 52 investigation into remote viewing.
+  entailment:
+    label: entails
+    score: 0.691
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

@@ -2,23 +2,31 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:27:56.542310+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 114310
-      output: 5752
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 114310
+    output: 5752
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 0.6
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: 9b953b4e3445d55d2e00ea456697b7647696f301ea266cd77e23c0813707ad27
   prep_version: 6
@@ -39,434 +47,509 @@ record:
 terminology:
   main_subject: 1985 Papua New Guinea overflight sightings
   acronyms:
-    - acronym: PNG
-      expansion: Papua New Guinea
-    - acronym: NIO
-      expansion: National Intelligence Organization
-    - acronym: USCINCPAC
-      expansion: United States Commander in Chief, Pacific
-    - acronym: USCINCLANT
-      expansion: United States Commander in Chief, Atlantic
-    - acronym: 43SW
-      expansion: 43rd Strategic Wing
-    - acronym: EAP/PIA
-      expansion: |-
-        Bureau of East Asian and Pacific Affairs, Office of Public and Intergovernmental Affairs
-    - acronym: PM/RSA
-      expansion: Bureau of Politico-Military Affairs, Regional Security Affairs
+  - acronym: PNG
+    expansion: Papua New Guinea
+  - acronym: NIO
+    expansion: National Intelligence Organization
+  - acronym: USCINCPAC
+    expansion: United States Commander in Chief, Pacific
+  - acronym: USCINCLANT
+    expansion: United States Commander in Chief, Atlantic
+  - acronym: 43SW
+    expansion: 43rd Strategic Wing
+  - acronym: EAP/PIA
+    expansion: |-
+      Bureau of East Asian and Pacific Affairs, Office of Public and Intergovernmental Affairs
+  - acronym: PM/RSA
+    expansion: Bureau of Politico-Military Affairs, Regional Security Affairs
 nodes:
-  - id: a4349890-22c8-43d8-9589-827e6d04891e
-    type: person
+- id: a4349890-22c8-43d8-9589-827e6d04891e
+  type: person
+  name: Gardner (AMEMBASSY PORT MORESBY)
+- id: c245619d-cca0-44b7-80e1-d45145679748
+  type: person
+  name: John Powers
+  metadata:
+    family_name: Powers
+    aliases:
+    - Powers, John
+- id: 936e2bb9-0029-4f64-a32d-0777742f20d0
+  type: organisation
+  name: United States Department of State
+- id: b4b878d1-2b20-4aad-96df-75e3f422e358
+  type: organisation
+  name: Papua New Guinea National Intelligence Organization (NIO)
+- id: fcca7908-33d4-4424-bebc-fb25225c695d
+  type: organisation
+  name: United States Commander in Chief, Pacific (USCINCPAC)
+- id: cfdff862-bc7c-4539-9eb5-e639d9a7e65b
+  type: organisation
+  name: United States Commander in Chief, Atlantic (USCINCLANT)
+- id: 6323e5c1-bb2c-4114-9f7b-bf912862e869
+  type: organisation
+  name: 43rd Strategic Wing (43SW)
+- id: 467d599a-dbc9-445d-92a4-123f3f64938a
+  type: organisation
+  name: Air Niugini
+- id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+  type: event
+  name: 1985 Papua New Guinea overflight sightings
+  metadata:
+    date_start: '1985-01-24'
+- id: 3d9c37a1-2ca4-4c04-8c4e-8482c3e550a2
+  type: place
+  name: USA, Embassy Port Moresby
+- id: aafb6d2c-9918-4c09-8cc7-be0e2ce3a453
+  type: place
+  name: Papua New Guinea, East Sepik Province, Wewak
+- id: 5ff024d6-fe94-4aa5-bc33-d0a66475d270
+  type: place
+  name: Papua New Guinea, East Sepik Province, Angoram
+- id: 42dd06a7-382a-4aa2-987f-72a69e554420
+  type: place
+  name: Papua New Guinea, National Capital District, Port Moresby
+- id: 2f978f15-6532-4c69-977e-6ac61eee04c2
+  type: place
+  name: Australia, Australian Capital Territory, Canberra
+- id: 837bc503-3bcc-4472-8316-261b9e64d3a1
+  type: place
+  name: Indonesia, Jakarta
+- id: 69948a2f-e794-4f08-80e4-e9b7d162b0a8
+  type: place
+  name: USA, Guam, Andersen Air Force Base
+- id: 2b369c16-4ca2-45a0-ac61-a0061647a09f
+  type: object
+  name: B-52
+- id: 7e29ec22-e0ac-45c7-b228-a4dce49806db
+  type: topic
+  name: Unidentified Aerial Phenomena (UAP)
+domain_claims:
+- id: fe7c0f15-96de-4672-b403-78a1d3b017c0
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: a4349890-22c8-43d8-9589-827e6d04891e
     name: Gardner (AMEMBASSY PORT MORESBY)
-  - id: c245619d-cca0-44b7-80e1-d45145679748
-    type: person
-    name: John Powers
-    metadata:
-      family_name: Powers
-      aliases:
-        - Powers, John
-  - id: 936e2bb9-0029-4f64-a32d-0777742f20d0
-    type: organisation
-    name: United States Department of State
-  - id: b4b878d1-2b20-4aad-96df-75e3f422e358
-    type: organisation
-    name: Papua New Guinea National Intelligence Organization (NIO)
-  - id: fcca7908-33d4-4424-bebc-fb25225c695d
-    type: organisation
-    name: United States Commander in Chief, Pacific (USCINCPAC)
-  - id: cfdff862-bc7c-4539-9eb5-e639d9a7e65b
-    type: organisation
-    name: United States Commander in Chief, Atlantic (USCINCLANT)
-  - id: 6323e5c1-bb2c-4114-9f7b-bf912862e869
-    type: organisation
-    name: 43rd Strategic Wing (43SW)
-  - id: 467d599a-dbc9-445d-92a4-123f3f64938a
-    type: organisation
-    name: Air Niugini
-  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-    type: event
-    name: 1985 Papua New Guinea overflight sightings
-    metadata:
-      date_start: '1985-01-24'
+  provenance_chain:
+    origin_kind: speaker
+    origin: Gardner (AMEMBASSY PORT MORESBY)
+  attribution_in_text: false
+  location: char:909-1104
+  date: '1985-01-28'
+  refs:
   - id: 3d9c37a1-2ca4-4c04-8c4e-8482c3e550a2
-    type: place
     name: USA, Embassy Port Moresby
+  - id: b4b878d1-2b20-4aad-96df-75e3f422e358
+    name: Papua New Guinea National Intelligence Organization (NIO)
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    EMBASSY JANUARY 28 RECEIVED INFORMAL INQUIRY FROM PNG NATIONAL INTELLIGENCE ORGANIZATION (NIO) CONCERNING REPORTED SIGHTINGS OF HIGH-ALTITUDE, HIGH-SPEED AIRCRAFT OVER PNG DURING EVENING JANUARY 24.
+  text: |-
+    On 1985-01-28, the Embassy in Port Moresby received an informal inquiry from the Papua New Guinea National Intelligence Organization (NIO) concerning reported sightings of high-altitude, high-speed aircraft over Papua New Guinea during the evening of 1985-01-24.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 230669ef-5fe4-4305-ba3e-cfb4e8303de0
+  type: observation
+  attestation: second_hand
+  speaker:
+    id: a4349890-22c8-43d8-9589-827e6d04891e
+    name: Gardner (AMEMBASSY PORT MORESBY)
+  provenance_chain:
+    origin_kind: named
+    origin: Papua New Guinea National Intelligence Organization (NIO)
+    relay:
+    - NIO officer in Wewak
+  attribution_in_text: false
+  location: char:1108-1213
+  date: '1985-01-24'
+  refs:
+  - id: b4b878d1-2b20-4aad-96df-75e3f422e358
+    name: Papua New Guinea National Intelligence Organization (NIO)
   - id: aafb6d2c-9918-4c09-8cc7-be0e2ce3a453
-    type: place
     name: Papua New Guinea, East Sepik Province, Wewak
-  - id: 5ff024d6-fe94-4aa5-bc33-d0a66475d270
-    type: place
-    name: Papua New Guinea, East Sepik Province, Angoram
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    MATTER CAME TO NIO'S ATTENTION WHEN ITS OFFICER IN WEWAK REPORTED LOCAL RESIDENTS HAD BEEN FRIGHTENED BY OVERFLIGHTS
+  text: |-
+    The 1985 Papua New Guinea overflight sightings came to the National Intelligence Organization's attention when its officer in Wewak reported that local residents had been frightened by the overflights.
+  entailment:
+    label: entails
+    score: 0.952
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 71b7741e-1229-4662-ba7f-37796b827ceb
+  type: observation
+  attestation: second_hand
+  speaker:
+    id: a4349890-22c8-43d8-9589-827e6d04891e
+    name: Gardner (AMEMBASSY PORT MORESBY)
+  provenance_chain:
+    origin_kind: named
+    origin: Papua New Guinea National Intelligence Organization (NIO)
+    relay:
+    - NIO officer in Wewak
+  attribution_in_text: false
+  location: char:1226-1299
+  date: '1985-01-24'
+  refs:
+  - id: aafb6d2c-9918-4c09-8cc7-be0e2ce3a453
+    name: Papua New Guinea, East Sepik Province, Wewak
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: WHICH LED TO THE PROVINCIAL PREMIER'S CALLING OF A PUBLIC MEETING ON THE SUBJECT
+  text: |-
+    The frightened reaction of local residents in Wewak to the overflights led the provincial premier to call a public meeting on the subject.
+  entailment:
+    label: entails
+    score: 0.498
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1f5726b8-32aa-4e0f-9de7-e295a7f20894
+  type: observation
+  attestation: second_hand
+  speaker:
+    id: a4349890-22c8-43d8-9589-827e6d04891e
+    name: Gardner (AMEMBASSY PORT MORESBY)
+  provenance_chain:
+    origin_kind: named
+    origin: Papua New Guinea National Intelligence Organization (NIO)
+    relay:
+    - NIO officer in Wewak
+  attribution_in_text: false
+  location: char:1307-1374
+  date: '1985-01-24'
+  refs:
+  - id: aafb6d2c-9918-4c09-8cc7-be0e2ce3a453
+    name: Papua New Guinea, East Sepik Province, Wewak
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: ATTENDED BY THE PRIME MINISTER WHO WAS WEEKENDING IN HIS ELECTORAL DISTRICT
+  text: |-
+    The public meeting called by the provincial premier in Wewak on the overflight sightings was attended by the Prime Minister of Papua New Guinea, who was weekending in his electoral district.
+  entailment:
+    label: entails
+    score: 0.497
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 329eaba0-c019-454e-921e-0eb514c8d7d0
+  type: observation
+  attestation: second_hand
+  speaker:
+    id: a4349890-22c8-43d8-9589-827e6d04891e
+    name: Gardner (AMEMBASSY PORT MORESBY)
+  provenance_chain:
+    origin_kind: named
+    origin: Papua New Guinea National Intelligence Organization (NIO)
+  attribution_in_text: false
+  location: char:1491-1633
+  date: '1985-01-24'
+  refs:
+  - id: b4b878d1-2b20-4aad-96df-75e3f422e358
+    name: Papua New Guinea National Intelligence Organization (NIO)
+  - id: 7e29ec22-e0ac-45c7-b228-a4dce49806db
+    name: Unidentified Aerial Phenomena (UAP)
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    NIO SAID THERE HAVE BEEN VARIOUS REPORTS OF UNIDENTIFIED AERIAL PHENOMENA THE NIGHT OF JANUARY 24, INCLUDING FAST-MOVING OBJECTS WITH LIGHTS, CONTRAILS, AND NOISE.
+  text: |-
+    The National Intelligence Organization reported there were various reports of Unidentified Aerial Phenomena (UAP) on the night of 1985-01-24, including fast-moving objects with lights, contrails, and noise.
+  entailment:
+    label: entails
+    score: 0.811
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2efbfa70-f28a-4797-94de-4d29c6b9fae7
+  type: observation
+  attestation: second_hand
+  speaker:
+    id: a4349890-22c8-43d8-9589-827e6d04891e
+    name: Gardner (AMEMBASSY PORT MORESBY)
+  provenance_chain:
+    origin_kind: named
+    origin: Papua New Guinea National Intelligence Organization (NIO)
+  attribution_in_text: false
+  location: char:1730-1859
+  date: '1985-01-24'
+  refs:
+  - id: b4b878d1-2b20-4aad-96df-75e3f422e358
+    name: Papua New Guinea National Intelligence Organization (NIO)
+  - id: 467d599a-dbc9-445d-92a4-123f3f64938a
+    name: Air Niugini
+  - id: aafb6d2c-9918-4c09-8cc7-be0e2ce3a453
+    name: Papua New Guinea, East Sepik Province, Wewak
   - id: 42dd06a7-382a-4aa2-987f-72a69e554420
-    type: place
     name: Papua New Guinea, National Capital District, Port Moresby
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    THE REPORT IN WHICH NIO PLACES SOME CREDENCE ORIGINATED WITH AN AIR NIUGINI PILOT WHO HAD JUST TAKEN OFF FROM WEWAK ENROUTE PORT MORESBY.
+  text: |-
+    Of the reports on the 1985 Papua New Guinea overflight sightings, the National Intelligence Organization placed some credence in the report originating with an Air Niugini pilot who had just taken off from Wewak en route to Port Moresby.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2c3ebfee-987a-44b1-849e-a258233483be
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: an Air Niugini pilot
+    relay:
+    - Papua New Guinea National Intelligence Organization (NIO)
+  attribution_in_text: false
+  location: char:1868-2009
+  date: '1985-01-24'
+  refs:
+  - id: 467d599a-dbc9-445d-92a4-123f3f64938a
+    name: Air Niugini
+  - id: 5ff024d6-fe94-4aa5-bc33-d0a66475d270
+    name: Papua New Guinea, East Sepik Province, Angoram
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    PILOT SAID HIS RADAR PICKED UP AIRCRAFT FLYING SOUTH TO NORTH AT HIGH ALTITUDE AND HIGH SPEED WHEN HE WAS OVER ANGORAM (VIC 4 DEG S, 144 DEG E).
+  text: |-
+    An Air Niugini pilot said his radar picked up aircraft flying south to north at high altitude and high speed while he was over Angoram, at approximately 4 degrees south, 144 degrees east.
+  entailment:
+    label: entails
+    score: 0.506
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: cfea33d9-78d3-4daa-af9a-9d5c786559d8
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: unnamed observers around Papua New Guinea
+    relay:
+    - Papua New Guinea National Intelligence Organization (NIO)
+  attribution_in_text: false
+  location: char:2013-2148
+  date: '1985-01-24'
+  refs:
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    SEVERAL VISUAL SIGHTINGS OF CONTRAILS WERE ALSO REPORTED FROM VARIOUS POINTS AROUND PNG, OF ONE AIRCRAFT MOVING NORTH TO SOUTH AT 1900 LOCAL
+  text: |-
+    Several visual sightings of contrails were reported from various points around Papua New Guinea, including one aircraft moving north to south at 19:00 local time.
+  entailment:
+    label: entails
+    score: 0.887
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 8286fa9e-d590-45d3-822b-a5caecef118a
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: unnamed observers around Papua New Guinea
+    relay:
+    - Papua New Guinea National Intelligence Organization (NIO)
+  attribution_in_text: false
+  location: char:2154-2213
+  date: '1985-01-24'
+  refs:
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: AND OF SIX-EIGHT AIRCRAFT TRAVELING SOUTH TO NORTH AT 2200 LOCAL.
+  text: |-
+    Visual sightings of contrails reported from various points around Papua New Guinea also included six to eight aircraft travelling south to north at 22:00 local time.
+  entailment:
+    label: entails
+    score: 0.461
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b41edd22-3451-491e-b2fc-57ff9c6c0183
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: a4349890-22c8-43d8-9589-827e6d04891e
+    name: Gardner (AMEMBASSY PORT MORESBY)
+  provenance_chain:
+    origin_kind: speaker
+    origin: Gardner (AMEMBASSY PORT MORESBY)
+  attribution_in_text: false
+  location: char:2224-2363
+  date: '1985-01-24'
+  refs:
+  - id: 3d9c37a1-2ca4-4c04-8c4e-8482c3e550a2
+    name: USA, Embassy Port Moresby
+  - id: 6323e5c1-bb2c-4114-9f7b-bf912862e869
+    name: 43rd Strategic Wing (43SW)
+  - id: b4b878d1-2b20-4aad-96df-75e3f422e358
+    name: Papua New Guinea National Intelligence Organization (NIO)
+  - id: 2b369c16-4ca2-45a0-ac61-a0061647a09f
+    name: B-52
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    BASED ON OUR RECORDS AND TELCON WITH 43SW, WE HAVE TOLD NIO WE KNEW OF NO B-52 OVERFLIGHTS AND NO U.S. AIRCRAFT IN PNG AIRSPACE ON JANUARY 24.
+  text: |-
+    Based on the Embassy's records and a telephone conversation with the 43rd Strategic Wing, the Embassy told the National Intelligence Organization it knew of no B-52 overflights and no US aircraft in Papua New Guinea airspace on 1985-01-24.
+  entailment:
+    label: entails
+    score: 0.57
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9b9bd4e4-88b3-4bc9-a802-899d76481eb0
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: a4349890-22c8-43d8-9589-827e6d04891e
+    name: Gardner (AMEMBASSY PORT MORESBY)
+  provenance_chain:
+    origin_kind: speaker
+    origin: Gardner (AMEMBASSY PORT MORESBY)
+  attribution_in_text: false
+  location: char:2371-2504
+  date: '1985-01-28'
+  refs:
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    ALTHOUGH INFORMATION PROVIDED US ON THESE SIGHTINGS IS VERY SKETCHY AND SOURCES WERE UNSURE OF THE DIRECTIONS IN WHICH AIRCRAFT WERE FLYING
+  text: |-
+    The information provided to the Embassy on the 1985 Papua New Guinea overflight sightings was very sketchy, and sources were unsure of the directions in which the aircraft were flying.
+  entailment:
+    label: neutral
+    score: 0.821
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: edd774ec-ce5f-41cb-80f5-1b13bf1f881e
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: a4349890-22c8-43d8-9589-827e6d04891e
+    name: Gardner (AMEMBASSY PORT MORESBY)
+  provenance_chain:
+    origin_kind: speaker
+    origin: Gardner (AMEMBASSY PORT MORESBY)
+  attribution_in_text: false
+  location: char:2512-2605
+  date: '1985-01-28'
+  refs:
+  - id: a4349890-22c8-43d8-9589-827e6d04891e
+    name: Gardner (AMEMBASSY PORT MORESBY)
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    WE WOULD MOST APPRECIATE CONFIRMATION OF PARA 3 ABOVE AND ANY LIGHT YOU MIGHT THROW ON THESE REPORTS.
+  text: |-
+    Gardner requested confirmation of the finding that there were no B-52 overflights or US aircraft in Papua New Guinea airspace on 1985-01-24, and any additional light that could be thrown on the overflight reports.
+  entailment:
+    label: entails
+    score: 0.952
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+infrastructure_claims:
+- id: 0e27a5e1-13b5-416b-973e-ac4d6c1394d2
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: State Department cable 85 PORT MORESBY 199
+  attribution_in_text: false
+  location: char:119-239
+  date: '1985-01-28'
+  refs:
+  - id: 3d9c37a1-2ca4-4c04-8c4e-8482c3e550a2
+    name: USA, Embassy Port Moresby
+  - id: cfdff862-bc7c-4539-9eb5-e639d9a7e65b
+    name: United States Commander in Chief, Atlantic (USCINCLANT)
+  quote: |-
+    MRN: 85 PORT MORESBY 199
+    Date/DTG: Jan 28, 1985 / 280000Z Jan 85
+    From: AMEMBASSY PORT MORESBY
+    Action: USCINCLANT ROUTINE
+  text: |-
+    On 1985-01-28, AMEMBASSY PORT MORESBY sent a cable numbered 85 PORT MORESBY 199 to USCINCLANT ROUTINE.
+  entailment:
+    label: entails
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 4a410292-096f-4445-9c87-4bbd2686fc0a
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: State Department cable 85 PORT MORESBY 199
+  attribution_in_text: false
+  location: char:556-703
+  date: '1985-01-28'
+  refs:
+  - id: 3d9c37a1-2ca4-4c04-8c4e-8482c3e550a2
+    name: USA, Embassy Port Moresby
+  - id: fcca7908-33d4-4424-bebc-fb25225c695d
+    name: United States Commander in Chief, Pacific (USCINCPAC)
+  - id: 6323e5c1-bb2c-4114-9f7b-bf912862e869
+    name: 43rd Strategic Wing (43SW)
+  - id: 69948a2f-e794-4f08-80e4-e9b7d162b0a8
+    name: USA, Guam, Andersen Air Force Base
+  - id: 936e2bb9-0029-4f64-a32d-0777742f20d0
+    name: United States Department of State
   - id: 2f978f15-6532-4c69-977e-6ac61eee04c2
-    type: place
     name: Australia, Australian Capital Territory, Canberra
   - id: 837bc503-3bcc-4472-8316-261b9e64d3a1
-    type: place
     name: Indonesia, Jakarta
-  - id: 69948a2f-e794-4f08-80e4-e9b7d162b0a8
-    type: place
-    name: USA, Guam, Andersen Air Force Base
-  - id: 2b369c16-4ca2-45a0-ac61-a0061647a09f
-    type: object
-    name: B-52
-  - id: 7e29ec22-e0ac-45c7-b228-a4dce49806db
-    type: topic
-    name: Unidentified Aerial Phenomena (UAP)
-domain_claims:
-  - id: fe7c0f15-96de-4672-b403-78a1d3b017c0
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: a4349890-22c8-43d8-9589-827e6d04891e
-      name: Gardner (AMEMBASSY PORT MORESBY)
-    provenance_chain:
-      origin_kind: speaker
-      origin: Gardner (AMEMBASSY PORT MORESBY)
-    attribution_in_text: false
-    location: char:909-1104
-    date: '1985-01-28'
-    refs:
-      - id: 3d9c37a1-2ca4-4c04-8c4e-8482c3e550a2
-        name: USA, Embassy Port Moresby
-      - id: b4b878d1-2b20-4aad-96df-75e3f422e358
-        name: Papua New Guinea National Intelligence Organization (NIO)
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      EMBASSY JANUARY 28 RECEIVED INFORMAL INQUIRY FROM PNG NATIONAL INTELLIGENCE ORGANIZATION (NIO) CONCERNING REPORTED SIGHTINGS OF HIGH-ALTITUDE, HIGH-SPEED AIRCRAFT OVER PNG DURING EVENING JANUARY 24.
-    text: |-
-      On 1985-01-28, the Embassy in Port Moresby received an informal inquiry from the Papua New Guinea National Intelligence Organization (NIO) concerning reported sightings of high-altitude, high-speed aircraft over Papua New Guinea during the evening of 1985-01-24.
-  - id: 230669ef-5fe4-4305-ba3e-cfb4e8303de0
-    type: observation
-    attestation: second_hand
-    speaker:
-      id: a4349890-22c8-43d8-9589-827e6d04891e
-      name: Gardner (AMEMBASSY PORT MORESBY)
-    provenance_chain:
-      origin_kind: named
-      origin: Papua New Guinea National Intelligence Organization (NIO)
-      relay:
-        - NIO officer in Wewak
-    attribution_in_text: false
-    location: char:1108-1213
-    date: '1985-01-24'
-    refs:
-      - id: b4b878d1-2b20-4aad-96df-75e3f422e358
-        name: Papua New Guinea National Intelligence Organization (NIO)
-      - id: aafb6d2c-9918-4c09-8cc7-be0e2ce3a453
-        name: Papua New Guinea, East Sepik Province, Wewak
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      MATTER CAME TO NIO'S ATTENTION WHEN ITS OFFICER IN WEWAK REPORTED LOCAL RESIDENTS HAD BEEN FRIGHTENED BY OVERFLIGHTS
-    text: |-
-      The 1985 Papua New Guinea overflight sightings came to the National Intelligence Organization's attention when its officer in Wewak reported that local residents had been frightened by the overflights.
-  - id: 71b7741e-1229-4662-ba7f-37796b827ceb
-    type: observation
-    attestation: second_hand
-    speaker:
-      id: a4349890-22c8-43d8-9589-827e6d04891e
-      name: Gardner (AMEMBASSY PORT MORESBY)
-    provenance_chain:
-      origin_kind: named
-      origin: Papua New Guinea National Intelligence Organization (NIO)
-      relay:
-        - NIO officer in Wewak
-    attribution_in_text: false
-    location: char:1226-1299
-    date: '1985-01-24'
-    refs:
-      - id: aafb6d2c-9918-4c09-8cc7-be0e2ce3a453
-        name: Papua New Guinea, East Sepik Province, Wewak
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: WHICH LED TO THE PROVINCIAL PREMIER'S CALLING OF A PUBLIC MEETING ON THE SUBJECT
-    text: |-
-      The frightened reaction of local residents in Wewak to the overflights led the provincial premier to call a public meeting on the subject.
-  - id: 1f5726b8-32aa-4e0f-9de7-e295a7f20894
-    type: observation
-    attestation: second_hand
-    speaker:
-      id: a4349890-22c8-43d8-9589-827e6d04891e
-      name: Gardner (AMEMBASSY PORT MORESBY)
-    provenance_chain:
-      origin_kind: named
-      origin: Papua New Guinea National Intelligence Organization (NIO)
-      relay:
-        - NIO officer in Wewak
-    attribution_in_text: false
-    location: char:1307-1374
-    date: '1985-01-24'
-    refs:
-      - id: aafb6d2c-9918-4c09-8cc7-be0e2ce3a453
-        name: Papua New Guinea, East Sepik Province, Wewak
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: ATTENDED BY THE PRIME MINISTER WHO WAS WEEKENDING IN HIS ELECTORAL DISTRICT
-    text: |-
-      The public meeting called by the provincial premier in Wewak on the overflight sightings was attended by the Prime Minister of Papua New Guinea, who was weekending in his electoral district.
-  - id: 329eaba0-c019-454e-921e-0eb514c8d7d0
-    type: observation
-    attestation: second_hand
-    speaker:
-      id: a4349890-22c8-43d8-9589-827e6d04891e
-      name: Gardner (AMEMBASSY PORT MORESBY)
-    provenance_chain:
-      origin_kind: named
-      origin: Papua New Guinea National Intelligence Organization (NIO)
-    attribution_in_text: false
-    location: char:1491-1633
-    date: '1985-01-24'
-    refs:
-      - id: b4b878d1-2b20-4aad-96df-75e3f422e358
-        name: Papua New Guinea National Intelligence Organization (NIO)
-      - id: 7e29ec22-e0ac-45c7-b228-a4dce49806db
-        name: Unidentified Aerial Phenomena (UAP)
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      NIO SAID THERE HAVE BEEN VARIOUS REPORTS OF UNIDENTIFIED AERIAL PHENOMENA THE NIGHT OF JANUARY 24, INCLUDING FAST-MOVING OBJECTS WITH LIGHTS, CONTRAILS, AND NOISE.
-    text: |-
-      The National Intelligence Organization reported there were various reports of Unidentified Aerial Phenomena (UAP) on the night of 1985-01-24, including fast-moving objects with lights, contrails, and noise.
-  - id: 2efbfa70-f28a-4797-94de-4d29c6b9fae7
-    type: observation
-    attestation: second_hand
-    speaker:
-      id: a4349890-22c8-43d8-9589-827e6d04891e
-      name: Gardner (AMEMBASSY PORT MORESBY)
-    provenance_chain:
-      origin_kind: named
-      origin: Papua New Guinea National Intelligence Organization (NIO)
-    attribution_in_text: false
-    location: char:1730-1859
-    date: '1985-01-24'
-    refs:
-      - id: b4b878d1-2b20-4aad-96df-75e3f422e358
-        name: Papua New Guinea National Intelligence Organization (NIO)
-      - id: 467d599a-dbc9-445d-92a4-123f3f64938a
-        name: Air Niugini
-      - id: aafb6d2c-9918-4c09-8cc7-be0e2ce3a453
-        name: Papua New Guinea, East Sepik Province, Wewak
-      - id: 42dd06a7-382a-4aa2-987f-72a69e554420
-        name: Papua New Guinea, National Capital District, Port Moresby
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      THE REPORT IN WHICH NIO PLACES SOME CREDENCE ORIGINATED WITH AN AIR NIUGINI PILOT WHO HAD JUST TAKEN OFF FROM WEWAK ENROUTE PORT MORESBY.
-    text: |-
-      Of the reports on the 1985 Papua New Guinea overflight sightings, the National Intelligence Organization placed some credence in the report originating with an Air Niugini pilot who had just taken off from Wewak en route to Port Moresby.
-  - id: 2c3ebfee-987a-44b1-849e-a258233483be
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: an Air Niugini pilot
-      relay:
-        - Papua New Guinea National Intelligence Organization (NIO)
-    attribution_in_text: false
-    location: char:1868-2009
-    date: '1985-01-24'
-    refs:
-      - id: 467d599a-dbc9-445d-92a4-123f3f64938a
-        name: Air Niugini
-      - id: 5ff024d6-fe94-4aa5-bc33-d0a66475d270
-        name: Papua New Guinea, East Sepik Province, Angoram
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      PILOT SAID HIS RADAR PICKED UP AIRCRAFT FLYING SOUTH TO NORTH AT HIGH ALTITUDE AND HIGH SPEED WHEN HE WAS OVER ANGORAM (VIC 4 DEG S, 144 DEG E).
-    text: |-
-      An Air Niugini pilot said his radar picked up aircraft flying south to north at high altitude and high speed while he was over Angoram, at approximately 4 degrees south, 144 degrees east.
-  - id: cfea33d9-78d3-4daa-af9a-9d5c786559d8
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: unnamed observers around Papua New Guinea
-      relay:
-        - Papua New Guinea National Intelligence Organization (NIO)
-    attribution_in_text: false
-    location: char:2013-2148
-    date: '1985-01-24'
-    refs:
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      SEVERAL VISUAL SIGHTINGS OF CONTRAILS WERE ALSO REPORTED FROM VARIOUS POINTS AROUND PNG, OF ONE AIRCRAFT MOVING NORTH TO SOUTH AT 1900 LOCAL
-    text: |-
-      Several visual sightings of contrails were reported from various points around Papua New Guinea, including one aircraft moving north to south at 19:00 local time.
-  - id: 8286fa9e-d590-45d3-822b-a5caecef118a
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: unnamed observers around Papua New Guinea
-      relay:
-        - Papua New Guinea National Intelligence Organization (NIO)
-    attribution_in_text: false
-    location: char:2154-2213
-    date: '1985-01-24'
-    refs:
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: AND OF SIX-EIGHT AIRCRAFT TRAVELING SOUTH TO NORTH AT 2200 LOCAL.
-    text: |-
-      Visual sightings of contrails reported from various points around Papua New Guinea also included six to eight aircraft travelling south to north at 22:00 local time.
-  - id: b41edd22-3451-491e-b2fc-57ff9c6c0183
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: a4349890-22c8-43d8-9589-827e6d04891e
-      name: Gardner (AMEMBASSY PORT MORESBY)
-    provenance_chain:
-      origin_kind: speaker
-      origin: Gardner (AMEMBASSY PORT MORESBY)
-    attribution_in_text: false
-    location: char:2224-2363
-    date: '1985-01-24'
-    refs:
-      - id: 3d9c37a1-2ca4-4c04-8c4e-8482c3e550a2
-        name: USA, Embassy Port Moresby
-      - id: 6323e5c1-bb2c-4114-9f7b-bf912862e869
-        name: 43rd Strategic Wing (43SW)
-      - id: b4b878d1-2b20-4aad-96df-75e3f422e358
-        name: Papua New Guinea National Intelligence Organization (NIO)
-      - id: 2b369c16-4ca2-45a0-ac61-a0061647a09f
-        name: B-52
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      BASED ON OUR RECORDS AND TELCON WITH 43SW, WE HAVE TOLD NIO WE KNEW OF NO B-52 OVERFLIGHTS AND NO U.S. AIRCRAFT IN PNG AIRSPACE ON JANUARY 24.
-    text: |-
-      Based on the Embassy's records and a telephone conversation with the 43rd Strategic Wing, the Embassy told the National Intelligence Organization it knew of no B-52 overflights and no US aircraft in Papua New Guinea airspace on 1985-01-24.
-  - id: 9b9bd4e4-88b3-4bc9-a802-899d76481eb0
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: a4349890-22c8-43d8-9589-827e6d04891e
-      name: Gardner (AMEMBASSY PORT MORESBY)
-    provenance_chain:
-      origin_kind: speaker
-      origin: Gardner (AMEMBASSY PORT MORESBY)
-    attribution_in_text: false
-    location: char:2371-2504
-    date: '1985-01-28'
-    refs:
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      ALTHOUGH INFORMATION PROVIDED US ON THESE SIGHTINGS IS VERY SKETCHY AND SOURCES WERE UNSURE OF THE DIRECTIONS IN WHICH AIRCRAFT WERE FLYING
-    text: |-
-      The information provided to the Embassy on the 1985 Papua New Guinea overflight sightings was very sketchy, and sources were unsure of the directions in which the aircraft were flying.
-  - id: edd774ec-ce5f-41cb-80f5-1b13bf1f881e
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: a4349890-22c8-43d8-9589-827e6d04891e
-      name: Gardner (AMEMBASSY PORT MORESBY)
-    provenance_chain:
-      origin_kind: speaker
-      origin: Gardner (AMEMBASSY PORT MORESBY)
-    attribution_in_text: false
-    location: char:2512-2605
-    date: '1985-01-28'
-    refs:
-      - id: a4349890-22c8-43d8-9589-827e6d04891e
-        name: Gardner (AMEMBASSY PORT MORESBY)
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      WE WOULD MOST APPRECIATE CONFIRMATION OF PARA 3 ABOVE AND ANY LIGHT YOU MIGHT THROW ON THESE REPORTS.
-    text: |-
-      Gardner requested confirmation of the finding that there were no B-52 overflights or US aircraft in Papua New Guinea airspace on 1985-01-24, and any additional light that could be thrown on the overflight reports.
-infrastructure_claims:
-  - id: 0e27a5e1-13b5-416b-973e-ac4d6c1394d2
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: State Department cable 85 PORT MORESBY 199
-    attribution_in_text: false
-    location: char:119-239
-    date: '1985-01-28'
-    refs:
-      - id: 3d9c37a1-2ca4-4c04-8c4e-8482c3e550a2
-        name: USA, Embassy Port Moresby
-      - id: cfdff862-bc7c-4539-9eb5-e639d9a7e65b
-        name: United States Commander in Chief, Atlantic (USCINCLANT)
-    quote: |-
-      MRN: 85 PORT MORESBY 199
-      Date/DTG: Jan 28, 1985 / 280000Z Jan 85
-      From: AMEMBASSY PORT MORESBY
-      Action: USCINCLANT ROUTINE
-    text: |-
-      On 1985-01-28, AMEMBASSY PORT MORESBY sent a cable numbered 85 PORT MORESBY 199 to USCINCLANT ROUTINE.
-  - id: 4a410292-096f-4445-9c87-4bbd2686fc0a
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: State Department cable 85 PORT MORESBY 199
-    attribution_in_text: false
-    location: char:556-703
-    date: '1985-01-28'
-    refs:
-      - id: 3d9c37a1-2ca4-4c04-8c4e-8482c3e550a2
-        name: USA, Embassy Port Moresby
-      - id: fcca7908-33d4-4424-bebc-fb25225c695d
-        name: United States Commander in Chief, Pacific (USCINCPAC)
-      - id: 6323e5c1-bb2c-4114-9f7b-bf912862e869
-        name: 43rd Strategic Wing (43SW)
-      - id: 69948a2f-e794-4f08-80e4-e9b7d162b0a8
-        name: USA, Guam, Andersen Air Force Base
-      - id: 936e2bb9-0029-4f64-a32d-0777742f20d0
-        name: United States Department of State
-      - id: 2f978f15-6532-4c69-977e-6ac61eee04c2
-        name: Australia, Australian Capital Territory, Canberra
-      - id: 837bc503-3bcc-4472-8316-261b9e64d3a1
-        name: Indonesia, Jakarta
-    quote: |-
-      FM AMEMBASSY PORT MORESBY
-      TO USCINCPAC HONOLULU HI IMMEDIATE
-      INFO 43SW ANDERSON AFB GU IMMEDIATE
-      SECSTATE WASHDC 1694
-      AMEMBASSY CANBERRA
-      AMEMBASSY JAKARTA
-    text: |-
-      The cable from AMEMBASSY Port Moresby dated 1985-01-28 was addressed to USCINCPAC Honolulu as immediate action, with information copies to the 43rd Strategic Wing at Andersen Air Force Base, the Department of State in Washington, AMEMBASSY Canberra, and AMEMBASSY Jakarta.
-  - id: bafddccc-8940-467a-bc0f-7777c4ed31c8
-    type: administrative
-    attestation: second_hand
-    speaker:
-      id: c245619d-cca0-44b7-80e1-d45145679748
-      name: John Powers
-    provenance_chain:
-      origin_kind: document
-      origin: State Department release stamp on cable 85 PORT MORESBY 199
-    attribution_in_text: true
-    location: char:1385-1459
-    date: '2026-02-25'
-    refs:
-      - id: c245619d-cca0-44b7-80e1-d45145679748
-        name: John Powers
-      - id: 936e2bb9-0029-4f64-a32d-0777742f20d0
-        name: United States Department of State
-      - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
-        name: 1985 Papua New Guinea overflight sightings
-    quote: |-
-      Released in Full
-      John Powers, Acting-Director
-      US Department of State
-      2/25/2026
-    text: |-
-      This cable on the Papua New Guinea overflight inquiry was released in full by John Powers, Acting Director of the United States Department of State, on 2026-02-25.
+  quote: |-
+    FM AMEMBASSY PORT MORESBY
+    TO USCINCPAC HONOLULU HI IMMEDIATE
+    INFO 43SW ANDERSON AFB GU IMMEDIATE
+    SECSTATE WASHDC 1694
+    AMEMBASSY CANBERRA
+    AMEMBASSY JAKARTA
+  text: |-
+    The cable from AMEMBASSY Port Moresby dated 1985-01-28 was addressed to USCINCPAC Honolulu as immediate action, with information copies to the 43rd Strategic Wing at Andersen Air Force Base, the Department of State in Washington, AMEMBASSY Canberra, and AMEMBASSY Jakarta.
+  entailment:
+    label: entails
+    score: 0.954
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: bafddccc-8940-467a-bc0f-7777c4ed31c8
+  type: administrative
+  attestation: second_hand
+  speaker:
+    id: c245619d-cca0-44b7-80e1-d45145679748
+    name: John Powers
+  provenance_chain:
+    origin_kind: document
+    origin: State Department release stamp on cable 85 PORT MORESBY 199
+  attribution_in_text: true
+  location: char:1385-1459
+  date: '2026-02-25'
+  refs:
+  - id: c245619d-cca0-44b7-80e1-d45145679748
+    name: John Powers
+  - id: 936e2bb9-0029-4f64-a32d-0777742f20d0
+    name: United States Department of State
+  - id: ef316d5f-8eb8-412a-9e6d-1c0864adf22b
+    name: 1985 Papua New Guinea overflight sightings
+  quote: |-
+    Released in Full
+    John Powers, Acting-Director
+    US Department of State
+    2/25/2026
+  text: |-
+    This cable on the Papua New Guinea overflight inquiry was released in full by John Powers, Acting Director of the United States Department of State, on 2026-02-25.
+  entailment:
+    label: entails
+    score: 0.788
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh
   changed:
   - record
-  why: Record block refreshed from current record frontmatter. No re-extraction; claims
-    and nodes untouched.
+  why: |-
+    Record block refreshed from current record frontmatter. No re-extraction; claims and nodes untouched.

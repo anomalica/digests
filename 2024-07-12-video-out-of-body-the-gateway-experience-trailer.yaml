@@ -3,27 +3,35 @@ schema: anomalica/digest/1
 extracted_at: '2026-08-01T00:37:17.699872+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 299812
-      output: 7569
-      real_input: 10
-      cache_read: 127097
-      cache_write: 172705
-      calls: 2
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 299812
+    output: 7569
+    real_input: 10
+    cache_read: 127097
+    cache_write: 172705
+    calls: 2
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.2
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.9
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: 394dc82dce800d3724edaf31676d63ea220a2863af0bd31beab7a3be4764515b
   prep_version: 6
@@ -44,184 +52,234 @@ record:
 terminology:
   main_subject: 'Out of Body: The Gateway Experience'
   acronyms:
-    - acronym: CIA
-      expansion: Central Intelligence Agency
-    - acronym: OOBE
-      expansion: out-of-body experience
+  - acronym: CIA
+    expansion: Central Intelligence Agency
+  - acronym: OOBE
+    expansion: out-of-body experience
 nodes:
-  - id: 65c7aaac-3ae7-4b96-97e2-44190091b89a
-    type: document
-    name: 'Out of Body: The Gateway Experience'
-    metadata:
-      document_type: documentary trailer
-      date: '2024-07-12'
-  - id: a3d6ed12-6505-4edb-9fed-b77c9fcfe778
-    type: organisation
-    name: Central Intelligence Agency (CIA)
-  - id: 0492c99b-e228-4034-8f1c-96cd15b0a33a
-    type: project
-    name: Gateway Process
-  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-    type: topic
-    name: out-of-body experience (OOBE)
+- id: 65c7aaac-3ae7-4b96-97e2-44190091b89a
+  type: document
+  name: 'Out of Body: The Gateway Experience'
+  metadata:
+    document_type: documentary trailer
+    date: '2024-07-12'
+- id: a3d6ed12-6505-4edb-9fed-b77c9fcfe778
+  type: organisation
+  name: Central Intelligence Agency (CIA)
+- id: 0492c99b-e228-4034-8f1c-96cd15b0a33a
+  type: project
+  name: Gateway Process
+- id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+  type: topic
+  name: out-of-body experience (OOBE)
 domain_claims:
-  - id: bcf3dcd8-e6cc-422f-a761-c612400edf3a
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-1
-    attribution_in_text: false
-    location: 00:00:02.2-00:00:05.7
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-    quote: |-
-      It felt like my consciousness was like flapping behind me like a cape in the wind.
-    text: |-
-      A participant in an out-of-body experience (OOBE) described their consciousness as feeling like it was flapping behind them like a cape in the wind.
-  - id: b9f64b58-0d18-42e7-9c38-87cb430ee922
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-2
-    attribution_in_text: false
-    location: 00:00:07.0-00:00:10.4
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-    quote: The experience seemed like it lasted thousands of years.
-    text: |-
-      A participant described an out-of-body experience (OOBE) as seeming to last thousands of years.
-  - id: ca08d284-e601-4201-8f5c-373a8e3b3483
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-1
-    attribution_in_text: false
-    location: 00:00:11.2-00:00:15.1
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-    quote: |-
-      And I'm standing like this, and suddenly I realize that I'm standing behind myself.
-    text: |-
-      A participant described realising they were standing behind themselves during an out-of-body experience (OOBE).
-  - id: 5a9b6aee-56d8-4a76-bcfa-71a0f653efae
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-3
-    attribution_in_text: false
-    location: 00:00:21.7-00:00:27.0
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-    quote: |-
-      I'm looking at my hand and thinking, can I stick my hand through the glass? And sure enough, I could.
-    text: |-
-      A participant found they could put their hand through a glass window during an out-of-body experience (OOBE).
-  - id: fb27906a-0633-4a5e-b735-11970116e6af
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-4
-    attribution_in_text: false
-    location: 00:00:28.2-00:00:34.0
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-    quote: |-
-      And I felt my body lighter than before, and I felt like I could lift out of my body.
-    text: |-
-      A participant felt their body become lighter and felt able to lift out of their body during an out-of-body experience (OOBE).
-  - id: 68003092-9578-40fc-936a-9bef9c5bc1b2
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-6
-    attribution_in_text: false
-    location: 00:00:40.0-00:00:45.8
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-    quote: |-
-      I felt something bumping against my shoulder. What I was bumping against was the ceiling of my bedroom.
-    text: |-
-      A participant felt something bumping against their shoulder during an out-of-body experience (OOBE), which turned out to be the ceiling of their bedroom.
-  - id: 7203f9d6-4a96-4249-89af-7a16f20a478e
-    type: opinion
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-4
-    attribution_in_text: false
-    location: 00:00:48.7-00:00:50.4
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-      - id: a3d6ed12-6505-4edb-9fed-b77c9fcfe778
-        name: Central Intelligence Agency (CIA)
-    quote: Now, obviously, this caught the attention of the CIA.
-    text: |-
-      Out-of-body experiences (OOBEs) attracted the attention of the Central Intelligence Agency (CIA).
-  - id: 01943459-5099-4a93-b5b9-974ad910b9b2
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-7
-    attribution_in_text: false
-    location: 00:00:59.8-00:01:01.9
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-    quote: My soul came out of the mold of my body.
-    text: |-
-      A participant described their soul as coming out of the mould of their body during an out-of-body experience (OOBE).
-  - id: c339bb0f-a1d4-461a-a571-050d0e2b3dc0
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-4
-    attribution_in_text: false
-    location: 00:01:05.2-00:01:08.2
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-    quote: 3.09 a.m. This was the first time I left my body.
-    text: A participant's first out-of-body experience (OOBE) occurred at 3:09 a.m.
-  - id: 72bf0013-c6da-4004-9bee-f6905dd9fe3e
-    type: opinion
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: an unnamed participant describing their own out-of-body experience
-      origin_ref: speaker-3
-    attribution_in_text: false
-    location: 00:01:33.0-00:01:41.3
-    refs:
-      - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
-        name: out-of-body experience (OOBE)
-    quote: |-
-      The one main thing I got from the out-of-body experience is the absolute knowledge that I would transcend physical mortality.
-    text: |-
-      A participant considers the absolute knowledge that they would transcend physical mortality to be the main thing they gained from their out-of-body experience (OOBE).
+- id: bcf3dcd8-e6cc-422f-a761-c612400edf3a
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-1
+  attribution_in_text: false
+  location: 00:00:02.2-00:00:05.7
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  quote: |-
+    It felt like my consciousness was like flapping behind me like a cape in the wind.
+  text: |-
+    A participant in an out-of-body experience (OOBE) described their consciousness as feeling like it was flapping behind them like a cape in the wind.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b9f64b58-0d18-42e7-9c38-87cb430ee922
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-2
+  attribution_in_text: false
+  location: 00:00:07.0-00:00:10.4
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  quote: The experience seemed like it lasted thousands of years.
+  text: |-
+    A participant described an out-of-body experience (OOBE) as seeming to last thousands of years.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ca08d284-e601-4201-8f5c-373a8e3b3483
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-1
+  attribution_in_text: false
+  location: 00:00:11.2-00:00:15.1
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  quote: |-
+    And I'm standing like this, and suddenly I realize that I'm standing behind myself.
+  text: |-
+    A participant described realising they were standing behind themselves during an out-of-body experience (OOBE).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5a9b6aee-56d8-4a76-bcfa-71a0f653efae
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-3
+  attribution_in_text: false
+  location: 00:00:21.7-00:00:27.0
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  quote: |-
+    I'm looking at my hand and thinking, can I stick my hand through the glass? And sure enough, I could.
+  text: |-
+    A participant found they could put their hand through a glass window during an out-of-body experience (OOBE).
+  entailment:
+    label: neutral
+    score: 0.784
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: fb27906a-0633-4a5e-b735-11970116e6af
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-4
+  attribution_in_text: false
+  location: 00:00:28.2-00:00:34.0
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  quote: |-
+    And I felt my body lighter than before, and I felt like I could lift out of my body.
+  text: |-
+    A participant felt their body become lighter and felt able to lift out of their body during an out-of-body experience (OOBE).
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 68003092-9578-40fc-936a-9bef9c5bc1b2
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-6
+  attribution_in_text: false
+  location: 00:00:40.0-00:00:45.8
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  quote: |-
+    I felt something bumping against my shoulder. What I was bumping against was the ceiling of my bedroom.
+  text: |-
+    A participant felt something bumping against their shoulder during an out-of-body experience (OOBE), which turned out to be the ceiling of their bedroom.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 7203f9d6-4a96-4249-89af-7a16f20a478e
+  type: opinion
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-4
+  attribution_in_text: false
+  location: 00:00:48.7-00:00:50.4
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  - id: a3d6ed12-6505-4edb-9fed-b77c9fcfe778
+    name: Central Intelligence Agency (CIA)
+  quote: Now, obviously, this caught the attention of the CIA.
+  text: |-
+    Out-of-body experiences (OOBEs) attracted the attention of the Central Intelligence Agency (CIA).
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 01943459-5099-4a93-b5b9-974ad910b9b2
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-7
+  attribution_in_text: false
+  location: 00:00:59.8-00:01:01.9
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  quote: My soul came out of the mold of my body.
+  text: |-
+    A participant described their soul as coming out of the mould of their body during an out-of-body experience (OOBE).
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c339bb0f-a1d4-461a-a571-050d0e2b3dc0
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-4
+  attribution_in_text: false
+  location: 00:01:05.2-00:01:08.2
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  quote: 3.09 a.m. This was the first time I left my body.
+  text: A participant's first out-of-body experience (OOBE) occurred at 3:09 a.m.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 72bf0013-c6da-4004-9bee-f6905dd9fe3e
+  type: opinion
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: an unnamed participant describing their own out-of-body experience
+    origin_ref: speaker-3
+  attribution_in_text: false
+  location: 00:01:33.0-00:01:41.3
+  refs:
+  - id: dad39bb7-5cd2-4a48-914c-0f7ced9ec174
+    name: out-of-body experience (OOBE)
+  quote: |-
+    The one main thing I got from the out-of-body experience is the absolute knowledge that I would transcend physical mortality.
+  text: |-
+    A participant considers the absolute knowledge that they would transcend physical mortality to be the main thing they gained from their out-of-body experience (OOBE).
+  entailment:
+    label: entails
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

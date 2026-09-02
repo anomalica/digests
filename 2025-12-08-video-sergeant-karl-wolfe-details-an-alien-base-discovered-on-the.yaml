@@ -3,27 +3,35 @@ schema: anomalica/digest/1
 extracted_at: '2026-08-01T00:38:59.387749+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 219677
-      output: 5623
-      real_input: 8
-      cache_read: 53225
-      cache_write: 166444
-      calls: 2
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 219677
+    output: 5623
+    real_input: 8
+    cache_read: 53225
+    cache_write: 166444
+    calls: 2
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.8
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: b966941577638e1afb6c9e1545c829fd69f22ed78d7674b9930100974aff5907
   prep_version: 6
@@ -44,371 +52,461 @@ record:
 terminology:
   main_subject: Carl Wolf
   acronyms:
-    - acronym: NASA
-      expansion: National Aeronautics and Space Administration
+  - acronym: NASA
+    expansion: National Aeronautics and Space Administration
 nodes:
-  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-    type: person
-    name: Carl Wolf
-  - id: 15ff0344-ba1a-4925-98be-96359421eced
-    type: person
-    name: Dr. Colley
-  - id: abaa5262-d3c0-4b6e-a818-d73936d2abb7
-    type: organisation
-    name: United States Air Force
-  - id: ee2de449-01e5-47aa-9452-be2918df25e6
-    type: organisation
-    name: National Aeronautics and Space Administration (NASA)
-  - id: 4a635c26-ec14-462b-b4a8-f7730e9c6540
-    type: organisation
-    name: United States Congress
-  - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
-    type: project
-    name: Lunar Orbiter Project
-  - id: 4f43a72d-9493-4c90-a7ea-07d9ec9d6636
-    type: place
-    name: USA, Virginia, Langley Air Force Base
-  - id: 0db31545-4145-409e-bf4e-e771da2d80bc
-    type: place
-    name: Moon, Far Side
+- id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+  type: person
+  name: Carl Wolf
+- id: 15ff0344-ba1a-4925-98be-96359421eced
+  type: person
+  name: Dr. Colley
+- id: abaa5262-d3c0-4b6e-a818-d73936d2abb7
+  type: organisation
+  name: United States Air Force
+- id: ee2de449-01e5-47aa-9452-be2918df25e6
+  type: organisation
+  name: National Aeronautics and Space Administration (NASA)
+- id: 4a635c26-ec14-462b-b4a8-f7730e9c6540
+  type: organisation
+  name: United States Congress
+- id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
+  type: project
+  name: Lunar Orbiter Project
+- id: 4f43a72d-9493-4c90-a7ea-07d9ec9d6636
+  type: place
+  name: USA, Virginia, Langley Air Force Base
+- id: 0db31545-4145-409e-bf4e-e771da2d80bc
+  type: place
+  name: Moon, Far Side
 domain_claims:
-  - id: 4f3b664e-8289-4db3-a30a-9d17ced87a73
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:00:03.6-00:00:14.3
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-      - id: abaa5262-d3c0-4b6e-a818-d73936d2abb7
-        name: United States Air Force
-    quote: |-
-      My name is Carl Wolf and I was a precision electronics photographic repairman with a top secret crypto clearance in the United States Air Force.
-    text: |-
-      Carl Wolf worked as a precision electronics photographic repairman with a top secret crypto clearance in the United States Air Force.
-  - id: 91302af5-f832-4554-bc10-14a50995d0f3
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:00:15.2-00:00:17.4
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-      - id: 4f43a72d-9493-4c90-a7ea-07d9ec9d6636
-        name: USA, Virginia, Langley Air Force Base
-    quote: I was stationed at Langley Air Force Base in Virginia.
-    text: Carl Wolf was stationed at Langley Air Force Base in Virginia.
-  - id: cb3770a3-d4d8-42c2-959e-6bf18e322ebc
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:00:19.1-00:00:28.2
-    date: 1965-06
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-      - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
-        name: Lunar Orbiter Project
-      - id: ee2de449-01e5-47aa-9452-be2918df25e6
-        name: National Aeronautics and Space Administration (NASA)
-    quote: |-
-      In 1965, in mid-1965, I was loaned to the Lunar Orbiter Project at NASA on Langley Field.
-    text: |-
-      In mid-1965, Carl Wolf was loaned to the Lunar Orbiter Project at the National Aeronautics and Space Administration (NASA) at Langley Field.
-  - id: 51176098-c7e7-4be3-b1c5-c7e418a28a32
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:00:30.0-00:00:31.7
-    refs:
-      - id: 15ff0344-ba1a-4925-98be-96359421eced
-        name: Dr. Colley
-      - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
-        name: Lunar Orbiter Project
-    quote: Dr. Colley was in charge of that project.
-    text: Dr. Colley was in charge of the Lunar Orbiter Project.
-  - id: b0cfc67c-cc9e-4d6d-a494-3d7f4342bcb6
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:00:32.9-00:00:39.2
-    refs:
-      - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
-        name: Lunar Orbiter Project
-    quote: |-
-      They had problems with a piece of electronic equipment that was bottlenecking their production of photographs.
-    text: |-
-      The Lunar Orbiter Project had problems with a piece of electronic equipment that was bottlenecking their production of photographs.
-  - id: 8d7dc661-b33c-48d2-b0a6-f8f39df2858d
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:00:41.6-00:00:46.5
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-      - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
-        name: Lunar Orbiter Project
-    quote: |-
-      I went to the facility and when I walked into the facility, there were scientists from all over the world.
-    text: |-
-      Carl Wolf observed scientists from all over the world at the Lunar Orbiter Project facility.
-  - id: 8052097f-1caf-4391-b1e6-6c079a30b63b
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:00:56.2-00:00:58.9
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-    quote: I was taken into the laboratory where the equipment was malfunctioning.
-    text: |-
-      Carl Wolf was taken into the laboratory where the malfunctioning equipment was located.
-  - id: 393463cb-8782-4bbb-a57f-19499b32f2b9
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:01:00.4-00:01:02.5
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-    quote: I couldn't repair it in the dark. I asked to have it removed.
-    text: |-
-      Carl Wolf could not repair the malfunctioning equipment in the dark and asked to have it removed.
-  - id: f33b37d2-e477-4e9d-9635-e2cf146ae091
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:01:08.5-00:01:09.8
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-    quote: I was also an airman second class.
-    text: Carl Wolf was an airman second class.
-  - id: 7be2575a-ade2-41a9-aced-bd1a8ade0c96
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:01:12.9-00:01:22.9
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-    quote: |-
-      I was interested how the whole process functioned, how the data got from the lunar orbiter to the laboratory, asked the young man if he described the process to me, he did.
-    text: |-
-      Carl Wolf asked a young airman working in the darkroom to describe how data got from the lunar orbiter to the laboratory, and the airman did so.
-  - id: 4afffec3-6d63-43a6-b133-3337bb5c3b50
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        an unnamed airman second class working in the darkroom of the Lunar Orbiter Project laboratory
-      origin_ref: darkroom-airman
-    attribution_in_text: true
-    location: 00:01:24.0-00:01:32.9
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-      - id: 0db31545-4145-409e-bf4e-e771da2d80bc
-        name: Moon, Far Side
-    quote: |-
-      About 30 minutes into the process, he said to me, in a very distressed way, by the way, we've discovered a base on the backside of the moon.
-    text: |-
-      An unnamed young airman working in the darkroom at the Lunar Orbiter Project laboratory told Carl Wolf, in a distressed manner, that a base had been discovered on the far side of the Moon.
-  - id: 7967efd5-461c-4c5a-bcf8-61ebf64b17c4
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        an unnamed airman second class working in the darkroom of the Lunar Orbiter Project laboratory
-      origin_ref: darkroom-airman
-    attribution_in_text: true
-    location: 00:01:34.2-00:01:43.6
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-      - id: 0db31545-4145-409e-bf4e-e771da2d80bc
-        name: Moon, Far Side
-    quote: |-
-      And then he proceeded to put photographs down in front of me and clearly in these photographs were structures, mushroom-shaped buildings, spherical buildings, and towers.
-    text: |-
-      An unnamed airman working at the Lunar Orbiter Project laboratory showed Carl Wolf photographs depicting mushroom-shaped buildings, spherical buildings, and towers on the far side of the Moon.
-  - id: 48149bd9-f434-441e-a2c2-3cc09d184d1f
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:01:45.1-00:01:49.0
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-      - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
-        name: Lunar Orbiter Project
-    quote: |-
-      And at that point I was very concerned because I knew we were working on compartmentalized security.
-    text: |-
-      Carl Wolf became concerned upon hearing about the alleged base because he knew the Lunar Orbiter Project operated under compartmentalised security.
-  - id: 99ff7762-0a48-4c3a-95ee-0301559bd30e
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:01:50.0-00:01:55.9
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-    quote: |-
-      He had breached security and I was actually frightened at that moment and I did not question him any further.
-    text: |-
-      Carl Wolf believed the young airman had breached security by disclosing the alleged lunar base and photographs to him, and Carl Wolf was frightened and did not question him further.
-  - id: e43f0b9d-5dff-45a3-80a7-bae2b7a41e94
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:01:56.8-00:01:59.0
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-    quote: And a few moments later someone did come into the room.
-    text: |-
-      A few moments after the airman disclosed the lunar base information, someone else entered the room.
-  - id: 997065da-5d81-44e5-a193-c831f0932ddd
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:02:01.1-00:02:06.8
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-      - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
-        name: Lunar Orbiter Project
-    quote: |-
-      I worked there for three more days and I remember going home and naively thinking, I can't wait to hear about this on the evening news.
-    text: |-
-      Carl Wolf worked at the Lunar Orbiter Project facility for three more days after the incident.
-  - id: 8b9a125b-f855-4430-b67e-9384160784d5
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:02:08.5-00:02:11.8
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-    quote: And here it is more than 30 years later and I hope we hear about it tonight.
-    text: |-
-      Carl Wolf expected the discovery of the alleged lunar base to be reported on the evening news, but more than 30 years later it had not been reported, and he expressed hope of hearing about it soon.
-  - id: b0e70f89-deae-4f73-9a74-d24aa10d0190
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-      name: Carl Wolf
-    provenance_chain:
-      origin_kind: speaker
-      origin: Carl Wolf
-    attribution_in_text: false
-    location: 00:02:12.6-00:02:16.8
-    refs:
-      - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
-        name: Carl Wolf
-      - id: 4a635c26-ec14-462b-b4a8-f7730e9c6540
-        name: United States Congress
-    quote: And I will testify under oath before Congress that what I'm saying is the truth.
-    text: |-
-      Carl Wolf offered to testify under oath before the United States Congress that his account is true.
+- id: 4f3b664e-8289-4db3-a30a-9d17ced87a73
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:00:03.6-00:00:14.3
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  - id: abaa5262-d3c0-4b6e-a818-d73936d2abb7
+    name: United States Air Force
+  quote: |-
+    My name is Carl Wolf and I was a precision electronics photographic repairman with a top secret crypto clearance in the United States Air Force.
+  text: |-
+    Carl Wolf worked as a precision electronics photographic repairman with a top secret crypto clearance in the United States Air Force.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 91302af5-f832-4554-bc10-14a50995d0f3
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:00:15.2-00:00:17.4
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  - id: 4f43a72d-9493-4c90-a7ea-07d9ec9d6636
+    name: USA, Virginia, Langley Air Force Base
+  quote: I was stationed at Langley Air Force Base in Virginia.
+  text: Carl Wolf was stationed at Langley Air Force Base in Virginia.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: cb3770a3-d4d8-42c2-959e-6bf18e322ebc
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:00:19.1-00:00:28.2
+  date: 1965-06
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
+    name: Lunar Orbiter Project
+  - id: ee2de449-01e5-47aa-9452-be2918df25e6
+    name: National Aeronautics and Space Administration (NASA)
+  quote: |-
+    In 1965, in mid-1965, I was loaned to the Lunar Orbiter Project at NASA on Langley Field.
+  text: |-
+    In mid-1965, Carl Wolf was loaned to the Lunar Orbiter Project at the National Aeronautics and Space Administration (NASA) at Langley Field.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 51176098-c7e7-4be3-b1c5-c7e418a28a32
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:00:30.0-00:00:31.7
+  refs:
+  - id: 15ff0344-ba1a-4925-98be-96359421eced
+    name: Dr. Colley
+  - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
+    name: Lunar Orbiter Project
+  quote: Dr. Colley was in charge of that project.
+  text: Dr. Colley was in charge of the Lunar Orbiter Project.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b0cfc67c-cc9e-4d6d-a494-3d7f4342bcb6
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:00:32.9-00:00:39.2
+  refs:
+  - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
+    name: Lunar Orbiter Project
+  quote: |-
+    They had problems with a piece of electronic equipment that was bottlenecking their production of photographs.
+  text: |-
+    The Lunar Orbiter Project had problems with a piece of electronic equipment that was bottlenecking their production of photographs.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8d7dc661-b33c-48d2-b0a6-f8f39df2858d
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:00:41.6-00:00:46.5
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
+    name: Lunar Orbiter Project
+  quote: |-
+    I went to the facility and when I walked into the facility, there were scientists from all over the world.
+  text: |-
+    Carl Wolf observed scientists from all over the world at the Lunar Orbiter Project facility.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8052097f-1caf-4391-b1e6-6c079a30b63b
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:00:56.2-00:00:58.9
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  quote: I was taken into the laboratory where the equipment was malfunctioning.
+  text: |-
+    Carl Wolf was taken into the laboratory where the malfunctioning equipment was located.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 393463cb-8782-4bbb-a57f-19499b32f2b9
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:01:00.4-00:01:02.5
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  quote: I couldn't repair it in the dark. I asked to have it removed.
+  text: |-
+    Carl Wolf could not repair the malfunctioning equipment in the dark and asked to have it removed.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: f33b37d2-e477-4e9d-9635-e2cf146ae091
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:01:08.5-00:01:09.8
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  quote: I was also an airman second class.
+  text: Carl Wolf was an airman second class.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 7be2575a-ade2-41a9-aced-bd1a8ade0c96
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:01:12.9-00:01:22.9
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  quote: |-
+    I was interested how the whole process functioned, how the data got from the lunar orbiter to the laboratory, asked the young man if he described the process to me, he did.
+  text: |-
+    Carl Wolf asked a young airman working in the darkroom to describe how data got from the lunar orbiter to the laboratory, and the airman did so.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4afffec3-6d63-43a6-b133-3337bb5c3b50
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      an unnamed airman second class working in the darkroom of the Lunar Orbiter Project laboratory
+    origin_ref: darkroom-airman
+  attribution_in_text: true
+  location: 00:01:24.0-00:01:32.9
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  - id: 0db31545-4145-409e-bf4e-e771da2d80bc
+    name: Moon, Far Side
+  quote: |-
+    About 30 minutes into the process, he said to me, in a very distressed way, by the way, we've discovered a base on the backside of the moon.
+  text: |-
+    An unnamed young airman working in the darkroom at the Lunar Orbiter Project laboratory told Carl Wolf, in a distressed manner, that a base had been discovered on the far side of the Moon.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 7967efd5-461c-4c5a-bcf8-61ebf64b17c4
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      an unnamed airman second class working in the darkroom of the Lunar Orbiter Project laboratory
+    origin_ref: darkroom-airman
+  attribution_in_text: true
+  location: 00:01:34.2-00:01:43.6
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  - id: 0db31545-4145-409e-bf4e-e771da2d80bc
+    name: Moon, Far Side
+  quote: |-
+    And then he proceeded to put photographs down in front of me and clearly in these photographs were structures, mushroom-shaped buildings, spherical buildings, and towers.
+  text: |-
+    An unnamed airman working at the Lunar Orbiter Project laboratory showed Carl Wolf photographs depicting mushroom-shaped buildings, spherical buildings, and towers on the far side of the Moon.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 48149bd9-f434-441e-a2c2-3cc09d184d1f
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:01:45.1-00:01:49.0
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
+    name: Lunar Orbiter Project
+  quote: |-
+    And at that point I was very concerned because I knew we were working on compartmentalized security.
+  text: |-
+    Carl Wolf became concerned upon hearing about the alleged base because he knew the Lunar Orbiter Project operated under compartmentalised security.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 99ff7762-0a48-4c3a-95ee-0301559bd30e
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:01:50.0-00:01:55.9
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  quote: |-
+    He had breached security and I was actually frightened at that moment and I did not question him any further.
+  text: |-
+    Carl Wolf believed the young airman had breached security by disclosing the alleged lunar base and photographs to him, and Carl Wolf was frightened and did not question him further.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e43f0b9d-5dff-45a3-80a7-bae2b7a41e94
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:01:56.8-00:01:59.0
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  quote: And a few moments later someone did come into the room.
+  text: |-
+    A few moments after the airman disclosed the lunar base information, someone else entered the room.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 997065da-5d81-44e5-a193-c831f0932ddd
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:02:01.1-00:02:06.8
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  - id: c29e9eb2-95a6-47f2-aa36-9c74fcb34da8
+    name: Lunar Orbiter Project
+  quote: |-
+    I worked there for three more days and I remember going home and naively thinking, I can't wait to hear about this on the evening news.
+  text: |-
+    Carl Wolf worked at the Lunar Orbiter Project facility for three more days after the incident.
+  entailment:
+    label: entails
+    score: 0.866
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8b9a125b-f855-4430-b67e-9384160784d5
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:02:08.5-00:02:11.8
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  quote: And here it is more than 30 years later and I hope we hear about it tonight.
+  text: |-
+    Carl Wolf expected the discovery of the alleged lunar base to be reported on the evening news, but more than 30 years later it had not been reported, and he expressed hope of hearing about it soon.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b0e70f89-deae-4f73-9a74-d24aa10d0190
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  provenance_chain:
+    origin_kind: speaker
+    origin: Carl Wolf
+  attribution_in_text: false
+  location: 00:02:12.6-00:02:16.8
+  refs:
+  - id: 90451e98-9fac-4c6c-ac06-67c7f263b3b8
+    name: Carl Wolf
+  - id: 4a635c26-ec14-462b-b4a8-f7730e9c6540
+    name: United States Congress
+  quote: And I will testify under oath before Congress that what I'm saying is the truth.
+  text: |-
+    Carl Wolf offered to testify under oath before the United States Congress that his account is true.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

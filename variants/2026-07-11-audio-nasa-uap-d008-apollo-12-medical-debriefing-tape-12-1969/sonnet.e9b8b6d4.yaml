@@ -3,27 +3,29 @@ schema: anomalica/digest/1
 extracted_at: '2026-08-01T00:48:37.247277+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 307764
-      output: 10566
-      real_input: 10
-      cache_read: 130369
-      cache_write: 177385
-      calls: 2
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 307764
+    output: 10566
+    real_input: 10
+    cache_read: 130369
+    cache_write: 177385
+    calls: 2
+  route: cli
+  effort: low
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: 3986aa68b10c76bd9ce9cb1a2b34777b26622011c49d638bae83cb9a421ec9a3
   prep_version: 6
@@ -43,260 +45,260 @@ record:
 terminology:
   main_subject: Apollo 12
   codenames:
-    - codename: Dick
-      refers_to: Richard Gordon
-    - codename: Al
-      refers_to: Alan Bean
-    - codename: Pete
-      refers_to: Charles Conrad
+  - codename: Dick
+    refers_to: Richard Gordon
+  - codename: Al
+    refers_to: Alan Bean
+  - codename: Pete
+    refers_to: Charles Conrad
   acronyms:
-    - acronym: VHF
-      expansion: Very High Frequency
+  - acronym: VHF
+    expansion: Very High Frequency
 nodes:
-  - id: 94bf8fc8-934a-45ad-b0f8-2e3de3656c47
-    type: project
-    name: Apollo 12
-    metadata:
-      date_start: '1969-11-14'
-      date_end: '1969-11-24'
-  - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-    type: person
-    name: Charles Conrad
-  - id: b9dfa925-b865-47db-9cda-b0ad2720d93b
-    type: person
-    name: Alan Bean
-  - id: 19660b9c-fe22-454e-bc72-3c04f0395158
-    type: person
-    name: Richard Gordon
-  - id: 2899acba-bc9d-4209-b582-d9d0179a1681
-    type: person
-    name: Buzz Neal
-  - id: 4fb78cc3-4e03-474c-aa91-d4eb1a4fb9a6
-    type: place
-    name: Moon
-  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-    type: topic
-    name: astronaut light flash phenomenon
+- id: 94bf8fc8-934a-45ad-b0f8-2e3de3656c47
+  type: project
+  name: Apollo 12
+  metadata:
+    date_start: '1969-11-14'
+    date_end: '1969-11-24'
+- id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+  type: person
+  name: Charles Conrad
+- id: b9dfa925-b865-47db-9cda-b0ad2720d93b
+  type: person
+  name: Alan Bean
+- id: 19660b9c-fe22-454e-bc72-3c04f0395158
+  type: person
+  name: Richard Gordon
+- id: 2899acba-bc9d-4209-b582-d9d0179a1681
+  type: person
+  name: Buzz Neal
+- id: 4fb78cc3-4e03-474c-aa91-d4eb1a4fb9a6
+  type: place
+  name: Moon
+- id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+  type: topic
+  name: astronaut light flash phenomenon
 domain_claims:
-  - id: e14c09ac-48a3-4365-bab7-28e5110035b6
-    type: hearsay
-    attestation: third_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a person claiming to have flown on an earlier spaceflight
-      origin_ref: earlier-flight-astronaut
-      relay:
-        - a letter
-        - paperwork forwarded to the speaker
-    attribution_in_text: true
-    location: L6-L10
-    refs:
-      - id: 94bf8fc8-934a-45ad-b0f8-2e3de3656c47
-        name: Apollo 12
-    quote: |-
-      some guy up, I got the letters, paperwork somewhere... he said, airport is seeing flashes in a spacecraft. At night with their eyes closed.
-    text: |-
-      During the Apollo 12 mission, astronauts on earlier spaceflights reported seeing light flashes in the spacecraft at night when their eyes were closed.
-  - id: 0ef44c14-387c-4e8d-aac0-c53d2deb35df
-    type: hearsay
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a person claiming to have knowledge of the light-flash phenomenon
-      origin_ref: earlier-flight-astronaut
-    attribution_in_text: true
-    location: 00:00:54.9-00:01:00.1
-    refs:
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: |-
-      that's a perfectly known phenomenon. You can get discharge across your eye from gamma rays or something.
-    text: |-
-      The light-flash phenomenon experienced by astronauts was described by an unnamed source as a known effect of discharge across the eye caused by gamma rays or cosmic particles.
-  - id: 35c7d031-2389-4d2b-adc5-b4c2cf10ea7a
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-      name: Charles Conrad
-    provenance_chain:
-      origin_kind: speaker
-      origin: Charles Conrad
-    attribution_in_text: false
-    location: 00:02:44.5-00:02:47.5
-    refs:
-      - id: 2899acba-bc9d-4209-b582-d9d0179a1681
-        name: Buzz Neal
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: Two phenomena that came out of a letter. Buzz Neal talked about this.
-    text: |-
-      Buzz Neal discussed two phenomena related to the astronaut light flash phenomenon in a letter.
-  - id: e2194c84-5594-468a-994b-e9e98232c9d9
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-      name: Charles Conrad
-    provenance_chain:
-      origin_kind: speaker
-      origin: Charles Conrad
-    attribution_in_text: false
-    location: 00:02:30.3-00:02:33.6
-    date: '1969-11-14'
-    refs:
-      - id: 94bf8fc8-934a-45ad-b0f8-2e3de3656c47
-        name: Apollo 12
-      - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-        name: Charles Conrad
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: we were asked to specifically experiment with this.
-    text: |-
-      During Apollo 12, Charles Conrad and other crew members were specifically asked to experiment with observing the astronaut light flash phenomenon.
-  - id: 7144dfe1-8312-4036-8590-b3f33dc0e62d
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-      name: Charles Conrad
-    provenance_chain:
-      origin_kind: speaker
-      origin: Charles Conrad
-    attribution_in_text: false
-    location: L19-L23
-    refs:
-      - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-        name: Charles Conrad
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: We had two kinds... And we get either a flag like that or we get a streak.
-    text: |-
-      Charles Conrad observed two distinct types of light flashes during the astronaut light flash phenomenon: a flash-like shape and a streak.
-  - id: ed51ce41-1af4-4222-b7e3-362761bb1e34
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-      name: Charles Conrad
-    provenance_chain:
-      origin_kind: speaker
-      origin: Charles Conrad
-    attribution_in_text: false
-    location: 00:01:54.4-00:02:00.4
-    refs:
-      - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-        name: Charles Conrad
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: |-
-      I, for some reason, got more with my left eye than my right eye, but I could tell which eye it was when I was concentrating on it.
-    text: |-
-      Charles Conrad perceived more instances of the light flash phenomenon in his left eye than in his right eye.
-  - id: 66337d8e-d899-45bf-acdb-9bd62f1fb57b
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:02:00.5-00:02:08.6
-    date: '1969-11-14'
-    refs:
-      - id: 94bf8fc8-934a-45ad-b0f8-2e3de3656c47
-        name: Apollo 12
-      - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-        name: Charles Conrad
-    quote: |-
-      I'm trying to tell him the reason he did is because his, where he slept, was always on the left side of the spacecraft.
-    text: |-
-      Charles Conrad's sleeping position was on the left side of the spacecraft during Apollo 12, which was suggested as the reason he perceived more light flashes in his left eye.
-  - id: fee65f9b-0280-4cfe-94c1-15f63b6baf36
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: 00:03:38.6-00:03:46.1
-    refs:
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: |-
-      we started at clear back and mercury Taking photographs of the redness see if you could see his freaks across the retina stuff. We never could find any in there
-    text: |-
-      During earlier crewed lunar missions, NASA took photographs of astronauts' retinas to check for evidence of cosmic ray strikes but found none.
-  - id: b5d4cb6a-b887-4eda-8c78-4d3bd60ae2a7
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-      name: Charles Conrad
-    provenance_chain:
-      origin_kind: speaker
-      origin: Charles Conrad
-    attribution_in_text: false
-    location: 00:04:12.7-00:04:22.8
-    refs:
-      - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-        name: Charles Conrad
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: |-
-      I saw one night, I was looking at the MVP, a handrail up above, and one right right along, I don't know where it went, it's here, you know, right straight along that handrail for about that distance.
-    text: |-
-      Charles Conrad observed a light flash travel along a handrail above the MVP for a short distance while looking directly at that spot.
-  - id: 2d86fd5d-f03e-4c1a-8625-53a03c9c4d1a
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-      name: Charles Conrad
-    provenance_chain:
-      origin_kind: speaker
-      origin: Charles Conrad
-    attribution_in_text: false
-    location: 00:05:26.2-00:05:27.9
-    refs:
-      - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-        name: Charles Conrad
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: The streets I saw were horizontal.
-    text: |-
-      Charles Conrad observed that the light streaks he saw during the astronaut light flash phenomenon were horizontal in orientation.
-  - id: a00086be-7251-44b5-8c50-119410b44a2d
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-      name: Charles Conrad
-    provenance_chain:
-      origin_kind: speaker
-      origin: Charles Conrad
-    attribution_in_text: false
-    location: 00:05:31.5-00:05:48.9
-    refs:
-      - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-        name: Charles Conrad
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: |-
-      Mine, it seemed to me I had the impression that they were always roughly in the same place and mine were horizontal... it always seemed like the horizontal street was a little bit above the center. And it always seemed to me it went from right to left.
-    text: |-
-      Charles Conrad had the impression that the horizontal light streaks he observed always appeared roughly in the same place, slightly above centre of his field of view, and moved from right to left.
-  - id: 2ce9de79-1ef4-4704-8956-e15cc1c43233
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-      name: Charles Conrad
-    provenance_chain:
-      origin_kind: speaker
-      origin: Charles Conrad
-    attribution_in_text: false
-    location: 00:06:28.8-00:06:32.6
-    refs:
-      - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
-        name: Charles Conrad
-      - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
-        name: astronaut light flash phenomenon
-    quote: Yeah, I remember right about 30 degrees of horizontal when they were coming.
-    text: |-
-      Charles Conrad recalled that the light streaks he observed appeared at roughly 30 degrees from horizontal.
+- id: e14c09ac-48a3-4365-bab7-28e5110035b6
+  type: hearsay
+  attestation: third_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a person claiming to have flown on an earlier spaceflight
+    origin_ref: earlier-flight-astronaut
+    relay:
+    - a letter
+    - paperwork forwarded to the speaker
+  attribution_in_text: true
+  location: L6-L10
+  refs:
+  - id: 94bf8fc8-934a-45ad-b0f8-2e3de3656c47
+    name: Apollo 12
+  quote: |-
+    some guy up, I got the letters, paperwork somewhere... he said, airport is seeing flashes in a spacecraft. At night with their eyes closed.
+  text: |-
+    During the Apollo 12 mission, astronauts on earlier spaceflights reported seeing light flashes in the spacecraft at night when their eyes were closed.
+- id: 0ef44c14-387c-4e8d-aac0-c53d2deb35df
+  type: hearsay
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a person claiming to have knowledge of the light-flash phenomenon
+    origin_ref: earlier-flight-astronaut
+  attribution_in_text: true
+  location: 00:00:54.9-00:01:00.1
+  refs:
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: |-
+    that's a perfectly known phenomenon. You can get discharge across your eye from gamma rays or something.
+  text: |-
+    The light-flash phenomenon experienced by astronauts was described by an unnamed source as a known effect of discharge across the eye caused by gamma rays or cosmic particles.
+- id: 35c7d031-2389-4d2b-adc5-b4c2cf10ea7a
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  provenance_chain:
+    origin_kind: speaker
+    origin: Charles Conrad
+  attribution_in_text: false
+  location: 00:02:44.5-00:02:47.5
+  refs:
+  - id: 2899acba-bc9d-4209-b582-d9d0179a1681
+    name: Buzz Neal
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: Two phenomena that came out of a letter. Buzz Neal talked about this.
+  text: |-
+    Buzz Neal discussed two phenomena related to the astronaut light flash phenomenon in a letter.
+- id: e2194c84-5594-468a-994b-e9e98232c9d9
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  provenance_chain:
+    origin_kind: speaker
+    origin: Charles Conrad
+  attribution_in_text: false
+  location: 00:02:30.3-00:02:33.6
+  date: '1969-11-14'
+  refs:
+  - id: 94bf8fc8-934a-45ad-b0f8-2e3de3656c47
+    name: Apollo 12
+  - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: we were asked to specifically experiment with this.
+  text: |-
+    During Apollo 12, Charles Conrad and other crew members were specifically asked to experiment with observing the astronaut light flash phenomenon.
+- id: 7144dfe1-8312-4036-8590-b3f33dc0e62d
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  provenance_chain:
+    origin_kind: speaker
+    origin: Charles Conrad
+  attribution_in_text: false
+  location: L19-L23
+  refs:
+  - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: We had two kinds... And we get either a flag like that or we get a streak.
+  text: |-
+    Charles Conrad observed two distinct types of light flashes during the astronaut light flash phenomenon: a flash-like shape and a streak.
+- id: ed51ce41-1af4-4222-b7e3-362761bb1e34
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  provenance_chain:
+    origin_kind: speaker
+    origin: Charles Conrad
+  attribution_in_text: false
+  location: 00:01:54.4-00:02:00.4
+  refs:
+  - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: |-
+    I, for some reason, got more with my left eye than my right eye, but I could tell which eye it was when I was concentrating on it.
+  text: |-
+    Charles Conrad perceived more instances of the light flash phenomenon in his left eye than in his right eye.
+- id: 66337d8e-d899-45bf-acdb-9bd62f1fb57b
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:02:00.5-00:02:08.6
+  date: '1969-11-14'
+  refs:
+  - id: 94bf8fc8-934a-45ad-b0f8-2e3de3656c47
+    name: Apollo 12
+  - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  quote: |-
+    I'm trying to tell him the reason he did is because his, where he slept, was always on the left side of the spacecraft.
+  text: |-
+    Charles Conrad's sleeping position was on the left side of the spacecraft during Apollo 12, which was suggested as the reason he perceived more light flashes in his left eye.
+- id: fee65f9b-0280-4cfe-94c1-15f63b6baf36
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: 00:03:38.6-00:03:46.1
+  refs:
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: |-
+    we started at clear back and mercury Taking photographs of the redness see if you could see his freaks across the retina stuff. We never could find any in there
+  text: |-
+    During earlier crewed lunar missions, NASA took photographs of astronauts' retinas to check for evidence of cosmic ray strikes but found none.
+- id: b5d4cb6a-b887-4eda-8c78-4d3bd60ae2a7
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  provenance_chain:
+    origin_kind: speaker
+    origin: Charles Conrad
+  attribution_in_text: false
+  location: 00:04:12.7-00:04:22.8
+  refs:
+  - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: |-
+    I saw one night, I was looking at the MVP, a handrail up above, and one right right along, I don't know where it went, it's here, you know, right straight along that handrail for about that distance.
+  text: |-
+    Charles Conrad observed a light flash travel along a handrail above the MVP for a short distance while looking directly at that spot.
+- id: 2d86fd5d-f03e-4c1a-8625-53a03c9c4d1a
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  provenance_chain:
+    origin_kind: speaker
+    origin: Charles Conrad
+  attribution_in_text: false
+  location: 00:05:26.2-00:05:27.9
+  refs:
+  - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: The streets I saw were horizontal.
+  text: |-
+    Charles Conrad observed that the light streaks he saw during the astronaut light flash phenomenon were horizontal in orientation.
+- id: a00086be-7251-44b5-8c50-119410b44a2d
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  provenance_chain:
+    origin_kind: speaker
+    origin: Charles Conrad
+  attribution_in_text: false
+  location: 00:05:31.5-00:05:48.9
+  refs:
+  - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: |-
+    Mine, it seemed to me I had the impression that they were always roughly in the same place and mine were horizontal... it always seemed like the horizontal street was a little bit above the center. And it always seemed to me it went from right to left.
+  text: |-
+    Charles Conrad had the impression that the horizontal light streaks he observed always appeared roughly in the same place, slightly above centre of his field of view, and moved from right to left.
+- id: 2ce9de79-1ef4-4704-8956-e15cc1c43233
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  provenance_chain:
+    origin_kind: speaker
+    origin: Charles Conrad
+  attribution_in_text: false
+  location: 00:06:28.8-00:06:32.6
+  refs:
+  - id: 97a04ed9-30a0-4588-85e3-983ca27502ed
+    name: Charles Conrad
+  - id: 244decc2-311c-4ab1-8197-ba03cc8ce57a
+    name: astronaut light flash phenomenon
+  quote: Yeah, I remember right about 30 degrees of horizontal when they were coming.
+  text: |-
+    Charles Conrad recalled that the light streaks he observed appeared at roughly 30 degrees from horizontal.

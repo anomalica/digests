@@ -2,23 +2,31 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:27:12.610345+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 196993
-      output: 12101
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 196993
+    output: 12101
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 0.5
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: e34ab2341d8542872c6e2eb0b9743df2304b7605c6fc0b29aa8e4ab25a7bbde4
   prep_version: 6
@@ -39,407 +47,482 @@ record:
 terminology:
   main_subject: Tuck, James L.
   codenames:
-    - codename: the Hill
-      refers_to: USA, New Mexico, Los Alamos
+  - codename: the Hill
+    refers_to: USA, New Mexico, Los Alamos
   acronyms:
-    - acronym: UFO
-      expansion: Unidentified Flying Object
+  - acronym: UFO
+    expansion: Unidentified Flying Object
 nodes:
+- id: 176bf904-ba3e-4641-9a8f-336401532900
+  type: person
+  name: James L. Tuck
+  metadata:
+    family_name: Tuck
+    aliases:
+    - Tuck, James L.
+- id: fc663116-c07b-4975-a996-0f44a9d19df0
+  type: person
+  name: Edward U. Condon
+  metadata:
+    family_name: Condon
+    aliases:
+    - Condon, Edward U.
+- id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
+  type: person
+  name: James M. McCampbell
+  metadata:
+    family_name: McCampbell
+    aliases:
+    - McCampbell, James M.
+- id: 725f7427-f91b-4e09-8e1e-797e5dc14c98
+  type: person
+  name: Albert Einstein
+  metadata:
+    family_name: Einstein
+    aliases:
+    - Einstein, Albert
+- id: 8b3c354e-b17f-4f63-8abd-69c0cdd429d9
+  type: place
+  name: USA, New Mexico, Los Alamos
+- id: 00d77f2f-0a20-44d8-9fe6-53c0584ae7ce
+  type: place
+  name: USA, New Mexico, Jemez Mountains
+- id: 56562f14-e7c4-418e-b488-f6550da183e8
+  type: place
+  name: USA, Virginia, Fort Belvoir
+- id: 6151ce0c-7626-453a-bf6b-8ffa6e165b54
+  type: organisation
+  name: Protective Force Headquarters, Los Alamos
+- id: bb023961-8b6e-41f9-b8da-210031fe04d0
+  type: organisation
+  name: U.S. Army Engineering School
+- id: 608b556f-920e-4b16-bc85-777b5346bb11
+  type: organisation
+  name: Department of Mechanical and Technical Equipment, U.S. Army Engineering School
+- id: a1e17229-012c-4b71-a9d2-b430cfd6480b
+  type: organisation
+  name: Mesa Public Library
+- id: d0622fec-c4ca-4229-9885-f2792ddb94e3
+  type: event
+  name: 1948-1951 Los Alamos green light sightings
+  metadata:
+    date_start: '1948'
+    date_end: '1951'
+- id: a3d32574-c54b-46d1-bc6a-ec5e066ad149
+  type: document
+  name: Scientific Study of Unidentified Flying Objects (Condon Report)
+- id: a7481a02-fa2a-4aa7-a300-4da5581361b1
+  type: document
+  name: UFOLOGY (1976, McCampbell)
+- id: 19184c4d-4f18-4e8d-9294-97c858a905ff
+  type: topic
+  name: Unidentified Flying Object (UFO)
+- id: eb844394-11fa-4223-ab75-374412b7be46
+  type: topic
+  name: ball lightning
+- id: 3fe14a83-666c-4655-a827-10c1dd699e63
+  type: topic
+  name: unified field theory
+domain_claims:
+- id: 3be0bd54-0014-4a56-a43b-c13e9f0a119a
+  type: hearsay
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
+    origin_ref: los-alamos-green-light-correspondent
+  attribution_in_text: true
+  location: char:157-272
+  date: '1970-11-23'
+  refs:
   - id: 176bf904-ba3e-4641-9a8f-336401532900
-    type: person
     name: James L. Tuck
-    metadata:
-      family_name: Tuck
-      aliases:
-        - Tuck, James L.
-  - id: fc663116-c07b-4975-a996-0f44a9d19df0
-    type: person
-    name: Edward U. Condon
-    metadata:
-      family_name: Condon
-      aliases:
-        - Condon, Edward U.
-  - id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
-    type: person
-    name: James M. McCampbell
-    metadata:
-      family_name: McCampbell
-      aliases:
-        - McCampbell, James M.
-  - id: 725f7427-f91b-4e09-8e1e-797e5dc14c98
-    type: person
-    name: Albert Einstein
-    metadata:
-      family_name: Einstein
-      aliases:
-        - Einstein, Albert
   - id: 8b3c354e-b17f-4f63-8abd-69c0cdd429d9
-    type: place
     name: USA, New Mexico, Los Alamos
+  - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
+    name: 1948-1951 Los Alamos green light sightings
+  quote: |-
+    I can however, tell you that during the years 1948 through 1951 several sightings of green lights were made at Los Alamos.
+  text: |-
+    An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said that between 1948 and 1951 several sightings of green lights were made at Los Alamos, USA, New Mexico.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8052789c-0ade-4e38-92be-9d214f6eccb2
+  type: hearsay
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
+    origin_ref: los-alamos-green-light-correspondent
+  attribution_in_text: true
+  location: char:280-385
+  date: '1970-11-23'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
+  - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
+    name: 1948-1951 Los Alamos green light sightings
+  quote: |-
+    These usually occurred during the early part of the night, nine to eleven, and were usually in the Jemez Mountains.
+  text: |-
+    An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the 1948-1951 Los Alamos green light sightings usually occurred during the early part of the night, between 21:00 and 23:00.
+  entailment:
+    label: contradicts
+    score: 0.831
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 46e8f053-1bc9-44f7-98b6-a30ac82b13df
+  type: hearsay
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
+    origin_ref: los-alamos-green-light-correspondent
+  attribution_in_text: true
+  location: char:280-385
+  date: '1970-11-23'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
   - id: 00d77f2f-0a20-44d8-9fe6-53c0584ae7ce
-    type: place
     name: USA, New Mexico, Jemez Mountains
-  - id: 56562f14-e7c4-418e-b488-f6550da183e8
-    type: place
-    name: USA, Virginia, Fort Belvoir
+  - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
+    name: 1948-1951 Los Alamos green light sightings
+  quote: |-
+    These usually occurred during the early part of the night, nine to eleven, and were usually in the Jemez Mountains.
+  text: |-
+    An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the 1948-1951 Los Alamos green light sightings usually occurred in the Jemez Mountains.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 273c2a2b-8cd2-42fb-980c-1ad288a5e695
+  type: hearsay
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
+    origin_ref: los-alamos-green-light-correspondent
+  attribution_in_text: true
+  location: char:397-475
+  date: '1970-11-23'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
+  - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
+    name: 1948-1951 Los Alamos green light sightings
+  quote: |-
+    I can recall several instances of green lights weaving in and out of Mountain peaks.
+  text: |-
+    An anonymous correspondent, writing to James L. Tuck on 1970-11-23, recalled several instances of green lights weaving in and out of mountain peaks during the 1948-1951 Los Alamos green light sightings.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6c7e26b7-0c28-489b-a2e3-36229bc259c1
+  type: hearsay
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
+    origin_ref: los-alamos-green-light-correspondent
+  attribution_in_text: true
+  location: char:482-583
+  date: '1970-11-23'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
   - id: 6151ce0c-7626-453a-bf6b-8ffa6e165b54
-    type: organisation
     name: Protective Force Headquarters, Los Alamos
+  - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
+    name: 1948-1951 Los Alamos green light sightings
+  quote: |-
+    This was all reported to the Protective Force Headquarters and should be a matter of record on their logs.
+  text: |-
+    An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the green light sightings at Los Alamos were reported to the Protective Force Headquarters, Los Alamos and should be a matter of record on their logs.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 47828b07-ea37-4470-96ca-75255619955f
+  type: hearsay
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a person claiming to have witnessed a formation of five objects over Los Alamos
+    origin_ref: los-alamos-green-light-correspondent
+  attribution_in_text: true
+  location: char:590-663
+  date: '1970-11-23'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
+  - id: 8b3c354e-b17f-4f63-8abd-69c0cdd429d9
+    name: USA, New Mexico, Los Alamos
+  quote: |-
+    I also recall one instance of five objects flying over Los Alamos in the afternoon.
+  text: |-
+    An anonymous correspondent, writing to James L. Tuck on 1970-11-23, recalled one instance of five objects flying over Los Alamos, USA, New Mexico in the afternoon.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 27643c78-c103-42d5-84b0-e5f510817552
+  type: hearsay
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a person claiming to have witnessed a formation of five objects over Los Alamos
+    origin_ref: los-alamos-green-light-correspondent
+  attribution_in_text: true
+  location: char:674-748
+  date: '1970-11-23'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
+  - id: 8b3c354e-b17f-4f63-8abd-69c0cdd429d9
+    name: USA, New Mexico, Los Alamos
+  quote: |-
+    They were flying from southeast to northwest and appeared to be flying in formation.
+  text: |-
+    An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the five objects observed flying over Los Alamos were flying from southeast to northwest and appeared to be flying in formation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ab6df278-9916-449b-975b-4823a8d86ff4
+  type: hearsay
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
+    origin_ref: los-alamos-green-light-correspondent
+  attribution_in_text: true
+  location: char:989-1122
+  date: '1970-11-23'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
+  - id: 6151ce0c-7626-453a-bf6b-8ffa6e165b54
+    name: Protective Force Headquarters, Los Alamos
+  - id: 8b3c354e-b17f-4f63-8abd-69c0cdd429d9
+    name: USA, New Mexico, Los Alamos
+  - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
+    name: 1948-1951 Los Alamos green light sightings
+  quote: |-
+    Any of the Protective Force members that was on the "Hill" during the early '50 should recall all the reported sightings during this time.
+  text: |-
+    An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said that members of the Protective Force Headquarters, Los Alamos who were on the Hill (Los Alamos) during the early 1950s should recall the reported green light sightings from that period.
+  entailment:
+    label: entails
+    score: 0.389
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8a4a4a02-011d-42bb-978f-b7c7306e08d5
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
+  provenance_chain:
+    origin_kind: speaker
+    origin: Tuck, James L.
+  attribution_in_text: false
+  location: char:1604-1737
+  date: '1970-12-16'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
   - id: bb023961-8b6e-41f9-b8da-210031fe04d0
-    type: organisation
     name: U.S. Army Engineering School
   - id: 608b556f-920e-4b16-bc85-777b5346bb11
-    type: organisation
     name: Department of Mechanical and Technical Equipment, U.S. Army Engineering School
-  - id: a1e17229-012c-4b71-a9d2-b430cfd6480b
-    type: organisation
-    name: Mesa Public Library
-  - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
-    type: event
-    name: 1948-1951 Los Alamos green light sightings
-    metadata:
-      date_start: '1948'
-      date_end: '1951'
-  - id: a3d32574-c54b-46d1-bc6a-ec5e066ad149
-    type: document
-    name: Scientific Study of Unidentified Flying Objects (Condon Report)
-  - id: a7481a02-fa2a-4aa7-a300-4da5581361b1
-    type: document
-    name: UFOLOGY (1976, McCampbell)
-  - id: 19184c4d-4f18-4e8d-9294-97c858a905ff
-    type: topic
-    name: Unidentified Flying Object (UFO)
+  - id: 56562f14-e7c4-418e-b488-f6550da183e8
+    name: USA, Virginia, Fort Belvoir
+  quote: |-
+    As agreed in our telephone conversation of today's date, I would like to have the recipe that was used for the simulated atomic bomb demonstrations.
+  text: |-
+    On 1970-12-16, James L. Tuck wrote to the U.S. Army Engineering School, Department of Mechanical and Technical Equipment, U.S. Army Engineering School at Fort Belvoir, Virginia, requesting the recipe used for simulated atomic bomb demonstrations, as agreed in a prior telephone conversation.
+  entailment:
+    label: entails
+    score: 0.847
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ca74f9da-92ad-4ae8-a519-797fc3ebe9cb
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a correspondent of James L. Tuck who refers to him as "Jim"
+    origin_ref: tuck-correspondent-nov28
+  attribution_in_text: false
+  location: char:2014-2156
+  date: '1970-11-28'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
   - id: eb844394-11fa-4223-ab75-374412b7be46
-    type: topic
     name: ball lightning
+  quote: |-
+    Mindful of your interesting report on ball lightning, I am enclosing comments on same by a UFO believer, James M. McCampbell, in his UFOLOGY, 1976
+  text: James L. Tuck wrote a report on ball lightning.
+  entailment:
+    label: contradicts
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 2d5ae697-3d53-41d8-af9d-33d42578a2b9
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a correspondent of James L. Tuck who refers to him as "Jim"
+    origin_ref: tuck-correspondent-nov28
+  attribution_in_text: false
+  location: char:2162-2243
+  date: '1970-11-28'
+  refs:
+  - id: a7481a02-fa2a-4aa7-a300-4da5581361b1
+    name: UFOLOGY (1976, McCampbell)
+  - id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
+    name: James M. McCampbell
+  - id: a1e17229-012c-4b71-a9d2-b430cfd6480b
+    name: Mesa Public Library
+  quote: |-
+    appearing on the new non-fiction shelf at the Mesa Library, call number 629.1338 M125u
+  text: |-
+    A copy of James M. McCampbell's book UFOLOGY (1976, McCampbell) was on the new non-fiction shelf at Mesa Public Library, with call number 629.1338 M125u.
+  entailment:
+    label: entails
+    score: 0.861
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 220089a0-5e01-4aad-81e6-97f287ffeae4
+  type: opinion
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a correspondent of James L. Tuck who refers to him as "Jim"
+    origin_ref: tuck-correspondent-nov28
+  attribution_in_text: true
+  location: char:2068-2128
+  date: '1970-11-28'
+  refs:
+  - id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
+    name: James M. McCampbell
+  - id: 19184c4d-4f18-4e8d-9294-97c858a905ff
+    name: Unidentified Flying Object (UFO)
+  quote: I am enclosing comments on same by a UFO believer, James M. McCampbell
+  text: |-
+    An anonymous correspondent of James L. Tuck described James M. McCampbell as a UFO (Unidentified Flying Object) believer.
+  entailment:
+    label: entails
+    score: 0.761
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2da96f0f-d395-47a6-ac02-06bfe959c462
+  type: opinion
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a correspondent of James L. Tuck who refers to him as "Jim"
+    origin_ref: tuck-correspondent-nov28
+  attribution_in_text: true
+  location: char:2251-2503
+  date: '1970-11-28'
+  refs:
+  - id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
+    name: James M. McCampbell
+  - id: a7481a02-fa2a-4aa7-a300-4da5581361b1
+    name: UFOLOGY (1976, McCampbell)
+  - id: 725f7427-f91b-4e09-8e1e-797e5dc14c98
+    name: Albert Einstein
   - id: 3fe14a83-666c-4655-a827-10c1dd699e63
-    type: topic
     name: unified field theory
-domain_claims:
-  - id: 3be0bd54-0014-4a56-a43b-c13e9f0a119a
-    type: hearsay
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
-      origin_ref: los-alamos-green-light-correspondent
-    attribution_in_text: true
-    location: char:157-272
-    date: '1970-11-23'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: 8b3c354e-b17f-4f63-8abd-69c0cdd429d9
-        name: USA, New Mexico, Los Alamos
-      - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
-        name: 1948-1951 Los Alamos green light sightings
-    quote: |-
-      I can however, tell you that during the years 1948 through 1951 several sightings of green lights were made at Los Alamos.
-    text: |-
-      An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said that between 1948 and 1951 several sightings of green lights were made at Los Alamos, USA, New Mexico.
-  - id: 8052789c-0ade-4e38-92be-9d214f6eccb2
-    type: hearsay
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
-      origin_ref: los-alamos-green-light-correspondent
-    attribution_in_text: true
-    location: char:280-385
-    date: '1970-11-23'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
-        name: 1948-1951 Los Alamos green light sightings
-    quote: |-
-      These usually occurred during the early part of the night, nine to eleven, and were usually in the Jemez Mountains.
-    text: |-
-      An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the 1948-1951 Los Alamos green light sightings usually occurred during the early part of the night, between 21:00 and 23:00.
-  - id: 46e8f053-1bc9-44f7-98b6-a30ac82b13df
-    type: hearsay
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
-      origin_ref: los-alamos-green-light-correspondent
-    attribution_in_text: true
-    location: char:280-385
-    date: '1970-11-23'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: 00d77f2f-0a20-44d8-9fe6-53c0584ae7ce
-        name: USA, New Mexico, Jemez Mountains
-      - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
-        name: 1948-1951 Los Alamos green light sightings
-    quote: |-
-      These usually occurred during the early part of the night, nine to eleven, and were usually in the Jemez Mountains.
-    text: |-
-      An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the 1948-1951 Los Alamos green light sightings usually occurred in the Jemez Mountains.
-  - id: 273c2a2b-8cd2-42fb-980c-1ad288a5e695
-    type: hearsay
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
-      origin_ref: los-alamos-green-light-correspondent
-    attribution_in_text: true
-    location: char:397-475
-    date: '1970-11-23'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
-        name: 1948-1951 Los Alamos green light sightings
-    quote: |-
-      I can recall several instances of green lights weaving in and out of Mountain peaks.
-    text: |-
-      An anonymous correspondent, writing to James L. Tuck on 1970-11-23, recalled several instances of green lights weaving in and out of mountain peaks during the 1948-1951 Los Alamos green light sightings.
-  - id: 6c7e26b7-0c28-489b-a2e3-36229bc259c1
-    type: hearsay
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
-      origin_ref: los-alamos-green-light-correspondent
-    attribution_in_text: true
-    location: char:482-583
-    date: '1970-11-23'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: 6151ce0c-7626-453a-bf6b-8ffa6e165b54
-        name: Protective Force Headquarters, Los Alamos
-      - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
-        name: 1948-1951 Los Alamos green light sightings
-    quote: |-
-      This was all reported to the Protective Force Headquarters and should be a matter of record on their logs.
-    text: |-
-      An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the green light sightings at Los Alamos were reported to the Protective Force Headquarters, Los Alamos and should be a matter of record on their logs.
-  - id: 47828b07-ea37-4470-96ca-75255619955f
-    type: hearsay
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a person claiming to have witnessed a formation of five objects over Los Alamos
-      origin_ref: los-alamos-green-light-correspondent
-    attribution_in_text: true
-    location: char:590-663
-    date: '1970-11-23'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: 8b3c354e-b17f-4f63-8abd-69c0cdd429d9
-        name: USA, New Mexico, Los Alamos
-    quote: |-
-      I also recall one instance of five objects flying over Los Alamos in the afternoon.
-    text: |-
-      An anonymous correspondent, writing to James L. Tuck on 1970-11-23, recalled one instance of five objects flying over Los Alamos, USA, New Mexico in the afternoon.
-  - id: 27643c78-c103-42d5-84b0-e5f510817552
-    type: hearsay
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a person claiming to have witnessed a formation of five objects over Los Alamos
-      origin_ref: los-alamos-green-light-correspondent
-    attribution_in_text: true
-    location: char:674-748
-    date: '1970-11-23'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: 8b3c354e-b17f-4f63-8abd-69c0cdd429d9
-        name: USA, New Mexico, Los Alamos
-    quote: |-
-      They were flying from southeast to northwest and appeared to be flying in formation.
-    text: |-
-      An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the five objects observed flying over Los Alamos were flying from southeast to northwest and appeared to be flying in formation.
-  - id: ab6df278-9916-449b-975b-4823a8d86ff4
-    type: hearsay
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        a person claiming to have witnessed green light sightings at Los Alamos between 1948 and 1951
-      origin_ref: los-alamos-green-light-correspondent
-    attribution_in_text: true
-    location: char:989-1122
-    date: '1970-11-23'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: 6151ce0c-7626-453a-bf6b-8ffa6e165b54
-        name: Protective Force Headquarters, Los Alamos
-      - id: 8b3c354e-b17f-4f63-8abd-69c0cdd429d9
-        name: USA, New Mexico, Los Alamos
-      - id: d0622fec-c4ca-4229-9885-f2792ddb94e3
-        name: 1948-1951 Los Alamos green light sightings
-    quote: |-
-      Any of the Protective Force members that was on the "Hill" during the early '50 should recall all the reported sightings during this time.
-    text: |-
-      An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said that members of the Protective Force Headquarters, Los Alamos who were on the Hill (Los Alamos) during the early 1950s should recall the reported green light sightings from that period.
-  - id: 8a4a4a02-011d-42bb-978f-b7c7306e08d5
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 176bf904-ba3e-4641-9a8f-336401532900
-      name: James L. Tuck
-    provenance_chain:
-      origin_kind: speaker
-      origin: Tuck, James L.
-    attribution_in_text: false
-    location: char:1604-1737
-    date: '1970-12-16'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: bb023961-8b6e-41f9-b8da-210031fe04d0
-        name: U.S. Army Engineering School
-      - id: 608b556f-920e-4b16-bc85-777b5346bb11
-        name: Department of Mechanical and Technical Equipment, U.S. Army Engineering School
-      - id: 56562f14-e7c4-418e-b488-f6550da183e8
-        name: USA, Virginia, Fort Belvoir
-    quote: |-
-      As agreed in our telephone conversation of today's date, I would like to have the recipe that was used for the simulated atomic bomb demonstrations.
-    text: |-
-      On 1970-12-16, James L. Tuck wrote to the U.S. Army Engineering School, Department of Mechanical and Technical Equipment, U.S. Army Engineering School at Fort Belvoir, Virginia, requesting the recipe used for simulated atomic bomb demonstrations, as agreed in a prior telephone conversation.
-  - id: ca74f9da-92ad-4ae8-a519-797fc3ebe9cb
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a correspondent of James L. Tuck who refers to him as "Jim"
-      origin_ref: tuck-correspondent-nov28
-    attribution_in_text: false
-    location: char:2014-2156
-    date: '1970-11-28'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: eb844394-11fa-4223-ab75-374412b7be46
-        name: ball lightning
-    quote: |-
-      Mindful of your interesting report on ball lightning, I am enclosing comments on same by a UFO believer, James M. McCampbell, in his UFOLOGY, 1976
-    text: James L. Tuck wrote a report on ball lightning.
-  - id: 2d5ae697-3d53-41d8-af9d-33d42578a2b9
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a correspondent of James L. Tuck who refers to him as "Jim"
-      origin_ref: tuck-correspondent-nov28
-    attribution_in_text: false
-    location: char:2162-2243
-    date: '1970-11-28'
-    refs:
-      - id: a7481a02-fa2a-4aa7-a300-4da5581361b1
-        name: UFOLOGY (1976, McCampbell)
-      - id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
-        name: James M. McCampbell
-      - id: a1e17229-012c-4b71-a9d2-b430cfd6480b
-        name: Mesa Public Library
-    quote: |-
-      appearing on the new non-fiction shelf at the Mesa Library, call number 629.1338 M125u
-    text: |-
-      A copy of James M. McCampbell's book UFOLOGY (1976, McCampbell) was on the new non-fiction shelf at Mesa Public Library, with call number 629.1338 M125u.
-  - id: 220089a0-5e01-4aad-81e6-97f287ffeae4
-    type: opinion
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a correspondent of James L. Tuck who refers to him as "Jim"
-      origin_ref: tuck-correspondent-nov28
-    attribution_in_text: true
-    location: char:2068-2128
-    date: '1970-11-28'
-    refs:
-      - id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
-        name: James M. McCampbell
-      - id: 19184c4d-4f18-4e8d-9294-97c858a905ff
-        name: Unidentified Flying Object (UFO)
-    quote: I am enclosing comments on same by a UFO believer, James M. McCampbell
-    text: |-
-      An anonymous correspondent of James L. Tuck described James M. McCampbell as a UFO (Unidentified Flying Object) believer.
-  - id: 2da96f0f-d395-47a6-ac02-06bfe959c462
-    type: opinion
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a correspondent of James L. Tuck who refers to him as "Jim"
-      origin_ref: tuck-correspondent-nov28
-    attribution_in_text: true
-    location: char:2251-2503
-    date: '1970-11-28'
-    refs:
-      - id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
-        name: James M. McCampbell
-      - id: a7481a02-fa2a-4aa7-a300-4da5581361b1
-        name: UFOLOGY (1976, McCampbell)
-      - id: 725f7427-f91b-4e09-8e1e-797e5dc14c98
-        name: Albert Einstein
-      - id: 3fe14a83-666c-4655-a827-10c1dd699e63
-        name: unified field theory
-    quote: |-
-      His chapter FLIGHT AND PROPULSION strengthens my conviction that Einstein, while seemingly straying from the main current of physical research in his later years, was on scent like a bloodhound when he persisted in trying to lock in on a unified field theory.
-    text: |-
-      An anonymous correspondent of James L. Tuck considers that James M. McCampbell's chapter "Flight and Propulsion" in UFOLOGY (1976, McCampbell) strengthened their conviction that Albert Einstein, while seemingly straying from the main current of physical research in his later years, was on the scent of a unified field theory.
+  quote: |-
+    His chapter FLIGHT AND PROPULSION strengthens my conviction that Einstein, while seemingly straying from the main current of physical research in his later years, was on scent like a bloodhound when he persisted in trying to lock in on a unified field theory.
+  text: |-
+    An anonymous correspondent of James L. Tuck considers that James M. McCampbell's chapter "Flight and Propulsion" in UFOLOGY (1976, McCampbell) strengthened their conviction that Albert Einstein, while seemingly straying from the main current of physical research in his later years, was on the scent of a unified field theory.
+  entailment:
+    label: entails
+    score: 0.907
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
-  - id: 775ebd84-3218-4677-8897-ea16bf91da9b
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 176bf904-ba3e-4641-9a8f-336401532900
-      name: James L. Tuck
-    provenance_chain:
-      origin_kind: speaker
-      origin: Tuck, James L.
-    attribution_in_text: false
-    location: char:1754-1916
-    date: '1970-12-16'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: a3d32574-c54b-46d1-bc6a-ec5e066ad149
-        name: Scientific Study of Unidentified Flying Objects (Condon Report)
-      - id: fc663116-c07b-4975-a996-0f44a9d19df0
-        name: Edward U. Condon
-    quote: |-
-      We are interested in the large atmospheric vortices which are produced as reported in the book "Scientific Study of Unidentified Flying Objects" by Dr. Edward U. Condon.
-    text: |-
-      James L. Tuck was interested in the large atmospheric vortices produced by simulated atomic bomb demonstrations, as reported in the book "Scientific Study of Unidentified Flying Objects" by Edward U. Condon.
-  - id: 03232307-aaf4-4fe6-8dfd-ab550886c96f
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a correspondent of James L. Tuck who refers to him as "Jim"
-      origin_ref: tuck-correspondent-nov28
-    attribution_in_text: true
-    location: char:2068-2243
-    date: '1970-11-28'
-    refs:
-      - id: 176bf904-ba3e-4641-9a8f-336401532900
-        name: James L. Tuck
-      - id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
-        name: James M. McCampbell
-      - id: a7481a02-fa2a-4aa7-a300-4da5581361b1
-        name: UFOLOGY (1976, McCampbell)
-      - id: eb844394-11fa-4223-ab75-374412b7be46
-        name: ball lightning
-    quote: |-
-      I am enclosing comments on same by a UFO believer, James M. McCampbell, in his UFOLOGY, 1976, appearing on the new non-fiction shelf at the Mesa Library, call number 629.1338 M125u.
-    text: |-
-      An anonymous correspondent of James L. Tuck, writing on 1970-11-28, enclosed comments on Tuck's report on ball lightning written by James M. McCampbell in McCampbell's book UFOLOGY (1976, McCampbell).
+- id: 775ebd84-3218-4677-8897-ea16bf91da9b
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
+  provenance_chain:
+    origin_kind: speaker
+    origin: Tuck, James L.
+  attribution_in_text: false
+  location: char:1754-1916
+  date: '1970-12-16'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
+  - id: a3d32574-c54b-46d1-bc6a-ec5e066ad149
+    name: Scientific Study of Unidentified Flying Objects (Condon Report)
+  - id: fc663116-c07b-4975-a996-0f44a9d19df0
+    name: Edward U. Condon
+  quote: |-
+    We are interested in the large atmospheric vortices which are produced as reported in the book "Scientific Study of Unidentified Flying Objects" by Dr. Edward U. Condon.
+  text: |-
+    James L. Tuck was interested in the large atmospheric vortices produced by simulated atomic bomb demonstrations, as reported in the book "Scientific Study of Unidentified Flying Objects" by Edward U. Condon.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 03232307-aaf4-4fe6-8dfd-ab550886c96f
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a correspondent of James L. Tuck who refers to him as "Jim"
+    origin_ref: tuck-correspondent-nov28
+  attribution_in_text: true
+  location: char:2068-2243
+  date: '1970-11-28'
+  refs:
+  - id: 176bf904-ba3e-4641-9a8f-336401532900
+    name: James L. Tuck
+  - id: 2a889f24-c2a6-45c1-8f1d-141d98372e59
+    name: James M. McCampbell
+  - id: a7481a02-fa2a-4aa7-a300-4da5581361b1
+    name: UFOLOGY (1976, McCampbell)
+  - id: eb844394-11fa-4223-ab75-374412b7be46
+    name: ball lightning
+  quote: |-
+    I am enclosing comments on same by a UFO believer, James M. McCampbell, in his UFOLOGY, 1976, appearing on the new non-fiction shelf at the Mesa Library, call number 629.1338 M125u.
+  text: |-
+    An anonymous correspondent of James L. Tuck, writing on 1970-11-28, enclosed comments on Tuck's report on ball lightning written by James M. McCampbell in McCampbell's book UFOLOGY (1976, McCampbell).
+  entailment:
+    label: contradicts
+    score: 0.844
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh
   changed:
   - record
-  why: Record block refreshed from current record frontmatter. No re-extraction; claims
-    and nodes untouched.
+  why: |-
+    Record block refreshed from current record frontmatter. No re-extraction; claims and nodes untouched.

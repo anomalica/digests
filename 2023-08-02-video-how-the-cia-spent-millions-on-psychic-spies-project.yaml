@@ -3,27 +3,35 @@ schema: anomalica/digest/1
 extracted_at: '2026-08-01T01:28:26.423558+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 364726
-      output: 29994
-      real_input: 12
-      cache_read: 53229
-      cache_write: 311485
-      calls: 3
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 364726
+    output: 29994
+    real_input: 12
+    cache_read: 53229
+    cache_write: 311485
+    calls: 3
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 26.8
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: d585512ba25d83f38921d59f6e0b547257b478054049c82c4bdcd7a6afd69ed2
   prep_version: 6
@@ -44,1934 +52,2424 @@ record:
 terminology:
   main_subject: Project Stargate
   codenames:
-    - codename: Major Smith
-      refers_to: Ed Dames
-    - codename: John
-      refers_to: Ed Dames
-    - codename: remote viewer number 001
-      refers_to: Joseph McMoneagle
+  - codename: Major Smith
+    refers_to: Ed Dames
+  - codename: John
+    refers_to: Ed Dames
+  - codename: remote viewer number 001
+    refers_to: Joseph McMoneagle
   acronyms:
-    - acronym: ESP
-      expansion: Extrasensory Perception
-    - acronym: SRI
-      expansion: Stanford Research Institute
-    - acronym: CRV
-      expansion: Coordinate Remote Viewing
-    - acronym: AOL
-      expansion: Analytical Overlay
-    - acronym: CIA
-      expansion: Central Intelligence Agency
-    - acronym: DIA
-      expansion: Defense Intelligence Agency
-    - acronym: KGB
-      expansion: Komitet Gosudarstvennoy Bezopasnosti (Committee for State Security)
-    - acronym: FBI
-      expansion: Federal Bureau of Investigation
-    - acronym: NASA
-      expansion: National Aeronautics and Space Administration
+  - acronym: ESP
+    expansion: Extrasensory Perception
+  - acronym: SRI
+    expansion: Stanford Research Institute
+  - acronym: CRV
+    expansion: Coordinate Remote Viewing
+  - acronym: AOL
+    expansion: Analytical Overlay
+  - acronym: CIA
+    expansion: Central Intelligence Agency
+  - acronym: DIA
+    expansion: Defense Intelligence Agency
+  - acronym: KGB
+    expansion: Komitet Gosudarstvennoy Bezopasnosti (Committee for State Security)
+  - acronym: FBI
+    expansion: Federal Bureau of Investigation
+  - acronym: NASA
+    expansion: National Aeronautics and Space Administration
 nodes:
+- id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+  type: project
+  name: Project Stargate
+- id: 6e27ceed-e327-424e-904f-7001c21efe29
+  type: organisation
+  name: Central Intelligence Agency (CIA)
+- id: b83e7be2-f896-4135-be5e-3ba26c6b050f
+  type: organisation
+  name: United States Army
+- id: b1626fac-87ea-4841-aade-e01d6cddde8e
+  type: organisation
+  name: Defense Intelligence Agency (DIA)
+- id: e70c989c-e6e4-42ff-bcf2-974189b11a69
+  type: organisation
+  name: KGB
+- id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
+  type: organisation
+  name: Stanford Research Institute (SRI)
+- id: 6f165d97-a051-4677-a66f-4b435b00a35c
+  type: organisation
+  name: National Aeronautics and Space Administration (NASA)
+- id: 8fd58346-368a-4423-aca4-2d0584eec3cc
+  type: organisation
+  name: United States Congress
+- id: 5bfd8f20-1b0a-4140-80c3-d8c0eab956e9
+  type: organisation
+  name: The Pentagon
+- id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
+  type: organisation
+  name: Federal Bureau of Investigation (FBI)
+- id: 4563669b-5ed8-4730-a072-d0f07e23df99
+  type: organisation
+  name: United States Marshals Service
+- id: 7c5989f0-6ebb-4327-9e49-25d357919005
+  type: organisation
+  name: Laboratories for Fundamental Research Cognitive Sciences Laboratory
+- id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
+  type: organisation
+  name: United States Air Force
+- id: 366cbfdf-810b-49c4-9a9c-f49c4d3dffa2
+  type: organisation
+  name: Monroe Institute
+- id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+  type: person
+  name: Ingo Swann
+- id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
+  type: person
+  name: Hal Puthoff
+- id: cd6ad844-b1b1-48b2-8b25-4d3c657d8928
+  type: person
+  name: Russell Targ
+- id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
+  type: person
+  name: Joseph McMoneagle
+- id: c201c485-5533-4041-8783-1e3676141406
+  type: person
+  name: Nelson Dulles
+- id: c278f95e-8357-4d63-a923-441d07576995
+  type: person
+  name: Brett Stewart
+- id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+  type: person
+  name: Ed Dames
+- id: fd28e24e-fc68-4c3a-bd6f-55f9974f6554
+  type: person
+  name: Kevin Spacey
+- id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
+  type: person
+  name: Jason Derrick Brown
+- id: 0ed55feb-d31d-41ea-a776-e075bfca21d3
+  type: person
+  name: Bob Monroe
+- id: 93c1f441-0a5b-41ac-a835-99621393b6f5
+  type: topic
+  name: Extrasensory Perception (ESP)
+- id: 8951e20e-7e8a-462c-8871-0298c699b86c
+  type: topic
+  name: Remote viewing
+- id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
+  type: topic
+  name: Coordinate Remote Viewing (CRV)
+- id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+  type: topic
+  name: Ideogram
+- id: 45811a10-1854-4d31-9c80-5cf013d6bf4a
+  type: topic
+  name: Analytical overlay (AOL)
+- id: 507e585e-3d0f-426f-afe1-df8fef54ee44
+  type: project
+  name: MK-Ultra
+- id: d3b87f12-4b07-403c-b2c8-70a5d6f81853
+  type: object
+  name: Pioneer 10
+- id: a0c0e1fc-99c7-4fc6-91af-969db6f8a047
+  type: place
+  name: USA, California, Menlo Park
+- id: c489523d-8c41-4d26-959d-8629a199c3d1
+  type: place
+  name: USA, Maryland, Fort Meade
+- id: 33a75b18-9df7-46a4-a2e1-4ff9555fa077
+  type: place
+  name: USA, California, Palo Alto
+- id: d5360c9d-d023-4ced-96a8-58538524846d
+  type: place
+  name: USA, California, Sacramento
+- id: 35e27546-8144-4397-b67e-8e851620904a
+  type: place
+  name: USA, Virginia, Nelliesford
+- id: b7cca343-03eb-42eb-a6c8-cc44ce4e0d3e
+  type: place
+  name: USA, North Carolina, Fort Bragg
+- id: 33853e8e-4eae-4c23-81c8-f8b8d6f405aa
+  type: object
+  name: Washington Monument
+- id: 8229b337-dbe8-45d9-b58b-d31dee5b54a8
+  type: document
+  name: Suspect Zero
+- id: 3970ab06-cc96-4815-ae50-420c4282f45d
+  type: document
+  name: Men Who Stare at Goats
+- id: 75c75b4b-f69a-44a2-b813-60dfe9bbdbac
+  type: document
+  name: Journeys Out of the Body
+- id: e2efd58c-5412-408a-a1ac-4240bbfcd154
+  type: event
+  name: 2017 CIA declassification of Project Stargate records
+  metadata:
+    date_start: '2017'
+- id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
+  type: event
+  name: Jupiter remote viewing session
+  metadata:
+    date_start: '1973'
+- id: 8c0658b0-bd29-44ab-9bc4-fcc139797302
+  type: document
+  name: 1995 CIA report on remote viewing program
+  metadata:
+    date_start: '1995'
+domain_claims:
+- id: e0021f48-b8f6-41d0-88ae-4e342214c968
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:02:38.4-00:02:51.9
+  refs:
   - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-    type: project
     name: Project Stargate
-  - id: 6e27ceed-e327-424e-904f-7001c21efe29
-    type: organisation
-    name: Central Intelligence Agency (CIA)
-  - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
-    type: organisation
-    name: United States Army
-  - id: b1626fac-87ea-4841-aade-e01d6cddde8e
-    type: organisation
-    name: Defense Intelligence Agency (DIA)
-  - id: e70c989c-e6e4-42ff-bcf2-974189b11a69
-    type: organisation
-    name: KGB
-  - id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
-    type: organisation
-    name: Stanford Research Institute (SRI)
-  - id: 6f165d97-a051-4677-a66f-4b435b00a35c
-    type: organisation
-    name: National Aeronautics and Space Administration (NASA)
-  - id: 8fd58346-368a-4423-aca4-2d0584eec3cc
-    type: organisation
-    name: United States Congress
-  - id: 5bfd8f20-1b0a-4140-80c3-d8c0eab956e9
-    type: organisation
-    name: The Pentagon
-  - id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
-    type: organisation
-    name: Federal Bureau of Investigation (FBI)
-  - id: 4563669b-5ed8-4730-a072-d0f07e23df99
-    type: organisation
-    name: United States Marshals Service
-  - id: 7c5989f0-6ebb-4327-9e49-25d357919005
-    type: organisation
-    name: Laboratories for Fundamental Research Cognitive Sciences Laboratory
-  - id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
-    type: organisation
-    name: United States Air Force
-  - id: 366cbfdf-810b-49c4-9a9c-f49c4d3dffa2
-    type: organisation
-    name: Monroe Institute
-  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-    type: person
-    name: Ingo Swann
-  - id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
-    type: person
-    name: Hal Puthoff
-  - id: cd6ad844-b1b1-48b2-8b25-4d3c657d8928
-    type: person
-    name: Russell Targ
-  - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
-    type: person
-    name: Joseph McMoneagle
-  - id: c201c485-5533-4041-8783-1e3676141406
-    type: person
-    name: Nelson Dulles
-  - id: c278f95e-8357-4d63-a923-441d07576995
-    type: person
-    name: Brett Stewart
-  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-    type: person
-    name: Ed Dames
-  - id: fd28e24e-fc68-4c3a-bd6f-55f9974f6554
-    type: person
-    name: Kevin Spacey
-  - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
-    type: person
-    name: Jason Derrick Brown
-  - id: 0ed55feb-d31d-41ea-a776-e075bfca21d3
-    type: person
-    name: Bob Monroe
-  - id: 93c1f441-0a5b-41ac-a835-99621393b6f5
-    type: topic
-    name: Extrasensory Perception (ESP)
-  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-    type: topic
-    name: Remote viewing
-  - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
-    type: topic
-    name: Coordinate Remote Viewing (CRV)
-  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-    type: topic
-    name: Ideogram
-  - id: 45811a10-1854-4d31-9c80-5cf013d6bf4a
-    type: topic
-    name: Analytical overlay (AOL)
-  - id: 507e585e-3d0f-426f-afe1-df8fef54ee44
-    type: project
-    name: MK-Ultra
-  - id: d3b87f12-4b07-403c-b2c8-70a5d6f81853
-    type: object
-    name: Pioneer 10
+  quote: |-
+    During the height of the Cold War, the United States government embarked on a mission to gain an advantage over the Soviet Union. To do this, they sought to use a new weapon that could give them an edge in the conflict. Mind reading.
+  text: |-
+    During the Cold War, the United States government sought a new weapon, described as mind reading, to gain an advantage over the Soviet Union.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: d37c3643-5c69-4a19-8ba7-d255bcbf15ec
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:02:54.5-00:03:01.4
+  refs:
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
   - id: a0c0e1fc-99c7-4fc6-91af-969db6f8a047
-    type: place
     name: USA, California, Menlo Park
   - id: c489523d-8c41-4d26-959d-8629a199c3d1
-    type: place
     name: USA, Maryland, Fort Meade
-  - id: 33a75b18-9df7-46a4-a2e1-4ff9555fa077
-    type: place
-    name: USA, California, Palo Alto
-  - id: d5360c9d-d023-4ced-96a8-58538524846d
-    type: place
-    name: USA, California, Sacramento
-  - id: 35e27546-8144-4397-b67e-8e851620904a
-    type: place
-    name: USA, Virginia, Nelliesford
-  - id: b7cca343-03eb-42eb-a6c8-cc44ce4e0d3e
-    type: place
-    name: USA, North Carolina, Fort Bragg
-  - id: 33853e8e-4eae-4c23-81c8-f8b8d6f405aa
-    type: object
-    name: Washington Monument
-  - id: 8229b337-dbe8-45d9-b58b-d31dee5b54a8
-    type: document
-    name: Suspect Zero
-  - id: 3970ab06-cc96-4815-ae50-420c4282f45d
-    type: document
-    name: Men Who Stare at Goats
-  - id: 75c75b4b-f69a-44a2-b813-60dfe9bbdbac
-    type: document
-    name: Journeys Out of the Body
+  quote: |-
+    they initiated a highly classified project that began in a research lab in California in the 70s before moving to a Maryland army base
+  text: |-
+    Project Stargate began as a highly classified project in a research lab in California in the 1970s before moving to a Maryland army base.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: bea31e22-ed15-4ef4-8434-4bdcee09b8df
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:03:02.7-00:03:12.8
+  refs:
+  - id: 6e27ceed-e327-424e-904f-7001c21efe29
+    name: Central Intelligence Agency (CIA)
+  - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
+    name: United States Army
+  - id: b1626fac-87ea-4841-aade-e01d6cddde8e
+    name: Defense Intelligence Agency (DIA)
+  - id: 93c1f441-0a5b-41ac-a835-99621393b6f5
+    name: Extrasensory Perception (ESP)
+  quote: |-
+    The CIA Army and Defense Intelligence Agency recruited people who claimed to have extrasensory perception, otherwise known as ESP, to help them uncover intelligence secrets.
+  text: |-
+    The Central Intelligence Agency (CIA), United States Army, and Defense Intelligence Agency (DIA) recruited people who claimed to have extrasensory perception (ESP) to help uncover intelligence secrets.
+  entailment:
+    label: entails
+    score: 0.886
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 879e75d8-2488-415d-9eee-2298cb76995e
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:03:15.4-00:03:22.3
+  refs:
+  - id: e70c989c-e6e4-42ff-bcf2-974189b11a69
+    name: KGB
+  - id: 93c1f441-0a5b-41ac-a835-99621393b6f5
+    name: Extrasensory Perception (ESP)
+  quote: |-
+    the Soviets, including the KGB, were spending millions of dollars every year on this kind of phenomena
+  text: |-
+    The Soviet Union, including the KGB, was spending millions of dollars every year on extrasensory perception phenomena.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b01ab687-c383-4643-a06e-e08c420cad48
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:03:22.9-00:03:30.6
+  refs:
+  - id: 6e27ceed-e327-424e-904f-7001c21efe29
+    name: Central Intelligence Agency (CIA)
+  - id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
+    name: Stanford Research Institute (SRI)
+  - id: a0c0e1fc-99c7-4fc6-91af-969db6f8a047
+    name: USA, California, Menlo Park
+  quote: |-
+    In response, the CIA began to fund their own research in secret at the Stanford Research Institute, SRI, in Menlo Park, California.
+  text: |-
+    In response to Soviet spending on psychic phenomena, the Central Intelligence Agency (CIA) began funding its own research in secret at the Stanford Research Institute (SRI) in Menlo Park, California.
+  entailment:
+    label: neutral
+    score: 0.709
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: bd0a90a5-d5bb-420b-8c6c-5c5244b8aa69
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:03:31.6-00:03:41.2
+  date: '2017'
+  refs:
+  - id: 6e27ceed-e327-424e-904f-7001c21efe29
+    name: Central Intelligence Agency (CIA)
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
   - id: e2efd58c-5412-408a-a1ac-4240bbfcd154
-    type: event
     name: 2017 CIA declassification of Project Stargate records
-    metadata:
-      date_start: '2017'
+  quote: |-
+    recently, in 2017, the CIA declassified some 12 million pages of records, which revealed new details about the program, now known as Project Stargate
+  text: |-
+    In 2017, the Central Intelligence Agency (CIA) declassified approximately 12 million pages of records revealing new details about the programme now known as Project Stargate.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 787f42e0-49f6-4aa4-9794-e5a43c68cd87
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:03:48.5-00:03:54.7
+  refs:
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  quote: |-
+    From locating hostages kidnapped by Islamic terrorist groups to tracing the paths of fugitive criminals within the United States.
+  text: |-
+    Remote viewers involved in Project Stargate took part in operations to locate hostages kidnapped by Islamic terrorist groups.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: fb0428b1-8f1e-42cd-99ff-4b4fb57af2d8
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:03:51.9-00:03:54.7
+  refs:
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  quote: tracing the paths of fugitive criminals within the United States
+  text: |-
+    Remote viewers involved in Project Stargate took part in operations tracing the paths of fugitive criminals within the United States.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: be3beb2f-6097-486e-b9da-aaa02ff38760
+  type: opinion
+  attestation: second_hand
+  speaker:
+    id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  provenance_chain:
+    origin_kind: named
+    origin: Ingo Swann
+  attribution_in_text: true
+  location: 00:04:00.4-00:04:04.8
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  quote: Ingo Swann claims to have used this astral body to travel to distant planets.
+  text: Ingo Swann claimed to have used an astral body to travel to distant planets.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: fd22358b-d00b-430a-a497-ae0b112fa370
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:04:09.1-00:04:17.1
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: |-
+    This individual was instrumental in the development and advancement of remote viewing as a technique and helped bring it to the attention of the U.S. government.
+  text: |-
+    Ingo Swann was instrumental in the development and advancement of remote viewing as a technique and helped bring it to the attention of the U.S. government.
+  entailment:
+    label: entails
+    score: 0.49
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3d6fe272-ef51-4445-bd2a-ae8052852e81
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:04:18.5-00:04:25.2
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: |-
+    Swan, a renowned artist and psychic, is often credited with developing the first systematic approach to remote viewing in the 70s.
+  text: |-
+    Ingo Swann is a renowned artist and psychic often credited with developing the first systematic approach to remote viewing in the 1970s.
+  entailment:
+    label: contradicts
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9fbe87b3-33f5-489a-9e1e-a064be653ce5
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:04:26.3-00:04:33.2
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
+    name: Stanford Research Institute (SRI)
+  quote: |-
+    He'd already gained some fame for his psychic abilities and was approached by scientists at SRI to participate in the research on psychic phenomena.
+  text: |-
+    Ingo Swann was approached by scientists at the Stanford Research Institute (SRI) to participate in research on psychic phenomena.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3f74a70d-1e63-437a-9074-2c875c7ad747
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:04:34.1-00:04:39.7
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
+    name: Hal Puthoff
+  - id: cd6ad844-b1b1-48b2-8b25-4d3c657d8928
+    name: Russell Targ
+  quote: |-
+    He soon began to work with Dr. Hal Puthoff and Russell Targ, two of the leading researchers in the field of parapsychology.
+  text: |-
+    Ingo Swann worked with Hal Puthoff and Russell Targ, two leading researchers in the field of parapsychology.
+  entailment:
+    label: entails
+    score: 0.49
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 65fd1596-d4aa-4112-94f6-8e908d31221c
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:04:41.5-00:04:48.4
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
+    name: Stanford Research Institute (SRI)
+  - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
+    name: Coordinate Remote Viewing (CRV)
+  quote: |-
+    It was at SRI that Swan developed his unique approach to remote viewing, which he called Coordinate Remote Viewing, or CRV.
+  text: |-
+    At the Stanford Research Institute (SRI), Ingo Swann developed a unique approach to remote viewing called Coordinate Remote Viewing (CRV).
+  entailment:
+    label: entails
+    score: 0.716
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 61e23ef9-725a-4296-a210-845275fb2ef8
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:04:49.6-00:04:54.5
+  refs:
+  - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
+    name: Coordinate Remote Viewing (CRV)
+  quote: |-
+    CRV involves a structured process of gathering information through the use of visual sensory impressions.
+  text: |-
+    Coordinate Remote Viewing (CRV) involves a structured process of gathering information through the use of visual sensory impressions.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 75e749fe-9123-4656-a264-00658f98c632
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:04:56.1-00:05:04.8
+  refs:
+  - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
+    name: Coordinate Remote Viewing (CRV)
+  quote: |-
+    It starts with the viewer establishing a target, typically a location or object, and then working to gather information about that target through a series of structured steps.
+  text: |-
+    Coordinate Remote Viewing (CRV) starts with the viewer establishing a target, typically a location or object, then gathering information through a series of structured steps.
+  entailment:
+    label: entails
+    score: 0.539
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8db0f9a5-daf8-4301-9c50-e42f7f1244d6
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:05:05.9-00:05:14.1
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  quote: |-
+    Swan's method was so successful that it was eventually adopted by the US government and Swan himself became a consultant for various intelligence agencies.
+  text: |-
+    Ingo Swann's remote-viewing method was adopted by the US government, and Swann became a consultant for various intelligence agencies.
+  entailment:
+    label: contradicts
+    score: 0.935
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 36373393-2754-4358-b2e2-fca1754bbc45
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:05:20.2-00:05:27.0
+  date: '1973'
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
+    name: Stanford Research Institute (SRI)
   - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
-    type: event
     name: Jupiter remote viewing session
-    metadata:
-      date_start: '1973'
+  quote: |-
+    In 1973, Swan began working with scientists at SRI to explore the possibility of remote viewing planetary objects.
+  text: |-
+    In 1973, Ingo Swann began working with scientists at the Stanford Research Institute (SRI) to explore the possibility of remote viewing planetary objects.
+  entailment:
+    label: entails
+    score: 0.457
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 07c3c705-48c7-4582-87c7-fe20ffca4fd3
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:05:28.1-00:05:32.7
+  date: '1973'
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
+    name: Jupiter remote viewing session
+  quote: |-
+    Swan was tasked with viewing Jupiter, and his results were nothing short of extraordinary.
+  text: Ingo Swann was tasked with remote viewing the planet Jupiter.
+  entailment:
+    label: entails
+    score: 0.424
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2f2d51eb-5ea0-42df-b1d8-67ddca7c47dd
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:05:34.0-00:05:42.3
+  date: '1973'
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
+    name: Jupiter remote viewing session
+  quote: |-
+    Swan was able to accurately describe the complex atmospheric patterns of Jupiter, as well as the presence of a previously unknown ring around the planet.
+  text: |-
+    Ingo Swann accurately described the complex atmospheric patterns of Jupiter during his 1973 remote viewing session.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 028163cf-995a-45b4-becd-070d7d5ef489
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:05:34.0-00:05:42.3
+  date: '1973'
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
+    name: Jupiter remote viewing session
+  quote: |-
+    Swan was able to accurately describe the complex atmospheric patterns of Jupiter, as well as the presence of a previously unknown ring around the planet.
+  text: |-
+    Ingo Swann described the presence of a previously unknown ring around Jupiter during his 1973 remote viewing session.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 219b853c-04ea-410c-939f-e756e2515773
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:05:43.4-00:05:49.5
+  refs:
+  - id: 6f165d97-a051-4677-a66f-4b435b00a35c
+    name: National Aeronautics and Space Administration (NASA)
+  - id: d3b87f12-4b07-403c-b2c8-70a5d6f81853
+    name: Pioneer 10
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
+    name: Jupiter remote viewing session
+  quote: |-
+    These findings were later confirmed by NASA's Pioneer 10 spacecraft, which then flew past Jupiter in the 70s.
+  text: |-
+    NASA's Pioneer 10 spacecraft later confirmed Ingo Swann's remote-viewing findings about Jupiter when it flew past the planet in the 1970s.
+  entailment:
+    label: entails
+    score: 0.435
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4c9120b0-56cd-4f5a-9304-d99632dd6bf6
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ingo Swann
+  attribution_in_text: false
+  location: 00:05:50.6-00:05:56.1
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
+    name: Hal Puthoff
+  - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
+    name: Jupiter remote viewing session
+  quote: |-
+    So Hal came and said, you're the first to find a ring around Jupiter. I said, I am.
+  text: |-
+    Ingo Swann recalled that Hal Puthoff told him he was the first to find a ring around Jupiter.
+  entailment:
+    label: entails
+    score: 0.495
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 12a1abe9-44f8-4e72-87f6-235a95798b3f
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:06:06.4-00:06:12.9
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 6e27ceed-e327-424e-904f-7001c21efe29
+    name: Central Intelligence Agency (CIA)
+  quote: |-
+    Swann was asked to remote view a secret facility in the Soviet Union that was believed to be used for the manufacturing of nuclear weapons.
+  text: |-
+    Ingo Swann was asked by the Central Intelligence Agency (CIA) to remote view a secret facility in the Soviet Union believed to be used for manufacturing nuclear weapons.
+  entailment:
+    label: entails
+    score: 0.474
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 22eb2139-6070-42ab-99cf-3680a73e283b
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:06:14.0-00:06:20.4
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  quote: |-
+    He was able to provide accurate descriptions of the facility's layouts and operations, as well as the presence of nuclear materials.
+  text: |-
+    Ingo Swann provided accurate descriptions of the layout and operations of a suspected Soviet nuclear-weapons manufacturing facility.
+  entailment:
+    label: entails
+    score: 0.492
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8117257c-e3e1-4e00-8b3a-96ae1b770402
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:06:14.0-00:06:20.4
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  quote: |-
+    He was able to provide accurate descriptions of the facility's layouts and operations, as well as the presence of nuclear materials.
+  text: |-
+    Ingo Swann described the presence of nuclear materials at a suspected Soviet nuclear-weapons manufacturing facility.
+  entailment:
+    label: entails
+    score: 0.495
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: cd0e288c-0813-441a-b8f6-5b13359c06db
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:06:22.4-00:06:24.6
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  quote: His findings were later confirmed by satellite imagery.
+  text: |-
+    Ingo Swann's descriptions of a suspected Soviet nuclear-weapons facility were later confirmed by satellite imagery.
+  entailment:
+    label: entails
+    score: 0.482
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: bc63c251-b9eb-4f83-b8bf-3b327c7168ad
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:06:32.7-00:06:35.0
+  refs:
+  - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
+    name: Joseph McMoneagle
+  quote: He's also known as remote viewer number 001.
+  text: Joseph McMoneagle is also known as remote viewer number 001.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 7a05553e-e4c2-46a2-95ca-0030814269f2
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
+    name: Joseph McMoneagle
+  provenance_chain:
+    origin_kind: document
+    origin: an interview reported by the Washington Post
+    relay:
+    - the Washington Post
+  attribution_in_text: false
+  location: 00:06:37.0-00:06:45.1
+  refs:
+  - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
+    name: Joseph McMoneagle
+  quote: |-
+    He participated in approximately 450 missions between 1978 and 1984, as he later told the Washington Post
+  text: |-
+    Joseph McMoneagle told the Washington Post he participated in approximately 450 missions between 1978 and 1984.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1243990d-fdaa-4615-82d8-e94b476d05b3
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:06:46.0-00:06:48.0
+  refs:
+  - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
+    name: Joseph McMoneagle
+  - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
+    name: United States Army
+  quote: including helping the Army locate hostages in Iran
+  text: Joseph McMoneagle helped the United States Army locate hostages in Iran.
+  entailment:
+    label: entails
+    score: 0.62
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9dc9034b-0dc9-4124-99a7-d99334fece2c
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:06:49.2-00:06:57.2
+  refs:
+  - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
+    name: Joseph McMoneagle
+  - id: 6e27ceed-e327-424e-904f-7001c21efe29
+    name: Central Intelligence Agency (CIA)
+  - id: e70c989c-e6e4-42ff-bcf2-974189b11a69
+    name: KGB
+  quote: |-
+    and pointing CIA agents to the shortwave radio concealed in the pocket calculator of a suspected KGB agent captured in South Africa.
+  text: |-
+    Joseph McMoneagle pointed Central Intelligence Agency (CIA) agents to a shortwave radio concealed in the pocket calculator of a suspected KGB agent captured in South Africa.
+  entailment:
+    label: entails
+    score: 0.474
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9bd53a7a-30db-4e4c-b61d-91d4d1f3007a
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:06:58.2-00:07:05.2
+  refs:
+  - id: 6e27ceed-e327-424e-904f-7001c21efe29
+    name: Central Intelligence Agency (CIA)
+  - id: 93c1f441-0a5b-41ac-a835-99621393b6f5
+    name: Extrasensory Perception (ESP)
+  - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
+    name: United States Army
+  - id: c489523d-8c41-4d26-959d-8629a199c3d1
+    name: USA, Maryland, Fort Meade
+  quote: |-
+    The CIA's work on ESP concluded in the late 1970s, and the program moved to the US Army's Fort Meade in Maryland.
+  text: |-
+    The Central Intelligence Agency (CIA)'s work on extrasensory perception (ESP) concluded in the late 1970s, and the programme moved to the United States Army's base at Fort Meade, Maryland.
+  entailment:
+    label: entails
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 0f64cf8f-62f7-41f1-bf67-5b1b8ac5c9e7
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:07:06.2-00:07:08.3
+  refs:
+  - id: b1626fac-87ea-4841-aade-e01d6cddde8e
+    name: Defense Intelligence Agency (DIA)
+  - id: c489523d-8c41-4d26-959d-8629a199c3d1
+    name: USA, Maryland, Fort Meade
+  quote: where it was funded by the Defense Intelligence Agency.
+  text: |-
+    After moving to Fort Meade, Maryland, the remote-viewing programme was funded by the Defense Intelligence Agency (DIA).
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9bf9feab-4dfe-4a49-8019-7a96400ec873
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:07:09.2-00:07:12.8
+  refs:
+  - id: 5bfd8f20-1b0a-4140-80c3-d8c0eab956e9
+    name: The Pentagon
+  quote: |-
+    despite public denials from the Pentagon about spending money on psychic research
+  text: The Pentagon publicly denied spending money on psychic research.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 4d0a32c4-82b0-4006-ae75-e6fc5e85f45e
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:07:13.8-00:07:19.0
+  refs:
+  - id: 8fd58346-368a-4423-aca4-2d0584eec3cc
+    name: United States Congress
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: |-
+    Congress continued to approve funds for the remote viewing program for almost two decades.
+  text: |-
+    The United States Congress continued to approve funds for the remote-viewing programme for almost two decades.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 80b4dac8-65d6-4570-82ac-c07463eaca62
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: 1995 CIA report on remote viewing program
+  attribution_in_text: false
+  location: 00:07:19.9-00:07:28.3
+  date: '1995'
+  refs:
+  - id: 6e27ceed-e327-424e-904f-7001c21efe29
+    name: Central Intelligence Agency (CIA)
   - id: 8c0658b0-bd29-44ab-9bc4-fcc139797302
-    type: document
     name: 1995 CIA report on remote viewing program
-    metadata:
-      date_start: '1995'
-domain_claims:
-  - id: e0021f48-b8f6-41d0-88ae-4e342214c968
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:02:38.4-00:02:51.9
-    refs:
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-    quote: |-
-      During the height of the Cold War, the United States government embarked on a mission to gain an advantage over the Soviet Union. To do this, they sought to use a new weapon that could give them an edge in the conflict. Mind reading.
-    text: |-
-      During the Cold War, the United States government sought a new weapon, described as mind reading, to gain an advantage over the Soviet Union.
-  - id: d37c3643-5c69-4a19-8ba7-d255bcbf15ec
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:02:54.5-00:03:01.4
-    refs:
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-      - id: a0c0e1fc-99c7-4fc6-91af-969db6f8a047
-        name: USA, California, Menlo Park
-      - id: c489523d-8c41-4d26-959d-8629a199c3d1
-        name: USA, Maryland, Fort Meade
-    quote: |-
-      they initiated a highly classified project that began in a research lab in California in the 70s before moving to a Maryland army base
-    text: |-
-      Project Stargate began as a highly classified project in a research lab in California in the 1970s before moving to a Maryland army base.
-  - id: bea31e22-ed15-4ef4-8434-4bdcee09b8df
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:03:02.7-00:03:12.8
-    refs:
-      - id: 6e27ceed-e327-424e-904f-7001c21efe29
-        name: Central Intelligence Agency (CIA)
-      - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
-        name: United States Army
-      - id: b1626fac-87ea-4841-aade-e01d6cddde8e
-        name: Defense Intelligence Agency (DIA)
-      - id: 93c1f441-0a5b-41ac-a835-99621393b6f5
-        name: Extrasensory Perception (ESP)
-    quote: |-
-      The CIA Army and Defense Intelligence Agency recruited people who claimed to have extrasensory perception, otherwise known as ESP, to help them uncover intelligence secrets.
-    text: |-
-      The Central Intelligence Agency (CIA), United States Army, and Defense Intelligence Agency (DIA) recruited people who claimed to have extrasensory perception (ESP) to help uncover intelligence secrets.
-  - id: 879e75d8-2488-415d-9eee-2298cb76995e
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:03:15.4-00:03:22.3
-    refs:
-      - id: e70c989c-e6e4-42ff-bcf2-974189b11a69
-        name: KGB
-      - id: 93c1f441-0a5b-41ac-a835-99621393b6f5
-        name: Extrasensory Perception (ESP)
-    quote: |-
-      the Soviets, including the KGB, were spending millions of dollars every year on this kind of phenomena
-    text: |-
-      The Soviet Union, including the KGB, was spending millions of dollars every year on extrasensory perception phenomena.
-  - id: b01ab687-c383-4643-a06e-e08c420cad48
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:03:22.9-00:03:30.6
-    refs:
-      - id: 6e27ceed-e327-424e-904f-7001c21efe29
-        name: Central Intelligence Agency (CIA)
-      - id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
-        name: Stanford Research Institute (SRI)
-      - id: a0c0e1fc-99c7-4fc6-91af-969db6f8a047
-        name: USA, California, Menlo Park
-    quote: |-
-      In response, the CIA began to fund their own research in secret at the Stanford Research Institute, SRI, in Menlo Park, California.
-    text: |-
-      In response to Soviet spending on psychic phenomena, the Central Intelligence Agency (CIA) began funding its own research in secret at the Stanford Research Institute (SRI) in Menlo Park, California.
-  - id: bd0a90a5-d5bb-420b-8c6c-5c5244b8aa69
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:03:31.6-00:03:41.2
-    date: '2017'
-    refs:
-      - id: 6e27ceed-e327-424e-904f-7001c21efe29
-        name: Central Intelligence Agency (CIA)
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-      - id: e2efd58c-5412-408a-a1ac-4240bbfcd154
-        name: 2017 CIA declassification of Project Stargate records
-    quote: |-
-      recently, in 2017, the CIA declassified some 12 million pages of records, which revealed new details about the program, now known as Project Stargate
-    text: |-
-      In 2017, the Central Intelligence Agency (CIA) declassified approximately 12 million pages of records revealing new details about the programme now known as Project Stargate.
-  - id: 787f42e0-49f6-4aa4-9794-e5a43c68cd87
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:03:48.5-00:03:54.7
-    refs:
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-    quote: |-
-      From locating hostages kidnapped by Islamic terrorist groups to tracing the paths of fugitive criminals within the United States.
-    text: |-
-      Remote viewers involved in Project Stargate took part in operations to locate hostages kidnapped by Islamic terrorist groups.
-  - id: fb0428b1-8f1e-42cd-99ff-4b4fb57af2d8
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:03:51.9-00:03:54.7
-    refs:
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-    quote: tracing the paths of fugitive criminals within the United States
-    text: |-
-      Remote viewers involved in Project Stargate took part in operations tracing the paths of fugitive criminals within the United States.
-  - id: be3beb2f-6097-486e-b9da-aaa02ff38760
-    type: opinion
-    attestation: second_hand
-    speaker:
-      id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-      name: Ingo Swann
-    provenance_chain:
-      origin_kind: named
-      origin: Ingo Swann
-    attribution_in_text: true
-    location: 00:04:00.4-00:04:04.8
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-    quote: Ingo Swann claims to have used this astral body to travel to distant planets.
-    text: Ingo Swann claimed to have used an astral body to travel to distant planets.
-  - id: fd22358b-d00b-430a-a497-ae0b112fa370
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:04:09.1-00:04:17.1
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: |-
-      This individual was instrumental in the development and advancement of remote viewing as a technique and helped bring it to the attention of the U.S. government.
-    text: |-
-      Ingo Swann was instrumental in the development and advancement of remote viewing as a technique and helped bring it to the attention of the U.S. government.
-  - id: 3d6fe272-ef51-4445-bd2a-ae8052852e81
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:04:18.5-00:04:25.2
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: |-
-      Swan, a renowned artist and psychic, is often credited with developing the first systematic approach to remote viewing in the 70s.
-    text: |-
-      Ingo Swann is a renowned artist and psychic often credited with developing the first systematic approach to remote viewing in the 1970s.
-  - id: 9fbe87b3-33f5-489a-9e1e-a064be653ce5
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:04:26.3-00:04:33.2
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
-        name: Stanford Research Institute (SRI)
-    quote: |-
-      He'd already gained some fame for his psychic abilities and was approached by scientists at SRI to participate in the research on psychic phenomena.
-    text: |-
-      Ingo Swann was approached by scientists at the Stanford Research Institute (SRI) to participate in research on psychic phenomena.
-  - id: 3f74a70d-1e63-437a-9074-2c875c7ad747
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:04:34.1-00:04:39.7
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
-        name: Hal Puthoff
-      - id: cd6ad844-b1b1-48b2-8b25-4d3c657d8928
-        name: Russell Targ
-    quote: |-
-      He soon began to work with Dr. Hal Puthoff and Russell Targ, two of the leading researchers in the field of parapsychology.
-    text: |-
-      Ingo Swann worked with Hal Puthoff and Russell Targ, two leading researchers in the field of parapsychology.
-  - id: 65fd1596-d4aa-4112-94f6-8e908d31221c
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:04:41.5-00:04:48.4
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
-        name: Stanford Research Institute (SRI)
-      - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
-        name: Coordinate Remote Viewing (CRV)
-    quote: |-
-      It was at SRI that Swan developed his unique approach to remote viewing, which he called Coordinate Remote Viewing, or CRV.
-    text: |-
-      At the Stanford Research Institute (SRI), Ingo Swann developed a unique approach to remote viewing called Coordinate Remote Viewing (CRV).
-  - id: 61e23ef9-725a-4296-a210-845275fb2ef8
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:04:49.6-00:04:54.5
-    refs:
-      - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
-        name: Coordinate Remote Viewing (CRV)
-    quote: |-
-      CRV involves a structured process of gathering information through the use of visual sensory impressions.
-    text: |-
-      Coordinate Remote Viewing (CRV) involves a structured process of gathering information through the use of visual sensory impressions.
-  - id: 75e749fe-9123-4656-a264-00658f98c632
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:04:56.1-00:05:04.8
-    refs:
-      - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
-        name: Coordinate Remote Viewing (CRV)
-    quote: |-
-      It starts with the viewer establishing a target, typically a location or object, and then working to gather information about that target through a series of structured steps.
-    text: |-
-      Coordinate Remote Viewing (CRV) starts with the viewer establishing a target, typically a location or object, then gathering information through a series of structured steps.
-  - id: 8db0f9a5-daf8-4301-9c50-e42f7f1244d6
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:05:05.9-00:05:14.1
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-    quote: |-
-      Swan's method was so successful that it was eventually adopted by the US government and Swan himself became a consultant for various intelligence agencies.
-    text: |-
-      Ingo Swann's remote-viewing method was adopted by the US government, and Swann became a consultant for various intelligence agencies.
-  - id: 36373393-2754-4358-b2e2-fca1754bbc45
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:05:20.2-00:05:27.0
-    date: '1973'
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 8668c006-903e-4812-9ea1-3f3cdb7d7ec0
-        name: Stanford Research Institute (SRI)
-      - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
-        name: Jupiter remote viewing session
-    quote: |-
-      In 1973, Swan began working with scientists at SRI to explore the possibility of remote viewing planetary objects.
-    text: |-
-      In 1973, Ingo Swann began working with scientists at the Stanford Research Institute (SRI) to explore the possibility of remote viewing planetary objects.
-  - id: 07c3c705-48c7-4582-87c7-fe20ffca4fd3
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:05:28.1-00:05:32.7
-    date: '1973'
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
-        name: Jupiter remote viewing session
-    quote: |-
-      Swan was tasked with viewing Jupiter, and his results were nothing short of extraordinary.
-    text: Ingo Swann was tasked with remote viewing the planet Jupiter.
-  - id: 2f2d51eb-5ea0-42df-b1d8-67ddca7c47dd
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:05:34.0-00:05:42.3
-    date: '1973'
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
-        name: Jupiter remote viewing session
-    quote: |-
-      Swan was able to accurately describe the complex atmospheric patterns of Jupiter, as well as the presence of a previously unknown ring around the planet.
-    text: |-
-      Ingo Swann accurately described the complex atmospheric patterns of Jupiter during his 1973 remote viewing session.
-  - id: 028163cf-995a-45b4-becd-070d7d5ef489
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:05:34.0-00:05:42.3
-    date: '1973'
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
-        name: Jupiter remote viewing session
-    quote: |-
-      Swan was able to accurately describe the complex atmospheric patterns of Jupiter, as well as the presence of a previously unknown ring around the planet.
-    text: |-
-      Ingo Swann described the presence of a previously unknown ring around Jupiter during his 1973 remote viewing session.
-  - id: 219b853c-04ea-410c-939f-e756e2515773
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:05:43.4-00:05:49.5
-    refs:
-      - id: 6f165d97-a051-4677-a66f-4b435b00a35c
-        name: National Aeronautics and Space Administration (NASA)
-      - id: d3b87f12-4b07-403c-b2c8-70a5d6f81853
-        name: Pioneer 10
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
-        name: Jupiter remote viewing session
-    quote: |-
-      These findings were later confirmed by NASA's Pioneer 10 spacecraft, which then flew past Jupiter in the 70s.
-    text: |-
-      NASA's Pioneer 10 spacecraft later confirmed Ingo Swann's remote-viewing findings about Jupiter when it flew past the planet in the 1970s.
-  - id: 4c9120b0-56cd-4f5a-9304-d99632dd6bf6
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-      name: Ingo Swann
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ingo Swann
-    attribution_in_text: false
-    location: 00:05:50.6-00:05:56.1
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
-        name: Hal Puthoff
-      - id: d78ee7e3-9c01-43d4-b66b-f5f7c4191753
-        name: Jupiter remote viewing session
-    quote: |-
-      So Hal came and said, you're the first to find a ring around Jupiter. I said, I am.
-    text: |-
-      Ingo Swann recalled that Hal Puthoff told him he was the first to find a ring around Jupiter.
-  - id: 12a1abe9-44f8-4e72-87f6-235a95798b3f
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:06:06.4-00:06:12.9
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 6e27ceed-e327-424e-904f-7001c21efe29
-        name: Central Intelligence Agency (CIA)
-    quote: |-
-      Swann was asked to remote view a secret facility in the Soviet Union that was believed to be used for the manufacturing of nuclear weapons.
-    text: |-
-      Ingo Swann was asked by the Central Intelligence Agency (CIA) to remote view a secret facility in the Soviet Union believed to be used for manufacturing nuclear weapons.
-  - id: 22eb2139-6070-42ab-99cf-3680a73e283b
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:06:14.0-00:06:20.4
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-    quote: |-
-      He was able to provide accurate descriptions of the facility's layouts and operations, as well as the presence of nuclear materials.
-    text: |-
-      Ingo Swann provided accurate descriptions of the layout and operations of a suspected Soviet nuclear-weapons manufacturing facility.
-  - id: 8117257c-e3e1-4e00-8b3a-96ae1b770402
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:06:14.0-00:06:20.4
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-    quote: |-
-      He was able to provide accurate descriptions of the facility's layouts and operations, as well as the presence of nuclear materials.
-    text: |-
-      Ingo Swann described the presence of nuclear materials at a suspected Soviet nuclear-weapons manufacturing facility.
-  - id: cd0e288c-0813-441a-b8f6-5b13359c06db
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:06:22.4-00:06:24.6
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-    quote: His findings were later confirmed by satellite imagery.
-    text: |-
-      Ingo Swann's descriptions of a suspected Soviet nuclear-weapons facility were later confirmed by satellite imagery.
-  - id: bc63c251-b9eb-4f83-b8bf-3b327c7168ad
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:06:32.7-00:06:35.0
-    refs:
-      - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
-        name: Joseph McMoneagle
-    quote: He's also known as remote viewer number 001.
-    text: Joseph McMoneagle is also known as remote viewer number 001.
-  - id: 7a05553e-e4c2-46a2-95ca-0030814269f2
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
-      name: Joseph McMoneagle
-    provenance_chain:
-      origin_kind: document
-      origin: an interview reported by the Washington Post
-      relay:
-        - the Washington Post
-    attribution_in_text: false
-    location: 00:06:37.0-00:06:45.1
-    refs:
-      - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
-        name: Joseph McMoneagle
-    quote: |-
-      He participated in approximately 450 missions between 1978 and 1984, as he later told the Washington Post
-    text: |-
-      Joseph McMoneagle told the Washington Post he participated in approximately 450 missions between 1978 and 1984.
-  - id: 1243990d-fdaa-4615-82d8-e94b476d05b3
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:06:46.0-00:06:48.0
-    refs:
-      - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
-        name: Joseph McMoneagle
-      - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
-        name: United States Army
-    quote: including helping the Army locate hostages in Iran
-    text: Joseph McMoneagle helped the United States Army locate hostages in Iran.
-  - id: 9dc9034b-0dc9-4124-99a7-d99334fece2c
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:06:49.2-00:06:57.2
-    refs:
-      - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
-        name: Joseph McMoneagle
-      - id: 6e27ceed-e327-424e-904f-7001c21efe29
-        name: Central Intelligence Agency (CIA)
-      - id: e70c989c-e6e4-42ff-bcf2-974189b11a69
-        name: KGB
-    quote: |-
-      and pointing CIA agents to the shortwave radio concealed in the pocket calculator of a suspected KGB agent captured in South Africa.
-    text: |-
-      Joseph McMoneagle pointed Central Intelligence Agency (CIA) agents to a shortwave radio concealed in the pocket calculator of a suspected KGB agent captured in South Africa.
-  - id: 9bd53a7a-30db-4e4c-b61d-91d4d1f3007a
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:06:58.2-00:07:05.2
-    refs:
-      - id: 6e27ceed-e327-424e-904f-7001c21efe29
-        name: Central Intelligence Agency (CIA)
-      - id: 93c1f441-0a5b-41ac-a835-99621393b6f5
-        name: Extrasensory Perception (ESP)
-      - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
-        name: United States Army
-      - id: c489523d-8c41-4d26-959d-8629a199c3d1
-        name: USA, Maryland, Fort Meade
-    quote: |-
-      The CIA's work on ESP concluded in the late 1970s, and the program moved to the US Army's Fort Meade in Maryland.
-    text: |-
-      The Central Intelligence Agency (CIA)'s work on extrasensory perception (ESP) concluded in the late 1970s, and the programme moved to the United States Army's base at Fort Meade, Maryland.
-  - id: 0f64cf8f-62f7-41f1-bf67-5b1b8ac5c9e7
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:07:06.2-00:07:08.3
-    refs:
-      - id: b1626fac-87ea-4841-aade-e01d6cddde8e
-        name: Defense Intelligence Agency (DIA)
-      - id: c489523d-8c41-4d26-959d-8629a199c3d1
-        name: USA, Maryland, Fort Meade
-    quote: where it was funded by the Defense Intelligence Agency.
-    text: |-
-      After moving to Fort Meade, Maryland, the remote-viewing programme was funded by the Defense Intelligence Agency (DIA).
-  - id: 9bf9feab-4dfe-4a49-8019-7a96400ec873
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:07:09.2-00:07:12.8
-    refs:
-      - id: 5bfd8f20-1b0a-4140-80c3-d8c0eab956e9
-        name: The Pentagon
-    quote: |-
-      despite public denials from the Pentagon about spending money on psychic research
-    text: The Pentagon publicly denied spending money on psychic research.
-  - id: 4d0a32c4-82b0-4006-ae75-e6fc5e85f45e
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:07:13.8-00:07:19.0
-    refs:
-      - id: 8fd58346-368a-4423-aca4-2d0584eec3cc
-        name: United States Congress
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: |-
-      Congress continued to approve funds for the remote viewing program for almost two decades.
-    text: |-
-      The United States Congress continued to approve funds for the remote-viewing programme for almost two decades.
-  - id: 80b4dac8-65d6-4570-82ac-c07463eaca62
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: 1995 CIA report on remote viewing program
-    attribution_in_text: false
-    location: 00:07:19.9-00:07:28.3
-    date: '1995'
-    refs:
-      - id: 6e27ceed-e327-424e-904f-7001c21efe29
-        name: Central Intelligence Agency (CIA)
-      - id: 8c0658b0-bd29-44ab-9bc4-fcc139797302
-        name: 1995 CIA report on remote viewing program
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: |-
-      The CIA finally released a report in 1995 that acknowledged the US government's long-rumored work with remote viewing for military and intelligence purposes.
-    text: |-
-      The Central Intelligence Agency (CIA) released a report in 1995 acknowledging the US government's long-rumoured work with remote viewing for military and intelligence purposes.
-  - id: dbbd813c-e783-4bf8-b862-6ff3bd213979
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:07:32.3-00:07:37.0
-    refs:
-      - id: c201c485-5533-4041-8783-1e3676141406
-        name: Nelson Dulles
-    quote: |-
-      My investigation begins with my friend Nelson Dulles, five-time US memory champion.
-    text: Nelson Dulles is a five-time US memory champion.
-  - id: f448bf84-36c6-4d50-8b1a-ac07eb2da694
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c201c485-5533-4041-8783-1e3676141406
-      name: Nelson Dulles
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Dulles
-    attribution_in_text: false
-    location: 00:07:37.9-00:07:45.9
-    refs:
-      - id: c201c485-5533-4041-8783-1e3676141406
-        name: Nelson Dulles
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: |-
-      Nelson recalls being approached by some men in suits who are going to train him in remote viewing and to use his ability to play the stock market.
-    text: |-
-      Nelson Dulles was approached by men in suits to train him in remote viewing and to use his ability to play the stock market.
-  - id: 545490bb-5be2-4d52-b6f1-fc38940f37e8
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c201c485-5533-4041-8783-1e3676141406
-      name: Nelson Dulles
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Dulles
-    attribution_in_text: false
-    location: 00:08:33.4-00:08:47.8
-    refs:
-      - id: c201c485-5533-4041-8783-1e3676141406
-        name: Nelson Dulles
-    quote: |-
-      There was a post on Facebook on one of my memory groups that I'm a part of, and it said something very vague and cryptic, you know, looking for memory athletes that have some free time, want to make a little bit of cash on the side.
-    text: |-
-      Nelson Dulles was recruited via a vague and cryptic post on Facebook in one of his memory-athlete groups, seeking memory athletes with free time to earn extra money.
-  - id: 89ba3a37-4900-464f-ab8f-195290256722
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c201c485-5533-4041-8783-1e3676141406
-      name: Nelson Dulles
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Dulles
-    attribution_in_text: false
-    location: 00:10:25.0-00:10:25.4
-    refs:
-      - id: c201c485-5533-4041-8783-1e3676141406
-        name: Nelson Dulles
-    quote: There was an NDA.
-    text: |-
-      Nelson Dulles was required to sign a non-disclosure agreement (NDA) as part of the remote-viewing project he was recruited into.
-  - id: 62ba7a15-0109-4e31-a70f-97bffc442c17
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c201c485-5533-4041-8783-1e3676141406
-      name: Nelson Dulles
-    provenance_chain:
-      origin_kind: speaker
-      origin: Nelson Dulles
-    attribution_in_text: false
-    location: 00:10:44.2-00:10:50.6
-    refs:
-      - id: c201c485-5533-4041-8783-1e3676141406
-        name: Nelson Dulles
-      - id: c278f95e-8357-4d63-a923-441d07576995
-        name: Brett Stewart
-    quote: |-
-      We've hired an expert remote viewer who does this for a living. I'm happy to share his information. Brett Stewart.
-    text: |-
-      Nelson Dulles was trained in remote viewing by Brett Stewart, an expert remote viewer who does this professionally.
-  - id: 96dddf5f-50a7-4fa2-89d6-201fc8d59686
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c278f95e-8357-4d63-a923-441d07576995
-      name: Brett Stewart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Brett Stewart
-    attribution_in_text: false
-    location: 00:10:50.8-00:10:54.2
-    date: '2010'
-    refs:
-      - id: c278f95e-8357-4d63-a923-441d07576995
-        name: Brett Stewart
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: I've been doing this for about 12 years now. I started back in 2010.
-    text: |-
-      Brett Stewart has been practising remote viewing for about 12 years, having started in 2010.
-  - id: 1a2fe3c3-1d7b-4145-bc65-3b860e0bba08
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: c278f95e-8357-4d63-a923-441d07576995
-      name: Brett Stewart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Brett Stewart
-    attribution_in_text: false
-    location: 00:11:10.8-00:11:27.4
-    date: '2010'
-    refs:
-      - id: c278f95e-8357-4d63-a923-441d07576995
-        name: Brett Stewart
-    quote: |-
-      In 2010, I had an experience that kind of changed my perspective on reality... I see a triangle of lights and then a orangish red one in the middle... This thing went from over my head past the horizon in under a second.
-    text: |-
-      Brett Stewart observed a UFO in the middle of the San Francisco Bay Area in 2010, describing a triangle of lights with an orangish-red light in the middle that moved past his house and then departed at extremely high speed within about a second.
-  - id: 59e044ca-2623-4285-9e48-90f47aeac7a9
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: c278f95e-8357-4d63-a923-441d07576995
-      name: Brett Stewart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Brett Stewart
-    attribution_in_text: false
-    location: 00:11:56.5-00:12:07.3
-    refs:
-      - id: c278f95e-8357-4d63-a923-441d07576995
-        name: Brett Stewart
-      - id: 6e27ceed-e327-424e-904f-7001c21efe29
-        name: Central Intelligence Agency (CIA)
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: |-
-      One of them was I remember this remote viewing thing I had heard on the radio when I was 13 at my great grandma's house because she loved Art Bell. And so there was like these remote viewers talking about some CIA program.
-    text: |-
-      Brett Stewart heard remote viewers discussing a CIA programme on the radio when he was 13 years old at his great-grandmother's house, who listened to Art Bell.
-  - id: a4a4ba7a-e107-4286-8cbc-ba9e60cdbb6e
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narration
-    attribution_in_text: false
-    location: 00:12:08.4-00:12:25.6
-    refs:
-      - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
-        name: Joseph McMoneagle
-      - id: 7c5989f0-6ebb-4327-9e49-25d357919005
-        name: Laboratories for Fundamental Research Cognitive Sciences Laboratory
-      - id: 33a75b18-9df7-46a4-a2e1-4ff9555fa077
-        name: USA, California, Palo Alto
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: |-
-      Joe McMoneagle is currently a full time research associate and partner with the Laboratories for Fundamental Research Cognitive Sciences Laboratory, Palo Alto, California, where he has provided consulting support to research and development in remote viewing
-    text: |-
-      Joe McMoneagle is a full-time research associate and partner with the Laboratories for Fundamental Research Cognitive Sciences Laboratory in Palo Alto, California, providing consulting support to research and development in remote viewing.
-  - id: bfc6a410-e834-48fa-9d7d-ed550de33425
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: c278f95e-8357-4d63-a923-441d07576995
-      name: Brett Stewart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Brett Stewart
-    attribution_in_text: false
-    location: 00:16:50.3-00:16:57.1
-    refs:
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-    quote: |-
-      An ideogram is a little squiggle on the line on paper that represents the primary gestalt of the site.
-    text: |-
-      An ideogram in remote viewing is a simple sketch or squiggle drawn on paper representing the primary gestalt of the target site.
-  - id: 88b18856-9622-4336-962b-57c512babe6b
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: c278f95e-8357-4d63-a923-441d07576995
-      name: Brett Stewart
-    provenance_chain:
-      origin_kind: speaker
-      origin: Brett Stewart
-    attribution_in_text: false
-    location: 00:17:42.2-00:17:51.4
-    refs:
-      - id: 45811a10-1854-4d31-9c80-5cf013d6bf4a
-        name: Analytical overlay (AOL)
-    quote: |-
-      if you see, oh, it's red, white, blue, and you're like, American flag. Again, you want to avoid those. So on the side, you can write AOL, which we said was analytical overlay, and you address it.
-    text: |-
-      In remote viewing, an analytical overlay (AOL) occurs when the viewer's mind jumps to a specific identification, such as seeing red, white and blue and thinking American flag, and the viewer notes and sets it aside.
-  - id: dfc3201e-9e0e-43cc-a35a-1635c0618418
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:23:50.2-00:23:51.4
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
-        name: United States Army
-    quote: a retired U.S. Army major
-    text: Ed Dames is a retired United States Army major.
-  - id: a97304b7-f1fd-4f18-8f29-57e3f5828485
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: Ed Dames
-      relay:
-        - narrator
-    attribution_in_text: false
-    location: 00:23:47.1-00:23:58.1
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-      - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
-        name: United States Army
-    quote: |-
-      a gentleman by the name of Major Ed Dames, a retired U.S. Army major who claims that he was trained by Ingo Swann as a remote viewer in Project Stargate while serving in the Army in the 80s
-    text: |-
-      Ed Dames claims he was trained by Ingo Swann as a remote viewer in Project Stargate while serving in the United States Army in the 1980s.
-  - id: 713a4831-2802-4db1-815d-4102d8e3f71a
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:23:59.3-00:24:03.0
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 8229b337-dbe8-45d9-b58b-d31dee5b54a8
-        name: Suspect Zero
-    quote: |-
-      Dames was involved on the production of several Hollywood films, including Suspect Zero
-    text: |-
-      Ed Dames was involved in the production of several Hollywood films, including Suspect Zero.
-  - id: 7b88e661-efa4-4971-9c5a-244b7531ced3
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:24:04.1-00:24:08.0
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: fd28e24e-fc68-4c3a-bd6f-55f9974f6554
-        name: Kevin Spacey
-      - id: 3970ab06-cc96-4815-ae50-420c4282f45d
-        name: Men Who Stare at Goats
-    quote: was actually portrayed by Kevin Spacey in the movie Men Who Stare at Goats
-    text: Ed Dames was portrayed by Kevin Spacey in the film Men Who Stare at Goats.
-  - id: 7e48f5c1-bbef-4467-852b-08195a624abf
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an unnamed crew member
-    attribution_in_text: false
-    location: 00:24:38.3-00:24:40.1
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: b7cca343-03eb-42eb-a6c8-cc44ce4e0d3e
-        name: USA, North Carolina, Fort Bragg
-    quote: He was one of the Jedi teachers at Fort Bragg.
-    text: |-
-      Ed Dames was one of the remote-viewing instructors at Fort Bragg, North Carolina.
-  - id: 248633cf-cf94-493a-bada-76d75f25ec90
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:26:21.6-00:26:25.2
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-    quote: Major Ed Dames, who was part of the Sci-Spy program in the 80s.
-    text: Ed Dames was part of Project Stargate in the 1980s.
-  - id: cba4af39-913e-4903-9446-b3361b145d04
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:26:26.0-00:26:31.4
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: c278f95e-8357-4d63-a923-441d07576995
-        name: Brett Stewart
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: |-
-      He was actually the person who trained Brett Stewart and who then in turn trained Nelson.
-    text: Ed Dames trained Brett Stewart in remote viewing.
-  - id: 0a8fbecb-415c-45f3-aeeb-d0cd9887a9fb
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: true
-    location: 00:26:40.9-00:26:43.2
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: He claims to be the best remote viewing teacher in the country
-    text: Ed Dames considers himself the best remote viewing teacher in the country.
-  - id: f028ad5c-9a85-456c-bd37-973cac01d0c3
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: true
-    location: 00:26:44.7-00:26:52.6
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: |-
-      he claims that his successes have been documented and are above average and above everyone else in the field
-    text: |-
-      Ed Dames considers his remote-viewing successes to be well documented and above average compared to others in the field.
-  - id: e8a36c0e-bef2-4548-a6a6-189e68f69773
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:29:25.9-00:29:31.6
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-    quote: |-
-      I am the former operations and training officer for the Department of Defense Stargate program.
-    text: |-
-      Ed Dames was the former operations and training officer for the Department of Defense's Project Stargate program.
-  - id: 4db39899-5a7f-447b-98bc-13778b341d64
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:29:32.8-00:29:45.0
-    date: '1983'
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-      - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
-        name: United States Army
-    quote: |-
-      When I was selected as one of the five prototype members, Army members, to be trained by Ingo Swann, my mentor, to whom I later became protege, and that was 1983 and 1984.
-    text: |-
-      Ed Dames was selected as one of five prototype Army members to be trained by Ingo Swann in Project Stargate during 1983 and 1984.
-  - id: d0753966-2e69-4be9-a6b0-84bea8ac0e56
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:29:38.6-00:29:43.2
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-    quote: to be trained by Ingo Swann, my mentor, to whom I later became protege
-    text: Ingo Swann was Ed Dames's mentor, and Dames later became his protege.
-  - id: 1484491c-9df4-47f0-8239-538988885b5e
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:29:51.0-00:29:53.7
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-      - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
-        name: Coordinate Remote Viewing (CRV)
-    quote: Ingo had just developed his structure.
-    text: |-
-      Ingo Swann developed the remote-viewing structure used to train the Project Stargate prototype team.
-  - id: 41d28bca-00f2-4381-8129-6aede0dc38f3
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:29:56.6-00:30:02.3
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
-        name: Hal Puthoff
-    quote: he came to Hal Puthoff and said, who's paying for this? Because that was secret.
-    text: |-
-      Ingo Swann asked Hal Puthoff who was funding his remote-viewing training because it was classified.
-  - id: 65f3c0ba-593f-4e5b-8b1c-869c090f0941
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:30:03.4-00:30:05.9
-    refs:
-      - id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
-        name: Hal Puthoff
-      - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
-        name: United States Army
-    quote: And Hal said, well, the army.
-    text: |-
-      Hal Puthoff told Ingo Swann that the United States Army was funding the remote-viewing training.
-  - id: 3bef550c-54ab-492a-9c62-6161496ad416
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:30:07.1-00:30:11.8
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-    quote: |-
-      Angus frustrates, threw his hands up because his peers didn't want to be trained by him.
-    text: |-
-      Ingo Swann's peers did not want to be trained by him in the remote-viewing structure.
-  - id: 3355b4af-a2aa-4985-8b74-2c90ae88e55b
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:30:12.1-00:30:20.5
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
-        name: United States Army
-    quote: |-
-      Send me some army officers, because theoretically, this structure should work with everyone, everyone, this model, this structure.
-    text: |-
-      Ingo Swann requested that army officers be sent to him to test whether his remote-viewing structure would work with anyone.
-  - id: 34cdc1e7-aee1-401d-9572-1e4b5fe9fba3
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: true
-    location: 00:30:25.2-00:30:28.2
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-      - id: 93c1f441-0a5b-41ac-a835-99621393b6f5
-        name: Extrasensory Perception (ESP)
-    quote: We became better than some of the better natural psychics in the world.
-    text: |-
-      Ed Dames and the other members of the five-person prototype team became better remote viewers than some of the better natural psychics in the world.
-  - id: a04a36cb-1455-4b1e-903e-e6c2cbf26cae
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:30:42.8-00:30:47.3
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: And now I predominantly only teach specialized skills to my professionals.
-    text: |-
-      Ed Dames now predominantly teaches specialised remote-viewing skills to his professional clients.
-  - id: ce6356fb-9350-4eef-b262-cac98953bbc6
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:30:48.7-00:30:51.7
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-      - id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
-        name: Federal Bureau of Investigation (FBI)
-    quote: |-
-      The rest of the time we actually use remote viewing in operations. ... Looking for, for instance, FBI fugitives.
-    text: |-
-      Ed Dames and his organisation use remote viewing in operations, including searching for FBI fugitives.
-  - id: fd812e7c-4b1d-4bca-92c4-3deda1cbeeab
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: true
-    location: 00:30:58.8-00:31:08.3
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 4563669b-5ed8-4730-a072-d0f07e23df99
-        name: United States Marshals Service
-      - id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
-        name: Federal Bureau of Investigation (FBI)
-    quote: |-
-      I support the U.S. Marshals mainly because they support me. They actually use my information where the FBI just throws it away.
-    text: |-
-      Ed Dames supports the United States Marshals Service with remote-viewing information because they make use of it, whereas the FBI discards it.
-  - id: 9bff8154-c26f-4e3c-91cb-a8a6da5c20a4
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:31:08.9-00:31:11.9
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
-        name: Federal Bureau of Investigation (FBI)
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: So I search for the FBI fugitives on my own.
-    text: Ed Dames independently searches for FBI fugitives using remote viewing.
-  - id: 15c83492-fe56-4e53-9834-cc41c456b629
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:31:30.0-00:31:33.7
-    refs:
-      - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
-        name: Jason Derrick Brown
-      - id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
-        name: Federal Bureau of Investigation (FBI)
-    quote: Jason Derrick Brown is now a face on the FBI's most wanted list.
-    text: Jason Derrick Brown is on the FBI's most wanted list.
-  - id: 6fd1826f-9f17-42f5-991c-62ecd0369f4d
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:31:34.3-00:31:38.1
-    date: '2004-11-29'
-    refs:
-      - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
-        name: Jason Derrick Brown
-    quote: Jason Derrick Brown on the run since November 29th, 2004.
-    text: Jason Derrick Brown has been a fugitive on the run since 2004-11-29.
-  - id: aa602325-153d-40e0-a9c3-aa540eab7f49
-    type: measurement
-    provenance_chain:
-      origin_kind: unattributed
-      origin: unidentified law-enforcement spokesperson
-    attribution_in_text: false
-    location: 00:31:38.8-00:31:43.7
-    refs:
-      - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
-        name: Jason Derrick Brown
-    quote: |-
-      There was not one single corroborated sighting out of the tens of thousands of tips we received.
-    text: |-
-      Out of tens of thousands of tips received about Jason Derrick Brown, not one single sighting was corroborated.
-  - id: af89bcd9-2fa1-4a07-b767-4e95da22b78e
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:31:47.3-00:31:51.9
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
-        name: Jason Derrick Brown
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: Dames is going to explain exactly how he can see this man's present location.
-    text: |-
-      Ed Dames conducted a remote-viewing session to attempt to locate the fugitive Jason Derrick Brown.
-  - id: 469f0dcb-f055-460d-af00-716fb7433f37
-    type: testimony
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: named
-      origin: Ed Dames
-      relay:
-        - narrator
-    attribution_in_text: false
-    location: 00:31:54.0-00:31:57.3
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
-        name: Coordinate Remote Viewing (CRV)
-    quote: Dames will go through stages one through four, as we've explained previously.
-    text: |-
-      Ed Dames's remote-viewing process for locating a target proceeds through four stages.
-  - id: 2caa4923-14be-4899-81e8-e9ba2a8e6f34
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:32:07.7-00:32:13.8
-    refs:
-      - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
-        name: Coordinate Remote Viewing (CRV)
-    quote: |-
-      when the target reference numbers are encased in square brackets, they are target reference numbers
-    text: |-
-      In coordinate remote viewing, target reference numbers are encased in square brackets.
-  - id: 12e86c79-98cf-42ec-8137-8a64ede4fb76
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:33:15.8-00:33:21.3
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-      - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
-        name: Jason Derrick Brown
-    quote: So I've got four archetypes, four key site aspects, we call them at the site.
-    text: |-
-      During the remote-viewing session on Jason Derrick Brown's location, Ed Dames identified four archetypes, referred to as key site aspects.
-  - id: 31e1d953-e338-41c8-a96a-03c141bc8638
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:33:27.7-00:33:32.5
-    refs:
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-    quote: So a circle could be a life form. A loop is a life form.
-    text: In the ideogram process, a circle or loop can represent a life form.
-  - id: 9d32c640-8ed3-4e12-84fc-5f157be25836
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:33:33.6-00:33:35.5
-    refs:
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-    quote: An inverse loop can sometimes be a plant.
-    text: In the ideogram process, an inverse loop can sometimes represent a plant.
-  - id: a0efb890-a624-44fa-a384-5e9267d396fb
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:33:37.2-00:33:43.4
-    refs:
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-    quote: |-
-      If I have a broken loop like that ... That's a person who is in the process of dying.
-    text: |-
-      In the ideogram process, a broken loop drawn unconsciously represents a person who is in the process of dying.
-  - id: 71179db9-e691-406e-8ee6-5b962505def0
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: true
-    location: 00:33:57.8-00:34:06.1
-    refs:
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-    quote: |-
-      My automatic response to my autonomic nervous system, the mind-body reaction, this becomes an ideomotor response.
-    text: |-
-      Ed Dames considers ideogram drawing to be an automatic, unconscious ideomotor response of the autonomic nervous system.
-  - id: 24f7cc78-bcfa-424a-a056-fd5672bc6d76
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:34:07.0-00:34:11.6
-    refs:
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-    quote: A line like that could be is a surface. A spiral like that is energy.
-    text: |-
-      In the ideogram process, a line represents a surface, and a spiral represents energy.
-  - id: 5f1d30b1-1f3f-46f5-8113-026f3150f173
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:34:15.3-00:34:18.5
-    refs:
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-    quote: That, moving fast and dissipating, is motion.
-    text: |-
-      In the ideogram process, a shape that moves fast and dissipates represents motion.
-  - id: 490f65a6-7053-44ab-9610-ab9a1e067d7a
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:34:19.6-00:34:23.7
-    refs:
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-    quote: |-
-      That's not necessarily a mountain or a mountain range. It could be a tower as well.
-    text: |-
-      In the ideogram process, a shape can represent a mountain, a mountain range, or a tower.
-  - id: 3ce945b2-283a-4dc4-b00c-0b27b2e34712
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: true
-    location: 00:34:24.2-00:34:32.3
-    refs:
-      - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
-        name: Ideogram
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-    quote: |-
-      There's a very rare one, very rare. It's the infinity archetype. This is very rare.
-    text: |-
-      Ed Dames considers the 'infinity archetype' in the ideogram process to be very rare.
-  - id: 4c00ace1-6155-4d2c-a144-4eda2a48bddf
-    type: opinion
-    attestation: second_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: named
-      origin: Ed Dames
-      relay:
-        - narrator
-    attribution_in_text: true
-    location: 00:34:56.0-00:35:02.5
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
-        name: Jason Derrick Brown
-    quote: |-
-      Although we didn't get any closer to finding the fugitive, Dames really believes that this location is where he currently is hiding.
-    text: |-
-      Although the remote-viewing session did not lead to finding the fugitive, Ed Dames believed the identified location was where Jason Derrick Brown was currently hiding.
-  - id: 8840670d-3f38-4da0-bc56-af8f710a82b7
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: true
-    location: 225-234
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 8951e20e-7e8a-462c-8871-0298c699b86c
-        name: Remote viewing
-    quote: I ignore them. ... Skepticism is extremely healthy.
-    text: |-
-      Ed Dames considers skepticism about remote viewing to be extremely healthy, but says he ignores it because he is too focused on his work.
-  - id: d73b2b6b-ec69-4281-a0f3-90de1c68740b
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:35:44.6-00:35:57.9
-    refs:
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 33853e8e-4eae-4c23-81c8-f8b8d6f405aa
-        name: Washington Monument
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-    quote: |-
-      The moment that changed me was when Ingo Swann had me remote view the ... as one of my first training targets, the Lincoln Monument, the Washington Monument.
-    text: |-
-      Ingo Swann had Ed Dames remote view the Washington Monument as one of his first training targets in Project Stargate.
-  - id: f60cb090-74e8-4ee7-ad7d-f0cd57fb3eac
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:35:59.0-00:36:02.1
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 33853e8e-4eae-4c23-81c8-f8b8d6f405aa
-        name: Washington Monument
-    quote: Of course, it was a blind target. I had no idea what the training target was.
-    text: |-
-      The Washington Monument remote-viewing target was given to Ed Dames blind, with no prior knowledge of what the target was.
-  - id: b9c97e53-cd20-4a62-8aeb-816a7185ee10
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:36:02.6-00:36:06.2
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 33853e8e-4eae-4c23-81c8-f8b8d6f405aa
-        name: Washington Monument
-      - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
-        name: Ingo Swann
-    quote: And it was a perfect rendition on my part of the Washington Monument.
-    text: |-
-      Ed Dames produced what Ingo Swann considered a perfect rendition of the Washington Monument during the blind remote-viewing session.
-  - id: 78da8186-b6cb-4ffd-be55-ce4b2cada464
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:36:28.3-00:36:35.0
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
-        name: United States Air Force
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-    quote: |-
-      chief of staff for intelligence for the u.s air force though they he did not believe it what that we could do what we could do
-    text: |-
-      The chief of staff for intelligence of the United States Air Force did not believe that Project Stargate's remote viewers could do what they claimed.
-  - id: 225fcf2c-8906-4913-b3c2-07b1e8a836b8
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:36:39.1-00:36:57.2
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
-        name: United States Air Force
-    quote: |-
-      he sends an officer up with a folder. ... He says, look, we have this satellite photo of this blurry thing that we think is a new Russian fighter. We want you to give us information about that.
-    text: |-
-      An officer from the United States Air Force brought Ed Dames a satellite photo of a blurry object believed to be a new Russian fighter aircraft, and asked for remote-viewing information about it.
-  - id: ad849184-ca62-41c9-80e0-b40cd1f92b3f
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:37:15.8-00:37:20.6
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
-        name: United States Air Force
-    quote: |-
-      there's another version of this that lands at Edwards Air Force Base. And then the smile went away.
-    text: |-
-      Ed Dames's remote-viewing team identified an additional version of the Russian fighter aircraft that lands at an air force base, information which the requesting Air Force officer had not disclosed.
-  - id: 2a66ef11-db0f-4373-b621-cc5d27df17be
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:37:21.2-00:37:27.3
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
-        name: United States Air Force
-    quote: |-
-      He gave us the own program, and we had to sign nondisclosure agreements because we busted the program.
-    text: |-
-      After the remote-viewing session on the Russian fighter aircraft proved accurate, the Air Force officers involved were required to sign nondisclosure agreements.
-  - id: 41f89d54-ed22-4bae-8511-601c81902457
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:37:42.6-00:37:55.8
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: 0ed55feb-d31d-41ea-a776-e075bfca21d3
-        name: Bob Monroe
-      - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
-        name: Project Stargate
-      - id: 366cbfdf-810b-49c4-9a9c-f49c4d3dffa2
-        name: Monroe Institute
-    quote: |-
-      One thing that we did use, and I especially as an operations officer, to evaluate potential recruits for the program was the Bob Monroe's program developing altered states and out-of-bodies.
-    text: |-
-      Ed Dames used Bob Monroe's program on altered states and out-of-body experiences to evaluate potential recruits for Project Stargate.
-  - id: 7cef7e66-6409-410e-9089-b50bcc6d570d
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:37:57.0-00:38:00.2
-    refs:
-      - id: 0ed55feb-d31d-41ea-a776-e075bfca21d3
-        name: Bob Monroe
-      - id: 75c75b4b-f69a-44a2-b813-60dfe9bbdbac
-        name: Journeys Out of the Body
-    quote: Bob Monroe wrote the book Journeys Out of Body
-    text: Bob Monroe wrote the book Journeys Out of Body.
-  - id: 92de3b7a-0ee9-41a9-b6cb-3cba133d918d
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-      name: Ed Dames
-    provenance_chain:
-      origin_kind: speaker
-      origin: Ed Dames
-    attribution_in_text: false
-    location: 00:38:01.8-00:38:07.0
-    refs:
-      - id: 0ed55feb-d31d-41ea-a776-e075bfca21d3
-        name: Bob Monroe
-      - id: 75c75b4b-f69a-44a2-b813-60dfe9bbdbac
-        name: Journeys Out of the Body
-    quote: |-
-      specifically trying to convince people that you're more, quote, you're more than your physical self
-    text: |-
-      Bob Monroe's book Journeys Out of Body argues that a person is more than their physical self.
-  - id: 355e889c-1821-47af-a08f-484a9c83c15a
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:38:12.1-00:38:19.5
-    refs:
-      - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
-        name: Joseph McMoneagle
-      - id: 35e27546-8144-4397-b67e-8e851620904a
-        name: USA, Virginia, Nelliesford
-      - id: 366cbfdf-810b-49c4-9a9c-f49c4d3dffa2
-        name: Monroe Institute
-    quote: |-
-      And not by coincidence, also the location of Joe McMoneagle, remote viewer number 001. It was time to head to Nelliesford, Virginia.
-    text: |-
-      Joseph McMoneagle, referred to as remote viewer number 001, lived in Nelliesford, Virginia, the same location as the Monroe Institute.
-  - id: 40069255-b2b6-47c3-9063-0adab5ef559a
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: narrator
-    attribution_in_text: false
-    location: 00:26:17.5-00:26:18.9
-    refs:
-      - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
-        name: Ed Dames
-      - id: d5360c9d-d023-4ced-96a8-58538524846d
-        name: USA, California, Sacramento
-    quote: We just got to Sacramento last night.
-    text: The narrator and his crew travelled to Sacramento, California to meet Ed Dames.
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: |-
+    The CIA finally released a report in 1995 that acknowledged the US government's long-rumored work with remote viewing for military and intelligence purposes.
+  text: |-
+    The Central Intelligence Agency (CIA) released a report in 1995 acknowledging the US government's long-rumoured work with remote viewing for military and intelligence purposes.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: dbbd813c-e783-4bf8-b862-6ff3bd213979
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:07:32.3-00:07:37.0
+  refs:
+  - id: c201c485-5533-4041-8783-1e3676141406
+    name: Nelson Dulles
+  quote: |-
+    My investigation begins with my friend Nelson Dulles, five-time US memory champion.
+  text: Nelson Dulles is a five-time US memory champion.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: f448bf84-36c6-4d50-8b1a-ac07eb2da694
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c201c485-5533-4041-8783-1e3676141406
+    name: Nelson Dulles
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Dulles
+  attribution_in_text: false
+  location: 00:07:37.9-00:07:45.9
+  refs:
+  - id: c201c485-5533-4041-8783-1e3676141406
+    name: Nelson Dulles
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: |-
+    Nelson recalls being approached by some men in suits who are going to train him in remote viewing and to use his ability to play the stock market.
+  text: |-
+    Nelson Dulles was approached by men in suits to train him in remote viewing and to use his ability to play the stock market.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 545490bb-5be2-4d52-b6f1-fc38940f37e8
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c201c485-5533-4041-8783-1e3676141406
+    name: Nelson Dulles
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Dulles
+  attribution_in_text: false
+  location: 00:08:33.4-00:08:47.8
+  refs:
+  - id: c201c485-5533-4041-8783-1e3676141406
+    name: Nelson Dulles
+  quote: |-
+    There was a post on Facebook on one of my memory groups that I'm a part of, and it said something very vague and cryptic, you know, looking for memory athletes that have some free time, want to make a little bit of cash on the side.
+  text: |-
+    Nelson Dulles was recruited via a vague and cryptic post on Facebook in one of his memory-athlete groups, seeking memory athletes with free time to earn extra money.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 89ba3a37-4900-464f-ab8f-195290256722
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c201c485-5533-4041-8783-1e3676141406
+    name: Nelson Dulles
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Dulles
+  attribution_in_text: false
+  location: 00:10:25.0-00:10:25.4
+  refs:
+  - id: c201c485-5533-4041-8783-1e3676141406
+    name: Nelson Dulles
+  quote: There was an NDA.
+  text: |-
+    Nelson Dulles was required to sign a non-disclosure agreement (NDA) as part of the remote-viewing project he was recruited into.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 62ba7a15-0109-4e31-a70f-97bffc442c17
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c201c485-5533-4041-8783-1e3676141406
+    name: Nelson Dulles
+  provenance_chain:
+    origin_kind: speaker
+    origin: Nelson Dulles
+  attribution_in_text: false
+  location: 00:10:44.2-00:10:50.6
+  refs:
+  - id: c201c485-5533-4041-8783-1e3676141406
+    name: Nelson Dulles
+  - id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  quote: |-
+    We've hired an expert remote viewer who does this for a living. I'm happy to share his information. Brett Stewart.
+  text: |-
+    Nelson Dulles was trained in remote viewing by Brett Stewart, an expert remote viewer who does this professionally.
+  entailment:
+    label: neutral
+    score: 0.917
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 96dddf5f-50a7-4fa2-89d6-201fc8d59686
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Brett Stewart
+  attribution_in_text: false
+  location: 00:10:50.8-00:10:54.2
+  date: '2010'
+  refs:
+  - id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: I've been doing this for about 12 years now. I started back in 2010.
+  text: |-
+    Brett Stewart has been practising remote viewing for about 12 years, having started in 2010.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1a2fe3c3-1d7b-4145-bc65-3b860e0bba08
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Brett Stewart
+  attribution_in_text: false
+  location: 00:11:10.8-00:11:27.4
+  date: '2010'
+  refs:
+  - id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  quote: |-
+    In 2010, I had an experience that kind of changed my perspective on reality... I see a triangle of lights and then a orangish red one in the middle... This thing went from over my head past the horizon in under a second.
+  text: |-
+    Brett Stewart observed a UFO in the middle of the San Francisco Bay Area in 2010, describing a triangle of lights with an orangish-red light in the middle that moved past his house and then departed at extremely high speed within about a second.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 59e044ca-2623-4285-9e48-90f47aeac7a9
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Brett Stewart
+  attribution_in_text: false
+  location: 00:11:56.5-00:12:07.3
+  refs:
+  - id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  - id: 6e27ceed-e327-424e-904f-7001c21efe29
+    name: Central Intelligence Agency (CIA)
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: |-
+    One of them was I remember this remote viewing thing I had heard on the radio when I was 13 at my great grandma's house because she loved Art Bell. And so there was like these remote viewers talking about some CIA program.
+  text: |-
+    Brett Stewart heard remote viewers discussing a CIA programme on the radio when he was 13 years old at his great-grandmother's house, who listened to Art Bell.
+  entailment:
+    label: entails
+    score: 0.935
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a4a4ba7a-e107-4286-8cbc-ba9e60cdbb6e
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narration
+  attribution_in_text: false
+  location: 00:12:08.4-00:12:25.6
+  refs:
+  - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
+    name: Joseph McMoneagle
+  - id: 7c5989f0-6ebb-4327-9e49-25d357919005
+    name: Laboratories for Fundamental Research Cognitive Sciences Laboratory
+  - id: 33a75b18-9df7-46a4-a2e1-4ff9555fa077
+    name: USA, California, Palo Alto
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: |-
+    Joe McMoneagle is currently a full time research associate and partner with the Laboratories for Fundamental Research Cognitive Sciences Laboratory, Palo Alto, California, where he has provided consulting support to research and development in remote viewing
+  text: |-
+    Joe McMoneagle is a full-time research associate and partner with the Laboratories for Fundamental Research Cognitive Sciences Laboratory in Palo Alto, California, providing consulting support to research and development in remote viewing.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: bfc6a410-e834-48fa-9d7d-ed550de33425
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Brett Stewart
+  attribution_in_text: false
+  location: 00:16:50.3-00:16:57.1
+  refs:
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  quote: |-
+    An ideogram is a little squiggle on the line on paper that represents the primary gestalt of the site.
+  text: |-
+    An ideogram in remote viewing is a simple sketch or squiggle drawn on paper representing the primary gestalt of the target site.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 88b18856-9622-4336-962b-57c512babe6b
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  provenance_chain:
+    origin_kind: speaker
+    origin: Brett Stewart
+  attribution_in_text: false
+  location: 00:17:42.2-00:17:51.4
+  refs:
+  - id: 45811a10-1854-4d31-9c80-5cf013d6bf4a
+    name: Analytical overlay (AOL)
+  quote: |-
+    if you see, oh, it's red, white, blue, and you're like, American flag. Again, you want to avoid those. So on the side, you can write AOL, which we said was analytical overlay, and you address it.
+  text: |-
+    In remote viewing, an analytical overlay (AOL) occurs when the viewer's mind jumps to a specific identification, such as seeing red, white and blue and thinking American flag, and the viewer notes and sets it aside.
+  entailment:
+    label: neutral
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: dfc3201e-9e0e-43cc-a35a-1635c0618418
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:23:50.2-00:23:51.4
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
+    name: United States Army
+  quote: a retired U.S. Army major
+  text: Ed Dames is a retired United States Army major.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a97304b7-f1fd-4f18-8f29-57e3f5828485
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: Ed Dames
+    relay:
+    - narrator
+  attribution_in_text: false
+  location: 00:23:47.1-00:23:58.1
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
+    name: United States Army
+  quote: |-
+    a gentleman by the name of Major Ed Dames, a retired U.S. Army major who claims that he was trained by Ingo Swann as a remote viewer in Project Stargate while serving in the Army in the 80s
+  text: |-
+    Ed Dames claims he was trained by Ingo Swann as a remote viewer in Project Stargate while serving in the United States Army in the 1980s.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 713a4831-2802-4db1-815d-4102d8e3f71a
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:23:59.3-00:24:03.0
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 8229b337-dbe8-45d9-b58b-d31dee5b54a8
+    name: Suspect Zero
+  quote: |-
+    Dames was involved on the production of several Hollywood films, including Suspect Zero
+  text: |-
+    Ed Dames was involved in the production of several Hollywood films, including Suspect Zero.
+  entailment:
+    label: entails
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 7b88e661-efa4-4971-9c5a-244b7531ced3
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:24:04.1-00:24:08.0
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: fd28e24e-fc68-4c3a-bd6f-55f9974f6554
+    name: Kevin Spacey
+  - id: 3970ab06-cc96-4815-ae50-420c4282f45d
+    name: Men Who Stare at Goats
+  quote: was actually portrayed by Kevin Spacey in the movie Men Who Stare at Goats
+  text: Ed Dames was portrayed by Kevin Spacey in the film Men Who Stare at Goats.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 7e48f5c1-bbef-4467-852b-08195a624abf
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an unnamed crew member
+  attribution_in_text: false
+  location: 00:24:38.3-00:24:40.1
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: b7cca343-03eb-42eb-a6c8-cc44ce4e0d3e
+    name: USA, North Carolina, Fort Bragg
+  quote: He was one of the Jedi teachers at Fort Bragg.
+  text: |-
+    Ed Dames was one of the remote-viewing instructors at Fort Bragg, North Carolina.
+  entailment:
+    label: neutral
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 248633cf-cf94-493a-bada-76d75f25ec90
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:26:21.6-00:26:25.2
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  quote: Major Ed Dames, who was part of the Sci-Spy program in the 80s.
+  text: Ed Dames was part of Project Stargate in the 1980s.
+  entailment:
+    label: contradicts
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: cba4af39-913e-4903-9446-b3361b145d04
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:26:26.0-00:26:31.4
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: c278f95e-8357-4d63-a923-441d07576995
+    name: Brett Stewart
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: |-
+    He was actually the person who trained Brett Stewart and who then in turn trained Nelson.
+  text: Ed Dames trained Brett Stewart in remote viewing.
+  entailment:
+    label: entails
+    score: 0.553
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0a8fbecb-415c-45f3-aeeb-d0cd9887a9fb
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: true
+  location: 00:26:40.9-00:26:43.2
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: He claims to be the best remote viewing teacher in the country
+  text: Ed Dames considers himself the best remote viewing teacher in the country.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: f028ad5c-9a85-456c-bd37-973cac01d0c3
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: true
+  location: 00:26:44.7-00:26:52.6
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: |-
+    he claims that his successes have been documented and are above average and above everyone else in the field
+  text: |-
+    Ed Dames considers his remote-viewing successes to be well documented and above average compared to others in the field.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: e8a36c0e-bef2-4548-a6a6-189e68f69773
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:29:25.9-00:29:31.6
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  quote: |-
+    I am the former operations and training officer for the Department of Defense Stargate program.
+  text: |-
+    Ed Dames was the former operations and training officer for the Department of Defense's Project Stargate program.
+  entailment:
+    label: entails
+    score: 0.678
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 4db39899-5a7f-447b-98bc-13778b341d64
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:29:32.8-00:29:45.0
+  date: '1983'
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
+    name: United States Army
+  quote: |-
+    When I was selected as one of the five prototype members, Army members, to be trained by Ingo Swann, my mentor, to whom I later became protege, and that was 1983 and 1984.
+  text: |-
+    Ed Dames was selected as one of five prototype Army members to be trained by Ingo Swann in Project Stargate during 1983 and 1984.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d0753966-2e69-4be9-a6b0-84bea8ac0e56
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:29:38.6-00:29:43.2
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  quote: to be trained by Ingo Swann, my mentor, to whom I later became protege
+  text: Ingo Swann was Ed Dames's mentor, and Dames later became his protege.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1484491c-9df4-47f0-8239-538988885b5e
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:29:51.0-00:29:53.7
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
+    name: Coordinate Remote Viewing (CRV)
+  quote: Ingo had just developed his structure.
+  text: |-
+    Ingo Swann developed the remote-viewing structure used to train the Project Stargate prototype team.
+  entailment:
+    label: neutral
+    score: 0.387
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 41d28bca-00f2-4381-8129-6aede0dc38f3
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:29:56.6-00:30:02.3
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
+    name: Hal Puthoff
+  quote: he came to Hal Puthoff and said, who's paying for this? Because that was secret.
+  text: |-
+    Ingo Swann asked Hal Puthoff who was funding his remote-viewing training because it was classified.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 65f3c0ba-593f-4e5b-8b1c-869c090f0941
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:30:03.4-00:30:05.9
+  refs:
+  - id: 84f39f90-3fc6-4fe7-b30c-20179a4840e1
+    name: Hal Puthoff
+  - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
+    name: United States Army
+  quote: And Hal said, well, the army.
+  text: |-
+    Hal Puthoff told Ingo Swann that the United States Army was funding the remote-viewing training.
+  entailment:
+    label: neutral
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 3bef550c-54ab-492a-9c62-6161496ad416
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:30:07.1-00:30:11.8
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  quote: |-
+    Angus frustrates, threw his hands up because his peers didn't want to be trained by him.
+  text: |-
+    Ingo Swann's peers did not want to be trained by him in the remote-viewing structure.
+  entailment:
+    label: entails
+    score: 0.572
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3355b4af-a2aa-4985-8b74-2c90ae88e55b
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:30:12.1-00:30:20.5
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: b83e7be2-f896-4135-be5e-3ba26c6b050f
+    name: United States Army
+  quote: |-
+    Send me some army officers, because theoretically, this structure should work with everyone, everyone, this model, this structure.
+  text: |-
+    Ingo Swann requested that army officers be sent to him to test whether his remote-viewing structure would work with anyone.
+  entailment:
+    label: contradicts
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 34cdc1e7-aee1-401d-9572-1e4b5fe9fba3
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: true
+  location: 00:30:25.2-00:30:28.2
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  - id: 93c1f441-0a5b-41ac-a835-99621393b6f5
+    name: Extrasensory Perception (ESP)
+  quote: We became better than some of the better natural psychics in the world.
+  text: |-
+    Ed Dames and the other members of the five-person prototype team became better remote viewers than some of the better natural psychics in the world.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a04a36cb-1455-4b1e-903e-e6c2cbf26cae
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:30:42.8-00:30:47.3
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: And now I predominantly only teach specialized skills to my professionals.
+  text: |-
+    Ed Dames now predominantly teaches specialised remote-viewing skills to his professional clients.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ce6356fb-9350-4eef-b262-cac98953bbc6
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:30:48.7-00:30:51.7
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  - id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
+    name: Federal Bureau of Investigation (FBI)
+  quote: |-
+    The rest of the time we actually use remote viewing in operations. ... Looking for, for instance, FBI fugitives.
+  text: |-
+    Ed Dames and his organisation use remote viewing in operations, including searching for FBI fugitives.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: fd812e7c-4b1d-4bca-92c4-3deda1cbeeab
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: true
+  location: 00:30:58.8-00:31:08.3
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 4563669b-5ed8-4730-a072-d0f07e23df99
+    name: United States Marshals Service
+  - id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
+    name: Federal Bureau of Investigation (FBI)
+  quote: |-
+    I support the U.S. Marshals mainly because they support me. They actually use my information where the FBI just throws it away.
+  text: |-
+    Ed Dames supports the United States Marshals Service with remote-viewing information because they make use of it, whereas the FBI discards it.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9bff8154-c26f-4e3c-91cb-a8a6da5c20a4
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:31:08.9-00:31:11.9
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
+    name: Federal Bureau of Investigation (FBI)
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: So I search for the FBI fugitives on my own.
+  text: Ed Dames independently searches for FBI fugitives using remote viewing.
+  entailment:
+    label: entails
+    score: 0.897
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 15c83492-fe56-4e53-9834-cc41c456b629
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:31:30.0-00:31:33.7
+  refs:
+  - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
+    name: Jason Derrick Brown
+  - id: b92e7f60-87ba-415d-a46b-ff2aac2f9bd1
+    name: Federal Bureau of Investigation (FBI)
+  quote: Jason Derrick Brown is now a face on the FBI's most wanted list.
+  text: Jason Derrick Brown is on the FBI's most wanted list.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 6fd1826f-9f17-42f5-991c-62ecd0369f4d
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:31:34.3-00:31:38.1
+  date: '2004-11-29'
+  refs:
+  - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
+    name: Jason Derrick Brown
+  quote: Jason Derrick Brown on the run since November 29th, 2004.
+  text: Jason Derrick Brown has been a fugitive on the run since 2004-11-29.
+  entailment:
+    label: entails
+    score: 0.591
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: aa602325-153d-40e0-a9c3-aa540eab7f49
+  type: measurement
+  provenance_chain:
+    origin_kind: unattributed
+    origin: unidentified law-enforcement spokesperson
+  attribution_in_text: false
+  location: 00:31:38.8-00:31:43.7
+  refs:
+  - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
+    name: Jason Derrick Brown
+  quote: |-
+    There was not one single corroborated sighting out of the tens of thousands of tips we received.
+  text: |-
+    Out of tens of thousands of tips received about Jason Derrick Brown, not one single sighting was corroborated.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: af89bcd9-2fa1-4a07-b767-4e95da22b78e
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:31:47.3-00:31:51.9
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
+    name: Jason Derrick Brown
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: Dames is going to explain exactly how he can see this man's present location.
+  text: |-
+    Ed Dames conducted a remote-viewing session to attempt to locate the fugitive Jason Derrick Brown.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 469f0dcb-f055-460d-af00-716fb7433f37
+  type: testimony
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: named
+    origin: Ed Dames
+    relay:
+    - narrator
+  attribution_in_text: false
+  location: 00:31:54.0-00:31:57.3
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
+    name: Coordinate Remote Viewing (CRV)
+  quote: Dames will go through stages one through four, as we've explained previously.
+  text: |-
+    Ed Dames's remote-viewing process for locating a target proceeds through four stages.
+  entailment:
+    label: entails
+    score: 0.546
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2caa4923-14be-4899-81e8-e9ba2a8e6f34
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:32:07.7-00:32:13.8
+  refs:
+  - id: 12bb556e-2e8f-4bee-92c2-d5b6a71a7143
+    name: Coordinate Remote Viewing (CRV)
+  quote: |-
+    when the target reference numbers are encased in square brackets, they are target reference numbers
+  text: |-
+    In coordinate remote viewing, target reference numbers are encased in square brackets.
+  entailment:
+    label: entails
+    score: 0.829
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 12e86c79-98cf-42ec-8137-8a64ede4fb76
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:33:15.8-00:33:21.3
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
+    name: Jason Derrick Brown
+  quote: So I've got four archetypes, four key site aspects, we call them at the site.
+  text: |-
+    During the remote-viewing session on Jason Derrick Brown's location, Ed Dames identified four archetypes, referred to as key site aspects.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 31e1d953-e338-41c8-a96a-03c141bc8638
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:33:27.7-00:33:32.5
+  refs:
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  quote: So a circle could be a life form. A loop is a life form.
+  text: In the ideogram process, a circle or loop can represent a life form.
+  entailment:
+    label: neutral
+    score: 0.868
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9d32c640-8ed3-4e12-84fc-5f157be25836
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:33:33.6-00:33:35.5
+  refs:
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  quote: An inverse loop can sometimes be a plant.
+  text: In the ideogram process, an inverse loop can sometimes represent a plant.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a0efb890-a624-44fa-a384-5e9267d396fb
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:33:37.2-00:33:43.4
+  refs:
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  quote: |-
+    If I have a broken loop like that ... That's a person who is in the process of dying.
+  text: |-
+    In the ideogram process, a broken loop drawn unconsciously represents a person who is in the process of dying.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 71179db9-e691-406e-8ee6-5b962505def0
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: true
+  location: 00:33:57.8-00:34:06.1
+  refs:
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  quote: |-
+    My automatic response to my autonomic nervous system, the mind-body reaction, this becomes an ideomotor response.
+  text: |-
+    Ed Dames considers ideogram drawing to be an automatic, unconscious ideomotor response of the autonomic nervous system.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 24f7cc78-bcfa-424a-a056-fd5672bc6d76
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:34:07.0-00:34:11.6
+  refs:
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  quote: A line like that could be is a surface. A spiral like that is energy.
+  text: |-
+    In the ideogram process, a line represents a surface, and a spiral represents energy.
+  entailment:
+    label: neutral
+    score: 0.737
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5f1d30b1-1f3f-46f5-8113-026f3150f173
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:34:15.3-00:34:18.5
+  refs:
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  quote: That, moving fast and dissipating, is motion.
+  text: |-
+    In the ideogram process, a shape that moves fast and dissipates represents motion.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 490f65a6-7053-44ab-9610-ab9a1e067d7a
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:34:19.6-00:34:23.7
+  refs:
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  quote: |-
+    That's not necessarily a mountain or a mountain range. It could be a tower as well.
+  text: |-
+    In the ideogram process, a shape can represent a mountain, a mountain range, or a tower.
+  entailment:
+    label: entails
+    score: 0.64
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 3ce945b2-283a-4dc4-b00c-0b27b2e34712
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: true
+  location: 00:34:24.2-00:34:32.3
+  refs:
+  - id: 1cd0ee38-8ea0-4df9-b91a-c726e75e855c
+    name: Ideogram
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  quote: |-
+    There's a very rare one, very rare. It's the infinity archetype. This is very rare.
+  text: |-
+    Ed Dames considers the 'infinity archetype' in the ideogram process to be very rare.
+  entailment:
+    label: neutral
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 4c00ace1-6155-4d2c-a144-4eda2a48bddf
+  type: opinion
+  attestation: second_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: named
+    origin: Ed Dames
+    relay:
+    - narrator
+  attribution_in_text: true
+  location: 00:34:56.0-00:35:02.5
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 16e1a583-54bc-4965-8ed6-02cb10afeeaf
+    name: Jason Derrick Brown
+  quote: |-
+    Although we didn't get any closer to finding the fugitive, Dames really believes that this location is where he currently is hiding.
+  text: |-
+    Although the remote-viewing session did not lead to finding the fugitive, Ed Dames believed the identified location was where Jason Derrick Brown was currently hiding.
+  entailment:
+    label: neutral
+    score: 0.522
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8840670d-3f38-4da0-bc56-af8f710a82b7
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: true
+  location: 225-234
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 8951e20e-7e8a-462c-8871-0298c699b86c
+    name: Remote viewing
+  quote: I ignore them. ... Skepticism is extremely healthy.
+  text: |-
+    Ed Dames considers skepticism about remote viewing to be extremely healthy, but says he ignores it because he is too focused on his work.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d73b2b6b-ec69-4281-a0f3-90de1c68740b
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:35:44.6-00:35:57.9
+  refs:
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 33853e8e-4eae-4c23-81c8-f8b8d6f405aa
+    name: Washington Monument
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  quote: |-
+    The moment that changed me was when Ingo Swann had me remote view the ... as one of my first training targets, the Lincoln Monument, the Washington Monument.
+  text: |-
+    Ingo Swann had Ed Dames remote view the Washington Monument as one of his first training targets in Project Stargate.
+  entailment:
+    label: neutral
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f60cb090-74e8-4ee7-ad7d-f0cd57fb3eac
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:35:59.0-00:36:02.1
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 33853e8e-4eae-4c23-81c8-f8b8d6f405aa
+    name: Washington Monument
+  quote: Of course, it was a blind target. I had no idea what the training target was.
+  text: |-
+    The Washington Monument remote-viewing target was given to Ed Dames blind, with no prior knowledge of what the target was.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b9c97e53-cd20-4a62-8aeb-816a7185ee10
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:36:02.6-00:36:06.2
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 33853e8e-4eae-4c23-81c8-f8b8d6f405aa
+    name: Washington Monument
+  - id: 617fbb1d-81c2-41fb-9d57-d44bdc190bae
+    name: Ingo Swann
+  quote: And it was a perfect rendition on my part of the Washington Monument.
+  text: |-
+    Ed Dames produced what Ingo Swann considered a perfect rendition of the Washington Monument during the blind remote-viewing session.
+  entailment:
+    label: entails
+    score: 0.49
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 78da8186-b6cb-4ffd-be55-ce4b2cada464
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:36:28.3-00:36:35.0
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
+    name: United States Air Force
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  quote: |-
+    chief of staff for intelligence for the u.s air force though they he did not believe it what that we could do what we could do
+  text: |-
+    The chief of staff for intelligence of the United States Air Force did not believe that Project Stargate's remote viewers could do what they claimed.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 225fcf2c-8906-4913-b3c2-07b1e8a836b8
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:36:39.1-00:36:57.2
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
+    name: United States Air Force
+  quote: |-
+    he sends an officer up with a folder. ... He says, look, we have this satellite photo of this blurry thing that we think is a new Russian fighter. We want you to give us information about that.
+  text: |-
+    An officer from the United States Air Force brought Ed Dames a satellite photo of a blurry object believed to be a new Russian fighter aircraft, and asked for remote-viewing information about it.
+  entailment:
+    label: neutral
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ad849184-ca62-41c9-80e0-b40cd1f92b3f
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:37:15.8-00:37:20.6
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
+    name: United States Air Force
+  quote: |-
+    there's another version of this that lands at Edwards Air Force Base. And then the smile went away.
+  text: |-
+    Ed Dames's remote-viewing team identified an additional version of the Russian fighter aircraft that lands at an air force base, information which the requesting Air Force officer had not disclosed.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 2a66ef11-db0f-4373-b621-cc5d27df17be
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:37:21.2-00:37:27.3
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 3825a9ed-8daf-4d55-bf2d-9693f468b7d2
+    name: United States Air Force
+  quote: |-
+    He gave us the own program, and we had to sign nondisclosure agreements because we busted the program.
+  text: |-
+    After the remote-viewing session on the Russian fighter aircraft proved accurate, the Air Force officers involved were required to sign nondisclosure agreements.
+  entailment:
+    label: contradicts
+    score: 0.873
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 41f89d54-ed22-4bae-8511-601c81902457
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:37:42.6-00:37:55.8
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: 0ed55feb-d31d-41ea-a776-e075bfca21d3
+    name: Bob Monroe
+  - id: 06218af1-a059-4b12-8ef4-0548bde2e1a2
+    name: Project Stargate
+  - id: 366cbfdf-810b-49c4-9a9c-f49c4d3dffa2
+    name: Monroe Institute
+  quote: |-
+    One thing that we did use, and I especially as an operations officer, to evaluate potential recruits for the program was the Bob Monroe's program developing altered states and out-of-bodies.
+  text: |-
+    Ed Dames used Bob Monroe's program on altered states and out-of-body experiences to evaluate potential recruits for Project Stargate.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 7cef7e66-6409-410e-9089-b50bcc6d570d
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:37:57.0-00:38:00.2
+  refs:
+  - id: 0ed55feb-d31d-41ea-a776-e075bfca21d3
+    name: Bob Monroe
+  - id: 75c75b4b-f69a-44a2-b813-60dfe9bbdbac
+    name: Journeys Out of the Body
+  quote: Bob Monroe wrote the book Journeys Out of Body
+  text: Bob Monroe wrote the book Journeys Out of Body.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 92de3b7a-0ee9-41a9-b6cb-3cba133d918d
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  provenance_chain:
+    origin_kind: speaker
+    origin: Ed Dames
+  attribution_in_text: false
+  location: 00:38:01.8-00:38:07.0
+  refs:
+  - id: 0ed55feb-d31d-41ea-a776-e075bfca21d3
+    name: Bob Monroe
+  - id: 75c75b4b-f69a-44a2-b813-60dfe9bbdbac
+    name: Journeys Out of the Body
+  quote: |-
+    specifically trying to convince people that you're more, quote, you're more than your physical self
+  text: |-
+    Bob Monroe's book Journeys Out of Body argues that a person is more than their physical self.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 355e889c-1821-47af-a08f-484a9c83c15a
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:38:12.1-00:38:19.5
+  refs:
+  - id: 95b22fb6-f05e-4ed0-87c1-a08556a7ebf8
+    name: Joseph McMoneagle
+  - id: 35e27546-8144-4397-b67e-8e851620904a
+    name: USA, Virginia, Nelliesford
+  - id: 366cbfdf-810b-49c4-9a9c-f49c4d3dffa2
+    name: Monroe Institute
+  quote: |-
+    And not by coincidence, also the location of Joe McMoneagle, remote viewer number 001. It was time to head to Nelliesford, Virginia.
+  text: |-
+    Joseph McMoneagle, referred to as remote viewer number 001, lived in Nelliesford, Virginia, the same location as the Monroe Institute.
+  entailment:
+    label: entails
+    score: 0.54
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 40069255-b2b6-47c3-9063-0adab5ef559a
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: narrator
+  attribution_in_text: false
+  location: 00:26:17.5-00:26:18.9
+  refs:
+  - id: fa7c855c-0cf3-45f3-bccd-763dc84f54b2
+    name: Ed Dames
+  - id: d5360c9d-d023-4ced-96a8-58538524846d
+    name: USA, California, Sacramento
+  quote: We just got to Sacramento last night.
+  text: The narrator and his crew travelled to Sacramento, California to meet Ed Dames.
+  entailment:
+    label: entails
+    score: 0.519
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

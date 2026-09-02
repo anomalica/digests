@@ -1,684 +1,1333 @@
-run_kind: production
+run_kind: comparison
 schema: anomalica/digest/1
-extracted_at: '2026-08-01T00:43:00.860935+00:00'
+extracted_at: '2026-08-31T22:32:56.830596+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 321265
-      output: 13882
-      real_input: 10
-      cache_read: 135576
-      cache_write: 185679
-      calls: 2
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 244419
+    output: 15796
+    real_input: 6
+    cache_read: 159464
+    cache_write: 84949
+    calls: 1
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 2.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 30.8
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
-  sha256: c1b4b0c886ff9dea2bbc13573fc1e2777c32b0581b6d40522dd978b922117c8d
-  prep_version: 6
+  sha256: e87ad0653954bde2aa87d76cd3b45da31e5b296358f7bc173da063b320726dcb
+  prep_version: 7
 record:
-  id: c323ba11-136d-424d-beec-9a09c7a603b5
+  id: 6c9f336f-4a00-4dcf-ba0f-dfbc3775d647
   title: Misrep-7816710
   date: '2022-07-31'
   medium: pdf
   content_hash: sha256:b3b3f023d70bcce3178de9fe6a019ea6db5e5145bc7e28a49308442e190ef817
-  processing_version: 50fd724
+  processing_version: 0e1658e
   review:
-    state: none
-    sidecar: absent
-  release: {control_number: MDR 25-0094 thru MDR 25-0099 / JS-250710-TM8S, declassified_by: Richard A. Harrison, declassified_by_title: 'MG, USCENTCOM Chief of Staff', markings: [Declassified by MG Richard A. Harrison, USCENTCOM Chief of Staff, 'Declassified on: 8 October 2025', MDR 25-0094 thru MDR 25-0099 / JS-250710-TM8S, Approved for Release to AARO], release_date: 2025-10-08, released_to: AARO}
+    state: human
+    sidecar: present
+    observed_coverage: 1.0
+  release:
+    declassified_by: Richard A. Harrison
+    declassified_by_title: MG, USCENTCOM Chief of Staff
+    control_number: MDR 25-0094 thru MDR 25-0099 / JS-250710-TM8S
+    released_to: AARO
+    release_date: 2025-10-08
+    markings:
+    - Declassified by MG Richard A. Harrison
+    - USCENTCOM Chief of Staff
+    - 'Declassified on: 8 October 2025'
+    - MDR 25-0094 thru MDR 25-0099 / JS-250710-TM8S
+    - Approved for Release to AARO
   classification: SECRET//NOFORN
   pages: 7
   copyright_status: public_domain
 terminology:
-  main_subject: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
+  main_subject: 31 July 2022 UAP sighting near Deir ez-Zor
   acronyms:
-    - acronym: TF
-      expansion: Task Force
-    - acronym: IMINT
-      expansion: Imagery Intelligence
-    - acronym: SIGINT
-      expansion: Signals Intelligence
-    - acronym: ISR
-      expansion: Intelligence, Surveillance, and Reconnaissance
-    - acronym: UAP
-      expansion: Unidentified Aerial Phenomena
-    - acronym: EEI
-      expansion: Essential Elements of Information
-    - acronym: AAA
-      expansion: Anti-Aircraft Artillery
-    - acronym: FMV
-      expansion: Full Motion Video
-    - acronym: JTAC
-      expansion: Joint Terminal Attack Controller
-    - acronym: JTAR
-      expansion: Joint Tactical Air Request
-    - acronym: NTISR
-      expansion: Non-Traditional Intelligence, Surveillance, and Reconnaissance
-    - acronym: AOC
-      expansion: Air Operations Center
-    - acronym: CAOC
-      expansion: Combined Air Operations Center
-    - acronym: AEW
-      expansion: Air Expeditionary Wing
-    - acronym: ATKS
-      expansion: Attack Squadron
-    - acronym: DGS
-      expansion: Distributed Ground Station
-    - acronym: AFCENT
-      expansion: Air Forces Central Command
-    - acronym: USCENTCOM
-      expansion: United States Central Command
-    - acronym: ATO
-      expansion: Air Tasking Order
-    - acronym: LRE
-      expansion: Launch and Recovery Element
-    - acronym: STA
-      expansion: Sensor Tasking Authority
-    - acronym: TELAR
-      expansion: Transporter Erector Launcher and Radar
-    - acronym: IVO
-      expansion: In Vicinity Of
-    - acronym: MISREP
-      expansion: Mission Report
-    - acronym: AREC
-      expansion: Armed Reconnaissance
-    - acronym: ADM
-      expansion: Adult Male
+  - acronym: TF CHOSIN
+    expansion: Task Force Chosin
+  - acronym: ATKS
+    expansion: Attack Squadron
+  - acronym: AEW
+    expansion: Air Expeditionary Wing
+  - acronym: AOC
+    expansion: Air Operations Center
+  - acronym: CAOC
+    expansion: Combined Air Operations Center
+  - acronym: AFCENT
+    expansion: Air Forces Central Command
+  - acronym: USCENTCOM
+    expansion: United States Central Command
+  - acronym: UAP
+    expansion: Unidentified Aerial Phenomenon
+  - acronym: IMINT
+    expansion: Imagery Intelligence
+  - acronym: SIGINT
+    expansion: Signals Intelligence
+  - acronym: ISR
+    expansion: Intelligence, Surveillance, and Reconnaissance
+  - acronym: EEI
+    expansion: Essential Elements of Information
+  - acronym: STA
+    expansion: Sensor Tasking Authority
+  - acronym: IVO
+    expansion: In the Vicinity Of
+  - acronym: ADM
+    expansion: Adult Male (military reporting shorthand)
+  - acronym: OJMS
+    expansion: ICAO code for Muwaffaq Salti Air Base, Jordan
+  - acronym: COI
+    expansion: Contact of Interest
+  - acronym: AAM
+    expansion: Air-to-Air Missile
+  - acronym: AAA
+    expansion: Anti-Aircraft Artillery
+  - acronym: MISREP
+    expansion: Mission Report
+  - acronym: ATO
+    expansion: Air Tasking Order
+  - acronym: MSGID
+    expansion: Message Identifier
+  - acronym: MSNID
+    expansion: Mission Identifier
+  - acronym: PUT
+    expansion: Pickup Truck
+  - acronym: TELAR
+    expansion: Transporter Erector Launcher and Radar
+  - acronym: DTG
+    expansion: Date-Time Group
+  - acronym: LRE
+    expansion: Launch and Recovery Element
+  - acronym: DGS
+    expansion: Distributed Ground System
 nodes:
-  - id: 77c948c8-0159-4f8d-84bb-9e6d8c1e1430
-    type: organisation
-    name: Task Force Chosin
-  - id: e67c1cdb-46fc-487a-8b8d-f1b8f623987f
-    type: organisation
-    name: 89th Attack Squadron (89 ATKS)
-  - id: 714d485f-a835-4b3f-b87c-d12e0a6c11b1
-    type: organisation
-    name: 432nd Air Expeditionary Wing (432 AEW)
-  - id: 3e45a30c-4580-4626-bfb1-a3beb5129eba
-    type: organisation
-    name: 603rd Air Operations Center (603 AOC)
-  - id: 0f6259cf-587b-4e71-b3fd-2a1077c0f36c
-    type: organisation
-    name: 609th Combined Air Operations Center (609 CAOC)
-  - id: 24bdaa6b-0010-4453-8632-afd5aa6047b5
-    type: organisation
-    name: Air Forces Central Command (AFCENT)
-  - id: b1781a91-ffd8-4ffd-a8f7-3cc385eece72
-    type: organisation
-    name: United States Central Command (USCENTCOM)
-  - id: 6a505420-ee22-4641-b7d9-9f233b8fcdcb
-    type: organisation
-    name: United States Air Force
-  - id: 7a6f8d2f-64d6-4e3b-a5f7-892074ce0430
-    type: organisation
-    name: Distributed Ground Station 1 (DGS-1)
-  - id: 41c0f750-d173-475d-bb1e-b6f2937c606c
-    type: project
-    name: Operation Inherent Resolve
-  - id: bc257947-40a7-4185-b3b2-962146c18ade
-    type: project
-    name: Operation Spectre Dagger
-  - id: bd85e67e-eced-4b42-90ff-3935b7e28000
-    type: place
-    name: Jordan, Muwaffaq Salti Air Base
-  - id: 8c21fed8-77f6-4b9e-9364-4c9069bbb6fd
-    type: place
-    name: Syria, Deir ez-Zor, Dayr Az Zar Parking Airfield
-  - id: 969d6023-e7eb-400b-8ba9-87440e86e29a
-    type: topic
-    name: Unidentified Aerial Phenomena (UAP)
-  - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-    type: event
-    name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    metadata:
-      date_start: '2022-07-31'
+- id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+  type: event
+  name: 31 July 2022 UAP sighting near Deir ez-Zor
+  metadata:
+    date_start: '2022-07-31'
+- id: 326edd5c-6327-4eee-a65b-949a41062605
+  type: topic
+  name: Unidentified Aerial Phenomena (UAP)
+- id: eb606c54-6ea1-4d52-819c-91e82940bc6b
+  type: organisation
+  name: Task Force Chosin
+- id: 50448df2-7b59-42aa-9055-0be4abdc5af6
+  type: organisation
+  name: 89th Attack Squadron (89 ATKS)
+- id: e58a3e73-0c42-4575-ad25-7feaa90ca076
+  type: organisation
+  name: 432nd Air Expeditionary Wing (432 AEW)
+- id: 88451595-22c1-4c27-a68b-08349e9788c6
+  type: organisation
+  name: 603rd Air Operations Center (603 AOC)
+- id: 25c0ea89-8282-4c9f-8123-f2ed5d192bcd
+  type: organisation
+  name: 609th Air Operations Center (609 CAOC)
+- id: 37aabbf9-3151-4058-af85-7171811ec6d9
+  type: organisation
+  name: Air Forces Central (AFCENT)
+- id: cfb3190b-1591-457d-9870-d84c42fc1a9e
+  type: organisation
+  name: United States Central Command (USCENTCOM)
+- id: 65337ad5-7076-4a1d-bebf-c5ccacf25be9
+  type: organisation
+  name: United States Air Force
+- id: c6ac73fd-650a-412a-b0f3-bac017774785
+  type: project
+  name: Operation Inherent Resolve
+- id: 713a8c18-4d3b-48c7-b496-a8e49fc9e187
+  type: project
+  name: Operation Spectre Dagger
+- id: 1ce5239b-6c4c-4f2e-9566-388a86c6304d
+  type: place
+  name: Jordan, Muwaffaq Salti Air Base
+- id: 0fc7007a-e8cf-4e8f-9e38-147d3456b996
+  type: place
+  name: Syria, Dayr az Zawr Parking Airfield
 domain_claims:
-  - id: 217cb5d4-d104-4aab-a3ce-29d69f5fe74c
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:112-182
-    date: '2022-07-30'
-    refs:
-      - id: 77c948c8-0159-4f8d-84bb-9e6d8c1e1430
-        name: Task Force Chosin
-    quote: 'AT 301639ZJUL22, TF CHOSIN TASKED {{redacted: 1.4a}} WITH IMINT VIA 7 LINE.'
-    text: |-
-      Task Force Chosin tasked an aircraft with imagery intelligence (IMINT) via a 7 line at 2022-07-30 16:39 UTC.
-  - id: 5669af85-5589-45b8-af3c-17a2bfda5e01
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:188-252
-    date: '2022-07-30'
-    refs:
-      - id: bd85e67e-eced-4b42-90ff-3935b7e28000
-        name: Jordan, Muwaffaq Salti Air Base
-    quote: 'AT 301822ZJUL22, {{redacted: 1.4a}} DEPARTED MUWAFFAQ SALTI AB (OJMS).'
-    text: The tasked aircraft departed Muwaffaq Salti Air Base at 2022-07-30 18:22 UTC.
-  - id: 4a2f2cb2-c402-4ac9-a653-10533c257251
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:321-370
-    date: '2022-07-30'
-    quote: 'AT 301925ZJUL22, {{redacted: 1.4a}} BEGAN SIGINT COLLECT.'
-    text: |-
-      The aircraft began signals intelligence (SIGINT) collection at 2022-07-30 19:25 UTC.
-  - id: c5421a3f-0616-430a-8888-a3fa374ccc3a
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:379-544
-    date: '2022-07-30'
-    refs:
-      - id: 77c948c8-0159-4f8d-84bb-9e6d8c1e1430
-        name: Task Force Chosin
-    quote: |-
-      AT 302028ZJUL22, {{redacted: 1.4a}} ARRIVED ON STATION AND CHECKED IN WITH TF CHOSIN STA TO PERFORM IMINT IVO 37SFU38{{redacted: 1.4a}}81{{redacted: 1.4a}} (SEE ISR 1).
-    text: |-
-      The aircraft arrived on station and checked in with the Task Force Chosin Sensor Tasking Authority (STA) to perform imagery intelligence (IMINT) at 2022-07-30 20:28 UTC.
-  - id: 3b3af0fb-814b-4bfc-ac55-4b848d20efe7
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the aircraft crew
-    attribution_in_text: false
-    location: char:548-686
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-      - id: 969d6023-e7eb-400b-8ba9-87440e86e29a
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      AT 310239ZJUL22, {{redacted: 1.4a}} OBSERVED AN UNIDENTIFIED AERIAL PHENOMENON IVO 37SFU27{{redacted: 1.4a}}74{{redacted: 1.4a}} (SEE UAP 1).
-    text: |-
-      During the 2022-07-31 UAP sighting near Deir ez-Zor, Syria, the aircraft observed an unidentified aerial phenomenon at 2022-07-31 02:39 UTC.
-  - id: f1d9d99f-1459-40e8-aded-a8ad885f3707
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:690-738
-    date: '2022-07-31'
-    quote: 'AT 311343ZJUL22, {{redacted: 1.4a}} RETURNED TO BASE.'
-    text: |-
-      The aircraft that observed the 2022-07-31 UAP sighting near Deir ez-Zor, Syria returned to base at 2022-07-31 13:43 UTC.
-  - id: 99277643-e367-4e2d-9c99-0ee790441c5d
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:744-798
-    date: '2022-07-31'
-    quote: 'AT 311409ZJUL22, {{redacted: 1.4a}} TERMINATED SIGINT COLLECT.'
-    text: |-
-      The aircraft terminated signals intelligence (SIGINT) collection at 2022-07-31 14:09 UTC.
-  - id: 3f6e32b6-4018-485e-9221-ba42d888114a
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:867-913
-    date: '2022-07-31'
-    refs:
-      - id: bd85e67e-eced-4b42-90ff-3935b7e28000
-        name: Jordan, Muwaffaq Salti Air Base
-    quote: 'AT 311519ZJUL22, {{redacted: 1.4a}} LANDED AT OJMS.'
-    text: The aircraft landed at Muwaffaq Salti Air Base at 2022-07-31 15:19 UTC.
-  - id: f96eeaaf-eac1-4a5a-adf2-c781611df95a
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:919-954
-    date: '2022-07-31'
-    refs:
-      - id: 7a6f8d2f-64d6-4e3b-a5f7-892074ce0430
-        name: Distributed Ground Station 1 (DGS-1)
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: FULL MOTION VIDEO WAS EXPLOITED BY DGS1.
-    text: |-
-      Full motion video (FMV) from the mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria was exploited by Distributed Ground Station 1 (DGS-1).
-  - id: f2983a32-3d53-4ec2-9e70-88ed56e35199
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:960-1093
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: |-
-      20.9 MISSION HOURS, 17.2 IMINT HOURS, 1 IMINT TASKINGS PROSECUTED, 18.7 SIGINT HOURS, 1 SIGINT TASKINGS PROSECUTED, 2 TOTAL TASKINGS PROSECUTED
-    text: |-
-      The mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria totalled 20.9 mission hours.
-  - id: 065a7bfa-5759-4f1d-879b-3d7f8816385a
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:980-1015
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 17.2 IMINT HOURS, 1 IMINT TASKINGS PROSECUTED
-    text: |-
-      The mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria logged 17.2 imagery intelligence (IMINT) hours with 1 IMINT tasking prosecuted.
-  - id: 4b96d2a4-7ee0-411b-9a8f-f349bf4ee2f0
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1027-1064
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 18.7 SIGINT HOURS, 1 SIGINT TASKINGS PROSECUTED
-    text: |-
-      The mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria logged 18.7 signals intelligence (SIGINT) hours with 1 SIGINT tasking prosecuted.
-  - id: 6a5a3483-1de4-43bf-80fe-ed98ac3c345c
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1076-1093
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 2 TOTAL TASKINGS PROSECUTED
-    text: |-
-      The mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria prosecuted 2 total taskings.
-  - id: 48084261-a0a6-440f-b60f-fd51d0c1a03a
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1414-1423
-    date: '2022-07-31'
-    refs:
-      - id: 41c0f750-d173-475d-bb1e-b6f2937c606c
-        name: Operation Inherent Resolve
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Operation: INHERENT RESOLVE'
-    text: |-
-      The mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria was flown under Operation Inherent Resolve.
-  - id: ba7265ee-13f3-4821-8d2a-b75c228992fb
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1466-1466
-    date: '2022-07-31'
-    refs:
-      - id: 0f6259cf-587b-4e71-b3fd-2a1077c0f36c
-        name: 609th Combined Air Operations Center (609 CAOC)
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Operations Center: 609th'
-    text: |-
-      The mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria was overseen by the 609th Combined Air Operations Center (609 CAOC) as the operations center.
-  - id: ab2c1efe-345c-4249-8e1f-8ab1115d4564
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1474-1498
-    date: '2022-07-31'
-    refs:
-      - id: 24bdaa6b-0010-4453-8632-afd5aa6047b5
-        name: Air Forces Central Command (AFCENT)
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Major Command (MAJCOM): AFCENT'
-    text: |-
-      The mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria fell under the major command of Air Forces Central Command (AFCENT).
-  - id: 2ffe5bfa-25c2-4a6c-afc8-0fc873c6cd6a
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1507-1534
-    date: '2022-07-31'
-    refs:
-      - id: b1781a91-ffd8-4ffd-a8f7-3cc385eece72
-        name: United States Central Command (USCENTCOM)
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Combatant Command (COCOM): USCENTCOM'
-    text: |-
-      The mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria fell under the combatant command of United States Central Command (USCENTCOM).
-  - id: 05b47e5d-5864-4aeb-82f4-f0b4ff5e19c5
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1603-1637
-    date: '2022-07-31'
-    refs:
-      - id: e67c1cdb-46fc-487a-8b8d-f1b8f623987f
-        name: 89th Attack Squadron (89 ATKS)
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Originator (Unit or Squadron): 89 ATKS'
-    text: |-
-      The mission report for the 2022-07-31 UAP sighting near Deir ez-Zor, Syria was originated by the 89th Attack Squadron (89 ATKS).
-  - id: a8d789ea-0f3b-423e-b97d-233b7bc81278
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1711-1717
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Mission Type: ARMED RECCE'
-    text: |-
-      The mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria was classified as an Armed Reconnaissance (AREC) mission type.
-  - id: a837dd1b-c157-44e6-a600-0b034a5c0f9d
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1941-1961
-    date: '2022-07-31'
-    refs:
-      - id: e67c1cdb-46fc-487a-8b8d-f1b8f623987f
-        name: 89th Attack Squadron (89 ATKS)
-      - id: 714d485f-a835-4b3f-b87c-d12e0a6c11b1
-        name: 432nd Air Expeditionary Wing (432 AEW)
-      - id: 3e45a30c-4580-4626-bfb1-a3beb5129eba
-        name: 603rd Air Operations Center (603 AOC)
-    quote: |-
-      Unit: 89 ATKS
-      - Wing: 432 AEW
-      ... Operations Center: 603 AOC
-    text: |-
-      The point of contact for the mission report was assigned to the 89th Attack Squadron (89 ATKS), part of the 432nd Air Expeditionary Wing (432 AEW), with an operations center of 603rd Air Operations Center (603 AOC).
-  - id: bc69e382-2897-4247-add4-23d125ba6c13
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:1941-1961
-    date: '2022-07-31'
-    refs:
-      - id: e67c1cdb-46fc-487a-8b8d-f1b8f623987f
-        name: 89th Attack Squadron (89 ATKS)
-      - id: 714d485f-a835-4b3f-b87c-d12e0a6c11b1
-        name: 432nd Air Expeditionary Wing (432 AEW)
-      - id: 0f6259cf-587b-4e71-b3fd-2a1077c0f36c
-        name: 609th Combined Air Operations Center (609 CAOC)
-    quote: |-
-      Unit: 89 ATKS
-      - Wing: 432 AEW
-      ... Operations Center: 609 CAOC
-    text: |-
-      The quality control (QC) reviewer for the mission report was assigned to the 89th Attack Squadron (89 ATKS), part of the 432nd Air Expeditionary Wing (432 AEW), with an operations center of 609th Combined Air Operations Center (609 CAOC).
-  - id: 23534654-98c0-47b4-94e3-7691fa032973
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: lines 70-80
-    date: '2022-07-31'
-    refs:
-      - id: 0f6259cf-587b-4e71-b3fd-2a1077c0f36c
-        name: 609th Combined Air Operations Center (609 CAOC)
-    quote: |-
-      Unit: 609th AOC
-      ... Operations Center: 609 CAOC
-    text: |-
-      The approver of the mission report was assigned to the 609th Air Operations Center, with an operations center of 609th Combined Air Operations Center (609 CAOC).
-  - id: 450d7285-6186-4d8a-a64c-908bac5dc36d
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:4345-4357
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Total Time On Station: 18 hours 44 minutes'
-    text: |-
-      The aircraft's total time on station during the mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria was 18 hours 44 minutes.
-  - id: f28cd19e-1b81-420f-a2c7-07b2e828e579
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:4572-4584
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Total Mission Time: 20 hours 57 minutes'
-    text: |-
-      The total mission time for the mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria was 20 hours 57 minutes.
-  - id: f625d14d-6787-41fd-8170-e49c943d601e
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:5147-5270
-    date: '2022-07-31'
-    refs:
-      - id: 77c948c8-0159-4f8d-84bb-9e6d8c1e1430
-        name: Task Force Chosin
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: |-
-      {{redacted: 1.4a}} COORDINATED WITH TF CHOSIN 103 MINUTES PRIOR TO TAKE OFF. COORDINATION WAS SATISFACTORY DUE TO QUALITY OF PRODUCTS.
-    text: |-
-      Prior to takeoff for the mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria, the aircraft coordinated with Task Force Chosin 103 minutes before takeoff, and the coordination was assessed as satisfactory.
-  - id: f83d4a23-4c0a-4fe9-b3d5-d4e391ea9546
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:5361-5579
-    date: '2022-07-30'
-    refs:
-      - id: bc257947-40a7-4185-b3b2-962146c18ade
-        name: Operation Spectre Dagger
-      - id: 77c948c8-0159-4f8d-84bb-9e6d8c1e1430
-        name: Task Force Chosin
-    quote: |-
-      AT 2028Z, {{redacted: 1.4a}} ARRIVED ON OP SPECTRE DAGGER, FORCE PRO ISO TF CHOSIN AND TF CHOSIN SENSOR TASKING AUTHORITY (STA) DIRECTED {{redacted: 1.4a}} TO PROVIDE IMINT IVO 37SFU38{{redacted: 1.4a}}81{{redacted: 1.4a}}.
-    text: |-
-      At 2022-07-30 20:28 UTC, the aircraft arrived on Operation Spectre Dagger, force protection in support of Task Force Chosin, and the Task Force Chosin Sensor Tasking Authority (STA) directed it to provide imagery intelligence (IMINT).
-  - id: 8d08242d-83c4-45f8-b727-7b18662f689e
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:10836-10934
-    date: '2022-07-31'
-    refs:
-      - id: 77c948c8-0159-4f8d-84bb-9e6d8c1e1430
-        name: Task Force Chosin
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: |-
-      AT 1243Z, TF CHOSIN STA CLEARED {{redacted: 1.4a}} OFF TASKING AND {{redacted: 1.4a}} RETURNED TO BASE
-    text: |-
-      At 2022-07-31 12:43 UTC, Task Force Chosin's Sensor Tasking Authority (STA) cleared the aircraft off tasking and the aircraft returned to base, concluding the mission during which the 2022-07-31 UAP sighting near Deir ez-Zor, Syria occurred.
-  - id: a40a29e6-7da8-4a9b-adae-a3307766e6ac
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:11200-11218
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: WEATHER WAS NOT A FACTOR
-    text: |-
-      Weather was not a factor during the mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria.
-  - id: c021ee00-d194-4434-9745-d6789482571c
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:11322-11329
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-      - id: 969d6023-e7eb-400b-8ba9-87440e86e29a
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: 'Initial Contact DTG: 310239:00ZJUL22'
-    text: |-
-      Initial contact with the unidentified aerial phenomenon during the 2022-07-31 UAP sighting near Deir ez-Zor, Syria occurred at 2022-07-31 02:39 UTC.
-  - id: 9a23a924-f7ce-4fc2-9d16-ccae0718ef5f
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:11482-11523
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Friendly Aircraft Altitude/Depth: 19,359 FT'
-    text: |-
-      During the 2022-07-31 UAP sighting near Deir ez-Zor, Syria, the friendly aircraft's altitude was approximately 5,900 metres.
-  - id: 2d0e635f-8c3c-4a79-a14d-6256779b072e
-    type: measurement
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: the mission report (MISREP)
-    attribution_in_text: false
-    location: char:11553-11557
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: 'Friendly Aircraft Speed: 116 KTS'
-    text: |-
-      During the 2022-07-31 UAP sighting near Deir ez-Zor, Syria, the friendly aircraft's speed was approximately 215 kilometres per hour.
-  - id: 893b21ce-a560-4819-a3ba-76f0c9ea778f
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the aircraft crew
-    attribution_in_text: false
-    location: char:12204-12273
-    date: '2022-07-31'
-    refs:
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-      - id: 969d6023-e7eb-400b-8ba9-87440e86e29a
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: THE UAP OCCURED IN LESS THAN A MINUTE, WITH THE UAP MOVING FROM N TO S.
-    text: |-
-      The 2022-07-31 UAP sighting near Deir ez-Zor, Syria lasted less than a minute, with the unidentified aerial phenomenon moving from north to south.
-  - id: fcce14b1-482d-4999-a905-e6bc1819ccce
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: the aircraft crew
-    attribution_in_text: false
-    location: char:10491-10689
-    date: '2022-07-31'
-    refs:
-      - id: 8c21fed8-77f6-4b9e-9364-4c9069bbb6fd
-        name: Syria, Deir ez-Zor, Dayr Az Zar Parking Airfield
-      - id: 4601c91f-54fd-4465-91dc-850378d5eed9
-        name: 2022-07-31 UAP sighting near Deir ez-Zor, Syria
-    quote: |-
-      FROM 1122Z TO 1137Z, {{redacted: 1.4a}} SCANNED IVO DAYR AZ ZAR PARKING AFLD (37SFV07{{redacted: 1.4a}}05{{redacted: 1.4a}}) FOR EEI RELATED ACTIVITY. AT 1134Z, 2X TELARS WITH 3 ROCKETS LOADED WERE INACTIVE.
-    text: |-
-      During the mission that included the 2022-07-31 UAP sighting near Deir ez-Zor, Syria, the aircraft scanned the vicinity of Dayr Az Zar Parking Airfield and observed 2 transporter erector launcher and radar (TELAR) systems with 3 rockets loaded that were inactive.
-curation:
-- at: '2026-08-28T01:13:40.625539+00:00'
-  by: metadata-refresh
-  changed:
-  - record
-  why: |-
-    Record block refreshed from current record frontmatter. No re-extraction; claims and nodes untouched.
+- id: 0ee664a3-2439-4274-8baa-b089f8011aaf
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:98-179
+  date: '2022-07-30'
+  refs:
+  - id: eb606c54-6ea1-4d52-819c-91e82940bc6b
+    name: Task Force Chosin
+  quote: |-
+    AT 301639ZJUL22, TF CHOSIN TASKED {{redacted: ~14 chars, 1.4a}} WITH IMINT VIA 7 LINE.
+  text: |-
+    At 2022-07-30 16:39Z, Task Force Chosin tasked an intelligence, surveillance, and reconnaissance (ISR) asset with imagery intelligence (IMINT) via a 7-line request.
+  entailment:
+    label: entails
+    score: 0.525
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 52cd41a7-40f3-43f6-87aa-c25782da1ae9
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:185-259
+  date: '2022-07-30'
+  refs:
+  - id: 1ce5239b-6c4c-4f2e-9566-388a86c6304d
+    name: Jordan, Muwaffaq Salti Air Base
+  quote: 'AT 301822ZJUL22, {{redacted: ~2 chars, 1.4a}} DEPARTED MUWAFFAQ SALTI AB (OJMS).'
+  text: The ISR aircraft departed Muwaffaq Salti Air Base, Jordan at 2022-07-30 18:22Z.
+  entailment:
+    label: neutral
+    score: 0.514
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4b269b18-c9db-4601-aae5-1fb11fe74313
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:406-601
+  date: '2022-07-30'
+  refs:
+  - id: eb606c54-6ea1-4d52-819c-91e82940bc6b
+    name: Task Force Chosin
+  quote: |-
+    AT 302028ZJUL22, {{redacted: ~2 chars, 1.4a}} ARRIVED ON STATION AND CHECKED IN WITH TF CHOSIN STA TO PERFORM IMINT IVO 37SFU38{{redacted: ~2 chars, 1.4a}}81{{redacted: ~2 chars, 1.4a}} (SEE ISR 1).
+  text: |-
+    The ISR aircraft arrived on station and checked in with Task Force Chosin's sensor tasking authority at 2022-07-30 20:28Z to perform imagery intelligence (IMINT) in the vicinity of grid 37SFU3881.
+  entailment:
+    label: entails
+    score: 0.425
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3ef729d8-89e2-4066-a820-c8700ad13346
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:605-773
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 326edd5c-6327-4eee-a65b-949a41062605
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    AT 310239ZJUL22, {{redacted: ~2 chars, 1.4a}} OBSERVED AN UNIDENTIFIED AERIAL PHENOMENON IVO 37SFU27{{redacted: ~2 chars, 1.4a}}74{{redacted: ~2 chars, 1.4a}} (SEE UAP 1).
+  text: |-
+    During the 31 July 2022 UAP sighting near Deir ez-Zor, the ISR aircraft observed an unidentified aerial phenomenon in the vicinity of grid 37SFU2774 at 2022-07-31 02:39Z.
+  entailment:
+    label: neutral
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c3d89e9e-60d8-439c-8d88-8bc4eef9378e
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:777-835
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: 'AT 311343ZJUL22, {{redacted: ~2 chars, 1.4a}} RETURNED TO BASE.'
+  text: |-
+    The ISR aircraft returned to base at 2022-07-31 13:43Z after the 31 July 2022 UAP sighting near Deir ez-Zor.
+  entailment:
+    label: neutral
+    score: 0.796
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: fd82bd74-f168-4ef3-a835-ca0fd7fd2b06
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:984-1040
+  date: '2022-07-31'
+  refs:
+  - id: 1ce5239b-6c4c-4f2e-9566-388a86c6304d
+    name: Jordan, Muwaffaq Salti Air Base
+  quote: 'AT 311519ZJUL22, {{redacted: ~2 chars, 1.4a}} LANDED AT OJMS.'
+  text: The ISR aircraft landed at Muwaffaq Salti Air Base, Jordan at 2022-07-31 15:19Z.
+  entailment:
+    label: contradicts
+    score: 0.595
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: c50b4268-d2f7-406b-bdde-2af2f26cb43a
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:1046-1081
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: FULL MOTION VIDEO WAS EXPLOITED BY DGS1.
+  text: |-
+    Full motion video from the mission during the 31 July 2022 UAP sighting near Deir ez-Zor was exploited by a distributed ground system (DGS1).
+  entailment:
+    label: entails
+    score: 0.423
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1ae92c07-9e59-4a20-8064-8b163cbf3b6e
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:1087-1100
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: 20.9 MISSION HOURS
+  text: |-
+    The mission associated with the 31 July 2022 UAP sighting near Deir ez-Zor totalled 20.9 mission hours.
+  entailment:
+    label: neutral
+    score: 0.597
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 97b69d63-1998-44ce-99db-d33022cebc65
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:1107-1118
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: 17.2 IMINT HOURS
+  text: |-
+    The mission associated with the 31 July 2022 UAP sighting near Deir ez-Zor included 17.2 imagery intelligence (IMINT) hours.
+  entailment:
+    label: entails
+    score: 0.442
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 561e7606-2f00-486e-bba3-5cbda69a5bd8
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report narrative
+  attribution_in_text: false
+  location: char:1154-1166
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: 18.7 SIGINT HOURS
+  text: |-
+    The mission associated with the 31 July 2022 UAP sighting near Deir ez-Zor included 18.7 signals intelligence (SIGINT) hours.
+  entailment:
+    label: entails
+    score: 0.787
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 78450a83-97e6-40eb-8a51-485b924ffb4a
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1305-1325
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Classification:** ~~SECRET~~'
+  text: |-
+    The mission report covering the 31 July 2022 UAP sighting near Deir ez-Zor is classified SECRET.
+  entailment:
+    label: entails
+    score: 0.432
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b6bdc897-5d6a-42e4-81e4-6c431465e9c3
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1338-1362
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Associated Caveats:** ~~NOFORN~~'
+  text: |-
+    The mission report covering the 31 July 2022 UAP sighting near Deir ez-Zor carries the NOFORN caveat.
+  entailment:
+    label: entails
+    score: 0.423
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 122843fc-e926-4708-a1ee-dcb1048de3f5
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1453-1489
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Declassification Date (YYYYMMDD):** 20470731'
+  text: |-
+    The mission report covering the 31 July 2022 UAP sighting near Deir ez-Zor has a declassification date of 2047-07-31.
+  entailment:
+    label: neutral
+    score: 0.66
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a38cc92a-4202-4000-9aca-c64f2c933838
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1520-1542
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: c6ac73fd-650a-412a-b0f3-bac017774785
+    name: Operation Inherent Resolve
+  quote: '**Operation:** INHERENT RESOLVE'
+  text: |-
+    The mission associated with the 31 July 2022 UAP sighting near Deir ez-Zor was flown under Operation Inherent Resolve.
+  entailment:
+    label: entails
+    score: 0.44
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6ef77c0b-e2df-471c-84bd-edf2d34c658d
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1572-1593
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 25c0ea89-8282-4c9f-8123-f2ed5d192bcd
+    name: 609th Air Operations Center (609 CAOC)
+  quote: '**Operations Center:** 609th'
+  text: |-
+    The mission associated with the 31 July 2022 UAP sighting near Deir ez-Zor was overseen by the 609th Air Operations Center.
+  entailment:
+    label: entails
+    score: 0.434
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8a3f3aa7-698d-4073-8d78-07b2a8fd5f66
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1603-1629
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 37aabbf9-3151-4058-af85-7171811ec6d9
+    name: Air Forces Central (AFCENT)
+  quote: '**Major Command (MAJCOM):** AFCENT'
+  text: |-
+    The mission associated with the 31 July 2022 UAP sighting near Deir ez-Zor fell under Air Forces Central (AFCENT) as the major command.
+  entailment:
+    label: entails
+    score: 0.417
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 63cdef0c-7036-40fa-a7fc-394ba0a265db
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1640-1669
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: cfb3190b-1591-457d-9870-d84c42fc1a9e
+    name: United States Central Command (USCENTCOM)
+  quote: '**Combatant Command (COCOM):** USCENTCOM'
+  text: |-
+    The mission associated with the 31 July 2022 UAP sighting near Deir ez-Zor fell under United States Central Command (USCENTCOM) as the combatant command.
+  entailment:
+    label: entails
+    score: 0.428
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2b2537a5-776f-4951-8dfe-60ba32447939
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1785-1821
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 50448df2-7b59-42aa-9055-0be4abdc5af6
+    name: 89th Attack Squadron (89 ATKS)
+  quote: '**Originator (Unit or Squadron):** 89 ATKS'
+  text: |-
+    The mission report covering the 31 July 2022 UAP sighting near Deir ez-Zor was originated by the 89th Attack Squadron (89 ATKS).
+  entailment:
+    label: entails
+    score: 0.444
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0e406f22-2d80-4e93-963b-53d6b18859e7
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1759-1774
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Report Type:** MISREP'
+  text: |-
+    The mission report's report type covering the 31 July 2022 UAP sighting near Deir ez-Zor is a Mission Report (MISREP).
+  entailment:
+    label: entails
+    score: 0.442
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 355c130e-b104-45a7-98dd-2a551b62c054
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1893-1915
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Mission Type:** ARMED RECCE'
+  text: |-
+    The mission for the 31 July 2022 UAP sighting near Deir ez-Zor was an armed reconnaissance mission type.
+  entailment:
+    label: entails
+    score: 0.379
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4baf158d-be4f-4502-bfbb-a95193e3d2b6
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:1987-2017
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Country Tasked:** US - UNITED STATES'
+  text: |-
+    The mission for the 31 July 2022 UAP sighting near Deir ez-Zor was tasked to the United States.
+  entailment:
+    label: entails
+    score: 0.409
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0502d561-1a15-422f-9f89-f586aa95c63f
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report admin section
+  attribution_in_text: false
+  location: char:2028-2054
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 65337ad5-7076-4a1d-bebf-c5ccacf25be9
+    name: United States Air Force
+  quote: '**Service Tasked:** A - AIR FORCE'
+  text: |-
+    The mission for the 31 July 2022 UAP sighting near Deir ez-Zor was tasked to the Air Force service.
+  entailment:
+    label: neutral
+    score: 0.586
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1fa55ac7-1a59-4fed-bcaa-86e8d99b46d4
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report POC section
+  attribution_in_text: false
+  location: char:2084-2195
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 50448df2-7b59-42aa-9055-0be4abdc5af6
+    name: 89th Attack Squadron (89 ATKS)
+  - id: e58a3e73-0c42-4575-ad25-7feaa90ca076
+    name: 432nd Air Expeditionary Wing (432 AEW)
+  quote: |-
+    **Rank:** Amn ... **Unit:** 89 ATKS
+    - **Wing:** 432 AEW
+  text: |-
+    The point of contact for the mission report covering the 31 July 2022 UAP sighting near Deir ez-Zor holds the rank of Airman (Amn) and belongs to the 89th Attack Squadron (89 ATKS), 432nd Air Expeditionary Wing (432 AEW).
+  entailment:
+    label: entails
+    score: 0.622
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 35a89c8c-953b-4d7e-b5e7-d76f1c666bd4
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report POC section
+  attribution_in_text: false
+  location: char:2331-2356
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 88451595-22c1-4c27-a68b-08349e9788c6
+    name: 603rd Air Operations Center (603 AOC)
+  quote: '**Operations Center:** 603 AOC'
+  text: |-
+    The point of contact for the mission report covering the 31 July 2022 UAP sighting near Deir ez-Zor was affiliated with the 603rd Air Operations Center (603 AOC).
+  entailment:
+    label: entails
+    score: 0.434
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c65f3fac-e54e-4f15-8d87-ffa61683b4b9
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report QC section
+  attribution_in_text: false
+  location: 63-70
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 50448df2-7b59-42aa-9055-0be4abdc5af6
+    name: 89th Attack Squadron (89 ATKS)
+  - id: e58a3e73-0c42-4575-ad25-7feaa90ca076
+    name: 432nd Air Expeditionary Wing (432 AEW)
+  quote: |-
+    **Rank:** 2d Lt ... **Unit:** 89 ATKS
+    - **Wing:** 432 AEW
+  text: |-
+    The quality-control reviewer of the mission report covering the 31 July 2022 UAP sighting near Deir ez-Zor holds the rank of Second Lieutenant (2d Lt) and belongs to the 89th Attack Squadron (89 ATKS), 432nd Air Expeditionary Wing (432 AEW).
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8dbc5b6e-dd02-412c-82fd-ce63a382346b
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report QC section
+  attribution_in_text: false
+  location: char:2624-2649
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 25c0ea89-8282-4c9f-8123-f2ed5d192bcd
+    name: 609th Air Operations Center (609 CAOC)
+  quote: '**Operations Center:** 609 CAOC'
+  text: |-
+    The quality-control reviewer of the mission report covering the 31 July 2022 UAP sighting near Deir ez-Zor was affiliated with the 609th Combined Air Operations Center (609 CAOC).
+  entailment:
+    label: neutral
+    score: 0.866
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d70954ea-1972-4a75-9263-a9dd382e92cb
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report approver section
+  attribution_in_text: false
+  location: char:2675-2768
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 25c0ea89-8282-4c9f-8123-f2ed5d192bcd
+    name: 609th Air Operations Center (609 CAOC)
+  quote: '**Rank:** SrA ... **Unit:** 609th AOC'
+  text: |-
+    The approver of the mission report covering the 31 July 2022 UAP sighting near Deir ez-Zor holds the rank of Senior Airman (SrA) and belongs to the 609th Air Operations Center.
+  entailment:
+    label: entails
+    score: 0.435
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 438fc09d-948d-4ae4-8ecd-fb495d3a3b67
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report timeline section
+  attribution_in_text: false
+  location: char:4232-4254
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Number of Aircraft:** 1'
+  text: |-
+    One aircraft flew the mission associated with the 31 July 2022 UAP sighting near Deir ez-Zor.
+  entailment:
+    label: entails
+    score: 0.434
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1490fdaf-b372-4d72-96ba-0fceed09ff7a
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report timeline section
+  attribution_in_text: false
+  location: char:4392-4460
+  date: '2022-07-30'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 1ce5239b-6c4c-4f2e-9566-388a86c6304d
+    name: Jordan, Muwaffaq Salti Air Base
+  quote: |-
+    **Takeoff Location (ICAO Code):** OJMS
+    - **Takeoff Time DTG:** 301822:00ZJUL22
+  text: |-
+    The aircraft involved in the 31 July 2022 UAP sighting near Deir ez-Zor took off from Muwaffaq Salti Air Base, Jordan at 2022-07-30 18:22Z.
+  entailment:
+    label: entails
+    score: 0.38
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2a004cea-244a-4130-a879-0413d21bbc50
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report timeline section
+  attribution_in_text: false
+  location: char:4578-4608
+  date: '2022-07-30'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Time On Station DTG:** 301925:00ZJUL22'
+  text: |-
+    The aircraft involved in the 31 July 2022 UAP sighting near Deir ez-Zor came on station at 2022-07-30 19:25Z.
+  entailment:
+    label: neutral
+    score: 0.453
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6ba2b5fd-4af7-4272-beb1-d11579bcdce5
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report timeline section
+  attribution_in_text: false
+  location: char:4711-4727
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Mission Type:** AREC'
+  text: |-
+    The mission type recorded when the aircraft came on station during the 31 July 2022 UAP sighting near Deir ez-Zor was armed reconnaissance (AREC).
+  entailment:
+    label: neutral
+    score: 0.857
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 49f94852-ce19-49a2-b434-631be6844450
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report timeline section
+  attribution_in_text: false
+  location: char:4846-4877
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Time Off Station DTG:** 311409:00ZJUL22'
+  text: |-
+    The aircraft involved in the 31 July 2022 UAP sighting near Deir ez-Zor went off station at 2022-07-31 14:09Z.
+  entailment:
+    label: contradicts
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 40fdb734-b359-4b5d-8433-7ce4a775e747
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report timeline section
+  attribution_in_text: false
+  location: char:4890-4927
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Total Time On Station:** 18 hours 44 minutes'
+  text: |-
+    The total time on station for the aircraft during the 31 July 2022 UAP sighting near Deir ez-Zor was 18 hours 44 minutes.
+  entailment:
+    label: entails
+    score: 0.406
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 01ac9f9e-409f-414a-8247-b9cd64c2be0f
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report timeline section
+  attribution_in_text: false
+  location: char:5012-5080
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 1ce5239b-6c4c-4f2e-9566-388a86c6304d
+    name: Jordan, Muwaffaq Salti Air Base
+  quote: |-
+    **Last Land Location (ICAO Code):** OJMS
+    - **Last Land Time:** 311519:00ZJUL22
+  text: |-
+    The aircraft involved in the 31 July 2022 UAP sighting near Deir ez-Zor last landed at Muwaffaq Salti Air Base, Jordan at 2022-07-31 15:19Z.
+  entailment:
+    label: entails
+    score: 0.416
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 36d1a67f-2eae-4243-8c54-2042f9c369d8
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report timeline section
+  attribution_in_text: false
+  location: char:5093-5129
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Last Engine Shutdown Time:** 311529:00ZJUL22'
+  text: |-
+    The aircraft involved in the 31 July 2022 UAP sighting near Deir ez-Zor shut down its engine at 2022-07-31 15:29Z.
+  entailment:
+    label: entails
+    score: 0.382
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1d1bc2c7-2263-4938-8222-15e0d0e47d1f
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report timeline section
+  attribution_in_text: false
+  location: char:5142-5176
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Total Mission Time:** 20 hours 57 minutes'
+  text: |-
+    The total mission time for the 31 July 2022 UAP sighting near Deir ez-Zor mission was 20 hours 57 minutes.
+  entailment:
+    label: entails
+    score: 0.377
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2e606e8c-1529-43d6-b847-20c8aa974f5a
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report ISR section
+  attribution_in_text: false
+  location: char:5236-5266
+  date: '2022-07-30'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Time-on Station DTG:** 302028:00ZJUL22'
+  text: |-
+    The intelligence, surveillance, and reconnaissance (ISR) time-on-station during the 31 July 2022 UAP sighting near Deir ez-Zor mission began at 2022-07-30 20:28Z.
+  entailment:
+    label: contradicts
+    score: 0.503
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 885a9f84-299d-45ca-bd49-414fe5eae8f4
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report ISR section
+  attribution_in_text: false
+  location: char:5279-5310
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Time-off Station DTG:** 310000:00ZJUL22'
+  text: |-
+    The intelligence, surveillance, and reconnaissance (ISR) time-off-station during the 31 July 2022 UAP sighting near Deir ez-Zor mission was 2022-07-31 00:00Z.
+  entailment:
+    label: entails
+    score: 0.399
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5750fc5d-8789-4b12-8e01-a3229683c2fa
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report ISR section
+  attribution_in_text: false
+  location: char:5430-5446
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Tasking Type:** Planned'
+  text: |-
+    The intelligence, surveillance, and reconnaissance (ISR) tasking for the 31 July 2022 UAP sighting near Deir ez-Zor mission was a planned tasking type.
+  entailment:
+    label: entails
+    score: 0.473
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e0ccbb09-e2f7-4624-8143-27b1027a43cd
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report gentext/ISR section
+  attribution_in_text: false
+  location: char:5852-5905
+  date: '2022-07-30'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: eb606c54-6ea1-4d52-819c-91e82940bc6b
+    name: Task Force Chosin
+  quote: COORDINATED WITH TF CHOSIN 103 MINUTES PRIOR TO TAKE OFF.
+  text: |-
+    Coordination between the aircraft crew and Task Force Chosin for the 31 July 2022 UAP sighting near Deir ez-Zor mission occurred 103 minutes prior to take-off.
+  entailment:
+    label: entails
+    score: 0.533
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6da1b01e-f0c1-475d-89f6-8aaf69e8821b
+  type: opinion
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report gentext/ISR section
+  attribution_in_text: false
+  location: char:5910-5958
+  date: '2022-07-30'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: eb606c54-6ea1-4d52-819c-91e82940bc6b
+    name: Task Force Chosin
+  quote: COORDINATION WAS SATISFACTORY DUE TO QUALITY OF PRODUCTS.
+  text: |-
+    Coordination between the aircraft crew and Task Force Chosin for the 31 July 2022 UAP sighting near Deir ez-Zor mission was assessed as satisfactory due to the quality of the products provided.
+  entailment:
+    label: entails
+    score: 0.508
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1e27ea85-ef43-4021-8aa5-791a810a4da6
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report gentext/ISR section
+  attribution_in_text: false
+  location: char:6049-6135
+  date: '2022-07-30'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 713a8c18-4d3b-48c7-b496-a8e49fc9e187
+    name: Operation Spectre Dagger
+  - id: eb606c54-6ea1-4d52-819c-91e82940bc6b
+    name: Task Force Chosin
+  quote: |-
+    AT 2028Z, {{redacted: ~2 chars, 1.4a}} ARRIVED ON OP SPECTRE DAGGER, FORCE PRO ISO TF CHOSIN
+  text: |-
+    At 2022-07-30 20:28Z, the aircraft arrived on Operation Spectre Dagger to provide force protection in support of Task Force Chosin.
+  entailment:
+    label: entails
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9969d450-e2be-404c-b732-aa75f92c92ca
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report gentext/ISR section
+  attribution_in_text: false
+  location: char:6146-6307
+  date: '2022-07-30'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: eb606c54-6ea1-4d52-819c-91e82940bc6b
+    name: Task Force Chosin
+  quote: |-
+    TF CHOSIN SENSOR TASKING AUTHORITY (STA) DIRECTED {{redacted: ~2 chars, 1.4a}} TO PROVIDE IMINT IVO 37SFU38{{redacted: ~2 chars, 1.4a}}81{{redacted: ~2 chars, 1.4a}}.
+  text: |-
+    Task Force Chosin's sensor tasking authority directed the aircraft to provide imagery intelligence (IMINT) in the vicinity of grid 37SFU3881 during the 31 July 2022 UAP sighting near Deir ez-Zor mission.
+  entailment:
+    label: neutral
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 83233aee-c09a-480b-bab1-b396ca296507
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report gentext/ISR section
+  attribution_in_text: false
+  location: char:12495-12613
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: eb606c54-6ea1-4d52-819c-91e82940bc6b
+    name: Task Force Chosin
+  quote: |-
+    AT 1243Z, TF CHOSIN STA CLEARED {{redacted: ~2 chars, 1.4a}} OFF TASKING AND {{redacted: ~2 chars, 1.4a}} RETURNED TO BASE
+  text: |-
+    At 2022-07-31 12:43Z, Task Force Chosin's sensor tasking authority cleared the aircraft off tasking and it returned to base, ending the mission associated with the 31 July 2022 UAP sighting near Deir ez-Zor.
+  entailment:
+    label: entails
+    score: 0.434
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3e8f0064-52ca-40df-b89e-c7e488999b5b
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the mission report gentext/ISR section
+  attribution_in_text: false
+  location: char:12089-12260
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 0fc7007a-e8cf-4e8f-9e38-147d3456b996
+    name: Syria, Dayr az Zawr Parking Airfield
+  quote: |-
+    FROM 1122Z TO 1137Z, {{redacted: ~2 chars, 1.4a}} SCANNED IVO DAYR AZ ZAR PARKING AFLD (37SFV07{{redacted: ~2 chars, 1.4a}}05{{redacted: ~2 chars, 1.4a}}) FOR EEI RELATED ACTIVITY.
+  text: |-
+    During the 31 July 2022 UAP sighting near Deir ez-Zor mission, the crew scanned the vicinity of the Dayr az Zawr Parking Airfield, Syria (grid 37SFV0705) for essential-elements-of-information related activity between 11:22Z and 11:37Z.
+  entailment:
+    label: contradicts
+    score: 0.495
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0aadd590-26b4-4c4f-a352-dbcc80488f09
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the mission report gentext/ISR section
+  attribution_in_text: false
+  location: char:12270-12317
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: AT 1134Z, 2X TELARS WITH 3 ROCKETS LOADED WERE INACTIVE.
+  text: |-
+    At 2022-07-31 11:34Z, during the 31 July 2022 UAP sighting near Deir ez-Zor mission, the crew observed two transporter erector launcher and radar (TELAR) systems with three rockets loaded that were inactive.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 631ba1ac-29e9-4b21-bd6a-fd392960750c
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report weather section
+  attribution_in_text: false
+  location: char:12898-12916
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: WEATHER WAS NOT A FACTOR
+  text: |-
+    Weather was not a factor during the 31 July 2022 UAP sighting near Deir ez-Zor mission.
+  entailment:
+    label: entails
+    score: 0.429
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 79486f60-debd-4068-aa0d-fada948b9ae7
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report UAP section
+  attribution_in_text: false
+  location: char:13017-13047
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 326edd5c-6327-4eee-a65b-949a41062605
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: '**Initial Contact DTG:** 310239:00ZJUL22'
+  text: |-
+    The initial contact with the unidentified aerial phenomenon during the 31 July 2022 UAP sighting near Deir ez-Zor occurred at 2022-07-31 02:39Z.
+  entailment:
+    label: entails
+    score: 0.422
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 05fe3325-d0f3-4b8f-beb5-2d62b7ff9c20
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report UAP section
+  attribution_in_text: false
+  location: char:13145-13236
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: |-
+    **Friendly Aircraft Location:** 37SFU41{{redacted: ~2 chars, 1.4a}}78{{redacted: ~2 chars, 1.4a}}
+  text: |-
+    During the 31 July 2022 UAP sighting near Deir ez-Zor, the friendly aircraft's location was grid 37SFU4178.
+  entailment:
+    label: contradicts
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: c6bf621f-db65-453d-a9a8-9ba28d8e05ca
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report UAP section
+  attribution_in_text: false
+  location: char:13245-13288
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Friendly Aircraft Altitude/Depth:** 19,359 FT'
+  text: |-
+    During the 31 July 2022 UAP sighting near Deir ez-Zor, the friendly aircraft's altitude was approximately 5,900 metres.
+  entailment:
+    label: contradicts
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9d1fb7e9-caa8-4806-9629-cbeda280b7da
+  type: measurement
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report UAP section
+  attribution_in_text: false
+  location: char:13295-13326
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  quote: '**Friendly Aircraft Speed:** 116 KTS'
+  text: |-
+    During the 31 July 2022 UAP sighting near Deir ez-Zor, the friendly aircraft's speed was approximately 215 kilometres per hour.
+  entailment:
+    label: neutral
+    score: 0.487
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e7ce9e2b-5a2b-4905-abe2-95b56d4866b5
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: the mission report UAP section
+  attribution_in_text: false
+  location: char:13491-13509
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 326edd5c-6327-4eee-a65b-949a41062605
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: '**UAP Signatures:** No'
+  text: |-
+    During the 31 July 2022 UAP sighting near Deir ez-Zor, no radio-frequency signatures were recorded from the unidentified aerial phenomenon.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 98779892-6110-4aac-b082-39773aecbb02
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the mission report UAP section
+  attribution_in_text: false
+  location: char:13659-13747
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 326edd5c-6327-4eee-a65b-949a41062605
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    **UAP First Seen Location:** 37SFU27{{redacted: ~2 chars, 1.4a}}74{{redacted: ~2 chars, 1.4a}}
+  text: |-
+    The unidentified aerial phenomenon in the 31 July 2022 UAP sighting near Deir ez-Zor was first seen at grid 37SFU2774.
+  entailment:
+    label: contradicts
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: d1faeec3-a234-4c5f-b5aa-23d98e19e5ef
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the mission report gentext/UAP section
+  attribution_in_text: false
+  location: char:13964-14104
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 326edd5c-6327-4eee-a65b-949a41062605
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    AT 310239Z, {{redacted: ~14 chars, 1.4a}} OBSERVED AN UAP EVENT IVO 37SFU27{{redacted: ~2 chars, 1.4a}}74{{redacted: ~2 chars, 1.4a}} IN KP 9.
+  text: |-
+    During the 31 July 2022 UAP sighting near Deir ez-Zor, the crew observed the unidentified aerial phenomenon event in the vicinity of grid 37SFU2774 in kill-box KP 9.
+  entailment:
+    label: contradicts
+    score: 0.432
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a1d49b25-1fe3-425b-bd93-589a95dea323
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the mission report gentext/UAP section
+  attribution_in_text: false
+  location: char:14107-14138
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 326edd5c-6327-4eee-a65b-949a41062605
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: THE UAP OCCURED IN LESS THAN A MINUTE
+  text: |-
+    The unidentified aerial phenomenon observed during the 31 July 2022 UAP sighting near Deir ez-Zor occurred in less than a minute.
+  entailment:
+    label: neutral
+    score: 0.515
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6432a92d-c125-4824-8e98-817383ce3a01
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: the mission report gentext/UAP section
+  attribution_in_text: false
+  location: char:14146-14176
+  date: '2022-07-31'
+  refs:
+  - id: 4933a8b6-6828-4093-ba93-80db4ec6d1a2
+    name: 31 July 2022 UAP sighting near Deir ez-Zor
+  - id: 326edd5c-6327-4eee-a65b-949a41062605
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: WITH THE UAP MOVING FROM N TO S.
+  text: |-
+    The unidentified aerial phenomenon observed during the 31 July 2022 UAP sighting near Deir ez-Zor moved from north to south.
+  entailment:
+    label: neutral
+    score: 0.582
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

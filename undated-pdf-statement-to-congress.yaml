@@ -3,23 +3,31 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:49:37.068763+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 327610
-      output: 38076
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 327610
+    output: 38076
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.2
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 17.7
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: df9a3cc66a7187b79fc714fef72baf42f0df4f76f08a9de55e0e27b899b3340f
   prep_version: 6
@@ -40,1727 +48,2077 @@ record:
 terminology:
   main_subject: Knapp, George
   codenames:
-    - codename: Tic Tac
-      refers_to: 2004 USS Nimitz Tic Tac UAP incident
+  - codename: Tic Tac
+    refers_to: 2004 USS Nimitz Tic Tac UAP incident
   acronyms:
-    - acronym: AATIP
-      expansion: Advanced Aerospace Threat Identification Program
-    - acronym: AAWSAP
-      expansion: Advanced Aerospace Weapon System Applications Program
-    - acronym: AARO
-      expansion: All-Domain Anomaly Resolution Office
-    - acronym: NIDS
-      expansion: National Institute for Discovery Science
-    - acronym: DIA
-      expansion: Defense Intelligence Agency
-    - acronym: OUSDI
-      expansion: Office of the Undersecretary of Defense for Intelligence
-    - acronym: MOD
-      expansion: Ministry of Defense
-    - acronym: UFO
-      expansion: Unidentified Flying Object
-    - acronym: UAP
-      expansion: Unidentified Aerial Phenomena
-    - acronym: DOD
-      expansion: Department of Defense
+  - acronym: AATIP
+    expansion: Advanced Aerospace Threat Identification Program
+  - acronym: AAWSAP
+    expansion: Advanced Aerospace Weapon System Applications Program
+  - acronym: AARO
+    expansion: All-Domain Anomaly Resolution Office
+  - acronym: NIDS
+    expansion: National Institute for Discovery Science
+  - acronym: DIA
+    expansion: Defense Intelligence Agency
+  - acronym: OUSDI
+    expansion: Office of the Undersecretary of Defense for Intelligence
+  - acronym: MOD
+    expansion: Ministry of Defense
+  - acronym: UFO
+    expansion: Unidentified Flying Object
+  - acronym: UAP
+    expansion: Unidentified Aerial Phenomena
+  - acronym: DOD
+    expansion: Department of Defense
 nodes:
-  - id: b9500529-b4de-4c3c-8391-827b17339ac6
-    type: person
+- id: b9500529-b4de-4c3c-8391-827b17339ac6
+  type: person
+  name: George Knapp
+  metadata:
+    family_name: Knapp
+    aliases:
+    - Knapp, George
+- id: 0e2165fa-b0c2-44e4-820a-203abd4216eb
+  type: person
+  name: Tim Burchett
+  metadata:
+    family_name: Burchett
+    aliases:
+    - Burchett, Tim
+- id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+  type: person
+  name: Harry Reid
+  metadata:
+    family_name: Reid
+    aliases:
+    - Reid, Harry
+- id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
+  type: person
+  name: Robert Bigelow
+  metadata:
+    family_name: Bigelow
+    aliases:
+    - Bigelow, Robert
+- id: 11ecc378-370f-4951-afcc-96ac338b6016
+  type: person
+  name: Jim Bilbray
+  metadata:
+    family_name: Bilbray
+    aliases:
+    - Bilbray, Jim
+- id: 42d8820a-e9bb-4a60-aa41-aa61d11437ed
+  type: person
+  name: Nikolai Kapranov
+  metadata:
+    family_name: Kapranov
+    aliases:
+    - Kapranov, Nikolai
+- id: 7f1cfbcf-c17c-4512-bb86-2738e8f27451
+  type: person
+  name: Boris Sokolov
+  metadata:
+    family_name: Sokolov
+    aliases:
+    - Sokolov, Boris
+- id: 6142d504-b5fb-417f-aef4-c5d6d16acc8e
+  type: person
+  name: Daniel Inouye
+  metadata:
+    family_name: Inouye
+    aliases:
+    - Inouye, Daniel
+- id: 477d6918-c9d5-4731-ba4a-31de1925ce09
+  type: person
+  name: Ted Stevens
+  metadata:
+    family_name: Stevens
+    aliases:
+    - Stevens, Ted
+- id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
+  type: person
+  name: Lue Elizondo
+  metadata:
+    family_name: Elizondo
+    aliases:
+    - Elizondo, Lue
+- id: 94cfe4b9-88cf-429b-89bb-59d5399a9819
+  type: person
+  name: David Fravor
+  metadata:
+    family_name: Fravor
+    aliases:
+    - Fravor, David
+- id: 0d5d61cd-a7b6-4c91-a195-6120713d3feb
+  type: person
+  name: James Lacatski
+  metadata:
+    family_name: Lacatski
+    aliases:
+    - Lacatski, James
+- id: 8ec6c527-4685-4be5-991c-465d5e59773f
+  type: person
+  name: Colm Kelleher
+  metadata:
+    family_name: Kelleher
+    aliases:
+    - Kelleher, Colm
+- id: 2517a3c7-cadb-44f9-ab4e-e5bad2c918dc
+  type: person
+  name: Matt Adams
+  metadata:
+    family_name: Adams
+    aliases:
+    - Adams, Matt
+- id: d05bb4bd-1944-4fa9-a790-b41190b6c5a2
+  type: organisation
+  name: KLAS TV
+- id: f4607ed6-1c5e-44c5-80f8-ef389f04942d
+  type: organisation
+  name: CBS
+- id: bb8eb506-1eae-4b38-b572-9345a4c474ad
+  type: organisation
+  name: United States Congress
+- id: 07deb569-d856-4867-bed9-2345bc645378
+  type: organisation
+  name: United States Senate
+- id: 86e98eed-d0b6-47d0-a787-a607f753bbc7
+  type: organisation
+  name: US Senate Select Committee on Intelligence
+- id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
+  type: organisation
+  name: National Institute for Discovery Science (NIDS)
+- id: 0577e713-5eb4-416e-8b93-7dcbb419f02d
+  type: organisation
+  name: Bigelow Aerospace
+- id: bf3c9a43-f1f3-4160-b59b-47508aae860d
+  type: organisation
+  name: Defense Intelligence Agency (DIA)
+- id: 72cab652-b923-4063-9a51-e861825714fb
+  type: organisation
+  name: Office of the Undersecretary of Defense for Intelligence (OUSDI)
+- id: f5d3e09d-61a8-42bf-bc88-0bb743987273
+  type: organisation
+  name: United States Department of Defense (DoD)
+- id: 864a25f2-ce04-471d-93e4-7f8f2b486ead
+  type: organisation
+  name: Russian Ministry of Defense (MOD)
+- id: ba8eeb43-cd4c-413e-87fa-0563bf4caf71
+  type: organisation
+  name: New York Times
+- id: 23f9d39a-5938-4c2c-a782-5b86615b23d3
+  type: organisation
+  name: United States Air Force
+- id: 4934a3a7-1af0-47c3-8d96-33153b3f853c
+  type: organisation
+  name: Russian Air Defense Forces
+- id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
+  type: project
+  name: Advanced Aerospace Threat Identification Program (AATIP)
+- id: 6830efb6-af09-4c80-be69-fa7df03af874
+  type: project
+  name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+- id: a31c45ca-f616-4e3f-a60b-55a08f7a1bb9
+  type: project
+  name: Project Blue Book
+- id: 85d0ff94-c6b4-48b6-a36d-e857871cfcca
+  type: project
+  name: Unidentified Aerospace Phenomena Task Force (UAP Task Force)
+- id: d5726bc6-704e-4d01-b4da-0d22a3e0af14
+  type: project
+  name: All-Domain Anomaly Resolution Office (AARO)
+- id: e432450d-335d-4f65-837d-9f5ce5d6bcf0
+  type: topic
+  name: Glasnost
+- id: 6905f647-3e8e-42db-949e-4550d6fd073a
+  type: topic
+  name: Unidentified Aerial Phenomena (UAP)
+- id: 1456216c-8943-4571-8909-7a57b04f6782
+  type: topic
+  name: Unidentified Flying Object (UFO)
+- id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
+  type: event
+  name: 2004 USS Nimitz Tic Tac UAP incident
+  metadata:
+    date_start: '2004'
+- id: c83e250a-7fb2-48a7-a456-2d2c54357e83
+  type: event
+  name: 1993 George Knapp Moscow investigation trip
+  metadata:
+    date_start: '1993'
+- id: 34a5383a-daf9-4f58-a249-6eb3a46f3da9
+  type: event
+  name: Russian ICBM base UFO incident, Ukraine
+- id: 186a592e-a87a-438a-8c69-91dfdd9f3797
+  type: place
+  name: USA, Nevada, Las Vegas
+- id: fa319ac5-81f1-49e0-a165-b0af3f900d18
+  type: place
+  name: Russia, Ukraine
+- id: 16f3501b-7d7f-475f-8d05-46d0448afa53
+  type: place
+  name: Russia, Moscow
+- id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
+  type: document
+  name: New York Times AATIP article, December 2017
+  metadata:
+    date_start: 2017-12
+- id: 62efcd03-542a-4679-9751-b13335093aa0
+  type: document
+  name: AAWSAP Tic Tac report (140-page)
+- id: 2b683deb-dbd8-4701-a586-b40c564661c1
+  type: document
+  name: Statement to Congress by George Knapp
+domain_claims:
+- id: c6e5470a-3fc4-4d06-9140-cdd9e7c70023
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
     name: George Knapp
-    metadata:
-      family_name: Knapp
-      aliases:
-        - Knapp, George
-  - id: 0e2165fa-b0c2-44e4-820a-203abd4216eb
-    type: person
-    name: Tim Burchett
-    metadata:
-      family_name: Burchett
-      aliases:
-        - Burchett, Tim
-  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-    type: person
-    name: Harry Reid
-    metadata:
-      family_name: Reid
-      aliases:
-        - Reid, Harry
-  - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
-    type: person
-    name: Robert Bigelow
-    metadata:
-      family_name: Bigelow
-      aliases:
-        - Bigelow, Robert
-  - id: 11ecc378-370f-4951-afcc-96ac338b6016
-    type: person
-    name: Jim Bilbray
-    metadata:
-      family_name: Bilbray
-      aliases:
-        - Bilbray, Jim
-  - id: 42d8820a-e9bb-4a60-aa41-aa61d11437ed
-    type: person
-    name: Nikolai Kapranov
-    metadata:
-      family_name: Kapranov
-      aliases:
-        - Kapranov, Nikolai
-  - id: 7f1cfbcf-c17c-4512-bb86-2738e8f27451
-    type: person
-    name: Boris Sokolov
-    metadata:
-      family_name: Sokolov
-      aliases:
-        - Sokolov, Boris
-  - id: 6142d504-b5fb-417f-aef4-c5d6d16acc8e
-    type: person
-    name: Daniel Inouye
-    metadata:
-      family_name: Inouye
-      aliases:
-        - Inouye, Daniel
-  - id: 477d6918-c9d5-4731-ba4a-31de1925ce09
-    type: person
-    name: Ted Stevens
-    metadata:
-      family_name: Stevens
-      aliases:
-        - Stevens, Ted
-  - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
-    type: person
-    name: Lue Elizondo
-    metadata:
-      family_name: Elizondo
-      aliases:
-        - Elizondo, Lue
-  - id: 94cfe4b9-88cf-429b-89bb-59d5399a9819
-    type: person
-    name: David Fravor
-    metadata:
-      family_name: Fravor
-      aliases:
-        - Fravor, David
-  - id: 0d5d61cd-a7b6-4c91-a195-6120713d3feb
-    type: person
-    name: James Lacatski
-    metadata:
-      family_name: Lacatski
-      aliases:
-        - Lacatski, James
-  - id: 8ec6c527-4685-4be5-991c-465d5e59773f
-    type: person
-    name: Colm Kelleher
-    metadata:
-      family_name: Kelleher
-      aliases:
-        - Kelleher, Colm
-  - id: 2517a3c7-cadb-44f9-ab4e-e5bad2c918dc
-    type: person
-    name: Matt Adams
-    metadata:
-      family_name: Adams
-      aliases:
-        - Adams, Matt
-  - id: d05bb4bd-1944-4fa9-a790-b41190b6c5a2
-    type: organisation
-    name: KLAS TV
-  - id: f4607ed6-1c5e-44c5-80f8-ef389f04942d
-    type: organisation
-    name: CBS
-  - id: bb8eb506-1eae-4b38-b572-9345a4c474ad
-    type: organisation
-    name: United States Congress
-  - id: 07deb569-d856-4867-bed9-2345bc645378
-    type: organisation
-    name: United States Senate
-  - id: 86e98eed-d0b6-47d0-a787-a607f753bbc7
-    type: organisation
-    name: US Senate Select Committee on Intelligence
-  - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
-    type: organisation
-    name: National Institute for Discovery Science (NIDS)
-  - id: 0577e713-5eb4-416e-8b93-7dcbb419f02d
-    type: organisation
-    name: Bigelow Aerospace
-  - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
-    type: organisation
-    name: Defense Intelligence Agency (DIA)
-  - id: 72cab652-b923-4063-9a51-e861825714fb
-    type: organisation
-    name: Office of the Undersecretary of Defense for Intelligence (OUSDI)
-  - id: f5d3e09d-61a8-42bf-bc88-0bb743987273
-    type: organisation
-    name: United States Department of Defense (DoD)
-  - id: 864a25f2-ce04-471d-93e4-7f8f2b486ead
-    type: organisation
-    name: Russian Ministry of Defense (MOD)
-  - id: ba8eeb43-cd4c-413e-87fa-0563bf4caf71
-    type: organisation
-    name: New York Times
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:774-827
+  date: '1987'
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: As a journalist, my interest in UFO secrecy began in 1987.
+  text: George Knapp's interest in UFO secrecy began in 1987.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: f6e9656c-8aaf-4896-98eb-8034fcf02131
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:858-914
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: I have written hundreds of UFO-related news stories and series
+  text: George Knapp has written hundreds of UFO-related news stories and series.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: da239490-20b5-4903-b1f9-132aa01d680d
+  type: administrative
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:1565-1691
+  date: '1969'
+  refs:
   - id: 23f9d39a-5938-4c2c-a782-5b86615b23d3
-    type: organisation
     name: United States Air Force
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    Since 1969, the position of our military has been that UFOs pose no threat to national security and are not worthy of further study.
+  text: |-
+    Since 1969, the official position of the United States military has been that UFOs pose no threat to national security and are not worthy of further study.
+  entailment:
+    label: entails
+    score: 0.702
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 19372698-a524-4f57-90c5-634deae2daf5
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: document
+    origin: documents released via FOIA requests
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:1809-1882
+  refs:
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    High ranking military officers considered the UFO mystery to be "serious business."
+  text: |-
+    Documents obtained via Freedom of Information Act requests reveal that high-ranking military officers considered the UFO mystery to be "serious business."
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e8ddb4ae-cad4-4998-b62c-9ba2b5a62d98
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: document
+    origin: documents released via FOIA requests
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:1950-2109
+  refs:
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    military leaders knew that UFOs were "real, not fictitious", that they were metallic craft, capable of incredible maneuvers far beyond any known technology on Earth
+  text: |-
+    Military leaders internally acknowledged that UFOs were "real, not fictitious" and were metallic craft capable of manoeuvres far beyond any known technology on Earth.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 12b7ba92-287d-4658-ac64-2aac689e90a6
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: document
+    origin: documents released via FOIA requests
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:2125-2270
+  refs:
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  - id: f5d3e09d-61a8-42bf-bc88-0bb743987273
+    name: United States Department of Defense (DoD)
+  quote: |-
+    there were a disturbing number of incidents wherein UFOs seemed to demonstrate an intense interest in our military assets, in particular nuclear weapons
+  text: |-
+    Internal documents describe a disturbing number of incidents in which UFOs demonstrated intense interest in United States military assets, particularly nuclear weapons.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f8580dc8-9eb9-4534-97cc-7e2d5b938219
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: anonymous
+    origin: |-
+      unnamed sources with tidbits about crashed saucers and reverse-engineering programmes
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:2424-2602
+  date: '1989'
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 186a592e-a87a-438a-8c69-91dfdd9f3797
+    name: USA, Nevada, Las Vegas
+  quote: |-
+    In 1989, I started hearing seemingly-outlandish tidbits regarding crashed saucers, strange materials, and reverse engineering programs being carried out in secrecy in the Nevada desert
+  text: |-
+    In 1989, George Knapp began hearing accounts of crashed saucers, strange materials, and reverse-engineering programmes carried out secretly in the Nevada desert by intelligence operatives and defence contractors.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5f5fac46-542d-455f-81e8-65dd77fa2e77
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:2661-2783
+  date: '1989'
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: 07deb569-d856-4867-bed9-2345bc645378
+    name: United States Senate
+  quote: |-
+    The first person I told about this - outside of our newsroom - was U.S. Senator Harry Reid, then in his first term in the Senate.
+  text: |-
+    The first person George Knapp told about the crashed-saucer accounts outside his newsroom was United States Senator Harry Reid, then in his first term in the Senate.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: df3f5a3a-491b-46ce-91a2-0475ae6e8d97
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: Harry Reid
+  attribution_in_text: false
+  location: char:2791-2917
+  refs:
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  quote: |-
+    Reid said he was interested in hearing more, and that began a private, two-way conversation that continued for the next three decades.
+  text: |-
+    Harry Reid told George Knapp he was interested in hearing more about the UFO accounts, beginning a private two-way conversation between them that continued for the next three decades.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 763f1947-5052-4c7c-bddb-ef1dc573f7e2
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:2926-3095
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  quote: |-
+    I kept Sen. Reid in the loop about UFO developments I was pursuing as a journalist, and he helped me obtain information that I might otherwise be unable to access on my own.
+  text: |-
+    George Knapp kept Harry Reid informed about UFO developments he was pursuing as a journalist, and Reid helped him obtain information otherwise inaccessible.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 0ef68fe2-c040-46ba-a3d3-7e79348a9f81
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:3100-3325
+  refs:
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: bb8eb506-1eae-4b38-b572-9345a4c474ad
+    name: United States Congress
+  - id: 6905f647-3e8e-42db-949e-4550d6fd073a
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    That private conversation with Reid proved to be pivotal in the long run, and is directly related to the current explosion of public interest in the UFO/UAP controversy, including the inquiries now underway in both houses of Congress.
+  text: |-
+    George Knapp considers his private conversation with Harry Reid directly related to the current explosion of public interest in the UFO/UAP controversy, including inquiries underway in both houses of the United States Congress.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 543f9f7f-615c-4e37-9622-857cb58f9a14
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:3359-3529
+  date: '1989'
+  refs:
+  - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
+    name: Robert Bigelow
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  quote: |-
+    The other person I met in 1989 related to the UFO mystery was a billionaire businessman named Robert Bigelow, who owned vast real estate and hotel properties in multiple states.
+  text: |-
+    The other person George Knapp met in 1989 related to the UFO mystery was billionaire businessman Robert Bigelow, who owned real estate and hotel properties in multiple states.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: e870733a-7007-4f34-8fc4-253edf169c06
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:3537-3624
+  refs:
+  - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
+    name: Robert Bigelow
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    Bigelow began funding private UFO investigations as well the work of UFO organizations UFO.
+  text: |-
+    Robert Bigelow began funding private UFO investigations as well as the work of UFO organisations.
+  entailment:
+    label: entails
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0e09290a-07f1-47ce-b6dd-60fbd2a11eb2
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:3629-3761
+  refs:
+  - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
+    name: Robert Bigelow
+  quote: |-
+    To date, he has spent more of his own money on UFO investigations than any person in the history of the world - tens of millions of dollars.
+  text: |-
+    Robert Bigelow has spent more of his own money on UFO investigations, tens of millions of dollars, than any person in the history of the world.
+  entailment:
+    label: entails
+    score: 0.947
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5aed1c88-2c4a-4001-bd78-15d158e22b9f
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:3770-3863
+  date: '1996'
+  refs:
+  - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
+    name: Robert Bigelow
+  - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
+    name: National Institute for Discovery Science (NIDS)
+  quote: |-
+    In 1996, Bigelow created his own research organization, the National Institute for Discovery Science
+  text: |-
+    In 1996, Robert Bigelow created his own research organisation, the National Institute for Discovery Science.
+  entailment:
+    label: entails
+    score: 0.693
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 53152143-b62f-4628-a3e6-735e647a5d46
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:3872-4086
+  refs:
+  - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
+    name: National Institute for Discovery Science (NIDS)
+  quote: |-
+    with a science advisory board made up of PhD-level academics, two of the former astronauts who had walked on the moon, and several scientists who had worked for or consulted with the U.S. military and intelligence agencies
+  text: |-
+    The National Institute for Discovery Science had a science advisory board made up of PhD-level academics, two former astronauts who had walked on the Moon, and several scientists who had worked for or consulted with the United States military and intelligence agencies.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 35e5bb1a-5a40-476e-8f53-60684432d7ad
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:4341-4458
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
+    name: National Institute for Discovery Science (NIDS)
+  quote: |-
+    After NIDS began its own investigations and projects, I informed Senator Reid about the organization and arranged an introduction.
+  text: |-
+    After the National Institute for Discovery Science began its own investigations, George Knapp informed Harry Reid about the organisation and arranged an introduction.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c152502c-a25f-47f0-bc70-71a878f55d0f
+  type: observation
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: Harry Reid
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:4472-4634
+  refs:
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
+    name: National Institute for Discovery Science (NIDS)
+  quote: |-
+    Reid attended one of the first board meetings of NIDS and was impressed by the professionalism he witnessed and the pedigrees of the world class Science Advisory Board.
+  text: |-
+    Harry Reid attended one of the first board meetings of the National Institute for Discovery Science and was impressed by the professionalism and the pedigrees of the Science Advisory Board.
+  entailment:
+    label: entails
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 091269bb-ce73-4706-ac1f-3a06a224d0d7
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:4806-4905
+  refs:
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
+    name: Robert Bigelow
+  - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
+    name: National Institute for Discovery Science (NIDS)
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    One of the topics that was of interest to Reid, Bigelow, and NIDS was Russia's ongoing interest in UFOs.
+  text: |-
+    One of the topics of interest to Harry Reid, Robert Bigelow, and the National Institute for Discovery Science was Russia's ongoing interest in UFOs.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ea1a4375-84d2-4b53-b64e-d362533cc59f
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:4911-5178
+  date: '1993'
+  refs:
+  - id: e432450d-335d-4f65-837d-9f5ce5d6bcf0
+    name: Glasnost
+  - id: c83e250a-7fb2-48a7-a456-2d2c54357e83
+    name: 1993 George Knapp Moscow investigation trip
+  quote: |-
+    In 1993, there was a brief window of opportunity in the former USSR. The period known as Glasnost offered the possibility that western journalists and researchers might be able to learn about subjects that were previously off limits during the worst days of the Cold War.
+  text: |-
+    In 1993, a brief window of opportunity existed in the former USSR during the period known as Glasnost, offering the possibility that western journalists and researchers could learn about previously off-limits subjects.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: fbc608b2-49e1-42ff-a055-adac51676099
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:5183-5431
+  refs:
+  - id: 11ecc378-370f-4951-afcc-96ac338b6016
+    name: Jim Bilbray
+  - id: 42d8820a-e9bb-4a60-aa41-aa61d11437ed
+    name: Nikolai Kapranov
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  quote: |-
+    With the assistance off former US Congressman Jim Bilbray, I met a Russian physicist and national security advisor who was in the U.S. in order to speak about arms control issues and nuclear detente at our national laboratories and nuclear weapons facilities.
+  text: |-
+    With the assistance of former United States Congressman Jim Bilbray, George Knapp met a Russian physicist and national security advisor, Nikolai Kapranov, who was in the United States to speak about arms control and nuclear detente at American national laboratories and nuclear weapons facilities.
+  entailment:
+    label: entails
+    score: 0.944
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 40b18bc7-dcf4-4d26-aa2c-6bd20487792d
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:5443-5699
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 42d8820a-e9bb-4a60-aa41-aa61d11437ed
+    name: Nikolai Kapranov
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    I asked Dr. Nikolai Kapranov if he might be willing to find high ranking persons in the former USSR who may have been in a position to know about any secret UFO programs or investigations in Russia and whether any of those persons would agree to meet with me.
+  text: |-
+    George Knapp asked Nikolai Kapranov to find high-ranking persons in the former USSR who might know about secret UFO programmes or investigations in Russia and who would agree to meet with him.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 43e6673e-f8b9-455b-ac01-2837bc772392
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:5721-5805
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 16f3501b-7d7f-475f-8d05-46d0448afa53
+    name: Russia, Moscow
+  quote: |-
+    It took 8 months to arrange an itinerary and to obtain a formal invitation to visit Moscow.
+  text: |-
+    It took eight months to arrange an itinerary and obtain a formal invitation for George Knapp to visit Moscow.
+  entailment:
+    label: entails
+    score: 0.943
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 513bfbfe-de67-4234-abcf-ac1c09bb60e2
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:5813-6063
+  date: '1993'
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 16f3501b-7d7f-475f-8d05-46d0448afa53
+    name: Russia, Moscow
+  - id: c83e250a-7fb2-48a7-a456-2d2c54357e83
+    name: 1993 George Knapp Moscow investigation trip
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    In the spring of that year, I traveled with two colleagues to Moscow, met and interviewed more than a dozen military officials, intelligence operatives, and scientists who had knowledge of UFO incidents and studies in the former USSR during the Cold War.
+  text: |-
+    In the spring of 1993, George Knapp travelled with two colleagues to Moscow and interviewed more than a dozen military officials, intelligence operatives, and scientists with knowledge of UFO incidents and studies in the former USSR during the Cold War.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: bc6cf381-474f-48b6-bcb1-8d4da376b64a
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: |-
+      Russian military officials and intelligence operatives interviewed by George Knapp in Moscow
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:6083-6401
+  refs:
+  - id: 864a25f2-ce04-471d-93e4-7f8f2b486ead
+    name: Russian Ministry of Defense (MOD)
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    Russian leaders commissioned an unprecedented UFO investigation. The order went out to all units in the vast Russian military empire that any UFO incident or report must be fully investigated, witnesses interviewed, evidence collected and then all of those materials were forwarded to an office inside the Ministry of Defense.
+  text: |-
+    Russian leaders commissioned an unprecedented UFO investigation, ordering that any UFO incident or report by any unit in the Russian military be fully investigated, witnesses interviewed, and evidence collected and forwarded to an office inside the Russian Ministry of Defense.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 32aa3ed8-3f68-4fb7-8e01-111b5021ef2d
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:6411-6495
+  refs:
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    The study lasted a full ten years and was likely the largest UFO investigation ever undertaken.
+  text: |-
+    The Russian military's UFO study lasted a full ten years and was likely the largest UFO investigation ever undertaken.
+  entailment:
+    label: entails
+    score: 0.602
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b66588bf-8ca2-4e8e-ac71-f932f8c3b662
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: |-
+      Russian military officials and intelligence operatives interviewed by George Knapp in Moscow
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:6507-6612
+  refs:
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    Thousands of case files were accumulated. Nearly all of the witnesses who were interviewed were military personnel.
+  text: |-
+    Thousands of case files were accumulated during the Russian military's ten-year UFO investigation, and nearly all of the interviewed witnesses were military personnel.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 79d06602-1986-4a68-b5e2-b83be4c094dd
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: Boris Sokolov
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:6623-6711
+  refs:
+  - id: 7f1cfbcf-c17c-4512-bb86-2738e8f27451
+    name: Boris Sokolov
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  quote: |-
+    Many of the incidents described to me by the program's director Col. Boris Sokolov were alarming.
+  text: |-
+    The Russian military UFO investigation was directed by Colonel Boris Sokolov, who described many alarming incidents to George Knapp.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 72d91abf-de74-4b17-9c8e-806622d00dd3
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: Boris Sokolov
+    relay:
+    - George Knapp
+  attribution_in_text: true
+  location: char:6721-6834
+  refs:
+  - id: 7f1cfbcf-c17c-4512-bb86-2738e8f27451
+    name: Boris Sokolov
   - id: 4934a3a7-1af0-47c3-8d96-33153b3f853c
-    type: organisation
     name: Russian Air Defense Forces
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    Sokolov said there had been 45 incidents in which Russian warplanes engaged with UFOs, chased them, even shot at them.
+  text: |-
+    Boris Sokolov said there had been 45 incidents in which Russian warplanes engaged with UFOs, chasing them and even shooting at them.
+  entailment:
+    label: entails
+    score: 0.636
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 58177002-9313-4f97-9478-14332a932b36
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: Boris Sokolov
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:6840-6997
+  refs:
+  - id: 4934a3a7-1af0-47c3-8d96-33153b3f853c
+    name: Russian Air Defense Forces
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    In most incidents, the UFOs shot away at unbelievable speeds, but in three incidents, the Russian warplanes were dibbled and crashed. Two of the pilots were killed.
+  text: |-
+    In most of the 45 Russian warplane-UFO encounters, the UFOs shot away at unbelievable speeds, but in three incidents the Russian warplanes crashed, killing two pilots.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 48b3a19c-99db-4e4f-b83d-4c75ad6c5c2c
+  type: hearsay
+  attestation: third_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a person described as a top Russian Air Defence official
+    relay:
+    - Boris Sokolov
+    - George Knapp
+  attribution_in_text: true
+  location: char:7005-7187
+  refs:
+  - id: 864a25f2-ce04-471d-93e4-7f8f2b486ead
+    name: Russian Ministry of Defense (MOD)
+  - id: 4934a3a7-1af0-47c3-8d96-33153b3f853c
+    name: Russian Air Defense Forces
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    After those incidents, the MOD issued a nationwide order that UFOs should be left alone because, in the words of a top Air Defense official, "they may have incredible capacities for retaliation."
+  text: |-
+    After the crash incidents, the Russian Ministry of Defense issued a nationwide order that UFOs should be left alone because, in the words of a top Russian Air Defence official, "they may have incredible capacities for retaliation."
+  entailment:
+    label: entails
+    score: 0.848
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: dbccd397-ee05-4f7d-a4b9-3bfdae36d1a1
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: Boris Sokolov
+    relay:
+    - George Knapp
+  attribution_in_text: true
+  location: char:7201-7438
+  refs:
+  - id: 7f1cfbcf-c17c-4512-bb86-2738e8f27451
+    name: Boris Sokolov
+  - id: 34a5383a-daf9-4f58-a249-6eb3a46f3da9
+    name: Russian ICBM base UFO incident, Ukraine
+  - id: fa319ac5-81f1-49e0-a165-b0af3f900d18
+    name: Russia, Ukraine
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    Col. Sokolov also shared information about an alarming incident at a Russian ICBM base in Ukraine. UFOs appeared over the base, performed astonishing maneuvers in front of stunned eyewitnesses and then somehow took control of the launch system.
+  text: |-
+    Boris Sokolov shared information with George Knapp about an alarming incident at a Russian ICBM base in Ukraine in which UFOs appeared, performed manoeuvres in front of stunned eyewitnesses, and then took control of the base's launch system.
+  entailment:
+    label: entails
+    score: 0.894
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 0b0914e5-1363-475d-b70b-764c3a339f19
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: Boris Sokolov
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:7446-7694
+  refs:
+  - id: 34a5383a-daf9-4f58-a249-6eb3a46f3da9
+    name: Russian ICBM base UFO incident, Ukraine
+  - id: fa319ac5-81f1-49e0-a165-b0af3f900d18
+    name: Russia, Ukraine
+  quote: |-
+    The missiles aimed at the US were suddenly fired up. Launch control codes were somehow entered, and the base was unable to stop what could have initiated World War 3. Then, just as suddenly, the UFOs disappeared, and the launch-control system shut down.
+  text: |-
+    During the Russian ICBM base UFO incident in Ukraine, missiles aimed at the United States were fired up and launch control codes were entered, leaving the base unable to stop what could have initiated World War 3, before the UFOs disappeared and the launch-control system shut down.
+  entailment:
+    label: entails
+    score: 0.538
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 61e2305a-d53c-4aa4-817b-473fc8c45d4d
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: Russian Ministry of Defense (MOD)
+  attribution_in_text: true
+  location: char:7887-8123
+  refs:
+  - id: 864a25f2-ce04-471d-93e4-7f8f2b486ead
+    name: Russian Ministry of Defense (MOD)
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    The Russian MOD had confirmed to me that they were studying UFO cases in the hope that they might understand and eventually duplicate the technology that had allowed the UFO pilots to so thoroughly dominate Russian airspace and weapons systems.
+  text: |-
+    The Russian Ministry of Defense confirmed to George Knapp that it was studying UFO cases in the hope of understanding and eventually duplicating the technology that had allowed UFO pilots to dominate Russian airspace and weapons systems.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 3600aedd-ab76-42ea-a0bf-b2fe12e3a10c
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:8132-8276
+  refs:
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  quote: |-
+    The information made lasting impression on Senator Reid and others and became a key factor in a secretive program that was launched a few years later.
+  text: |-
+    George Knapp's information from Russia made a lasting impression on Harry Reid and became a key factor in a secretive program launched a few years later.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b267f3e4-23d0-47f8-8216-4eb4b65bc161
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:8712-8867
+  refs:
   - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
-    type: project
     name: Advanced Aerospace Threat Identification Program (AATIP)
-  - id: 6830efb6-af09-4c80-be69-fa7df03af874
-    type: project
-    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-  - id: a31c45ca-f616-4e3f-a60b-55a08f7a1bb9
-    type: project
-    name: Project Blue Book
+  - id: 72cab652-b923-4063-9a51-e861825714fb
+    name: Office of the Undersecretary of Defense for Intelligence (OUSDI)
+  - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
+    name: Lue Elizondo
+  quote: |-
+    AATIP was launched from OUSDI, the office of the undersecretary for defense intelligence and was managed by a career counterintelligence officer named Lue Elizondo.
+  text: |-
+    The Advanced Aerospace Threat Identification Program was launched from the Office of the Undersecretary of Defense for Intelligence and was managed by a career counterintelligence officer named Lue Elizondo.
+  entailment:
+    label: entails
+    score: 0.925
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 195f907f-3606-4e92-9c5c-4094b1bd32f9
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:9218-9361
+  refs:
+  - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
+    name: New York Times AATIP article, December 2017
+  - id: bb8eb506-1eae-4b38-b572-9345a4c474ad
+    name: United States Congress
   - id: 85d0ff94-c6b4-48b6-a36d-e857871cfcca
-    type: project
     name: Unidentified Aerospace Phenomena Task Force (UAP Task Force)
   - id: d5726bc6-704e-4d01-b4da-0d22a3e0af14
-    type: project
     name: All-Domain Anomaly Resolution Office (AARO)
-  - id: e432450d-335d-4f65-837d-9f5ce5d6bcf0
-    type: topic
-    name: Glasnost
-  - id: 6905f647-3e8e-42db-949e-4550d6fd073a
-    type: topic
-    name: Unidentified Aerial Phenomena (UAP)
-  - id: 1456216c-8943-4571-8909-7a57b04f6782
-    type: topic
-    name: Unidentified Flying Object (UFO)
-  - id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
-    type: event
-    name: 2004 USS Nimitz Tic Tac UAP incident
-    metadata:
-      date_start: '2004'
-  - id: c83e250a-7fb2-48a7-a456-2d2c54357e83
-    type: event
-    name: 1993 George Knapp Moscow investigation trip
-    metadata:
-      date_start: '1993'
-  - id: 34a5383a-daf9-4f58-a249-6eb3a46f3da9
-    type: event
-    name: Russian ICBM base UFO incident, Ukraine
-  - id: 186a592e-a87a-438a-8c69-91dfdd9f3797
-    type: place
-    name: USA, Nevada, Las Vegas
-  - id: fa319ac5-81f1-49e0-a165-b0af3f900d18
-    type: place
-    name: Russia, Ukraine
-  - id: 16f3501b-7d7f-475f-8d05-46d0448afa53
-    type: place
-    name: Russia, Moscow
+  quote: |-
+    was largely responsible for the creation by Congress of the UAP Task Force, which later morphed into AARO, the current UFO program approved by Congress.
+  text: |-
+    The New York Times AATIP article was largely responsible for the creation by Congress of the Unidentified Aerospace Phenomena Task Force, which later became the All-Domain Anomaly Resolution Office.
+  entailment:
+    label: contradicts
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 4d13c57e-74d5-42be-888d-8373b507d630
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:9372-9546
+  refs:
   - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
-    type: document
     name: New York Times AATIP article, December 2017
-    metadata:
-      date_start: 2017-12
+  - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
+    name: Lue Elizondo
+  quote: |-
+    The NY Times report was accurate on many levels. AATIP as real. Lue Elizondo was the man in charge of it. And it was an investigation of UFO encounters involving US military personnel.
+  text: |-
+    George Knapp considers the New York Times AATIP report accurate on many levels: that AATIP was real, that Lue Elizondo was the man in charge of it, and that it was an investigation of UFO encounters involving US military personnel.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 6803435a-e722-408c-8927-aec17b1adc11
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:9602-9740
+  refs:
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
+    name: Defense Intelligence Agency (DIA)
+  quote: |-
+    The $22 million secured by Reid did not fund AATIP. Rather, it went into an entirely different effort managed by the Defense Intelligence Agency.
+  text: |-
+    The 22 million US dollars secured by Harry Reid did not fund the Advanced Aerospace Threat Identification Program, but instead went into a separate effort managed by the Defense Intelligence Agency.
+  entailment:
+    label: entails
+    score: 0.493
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9e3b5bd8-fdf0-46d7-8c14-2269128a9958
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:9748-9828
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: |-
+    The original program was dubbed AAWSAP, the Advanced Weapons System Application program.
+  text: |-
+    The programme funded by Harry Reid's 22 million US dollars was dubbed the Advanced Aerospace Weapon System Applications Program.
+  entailment:
+    label: entails
+    score: 0.434
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 15d09546-9c85-4e5c-be2a-7f4c20084c3e
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:9837-9960
+  refs:
+  - id: 0d5d61cd-a7b6-4c91-a195-6120713d3feb
+    name: James Lacatski
+  - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
+    name: Defense Intelligence Agency (DIA)
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: |-
+    The man who initiated and managed the program for DIA was a veteran intelligence analyst and rocket expert named Dr. James Lacatski.
+  text: |-
+    The Advanced Aerospace Weapon System Applications Program was initiated and managed for the Defense Intelligence Agency by veteran intelligence analyst and rocket expert Dr. James Lacatski.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d314c627-a752-43d3-a286-835241ddff40
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:9970-10060
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: 0577e713-5eb4-416e-8b93-7dcbb419f02d
+    name: Bigelow Aerospace
+  - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
+    name: Robert Bigelow
+  quote: |-
+    The contract for AAWSAP was awarded to a subsidiary of Bigelow Aerospace, owned by Robert Bigelow.
+  text: |-
+    The contract for the Advanced Aerospace Weapon System Applications Program was awarded to a subsidiary of Bigelow Aerospace, owned by Robert Bigelow.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 96df0f77-b10f-46fc-9abf-f4b48ede902e
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:10069-10163
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  quote: |-
+    And the focus of the study was much broader than the military-only encounters investigated by AATIP.
+  text: |-
+    The focus of the Advanced Aerospace Weapon System Applications Program study was much broader than the military-only encounters investigated by the Advanced Aerospace Threat Identification Program.
+  entailment:
+    label: entails
+    score: 0.515
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8bbd65c9-e9ac-4f1b-93c7-3108cd68f41a
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:10277-10355
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    It was likely the largest UFO study ever conducted with the use of government funds.
+  text: |-
+    The Advanced Aerospace Weapon System Applications Program was likely the largest UFO study ever conducted with government funds.
+  entailment:
+    label: entails
+    score: 0.794
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 947fb792-89a7-4ec8-a84b-f9acdbc1f670
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:10362-10404
+  date: 2008-09
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: It began in Sept. 2008 and quickly ramped up.
+  text: |-
+    The Advanced Aerospace Weapon System Applications Program began in September 2008 and quickly ramped up.
+  entailment:
+    label: contradicts
+    score: 0.784
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 346e7c33-c4df-45ea-bc82-54fe11f9b7cf
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:10408-10520
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: a31c45ca-f616-4e3f-a60b-55a08f7a1bb9
+    name: Project Blue Book
+  - id: 85d0ff94-c6b4-48b6-a36d-e857871cfcca
+    name: Unidentified Aerospace Phenomena Task Force (UAP Task Force)
+  - id: d5726bc6-704e-4d01-b4da-0d22a3e0af14
+    name: All-Domain Anomaly Resolution Office (AARO)
+  quote: |-
+    At one point, it employed 50 full time investigators, far more than Project Blue Book or the UAP Task Force, or AARO.
+  text: |-
+    At one point, the Advanced Aerospace Weapon System Applications Program employed 50 full-time investigators, far more than Project Blue Book, the Unidentified Aerospace Phenomena Task Force, or the All-Domain Anomaly Resolution Office.
+  entailment:
+    label: contradicts
+    score: 0.583
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0accc97a-0032-4d29-910c-9fa78781603a
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:10526-10655
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    The team compiled what might be the largest and most sophisticated UFO data warehouse ever created, with more than 200,000 cases catalogued.
+  text: |-
+    The Advanced Aerospace Weapon System Applications Program team compiled what might be the largest and most sophisticated UFO data warehouse ever created, with more than 200,000 cases catalogued.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d92785b3-4884-4a8d-ad45-f057737bd0b1
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:10667-10874
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: 8ec6c527-4685-4be5-991c-465d5e59773f
+    name: Colm Kelleher
+  - id: 186a592e-a87a-438a-8c69-91dfdd9f3797
+    name: USA, Nevada, Las Vegas
+  quote: |-
+    The data base included reports from civilian organizations and foreign governments, as well as new investigations conducted by boots-on-the ground teams dispatched by AAWSAP's manager in Las Vegas, Dr. Colm Kelleher.
+  text: |-
+    The Advanced Aerospace Weapon System Applications Program database included reports from civilian organisations and foreign governments, as well as new investigations conducted by boots-on-the-ground teams dispatched by the programme's manager in Las Vegas, Dr. Colm Kelleher.
+  entailment:
+    label: entails
+    score: 0.599
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 63b7ba0d-09ff-444b-8f0e-64cc862b1521
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:10884-11012
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: |-
+    It was an astonishing effort that also produced more than 100 highly detailed research papers, many of them more than 100 pages long.
+  text: |-
+    The Advanced Aerospace Weapon System Applications Program produced more than 100 highly detailed research papers, many of them more than 100 pages long.
+  entailment:
+    label: entails
+    score: 0.79
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 65d88cba-4964-4404-8317-4d894accebdf
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:11018-11091
+  date: '2004'
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
+    name: 2004 USS Nimitz Tic Tac UAP incident
+  quote: The very first case investigated by AAWSAP was the Tic Tac incident from 2004.
+  text: |-
+    The very first case investigated by the Advanced Aerospace Weapon System Applications Program was the 2004 USS Nimitz Tic Tac UAP incident.
+  entailment:
+    label: neutral
+    score: 0.608
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 447e52d5-3d75-41da-8b0b-706f5d2b23a6
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:11316-11419
+  refs:
   - id: 62efcd03-542a-4679-9751-b13335093aa0
-    type: document
     name: AAWSAP Tic Tac report (140-page)
-  - id: 2b683deb-dbd8-4701-a586-b40c564661c1
-    type: document
-    name: Statement to Congress by George Knapp
-domain_claims:
-  - id: c6e5470a-3fc4-4d06-9140-cdd9e7c70023
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:774-827
-    date: '1987'
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: As a journalist, my interest in UFO secrecy began in 1987.
-    text: George Knapp's interest in UFO secrecy began in 1987.
-  - id: f6e9656c-8aaf-4896-98eb-8034fcf02131
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:858-914
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: I have written hundreds of UFO-related news stories and series
-    text: George Knapp has written hundreds of UFO-related news stories and series.
-  - id: da239490-20b5-4903-b1f9-132aa01d680d
-    type: administrative
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:1565-1691
-    date: '1969'
-    refs:
-      - id: 23f9d39a-5938-4c2c-a782-5b86615b23d3
-        name: United States Air Force
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      Since 1969, the position of our military has been that UFOs pose no threat to national security and are not worthy of further study.
-    text: |-
-      Since 1969, the official position of the United States military has been that UFOs pose no threat to national security and are not worthy of further study.
-  - id: 19372698-a524-4f57-90c5-634deae2daf5
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: document
-      origin: documents released via FOIA requests
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:1809-1882
-    refs:
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      High ranking military officers considered the UFO mystery to be "serious business."
-    text: |-
-      Documents obtained via Freedom of Information Act requests reveal that high-ranking military officers considered the UFO mystery to be "serious business."
-  - id: e8ddb4ae-cad4-4998-b62c-9ba2b5a62d98
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: document
-      origin: documents released via FOIA requests
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:1950-2109
-    refs:
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      military leaders knew that UFOs were "real, not fictitious", that they were metallic craft, capable of incredible maneuvers far beyond any known technology on Earth
-    text: |-
-      Military leaders internally acknowledged that UFOs were "real, not fictitious" and were metallic craft capable of manoeuvres far beyond any known technology on Earth.
-  - id: 12b7ba92-287d-4658-ac64-2aac689e90a6
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: document
-      origin: documents released via FOIA requests
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:2125-2270
-    refs:
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-      - id: f5d3e09d-61a8-42bf-bc88-0bb743987273
-        name: United States Department of Defense (DoD)
-    quote: |-
-      there were a disturbing number of incidents wherein UFOs seemed to demonstrate an intense interest in our military assets, in particular nuclear weapons
-    text: |-
-      Internal documents describe a disturbing number of incidents in which UFOs demonstrated intense interest in United States military assets, particularly nuclear weapons.
-  - id: f8580dc8-9eb9-4534-97cc-7e2d5b938219
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: anonymous
-      origin: |-
-        unnamed sources with tidbits about crashed saucers and reverse-engineering programmes
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:2424-2602
-    date: '1989'
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 186a592e-a87a-438a-8c69-91dfdd9f3797
-        name: USA, Nevada, Las Vegas
-    quote: |-
-      In 1989, I started hearing seemingly-outlandish tidbits regarding crashed saucers, strange materials, and reverse engineering programs being carried out in secrecy in the Nevada desert
-    text: |-
-      In 1989, George Knapp began hearing accounts of crashed saucers, strange materials, and reverse-engineering programmes carried out secretly in the Nevada desert by intelligence operatives and defence contractors.
-  - id: 5f5fac46-542d-455f-81e8-65dd77fa2e77
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:2661-2783
-    date: '1989'
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: 07deb569-d856-4867-bed9-2345bc645378
-        name: United States Senate
-    quote: |-
-      The first person I told about this - outside of our newsroom - was U.S. Senator Harry Reid, then in his first term in the Senate.
-    text: |-
-      The first person George Knapp told about the crashed-saucer accounts outside his newsroom was United States Senator Harry Reid, then in his first term in the Senate.
-  - id: df3f5a3a-491b-46ce-91a2-0475ae6e8d97
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: Harry Reid
-    attribution_in_text: false
-    location: char:2791-2917
-    refs:
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-    quote: |-
-      Reid said he was interested in hearing more, and that began a private, two-way conversation that continued for the next three decades.
-    text: |-
-      Harry Reid told George Knapp he was interested in hearing more about the UFO accounts, beginning a private two-way conversation between them that continued for the next three decades.
-  - id: 763f1947-5052-4c7c-bddb-ef1dc573f7e2
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:2926-3095
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-    quote: |-
-      I kept Sen. Reid in the loop about UFO developments I was pursuing as a journalist, and he helped me obtain information that I might otherwise be unable to access on my own.
-    text: |-
-      George Knapp kept Harry Reid informed about UFO developments he was pursuing as a journalist, and Reid helped him obtain information otherwise inaccessible.
-  - id: 0ef68fe2-c040-46ba-a3d3-7e79348a9f81
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:3100-3325
-    refs:
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: bb8eb506-1eae-4b38-b572-9345a4c474ad
-        name: United States Congress
-      - id: 6905f647-3e8e-42db-949e-4550d6fd073a
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      That private conversation with Reid proved to be pivotal in the long run, and is directly related to the current explosion of public interest in the UFO/UAP controversy, including the inquiries now underway in both houses of Congress.
-    text: |-
-      George Knapp considers his private conversation with Harry Reid directly related to the current explosion of public interest in the UFO/UAP controversy, including inquiries underway in both houses of the United States Congress.
-  - id: 543f9f7f-615c-4e37-9622-857cb58f9a14
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:3359-3529
-    date: '1989'
-    refs:
-      - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
-        name: Robert Bigelow
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-    quote: |-
-      The other person I met in 1989 related to the UFO mystery was a billionaire businessman named Robert Bigelow, who owned vast real estate and hotel properties in multiple states.
-    text: |-
-      The other person George Knapp met in 1989 related to the UFO mystery was billionaire businessman Robert Bigelow, who owned real estate and hotel properties in multiple states.
-  - id: e870733a-7007-4f34-8fc4-253edf169c06
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:3537-3624
-    refs:
-      - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
-        name: Robert Bigelow
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      Bigelow began funding private UFO investigations as well the work of UFO organizations UFO.
-    text: |-
-      Robert Bigelow began funding private UFO investigations as well as the work of UFO organisations.
-  - id: 0e09290a-07f1-47ce-b6dd-60fbd2a11eb2
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:3629-3761
-    refs:
-      - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
-        name: Robert Bigelow
-    quote: |-
-      To date, he has spent more of his own money on UFO investigations than any person in the history of the world - tens of millions of dollars.
-    text: |-
-      Robert Bigelow has spent more of his own money on UFO investigations, tens of millions of dollars, than any person in the history of the world.
-  - id: 5aed1c88-2c4a-4001-bd78-15d158e22b9f
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:3770-3863
-    date: '1996'
-    refs:
-      - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
-        name: Robert Bigelow
-      - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
-        name: National Institute for Discovery Science (NIDS)
-    quote: |-
-      In 1996, Bigelow created his own research organization, the National Institute for Discovery Science
-    text: |-
-      In 1996, Robert Bigelow created his own research organisation, the National Institute for Discovery Science.
-  - id: 53152143-b62f-4628-a3e6-735e647a5d46
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:3872-4086
-    refs:
-      - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
-        name: National Institute for Discovery Science (NIDS)
-    quote: |-
-      with a science advisory board made up of PhD-level academics, two of the former astronauts who had walked on the moon, and several scientists who had worked for or consulted with the U.S. military and intelligence agencies
-    text: |-
-      The National Institute for Discovery Science had a science advisory board made up of PhD-level academics, two former astronauts who had walked on the Moon, and several scientists who had worked for or consulted with the United States military and intelligence agencies.
-  - id: 35e5bb1a-5a40-476e-8f53-60684432d7ad
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:4341-4458
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
-        name: National Institute for Discovery Science (NIDS)
-    quote: |-
-      After NIDS began its own investigations and projects, I informed Senator Reid about the organization and arranged an introduction.
-    text: |-
-      After the National Institute for Discovery Science began its own investigations, George Knapp informed Harry Reid about the organisation and arranged an introduction.
-  - id: c152502c-a25f-47f0-bc70-71a878f55d0f
-    type: observation
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: Harry Reid
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:4472-4634
-    refs:
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
-        name: National Institute for Discovery Science (NIDS)
-    quote: |-
-      Reid attended one of the first board meetings of NIDS and was impressed by the professionalism he witnessed and the pedigrees of the world class Science Advisory Board.
-    text: |-
-      Harry Reid attended one of the first board meetings of the National Institute for Discovery Science and was impressed by the professionalism and the pedigrees of the Science Advisory Board.
-  - id: 091269bb-ce73-4706-ac1f-3a06a224d0d7
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:4806-4905
-    refs:
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
-        name: Robert Bigelow
-      - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
-        name: National Institute for Discovery Science (NIDS)
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      One of the topics that was of interest to Reid, Bigelow, and NIDS was Russia's ongoing interest in UFOs.
-    text: |-
-      One of the topics of interest to Harry Reid, Robert Bigelow, and the National Institute for Discovery Science was Russia's ongoing interest in UFOs.
-  - id: ea1a4375-84d2-4b53-b64e-d362533cc59f
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:4911-5178
-    date: '1993'
-    refs:
-      - id: e432450d-335d-4f65-837d-9f5ce5d6bcf0
-        name: Glasnost
-      - id: c83e250a-7fb2-48a7-a456-2d2c54357e83
-        name: 1993 George Knapp Moscow investigation trip
-    quote: |-
-      In 1993, there was a brief window of opportunity in the former USSR. The period known as Glasnost offered the possibility that western journalists and researchers might be able to learn about subjects that were previously off limits during the worst days of the Cold War.
-    text: |-
-      In 1993, a brief window of opportunity existed in the former USSR during the period known as Glasnost, offering the possibility that western journalists and researchers could learn about previously off-limits subjects.
-  - id: fbc608b2-49e1-42ff-a055-adac51676099
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:5183-5431
-    refs:
-      - id: 11ecc378-370f-4951-afcc-96ac338b6016
-        name: Jim Bilbray
-      - id: 42d8820a-e9bb-4a60-aa41-aa61d11437ed
-        name: Nikolai Kapranov
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-    quote: |-
-      With the assistance off former US Congressman Jim Bilbray, I met a Russian physicist and national security advisor who was in the U.S. in order to speak about arms control issues and nuclear detente at our national laboratories and nuclear weapons facilities.
-    text: |-
-      With the assistance of former United States Congressman Jim Bilbray, George Knapp met a Russian physicist and national security advisor, Nikolai Kapranov, who was in the United States to speak about arms control and nuclear detente at American national laboratories and nuclear weapons facilities.
-  - id: 40b18bc7-dcf4-4d26-aa2c-6bd20487792d
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:5443-5699
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 42d8820a-e9bb-4a60-aa41-aa61d11437ed
-        name: Nikolai Kapranov
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      I asked Dr. Nikolai Kapranov if he might be willing to find high ranking persons in the former USSR who may have been in a position to know about any secret UFO programs or investigations in Russia and whether any of those persons would agree to meet with me.
-    text: |-
-      George Knapp asked Nikolai Kapranov to find high-ranking persons in the former USSR who might know about secret UFO programmes or investigations in Russia and who would agree to meet with him.
-  - id: 43e6673e-f8b9-455b-ac01-2837bc772392
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:5721-5805
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 16f3501b-7d7f-475f-8d05-46d0448afa53
-        name: Russia, Moscow
-    quote: |-
-      It took 8 months to arrange an itinerary and to obtain a formal invitation to visit Moscow.
-    text: |-
-      It took eight months to arrange an itinerary and obtain a formal invitation for George Knapp to visit Moscow.
-  - id: 513bfbfe-de67-4234-abcf-ac1c09bb60e2
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:5813-6063
-    date: '1993'
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 16f3501b-7d7f-475f-8d05-46d0448afa53
-        name: Russia, Moscow
-      - id: c83e250a-7fb2-48a7-a456-2d2c54357e83
-        name: 1993 George Knapp Moscow investigation trip
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      In the spring of that year, I traveled with two colleagues to Moscow, met and interviewed more than a dozen military officials, intelligence operatives, and scientists who had knowledge of UFO incidents and studies in the former USSR during the Cold War.
-    text: |-
-      In the spring of 1993, George Knapp travelled with two colleagues to Moscow and interviewed more than a dozen military officials, intelligence operatives, and scientists with knowledge of UFO incidents and studies in the former USSR during the Cold War.
-  - id: bc6cf381-474f-48b6-bcb1-8d4da376b64a
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: |-
-        Russian military officials and intelligence operatives interviewed by George Knapp in Moscow
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:6083-6401
-    refs:
-      - id: 864a25f2-ce04-471d-93e4-7f8f2b486ead
-        name: Russian Ministry of Defense (MOD)
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      Russian leaders commissioned an unprecedented UFO investigation. The order went out to all units in the vast Russian military empire that any UFO incident or report must be fully investigated, witnesses interviewed, evidence collected and then all of those materials were forwarded to an office inside the Ministry of Defense.
-    text: |-
-      Russian leaders commissioned an unprecedented UFO investigation, ordering that any UFO incident or report by any unit in the Russian military be fully investigated, witnesses interviewed, and evidence collected and forwarded to an office inside the Russian Ministry of Defense.
-  - id: 32aa3ed8-3f68-4fb7-8e01-111b5021ef2d
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:6411-6495
-    refs:
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      The study lasted a full ten years and was likely the largest UFO investigation ever undertaken.
-    text: |-
-      The Russian military's UFO study lasted a full ten years and was likely the largest UFO investigation ever undertaken.
-  - id: b66588bf-8ca2-4e8e-ac71-f932f8c3b662
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: |-
-        Russian military officials and intelligence operatives interviewed by George Knapp in Moscow
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:6507-6612
-    refs:
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      Thousands of case files were accumulated. Nearly all of the witnesses who were interviewed were military personnel.
-    text: |-
-      Thousands of case files were accumulated during the Russian military's ten-year UFO investigation, and nearly all of the interviewed witnesses were military personnel.
-  - id: 79d06602-1986-4a68-b5e2-b83be4c094dd
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: Boris Sokolov
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:6623-6711
-    refs:
-      - id: 7f1cfbcf-c17c-4512-bb86-2738e8f27451
-        name: Boris Sokolov
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-    quote: |-
-      Many of the incidents described to me by the program's director Col. Boris Sokolov were alarming.
-    text: |-
-      The Russian military UFO investigation was directed by Colonel Boris Sokolov, who described many alarming incidents to George Knapp.
-  - id: 72d91abf-de74-4b17-9c8e-806622d00dd3
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: Boris Sokolov
-      relay:
-        - George Knapp
-    attribution_in_text: true
-    location: char:6721-6834
-    refs:
-      - id: 7f1cfbcf-c17c-4512-bb86-2738e8f27451
-        name: Boris Sokolov
-      - id: 4934a3a7-1af0-47c3-8d96-33153b3f853c
-        name: Russian Air Defense Forces
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      Sokolov said there had been 45 incidents in which Russian warplanes engaged with UFOs, chased them, even shot at them.
-    text: |-
-      Boris Sokolov said there had been 45 incidents in which Russian warplanes engaged with UFOs, chasing them and even shooting at them.
-  - id: 58177002-9313-4f97-9478-14332a932b36
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: Boris Sokolov
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:6840-6997
-    refs:
-      - id: 4934a3a7-1af0-47c3-8d96-33153b3f853c
-        name: Russian Air Defense Forces
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      In most incidents, the UFOs shot away at unbelievable speeds, but in three incidents, the Russian warplanes were dibbled and crashed. Two of the pilots were killed.
-    text: |-
-      In most of the 45 Russian warplane-UFO encounters, the UFOs shot away at unbelievable speeds, but in three incidents the Russian warplanes crashed, killing two pilots.
-  - id: 48b3a19c-99db-4e4f-b83d-4c75ad6c5c2c
-    type: hearsay
-    attestation: third_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a person described as a top Russian Air Defence official
-      relay:
-        - Boris Sokolov
-        - George Knapp
-    attribution_in_text: true
-    location: char:7005-7187
-    refs:
-      - id: 864a25f2-ce04-471d-93e4-7f8f2b486ead
-        name: Russian Ministry of Defense (MOD)
-      - id: 4934a3a7-1af0-47c3-8d96-33153b3f853c
-        name: Russian Air Defense Forces
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      After those incidents, the MOD issued a nationwide order that UFOs should be left alone because, in the words of a top Air Defense official, "they may have incredible capacities for retaliation."
-    text: |-
-      After the crash incidents, the Russian Ministry of Defense issued a nationwide order that UFOs should be left alone because, in the words of a top Russian Air Defence official, "they may have incredible capacities for retaliation."
-  - id: dbccd397-ee05-4f7d-a4b9-3bfdae36d1a1
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: Boris Sokolov
-      relay:
-        - George Knapp
-    attribution_in_text: true
-    location: char:7201-7438
-    refs:
-      - id: 7f1cfbcf-c17c-4512-bb86-2738e8f27451
-        name: Boris Sokolov
-      - id: 34a5383a-daf9-4f58-a249-6eb3a46f3da9
-        name: Russian ICBM base UFO incident, Ukraine
-      - id: fa319ac5-81f1-49e0-a165-b0af3f900d18
-        name: Russia, Ukraine
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      Col. Sokolov also shared information about an alarming incident at a Russian ICBM base in Ukraine. UFOs appeared over the base, performed astonishing maneuvers in front of stunned eyewitnesses and then somehow took control of the launch system.
-    text: |-
-      Boris Sokolov shared information with George Knapp about an alarming incident at a Russian ICBM base in Ukraine in which UFOs appeared, performed manoeuvres in front of stunned eyewitnesses, and then took control of the base's launch system.
-  - id: 0b0914e5-1363-475d-b70b-764c3a339f19
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: Boris Sokolov
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:7446-7694
-    refs:
-      - id: 34a5383a-daf9-4f58-a249-6eb3a46f3da9
-        name: Russian ICBM base UFO incident, Ukraine
-      - id: fa319ac5-81f1-49e0-a165-b0af3f900d18
-        name: Russia, Ukraine
-    quote: |-
-      The missiles aimed at the US were suddenly fired up. Launch control codes were somehow entered, and the base was unable to stop what could have initiated World War 3. Then, just as suddenly, the UFOs disappeared, and the launch-control system shut down.
-    text: |-
-      During the Russian ICBM base UFO incident in Ukraine, missiles aimed at the United States were fired up and launch control codes were entered, leaving the base unable to stop what could have initiated World War 3, before the UFOs disappeared and the launch-control system shut down.
-  - id: 61e2305a-d53c-4aa4-817b-473fc8c45d4d
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: Russian Ministry of Defense (MOD)
-    attribution_in_text: true
-    location: char:7887-8123
-    refs:
-      - id: 864a25f2-ce04-471d-93e4-7f8f2b486ead
-        name: Russian Ministry of Defense (MOD)
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      The Russian MOD had confirmed to me that they were studying UFO cases in the hope that they might understand and eventually duplicate the technology that had allowed the UFO pilots to so thoroughly dominate Russian airspace and weapons systems.
-    text: |-
-      The Russian Ministry of Defense confirmed to George Knapp that it was studying UFO cases in the hope of understanding and eventually duplicating the technology that had allowed UFO pilots to dominate Russian airspace and weapons systems.
-  - id: 3600aedd-ab76-42ea-a0bf-b2fe12e3a10c
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:8132-8276
-    refs:
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-    quote: |-
-      The information made lasting impression on Senator Reid and others and became a key factor in a secretive program that was launched a few years later.
-    text: |-
-      George Knapp's information from Russia made a lasting impression on Harry Reid and became a key factor in a secretive program launched a few years later.
-  - id: b267f3e4-23d0-47f8-8216-4eb4b65bc161
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:8712-8867
-    refs:
-      - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-      - id: 72cab652-b923-4063-9a51-e861825714fb
-        name: Office of the Undersecretary of Defense for Intelligence (OUSDI)
-      - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
-        name: Lue Elizondo
-    quote: |-
-      AATIP was launched from OUSDI, the office of the undersecretary for defense intelligence and was managed by a career counterintelligence officer named Lue Elizondo.
-    text: |-
-      The Advanced Aerospace Threat Identification Program was launched from the Office of the Undersecretary of Defense for Intelligence and was managed by a career counterintelligence officer named Lue Elizondo.
-  - id: 195f907f-3606-4e92-9c5c-4094b1bd32f9
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:9218-9361
-    refs:
-      - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
-        name: New York Times AATIP article, December 2017
-      - id: bb8eb506-1eae-4b38-b572-9345a4c474ad
-        name: United States Congress
-      - id: 85d0ff94-c6b4-48b6-a36d-e857871cfcca
-        name: Unidentified Aerospace Phenomena Task Force (UAP Task Force)
-      - id: d5726bc6-704e-4d01-b4da-0d22a3e0af14
-        name: All-Domain Anomaly Resolution Office (AARO)
-    quote: |-
-      was largely responsible for the creation by Congress of the UAP Task Force, which later morphed into AARO, the current UFO program approved by Congress.
-    text: |-
-      The New York Times AATIP article was largely responsible for the creation by Congress of the Unidentified Aerospace Phenomena Task Force, which later became the All-Domain Anomaly Resolution Office.
-  - id: 4d13c57e-74d5-42be-888d-8373b507d630
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:9372-9546
-    refs:
-      - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
-        name: New York Times AATIP article, December 2017
-      - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-      - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
-        name: Lue Elizondo
-    quote: |-
-      The NY Times report was accurate on many levels. AATIP as real. Lue Elizondo was the man in charge of it. And it was an investigation of UFO encounters involving US military personnel.
-    text: |-
-      George Knapp considers the New York Times AATIP report accurate on many levels: that AATIP was real, that Lue Elizondo was the man in charge of it, and that it was an investigation of UFO encounters involving US military personnel.
-  - id: 6803435a-e722-408c-8927-aec17b1adc11
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:9602-9740
-    refs:
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-      - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
-        name: Defense Intelligence Agency (DIA)
-    quote: |-
-      The $22 million secured by Reid did not fund AATIP. Rather, it went into an entirely different effort managed by the Defense Intelligence Agency.
-    text: |-
-      The 22 million US dollars secured by Harry Reid did not fund the Advanced Aerospace Threat Identification Program, but instead went into a separate effort managed by the Defense Intelligence Agency.
-  - id: 9e3b5bd8-fdf0-46d7-8c14-2269128a9958
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:9748-9828
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: |-
-      The original program was dubbed AAWSAP, the Advanced Weapons System Application program.
-    text: |-
-      The programme funded by Harry Reid's 22 million US dollars was dubbed the Advanced Aerospace Weapon System Applications Program.
-  - id: 15d09546-9c85-4e5c-be2a-7f4c20084c3e
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:9837-9960
-    refs:
-      - id: 0d5d61cd-a7b6-4c91-a195-6120713d3feb
-        name: James Lacatski
-      - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
-        name: Defense Intelligence Agency (DIA)
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: |-
-      The man who initiated and managed the program for DIA was a veteran intelligence analyst and rocket expert named Dr. James Lacatski.
-    text: |-
-      The Advanced Aerospace Weapon System Applications Program was initiated and managed for the Defense Intelligence Agency by veteran intelligence analyst and rocket expert Dr. James Lacatski.
-  - id: d314c627-a752-43d3-a286-835241ddff40
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:9970-10060
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: 0577e713-5eb4-416e-8b93-7dcbb419f02d
-        name: Bigelow Aerospace
-      - id: 8e8d3341-20a7-4adb-8f56-c4e6e954d284
-        name: Robert Bigelow
-    quote: |-
-      The contract for AAWSAP was awarded to a subsidiary of Bigelow Aerospace, owned by Robert Bigelow.
-    text: |-
-      The contract for the Advanced Aerospace Weapon System Applications Program was awarded to a subsidiary of Bigelow Aerospace, owned by Robert Bigelow.
-  - id: 96df0f77-b10f-46fc-9abf-f4b48ede902e
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:10069-10163
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-    quote: |-
-      And the focus of the study was much broader than the military-only encounters investigated by AATIP.
-    text: |-
-      The focus of the Advanced Aerospace Weapon System Applications Program study was much broader than the military-only encounters investigated by the Advanced Aerospace Threat Identification Program.
-  - id: 8bbd65c9-e9ac-4f1b-93c7-3108cd68f41a
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:10277-10355
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      It was likely the largest UFO study ever conducted with the use of government funds.
-    text: |-
-      The Advanced Aerospace Weapon System Applications Program was likely the largest UFO study ever conducted with government funds.
-  - id: 947fb792-89a7-4ec8-a84b-f9acdbc1f670
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:10362-10404
-    date: 2008-09
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: It began in Sept. 2008 and quickly ramped up.
-    text: |-
-      The Advanced Aerospace Weapon System Applications Program began in September 2008 and quickly ramped up.
-  - id: 346e7c33-c4df-45ea-bc82-54fe11f9b7cf
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:10408-10520
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: a31c45ca-f616-4e3f-a60b-55a08f7a1bb9
-        name: Project Blue Book
-      - id: 85d0ff94-c6b4-48b6-a36d-e857871cfcca
-        name: Unidentified Aerospace Phenomena Task Force (UAP Task Force)
-      - id: d5726bc6-704e-4d01-b4da-0d22a3e0af14
-        name: All-Domain Anomaly Resolution Office (AARO)
-    quote: |-
-      At one point, it employed 50 full time investigators, far more than Project Blue Book or the UAP Task Force, or AARO.
-    text: |-
-      At one point, the Advanced Aerospace Weapon System Applications Program employed 50 full-time investigators, far more than Project Blue Book, the Unidentified Aerospace Phenomena Task Force, or the All-Domain Anomaly Resolution Office.
-  - id: 0accc97a-0032-4d29-910c-9fa78781603a
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:10526-10655
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      The team compiled what might be the largest and most sophisticated UFO data warehouse ever created, with more than 200,000 cases catalogued.
-    text: |-
-      The Advanced Aerospace Weapon System Applications Program team compiled what might be the largest and most sophisticated UFO data warehouse ever created, with more than 200,000 cases catalogued.
-  - id: d92785b3-4884-4a8d-ad45-f057737bd0b1
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:10667-10874
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: 8ec6c527-4685-4be5-991c-465d5e59773f
-        name: Colm Kelleher
-      - id: 186a592e-a87a-438a-8c69-91dfdd9f3797
-        name: USA, Nevada, Las Vegas
-    quote: |-
-      The data base included reports from civilian organizations and foreign governments, as well as new investigations conducted by boots-on-the ground teams dispatched by AAWSAP's manager in Las Vegas, Dr. Colm Kelleher.
-    text: |-
-      The Advanced Aerospace Weapon System Applications Program database included reports from civilian organisations and foreign governments, as well as new investigations conducted by boots-on-the-ground teams dispatched by the programme's manager in Las Vegas, Dr. Colm Kelleher.
-  - id: 63b7ba0d-09ff-444b-8f0e-64cc862b1521
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:10884-11012
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: |-
-      It was an astonishing effort that also produced more than 100 highly detailed research papers, many of them more than 100 pages long.
-    text: |-
-      The Advanced Aerospace Weapon System Applications Program produced more than 100 highly detailed research papers, many of them more than 100 pages long.
-  - id: 65d88cba-4964-4404-8317-4d894accebdf
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:11018-11091
-    date: '2004'
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
-        name: 2004 USS Nimitz Tic Tac UAP incident
-    quote: The very first case investigated by AAWSAP was the Tic Tac incident from 2004.
-    text: |-
-      The very first case investigated by the Advanced Aerospace Weapon System Applications Program was the 2004 USS Nimitz Tic Tac UAP incident.
-  - id: 447e52d5-3d75-41da-8b0b-706f5d2b23a6
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:11316-11419
-    refs:
-      - id: 62efcd03-542a-4679-9751-b13335093aa0
-        name: AAWSAP Tic Tac report (140-page)
-      - id: bb8eb506-1eae-4b38-b572-9345a4c474ad
-        name: United States Congress
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: |-
-      Neither Congress nor the public has ever seen the Tic Tac report or any of the other 100-plus research papers.
-    text: |-
-      Neither Congress nor the public has ever seen the 140-page Advanced Aerospace Weapon System Applications Program Tic Tac report or any of the other 100-plus research papers it produced.
-  - id: 761022c7-f81c-479f-b0c6-5c3bfec1942d
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:11572-11743
-    refs:
-      - id: 0577e713-5eb4-416e-8b93-7dcbb419f02d
-        name: Bigelow Aerospace
-      - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
-        name: Defense Intelligence Agency (DIA)
-      - id: 186a592e-a87a-438a-8c69-91dfdd9f3797
-        name: USA, Nevada, Las Vegas
-    quote: |-
-      One condition of the Bigelow contract with DIA was that Bigelow's Aerospace plant in Las Vegas must be engineered so that it could accept, store, and study certain exotic materials.
-    text: |-
-      One condition of the Bigelow contract with the Defense Intelligence Agency was that Bigelow Aerospace's plant in Las Vegas be engineered so it could accept, store, and study certain exotic materials.
-  - id: b6006355-d6fd-4ada-bcd6-6b8ca4538080
-    type: opinion
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: anonymous
-      origin: unnamed managers of the Advanced Aerospace Weapon System Applications Program
-      relay:
-        - George Knapp
-    attribution_in_text: true
-    location: char:11754-11847
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: |-
-      AAWSAP managers believe these materials were collected from sites where unknown aircraft had crashed.
-    text: |-
-      Managers of the Advanced Aerospace Weapon System Applications Program believed the exotic materials studied under the programme were collected from sites where unknown aircraft had crashed.
-  - id: 4b90f6eb-ae58-4d7e-81c4-41643e707245
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: named
-      origin: James Lacatski
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:11856-12036
-    refs:
-      - id: 0d5d61cd-a7b6-4c91-a195-6120713d3feb
-        name: James Lacatski
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: |-
-      When Dr. Lacatski began pressing the issue, seeking access to the exotic materials, he was met with harsh rebukes. The door, in essence, was slammed in his face.
-    text: |-
-      When James Lacatski pressed for access to the exotic materials studied under the Advanced Aerospace Weapon System Applications Program, he was met with harsh rebukes and the door was slammed in his face.
-  - id: 436e3cff-0ec4-447f-9ab6-ac40c8481c55
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:12104-12206
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
-        name: Defense Intelligence Agency (DIA)
-    quote: |-
-      It lasted a mere 27 months before the plug was pulled, instead of a five year operation as planned by DIA.
-    text: |-
-      The Advanced Aerospace Weapon System Applications Program lasted only 27 months before it was ended, rather than the five-year operation planned by the Defense Intelligence Agency.
-  - id: de4220e7-cba0-42a2-b9a7-4b8c60bec416
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:12212-12369
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: |-
-      AAWSAP investigated a wider range of phenomena than mystery craft seen in the sky. Some of the encounters reported by intelligence operatives were downright weird.
-    text: |-
-      The Advanced Aerospace Weapon System Applications Program investigated a wider range of phenomena than mystery craft seen in the sky, including some encounters reported by intelligence operatives that were downright weird.
-  - id: 334b64c4-8f77-4326-a34b-04cb796ee320
-    type: opinion
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: anonymous
-      origin: unnamed personnel of the Advanced Aerospace Weapon System Applications Program
-      relay:
-        - George Knapp
-    attribution_in_text: true
-    location: char:12376-12606
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      AAWSAP personnel suspected that the sighting of weird creatures and bizarre phenomena in the proximity of UFO activity might be some sort of unintentional side effect of a technology that is seemingly beyond anything we currently possess.
-    text: |-
-      Advanced Aerospace Weapon System Applications Program personnel suspected that sightings of unusual creatures and bizarre phenomena near UFO activity might be an unintentional side effect of a technology seemingly beyond anything currently possessed.
-  - id: 39f3502f-9fd9-4e8c-a87c-9db4afeb82a1
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:13090-13137
-    refs:
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-      - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-    quote: After AAWSAP ended, AATIP was created from its ashes.
-    text: |-
-      After the Advanced Aerospace Weapon System Applications Program ended, the Advanced Aerospace Threat Identification Program was created from its remnants.
-  - id: a80bf7f8-21ae-429c-95a4-0c62bf84ede8
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:13144-13309
-    refs:
-      - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
-        name: Lue Elizondo
-      - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-      - id: f5d3e09d-61a8-42bf-bc88-0bb743987273
-        name: United States Department of Defense (DoD)
-    quote: |-
-      Lue Elizondo was able to keep the investigation going for a few years until his frustration with a lack of interest on the part of DOD higher ups became too much to bear.
-    text: |-
-      Lue Elizondo kept the Advanced Aerospace Threat Identification Program investigation going for a few years until his frustration with a lack of interest from Department of Defense higher-ups became too much to bear.
-  - id: 2c6d675d-7607-4b7b-a081-8af471fcda73
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:13315-13434
-    refs:
-      - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
-        name: Lue Elizondo
-      - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-      - id: 85d0ff94-c6b4-48b6-a36d-e857871cfcca
-        name: Unidentified Aerospace Phenomena Task Force (UAP Task Force)
-      - id: d5726bc6-704e-4d01-b4da-0d22a3e0af14
-        name: All-Domain Anomaly Resolution Office (AARO)
-    quote: |-
-      His exposure of the existence of AATIP was a major factor in the eventual creation of the UAP Task Force and later, of AARO.
-    text: |-
-      Lue Elizondo's public exposure of the existence of the Advanced Aerospace Threat Identification Program was a major factor in the eventual creation of the Unidentified Aerospace Phenomena Task Force and later the All-Domain Anomaly Resolution Office.
+  - id: bb8eb506-1eae-4b38-b572-9345a4c474ad
+    name: United States Congress
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: |-
+    Neither Congress nor the public has ever seen the Tic Tac report or any of the other 100-plus research papers.
+  text: |-
+    Neither Congress nor the public has ever seen the 140-page Advanced Aerospace Weapon System Applications Program Tic Tac report or any of the other 100-plus research papers it produced.
+  entailment:
+    label: entails
+    score: 0.458
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 761022c7-f81c-479f-b0c6-5c3bfec1942d
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:11572-11743
+  refs:
+  - id: 0577e713-5eb4-416e-8b93-7dcbb419f02d
+    name: Bigelow Aerospace
+  - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
+    name: Defense Intelligence Agency (DIA)
+  - id: 186a592e-a87a-438a-8c69-91dfdd9f3797
+    name: USA, Nevada, Las Vegas
+  quote: |-
+    One condition of the Bigelow contract with DIA was that Bigelow's Aerospace plant in Las Vegas must be engineered so that it could accept, store, and study certain exotic materials.
+  text: |-
+    One condition of the Bigelow contract with the Defense Intelligence Agency was that Bigelow Aerospace's plant in Las Vegas be engineered so it could accept, store, and study certain exotic materials.
+  entailment:
+    label: entails
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b6006355-d6fd-4ada-bcd6-6b8ca4538080
+  type: opinion
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: anonymous
+    origin: unnamed managers of the Advanced Aerospace Weapon System Applications Program
+    relay:
+    - George Knapp
+  attribution_in_text: true
+  location: char:11754-11847
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: |-
+    AAWSAP managers believe these materials were collected from sites where unknown aircraft had crashed.
+  text: |-
+    Managers of the Advanced Aerospace Weapon System Applications Program believed the exotic materials studied under the programme were collected from sites where unknown aircraft had crashed.
+  entailment:
+    label: entails
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4b90f6eb-ae58-4d7e-81c4-41643e707245
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: named
+    origin: James Lacatski
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:11856-12036
+  refs:
+  - id: 0d5d61cd-a7b6-4c91-a195-6120713d3feb
+    name: James Lacatski
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: |-
+    When Dr. Lacatski began pressing the issue, seeking access to the exotic materials, he was met with harsh rebukes. The door, in essence, was slammed in his face.
+  text: |-
+    When James Lacatski pressed for access to the exotic materials studied under the Advanced Aerospace Weapon System Applications Program, he was met with harsh rebukes and the door was slammed in his face.
+  entailment:
+    label: neutral
+    score: 0.812
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 436e3cff-0ec4-447f-9ab6-ac40c8481c55
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:12104-12206
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
+    name: Defense Intelligence Agency (DIA)
+  quote: |-
+    It lasted a mere 27 months before the plug was pulled, instead of a five year operation as planned by DIA.
+  text: |-
+    The Advanced Aerospace Weapon System Applications Program lasted only 27 months before it was ended, rather than the five-year operation planned by the Defense Intelligence Agency.
+  entailment:
+    label: entails
+    score: 0.469
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: de4220e7-cba0-42a2-b9a7-4b8c60bec416
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:12212-12369
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: |-
+    AAWSAP investigated a wider range of phenomena than mystery craft seen in the sky. Some of the encounters reported by intelligence operatives were downright weird.
+  text: |-
+    The Advanced Aerospace Weapon System Applications Program investigated a wider range of phenomena than mystery craft seen in the sky, including some encounters reported by intelligence operatives that were downright weird.
+  entailment:
+    label: entails
+    score: 0.812
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 334b64c4-8f77-4326-a34b-04cb796ee320
+  type: opinion
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: anonymous
+    origin: unnamed personnel of the Advanced Aerospace Weapon System Applications Program
+    relay:
+    - George Knapp
+  attribution_in_text: true
+  location: char:12376-12606
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    AAWSAP personnel suspected that the sighting of weird creatures and bizarre phenomena in the proximity of UFO activity might be some sort of unintentional side effect of a technology that is seemingly beyond anything we currently possess.
+  text: |-
+    Advanced Aerospace Weapon System Applications Program personnel suspected that sightings of unusual creatures and bizarre phenomena near UFO activity might be an unintentional side effect of a technology seemingly beyond anything currently possessed.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 39f3502f-9fd9-4e8c-a87c-9db4afeb82a1
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:13090-13137
+  refs:
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  quote: After AAWSAP ended, AATIP was created from its ashes.
+  text: |-
+    After the Advanced Aerospace Weapon System Applications Program ended, the Advanced Aerospace Threat Identification Program was created from its remnants.
+  entailment:
+    label: entails
+    score: 0.505
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a80bf7f8-21ae-429c-95a4-0c62bf84ede8
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:13144-13309
+  refs:
+  - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
+    name: Lue Elizondo
+  - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  - id: f5d3e09d-61a8-42bf-bc88-0bb743987273
+    name: United States Department of Defense (DoD)
+  quote: |-
+    Lue Elizondo was able to keep the investigation going for a few years until his frustration with a lack of interest on the part of DOD higher ups became too much to bear.
+  text: |-
+    Lue Elizondo kept the Advanced Aerospace Threat Identification Program investigation going for a few years until his frustration with a lack of interest from Department of Defense higher-ups became too much to bear.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2c6d675d-7607-4b7b-a081-8af471fcda73
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:13315-13434
+  refs:
+  - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
+    name: Lue Elizondo
+  - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  - id: 85d0ff94-c6b4-48b6-a36d-e857871cfcca
+    name: Unidentified Aerospace Phenomena Task Force (UAP Task Force)
+  - id: d5726bc6-704e-4d01-b4da-0d22a3e0af14
+    name: All-Domain Anomaly Resolution Office (AARO)
+  quote: |-
+    His exposure of the existence of AATIP was a major factor in the eventual creation of the UAP Task Force and later, of AARO.
+  text: |-
+    Lue Elizondo's public exposure of the existence of the Advanced Aerospace Threat Identification Program was a major factor in the eventual creation of the Unidentified Aerospace Phenomena Task Force and later the All-Domain Anomaly Resolution Office.
+  entailment:
+    label: contradicts
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
-  - id: d4d6d12f-393e-4501-bf13-b1a9b73f929f
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:643-700
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: d05bb4bd-1944-4fa9-a790-b41190b6c5a2
-        name: KLAS TV
-      - id: 186a592e-a87a-438a-8c69-91dfdd9f3797
-        name: USA, Nevada, Las Vegas
-    quote: I am the chief investigative reporter for KLAS TV in Las Vegas.
-    text: |-
-      George Knapp is the chief investigative reporter for KLAS TV in Las Vegas, Nevada.
-  - id: 9ee771aa-d109-4b36-8b21-6f690d035681
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:707-762
-    refs:
-      - id: d05bb4bd-1944-4fa9-a790-b41190b6c5a2
-        name: KLAS TV
-    quote: KLAS is Nevada's original television station and a CBS affiliate.
-    text: KLAS TV is Nevada's original television station.
-  - id: 73d52df4-1635-40e6-a775-5ba282ef2a50
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:707-762
-    refs:
-      - id: d05bb4bd-1944-4fa9-a790-b41190b6c5a2
-        name: KLAS TV
-      - id: f4607ed6-1c5e-44c5-80f8-ef389f04942d
-        name: CBS
-    quote: KLAS is Nevada's original television station and a CBS affiliate.
-    text: KLAS TV is a CBS affiliate.
-  - id: 67d10a59-1a6a-458a-b54a-87e756ffc301
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:1027-1107
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 2517a3c7-cadb-44f9-ab4e-e5bad2c918dc
-        name: Matt Adams
-    quote: |-
-      For the past 22 years, I have worked with photographer Matt Adams on these news reports.
-    text: |-
-      For 22 years, George Knapp has worked with photographer Matt Adams on his news reports.
-  - id: 1277e6c7-2a9a-4172-a5e0-bbcb1cbdba17
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:7724-7876
-    refs:
-      - id: b9500529-b4de-4c3c-8391-827b17339ac6
-        name: George Knapp
-      - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
-        name: National Institute for Discovery Science (NIDS)
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: 86e98eed-d0b6-47d0-a787-a607f753bbc7
-        name: US Senate Select Committee on Intelligence
-    quote: |-
-      Upon my return from Moscow, I shared much of this information with NIDS, with Senator Reid, and with a senior staff members for the Senate Intelligence Committee.
-    text: |-
-      Upon returning from Moscow, George Knapp shared information from his investigation with the National Institute for Discovery Science, Harry Reid, and a senior staff member for the US Senate Select Committee on Intelligence.
-  - id: 4c5c8de0-d7bf-4af0-8715-cd48be2e367a
-    type: administrative
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: document
-      origin: New York Times AATIP article, December 2017
-      relay:
-        - George Knapp
-    attribution_in_text: false
-    location: char:8308-8534
-    date: 2017-12
-    refs:
-      - id: ba8eeb43-cd4c-413e-87fa-0563bf4caf71
-        name: New York Times
-      - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
-        name: New York Times AATIP article, December 2017
-      - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-      - id: 6905f647-3e8e-42db-949e-4550d6fd073a
-        name: Unidentified Aerial Phenomena (UAP)
-    quote: |-
-      the current wave of public and congressional interest in the UFO/UAP mystery was kickstarted in December 2017 when a front page story in the New York Times revealed the existence of an unknown, unacknowledged UFO study dubbed AATIP.
-    text: |-
-      The current wave of public and congressional interest in the UFO/UAP mystery was kickstarted in December 2017 when a front-page story in the New York Times revealed the existence of an unacknowledged UFO study dubbed the Advanced Aerospace Threat Identification Program (AATIP).
-  - id: fd4dd9ab-64a0-4e88-95c6-de2890339b33
-    type: administrative
-    attestation: second_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: document
-      origin: New York Times AATIP article, December 2017
-      relay:
-        - George Knapp
-    attribution_in_text: true
-    location: char:8541-8706
-    refs:
-      - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
-        name: New York Times AATIP article, December 2017
-      - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
-        name: Harry Reid
-      - id: 6142d504-b5fb-417f-aef4-c5d6d16acc8e
-        name: Daniel Inouye
-      - id: 477d6918-c9d5-4731-ba4a-31de1925ce09
-        name: Ted Stevens
-      - id: 1456216c-8943-4571-8909-7a57b04f6782
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      The Times story claimed that Sen. Reid and two colleagues in the Senate (Daniel Inouye and Ted Stevens) had secured $22 million in black budget funds to investigate UFOs.
-    text: |-
-      The New York Times AATIP article of December 2017 claimed that Harry Reid and two Senate colleagues, Daniel Inouye and Ted Stevens, had secured 22 million US dollars in black-budget funds to investigate UFOs.
-  - id: a605feab-adc6-4b5d-80f8-c2db0c4da2c6
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:8877-9066
-    refs:
-      - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
-        name: Lue Elizondo
-      - id: ba8eeb43-cd4c-413e-87fa-0563bf4caf71
-        name: New York Times
-      - id: 94cfe4b9-88cf-429b-89bb-59d5399a9819
-        name: David Fravor
-      - id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
-        name: 2004 USS Nimitz Tic Tac UAP incident
-      - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
-        name: New York Times AATIP article, December 2017
-    quote: |-
-      Elizondo's statements to the Times, including supporting testimony from Navy aviator David Fravor about the so-called Tic Tac incident in 2004, were the core of the newspapers' blockbuster story.
-    text: |-
-      Lue Elizondo's statements to the New York Times, including supporting testimony from Navy aviator David Fravor about the 2004 USS Nimitz Tic Tac UAP incident, were the core of the newspaper's story on the Advanced Aerospace Threat Identification Program.
-  - id: d3e4798f-9cfe-47cd-be2e-e458c62e866b
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:11097-11162
-    refs:
-      - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
-        name: Defense Intelligence Agency (DIA)
-      - id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
-        name: 2004 USS Nimitz Tic Tac UAP incident
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: An initial report was compiled by DIA personnel then shared with AAWSAP.
-    text: |-
-      An initial report on the 2004 USS Nimitz Tic Tac UAP incident was compiled by Defense Intelligence Agency personnel and then shared with the Advanced Aerospace Weapon System Applications Program.
-  - id: acc25e28-793c-4e02-81b7-e2d48b033269
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b9500529-b4de-4c3c-8391-827b17339ac6
-      name: George Knapp
-    provenance_chain:
-      origin_kind: speaker
-      origin: George Knapp
-    attribution_in_text: false
-    location: char:11170-11305
-    refs:
-      - id: 62efcd03-542a-4679-9751-b13335093aa0
-        name: AAWSAP Tic Tac report (140-page)
-      - id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
-        name: 2004 USS Nimitz Tic Tac UAP incident
-      - id: 6830efb6-af09-4c80-be69-fa7df03af874
-        name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
-    quote: |-
-      A much larger 140-page report, packed with detailed analysis of the Tic Tac and its capabilities, was written by AASWAP scientists and engineers.
-    text: |-
-      A 140-page report on the 2004 USS Nimitz Tic Tac UAP incident, containing detailed analysis of the object and its capabilities, was written by Advanced Aerospace Weapon System Applications Program scientists and engineers.
+- id: d4d6d12f-393e-4501-bf13-b1a9b73f929f
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:643-700
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: d05bb4bd-1944-4fa9-a790-b41190b6c5a2
+    name: KLAS TV
+  - id: 186a592e-a87a-438a-8c69-91dfdd9f3797
+    name: USA, Nevada, Las Vegas
+  quote: I am the chief investigative reporter for KLAS TV in Las Vegas.
+  text: |-
+    George Knapp is the chief investigative reporter for KLAS TV in Las Vegas, Nevada.
+  entailment:
+    label: entails
+    score: 0.923
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9ee771aa-d109-4b36-8b21-6f690d035681
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:707-762
+  refs:
+  - id: d05bb4bd-1944-4fa9-a790-b41190b6c5a2
+    name: KLAS TV
+  quote: KLAS is Nevada's original television station and a CBS affiliate.
+  text: KLAS TV is Nevada's original television station.
+  entailment:
+    label: entails
+    score: 0.943
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 73d52df4-1635-40e6-a775-5ba282ef2a50
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:707-762
+  refs:
+  - id: d05bb4bd-1944-4fa9-a790-b41190b6c5a2
+    name: KLAS TV
+  - id: f4607ed6-1c5e-44c5-80f8-ef389f04942d
+    name: CBS
+  quote: KLAS is Nevada's original television station and a CBS affiliate.
+  text: KLAS TV is a CBS affiliate.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 67d10a59-1a6a-458a-b54a-87e756ffc301
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:1027-1107
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 2517a3c7-cadb-44f9-ab4e-e5bad2c918dc
+    name: Matt Adams
+  quote: |-
+    For the past 22 years, I have worked with photographer Matt Adams on these news reports.
+  text: |-
+    For 22 years, George Knapp has worked with photographer Matt Adams on his news reports.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1277e6c7-2a9a-4172-a5e0-bbcb1cbdba17
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:7724-7876
+  refs:
+  - id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  - id: 99db31bf-6005-4bda-a783-dc5e08fdfc91
+    name: National Institute for Discovery Science (NIDS)
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: 86e98eed-d0b6-47d0-a787-a607f753bbc7
+    name: US Senate Select Committee on Intelligence
+  quote: |-
+    Upon my return from Moscow, I shared much of this information with NIDS, with Senator Reid, and with a senior staff members for the Senate Intelligence Committee.
+  text: |-
+    Upon returning from Moscow, George Knapp shared information from his investigation with the National Institute for Discovery Science, Harry Reid, and a senior staff member for the US Senate Select Committee on Intelligence.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4c5c8de0-d7bf-4af0-8715-cd48be2e367a
+  type: administrative
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: document
+    origin: New York Times AATIP article, December 2017
+    relay:
+    - George Knapp
+  attribution_in_text: false
+  location: char:8308-8534
+  date: 2017-12
+  refs:
+  - id: ba8eeb43-cd4c-413e-87fa-0563bf4caf71
+    name: New York Times
+  - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
+    name: New York Times AATIP article, December 2017
+  - id: 5821f869-66b2-4173-b8c0-0fc3ace12e54
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  - id: 6905f647-3e8e-42db-949e-4550d6fd073a
+    name: Unidentified Aerial Phenomena (UAP)
+  quote: |-
+    the current wave of public and congressional interest in the UFO/UAP mystery was kickstarted in December 2017 when a front page story in the New York Times revealed the existence of an unknown, unacknowledged UFO study dubbed AATIP.
+  text: |-
+    The current wave of public and congressional interest in the UFO/UAP mystery was kickstarted in December 2017 when a front-page story in the New York Times revealed the existence of an unacknowledged UFO study dubbed the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.542
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: fd4dd9ab-64a0-4e88-95c6-de2890339b33
+  type: administrative
+  attestation: second_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: document
+    origin: New York Times AATIP article, December 2017
+    relay:
+    - George Knapp
+  attribution_in_text: true
+  location: char:8541-8706
+  refs:
+  - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
+    name: New York Times AATIP article, December 2017
+  - id: 531b3ca7-8578-44d5-bc08-cdbbe2dbe3dd
+    name: Harry Reid
+  - id: 6142d504-b5fb-417f-aef4-c5d6d16acc8e
+    name: Daniel Inouye
+  - id: 477d6918-c9d5-4731-ba4a-31de1925ce09
+    name: Ted Stevens
+  - id: 1456216c-8943-4571-8909-7a57b04f6782
+    name: Unidentified Flying Object (UFO)
+  quote: |-
+    The Times story claimed that Sen. Reid and two colleagues in the Senate (Daniel Inouye and Ted Stevens) had secured $22 million in black budget funds to investigate UFOs.
+  text: |-
+    The New York Times AATIP article of December 2017 claimed that Harry Reid and two Senate colleagues, Daniel Inouye and Ted Stevens, had secured 22 million US dollars in black-budget funds to investigate UFOs.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a605feab-adc6-4b5d-80f8-c2db0c4da2c6
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:8877-9066
+  refs:
+  - id: 87788ebc-018b-47aa-a6e2-a7773c5a3d1d
+    name: Lue Elizondo
+  - id: ba8eeb43-cd4c-413e-87fa-0563bf4caf71
+    name: New York Times
+  - id: 94cfe4b9-88cf-429b-89bb-59d5399a9819
+    name: David Fravor
+  - id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
+    name: 2004 USS Nimitz Tic Tac UAP incident
+  - id: e7cfab5c-f78f-41c7-b4a6-f5bce173f865
+    name: New York Times AATIP article, December 2017
+  quote: |-
+    Elizondo's statements to the Times, including supporting testimony from Navy aviator David Fravor about the so-called Tic Tac incident in 2004, were the core of the newspapers' blockbuster story.
+  text: |-
+    Lue Elizondo's statements to the New York Times, including supporting testimony from Navy aviator David Fravor about the 2004 USS Nimitz Tic Tac UAP incident, were the core of the newspaper's story on the Advanced Aerospace Threat Identification Program.
+  entailment:
+    label: entails
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d3e4798f-9cfe-47cd-be2e-e458c62e866b
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:11097-11162
+  refs:
+  - id: bf3c9a43-f1f3-4160-b59b-47508aae860d
+    name: Defense Intelligence Agency (DIA)
+  - id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
+    name: 2004 USS Nimitz Tic Tac UAP incident
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: An initial report was compiled by DIA personnel then shared with AAWSAP.
+  text: |-
+    An initial report on the 2004 USS Nimitz Tic Tac UAP incident was compiled by Defense Intelligence Agency personnel and then shared with the Advanced Aerospace Weapon System Applications Program.
+  entailment:
+    label: neutral
+    score: 0.632
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: acc25e28-793c-4e02-81b7-e2d48b033269
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b9500529-b4de-4c3c-8391-827b17339ac6
+    name: George Knapp
+  provenance_chain:
+    origin_kind: speaker
+    origin: George Knapp
+  attribution_in_text: false
+  location: char:11170-11305
+  refs:
+  - id: 62efcd03-542a-4679-9751-b13335093aa0
+    name: AAWSAP Tic Tac report (140-page)
+  - id: 06e29dfe-28bd-4cba-81c0-9f7c0f13cd57
+    name: 2004 USS Nimitz Tic Tac UAP incident
+  - id: 6830efb6-af09-4c80-be69-fa7df03af874
+    name: Advanced Aerospace Weapon System Applications Program (AAWSAP)
+  quote: |-
+    A much larger 140-page report, packed with detailed analysis of the Tic Tac and its capabilities, was written by AASWAP scientists and engineers.
+  text: |-
+    A 140-page report on the 2004 USS Nimitz Tic Tac UAP incident, containing detailed analysis of the object and its capabilities, was written by Advanced Aerospace Weapon System Applications Program scientists and engineers.
+  entailment:
+    label: entails
+    score: 0.494
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

@@ -9,6 +9,14 @@ ai_usage:
   tokens:
     input: 309718
     output: 19656
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 13.3
 prompts:
 - pass: nodes
   id: nodes
@@ -183,6 +191,11 @@ domain_claims:
     the powerful internal investigative body that oversees the nation's intelligence agencies found a whistleblower's assertion that UFO-related information was inappropriately concealed from Congress “urgent and credible.”
   text: |-
     According to The Debrief article "Intelligence Officials Say U.S. Has Retrieved Non-Human Craft" (2023-06-05) and a subsequent Compass Rose press release (2023-06-09), the Intelligence Community Inspector General found a whistleblower's assertion that UFO-related information was inappropriately concealed from United States Congress to be "urgent and credible."
+  entailment:
+    label: entails
+    score: 0.791
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 59ecef44-ce9b-4e75-8edd-4c205f1c429c
   type: administrative
   speaker:
@@ -198,6 +211,11 @@ domain_claims:
     name: David Grusch
   quote: the whistleblower – a former high-level intelligence official –
   text: David Grusch is a former high-level intelligence official.
+  entailment:
+    label: contradicts
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ad6c8633-990d-4684-9a84-31d6077da401
   type: administrative
   speaker:
@@ -215,6 +233,11 @@ domain_claims:
     was represented until recently by a lawyer who served previously as the intelligence community’s first inspector general, a Senate-confirmed position
   text: |-
     David Grusch was until recently represented by a lawyer who previously served as the intelligence community's first inspector general, a Senate-confirmed position.
+  entailment:
+    label: contradicts
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0845bc30-b347-4697-bc88-919fba54365f
   type: administrative
   speaker:
@@ -239,6 +262,11 @@ domain_claims:
     The managing partner of the law firm representing the whistleblower reportedly co-signed the complaint submitted to the current intelligence community inspector general.
   text: |-
     The managing partner of Compass Rose Legal Group, the law firm that formerly represented David Grusch, reportedly co-signed the complaint submitted to the Intelligence Community Inspector General.
+  entailment:
+    label: entails
+    score: 0.625
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 964786a4-8fe7-4942-a770-9baf33bc1e60
   type: administrative
   attestation: second_hand
@@ -264,6 +292,11 @@ domain_claims:
     the firm that formerly represented the whistleblower clarified that it “took no position and takes no position” on the substance of the explosive information provided to the intelligence community inspector general, which the whistleblower “has now publicly characterized.”
   text: |-
     In the Compass Rose press release (2023-06-09), Compass Rose Legal Group clarified that it "took no position and takes no position" on the substance of the information David Grusch provided to the Intelligence Community Inspector General.
+  entailment:
+    label: entails
+    score: 0.413
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 29a3a8bc-82a6-4cce-9512-d85310e92177
   type: testimony
   attestation: second_hand
@@ -282,6 +315,11 @@ domain_claims:
     current and former officials vouched for the whistleblower, David Grusch, while also corroborating the broad outlines of his allegations
   text: |-
     Current and former officials vouched for David Grusch and corroborated the broad outlines of his allegations.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2f1cf313-7127-46d4-b9ab-139540853423
   type: administrative
   speaker:
@@ -300,6 +338,11 @@ domain_claims:
   quote: Grusch spoke to Congress for hours, generating hundreds of pages of transcripts.
   text: |-
     David Grusch spoke to United States Congress for hours, generating hundreds of pages of transcripts.
+  entailment:
+    label: entails
+    score: 0.548
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 52428234-ec1c-4463-9128-70f0339b7597
   type: administrative
   speaker:
@@ -317,6 +360,11 @@ domain_claims:
     “Knowingly and willfully making false statements” to the intelligence community inspector general carries the risk of financial penalties and imprisonment.
   text: |-
     Making knowingly and willfully false statements to the Intelligence Community Inspector General carries the risk of financial penalties and imprisonment.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 80f79f09-211f-41b0-8b33-376fb0119537
   type: opinion
   attestation: first_hand
@@ -337,6 +385,11 @@ domain_claims:
     For their part, Grusch and other knowledgeable individuals who have spoken to investigators seem to have little incentive to lie.
   text: |-
     Marik von Rennenkampff considers that David Grusch and other individuals who spoke to investigators appear to have little incentive to lie, given the legal risk of making false statements to the Intelligence Community Inspector General.
+  entailment:
+    label: entails
+    score: 0.514
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7fdc0087-4496-4475-98de-07e981bfc998
   type: opinion
   attestation: first_hand
@@ -354,6 +407,11 @@ domain_claims:
   quote: Grusch has not provided proof of his allegations.
   text: |-
     David Grusch has not provided proof of his allegations regarding UFO-related information being withheld from United States Congress.
+  entailment:
+    label: entails
+    score: 0.466
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2693a5a0-cf06-4912-92f1-909905c4c964
   type: opinion
   attestation: first_hand
@@ -372,6 +430,11 @@ domain_claims:
     the notion that such monumental revelations could remain secret for any appreciable amount of time strains credulity
   text: |-
     Marik von Rennenkampff considers it implausible that monumental revelations of the kind alleged by David Grusch could remain secret for any appreciable amount of time.
+  entailment:
+    label: entails
+    score: 0.459
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 200dbe20-614e-43ee-89f2-39a5174b6c6d
   type: administrative
   attestation: second_hand
@@ -398,6 +461,11 @@ domain_claims:
     In a statement to NewsNation, the Department of Defense denied that the Pentagon’s new UFO office has uncovered the sort of activity alleged by Grusch.
   text: |-
     In a statement to NewsNation, the United States Department of Defense denied that the All-domain Anomaly Resolution Office had uncovered the sort of activity alleged by David Grusch.
+  entailment:
+    label: entails
+    score: 0.417
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ae07f7df-baab-4e74-b249-9d85f2ede872
   type: testimony
   attestation: first_hand
@@ -416,6 +484,11 @@ domain_claims:
     According to Grusch, the evidence supporting his allegations is highly classified, a reasonable claim.
   text: |-
     David Grusch has stated that the evidence supporting his allegations is highly classified.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 73936796-607b-4a7e-b224-43781c027056
   type: administrative
   speaker:
@@ -435,6 +508,11 @@ domain_claims:
     the classified evidence [that] Grusch provided to Congress and two inspectors general [alleging that UFO information was improperly withheld]
   text: |-
     David Grusch provided classified evidence alleging that UFO information was improperly withheld to United States Congress and two inspectors general.
+  entailment:
+    label: entails
+    score: 0.579
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2c6a9bb7-24a9-4780-bdc4-2dad0ff96a05
   type: opinion
   attestation: first_hand
@@ -453,6 +531,11 @@ domain_claims:
     from what is known publicly, Grusch is making use of the well-established, legally protected whistleblower process. By honoring his commitment not to divulge classified information improperly, Grusch appears to be proceeding “by the book.”
   text: |-
     David Grusch is making use of the well-established, legally protected whistleblower process rather than conducting an unauthorised leak of classified information.
+  entailment:
+    label: entails
+    score: 0.762
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31fcbe00-aac9-466b-982a-eeff7d81cb15
   type: administrative
   attestation: first_hand
@@ -470,6 +553,11 @@ domain_claims:
   quote: |-
     As a former top secret security clearance holder, I can certainly respect this decision.
   text: Marik von Rennenkampff is a former holder of a top secret security clearance.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 79a367a8-e619-4c6c-a9ff-fee045b26542
   type: administrative
   attestation: second_hand
@@ -487,6 +575,11 @@ domain_claims:
   quote: With the House Oversight Committee vowing to hold a hearing
   text: |-
     The House Oversight Committee vowed to hold a hearing on UFO-related whistleblower allegations.
+  entailment:
+    label: entails
+    score: 0.493
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e3ce7f18-85f6-4d35-a15f-6a4229c1977d
   type: hearsay
   attestation: second_hand
@@ -509,6 +602,11 @@ domain_claims:
   quote: reportedly corroborated by individuals involved in the alleged program
   text: |-
     Individuals with knowledge of the alleged UFO retrieval and reverse engineering program reportedly corroborated David Grusch's evidence.
+  entailment:
+    label: entails
+    score: 0.473
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 814790c3-1ba7-4304-98c2-70de1b2ca913
   type: administrative
   speaker:
@@ -524,6 +622,11 @@ domain_claims:
     name: Michael Shellenberger
   quote: author and political commentator Michael Shellenberger
   text: Michael Shellenberger is an author and political commentator.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9f00bf3e-dddd-4acf-bffb-34acfa692755
   type: testimony
   attestation: second_hand
@@ -548,6 +651,11 @@ domain_claims:
     As Shellenberger writes, numerous current and former officials confirmed the outlines of Grusch’s explosive allegations.
   text: |-
     In the Michael Shellenberger Substack article on David Grusch allegations, numerous current and former officials confirmed the outlines of David Grusch's allegations.
+  entailment:
+    label: neutral
+    score: 0.887
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7f3b89d9-b792-4be1-a9aa-66c179128db6
   type: testimony
   attestation: second_hand
@@ -570,6 +678,11 @@ domain_claims:
     The officials also provided context and descriptions of the vehicles allegedly recovered by the surreptitious UFO retrieval and reverse engineering effort.
   text: |-
     Officials interviewed by Michael Shellenberger provided context and descriptions of vehicles allegedly recovered by the UFO Retrieval and Reverse Engineering Program.
+  entailment:
+    label: entails
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 209800cb-7929-4812-a0ef-232ab0fb27fe
   type: opinion
   attestation: first_hand
@@ -588,6 +701,11 @@ domain_claims:
     it is plausible that the many individuals necessarily on the margins of such alleged efforts were led to believe that they were recovering terrestrial, as opposed to more exotic, vehicles
   text: |-
     Marik von Rennenkampff considers it plausible that individuals on the margins of the alleged UFO Retrieval and Reverse Engineering Program were led to believe they were recovering terrestrial, rather than exotic, vehicles.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d2984f69-bec6-4920-a7fa-e7c5b3320574
   type: administrative
   speaker:
@@ -608,6 +726,11 @@ domain_claims:
     Earlier this week, the Department of Defense released a statement in response to Grusch’s stunning allegations.
   text: |-
     The United States Department of Defense released a statement in the week before 2023-06-09 in response to David Grusch's allegations.
+  entailment:
+    label: entails
+    score: 0.437
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 06171d55-f777-4549-8338-708d3b3f6889
   type: administrative
   attestation: second_hand
@@ -629,6 +752,11 @@ domain_claims:
     the Pentagon’s new UFO office “has not discovered any verifiable information to substantiate claims that any programs regarding the possession or reverse-engineering of extraterrestrial materials have existed in the past or exist currently.”
   text: |-
     The All-domain Anomaly Resolution Office has not discovered any verifiable information to substantiate claims that any programs regarding the possession or reverse-engineering of extraterrestrial materials have existed in the past or exist currently.
+  entailment:
+    label: contradicts
+    score: 0.827
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6c7b4bfb-9ba2-4a80-a13c-0a0abb94c1c1
   type: testimony
   attestation: first_hand
@@ -647,6 +775,11 @@ domain_claims:
     Grusch claims that staff of previous UFO analysis programs were not “read in” — that is, given access — to information regarding the kind of activities that he and others allege exist.
   text: |-
     David Grusch has stated that staff of previous UFO analysis programs were not "read in" to information regarding the kind of activities he and others allege exist.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ff36a6e7-6c37-4f2d-a64d-1b78e965e101
   type: opinion
   attestation: first_hand
@@ -667,6 +800,11 @@ domain_claims:
     it is conceivable that, like its predecessor organizations, the All-domain Anomaly Resolution Office (the Defense Department’s current UFO analysis effort) is simply not privy to the alleged program
   text: |-
     Marik von Rennenkampff considers it conceivable that the All-domain Anomaly Resolution Office, the Department of Defense's current UFO analysis effort, is not privy to the alleged UFO Retrieval and Reverse Engineering Program, like its predecessor organisations.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5d6d3169-a58c-4340-824a-636d3374bf7e
   type: administrative
   speaker:
@@ -686,6 +824,11 @@ domain_claims:
     Grusch’s striking statements about the retrieval of “exotic” craft of “non-human” origin were reportedly approved by the Pentagon’s pre-publication review office
   text: |-
     David Grusch's statements about the retrieval of "exotic" craft of "non-human" origin were reportedly approved by the Pentagon Office of Prepublication and Security Review (DOPSR).
+  entailment:
+    label: neutral
+    score: 0.613
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a74be260-832e-4bce-8dd6-68cdbd6ad20c
   type: administrative
   speaker:
@@ -703,6 +846,11 @@ domain_claims:
     which scrutinizes books, movie scripts and statements by former officials to ensure that no sensitive information is inadvertently disclosed
   text: |-
     The Pentagon Office of Prepublication and Security Review (DOPSR) scrutinises books, movie scripts and statements by former officials to ensure that no sensitive information is inadvertently disclosed.
+  entailment:
+    label: entails
+    score: 0.489
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f369047f-2146-424e-93fc-e8bfb695a44f
   type: opinion
   attestation: second_hand
@@ -720,6 +868,11 @@ domain_claims:
     Some critics have questioned how, if such information is so highly classified, the Pentagon cleared Grusch to make these explosive statements.
   text: |-
     Some critics have questioned how, if the alleged UFO Retrieval and Reverse Engineering Program information is highly classified, the Pentagon cleared David Grusch to make his explosive statements.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e74cfaaa-75cc-4855-9ccc-59278adfc950
   type: opinion
   attestation: first_hand
@@ -740,6 +893,11 @@ domain_claims:
     logic suggests that if a UFO retrieval and exploitation effort operated illegally, as is alleged, it would be unknown to the Pentagon’s censors.
   text: |-
     Marik von Rennenkampff considers that if the alleged UFO Retrieval and Reverse Engineering Program operated illegally, it would be unknown to the Pentagon Office of Prepublication and Security Review (DOPSR).
+  entailment:
+    label: entails
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8919cc0e-09f1-4654-a745-b7e96860b754
   type: opinion
   attestation: first_hand
@@ -758,6 +916,11 @@ domain_claims:
     Key national security-focused members of Congress seem to have found explosive allegations of illegal UFO crash retrieval activities credible.
   text: |-
     Key national security-focused members of United States Congress found allegations of illegal UFO crash retrieval activities credible.
+  entailment:
+    label: entails
+    score: 0.773
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3e44e56d-de78-4339-a1d6-35701c80e5bd
   type: administrative
   speaker:
@@ -778,6 +941,11 @@ domain_claims:
     A major defense bill, signed by President Biden in December, establishes robust whistleblower protections
   text: |-
     The National Defense Authorization Act for Fiscal Year 2023 was signed by President Joe Biden in December.
+  entailment:
+    label: entails
+    score: 0.44
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef38b1f3-44e5-4212-8e87-51ee2a014e1f
   type: administrative
   attestation: second_hand
@@ -796,6 +964,11 @@ domain_claims:
     establishes robust whistleblower protections for individuals with knowledge of UFO programs engaged in “material retrieval, material analysis, reverse engineering [and] research and development.”
   text: |-
     The National Defense Authorization Act for Fiscal Year 2023 establishes whistleblower protections for individuals with knowledge of UFO programs engaged in material retrieval, material analysis, reverse engineering, and research and development.
+  entailment:
+    label: contradicts
+    score: 0.648
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: db51a194-441e-4c6a-ab8c-8ca111d86e80
   type: administrative
   attestation: first_hand
@@ -814,6 +987,11 @@ domain_claims:
     Marik von Rennenkampff served as an analyst with the U.S. Department of State’s Bureau of International Security and Nonproliferation
   text: |-
     Marik von Rennenkampff served as an analyst with the United States Department of State Bureau of International Security and Nonproliferation.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5704956a-f9c4-49af-abec-53996b9944b1
   type: administrative
   attestation: first_hand
@@ -830,6 +1008,11 @@ domain_claims:
   quote: as well as an Obama administration appointee at the U.S. Department of Defense
   text: |-
     Marik von Rennenkampff served as an Obama administration appointee at the United States Department of Defense.
+  entailment:
+    label: entails
+    score: 0.531
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 57abd159-ee63-4c2b-88bd-9509511a299e
   type: administrative
@@ -852,6 +1035,11 @@ infrastructure_claims:
     name: David Grusch NewsNation interview with Ross Coulthart (2023)
   quote: Grusch also gave an exclusive interview to Ross Coulthart of NewsNation
   text: David Grusch gave an exclusive interview to Ross Coulthart of NewsNation.
+  entailment:
+    label: entails
+    score: 0.828
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1c64a9c1-60db-4933-8de0-a35fc20b1dd9
   type: administrative
   speaker:
@@ -872,6 +1060,11 @@ infrastructure_claims:
   quote: |-
     to Ross Coulthart of NewsNation, which like The Hill is owned by Nexstar Media Group
   text: NewsNation, like The Hill, is owned by Nexstar Media Group.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 00781f9b-0b48-4494-aba7-bb4d7ce83dcc
   type: administrative
   speaker:
@@ -891,6 +1084,11 @@ infrastructure_claims:
     Some of those individuals appear to have spoken in detail with author and political commentator Michael Shellenberger.
   text: |-
     Some individuals with knowledge of the alleged UFO retrieval and reverse engineering program spoke in detail with Michael Shellenberger.
+  entailment:
+    label: entails
+    score: 0.564
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

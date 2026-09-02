@@ -2,23 +2,31 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:32:23.404897+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 292628
-      output: 5214
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 292628
+    output: 5214
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 1.5
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: 2e6ba2cfd62ca0f39ec56eacbc7bfb8e7fef8eb1e3eedb4d8e0c3bc39eec0a2b
   prep_version: 6
@@ -39,213 +47,258 @@ record:
 terminology:
   main_subject: Mercury-Atlas 7 spaceflight
   acronyms:
-    - acronym: NASA
-      expansion: National Aeronautics and Space Administration
+  - acronym: NASA
+    expansion: National Aeronautics and Space Administration
 nodes:
-  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-    type: person
-    name: Scott Carpenter
-    metadata:
-      family_name: Carpenter
-      aliases:
-        - Carpenter, Scott
-  - id: 91172d6c-adba-4d19-95a8-4faf39e24dfd
-    type: organisation
-    name: National Aeronautics and Space Administration (NASA)
-  - id: deb0d9f1-78ca-4723-a4c6-799bba3b66a5
-    type: project
-    name: Project Mercury
-  - id: 8fe6d547-cc2f-482f-861b-24efc39f71e2
-    type: object
-    name: Mercury-Atlas 7
-  - id: 6029a915-30d1-4796-926a-e640e029b236
-    type: event
-    name: Mercury-Atlas 7 spaceflight
-    metadata:
-      date_start: '1962-05-24'
+- id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+  type: person
+  name: Scott Carpenter
+  metadata:
+    family_name: Carpenter
+    aliases:
+    - Carpenter, Scott
+- id: 91172d6c-adba-4d19-95a8-4faf39e24dfd
+  type: organisation
+  name: National Aeronautics and Space Administration (NASA)
+- id: deb0d9f1-78ca-4723-a4c6-799bba3b66a5
+  type: project
+  name: Project Mercury
+- id: 8fe6d547-cc2f-482f-861b-24efc39f71e2
+  type: object
+  name: Mercury-Atlas 7
+- id: 6029a915-30d1-4796-926a-e640e029b236
+  type: event
+  name: Mercury-Atlas 7 spaceflight
+  metadata:
+    date_start: '1962-05-24'
 domain_claims:
-  - id: 2d692f8b-7a41-4766-92a8-702a5c4a964d
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-      name: Scott Carpenter
-    provenance_chain:
-      origin_kind: speaker
-      origin: Scott Carpenter
-    attribution_in_text: false
-    location: 00:00:00.9-00:00:06.5
-    date: '1962-05-24'
-    refs:
-      - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-        name: Scott Carpenter
-      - id: 6029a915-30d1-4796-926a-e640e029b236
-        name: Mercury-Atlas 7 spaceflight
-      - id: 8fe6d547-cc2f-482f-861b-24efc39f71e2
-        name: Mercury-Atlas 7
-    quote: I have some more of the white particles in view below the capsule.
-    text: |-
-      During the Mercury-Atlas 7 spaceflight, Scott Carpenter observed white particles below the spacecraft.
-  - id: ad4c75f3-aa4c-4708-9374-d16d6cc45728
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-      name: Scott Carpenter
-    provenance_chain:
-      origin_kind: speaker
-      origin: Scott Carpenter
-    attribution_in_text: false
-    location: 00:00:09.2-00:00:12.0
-    date: '1962-05-24'
-    refs:
-      - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-        name: Scott Carpenter
-      - id: 6029a915-30d1-4796-926a-e640e029b236
-        name: Mercury-Atlas 7 spaceflight
-    quote: They appear to be traveling exactly my speed.
-    text: |-
-      Scott Carpenter observed that the white particles he saw during the Mercury-Atlas 7 spaceflight appeared to be travelling at exactly his own speed.
-  - id: 157aeee2-4ee8-4273-836a-596e4bd9f1e9
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-      name: Scott Carpenter
-    provenance_chain:
-      origin_kind: speaker
-      origin: Scott Carpenter
-    attribution_in_text: false
-    location: 00:00:12.3-00:00:21.8
-    date: '1962-05-24'
-    refs:
-      - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-        name: Scott Carpenter
-      - id: 6029a915-30d1-4796-926a-e640e029b236
-        name: Mercury-Atlas 7 spaceflight
-    quote: There is one drifting off. It's going faster than I am, as a matter of fact.
-    text: |-
-      Scott Carpenter observed one of the particles drifting off and moving faster than his own spacecraft during the Mercury-Atlas 7 spaceflight.
-  - id: 1ed686f5-e9d7-4ffe-a2e4-9b6972839f79
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-      name: Scott Carpenter
-    provenance_chain:
-      origin_kind: speaker
-      origin: Scott Carpenter
-    attribution_in_text: false
-    location: 00:00:28.9-00:00:34.2
-    date: '1962-05-24'
-    refs:
-      - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-        name: Scott Carpenter
-      - id: 6029a915-30d1-4796-926a-e640e029b236
-        name: Mercury-Atlas 7 spaceflight
-    quote: |-
-      I haven't seen the great numbers of these particles, but I've seen a few of them.
-    text: |-
-      Scott Carpenter had not seen great numbers of the particles during the Mercury-Atlas 7 spaceflight, but had seen a few of them.
-  - id: c80e818f-747b-4036-a93d-b1e3f64902bb
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-      name: Scott Carpenter
-    provenance_chain:
-      origin_kind: speaker
-      origin: Scott Carpenter
-    attribution_in_text: false
-    location: 00:00:34.7-00:00:35.7
-    date: '1962-05-24'
-    refs:
-      - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-        name: Scott Carpenter
-      - id: 6029a915-30d1-4796-926a-e640e029b236
-        name: Mercury-Atlas 7 spaceflight
-    quote: Their motion is random.
-    text: |-
-      Scott Carpenter observed that the motion of the particles during the Mercury-Atlas 7 spaceflight was random.
-  - id: 696b7002-6708-4552-8ec1-5b822ac9b936
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-      name: Scott Carpenter
-    provenance_chain:
-      origin_kind: speaker
-      origin: Scott Carpenter
-    attribution_in_text: true
-    location: 00:00:37.1-00:00:39.6
-    date: '1962-05-24'
-    refs:
-      - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-        name: Scott Carpenter
-      - id: 6029a915-30d1-4796-926a-e640e029b236
-        name: Mercury-Atlas 7 spaceflight
-    quote: They look exactly like snowflakes to me.
-    text: |-
-      Scott Carpenter considered the particles observed during the Mercury-Atlas 7 spaceflight to look exactly like snowflakes.
-  - id: a04c5d32-0686-4532-ba1e-17f260b8811f
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-      name: Scott Carpenter
-    provenance_chain:
-      origin_kind: speaker
-      origin: Scott Carpenter
-    attribution_in_text: true
-    location: 00:00:43.2-00:00:49.8
-    date: '1962-05-24'
-    refs:
-      - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-        name: Scott Carpenter
-      - id: 6029a915-30d1-4796-926a-e640e029b236
-        name: Mercury-Atlas 7 spaceflight
-    quote: |-
-      Ground Control: Have you tried a return? Scott Carpenter: Negative. Let me get within scanner limits first.
-    text: |-
-      Ground Control asked Scott Carpenter, during the Mercury-Atlas 7 spaceflight, whether he had tried a return, and Carpenter responded negatively, stating he needed to get within scanner limits first.
-  - id: 9366be24-0de1-4d6c-8909-fa51c7054bf7
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-      name: Scott Carpenter
-    provenance_chain:
-      origin_kind: speaker
-      origin: Scott Carpenter
-    attribution_in_text: false
-    location: 00:00:53.7-00:00:58.7
-    date: '1962-05-24'
-    refs:
-      - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-        name: Scott Carpenter
-      - id: 6029a915-30d1-4796-926a-e640e029b236
-        name: Mercury-Atlas 7 spaceflight
-    quote: I must adjust my attitude to within scanner limits first.
-    text: |-
-      Scott Carpenter needed to adjust his spacecraft's attitude to within scanner limits during the Mercury-Atlas 7 spaceflight.
-  - id: 63c0c5ed-47df-4e00-b48f-e0f2d2f6677c
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-      name: Scott Carpenter
-    provenance_chain:
-      origin_kind: speaker
-      origin: Scott Carpenter
-    attribution_in_text: false
-    location: 00:01:31.6-00:01:37.4
-    date: '1962-05-24'
-    refs:
-      - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
-        name: Scott Carpenter
-      - id: 6029a915-30d1-4796-926a-e640e029b236
-        name: Mercury-Atlas 7 spaceflight
-    quote: |-
-      There were some more of those little particles. They definitely looked like snowflakes this time.
-    text: |-
-      Scott Carpenter observed more particles during the Mercury-Atlas 7 spaceflight that definitely looked like snowflakes.
+- id: 2d692f8b-7a41-4766-92a8-702a5c4a964d
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  provenance_chain:
+    origin_kind: speaker
+    origin: Scott Carpenter
+  attribution_in_text: false
+  location: 00:00:00.9-00:00:06.5
+  date: '1962-05-24'
+  refs:
+  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  - id: 6029a915-30d1-4796-926a-e640e029b236
+    name: Mercury-Atlas 7 spaceflight
+  - id: 8fe6d547-cc2f-482f-861b-24efc39f71e2
+    name: Mercury-Atlas 7
+  quote: I have some more of the white particles in view below the capsule.
+  text: |-
+    During the Mercury-Atlas 7 spaceflight, Scott Carpenter observed white particles below the spacecraft.
+  entailment:
+    label: entails
+    score: 0.885
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ad4c75f3-aa4c-4708-9374-d16d6cc45728
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  provenance_chain:
+    origin_kind: speaker
+    origin: Scott Carpenter
+  attribution_in_text: false
+  location: 00:00:09.2-00:00:12.0
+  date: '1962-05-24'
+  refs:
+  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  - id: 6029a915-30d1-4796-926a-e640e029b236
+    name: Mercury-Atlas 7 spaceflight
+  quote: They appear to be traveling exactly my speed.
+  text: |-
+    Scott Carpenter observed that the white particles he saw during the Mercury-Atlas 7 spaceflight appeared to be travelling at exactly his own speed.
+  entailment:
+    label: neutral
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 157aeee2-4ee8-4273-836a-596e4bd9f1e9
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  provenance_chain:
+    origin_kind: speaker
+    origin: Scott Carpenter
+  attribution_in_text: false
+  location: 00:00:12.3-00:00:21.8
+  date: '1962-05-24'
+  refs:
+  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  - id: 6029a915-30d1-4796-926a-e640e029b236
+    name: Mercury-Atlas 7 spaceflight
+  quote: There is one drifting off. It's going faster than I am, as a matter of fact.
+  text: |-
+    Scott Carpenter observed one of the particles drifting off and moving faster than his own spacecraft during the Mercury-Atlas 7 spaceflight.
+  entailment:
+    label: neutral
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 1ed686f5-e9d7-4ffe-a2e4-9b6972839f79
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  provenance_chain:
+    origin_kind: speaker
+    origin: Scott Carpenter
+  attribution_in_text: false
+  location: 00:00:28.9-00:00:34.2
+  date: '1962-05-24'
+  refs:
+  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  - id: 6029a915-30d1-4796-926a-e640e029b236
+    name: Mercury-Atlas 7 spaceflight
+  quote: |-
+    I haven't seen the great numbers of these particles, but I've seen a few of them.
+  text: |-
+    Scott Carpenter had not seen great numbers of the particles during the Mercury-Atlas 7 spaceflight, but had seen a few of them.
+  entailment:
+    label: neutral
+    score: 0.728
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c80e818f-747b-4036-a93d-b1e3f64902bb
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  provenance_chain:
+    origin_kind: speaker
+    origin: Scott Carpenter
+  attribution_in_text: false
+  location: 00:00:34.7-00:00:35.7
+  date: '1962-05-24'
+  refs:
+  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  - id: 6029a915-30d1-4796-926a-e640e029b236
+    name: Mercury-Atlas 7 spaceflight
+  quote: Their motion is random.
+  text: |-
+    Scott Carpenter observed that the motion of the particles during the Mercury-Atlas 7 spaceflight was random.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 696b7002-6708-4552-8ec1-5b822ac9b936
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  provenance_chain:
+    origin_kind: speaker
+    origin: Scott Carpenter
+  attribution_in_text: true
+  location: 00:00:37.1-00:00:39.6
+  date: '1962-05-24'
+  refs:
+  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  - id: 6029a915-30d1-4796-926a-e640e029b236
+    name: Mercury-Atlas 7 spaceflight
+  quote: They look exactly like snowflakes to me.
+  text: |-
+    Scott Carpenter considered the particles observed during the Mercury-Atlas 7 spaceflight to look exactly like snowflakes.
+  entailment:
+    label: neutral
+    score: 0.924
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a04c5d32-0686-4532-ba1e-17f260b8811f
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  provenance_chain:
+    origin_kind: speaker
+    origin: Scott Carpenter
+  attribution_in_text: true
+  location: 00:00:43.2-00:00:49.8
+  date: '1962-05-24'
+  refs:
+  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  - id: 6029a915-30d1-4796-926a-e640e029b236
+    name: Mercury-Atlas 7 spaceflight
+  quote: |-
+    Ground Control: Have you tried a return? Scott Carpenter: Negative. Let me get within scanner limits first.
+  text: |-
+    Ground Control asked Scott Carpenter, during the Mercury-Atlas 7 spaceflight, whether he had tried a return, and Carpenter responded negatively, stating he needed to get within scanner limits first.
+  entailment:
+    label: neutral
+    score: 0.923
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 9366be24-0de1-4d6c-8909-fa51c7054bf7
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  provenance_chain:
+    origin_kind: speaker
+    origin: Scott Carpenter
+  attribution_in_text: false
+  location: 00:00:53.7-00:00:58.7
+  date: '1962-05-24'
+  refs:
+  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  - id: 6029a915-30d1-4796-926a-e640e029b236
+    name: Mercury-Atlas 7 spaceflight
+  quote: I must adjust my attitude to within scanner limits first.
+  text: |-
+    Scott Carpenter needed to adjust his spacecraft's attitude to within scanner limits during the Mercury-Atlas 7 spaceflight.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 63c0c5ed-47df-4e00-b48f-e0f2d2f6677c
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  provenance_chain:
+    origin_kind: speaker
+    origin: Scott Carpenter
+  attribution_in_text: false
+  location: 00:01:31.6-00:01:37.4
+  date: '1962-05-24'
+  refs:
+  - id: 3beb52a5-c472-4d8e-bbfc-b6ff689d5130
+    name: Scott Carpenter
+  - id: 6029a915-30d1-4796-926a-e640e029b236
+    name: Mercury-Atlas 7 spaceflight
+  quote: |-
+    There were some more of those little particles. They definitely looked like snowflakes this time.
+  text: |-
+    Scott Carpenter observed more particles during the Mercury-Atlas 7 spaceflight that definitely looked like snowflakes.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

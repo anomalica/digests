@@ -13,6 +13,14 @@ ai_usage:
     cache_read: 182213
     cache_write: 108241
     calls: 2
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 16.2
 prompts:
 - pass: nodes
   id: nodes
@@ -29,21 +37,21 @@ pre_digest:
   prep_version: 7
 record:
   id: 9bea2ffb-0e64-484e-99d8-339086249e40
-  title: IC Watchdog Responds to Alleged UAP Whistleblower Leak — Liberation Times
-    | Reimagining Old News
+  title: |-
+    IC Watchdog Responds to Alleged UAP Whistleblower Leak — Liberation Times | Reimagining Old News
   producer: Christopher Sharp
   publisher: Liberation Times | Reimagining Old News
   date: '2026-08-11'
   medium: web
   content_hash: sha256:f8225cc90eefd747010a6c48788489108c8c2bf65c2183ad008a448529ecd031
   processing_version: 40a8b9a
-  reference: https://www.liberationtimes.com/home/intelligence-watchdog-warns-of-fbi-referral-over-alleged-disclosure-of-uap-whistleblower-testimony
+  reference: |-
+    https://www.liberationtimes.com/home/intelligence-watchdog-warns-of-fbi-referral-over-alleged-disclosure-of-uap-whistleblower-testimony
   review:
     state: none
     sidecar: absent
-  description: The Intelligence Community Inspector General responds to allegations
-    that an ODNI source disclosed classified testimony from UAP whistleblower Dylan
-    Borland.
+  description: |-
+    The Intelligence Community Inspector General responds to allegations that an ODNI source disclosed classified testimony from UAP whistleblower Dylan Borland.
   copyright_status: publicly_accessible
 terminology:
   main_subject: Dylan Borland
@@ -171,13 +179,15 @@ domain_claims:
     name: Office of the Intelligence Community Inspector General (ICIG)
   - id: 453803a3-b8c1-44ae-9fab-77b21a446e9e
     name: United States Congress
-  quote: Investigative journalist Jeremy Corbell has alleged that an ODNI source disclosed
-    details of testimony provided by Dylan Borland, a UAP whistleblower who has made
-    protected disclosures to the IC OIG and Congress.
-  text: Jeremy Corbell alleged that an Office of the Director of National Intelligence
-    (ODNI) source disclosed details of testimony provided by Dylan Borland, a UAP
-    whistleblower who has made protected disclosures to the Office of the Intelligence
-    Community Inspector General and Congress.
+  quote: |-
+    Investigative journalist Jeremy Corbell has alleged that an ODNI source disclosed details of testimony provided by Dylan Borland, a UAP whistleblower who has made protected disclosures to the IC OIG and Congress.
+  text: |-
+    Jeremy Corbell alleged that an Office of the Director of National Intelligence (ODNI) source disclosed details of testimony provided by Dylan Borland, a UAP whistleblower who has made protected disclosures to the Office of the Intelligence Community Inspector General and Congress.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3dfdfada-20e0-41bf-86ec-cc93fe239426
   type: hearsay
   attestation: first_hand
@@ -194,10 +204,15 @@ domain_claims:
     name: Jeremy Corbell
   - id: ae1aea33-7d0d-4078-be6a-98bde64717c3
     name: Rubik's Cube
-  quote: According to Corbell, the information included claims concerning an alleged
-    UAP program codenamed ‘Rubik’s Cube’.
-  text: According to Jeremy Corbell, the disclosed information included claims concerning
-    an alleged UAP program codenamed Rubik's Cube.
+  quote: |-
+    According to Corbell, the information included claims concerning an alleged UAP program codenamed ‘Rubik’s Cube’.
+  text: |-
+    According to Jeremy Corbell, the disclosed information included claims concerning an alleged UAP program codenamed Rubik's Cube.
+  entailment:
+    label: entails
+    score: 0.954
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 87216fae-3a6c-4293-ac41-12a205d9769c
   type: testimony
   attestation: first_hand
@@ -216,10 +231,15 @@ domain_claims:
     name: Liberation Times
   - id: e2f578c2-e82a-4ca1-acb4-101906acaf1b
     name: Jeremy Corbell
-  quote: Speaking to Liberation Times, Borland corroborated the allegation that classified
-    whistleblower testimony was intentionally disclosed to Corbell.
-  text: Dylan Borland corroborated to Liberation Times the allegation that classified
-    whistleblower testimony was intentionally disclosed to Jeremy Corbell.
+  quote: |-
+    Speaking to Liberation Times, Borland corroborated the allegation that classified whistleblower testimony was intentionally disclosed to Corbell.
+  text: |-
+    Dylan Borland corroborated to Liberation Times the allegation that classified whistleblower testimony was intentionally disclosed to Jeremy Corbell.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8d027eb7-f920-41cc-8d1b-e15bd30065bc
   type: administrative
   provenance_chain:
@@ -231,11 +251,15 @@ domain_claims:
     name: Dylan Borland
   - id: 7e4bce13-a5a7-464e-98a4-9f5163ff4ae1
     name: United States Air Force
-  quote: Borland is a former U.S. Air Force geospatial intelligence specialist who
-    later worked as a senior analyst for defence contractors BAE Systems and Intrepid
-    Solutions, examining video, radar and advanced electro-optical imagery.
-  text: Dylan Borland is a former United States Air Force geospatial intelligence
-    specialist.
+  quote: |-
+    Borland is a former U.S. Air Force geospatial intelligence specialist who later worked as a senior analyst for defence contractors BAE Systems and Intrepid Solutions, examining video, radar and advanced electro-optical imagery.
+  text: |-
+    Dylan Borland is a former United States Air Force geospatial intelligence specialist.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1f76086b-db28-4608-97d9-8776f0a5e2b7
   type: administrative
   provenance_chain:
@@ -247,11 +271,15 @@ domain_claims:
     name: Dylan Borland
   - id: 8193ef3c-8aed-4b4d-a5ed-c17bdfa82b1a
     name: BAE Systems
-  quote: Borland is a former U.S. Air Force geospatial intelligence specialist who
-    later worked as a senior analyst for defence contractors BAE Systems and Intrepid
-    Solutions, examining video, radar and advanced electro-optical imagery.
-  text: Dylan Borland later worked as a senior analyst for defence contractor BAE
-    Systems, examining video, radar and advanced electro-optical imagery.
+  quote: |-
+    Borland is a former U.S. Air Force geospatial intelligence specialist who later worked as a senior analyst for defence contractors BAE Systems and Intrepid Solutions, examining video, radar and advanced electro-optical imagery.
+  text: |-
+    Dylan Borland later worked as a senior analyst for defence contractor BAE Systems, examining video, radar and advanced electro-optical imagery.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f6710d96-ad78-4635-8c66-6be27f11b5db
   type: administrative
   provenance_chain:
@@ -263,11 +291,15 @@ domain_claims:
     name: Dylan Borland
   - id: ecac5bc0-0d3e-4c09-b68b-db4a1cdb5243
     name: Intrepid Solutions
-  quote: Borland is a former U.S. Air Force geospatial intelligence specialist who
-    later worked as a senior analyst for defence contractors BAE Systems and Intrepid
-    Solutions, examining video, radar and advanced electro-optical imagery.
-  text: Dylan Borland later worked as a senior analyst for defence contractor Intrepid
-    Solutions, examining video, radar and advanced electro-optical imagery.
+  quote: |-
+    Borland is a former U.S. Air Force geospatial intelligence specialist who later worked as a senior analyst for defence contractors BAE Systems and Intrepid Solutions, examining video, radar and advanced electro-optical imagery.
+  text: |-
+    Dylan Borland later worked as a senior analyst for defence contractor Intrepid Solutions, examining video, radar and advanced electro-optical imagery.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ff5211ba-96b8-4d51-821b-d79fb54e158e
   type: testimony
   attestation: first_hand
@@ -287,14 +319,15 @@ domain_claims:
     name: United States Congress
   - id: 74dbfb8c-7c22-42be-bf42-52bdb77c11bf
     name: Office of the Intelligence Community Inspector General (ICIG)
-  quote: In sworn testimony before Congress in September 2025, he identified himself
-    as a federal whistleblower who had provided information to both the Intelligence
-    Community Office of the Inspector General (IC OIG) and the Pentagon’s All-domain
-    Anomaly Resolution Office (AARO) concerning alleged craft, technologies and legacy
-    UAP programs operating without congressional oversight.
-  text: In sworn testimony before the United States Congress in 2025-09, Dylan Borland
-    identified himself as a federal whistleblower who had provided information to
-    the Intelligence Community Office of the Inspector General.
+  quote: |-
+    In sworn testimony before Congress in September 2025, he identified himself as a federal whistleblower who had provided information to both the Intelligence Community Office of the Inspector General (IC OIG) and the Pentagon’s All-domain Anomaly Resolution Office (AARO) concerning alleged craft, technologies and legacy UAP programs operating without congressional oversight.
+  text: |-
+    In sworn testimony before the United States Congress in 2025-09, Dylan Borland identified himself as a federal whistleblower who had provided information to the Intelligence Community Office of the Inspector General.
+  entailment:
+    label: entails
+    score: 0.61
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 603baa47-806f-4230-b9f1-f3d2bb5b8483
   type: testimony
   attestation: first_hand
@@ -316,15 +349,15 @@ domain_claims:
     name: All-Domain Anomaly Resolution Office (AARO)
   - id: a82800f9-3be3-49ed-b969-62652360f036
     name: United States Department of Defense (DoD)
-  quote: In sworn testimony before Congress in September 2025, he identified himself
-    as a federal whistleblower who had provided information to both the Intelligence
-    Community Office of the Inspector General (IC OIG) and the Pentagon’s All-domain
-    Anomaly Resolution Office (AARO) concerning alleged craft, technologies and legacy
-    UAP programs operating without congressional oversight.
-  text: In sworn testimony before the United States Congress in 2025-09, Dylan Borland
-    identified himself as a federal whistleblower who had provided information to
-    the All-Domain Anomaly Resolution Office (AARO) concerning alleged craft, technologies
-    and legacy UAP programmes operating without congressional oversight.
+  quote: |-
+    In sworn testimony before Congress in September 2025, he identified himself as a federal whistleblower who had provided information to both the Intelligence Community Office of the Inspector General (IC OIG) and the Pentagon’s All-domain Anomaly Resolution Office (AARO) concerning alleged craft, technologies and legacy UAP programs operating without congressional oversight.
+  text: |-
+    In sworn testimony before the United States Congress in 2025-09, Dylan Borland identified himself as a federal whistleblower who had provided information to the All-Domain Anomaly Resolution Office (AARO) concerning alleged craft, technologies and legacy UAP programmes operating without congressional oversight.
+  entailment:
+    label: entails
+    score: 0.628
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4c30364b-383d-4c67-abab-06b162fd1b11
   type: administrative
   attestation: second_hand
@@ -338,13 +371,15 @@ domain_claims:
     name: Office of the Intelligence Community Inspector General (ICIG)
   - id: f851c6ab-52ff-4ac9-823f-d8062fc458bc
     name: Dylan Borland
-  quote: While declining to confirm whether Borland had provided testimony or whether
-    any investigation was underway, the office emphasised that it is legally required
-    to protect confidential whistleblowers and information that could reveal their
-    identities.
-  text: A spokesperson for the Office of the Intelligence Community Inspector General
-    declined to confirm whether Dylan Borland had provided testimony or whether any
-    investigation was underway.
+  quote: |-
+    While declining to confirm whether Borland had provided testimony or whether any investigation was underway, the office emphasised that it is legally required to protect confidential whistleblowers and information that could reveal their identities.
+  text: |-
+    A spokesperson for the Office of the Intelligence Community Inspector General declined to confirm whether Dylan Borland had provided testimony or whether any investigation was underway.
+  entailment:
+    label: entails
+    score: 0.477
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 87fe9bf7-2104-4d79-8bf2-730d22dc43a1
   type: administrative
   attestation: second_hand
@@ -356,11 +391,15 @@ domain_claims:
   refs:
   - id: 74dbfb8c-7c22-42be-bf42-52bdb77c11bf
     name: Office of the Intelligence Community Inspector General (ICIG)
-  quote: the office emphasised that it is legally required to protect confidential
-    whistleblowers and information that could reveal their identities.
-  text: The Office of the Intelligence Community Inspector General is legally required
-    to protect confidential whistleblowers and information that could reveal their
-    identities.
+  quote: |-
+    the office emphasised that it is legally required to protect confidential whistleblowers and information that could reveal their identities.
+  text: |-
+    The Office of the Intelligence Community Inspector General is legally required to protect confidential whistleblowers and information that could reveal their identities.
+  entailment:
+    label: entails
+    score: 0.644
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 88eb8ecf-ff8d-4841-8203-a086242f825a
   type: administrative
   attestation: second_hand
@@ -374,13 +413,15 @@ domain_claims:
     name: Office of the Intelligence Community Inspector General (ICIG)
   - id: bd15579f-15d7-4ab3-8bc9-3e34dda5f6d3
     name: Federal Bureau of Investigation (FBI)
-  quote: The spokesperson also warned that any unauthorised disclosure of protected
-    information could result in removal from federal service and referral to the FBI
-    or another investigative authority
-  text: A spokesperson for the Office of the Intelligence Community Inspector General
-    warned that any unauthorised disclosure of protected information could result
-    in removal from federal service and referral to the Federal Bureau of Investigation
-    (FBI) or another investigative authority.
+  quote: |-
+    The spokesperson also warned that any unauthorised disclosure of protected information could result in removal from federal service and referral to the FBI or another investigative authority
+  text: |-
+    A spokesperson for the Office of the Intelligence Community Inspector General warned that any unauthorised disclosure of protected information could result in removal from federal service and referral to the Federal Bureau of Investigation (FBI) or another investigative authority.
+  entailment:
+    label: entails
+    score: 0.5
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33017d65-6afe-4689-b719-8f56385707e7
   type: administrative
   attestation: second_hand
@@ -392,14 +433,15 @@ domain_claims:
   refs:
   - id: 74dbfb8c-7c22-42be-bf42-52bdb77c11bf
     name: Office of the Intelligence Community Inspector General (ICIG)
-  quote: Subject to limited exceptions, IC OIG is required by law to protect from
-    public disclosure the identity of confidential whistleblowers and certain information
-    that could reasonably be expected to reveal their identities. IC OIG takes these
-    obligations seriously.
-  text: The Office of the Intelligence Community Inspector General is required by
-    law to protect from public disclosure the identity of confidential whistleblowers
-    and certain information that could reasonably be expected to reveal their identities,
-    subject to limited exceptions.
+  quote: |-
+    Subject to limited exceptions, IC OIG is required by law to protect from public disclosure the identity of confidential whistleblowers and certain information that could reasonably be expected to reveal their identities. IC OIG takes these obligations seriously.
+  text: |-
+    The Office of the Intelligence Community Inspector General is required by law to protect from public disclosure the identity of confidential whistleblowers and certain information that could reasonably be expected to reveal their identities, subject to limited exceptions.
+  entailment:
+    label: entails
+    score: 0.908
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7af20011-d481-452f-be3d-81774801d9a7
   type: administrative
   attestation: second_hand
@@ -411,11 +453,15 @@ domain_claims:
   refs:
   - id: 74dbfb8c-7c22-42be-bf42-52bdb77c11bf
     name: Office of the Intelligence Community Inspector General (ICIG)
-  quote: Consistent with longstanding policy and practice, IC OIG can neither confirm
-    nor deny the existence of any pending or ongoing investigation.
-  text: Consistent with longstanding policy and practice, the Office of the Intelligence
-    Community Inspector General can neither confirm nor deny the existence of any
-    pending or ongoing investigation.
+  quote: |-
+    Consistent with longstanding policy and practice, IC OIG can neither confirm nor deny the existence of any pending or ongoing investigation.
+  text: |-
+    Consistent with longstanding policy and practice, the Office of the Intelligence Community Inspector General can neither confirm nor deny the existence of any pending or ongoing investigation.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c64d037b-9210-4529-bd27-9ec427dd7f65
   type: administrative
   attestation: second_hand
@@ -427,15 +473,15 @@ domain_claims:
   refs:
   - id: bd15579f-15d7-4ab3-8bc9-3e34dda5f6d3
     name: Federal Bureau of Investigation (FBI)
-  quote: Any unauthorized disclosure of information protected by law, including information
-    that identifies of could reasonably be expected to identify a confidential whistleblower,
-    may constitute grounds for removal from Federal service and may also warrant referral
-    to FBI or other appropriate investigative authorities.
-  text: Any unauthorised disclosure of information protected by law, including information
-    that identifies or could reasonably be expected to identify a confidential whistleblower,
-    may constitute grounds for removal from federal service and may also warrant referral
-    to the Federal Bureau of Investigation (FBI) or other appropriate investigative
-    authorities.
+  quote: |-
+    Any unauthorized disclosure of information protected by law, including information that identifies of could reasonably be expected to identify a confidential whistleblower, may constitute grounds for removal from Federal service and may also warrant referral to FBI or other appropriate investigative authorities.
+  text: |-
+    Any unauthorised disclosure of information protected by law, including information that identifies or could reasonably be expected to identify a confidential whistleblower, may constitute grounds for removal from federal service and may also warrant referral to the Federal Bureau of Investigation (FBI) or other appropriate investigative authorities.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5f14fd24-01c3-4d6a-a008-06edb3f290a6
   type: administrative
   speaker:
@@ -454,11 +500,15 @@ domain_claims:
     name: Office of the Director of National Intelligence (ODNI)
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: Corbell’s allegation concerning Borland forms part of a broader controversy
-    surrounding ODNI’s Director’s Initiatives Group (DIG).
-  text: Jeremy Corbell's allegation concerning Dylan Borland forms part of a broader
-    controversy surrounding the Office of the Director of National Intelligence's
-    Director's Initiatives Group (DIG).
+  quote: |-
+    Corbell’s allegation concerning Borland forms part of a broader controversy surrounding ODNI’s Director’s Initiatives Group (DIG).
+  text: |-
+    Jeremy Corbell's allegation concerning Dylan Borland forms part of a broader controversy surrounding the Office of the Director of National Intelligence's Director's Initiatives Group (DIG).
+  entailment:
+    label: contradicts
+    score: 0.859
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d5ac6c46-f72c-4297-9892-f4076b21b69a
   type: hearsay
   attestation: first_hand
@@ -477,12 +527,15 @@ domain_claims:
     name: Office of the Director of National Intelligence (ODNI)
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: Corbell also alleges that the same unnamed ODNI official circulated damaging
-    claims said to have emerged from another whistleblower’s private meeting with
-    the group.
-  text: Jeremy Corbell alleged that the same unnamed Office of the Director of National
-    Intelligence official circulated damaging claims said to have emerged from another
-    whistleblower's private meeting with the Director's Initiatives Group.
+  quote: |-
+    Corbell also alleges that the same unnamed ODNI official circulated damaging claims said to have emerged from another whistleblower’s private meeting with the group.
+  text: |-
+    Jeremy Corbell alleged that the same unnamed Office of the Director of National Intelligence official circulated damaging claims said to have emerged from another whistleblower's private meeting with the Director's Initiatives Group.
+  entailment:
+    label: entails
+    score: 0.64
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 290e6613-6d78-4e56-b313-db404b08729a
   type: administrative
   attestation: second_hand
@@ -498,12 +551,15 @@ domain_claims:
     name: Matthew Brown
   - id: 0e69b540-799b-4bbe-b21c-6f546b032903
     name: USA, Virginia, Liberty Crossing Intelligence Campus
-  quote: the group conducted its own inquiry into UAP-related allegations and met
-    privately with whistleblower Matthew Brown at the Liberty Crossing Intelligence
-    Campus in Virginia.
-  text: The Director's Initiatives Group conducted its own inquiry into UAP-related
-    allegations and met privately with whistleblower Matthew Brown at the Liberty
-    Crossing Intelligence Campus in Virginia.
+  quote: |-
+    the group conducted its own inquiry into UAP-related allegations and met privately with whistleblower Matthew Brown at the Liberty Crossing Intelligence Campus in Virginia.
+  text: |-
+    The Director's Initiatives Group conducted its own inquiry into UAP-related allegations and met privately with whistleblower Matthew Brown at the Liberty Crossing Intelligence Campus in Virginia.
+  entailment:
+    label: entails
+    score: 0.467
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b31c2c11-764e-4de1-ba49-2ebc05223f54
   type: testimony
   attestation: first_hand
@@ -520,10 +576,15 @@ domain_claims:
     name: Matthew Brown
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: Brown said he had been approached by the individual leading the effort and
-    invited to provide information about his experiences.
-  text: Matthew Brown said he had been approached by the individual leading the Director's
-    Initiatives Group's effort and invited to provide information about his experiences.
+  quote: |-
+    Brown said he had been approached by the individual leading the effort and invited to provide information about his experiences.
+  text: |-
+    Matthew Brown said he had been approached by the individual leading the Director's Initiatives Group's effort and invited to provide information about his experiences.
+  entailment:
+    label: entails
+    score: 0.481
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2639981d-ecaf-415c-981a-cf770eccd94e
   type: opinion
   attestation: first_hand
@@ -540,10 +601,15 @@ domain_claims:
     name: Matthew Brown
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: According to Brown, the group did not appear focused on the substance of
-    what he was saying.
-  text: Matthew Brown considers that the Director's Initiatives Group did not appear
-    focused on the substance of what he was saying during their meeting.
+  quote: |-
+    According to Brown, the group did not appear focused on the substance of what he was saying.
+  text: |-
+    Matthew Brown considers that the Director's Initiatives Group did not appear focused on the substance of what he was saying during their meeting.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 84faebb1-208d-487f-8c6b-f8eb1475cd32
   type: opinion
   attestation: first_hand
@@ -560,11 +626,15 @@ domain_claims:
     name: Matthew Brown
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: Instead, he felt they were more interested in learning which classified compartments
-    and sub-compartments he had accessed.
-  text: Matthew Brown felt that the Director's Initiatives Group was more interested
-    in learning which classified compartments and sub-compartments he had accessed
-    than in the substance of his account.
+  quote: |-
+    Instead, he felt they were more interested in learning which classified compartments and sub-compartments he had accessed.
+  text: |-
+    Matthew Brown felt that the Director's Initiatives Group was more interested in learning which classified compartments and sub-compartments he had accessed than in the substance of his account.
+  entailment:
+    label: entails
+    score: 0.786
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bcdaaf49-2b46-4b14-949a-c2b781ae0b05
   type: opinion
   attestation: first_hand
@@ -581,11 +651,15 @@ domain_claims:
     name: Matthew Brown
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: This left him with the impression that they wanted to work out how he knew
-    what he knew and stop similar disclosures from happening again.
-  text: Matthew Brown was left with the impression that the Director's Initiatives
-    Group wanted to work out how he knew what he knew and stop similar disclosures
-    from happening again.
+  quote: |-
+    This left him with the impression that they wanted to work out how he knew what he knew and stop similar disclosures from happening again.
+  text: |-
+    Matthew Brown was left with the impression that the Director's Initiatives Group wanted to work out how he knew what he knew and stop similar disclosures from happening again.
+  entailment:
+    label: entails
+    score: 0.671
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 621271ab-043c-4d66-903e-62296874b0e3
   type: opinion
   attestation: first_hand
@@ -603,8 +677,13 @@ domain_claims:
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
   quote: Brown believes this led to him being wrongly labelled antisemitic.
-  text: Matthew Brown believes his interaction with the Director's Initiatives Group
-    led to him being wrongly labelled antisemitic.
+  text: |-
+    Matthew Brown believes his interaction with the Director's Initiatives Group led to him being wrongly labelled antisemitic.
+  entailment:
+    label: contradicts
+    score: 0.758
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 89766f51-a698-42f9-988e-121d3f1145d5
   type: opinion
   attestation: first_hand
@@ -619,10 +698,15 @@ domain_claims:
   refs:
   - id: fb3500d0-de04-45a5-8c3d-c33ee563c780
     name: Matthew Brown
-  quote: Brown denied those claims and believed they formed part of an attempt to
-    discredit him.
-  text: Matthew Brown denied the claims that he was antisemitic and believed they
-    formed part of an attempt to discredit him.
+  quote: |-
+    Brown denied those claims and believed they formed part of an attempt to discredit him.
+  text: |-
+    Matthew Brown denied the claims that he was antisemitic and believed they formed part of an attempt to discredit him.
+  entailment:
+    label: entails
+    score: 0.703
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ab7a0619-8d07-4e0d-abdc-eb5eef854012
   type: hearsay
   provenance_chain:
@@ -634,10 +718,15 @@ domain_claims:
     name: Dylan Borland
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: Borland was also named among the UAP whistleblowers allegedly subjected to
-    intimidation or smear efforts connected to the inquiry.
-  text: Dylan Borland was named among the UAP whistleblowers allegedly subjected to
-    intimidation or smear efforts connected to the Director's Initiatives Group inquiry.
+  quote: |-
+    Borland was also named among the UAP whistleblowers allegedly subjected to intimidation or smear efforts connected to the inquiry.
+  text: |-
+    Dylan Borland was named among the UAP whistleblowers allegedly subjected to intimidation or smear efforts connected to the Director's Initiatives Group inquiry.
+  entailment:
+    label: neutral
+    score: 0.772
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5da8621-abe6-48a1-bc72-6173256581a6
   type: administrative
   attestation: second_hand
@@ -651,13 +740,15 @@ domain_claims:
     name: Office of the Director of National Intelligence (ODNI)
   - id: 5a69a5c5-9b77-4b5b-ab93-c2cecac913b3
     name: Donald Trump
-  quote: ‘ODNI has been and continues to be focused on carrying out the objectives
-    of President Trump's executive orders and mandates, including assisting with any
-    relevant information related to UAPs.’
-  text: An Office of the Director of National Intelligence spokesperson stated that
-    ODNI has been and continues to be focused on carrying out the objectives of President
-    Donald Trump's executive orders and mandates, including assisting with any relevant
-    information related to UAP.
+  quote: |-
+    ‘ODNI has been and continues to be focused on carrying out the objectives of President Trump's executive orders and mandates, including assisting with any relevant information related to UAPs.’
+  text: |-
+    An Office of the Director of National Intelligence spokesperson stated that ODNI has been and continues to be focused on carrying out the objectives of President Donald Trump's executive orders and mandates, including assisting with any relevant information related to UAP.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f851c33-8943-4bcc-b840-6da222dacfd5
   type: administrative
   speaker:
@@ -672,11 +763,15 @@ domain_claims:
     name: Office of the Director of National Intelligence (ODNI)
   - id: fb3500d0-de04-45a5-8c3d-c33ee563c780
     name: Matthew Brown
-  quote: The statement did not directly address whether information from Brown’s meeting
-    had been disclosed or whether ODNI was examining the allegation.
-  text: The Office of the Director of National Intelligence's statement did not directly
-    address whether information from Matthew Brown's meeting had been disclosed or
-    whether ODNI was examining the allegation.
+  quote: |-
+    The statement did not directly address whether information from Brown’s meeting had been disclosed or whether ODNI was examining the allegation.
+  text: |-
+    The Office of the Director of National Intelligence's statement did not directly address whether information from Matthew Brown's meeting had been disclosed or whether ODNI was examining the allegation.
+  entailment:
+    label: entails
+    score: 0.448
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 700bc85a-966a-4079-98b1-6ba862882e5b
   type: administrative
   attestation: second_hand
@@ -690,13 +785,15 @@ domain_claims:
     name: Sensitive Compartmented Information Facility (SCIF)
   - id: 5698d44e-64e2-4d35-beb0-a4dbd43d2654
     name: Office of the Director of National Intelligence (ODNI)
-  quote: It noted that information discussed inside a Sensitive Compartmented Information
-    Facility (SCIF) is not automatically classified, since unclassified matters may
-    also be discussed there, and stressed that simply speaking inside a SCIF does
-    not in itself confer whistleblower protections.
-  text: Information discussed inside a Sensitive Compartmented Information Facility
-    (SCIF) is not automatically classified, since unclassified matters may also be
-    discussed there.
+  quote: |-
+    It noted that information discussed inside a Sensitive Compartmented Information Facility (SCIF) is not automatically classified, since unclassified matters may also be discussed there, and stressed that simply speaking inside a SCIF does not in itself confer whistleblower protections.
+  text: |-
+    Information discussed inside a Sensitive Compartmented Information Facility (SCIF) is not automatically classified, since unclassified matters may also be discussed there.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 19a5bcdb-b2a5-4dc4-806d-8e61820f74ed
   type: administrative
   attestation: second_hand
@@ -710,10 +807,15 @@ domain_claims:
     name: Sensitive Compartmented Information Facility (SCIF)
   - id: 5698d44e-64e2-4d35-beb0-a4dbd43d2654
     name: Office of the Director of National Intelligence (ODNI)
-  quote: and stressed that simply speaking inside a SCIF does not in itself confer
-    whistleblower protections.
-  text: Simply speaking inside a Sensitive Compartmented Information Facility (SCIF)
-    does not in itself confer whistleblower protections.
+  quote: |-
+    and stressed that simply speaking inside a SCIF does not in itself confer whistleblower protections.
+  text: |-
+    Simply speaking inside a Sensitive Compartmented Information Facility (SCIF) does not in itself confer whistleblower protections.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: eac96f96-7702-47fd-b81d-6353f9c9e92b
   type: administrative
   provenance_chain:
@@ -725,18 +827,22 @@ domain_claims:
     name: Director's Initiatives Group (DIG)
   - id: 73aca4a6-5b4b-41f2-add6-263a6b74a382
     name: Tulsi Gabbard
-  quote: questions have also arisen about the investigative approach adopted within
-    the DIG, which was established under former Director of National Intelligence
-    Tulsi Gabbard.
-  text: The Director's Initiatives Group was established under former Director of
-    National Intelligence Tulsi Gabbard.
+  quote: |-
+    questions have also arisen about the investigative approach adopted within the DIG, which was established under former Director of National Intelligence Tulsi Gabbard.
+  text: |-
+    The Director's Initiatives Group was established under former Director of National Intelligence Tulsi Gabbard.
+  entailment:
+    label: entails
+    score: 0.508
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 62b96b1a-ed5d-468a-a13a-b747dfd0ccae
   type: hearsay
   attestation: second_hand
   provenance_chain:
     origin_kind: anonymous
-    origin: multiple people claiming knowledge of the Director's Initiatives Group
-      investigation
+    origin: |-
+      multiple people claiming knowledge of the Director's Initiatives Group investigation
     origin_ref: dig-sources
     relay:
     - Liberation Times
@@ -751,15 +857,15 @@ domain_claims:
     name: United States Congress
   - id: 82a79177-a04a-499b-91bd-7fda7fb2f09c
     name: Liberation Times
-  quote: Multiple sources who have spoken to Liberation Times claim that the investigation
-    was compromised by elements linked to the CIA, allegedly to discourage Congress
-    from pursuing further UAP hearings and legislation, while deterring additional
-    whistleblowers from coming forward publicly.
-  text: Multiple unnamed sources claimed to Liberation Times that the Director's Initiatives
-    Group investigation was compromised by elements linked to the Central Intelligence
-    Agency (CIA), allegedly to discourage the United States Congress from pursuing
-    further UAP hearings and legislation, while deterring additional whistleblowers
-    from coming forward publicly.
+  quote: |-
+    Multiple sources who have spoken to Liberation Times claim that the investigation was compromised by elements linked to the CIA, allegedly to discourage Congress from pursuing further UAP hearings and legislation, while deterring additional whistleblowers from coming forward publicly.
+  text: |-
+    Multiple unnamed sources claimed to Liberation Times that the Director's Initiatives Group investigation was compromised by elements linked to the Central Intelligence Agency (CIA), allegedly to discourage the United States Congress from pursuing further UAP hearings and legislation, while deterring additional whistleblowers from coming forward publicly.
+  entailment:
+    label: entails
+    score: 0.47
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: de9e2e9d-a4d7-4c69-985f-6b3c84d52801
   type: administrative
   provenance_chain:
@@ -773,12 +879,15 @@ domain_claims:
     name: Central Intelligence Agency (CIA)
   - id: 5698d44e-64e2-4d35-beb0-a4dbd43d2654
     name: Office of the Director of National Intelligence (ODNI)
-  quote: James E. Erdman III, a senior CIA operations officer assigned to ODNI on
-    a joint-duty posting, was among the earliest members of the DIG and led its work
-    on UAP, anomalous health incidents and the origins of COVID-19.
-  text: James E. Erdman III is a senior Central Intelligence Agency operations officer
-    assigned to the Office of the Director of National Intelligence on a joint-duty
-    posting.
+  quote: |-
+    James E. Erdman III, a senior CIA operations officer assigned to ODNI on a joint-duty posting, was among the earliest members of the DIG and led its work on UAP, anomalous health incidents and the origins of COVID-19.
+  text: |-
+    James E. Erdman III is a senior Central Intelligence Agency operations officer assigned to the Office of the Director of National Intelligence on a joint-duty posting.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 77dca74f-e3d0-4dc1-865a-0bed3bfc7a37
   type: administrative
   provenance_chain:
@@ -790,11 +899,15 @@ domain_claims:
     name: James E. Erdman III
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: James E. Erdman III, a senior CIA operations officer assigned to ODNI on
-    a joint-duty posting, was among the earliest members of the DIG and led its work
-    on UAP, anomalous health incidents and the origins of COVID-19.
-  text: James E. Erdman III was among the earliest members of the Director's Initiatives
-    Group.
+  quote: |-
+    James E. Erdman III, a senior CIA operations officer assigned to ODNI on a joint-duty posting, was among the earliest members of the DIG and led its work on UAP, anomalous health incidents and the origins of COVID-19.
+  text: |-
+    James E. Erdman III was among the earliest members of the Director's Initiatives Group.
+  entailment:
+    label: entails
+    score: 0.437
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ca35460a-20b7-4072-9b20-4ea7eb47089f
   type: administrative
   provenance_chain:
@@ -806,11 +919,15 @@ domain_claims:
     name: James E. Erdman III
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: James E. Erdman III, a senior CIA operations officer assigned to ODNI on
-    a joint-duty posting, was among the earliest members of the DIG and led its work
-    on UAP, anomalous health incidents and the origins of COVID-19.
-  text: James E. Erdman III led the Director's Initiatives Group's work on UAP, anomalous
-    health incidents and the origins of COVID-19.
+  quote: |-
+    James E. Erdman III, a senior CIA operations officer assigned to ODNI on a joint-duty posting, was among the earliest members of the DIG and led its work on UAP, anomalous health incidents and the origins of COVID-19.
+  text: |-
+    James E. Erdman III led the Director's Initiatives Group's work on UAP, anomalous health incidents and the origins of COVID-19.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ab01af41-789c-41a4-9060-198550036353
   type: testimony
   attestation: first_hand
@@ -829,11 +946,15 @@ domain_claims:
     name: Central Intelligence Agency (CIA)
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: Erdman subsequently alleged that the CIA obstructed the group’s work, monitored
-    its communications and tracked its contacts with whistleblowers.
-  text: James E. Erdman III alleged that the Central Intelligence Agency obstructed
-    the Director's Initiatives Group's work, monitored its communications and tracked
-    its contacts with whistleblowers.
+  quote: |-
+    Erdman subsequently alleged that the CIA obstructed the group’s work, monitored its communications and tracked its contacts with whistleblowers.
+  text: |-
+    James E. Erdman III alleged that the Central Intelligence Agency obstructed the Director's Initiatives Group's work, monitored its communications and tracked its contacts with whistleblowers.
+  entailment:
+    label: entails
+    score: 0.905
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d3352600-90a8-4f71-a901-90209271d636
   type: testimony
   attestation: first_hand
@@ -853,11 +974,15 @@ domain_claims:
     name: United States Senate
   - id: b6cd539f-7ebc-4b50-9f6a-fcc691505f05
     name: Central Intelligence Agency (CIA)
-  quote: In testimony provided to the Senate in May this year, he described himself
-    as a senior CIA operations officer and alleged that the agency had investigated
-    DIG members and monitored their computer and telephone activity.
-  text: In testimony provided to the United States Senate in 2026-05, James E. Erdman
-    III described himself as a senior Central Intelligence Agency operations officer.
+  quote: |-
+    In testimony provided to the Senate in May this year, he described himself as a senior CIA operations officer and alleged that the agency had investigated DIG members and monitored their computer and telephone activity.
+  text: |-
+    In testimony provided to the United States Senate in 2026-05, James E. Erdman III described himself as a senior Central Intelligence Agency operations officer.
+  entailment:
+    label: contradicts
+    score: 0.915
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b00e2f3a-a2dc-4a96-bb4d-f963016a43e4
   type: testimony
   attestation: first_hand
@@ -879,12 +1004,15 @@ domain_claims:
     name: Central Intelligence Agency (CIA)
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: In testimony provided to the Senate in May this year, he described himself
-    as a senior CIA operations officer and alleged that the agency had investigated
-    DIG members and monitored their computer and telephone activity.
-  text: In testimony provided to the United States Senate in 2026-05, James E. Erdman
-    III alleged that the Central Intelligence Agency had investigated Director's Initiatives
-    Group members and monitored their computer and telephone activity.
+  quote: |-
+    In testimony provided to the Senate in May this year, he described himself as a senior CIA operations officer and alleged that the agency had investigated DIG members and monitored their computer and telephone activity.
+  text: |-
+    In testimony provided to the United States Senate in 2026-05, James E. Erdman III alleged that the Central Intelligence Agency had investigated Director's Initiatives Group members and monitored their computer and telephone activity.
+  entailment:
+    label: contradicts
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ea20e9a7-1c11-4b4e-8c99-c5c9b52a6b1a
   type: administrative
   provenance_chain:
@@ -898,13 +1026,15 @@ domain_claims:
     name: Central Intelligence Agency (CIA)
   - id: 5698d44e-64e2-4d35-beb0-a4dbd43d2654
     name: Office of the Director of National Intelligence (ODNI)
-  quote: Those concerns are particularly relevant because Erdman, as a CIA officer
-    assigned to ODNI, led the examination of allegations that implicated his home
-    agency in a secretive UAP retrieval and reverse-engineering effort.
-  text: James E. Erdman III, as a Central Intelligence Agency officer assigned to
-    the Office of the Director of National Intelligence, led the examination of allegations
-    that implicated the Central Intelligence Agency in a secretive UAP retrieval and
-    reverse-engineering effort.
+  quote: |-
+    Those concerns are particularly relevant because Erdman, as a CIA officer assigned to ODNI, led the examination of allegations that implicated his home agency in a secretive UAP retrieval and reverse-engineering effort.
+  text: |-
+    James E. Erdman III, as a Central Intelligence Agency officer assigned to the Office of the Director of National Intelligence, led the examination of allegations that implicated the Central Intelligence Agency in a secretive UAP retrieval and reverse-engineering effort.
+  entailment:
+    label: entails
+    score: 0.451
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 45717115-27be-44e3-9eca-e85a24d0a227
   type: opinion
   attestation: first_hand
@@ -919,12 +1049,15 @@ domain_claims:
   refs:
   - id: ad492b48-4298-48fc-9a7a-5466291443f2
     name: James E. Erdman III
-  quote: ‘I generally lean in on believing fighter pilots and submariners with everything
-    to lose when they choose to risk vocalizing their experiences to their chain of
-    command.
-  text: James E. Erdman III said he generally leans in on believing fighter pilots
-    and submariners with everything to lose when they choose to risk vocalising their
-    experiences to their chain of command.
+  quote: |-
+    ‘I generally lean in on believing fighter pilots and submariners with everything to lose when they choose to risk vocalizing their experiences to their chain of command.
+  text: |-
+    James E. Erdman III said he generally leans in on believing fighter pilots and submariners with everything to lose when they choose to risk vocalising their experiences to their chain of command.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f4784e91-eb8e-402b-99a9-61b4c36e22d2
   type: opinion
   attestation: first_hand
@@ -939,10 +1072,15 @@ domain_claims:
   refs:
   - id: ad492b48-4298-48fc-9a7a-5466291443f2
     name: James E. Erdman III
-  quote: I just don’t think we can draw a straight line between all their stories
-    and alien life just yet and they don't always jump to that conclusion either.
-  text: James E. Erdman III does not think a straight line can be drawn between fighter
-    pilot and submariner accounts and alien life.
+  quote: |-
+    I just don’t think we can draw a straight line between all their stories and alien life just yet and they don't always jump to that conclusion either.
+  text: |-
+    James E. Erdman III does not think a straight line can be drawn between fighter pilot and submariner accounts and alien life.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 284fd624-1ce8-448e-99a6-6fe14ff7725e
   type: opinion
   attestation: first_hand
@@ -958,8 +1096,13 @@ domain_claims:
   - id: ad492b48-4298-48fc-9a7a-5466291443f2
     name: James E. Erdman III
   quote: ‘There is also … a whole lot of grifting and lies infecting the UFO community.
-  text: James E. Erdman III considers that a lot of grifting and lies infect the UFO
-    community.
+  text: |-
+    James E. Erdman III considers that a lot of grifting and lies infect the UFO community.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: be8998c5-2a50-4851-8236-06b79c8903e0
   type: opinion
   attestation: first_hand
@@ -976,10 +1119,15 @@ domain_claims:
     name: James E. Erdman III
   - id: fccab27e-43de-48db-aa4f-6d247f8c05c6
     name: Walter Kirn
-  quote: If anyone is up to the task of discerning between fact and fiction, I have
-    no doubt @walterkirn is the guy.
-  text: James E. Erdman III expressed confidence that Walter Kirn is capable of discerning
-    fact from fiction in the UFO community.
+  quote: |-
+    If anyone is up to the task of discerning between fact and fiction, I have no doubt @walterkirn is the guy.
+  text: |-
+    James E. Erdman III expressed confidence that Walter Kirn is capable of discerning fact from fiction in the UFO community.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aa7dc3e2-6d09-4149-a0fd-dd97f7790570
   type: opinion
   attestation: first_hand
@@ -994,12 +1142,15 @@ domain_claims:
   refs:
   - id: ad492b48-4298-48fc-9a7a-5466291443f2
     name: James E. Erdman III
-  quote: Videos released without explanation, often released during unfavorable news
-    cycles, and trumpeted by the same set of inter-connected alien-chasers should
-    not be propagated as evidence.
-  text: James E. Erdman III considers that UAP videos released without explanation,
-    often during unfavourable news cycles and promoted by the same interconnected
-    group of alien-chasers, should not be treated as evidence.
+  quote: |-
+    Videos released without explanation, often released during unfavorable news cycles, and trumpeted by the same set of inter-connected alien-chasers should not be propagated as evidence.
+  text: |-
+    James E. Erdman III considers that UAP videos released without explanation, often during unfavourable news cycles and promoted by the same interconnected group of alien-chasers, should not be treated as evidence.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5563ea12-3a07-4d37-949c-1c453428ee48
   type: opinion
   attestation: first_hand
@@ -1014,10 +1165,15 @@ domain_claims:
   refs:
   - id: ad492b48-4298-48fc-9a7a-5466291443f2
     name: James E. Erdman III
-  quote: ‘COVID also taught us how to identify PsyOps… We shouldn’t forget hard fought
-    lessons.
-  text: James E. Erdman III said that COVID-19 taught lessons on how to identify psychological
-    operations (PsyOps).
+  quote: |-
+    ‘COVID also taught us how to identify PsyOps… We shouldn’t forget hard fought lessons.
+  text: |-
+    James E. Erdman III said that COVID-19 taught lessons on how to identify psychological operations (PsyOps).
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7c9827ea-c381-4ee0-b11f-8db62874c48c
   type: opinion
   attestation: first_hand
@@ -1032,14 +1188,15 @@ domain_claims:
   refs:
   - id: ad492b48-4298-48fc-9a7a-5466291443f2
     name: James E. Erdman III
-  quote: ‘If the government doesn’t provide first hand evidence of biologics, evidence
-    of a crash retrieval program, or any object that is the subject of an ongoing
-    reverse engineering program … treat it as a known unknown, a lie, a mistake, or
-    a grift until proven otherwise.’
-  text: James E. Erdman III said that claims of a UAP crash retrieval or reverse-engineering
-    programme should be treated as a known unknown, a lie, a mistake, or a grift unless
-    the government provides first-hand evidence of biologics, evidence of a crash
-    retrieval programme, or an object under an ongoing reverse-engineering programme.
+  quote: |-
+    ‘If the government doesn’t provide first hand evidence of biologics, evidence of a crash retrieval program, or any object that is the subject of an ongoing reverse engineering program … treat it as a known unknown, a lie, a mistake, or a grift until proven otherwise.’
+  text: |-
+    James E. Erdman III said that claims of a UAP crash retrieval or reverse-engineering programme should be treated as a known unknown, a lie, a mistake, or a grift unless the government provides first-hand evidence of biologics, evidence of a crash retrieval programme, or an object under an ongoing reverse-engineering programme.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2451995a-97db-4030-83c6-a2a2a3fa69a3
   type: observation
   speaker:
@@ -1052,12 +1209,15 @@ domain_claims:
   refs:
   - id: ad492b48-4298-48fc-9a7a-5466291443f2
     name: James E. Erdman III
-  quote: Erdman appeared willing to credit military witnesses describing incidents
-    outside the secrecy of alleged UAP Special Access Programs and Controlled Access
-    Programs.
-  text: James E. Erdman III appeared willing to credit military witnesses describing
-    UAP incidents outside the secrecy of alleged UAP Special Access Programs and Controlled
-    Access Programs.
+  quote: |-
+    Erdman appeared willing to credit military witnesses describing incidents outside the secrecy of alleged UAP Special Access Programs and Controlled Access Programs.
+  text: |-
+    James E. Erdman III appeared willing to credit military witnesses describing UAP incidents outside the secrecy of alleged UAP Special Access Programs and Controlled Access Programs.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8713287b-2e42-4f7e-8de4-a634235d12bb
   type: opinion
   attestation: first_hand
@@ -1072,12 +1232,15 @@ domain_claims:
   refs:
   - id: ad492b48-4298-48fc-9a7a-5466291443f2
     name: James E. Erdman III
-  quote: By contrast, he characterised claims involving non-human biologics, recovered
-    craft and reverse-engineering efforts - allegedly concealed within those compartments
-    - as lies, mistakes or grifts unless direct evidence was produced.
-  text: James E. Erdman III characterised claims involving non-human biologics, recovered
-    craft and reverse-engineering efforts allegedly concealed within classified compartments
-    as lies, mistakes or grifts unless direct evidence was produced.
+  quote: |-
+    By contrast, he characterised claims involving non-human biologics, recovered craft and reverse-engineering efforts - allegedly concealed within those compartments - as lies, mistakes or grifts unless direct evidence was produced.
+  text: |-
+    James E. Erdman III characterised claims involving non-human biologics, recovered craft and reverse-engineering efforts allegedly concealed within classified compartments as lies, mistakes or grifts unless direct evidence was produced.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 69230db3-bccd-4f33-ac3d-bb8b85409eb3
   type: hearsay
   attestation: second_hand
@@ -1090,19 +1253,21 @@ domain_claims:
   refs:
   - id: 20328e3c-bc7e-4529-82d9-3e7b5bcac165
     name: Director's Initiatives Group (DIG)
-  quote: The concern is heightened by accounts from whistleblowers who interacted
-    with the DIG. They claim that, rather than receiving an impartial hearing, they
-    faced suspicion, intimidation and attempts to undermine their credibility.
-  text: Accounts from whistleblowers who interacted with the Director's Initiatives
-    Group claim that, rather than receiving an impartial hearing, they faced suspicion,
-    intimidation and attempts to undermine their credibility.
+  quote: |-
+    The concern is heightened by accounts from whistleblowers who interacted with the DIG. They claim that, rather than receiving an impartial hearing, they faced suspicion, intimidation and attempts to undermine their credibility.
+  text: |-
+    Accounts from whistleblowers who interacted with the Director's Initiatives Group claim that, rather than receiving an impartial hearing, they faced suspicion, intimidation and attempts to undermine their credibility.
+  entailment:
+    label: entails
+    score: 0.553
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cc8f9459-1461-4bbd-9aa6-e0badf70558b
   type: hearsay
   attestation: second_hand
   provenance_chain:
     origin_kind: anonymous
-    origin: three people claiming knowledge of resistance to UAP disclosure within
-      ODNI
+    origin: three people claiming knowledge of resistance to UAP disclosure within ODNI
     origin_ref: odni-resistance-sources
     relay:
     - Liberation Times
@@ -1117,20 +1282,21 @@ domain_claims:
     name: Liberation Times
   - id: 5a69a5c5-9b77-4b5b-ab93-c2cecac913b3
     name: Donald Trump
-  quote: Three sources have told Liberation Times that figures within ODNI linked
-    to the CIA are resisting efforts by the Trump administration to release more substantial
-    information concerning UAP.
-  text: Three unnamed sources told Liberation Times that figures within the Office
-    of the Director of National Intelligence linked to the Central Intelligence Agency
-    are resisting efforts by the Trump administration to release more substantial
-    information concerning UAP.
+  quote: |-
+    Three sources have told Liberation Times that figures within ODNI linked to the CIA are resisting efforts by the Trump administration to release more substantial information concerning UAP.
+  text: |-
+    Three unnamed sources told Liberation Times that figures within the Office of the Director of National Intelligence linked to the Central Intelligence Agency are resisting efforts by the Trump administration to release more substantial information concerning UAP.
+  entailment:
+    label: entails
+    score: 0.548
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4c2d6126-3476-43ba-a654-fa91f1014b8a
   type: hearsay
   attestation: second_hand
   provenance_chain:
     origin_kind: anonymous
-    origin: three people claiming knowledge of resistance to UAP disclosure within
-      ODNI
+    origin: three people claiming knowledge of resistance to UAP disclosure within ODNI
     origin_ref: odni-resistance-sources
     relay:
     - Liberation Times
@@ -1141,12 +1307,15 @@ domain_claims:
     name: Aaron Lukas
   - id: 5698d44e-64e2-4d35-beb0-a4dbd43d2654
     name: Office of the Director of National Intelligence (ODNI)
-  quote: Those sources identified Aaron Lukas, the Principal Deputy Director of National
-    Intelligence, as one of the officials allegedly providing such resistance.
-  text: Three unnamed sources claiming knowledge of resistance to UAP disclosure within
-    the Office of the Director of National Intelligence identified Aaron Lukas, the
-    Principal Deputy Director of National Intelligence, as one of the officials allegedly
-    providing such resistance.
+  quote: |-
+    Those sources identified Aaron Lukas, the Principal Deputy Director of National Intelligence, as one of the officials allegedly providing such resistance.
+  text: |-
+    Three unnamed sources claiming knowledge of resistance to UAP disclosure within the Office of the Director of National Intelligence identified Aaron Lukas, the Principal Deputy Director of National Intelligence, as one of the officials allegedly providing such resistance.
+  entailment:
+    label: entails
+    score: 0.515
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a5e57232-6cef-45ed-b9ba-1aa38362f0b9
   type: administrative
   provenance_chain:
@@ -1158,10 +1327,15 @@ domain_claims:
     name: Aaron Lukas
   - id: b6cd539f-7ebc-4b50-9f6a-fcc691505f05
     name: Central Intelligence Agency (CIA)
-  quote: Lukas previously spent more than two decades within the Intelligence Community
-    and served as a CIA Chief of Station.
-  text: Aaron Lukas previously spent more than two decades within the Intelligence
-    Community and served as a Central Intelligence Agency Chief of Station.
+  quote: |-
+    Lukas previously spent more than two decades within the Intelligence Community and served as a CIA Chief of Station.
+  text: |-
+    Aaron Lukas previously spent more than two decades within the Intelligence Community and served as a Central Intelligence Agency Chief of Station.
+  entailment:
+    label: entails
+    score: 0.84
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3d9516af-ec8c-4d81-a8fc-dd395553ec7e
   type: administrative
   attestation: second_hand
@@ -1175,12 +1349,15 @@ domain_claims:
     name: Aaron Lukas
   - id: 5698d44e-64e2-4d35-beb0-a4dbd43d2654
     name: Office of the Director of National Intelligence (ODNI)
-  quote: According to his official ODNI biography, he managed sensitive clandestine
-    programs, conducted covert operations and maintained liaison relationships around
-    the world.
-  text: According to his official Office of the Director of National Intelligence
-    biography, Aaron Lukas managed sensitive clandestine programmes, conducted covert
-    operations and maintained liaison relationships around the world.
+  quote: |-
+    According to his official ODNI biography, he managed sensitive clandestine programs, conducted covert operations and maintained liaison relationships around the world.
+  text: |-
+    According to his official Office of the Director of National Intelligence biography, Aaron Lukas managed sensitive clandestine programmes, conducted covert operations and maintained liaison relationships around the world.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc20b4bf-d601-48b0-a5f1-a6f6b3dbef19
   type: administrative
   speaker:
@@ -1195,10 +1372,15 @@ domain_claims:
     name: Liberation Times
   - id: f2bea849-8b2e-425e-a368-946e39e457c1
     name: Aaron Lukas
-  quote: Liberation Times has not independently substantiated the allegations concerning
-    Lukas.
-  text: Liberation Times has not independently substantiated the allegations concerning
-    Aaron Lukas.
+  quote: |-
+    Liberation Times has not independently substantiated the allegations concerning Lukas.
+  text: |-
+    Liberation Times has not independently substantiated the allegations concerning Aaron Lukas.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 8aad11e4-5d4f-4c0f-a6a9-f1090d61c6d0
   type: administrative
@@ -1216,17 +1398,19 @@ infrastructure_claims:
     name: Liberation Times
   - id: 923c2694-d8ba-4c19-83eb-29de9291fe0c
     name: Unidentified Anomalous Phenomena (UAP)
-  quote: The Office of the Intelligence Community Inspector General (ICIG) has provided
-    a statement to Liberation Times in response to allegations that details of testimony
-    given by an Unidentified Anomalous Phenomena (UAP) whistleblower were disclosed
-    to a journalist.
-  text: The Office of the Intelligence Community Inspector General (ICIG) provided
-    a statement to Liberation Times responding to allegations that details of testimony
-    given by a UAP whistleblower were disclosed to a journalist.
+  quote: |-
+    The Office of the Intelligence Community Inspector General (ICIG) has provided a statement to Liberation Times in response to allegations that details of testimony given by an Unidentified Anomalous Phenomena (UAP) whistleblower were disclosed to a journalist.
+  text: |-
+    The Office of the Intelligence Community Inspector General (ICIG) provided a statement to Liberation Times responding to allegations that details of testimony given by a UAP whistleblower were disclosed to a journalist.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 curation:
 - at: '2026-08-28T01:09:09.809943+00:00'
   by: metadata-refresh
   changed:
   - record
-  why: Record block refreshed from current record frontmatter. No re-extraction; claims
-    and nodes untouched.
+  why: |-
+    Record block refreshed from current record frontmatter. No re-extraction; claims and nodes untouched.

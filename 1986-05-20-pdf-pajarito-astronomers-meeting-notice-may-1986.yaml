@@ -2,23 +2,31 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:24:59.595067+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 188854
-      output: 3393
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 188854
+    output: 3393
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 0.1
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: 5446de7a5d4e12a09b73f6ce1c5fca01747d05158211c821fa8541e199d37f55
   prep_version: 6
@@ -39,153 +47,188 @@ record:
 terminology:
   main_subject: Pajarito Astronomers
   acronyms:
-    - acronym: UFO
-      expansion: Unidentified Flying Object
+  - acronym: UFO
+    expansion: Unidentified Flying Object
 nodes:
+- id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
+  type: organisation
+  name: Pajarito Astronomers
+- id: 0ccf2c41-f3c0-4bdc-b613-13ef872d38f0
+  type: organisation
+  name: Club 1663
+- id: b9ffe049-a2c3-4306-bb09-4a33f020d8e9
+  type: person
+  name: John Warren
+  metadata:
+    family_name: Warren
+    aliases:
+    - Warren, John
+- id: 92be1351-c04f-4bb4-85b7-7900824700c6
+  type: organisation
+  name: AT-6
+- id: 3b83a9ff-f997-4219-961c-f12506718978
+  type: place
+  name: USA, New Mexico, Los Alamos
+- id: 0affec09-f1cc-4c9f-9067-638e0ec05f06
+  type: object
+  name: Fuller Lodge
+- id: 2ac375b3-e1db-4c2d-8e53-e0ab692c69db
+  type: topic
+  name: Unidentified Flying Object (UFO)
+domain_claims:
+- id: 6082886a-62ac-4c46-b71a-6da7382e2c1b
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Pajarito Astronomers meeting notice
+  attribution_in_text: false
+  location: char:49-79
+  refs:
   - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
-    type: organisation
+    name: Pajarito Astronomers
+  - id: 3b83a9ff-f997-4219-961c-f12506718978
+    name: USA, New Mexico, Los Alamos
+  quote: P.O. Box 1092, Los Alamos NM, 87544
+  text: |-
+    The Pajarito Astronomers organisation is located at P.O. Box 1092, Los Alamos, New Mexico, 87544.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 7a28fc0f-7bd4-4bb3-9f5f-25c266264145
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Pajarito Astronomers meeting notice
+  attribution_in_text: false
+  location: char:219-237
+  refs:
+  - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
     name: Pajarito Astronomers
   - id: 0ccf2c41-f3c0-4bdc-b613-13ef872d38f0
-    type: organisation
     name: Club 1663
-  - id: b9ffe049-a2c3-4306-bb09-4a33f020d8e9
-    type: person
-    name: John Warren
-    metadata:
-      family_name: Warren
-      aliases:
-        - Warren, John
-  - id: 92be1351-c04f-4bb4-85b7-7900824700c6
-    type: organisation
-    name: AT-6
-  - id: 3b83a9ff-f997-4219-961c-f12506718978
-    type: place
-    name: USA, New Mexico, Los Alamos
+  quote: Sponsored by Club 1663
+  text: The Pajarito Astronomers organisation is sponsored by Club 1663.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a476289a-bc3b-46a6-b44e-de7fb9903ce4
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Pajarito Astronomers meeting notice
+  attribution_in_text: false
+  location: char:247-264
+  refs:
+  - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
+    name: Pajarito Astronomers
+  quote: Tuesday, May 20, 1986
+  text: The Pajarito Astronomers meeting notice is dated 1986-05-20.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: cc0a4af9-0933-4efb-a77e-68f1a9fe8617
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Pajarito Astronomers meeting notice
+  attribution_in_text: false
+  location: char:287-391
+  date: '1986-05-29'
+  refs:
+  - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
+    name: Pajarito Astronomers
   - id: 0affec09-f1cc-4c9f-9067-638e0ec05f06
-    type: object
     name: Fuller Lodge
+  quote: |-
+    Our next meeting will be Thursday, May 29, 1986, in the Ranch Room at Fuller Lodge, at 7:30 p.m.
+  text: |-
+    The Pajarito Astronomers scheduled their next meeting for 1986-05-29 in the Ranch Room at Fuller Lodge at 7:30 p.m.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 3adb99b7-6f27-4b7c-8182-b1cbca38df6e
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Pajarito Astronomers meeting notice
+  attribution_in_text: false
+  location: char:396-516
+  date: '1986-05-29'
+  refs:
+  - id: b9ffe049-a2c3-4306-bb09-4a33f020d8e9
+    name: John Warren
+  - id: 92be1351-c04f-4bb4-85b7-7900824700c6
+    name: AT-6
+  - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
+    name: Pajarito Astronomers
   - id: 2ac375b3-e1db-4c2d-8e53-e0ab692c69db
-    type: topic
     name: Unidentified Flying Object (UFO)
-domain_claims:
-  - id: 6082886a-62ac-4c46-b71a-6da7382e2c1b
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Pajarito Astronomers meeting notice
-    attribution_in_text: false
-    location: char:49-79
-    refs:
-      - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
-        name: Pajarito Astronomers
-      - id: 3b83a9ff-f997-4219-961c-f12506718978
-        name: USA, New Mexico, Los Alamos
-    quote: P.O. Box 1092, Los Alamos NM, 87544
-    text: |-
-      The Pajarito Astronomers organisation is located at P.O. Box 1092, Los Alamos, New Mexico, 87544.
-  - id: 7a28fc0f-7bd4-4bb3-9f5f-25c266264145
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Pajarito Astronomers meeting notice
-    attribution_in_text: false
-    location: char:219-237
-    refs:
-      - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
-        name: Pajarito Astronomers
-      - id: 0ccf2c41-f3c0-4bdc-b613-13ef872d38f0
-        name: Club 1663
-    quote: Sponsored by Club 1663
-    text: The Pajarito Astronomers organisation is sponsored by Club 1663.
-  - id: a476289a-bc3b-46a6-b44e-de7fb9903ce4
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Pajarito Astronomers meeting notice
-    attribution_in_text: false
-    location: char:247-264
-    refs:
-      - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
-        name: Pajarito Astronomers
-    quote: Tuesday, May 20, 1986
-    text: The Pajarito Astronomers meeting notice is dated 1986-05-20.
-  - id: cc0a4af9-0933-4efb-a77e-68f1a9fe8617
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Pajarito Astronomers meeting notice
-    attribution_in_text: false
-    location: char:287-391
-    date: '1986-05-29'
-    refs:
-      - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
-        name: Pajarito Astronomers
-      - id: 0affec09-f1cc-4c9f-9067-638e0ec05f06
-        name: Fuller Lodge
-    quote: |-
-      Our next meeting will be Thursday, May 29, 1986, in the Ranch Room at Fuller Lodge, at 7:30 p.m.
-    text: |-
-      The Pajarito Astronomers scheduled their next meeting for 1986-05-29 in the Ranch Room at Fuller Lodge at 7:30 p.m.
-  - id: 3adb99b7-6f27-4b7c-8182-b1cbca38df6e
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Pajarito Astronomers meeting notice
-    attribution_in_text: false
-    location: char:396-516
-    date: '1986-05-29'
-    refs:
-      - id: b9ffe049-a2c3-4306-bb09-4a33f020d8e9
-        name: John Warren
-      - id: 92be1351-c04f-4bb4-85b7-7900824700c6
-        name: AT-6
-      - id: ac0b187d-75b4-4d8f-bc0d-885908aaac4a
-        name: Pajarito Astronomers
-      - id: 2ac375b3-e1db-4c2d-8e53-e0ab692c69db
-        name: Unidentified Flying Object (UFO)
-    quote: |-
-      Guest speaker will be Dr. John Warren of AT-6, whose topic will be "Why Should a Scientist be Concerned about UFO's?"
-    text: |-
-      John Warren, of AT-6, was the guest speaker scheduled to address the Pajarito Astronomers on 1986-05-29 on the topic "Why Should a Scientist be Concerned about UFO's?"
-  - id: d1226113-6f61-41af-8f83-4b11ce570499
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Pajarito Astronomers meeting notice
-    attribution_in_text: false
-    location: char:420-444
-    refs:
-      - id: b9ffe049-a2c3-4306-bb09-4a33f020d8e9
-        name: John Warren
-      - id: 92be1351-c04f-4bb4-85b7-7900824700c6
-        name: AT-6
-    quote: Dr. John Warren of AT-6
-    text: John Warren is affiliated with AT-6.
-  - id: 5e2625df-8425-49b9-ba21-f1d41ec8abee
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: Pajarito Astronomers meeting notice
-    attribution_in_text: false
-    location: char:523-627
-    refs:
-      - id: 0affec09-f1cc-4c9f-9067-638e0ec05f06
-        name: Fuller Lodge
-    quote: |-
-      To find the Ranch Room, go around (outside) to the south end of the Lodge (facing Central Ave.), and go upstairs.
-    text: |-
-      The Ranch Room is located at the south end of Fuller Lodge, facing Central Avenue, reached by going around outside and upstairs.
+  quote: |-
+    Guest speaker will be Dr. John Warren of AT-6, whose topic will be "Why Should a Scientist be Concerned about UFO's?"
+  text: |-
+    John Warren, of AT-6, was the guest speaker scheduled to address the Pajarito Astronomers on 1986-05-29 on the topic "Why Should a Scientist be Concerned about UFO's?"
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d1226113-6f61-41af-8f83-4b11ce570499
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Pajarito Astronomers meeting notice
+  attribution_in_text: false
+  location: char:420-444
+  refs:
+  - id: b9ffe049-a2c3-4306-bb09-4a33f020d8e9
+    name: John Warren
+  - id: 92be1351-c04f-4bb4-85b7-7900824700c6
+    name: AT-6
+  quote: Dr. John Warren of AT-6
+  text: John Warren is affiliated with AT-6.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 5e2625df-8425-49b9-ba21-f1d41ec8abee
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: Pajarito Astronomers meeting notice
+  attribution_in_text: false
+  location: char:523-627
+  refs:
+  - id: 0affec09-f1cc-4c9f-9067-638e0ec05f06
+    name: Fuller Lodge
+  quote: |-
+    To find the Ranch Room, go around (outside) to the south end of the Lodge (facing Central Ave.), and go upstairs.
+  text: |-
+    The Ranch Room is located at the south end of Fuller Lodge, facing Central Avenue, reached by going around outside and upstairs.
+  entailment:
+    label: entails
+    score: 0.637
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh
   changed:
   - record
-  why: Record block refreshed from current record frontmatter. No re-extraction; claims
-    and nodes untouched.
+  why: |-
+    Record block refreshed from current record frontmatter. No re-extraction; claims and nodes untouched.

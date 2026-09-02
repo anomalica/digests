@@ -13,6 +13,14 @@ ai_usage:
     cache_read: 176422
     cache_write: 212055
     calls: 2
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.2
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 17.0
 prompts:
 - pass: nodes
   id: nodes
@@ -29,25 +37,25 @@ pre_digest:
   prep_version: 7
 record:
   id: 3b884786-04ff-4e4b-816f-621161e9d948
-  title: Pressure Mounts on President Trump as UAP Disclosure Advocates Intensify
-    Their Push
+  title: |-
+    Pressure Mounts on President Trump as UAP Disclosure Advocates Intensify Their Push
   producer: Christopher Sharp
   publisher: Liberation Times
   date: '2026-08-19'
   medium: web
   content_hash: sha256:dc288b5d31307a5eb396b1ecc4f3e2ee1e01673ec8707bb47111173faa83e683
   processing_version: 523d1c0
-  reference: https://www.liberationtimes.com/home/the-push-for-ufo-disclosure-intensifies-as-pressure-mounts-on-donald-trump
+  reference: |-
+    https://www.liberationtimes.com/home/the-push-for-ufo-disclosure-intensifies-as-pressure-mounts-on-donald-trump
   review:
     state: none
     sidecar: absent
-  description: Advocates and whistleblowers urge President Trump to disclose evidence
-    of non‑human intelligence, as new UAP claims, insider pressure, and political
-    momentum accelerate.
+  description: |-
+    Advocates and whistleblowers urge President Trump to disclose evidence of non‑human intelligence, as new UAP claims, insider pressure, and political momentum accelerate.
   copyright_status: publicly_accessible
 terminology:
-  main_subject: Pressure Mounts on President Trump as UAP Disclosure Advocates Intensify
-    Their Push
+  main_subject: |-
+    Pressure Mounts on President Trump as UAP Disclosure Advocates Intensify Their Push
   acronyms:
   - acronym: UAP
     expansion: Unidentified Anomalous Phenomena
@@ -190,12 +198,15 @@ domain_claims:
   refs:
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: A growing number of advocates are pressing President Trump to reveal what
-    they believe is evidence of advanced non‑human intelligence and its technologies
-    interacting with humanity, an effort that has accelerated in recent days.
-  text: A growing number of advocates are pressing Donald Trump to reveal what they
-    believe is evidence of advanced non-human intelligence and its technologies interacting
-    with humanity.
+  quote: |-
+    A growing number of advocates are pressing President Trump to reveal what they believe is evidence of advanced non‑human intelligence and its technologies interacting with humanity, an effort that has accelerated in recent days.
+  text: |-
+    A growing number of advocates are pressing Donald Trump to reveal what they believe is evidence of advanced non-human intelligence and its technologies interacting with humanity.
+  entailment:
+    label: entails
+    score: 0.676
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 11f12cf6-05e1-4de5-b745-6a0cfd3dae55
   type: administrative
   provenance_chain:
@@ -209,10 +220,15 @@ domain_claims:
     name: Unidentified Anomalous Phenomena (UAP)
   - id: 93c9f46d-facb-4a1c-97a0-8299a2ff7d68
     name: United States Air Force
-  quote: Unidentified Anomalous Phenomena (UAP) whistleblower and former U.S. Air
-    Force intelligence officer David Grusch
-  text: David Grusch is a Unidentified Anomalous Phenomena (UAP) whistleblower and
-    former United States Air Force intelligence officer.
+  quote: |-
+    Unidentified Anomalous Phenomena (UAP) whistleblower and former U.S. Air Force intelligence officer David Grusch
+  text: |-
+    David Grusch is a Unidentified Anomalous Phenomena (UAP) whistleblower and former United States Air Force intelligence officer.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 76841e2e-a564-461c-8fbf-014c5ab6b5dc
   type: hearsay
   provenance_chain:
@@ -226,9 +242,14 @@ domain_claims:
     name: Stephen Miller
   - id: a1d07e02-3de2-4851-8e44-256beea3a699
     name: Unidentified Anomalous Phenomena (UAP)
-  quote: Stephen Miller, one of Trump’s closest and longest‑serving advisers, has
-    reportedly been asked by the President to examine the UAP portfolio
+  quote: |-
+    Stephen Miller, one of Trump’s closest and longest‑serving advisers, has reportedly been asked by the President to examine the UAP portfolio
   text: Donald Trump reportedly asked Stephen Miller to examine the UAP portfolio.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7fb21883-c1b5-4e4c-8280-3db629122482
   type: administrative
   provenance_chain:
@@ -242,6 +263,11 @@ domain_claims:
     name: Donald Trump
   quote: Stephen Miller, one of Trump’s closest and longest‑serving advisers
   text: Stephen Miller is one of Donald Trump's closest and longest-serving advisers.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 96bcc656-af12-46f3-a334-d5f8573be3ec
   type: opinion
   provenance_chain:
@@ -253,10 +279,15 @@ domain_claims:
     name: Stephen Miller
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: Miller, a central architect of Trump‑era policy and a dominant voice within
-    his political operation
-  text: Stephen Miller is a central architect of Trump-era policy and a dominant voice
-    within Donald Trump's political operation.
+  quote: |-
+    Miller, a central architect of Trump‑era policy and a dominant voice within his political operation
+  text: |-
+    Stephen Miller is a central architect of Trump-era policy and a dominant voice within Donald Trump's political operation.
+  entailment:
+    label: neutral
+    score: 0.594
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6ed8a680-4cae-4d70-8a44-bbf75c522fb3
   type: opinion
   provenance_chain:
@@ -268,10 +299,15 @@ domain_claims:
     name: Stephen Miller
   - id: a1d07e02-3de2-4851-8e44-256beea3a699
     name: Unidentified Anomalous Phenomena (UAP)
-  quote: is now seen by disclosure advocates as a key figure in determining how the
-    administration approaches the subject
-  text: Stephen Miller is seen by disclosure advocates as a key figure in determining
-    how the Trump administration approaches the UAP issue.
+  quote: |-
+    is now seen by disclosure advocates as a key figure in determining how the administration approaches the subject
+  text: |-
+    Stephen Miller is seen by disclosure advocates as a key figure in determining how the Trump administration approaches the UAP issue.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 67ab1666-cc89-4801-8a6f-82df4d1a3f2b
   type: administrative
   provenance_chain:
@@ -283,9 +319,13 @@ domain_claims:
     name: Phil McGraw
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: During the interview with Dr Phil - a friend of President Trump - Grusch
-    said
+  quote: During the interview with Dr Phil - a friend of President Trump - Grusch said
   text: Phil McGraw is a friend of Donald Trump.
+  entailment:
+    label: entails
+    score: 0.829
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1ba2c01b-2e68-4911-9d39-937adb9e9243
   type: opinion
   attestation: first_hand
@@ -302,10 +342,15 @@ domain_claims:
     name: David Grusch
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: “I hope President Trump delivers on his promise – I think this is going to
-    be the singular thing which is going to define his legacy.”
-  text: David Grusch hopes Donald Trump delivers on his promise regarding UAP disclosure,
-    and considers it likely to be the singular thing which defines Trump's legacy.
+  quote: |-
+    “I hope President Trump delivers on his promise – I think this is going to be the singular thing which is going to define his legacy.”
+  text: |-
+    David Grusch hopes Donald Trump delivers on his promise regarding UAP disclosure, and considers it likely to be the singular thing which defines Trump's legacy.
+  entailment:
+    label: entails
+    score: 0.643
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0765adfc-63ad-4f17-9ff1-e3e0070a5543
   type: opinion
   attestation: first_hand
@@ -324,14 +369,15 @@ domain_claims:
     name: Stephen Miller
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: “Mr Miller and the President’s team need to realise this is going to be the
-    defining moment of his legacy, because even if Trump doesn’t disclose, the genie
-    is out of the bottle now and we’re going to look back on ‘what did the President
-    know and why didn’t he get the information out?’”
-  text: David Grusch believes the responsibility for UAP disclosure now rests with
-    Donald Trump's inner circle, and that even if Trump doesn't disclose, people will
-    look back and ask what the President knew and why he didn't get the information
-    out.
+  quote: |-
+    “Mr Miller and the President’s team need to realise this is going to be the defining moment of his legacy, because even if Trump doesn’t disclose, the genie is out of the bottle now and we’re going to look back on ‘what did the President know and why didn’t he get the information out?’”
+  text: |-
+    David Grusch believes the responsibility for UAP disclosure now rests with Donald Trump's inner circle, and that even if Trump doesn't disclose, people will look back and ask what the President knew and why he didn't get the information out.
+  entailment:
+    label: entails
+    score: 0.683
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a0436e8-14ba-458e-bf70-1a52e91e6b92
   type: administrative
   provenance_chain:
@@ -343,6 +389,11 @@ domain_claims:
     name: James Fox
   quote: documentary filmmaker James Fox
   text: James Fox is a documentary filmmaker.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cc9327ac-0a37-4263-b273-20546227792f
   type: observation
   provenance_chain:
@@ -354,13 +405,15 @@ domain_claims:
     name: James Fox
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: Their appeals focus on the declassification of UAP‑related material - including
-    photographs and documentation of retrieved craft and alleged non‑human bodies
-    - and on securing immunity and protection for individuals who could face repercussions
-    for violating Non‑Disclosure Agreements to share what they know.
-  text: The whistleblowers appealing to Donald Trump in James Fox's videos focus on
-    the declassification of UAP-related material, including photographs and documentation
-    of retrieved craft and alleged non-human bodies.
+  quote: |-
+    Their appeals focus on the declassification of UAP‑related material - including photographs and documentation of retrieved craft and alleged non‑human bodies - and on securing immunity and protection for individuals who could face repercussions for violating Non‑Disclosure Agreements to share what they know.
+  text: |-
+    The whistleblowers appealing to Donald Trump in James Fox's videos focus on the declassification of UAP-related material, including photographs and documentation of retrieved craft and alleged non-human bodies.
+  entailment:
+    label: entails
+    score: 0.663
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c56a5f5-5f9c-4544-b7b7-9ce1d4df38a1
   type: observation
   provenance_chain:
@@ -372,11 +425,15 @@ domain_claims:
     name: James Fox
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: and on securing immunity and protection for individuals who could face repercussions
-    for violating Non‑Disclosure Agreements to share what they know
-  text: The whistleblowers appealing to Donald Trump in James Fox's videos focus on
-    securing immunity and protection for individuals who could face repercussions
-    for violating Non-Disclosure Agreements to share what they know about UAP.
+  quote: |-
+    and on securing immunity and protection for individuals who could face repercussions for violating Non‑Disclosure Agreements to share what they know
+  text: |-
+    The whistleblowers appealing to Donald Trump in James Fox's videos focus on securing immunity and protection for individuals who could face repercussions for violating Non-Disclosure Agreements to share what they know about UAP.
+  entailment:
+    label: entails
+    score: 0.604
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f5030e68-e769-4b72-8354-7e58dccd6ae0
   type: administrative
   provenance_chain:
@@ -389,8 +446,13 @@ domain_claims:
   - id: 93c9f46d-facb-4a1c-97a0-8299a2ff7d68
     name: United States Air Force
   quote: Dylan Borland, a former Air Force geospatial intelligence specialist
-  text: Dylan Borland is a former United States Air Force geospatial intelligence
-    specialist.
+  text: |-
+    Dylan Borland is a former United States Air Force geospatial intelligence specialist.
+  entailment:
+    label: entails
+    score: 0.761
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e774b5e2-801e-4df9-9c1a-49bc403dcc79
   type: administrative
   provenance_chain:
@@ -404,6 +466,11 @@ domain_claims:
     name: Department of War
   quote: Matthew Brown, a former Department of War official
   text: Matthew Brown is a former Department of War official.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 71805a33-8511-46f6-b842-ee08658c9a01
   type: administrative
   provenance_chain:
@@ -413,10 +480,15 @@ domain_claims:
   refs:
   - id: c6873aca-d9ea-41be-a54d-f67e138347a3
     name: Eric Davis
-  quote: Dr Eric Davis, an aerospace engineer known for his work on advanced propulsion
-    concepts
-  text: Eric Davis is an aerospace engineer known for his work on advanced propulsion
-    concepts.
+  quote: |-
+    Dr Eric Davis, an aerospace engineer known for his work on advanced propulsion concepts
+  text: |-
+    Eric Davis is an aerospace engineer known for his work on advanced propulsion concepts.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6e886ba4-f360-41e5-9bdf-663af4481bf3
   type: opinion
   attestation: first_hand
@@ -437,13 +509,15 @@ domain_claims:
     name: White House
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: “provide a full historical accounting to the National Security Council principals,
-    the White House Chief of Staff and make any supporting public statements that
-    are authorised to help this administration move disclosure forward.”
-  text: David Grusch is prepared to provide a full historical accounting to the National
-    Security Council principals and the White House Chief of Staff, and to make any
-    supporting public statements that are authorised, to help the Trump administration
-    move UAP disclosure forward.
+  quote: |-
+    “provide a full historical accounting to the National Security Council principals, the White House Chief of Staff and make any supporting public statements that are authorised to help this administration move disclosure forward.”
+  text: |-
+    David Grusch is prepared to provide a full historical accounting to the National Security Council principals and the White House Chief of Staff, and to make any supporting public statements that are authorised, to help the Trump administration move UAP disclosure forward.
+  entailment:
+    label: entails
+    score: 0.846
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a24d2aed-116c-4f4a-bd68-df94c5b01e7e
   type: opinion
   attestation: first_hand
@@ -462,14 +536,15 @@ domain_claims:
     name: Donald Trump
   - id: 2b3e1814-75ad-4474-aa6d-94e994adc9a4
     name: United States Congress
-  quote: He added that he is ready to assist the administration in identifying the
-    records, programs and personnel involved in classified UAP activities, and in
-    bringing “any improperly concealed activities back under lawful presidential and
-    congressional oversight.”
-  text: David Grusch is ready to assist the Trump administration in identifying the
-    records, programmes and personnel involved in classified UAP activities, and in
-    bringing any improperly concealed activities back under lawful presidential and
-    congressional oversight.
+  quote: |-
+    He added that he is ready to assist the administration in identifying the records, programs and personnel involved in classified UAP activities, and in bringing “any improperly concealed activities back under lawful presidential and congressional oversight.”
+  text: |-
+    David Grusch is ready to assist the Trump administration in identifying the records, programmes and personnel involved in classified UAP activities, and in bringing any improperly concealed activities back under lawful presidential and congressional oversight.
+  entailment:
+    label: entails
+    score: 0.861
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 474947d5-05f0-4b32-90ef-4909a9220700
   type: opinion
   attestation: first_hand
@@ -487,8 +562,13 @@ domain_claims:
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
   quote: “Mr President, give us the authorisation, and we’re ready to go.”
-  text: David Grusch called on Donald Trump to give authorisation, stating that he
-    and other whistleblowers are ready to go.
+  text: |-
+    David Grusch called on Donald Trump to give authorisation, stating that he and other whistleblowers are ready to go.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 42bcc4eb-ce4c-4369-b1c1-be59ae9e4d43
   type: administrative
   provenance_chain:
@@ -502,10 +582,15 @@ domain_claims:
     name: Donald Trump
   - id: a1d07e02-3de2-4851-8e44-256beea3a699
     name: Unidentified Anomalous Phenomena (UAP)
-  quote: billionaire and Trump donor Robert Bigelow, whose interest in UAPs spans
-    several decades
-  text: Robert Bigelow is a billionaire and Trump donor whose interest in UAP spans
-    several decades.
+  quote: |-
+    billionaire and Trump donor Robert Bigelow, whose interest in UAPs spans several decades
+  text: |-
+    Robert Bigelow is a billionaire and Trump donor whose interest in UAP spans several decades.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bc7830d4-d77f-4a44-96b1-5b00fbccd8a3
   type: testimony
   attestation: first_hand
@@ -525,10 +610,15 @@ domain_claims:
     name: Donald Trump
   - id: a1d07e02-3de2-4851-8e44-256beea3a699
     name: Unidentified Anomalous Phenomena (UAP)
-  quote: Two weeks ago, Bigelow said that in February he advised President Trump on
-    how he might address the nation regarding the issue.
-  text: In February 2026, Robert Bigelow advised Donald Trump on how he might address
-    the nation regarding the UAP issue.
+  quote: |-
+    Two weeks ago, Bigelow said that in February he advised President Trump on how he might address the nation regarding the issue.
+  text: |-
+    In February 2026, Robert Bigelow advised Donald Trump on how he might address the nation regarding the UAP issue.
+  entailment:
+    label: neutral
+    score: 0.581
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 55444cbe-815c-46f1-bb4b-7d0ec37641f1
   type: opinion
   attestation: first_hand
@@ -543,14 +633,15 @@ domain_claims:
   refs:
   - id: ec28ce57-582f-45cd-a3c5-361fe30a68e6
     name: Robert Bigelow
-  quote: “I was emphasizing that the disclosure process, starting with confirmation,
-    is a big deal. That, you know, it really is important for somebody like the President
-    of the United States to say, ‘yeah, they’re real, they’re here. And eliminate
-    all the other nonsense, all the noise that’s been going on for 80 years,’”
-  text: Robert Bigelow emphasised that the disclosure process, starting with confirmation,
-    is a big deal, and that it is important for the President of the United States
-    to say that non-human intelligence is real and here, in order to eliminate the
-    other nonsense that has been going on for 80 years.
+  quote: |-
+    “I was emphasizing that the disclosure process, starting with confirmation, is a big deal. That, you know, it really is important for somebody like the President of the United States to say, ‘yeah, they’re real, they’re here. And eliminate all the other nonsense, all the noise that’s been going on for 80 years,’”
+  text: |-
+    Robert Bigelow emphasised that the disclosure process, starting with confirmation, is a big deal, and that it is important for the President of the United States to say that non-human intelligence is real and here, in order to eliminate the other nonsense that has been going on for 80 years.
+  entailment:
+    label: entails
+    score: 0.482
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 71cd7853-0a05-4752-8ee0-60f1871b0d47
   type: opinion
   attestation: first_hand
@@ -567,14 +658,15 @@ domain_claims:
     name: Robert Bigelow
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: '“This, this is what I want you to say, Mr President: ‘A non-human, intelligent
-    presence has been on Earth for a very long time, using spacecraft and with performances
-    completely beyond our capabilities and our human physics.’ And that’s it, to say
-    nothing else. That’s it, that’s all. Because what this is, is disclosure. And
-    it’s actually confirmation.”'
-  text: Robert Bigelow suggested Donald Trump say that a non-human, intelligent presence
-    has been on Earth for a very long time, using spacecraft with performances completely
-    beyond human capabilities and human physics.
+  quote: |-
+    “This, this is what I want you to say, Mr President: ‘A non-human, intelligent presence has been on Earth for a very long time, using spacecraft and with performances completely beyond our capabilities and our human physics.’ And that’s it, to say nothing else. That’s it, that’s all. Because what this is, is disclosure. And it’s actually confirmation.”
+  text: |-
+    Robert Bigelow suggested Donald Trump say that a non-human, intelligent presence has been on Earth for a very long time, using spacecraft with performances completely beyond human capabilities and human physics.
+  entailment:
+    label: entails
+    score: 0.47
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: df029f1f-265a-4741-a952-944b8c63997e
   type: administrative
   provenance_chain:
@@ -586,6 +678,11 @@ domain_claims:
     name: George Knapp
   quote: veteran investigative journalist George Knapp
   text: George Knapp is a veteran investigative journalist.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a752c754-60cd-440e-a91f-475a8b430c39
   type: opinion
   provenance_chain:
@@ -599,11 +696,15 @@ domain_claims:
     name: David Grusch
   - id: 8cfef8aa-bc40-45fa-89ed-bfe98ee46300
     name: George Knapp
-  quote: in the latest episode he appeared to take a more cautious stance on disclosure
-    than Grusch, emphasising the need to protect secrecy
-  text: In the latest episode of his podcast with George Knapp, Robert Bigelow took
-    a more cautious stance on UAP disclosure than David Grusch, emphasising the need
-    to protect secrecy.
+  quote: |-
+    in the latest episode he appeared to take a more cautious stance on disclosure than Grusch, emphasising the need to protect secrecy
+  text: |-
+    In the latest episode of his podcast with George Knapp, Robert Bigelow took a more cautious stance on UAP disclosure than David Grusch, emphasising the need to protect secrecy.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2985f007-c32c-4316-9c36-f386e9d5d224
   type: opinion
   attestation: first_hand
@@ -618,14 +719,15 @@ domain_claims:
   refs:
   - id: ec28ce57-582f-45cd-a3c5-361fe30a68e6
     name: Robert Bigelow
-  quote: “The companies need more money. They need more scientists involved, but they
-    have to maintain their secrecy at all costs because we are in competition with
-    China and Russia on the exact same thing [non-human technology], and they don't
-    have the concerns about secrecy that we do.”
-  text: Robert Bigelow considers it necessary for companies allegedly involved in
-    reverse-engineering non-human technology to maintain their secrecy at all costs,
-    because the United States is in competition with China and Russia on the same
-    technology, and China and Russia do not have the same concerns about secrecy.
+  quote: |-
+    “The companies need more money. They need more scientists involved, but they have to maintain their secrecy at all costs because we are in competition with China and Russia on the exact same thing [non-human technology], and they don't have the concerns about secrecy that we do.”
+  text: |-
+    Robert Bigelow considers it necessary for companies allegedly involved in reverse-engineering non-human technology to maintain their secrecy at all costs, because the United States is in competition with China and Russia on the same technology, and China and Russia do not have the same concerns about secrecy.
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 09042fa3-d8fd-4370-8b8e-4114443c3aec
   type: opinion
   attestation: first_hand
@@ -640,14 +742,15 @@ domain_claims:
   refs:
   - id: ec28ce57-582f-45cd-a3c5-361fe30a68e6
     name: Robert Bigelow
-  quote: “It needs to be a process, a step-by-step, partial process delivery. It needs
-    to be truthful, and we need to engage, find ways to engage one of the most important
-    assets that this country has - it’s the gatekeepers- and do it in a way that is
-    really a great new era of partnership that has never existed for 80 years.”
-  text: Robert Bigelow believes UAP disclosure needs to be a truthful, step-by-step,
-    partial process, engaging the gatekeepers as one of the country's most important
-    assets, in a way that creates a new era of partnership that has not existed in
-    80 years.
+  quote: |-
+    “It needs to be a process, a step-by-step, partial process delivery. It needs to be truthful, and we need to engage, find ways to engage one of the most important assets that this country has - it’s the gatekeepers- and do it in a way that is really a great new era of partnership that has never existed for 80 years.”
+  text: |-
+    Robert Bigelow believes UAP disclosure needs to be a truthful, step-by-step, partial process, engaging the gatekeepers as one of the country's most important assets, in a way that creates a new era of partnership that has not existed in 80 years.
+  entailment:
+    label: entails
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: afa098a2-f2c7-4d61-81e8-09f335699d45
   type: hearsay
   provenance_chain:
@@ -663,11 +766,15 @@ domain_claims:
     name: 2026 United States midterm elections
   - id: 8f5e5581-6788-45d0-92d2-6582d9afa35b
     name: Liberation Times
-  quote: Liberation Times understands that advocates are attempting to persuade President
-    Trump to deliver some form of disclosure speech before the midterm elections on
-    3 November 2026.
-  text: Advocates are attempting to persuade Donald Trump to deliver some form of
-    UAP disclosure speech before the 2026 United States midterm elections on 2026-11-03.
+  quote: |-
+    Liberation Times understands that advocates are attempting to persuade President Trump to deliver some form of disclosure speech before the midterm elections on 3 November 2026.
+  text: |-
+    Advocates are attempting to persuade Donald Trump to deliver some form of UAP disclosure speech before the 2026 United States midterm elections on 2026-11-03.
+  entailment:
+    label: entails
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1b813aa6-1898-43c7-b917-2a94a53385e5
   type: observation
   provenance_chain:
@@ -679,10 +786,15 @@ domain_claims:
     name: Donald Trump
   - id: a1d07e02-3de2-4851-8e44-256beea3a699
     name: Unidentified Anomalous Phenomena (UAP)
-  quote: Their goal is to prompt a public acknowledgement that some UAPs are of non-human
-    origin.
-  text: The advocates' goal is to prompt a public acknowledgement by Donald Trump
-    that some UAP are of non-human origin.
+  quote: |-
+    Their goal is to prompt a public acknowledgement that some UAPs are of non-human origin.
+  text: |-
+    The advocates' goal is to prompt a public acknowledgement by Donald Trump that some UAP are of non-human origin.
+  entailment:
+    label: entails
+    score: 0.48
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8745d800-c911-4bbb-874b-692a5152d12e
   type: administrative
   provenance_chain:
@@ -695,8 +807,13 @@ domain_claims:
   - id: bf205bd1-158d-4da7-8d2d-81af2f889d2e
     name: Advanced Aerospace Threat Identification Program (AATIP)
   quote: Lue Elizondo, the former head of the Pentagon’s UAP program AATIP
-  text: Lue Elizondo is the former head of the Pentagon's UAP programme, the Advanced
-    Aerospace Threat Identification Program (AATIP).
+  text: |-
+    Lue Elizondo is the former head of the Pentagon's UAP programme, the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.43
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 695a82ea-1f18-4e7e-ba85-4e085c3436a8
   type: opinion
   provenance_chain:
@@ -708,10 +825,15 @@ domain_claims:
     name: Lue Elizondo
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: is also widely believed to be in a position to work with the Trump administration
-    and help guide a potential disclosure effort
-  text: Lue Elizondo is widely believed to be in a position to work with the Trump
-    administration and help guide a potential UAP disclosure effort.
+  quote: |-
+    is also widely believed to be in a position to work with the Trump administration and help guide a potential disclosure effort
+  text: |-
+    Lue Elizondo is widely believed to be in a position to work with the Trump administration and help guide a potential UAP disclosure effort.
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 04bfb5c0-36db-48a8-818c-ca0ffe0c9b14
   type: hearsay
   attestation: second_hand
@@ -733,12 +855,15 @@ domain_claims:
     name: Liberation Times
   - id: abd325c6-a5db-4761-971c-b4f59f0c5db9
     name: USA
-  quote: Sources also tell Liberation Times that the U.S. government - including its
-    UAP office, the All‑domain Anomaly Resolution Office (AARO) - is aware of data
-    indicating extreme‑performance incidents.
-  text: An anonymous source claiming knowledge of the matter told Liberation Times
-    that the US government, including the All-domain Anomaly Resolution Office (AARO),
-    is aware of data indicating extreme-performance incidents.
+  quote: |-
+    Sources also tell Liberation Times that the U.S. government - including its UAP office, the All‑domain Anomaly Resolution Office (AARO) - is aware of data indicating extreme‑performance incidents.
+  text: |-
+    An anonymous source claiming knowledge of the matter told Liberation Times that the US government, including the All-domain Anomaly Resolution Office (AARO), is aware of data indicating extreme-performance incidents.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5248f5c-61f3-41a2-8c89-786877416727
   type: hearsay
   attestation: second_hand
@@ -758,12 +883,15 @@ domain_claims:
     name: Atlantic Ocean
   - id: 8f5e5581-6788-45d0-92d2-6582d9afa35b
     name: Liberation Times
-  quote: These reportedly include objects traversing the Atlantic Ocean from end to
-    end in three seconds, as well as similar episodes of rapid acceleration observed
-    in the vicinity of Japan.
-  text: An anonymous source claiming knowledge of the matter told Liberation Times
-    that objects have been reported traversing the Atlantic Ocean from end to end
-    in three seconds.
+  quote: |-
+    These reportedly include objects traversing the Atlantic Ocean from end to end in three seconds, as well as similar episodes of rapid acceleration observed in the vicinity of Japan.
+  text: |-
+    An anonymous source claiming knowledge of the matter told Liberation Times that objects have been reported traversing the Atlantic Ocean from end to end in three seconds.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 69f0bc0c-7235-417f-b602-5dccf763404a
   type: hearsay
   attestation: second_hand
@@ -783,11 +911,15 @@ domain_claims:
     name: Japan
   - id: 8f5e5581-6788-45d0-92d2-6582d9afa35b
     name: Liberation Times
-  quote: as well as similar episodes of rapid acceleration observed in the vicinity
-    of Japan
-  text: An anonymous source claiming knowledge of the matter told Liberation Times
-    that similar episodes of rapid acceleration have been observed in the vicinity
-    of Japan.
+  quote: |-
+    as well as similar episodes of rapid acceleration observed in the vicinity of Japan
+  text: |-
+    An anonymous source claiming knowledge of the matter told Liberation Times that similar episodes of rapid acceleration have been observed in the vicinity of Japan.
+  entailment:
+    label: entails
+    score: 0.75
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 630ee66c-a429-464f-a5a4-2b9fb5be1677
   type: hearsay
   attestation: second_hand
@@ -796,8 +928,8 @@ domain_claims:
     name: Christopher Sharp
   provenance_chain:
     origin_kind: anonymous
-    origin: a person claiming knowledge of Central Intelligence Agency reverse-engineering
-      programmes
+    origin: |-
+      a person claiming knowledge of Central Intelligence Agency reverse-engineering programmes
     origin_ref: liberation-times-cia-gatekeeper-source
     relay:
     - Liberation Times
@@ -810,14 +942,15 @@ domain_claims:
     name: Central Intelligence Agency (CIA) Directorate of Science and Technology
   - id: 8f5e5581-6788-45d0-92d2-6582d9afa35b
     name: Liberation Times
-  quote: Another source told Liberation Times that the CIA’s chief scientist acts
-    as an operational gatekeeper for programs involving the retrieval and reverse-engineering
-    of vehicles allegedly of non-human origin within the Agency’s Directorate of Science
-    and Technology.
-  text: An anonymous source told Liberation Times that the CIA's chief scientist acts
-    as an operational gatekeeper for programmes involving the retrieval and reverse-engineering
-    of vehicles allegedly of non-human origin within the CIA's Directorate of Science
-    and Technology.
+  quote: |-
+    Another source told Liberation Times that the CIA’s chief scientist acts as an operational gatekeeper for programs involving the retrieval and reverse-engineering of vehicles allegedly of non-human origin within the Agency’s Directorate of Science and Technology.
+  text: |-
+    An anonymous source told Liberation Times that the CIA's chief scientist acts as an operational gatekeeper for programmes involving the retrieval and reverse-engineering of vehicles allegedly of non-human origin within the CIA's Directorate of Science and Technology.
+  entailment:
+    label: entails
+    score: 0.762
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4397b39e-c450-4680-9e57-16c2fb77551a
   type: hearsay
   attestation: second_hand
@@ -826,8 +959,8 @@ domain_claims:
     name: Christopher Sharp
   provenance_chain:
     origin_kind: anonymous
-    origin: a person claiming knowledge of Central Intelligence Agency reverse-engineering
-      programmes
+    origin: |-
+      a person claiming knowledge of Central Intelligence Agency reverse-engineering programmes
     origin_ref: liberation-times-cia-gatekeeper-source
     relay:
     - Liberation Times
@@ -838,12 +971,15 @@ domain_claims:
     name: Central Intelligence Agency (CIA) Directorate of Science and Technology
   - id: 8f5e5581-6788-45d0-92d2-6582d9afa35b
     name: Liberation Times
-  quote: According to the source, the CIA’s deputy director within the Science and
-    Technology directorate serves as the administrative gatekeeper for those programs.
-  text: According to an anonymous source, the CIA's deputy director within the Directorate
-    of Science and Technology serves as the administrative gatekeeper for programmes
-    involving the retrieval and reverse-engineering of vehicles allegedly of non-human
-    origin.
+  quote: |-
+    According to the source, the CIA’s deputy director within the Science and Technology directorate serves as the administrative gatekeeper for those programs.
+  text: |-
+    According to an anonymous source, the CIA's deputy director within the Directorate of Science and Technology serves as the administrative gatekeeper for programmes involving the retrieval and reverse-engineering of vehicles allegedly of non-human origin.
+  entailment:
+    label: entails
+    score: 0.822
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 91f38484-e03e-4286-967d-ea6d04484895
   type: administrative
   provenance_chain:
@@ -857,6 +993,11 @@ domain_claims:
     name: National Reconnaissance Office (NRO)
   quote: Betty Sapp, former Director of the National Reconnaissance Office (NRO)
   text: Betty Sapp is the former Director of the National Reconnaissance Office (NRO).
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 11d780d8-99d3-4381-8bad-03c6abc45f50
   type: hearsay
   attestation: second_hand
@@ -877,8 +1018,13 @@ domain_claims:
   - id: 8f5e5581-6788-45d0-92d2-6582d9afa35b
     name: Liberation Times
   quote: has been described by Liberation Times sources as another key gatekeeper
-  text: Liberation Times sources describe Betty Sapp as another key gatekeeper of
-    programmes related to non-human technology.
+  text: |-
+    Liberation Times sources describe Betty Sapp as another key gatekeeper of programmes related to non-human technology.
+  entailment:
+    label: contradicts
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 94967663-6451-4b6c-b514-468b7cb2f1d3
   type: hearsay
   attestation: second_hand
@@ -902,13 +1048,15 @@ domain_claims:
     name: Stephanie O'Sullivan
   - id: 8f5e5581-6788-45d0-92d2-6582d9afa35b
     name: Liberation Times
-  quote: According to those sources, Sapp worked with former Director of National
-    Intelligence James Clapper and his deputy Stephanie O’Sullivan on an Obama‑era
-    program focused on locating UAP, recovering them, and attempting to reverse‑engineer
-    their technology.
-  text: According to Liberation Times sources, Betty Sapp worked with James Clapper
-    and his deputy Stephanie O'Sullivan on an Obama-era programme focused on locating
-    UAP, recovering them, and attempting to reverse-engineer their technology.
+  quote: |-
+    According to those sources, Sapp worked with former Director of National Intelligence James Clapper and his deputy Stephanie O’Sullivan on an Obama‑era program focused on locating UAP, recovering them, and attempting to reverse‑engineer their technology.
+  text: |-
+    According to Liberation Times sources, Betty Sapp worked with James Clapper and his deputy Stephanie O'Sullivan on an Obama-era programme focused on locating UAP, recovering them, and attempting to reverse-engineer their technology.
+  entailment:
+    label: entails
+    score: 0.531
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7be606f3-b17a-43d8-b392-9f43775d3278
   type: administrative
   provenance_chain:
@@ -920,6 +1068,11 @@ domain_claims:
     name: James Clapper
   quote: former Director of National Intelligence James Clapper
   text: James Clapper was the former Director of National Intelligence.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6900a24d-f382-448a-a4d3-a47588a4de67
   type: administrative
   provenance_chain:
@@ -934,8 +1087,13 @@ domain_claims:
   - id: afcfe111-5c79-4e9e-9cef-66bf6b777f35
     name: Office of the Director of National Intelligence (ODNI)
   quote: his deputy Stephanie O’Sullivan
-  text: Stephanie O'Sullivan was James Clapper's deputy at the Office of the Director
-    of National Intelligence.
+  text: |-
+    Stephanie O'Sullivan was James Clapper's deputy at the Office of the Director of National Intelligence.
+  entailment:
+    label: entails
+    score: 0.466
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 12f3bf6a-1cae-4e7b-a1e3-f0aaeaff0728
   type: administrative
   provenance_chain:
@@ -949,10 +1107,15 @@ domain_claims:
     name: James Clapper
   - id: b825928e-196e-4b5f-9314-248502ecff9d
     name: Office of the Under Secretary of Defense for Intelligence (USD(I))
-  quote: Sapp had previously worked with Clapper in the Office of the Under Secretary
-    of Defense for Intelligence or USD(I)
-  text: Betty Sapp previously worked with James Clapper in the Office of the Under
-    Secretary of Defense for Intelligence (USD(I)).
+  quote: |-
+    Sapp had previously worked with Clapper in the Office of the Under Secretary of Defense for Intelligence or USD(I)
+  text: |-
+    Betty Sapp previously worked with James Clapper in the Office of the Under Secretary of Defense for Intelligence (USD(I)).
+  entailment:
+    label: entails
+    score: 0.903
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d5cf21f4-24b1-471f-ac29-1f89cc1d0752
   type: administrative
   provenance_chain:
@@ -967,10 +1130,15 @@ domain_claims:
     name: Betty Sapp
   - id: 154c26b8-ab79-4790-981d-23ae7af5bf6d
     name: National Reconnaissance Office (NRO)
-  quote: he later helped advance her career by supporting her appointment as the NRO’s
-    deputy director in April 2009
-  text: James Clapper helped advance Betty Sapp's career by supporting her appointment
-    as the National Reconnaissance Office's deputy director in 2009-04.
+  quote: |-
+    he later helped advance her career by supporting her appointment as the NRO’s deputy director in April 2009
+  text: |-
+    James Clapper helped advance Betty Sapp's career by supporting her appointment as the National Reconnaissance Office's deputy director in 2009-04.
+  entailment:
+    label: entails
+    score: 0.459
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f64b9c85-e4f9-423d-b474-8765eeac81df
   type: hearsay
   speaker:
@@ -988,10 +1156,15 @@ domain_claims:
     name: Age of Disclosure
   - id: 8f5e5581-6788-45d0-92d2-6582d9afa35b
     name: Liberation Times
-  quote: Liberation Times understands that Clapper has stepped back from efforts to
-    promote UAP transparency.
-  text: Since appearing in the documentary Age of Disclosure, James Clapper has stepped
-    back from efforts to promote UAP transparency.
+  quote: |-
+    Liberation Times understands that Clapper has stepped back from efforts to promote UAP transparency.
+  text: |-
+    Since appearing in the documentary Age of Disclosure, James Clapper has stepped back from efforts to promote UAP transparency.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 20d2c9f3-fd96-4b04-9515-71274e7722ac
   type: hearsay
   attestation: second_hand
@@ -1000,8 +1173,8 @@ domain_claims:
     name: Christopher Sharp
   provenance_chain:
     origin_kind: anonymous
-    origin: a person claiming knowledge of James Clapper's current attitude toward
-      UAP transparency
+    origin: |-
+      a person claiming knowledge of James Clapper's current attitude toward UAP transparency
     origin_ref: liberation-times-clapper-source
     relay:
     - Liberation Times
@@ -1012,10 +1185,15 @@ domain_claims:
     name: James Clapper
   - id: 8f5e5581-6788-45d0-92d2-6582d9afa35b
     name: Liberation Times
-  quote: One source told Liberation Times that he has grown uncomfortable with the
-    recent surge of attention.
-  text: An anonymous source told Liberation Times that James Clapper has grown uncomfortable
-    with the recent surge of attention on UAP transparency efforts.
+  quote: |-
+    One source told Liberation Times that he has grown uncomfortable with the recent surge of attention.
+  text: |-
+    An anonymous source told Liberation Times that James Clapper has grown uncomfortable with the recent surge of attention on UAP transparency efforts.
+  entailment:
+    label: entails
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fb98241e-d548-4b95-bcf8-466d245a6701
   type: hearsay
   attestation: second_hand
@@ -1035,10 +1213,15 @@ domain_claims:
     name: Liberation Times
   - id: a1d07e02-3de2-4851-8e44-256beea3a699
     name: Unidentified Anomalous Phenomena (UAP)
-  quote: Some sources told Liberation Times they fear that whistleblowers could face
-    retaliation if the UAP issue slips from the political agenda.
-  text: Some anonymous sources told Liberation Times they fear that whistleblowers
-    could face retaliation if the UAP issue slips from the political agenda.
+  quote: |-
+    Some sources told Liberation Times they fear that whistleblowers could face retaliation if the UAP issue slips from the political agenda.
+  text: |-
+    Some anonymous sources told Liberation Times they fear that whistleblowers could face retaliation if the UAP issue slips from the political agenda.
+  entailment:
+    label: entails
+    score: 0.472
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc2e62bf-423a-4230-98d7-27625bf3b1bc
   type: observation
   provenance_chain:
@@ -1052,12 +1235,15 @@ domain_claims:
     name: White House
   - id: a1d07e02-3de2-4851-8e44-256beea3a699
     name: Unidentified Anomalous Phenomena (UAP)
-  quote: Whether President Trump is prepared to disclose any information related to
-    UAPs remains unclear, with sources offering differing accounts of his level of
-    interest and of how the White House is currently approaching the issue.
-  text: Whether Donald Trump is prepared to disclose any information related to UAP
-    remains unclear, with sources offering differing accounts of his level of interest
-    and of how the White House is currently approaching the issue.
+  quote: |-
+    Whether President Trump is prepared to disclose any information related to UAPs remains unclear, with sources offering differing accounts of his level of interest and of how the White House is currently approaching the issue.
+  text: |-
+    Whether Donald Trump is prepared to disclose any information related to UAP remains unclear, with sources offering differing accounts of his level of interest and of how the White House is currently approaching the issue.
+  entailment:
+    label: entails
+    score: 0.759
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: 864de887-ce58-4d39-8deb-5a234f6dca3a
   type: administrative
@@ -1071,6 +1257,11 @@ infrastructure_claims:
     name: Christopher Sharp
   quote: Written by Christopher Sharp - 19 August 2026
   text: Christopher Sharp wrote this article on 2026-08-19.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 246fc081-d259-4bc2-a59f-5281bab088ac
   type: administrative
   provenance_chain:
@@ -1084,10 +1275,15 @@ infrastructure_claims:
     name: Dr Phil (podcast)
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: who appeared last week on the Dr Phil podcast, urging the Trump administration
-    to take decisive action on the UAP issue
-  text: David Grusch appeared on the Dr Phil podcast urging the Trump administration
-    to take decisive action on the UAP issue.
+  quote: |-
+    who appeared last week on the Dr Phil podcast, urging the Trump administration to take decisive action on the UAP issue
+  text: |-
+    David Grusch appeared on the Dr Phil podcast urging the Trump administration to take decisive action on the UAP issue.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6581c860-7da7-4e70-90fa-02c55698f841
   type: administrative
   provenance_chain:
@@ -1104,12 +1300,15 @@ infrastructure_claims:
     name: Donald Trump
   - id: a1d07e02-3de2-4851-8e44-256beea3a699
     name: Unidentified Anomalous Phenomena (UAP)
-  quote: Since 14 August, documentary filmmaker James Fox has released a series of
-    four videos featuring different UAP whistleblowers - including David Grusch -
-    urging President Trump to take action on the issue.
-  text: Since 2026-08-14, James Fox has released a series of four videos featuring
-    different UAP whistleblowers, including David Grusch, urging Donald Trump to take
-    action on the UAP issue.
+  quote: |-
+    Since 14 August, documentary filmmaker James Fox has released a series of four videos featuring different UAP whistleblowers - including David Grusch - urging President Trump to take action on the issue.
+  text: |-
+    Since 2026-08-14, James Fox has released a series of four videos featuring different UAP whistleblowers, including David Grusch, urging Donald Trump to take action on the UAP issue.
+  entailment:
+    label: contradicts
+    score: 0.819
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0f59e9c0-614b-4c96-a9ff-af5fb9e180a9
   type: administrative
   provenance_chain:
@@ -1127,10 +1326,15 @@ infrastructure_claims:
     name: James Fox
   - id: 97df92e1-7003-4307-b429-0be68e68b5d3
     name: Donald Trump
-  quote: The additional whistleblowers appearing in Fox’s videos include Dylan Borland...Matthew
-    Brown...and Dr Eric Davis
-  text: Dylan Borland, Matthew Brown, and Eric Davis appear as whistleblowers in James
-    Fox's videos urging Donald Trump to act on UAP disclosure.
+  quote: |-
+    The additional whistleblowers appearing in Fox’s videos include Dylan Borland...Matthew Brown...and Dr Eric Davis
+  text: |-
+    Dylan Borland, Matthew Brown, and Eric Davis appear as whistleblowers in James Fox's videos urging Donald Trump to act on UAP disclosure.
+  entailment:
+    label: entails
+    score: 0.549
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aa1c6c50-b313-4273-8470-fd71f5a6bca4
   type: administrative
   provenance_chain:
@@ -1142,9 +1346,14 @@ infrastructure_claims:
     name: Robert Bigelow
   - id: 8cfef8aa-bc40-45fa-89ed-bfe98ee46300
     name: George Knapp
-  quote: Bigelow has recently launched a new podcast series with veteran investigative
-    journalist George Knapp
+  quote: |-
+    Bigelow has recently launched a new podcast series with veteran investigative journalist George Knapp
   text: Robert Bigelow has launched a new podcast series with George Knapp.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a6ed0929-30c9-4c6c-a737-58b753f1abf3
   type: testimony
   attestation: second_hand
@@ -1165,10 +1374,15 @@ infrastructure_claims:
     name: Betty Sapp
   - id: a7d8dd5f-847d-4540-bb82-7a6770b55305
     name: Stephanie O'Sullivan
-  quote: In his autobiography - ‘Facts and Fears’ - Clapper highlighted Sapp and O’Sullivan
-    as women who consistently outperformed their male colleagues.
-  text: In his autobiography 'Facts and Fears', James Clapper highlighted Betty Sapp
-    and Stephanie O'Sullivan as women who consistently outperformed their male colleagues.
+  quote: |-
+    In his autobiography - ‘Facts and Fears’ - Clapper highlighted Sapp and O’Sullivan as women who consistently outperformed their male colleagues.
+  text: |-
+    In his autobiography 'Facts and Fears', James Clapper highlighted Betty Sapp and Stephanie O'Sullivan as women who consistently outperformed their male colleagues.
+  entailment:
+    label: entails
+    score: 0.905
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a262ff03-7cd7-43bb-b8b9-9ea4743908c1
   type: testimony
   attestation: second_hand
@@ -1192,12 +1406,15 @@ infrastructure_claims:
     name: Office of the Under Secretary of Defense for Intelligence (USD(I))
   - id: 949c6e64-6d45-43b3-a829-e3e12c0e5c0c
     name: Facts and Fears
-  quote: ‘when the NRO director retired in April, we moved Betty Sapp, my USD(I) deputy
-    for portfolio, programs, and resources, to NRO as the principal deputy director.’
-  text: James Clapper wrote in his autobiography that when the National Reconnaissance
-    Office director retired in April 2009, Betty Sapp, his Office of the Under Secretary
-    of Defense for Intelligence deputy for portfolio, programmes, and resources, moved
-    to the National Reconnaissance Office as the principal deputy director.
+  quote: |-
+    ‘when the NRO director retired in April, we moved Betty Sapp, my USD(I) deputy for portfolio, programs, and resources, to NRO as the principal deputy director.’
+  text: |-
+    James Clapper wrote in his autobiography that when the National Reconnaissance Office director retired in April 2009, Betty Sapp, his Office of the Under Secretary of Defense for Intelligence deputy for portfolio, programmes, and resources, moved to the National Reconnaissance Office as the principal deputy director.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4b3532d5-9ed9-47b0-92b5-43d04037a39d
   type: administrative
   provenance_chain:
@@ -1211,10 +1428,15 @@ infrastructure_claims:
     name: Age of Disclosure
   quote: Since appearing in the UAP documentary Age of Disclosure
   text: James Clapper appeared in the UAP documentary Age of Disclosure.
+  entailment:
+    label: entails
+    score: 0.786
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:09:09.809943+00:00'
   by: metadata-refresh
   changed:
   - record
-  why: Record block refreshed from current record frontmatter. No re-extraction; claims
-    and nodes untouched.
+  why: |-
+    Record block refreshed from current record frontmatter. No re-extraction; claims and nodes untouched.

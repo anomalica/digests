@@ -2,23 +2,25 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:17:59.226448+00:00'
 model: haiku
 ai_usage:
-  - stage: digest
-    model: claude-haiku-4-5
-    model_version: claude-haiku-4-5
-    tokens:
-      input: 85269
-      output: 1770
+- stage: digest
+  model: claude-haiku-4-5
+  model_version: claude-haiku-4-5
+  tokens:
+    input: 85269
+    output: 1770
+  route: cli
+  effort: low
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: 5e723f165a951e021ce9dbcc9a863c38f8ade57a896180086da042d65fc3295d
   prep_version: 6
@@ -39,74 +41,74 @@ record:
 terminology:
   main_subject: Buzz Aldrin
 nodes:
-  - id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
-    type: person
+- id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
+  type: person
+  name: Aldrin, Buzz
+- id: 181f3c50-f826-45f0-9304-83b1dfba070e
+  type: place
+  name: Moon
+- id: 25910b07-616c-47e1-af6b-9b3656894f06
+  type: place
+  name: Mars
+- id: dab99992-5604-4033-93d4-68c96aa5f8b4
+  type: object
+  name: Phobos
+  metadata:
+    description: potato-shaped moon of Mars; monolith mentioned in the document
+- id: 5f763e0d-8fb6-4964-a237-d10107ab31c6
+  type: object
+  name: Monolith on Phobos
+  metadata:
+    description: unusual structure on Phobos, the moon of Mars
+- id: 489f856f-be27-40dd-a211-7859bd4bcd64
+  type: document
+  name: 'C-SPAN: Buzz Aldrin Reveals Existence of Monolith on Mars Moon'
+  metadata:
+    date: '2009-07-22'
+    type: video
+domain_claims:
+- id: 74446624-5dd9-4d87-8234-015662ac12a2
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
     name: Aldrin, Buzz
-  - id: 181f3c50-f826-45f0-9304-83b1dfba070e
-    type: place
-    name: Moon
+  provenance_chain:
+    origin_kind: speaker
+    origin: Buzz Aldrin
+  attribution_in_text: false
+  location: 00:00:39.8-00:00:48.0
+  date: '2009-07-22'
+  refs:
+  - id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
+    name: Aldrin, Buzz
   - id: 25910b07-616c-47e1-af6b-9b3656894f06
-    type: place
     name: Mars
   - id: dab99992-5604-4033-93d4-68c96aa5f8b4
-    type: object
     name: Phobos
-    metadata:
-      description: potato-shaped moon of Mars; monolith mentioned in the document
+  quote: |-
+    a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours
+  text: |-
+    Phobos, the moon of Mars, is potato-shaped and completes one orbit around Mars every seven hours.
+- id: 1d0064b6-69de-4697-b3e8-2ec751ed1395
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
+    name: Aldrin, Buzz
+  provenance_chain:
+    origin_kind: speaker
+    origin: Buzz Aldrin
+  attribution_in_text: false
+  location: 00:00:37.8-00:00:48.0
+  date: '2009-07-22'
+  refs:
+  - id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
+    name: Aldrin, Buzz
   - id: 5f763e0d-8fb6-4964-a237-d10107ab31c6
-    type: object
     name: Monolith on Phobos
-    metadata:
-      description: unusual structure on Phobos, the moon of Mars
-  - id: 489f856f-be27-40dd-a211-7859bd4bcd64
-    type: document
-    name: 'C-SPAN: Buzz Aldrin Reveals Existence of Monolith on Mars Moon'
-    metadata:
-      date: '2009-07-22'
-      type: video
-domain_claims:
-  - id: 74446624-5dd9-4d87-8234-015662ac12a2
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
-      name: Aldrin, Buzz
-    provenance_chain:
-      origin_kind: speaker
-      origin: Buzz Aldrin
-    attribution_in_text: false
-    location: 00:00:39.8-00:00:48.0
-    date: '2009-07-22'
-    refs:
-      - id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
-        name: Aldrin, Buzz
-      - id: 25910b07-616c-47e1-af6b-9b3656894f06
-        name: Mars
-      - id: dab99992-5604-4033-93d4-68c96aa5f8b4
-        name: Phobos
-    quote: |-
-      a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours
-    text: |-
-      Phobos, the moon of Mars, is potato-shaped and completes one orbit around Mars every seven hours.
-  - id: 1d0064b6-69de-4697-b3e8-2ec751ed1395
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
-      name: Aldrin, Buzz
-    provenance_chain:
-      origin_kind: speaker
-      origin: Buzz Aldrin
-    attribution_in_text: false
-    location: 00:00:37.8-00:00:48.0
-    date: '2009-07-22'
-    refs:
-      - id: ea0f58f0-25da-4f19-a94d-1a3dbd052860
-        name: Aldrin, Buzz
-      - id: 5f763e0d-8fb6-4964-a237-d10107ab31c6
-        name: Monolith on Phobos
-      - id: dab99992-5604-4033-93d4-68c96aa5f8b4
-        name: Phobos
-    quote: |-
-      There's a monolith there, a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours.
-    text: A monolith exists on Phobos.
+  - id: dab99992-5604-4033-93d4-68c96aa5f8b4
+    name: Phobos
+  quote: |-
+    There's a monolith there, a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours.
+  text: A monolith exists on Phobos.

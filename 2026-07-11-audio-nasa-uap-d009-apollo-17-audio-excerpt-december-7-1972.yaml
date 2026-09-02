@@ -3,23 +3,31 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-30T16:37:36.984669+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 249099
-      output: 7788
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 249099
+    output: 7788
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.6
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 8.6
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v3
-    sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v3
-    sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v3
+  sha256: 8751f7f434ea9bba1255dcb7696a3cab53ab35059852a40ff251a747ad0a13bc
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v3
+  sha256: 3a766d1450cd79c12fa22feaa90f874d7c4d424780e75efa1e155814c3758ea8
+  file: claims.txt
 pre_digest:
   sha256: 0c67fb4e0105ec6c125d9f64494fde135dd6ea888428cddb1bb144f439481287
   prep_version: 6
@@ -40,337 +48,432 @@ record:
 terminology:
   main_subject: Apollo 17 orbital debris sighting, December 7, 1972
   codenames:
-    - codename: Gino
-      refers_to: Cernan, Gene
-    - codename: S-4B
-      refers_to: Saturn IVB stage (S-IVB)
+  - codename: Gino
+    refers_to: Cernan, Gene
+  - codename: S-4B
+    refers_to: Saturn IVB stage (S-IVB)
   acronyms:
-    - acronym: NASA
-      expansion: National Aeronautics and Space Administration
+  - acronym: NASA
+    expansion: National Aeronautics and Space Administration
 nodes:
-  - id: 3f4db305-d170-4441-b886-f788cd891180
-    type: event
-    name: Apollo 17 orbital debris sighting, December 7, 1972
-    metadata:
-      date_start: '1972-12-07'
-  - id: c76ec8f2-cf2e-4693-b24c-b3ce9c5879d0
-    type: project
-    name: Apollo 17
-  - id: d7ecf305-8c7a-44d0-91bc-64ea3e4374ba
-    type: organisation
-    name: National Aeronautics and Space Administration (NASA)
-  - id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
-    type: person
-    name: Gene Cernan
-    metadata:
-      family_name: Cernan
-      aliases:
-        - Cernan, Gene
-  - id: df114138-8709-4053-80b3-32f1abfd91ab
-    type: object
-    name: Saturn IVB stage (S-IVB)
+- id: 3f4db305-d170-4441-b886-f788cd891180
+  type: event
+  name: Apollo 17 orbital debris sighting, December 7, 1972
+  metadata:
+    date_start: '1972-12-07'
+- id: c76ec8f2-cf2e-4693-b24c-b3ce9c5879d0
+  type: project
+  name: Apollo 17
+- id: d7ecf305-8c7a-44d0-91bc-64ea3e4374ba
+  type: organisation
+  name: National Aeronautics and Space Administration (NASA)
+- id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
+  type: person
+  name: Gene Cernan
+  metadata:
+    family_name: Cernan
+    aliases:
+    - Cernan, Gene
+- id: df114138-8709-4053-80b3-32f1abfd91ab
+  type: object
+  name: Saturn IVB stage (S-IVB)
 domain_claims:
-  - id: 3b1349dd-48bc-45fa-be62-88832aaa9aad
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:00:00.1-00:00:07.4
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: |-
-      A few very bright particles or fragments or something that go drifting by as we maneuver.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, the crew observed bright particles or fragments drifting past as the spacecraft manoeuvred.
-  - id: 436e7883-38de-456b-8a89-cc93f4f67585
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:00:14.8-00:00:17.6
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: There's a whole bunch of big ones on my window there. Just bright.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member reported a large number of big, bright fragments visible on his window.
-  - id: a299c37d-77fa-4f58-b936-7a785f4303a0
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:00:27.2-00:00:30.2
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: They're very jagged, angular, fragmented or tumbling.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, the fragments observed were very jagged, angular, and either fragmented or tumbling in shape.
-  - id: edbc7e57-5b3b-41d1-8a3c-5e61f434724f
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:00:32.6-00:00:37.0
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: |-
-      Roger, they look like fluid of some sort? / Not to me. They look like pieces or something.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member did not believe the fragments looked like fluid, but rather like distinct pieces.
-  - id: 2805e29b-43e8-4aae-ab8b-1368c906a443
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:02:11.5-00:02:17.3
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: |-
-      Bob, for the most part, these fragments are not, are tumbling at a very slow rate.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, the fragments observed were, for the most part, tumbling at a very slow rate.
-  - id: ed756092-c1dc-4570-99fa-6cb075025b18
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:02:19.6-00:02:25.4
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: |-
-      I've tried a couple pictures of them at different settings. You may get an idea what at least the patterns look like.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member took photographs of the fragments at different camera settings to try to capture their patterns.
-  - id: d32b5197-60bf-48c1-838b-0bab0d510e3a
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:02:38.0-00:02:46.6
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-      - id: df114138-8709-4053-80b3-32f1abfd91ab
-        name: Saturn IVB stage (S-IVB)
-    quote: |-
-      I got the impression maybe they were curved a little bit, as if they might be off the side of the S-4B. That's a wild guess.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member speculated that the fragments might be pieces off the side of the Saturn IVB stage (S-IVB), curved in shape.
-  - id: 59c4ad82-b3ac-4563-ab0e-e9ba1f7da662
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:02:49.3-00:02:50.2
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: Ice chunk, possibly.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member speculated the fragments might possibly be chunks of ice.
-  - id: 5e6bb6ed-76df-43ea-a664-474d9f109768
-    type: opinion
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:02:51.0-00:02:52.3
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: Maybe there's paint coming off of it.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member speculated the fragments might be paint coming off the spacecraft or its stage.
-  - id: 0a83c0d4-3f3d-4f7a-b475-450cc134ec3a
-    type: observation
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a NASA ground control communicator identified as Bob
-      origin_ref: bob-ground-control
-    attribution_in_text: false
-    location: 00:02:53.2-00:02:59.5
-    date: 1972-11
-    refs:
-      - id: df114138-8709-4053-80b3-32f1abfd91ab
-        name: Saturn IVB stage (S-IVB)
-    quote: |-
-      All right, I noticed on one trip up the elevator last week, one of the flags, I thought it was in the S-2, but it might be on the S-4. It looked like it was peeling.
-    text: |-
-      A NASA ground control communicator recalled that, during a pre-launch inspection, one of the thermal protection flags, possibly on the Saturn IVB stage (S-IVB), appeared to be peeling.
-  - id: 30c2b020-5f60-413f-98bd-9ddac191def1
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-      origin: NASA ground control
-    attribution_in_text: false
-    location: 00:03:03.8-00:03:05.1
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-      - id: df114138-8709-4053-80b3-32f1abfd91ab
-        name: Saturn IVB stage (S-IVB)
-    quote: And the S-4B maneuver is complete.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, the manoeuvre involving the Saturn IVB stage (S-IVB) was completed.
-  - id: aceaf6ca-0004-4635-bed3-1c675f3ad00a
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:03:10.5-00:03:17.5
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: |-
-      Okay, and with the maneuver complete, the fragment field is essentially static, except for very slight tumbling within the fragment.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, after the manoeuvre was complete the fragment field became essentially static, apart from very slight tumbling within it.
-  - id: 23da8361-b091-454a-8281-fd10f68282ae
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:03:21.6-00:03:28.6
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: |-
-      Every once in a while a fragment of considerably higher velocity than the others goes across my window, but that's very rare.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member observed that occasionally a fragment of considerably higher velocity than the others crossed his window, but that this was very rare.
-  - id: 5256189d-5d93-4b1c-8532-5e8975e78c7c
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:03:49.3-00:03:54.3
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: Bob, at least there's no apparent relative motion between fragments.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member observed no apparent relative motion between the fragments.
-  - id: 6245f5eb-6b73-4339-8b4e-53d993c7a0be
-    type: observation
-    provenance_chain:
-      origin_kind: unattributed
-      origin: an Apollo 17 crew member
-    attribution_in_text: false
-    location: 00:04:00.1-00:04:06.5
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-    quote: I'll take two pictures about a minute apart if I can, and it'll be frame 70.
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member planned to take two photographs of the fragments about a minute apart, using frame 70.
-  - id: 633cf739-1359-4a56-b0d5-ce0b1fe97daa
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
-      name: Gene Cernan
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cernan, Gene
-    attribution_in_text: false
-    location: 00:04:15.7-00:04:20.2
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-      - id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
-        name: Gene Cernan
-    quote: my impression is that they are flat, flake-like particles
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, Gene Cernan's impression was that the particles were flat, flake-like fragments.
-  - id: 93a73ddf-b0eb-431c-bbcd-d7b7b11a28b3
-    type: measurement
-    attestation: first_hand
-    speaker:
-      id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
-      name: Gene Cernan
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cernan, Gene
-    attribution_in_text: false
-    location: 00:04:20.8-00:04:22.8
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-      - id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
-        name: Gene Cernan
-    quote: some maybe six inches across
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, Gene Cernan estimated that some of the flake-like fragments were approximately 15 centimetres across.
-  - id: 625af919-e5d4-46b4-bab8-32165194e78b
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
-      name: Gene Cernan
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cernan, Gene
-    attribution_in_text: false
-    location: 00:04:28.3-00:04:31.4
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-      - id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
-        name: Gene Cernan
-    quote: most of them seem to be twinkling
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, Gene Cernan observed that most of the fragments appeared to be twinkling.
-  - id: 16041247-2fca-4e94-bed6-7f5e92010f2d
-    type: observation
-    attestation: first_hand
-    speaker:
-      id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
-      name: Gene Cernan
-    provenance_chain:
-      origin_kind: speaker
-      origin: Cernan, Gene
-    attribution_in_text: false
-    location: 00:04:33.1-00:04:35.2
-    date: '1972-12-07'
-    refs:
-      - id: 3f4db305-d170-4441-b886-f788cd891180
-        name: Apollo 17 orbital debris sighting, December 7, 1972
-      - id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
-        name: Gene Cernan
-    quote: I think for the most part they're all moving away from us
-    text: |-
-      During the Apollo 17 orbital debris sighting, December 7, 1972, Gene Cernan observed that the fragments seemed for the most part to be moving away from the spacecraft.
+- id: 3b1349dd-48bc-45fa-be62-88832aaa9aad
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:00:00.1-00:00:07.4
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: |-
+    A few very bright particles or fragments or something that go drifting by as we maneuver.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, the crew observed bright particles or fragments drifting past as the spacecraft manoeuvred.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 436e7883-38de-456b-8a89-cc93f4f67585
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:00:14.8-00:00:17.6
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: There's a whole bunch of big ones on my window there. Just bright.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member reported a large number of big, bright fragments visible on his window.
+  entailment:
+    label: neutral
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a299c37d-77fa-4f58-b936-7a785f4303a0
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:00:27.2-00:00:30.2
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: They're very jagged, angular, fragmented or tumbling.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, the fragments observed were very jagged, angular, and either fragmented or tumbling in shape.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: edbc7e57-5b3b-41d1-8a3c-5e61f434724f
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:00:32.6-00:00:37.0
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: |-
+    Roger, they look like fluid of some sort? / Not to me. They look like pieces or something.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member did not believe the fragments looked like fluid, but rather like distinct pieces.
+  entailment:
+    label: entails
+    score: 0.88
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 2805e29b-43e8-4aae-ab8b-1368c906a443
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:02:11.5-00:02:17.3
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: |-
+    Bob, for the most part, these fragments are not, are tumbling at a very slow rate.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, the fragments observed were, for the most part, tumbling at a very slow rate.
+  entailment:
+    label: entails
+    score: 0.852
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ed756092-c1dc-4570-99fa-6cb075025b18
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:02:19.6-00:02:25.4
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: |-
+    I've tried a couple pictures of them at different settings. You may get an idea what at least the patterns look like.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member took photographs of the fragments at different camera settings to try to capture their patterns.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: d32b5197-60bf-48c1-838b-0bab0d510e3a
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:02:38.0-00:02:46.6
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  - id: df114138-8709-4053-80b3-32f1abfd91ab
+    name: Saturn IVB stage (S-IVB)
+  quote: |-
+    I got the impression maybe they were curved a little bit, as if they might be off the side of the S-4B. That's a wild guess.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member speculated that the fragments might be pieces off the side of the Saturn IVB stage (S-IVB), curved in shape.
+  entailment:
+    label: entails
+    score: 0.527
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 59c4ad82-b3ac-4563-ab0e-e9ba1f7da662
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:02:49.3-00:02:50.2
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: Ice chunk, possibly.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member speculated the fragments might possibly be chunks of ice.
+  entailment:
+    label: entails
+    score: 0.548
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5e6bb6ed-76df-43ea-a664-474d9f109768
+  type: opinion
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:02:51.0-00:02:52.3
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: Maybe there's paint coming off of it.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member speculated the fragments might be paint coming off the spacecraft or its stage.
+  entailment:
+    label: entails
+    score: 0.46
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 0a83c0d4-3f3d-4f7a-b475-450cc134ec3a
+  type: observation
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a NASA ground control communicator identified as Bob
+    origin_ref: bob-ground-control
+  attribution_in_text: false
+  location: 00:02:53.2-00:02:59.5
+  date: 1972-11
+  refs:
+  - id: df114138-8709-4053-80b3-32f1abfd91ab
+    name: Saturn IVB stage (S-IVB)
+  quote: |-
+    All right, I noticed on one trip up the elevator last week, one of the flags, I thought it was in the S-2, but it might be on the S-4. It looked like it was peeling.
+  text: |-
+    A NASA ground control communicator recalled that, during a pre-launch inspection, one of the thermal protection flags, possibly on the Saturn IVB stage (S-IVB), appeared to be peeling.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 30c2b020-5f60-413f-98bd-9ddac191def1
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+    origin: NASA ground control
+  attribution_in_text: false
+  location: 00:03:03.8-00:03:05.1
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  - id: df114138-8709-4053-80b3-32f1abfd91ab
+    name: Saturn IVB stage (S-IVB)
+  quote: And the S-4B maneuver is complete.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, the manoeuvre involving the Saturn IVB stage (S-IVB) was completed.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: aceaf6ca-0004-4635-bed3-1c675f3ad00a
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:03:10.5-00:03:17.5
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: |-
+    Okay, and with the maneuver complete, the fragment field is essentially static, except for very slight tumbling within the fragment.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, after the manoeuvre was complete the fragment field became essentially static, apart from very slight tumbling within it.
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 23da8361-b091-454a-8281-fd10f68282ae
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:03:21.6-00:03:28.6
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: |-
+    Every once in a while a fragment of considerably higher velocity than the others goes across my window, but that's very rare.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member observed that occasionally a fragment of considerably higher velocity than the others crossed his window, but that this was very rare.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5256189d-5d93-4b1c-8532-5e8975e78c7c
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:03:49.3-00:03:54.3
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: Bob, at least there's no apparent relative motion between fragments.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member observed no apparent relative motion between the fragments.
+  entailment:
+    label: entails
+    score: 0.779
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 6245f5eb-6b73-4339-8b4e-53d993c7a0be
+  type: observation
+  provenance_chain:
+    origin_kind: unattributed
+    origin: an Apollo 17 crew member
+  attribution_in_text: false
+  location: 00:04:00.1-00:04:06.5
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  quote: I'll take two pictures about a minute apart if I can, and it'll be frame 70.
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member planned to take two photographs of the fragments about a minute apart, using frame 70.
+  entailment:
+    label: entails
+    score: 0.702
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 633cf739-1359-4a56-b0d5-ce0b1fe97daa
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
+    name: Gene Cernan
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cernan, Gene
+  attribution_in_text: false
+  location: 00:04:15.7-00:04:20.2
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  - id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
+    name: Gene Cernan
+  quote: my impression is that they are flat, flake-like particles
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, Gene Cernan's impression was that the particles were flat, flake-like fragments.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 93a73ddf-b0eb-431c-bbcd-d7b7b11a28b3
+  type: measurement
+  attestation: first_hand
+  speaker:
+    id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
+    name: Gene Cernan
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cernan, Gene
+  attribution_in_text: false
+  location: 00:04:20.8-00:04:22.8
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  - id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
+    name: Gene Cernan
+  quote: some maybe six inches across
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, Gene Cernan estimated that some of the flake-like fragments were approximately 15 centimetres across.
+  entailment:
+    label: contradicts
+    score: 0.524
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 625af919-e5d4-46b4-bab8-32165194e78b
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
+    name: Gene Cernan
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cernan, Gene
+  attribution_in_text: false
+  location: 00:04:28.3-00:04:31.4
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  - id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
+    name: Gene Cernan
+  quote: most of them seem to be twinkling
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, Gene Cernan observed that most of the fragments appeared to be twinkling.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 16041247-2fca-4e94-bed6-7f5e92010f2d
+  type: observation
+  attestation: first_hand
+  speaker:
+    id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
+    name: Gene Cernan
+  provenance_chain:
+    origin_kind: speaker
+    origin: Cernan, Gene
+  attribution_in_text: false
+  location: 00:04:33.1-00:04:35.2
+  date: '1972-12-07'
+  refs:
+  - id: 3f4db305-d170-4441-b886-f788cd891180
+    name: Apollo 17 orbital debris sighting, December 7, 1972
+  - id: 4facfe0c-8adb-4b1c-942d-2a3d368ec4d8
+    name: Gene Cernan
+  quote: I think for the most part they're all moving away from us
+  text: |-
+    During the Apollo 17 orbital debris sighting, December 7, 1972, Gene Cernan observed that the fragments seemed for the most part to be moving away from the spacecraft.
+  entailment:
+    label: entails
+    score: 0.899
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

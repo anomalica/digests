@@ -3,27 +3,35 @@ schema: anomalica/digest/1
 extracted_at: '2026-07-31T22:22:33.403555+00:00'
 model: sonnet
 ai_usage:
-  - stage: digest
-    model: claude-sonnet-5
-    model_version: claude-sonnet-5
-    tokens:
-      input: 603957
-      output: 45359
-      real_input: 18
-      cache_read: 172044
-      cache_write: 431895
-      calls: 3
+- stage: digest
+  model: claude-sonnet-5
+  model_version: claude-sonnet-5
+  tokens:
+    input: 603957
+    output: 45359
+    real_input: 18
+    cache_read: 172044
+    cache_write: 431895
+    calls: 3
+  route: cli
+  effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 1.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 26.6
 prompts:
-  - pass: nodes
-    id: nodes
-    version: v4
-    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
-    file: nodes.txt
-  - pass: claims
-    id: claims
-    version: v4
-    sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
-    file: claims.txt
+- pass: nodes
+  id: nodes
+  version: v4
+  sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+  file: nodes.txt
+- pass: claims
+  id: claims
+  version: v4
+  sha256: 89ec59286169096f610265f3c5cf0fb34ff5e58e9726e6682e8693e8c703fe89
+  file: claims.txt
 pre_digest:
   sha256: 4b757c8c80da661791d8bf40e6cddfc94db7a9699251e61234d0837a0602106c
   prep_version: 6
@@ -45,1709 +53,2089 @@ record:
 terminology:
   main_subject: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
   acronyms:
-    - acronym: AATIP
-      expansion: Advanced Aerospace Threat Identification Program
-    - acronym: AFOSI
-      expansion: Air Force Office of Special Investigations
-    - acronym: DIA
-      expansion: Defense Intelligence Agency
-    - acronym: DoD
-      expansion: Department of Defense
-    - acronym: OUSDI
-      expansion: Office of the Under Secretary of Defense for Intelligence
-    - acronym: OSD
-      expansion: Office of the Secretary of Defense
-    - acronym: OGIS
-      expansion: Office of Government Information Services
-    - acronym: NYT
-      expansion: New York Times
-    - acronym: FOIA
-      expansion: Freedom of Information Act
-    - acronym: UFO
-      expansion: Unidentified Flying Object
-    - acronym: UAP
-      expansion: Unidentified Aerial Phenomena
-    - acronym: SAP
-      expansion: Special Access Program
-    - acronym: SCI
-      expansion: Sensitive Compartmented Information
-    - acronym: SIPRnet
-      expansion: Secret Internet Protocol Router Network
-    - acronym: MRA
-      expansion: Minimum Retirement Age
-    - acronym: PCLT
-      expansion: Privacy Civil Liberties, and Transparency
+  - acronym: AATIP
+    expansion: Advanced Aerospace Threat Identification Program
+  - acronym: AFOSI
+    expansion: Air Force Office of Special Investigations
+  - acronym: DIA
+    expansion: Defense Intelligence Agency
+  - acronym: DoD
+    expansion: Department of Defense
+  - acronym: OUSDI
+    expansion: Office of the Under Secretary of Defense for Intelligence
+  - acronym: OSD
+    expansion: Office of the Secretary of Defense
+  - acronym: OGIS
+    expansion: Office of Government Information Services
+  - acronym: NYT
+    expansion: New York Times
+  - acronym: FOIA
+    expansion: Freedom of Information Act
+  - acronym: UFO
+    expansion: Unidentified Flying Object
+  - acronym: UAP
+    expansion: Unidentified Aerial Phenomena
+  - acronym: SAP
+    expansion: Special Access Program
+  - acronym: SCI
+    expansion: Sensitive Compartmented Information
+  - acronym: SIPRnet
+    expansion: Secret Internet Protocol Router Network
+  - acronym: MRA
+    expansion: Minimum Retirement Age
+  - acronym: PCLT
+    expansion: Privacy Civil Liberties, and Transparency
 nodes:
-  - id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
-    type: document
-    name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
-    metadata:
-      date: '2022-08-17'
-  - id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-    type: person
+- id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
+  type: document
+  name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
+  metadata:
+    date: '2022-08-17'
+- id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+  type: person
+  name: Stephanie L. Carr
+- id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+  type: person
+  name: Garry Reid
+- id: 211e289f-a0b1-4f48-9719-a8759918594a
+  type: person
+  name: Luis Elizondo
+- id: 7148f489-5742-49a3-b56a-b30b52687902
+  type: person
+  name: John Greenewald
+- id: 5f4fd90d-5330-4d7f-8aa4-3ba911174912
+  type: person
+  name: Brian C. Kreitlow
+- id: d26ee7b5-930f-4d78-8c26-5e399951b59c
+  type: person
+  name: Daniel Mullin
+- id: fa0e2753-5806-43c4-9b2f-4207d9e532c3
+  type: person
+  name: Toni Fuentes
+- id: 0d3a15c2-c01b-4726-a8f9-709b81645c82
+  type: person
+  name: Joo Chung
+- id: c1bdaf5b-d892-4e91-8dcf-a2f3b93135ea
+  type: organisation
+  name: The Black Vault
+- id: 6c6d4367-8138-423c-bb4d-7d9631d770b2
+  type: organisation
+  name: Office of the Secretary of Defense (OSD)
+- id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+  type: organisation
+  name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+- id: 97914ee9-4e98-459b-988d-7250cd62ac21
+  type: organisation
+  name: Office of Government Information Services (OGIS)
+- id: f0156615-19e4-44fc-b1e5-b24c69b7cff8
+  type: organisation
+  name: National Archives and Records Administration (NARA)
+- id: af3838f6-338a-45e8-8ab6-419086272003
+  type: organisation
+  name: Defense Intelligence Agency (DIA)
+- id: e0ca868c-cd32-4ea1-910e-e588741a5bc6
+  type: organisation
+  name: United States Navy
+- id: 9105fcf5-fcb6-44c8-b55a-b2c7691a0a14
+  type: organisation
+  name: United States Air Force
+- id: 3b3c9037-377a-498e-a123-c83ff7564686
+  type: organisation
+  name: Air Force Office of Special Investigations (AFOSI)
+- id: 8921727f-97ac-45ca-a06a-5f57a785c7fe
+  type: organisation
+  name: To the Stars Academy for Arts and Sciences
+- id: 98b53544-a9a7-4b5b-a58f-e1e5753e6ea1
+  type: organisation
+  name: The New York Times (NYT)
+- id: a6417ff0-7ebf-4009-9c51-faf25df6e3f8
+  type: organisation
+  name: Office of Military Commissions
+- id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+  type: organisation
+  name: United States Department of Defense (DoD)
+- id: a140391b-76db-4ceb-a0cf-68752143af46
+  type: project
+  name: Advanced Aerospace Threat Identification Program (AATIP)
+- id: 66f486a3-f3f4-4ee7-a152-d57cd5c7cdc9
+  type: organisation
+  name: National Programs Special Management Staff
+- id: e80957db-3d4a-4e45-95cc-33e5a28f42fa
+  type: place
+  name: USA, Virginia, Alexandria
+- id: 9dfe08d8-5b4a-4a23-abe1-d6d7ff5b0efc
+  type: place
+  name: USA, Maryland, College Park
+- id: cc783a32-6e24-4ea7-aec5-b5a646944b79
+  type: place
+  name: USA, District of Columbia, Washington
+- id: 0acc7cc8-d8e2-4af0-9034-b99cd6e75db9
+  type: place
+  name: USA, California, Castaic
+- id: e2614a7d-8d97-4f5d-9907-0f38166fc7a9
+  type: document
+  name: Luis Elizondo's first resignation letter (October 3, 2017)
+  metadata:
+    date: '2017-10-03'
+- id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+  type: document
+  name: Luis Elizondo's second resignation letter (October 4, 2017)
+  metadata:
+    date: '2017-10-04'
+- id: 37376372-2769-4e0b-b115-729e3acd5c7d
+  type: document
+  name: Luis Elizondo's To the Stars Academy YouTube video (October 2017)
+  metadata:
+    date: '2017-10-12'
+- id: 0efaff51-0ab9-4fe3-9448-7b0798c23897
+  type: document
+  name: |-
+    December 17, 2017 unidentified aerial phenomena footage broadcast on national news
+  metadata:
+    date: '2017-12-17'
+- id: e68e01f6-d847-4679-8a8a-fe2f6c6e3328
+  type: document
+  name: Garry Reid's classified email chain on video declassification (August 2017)
+  metadata:
+    date: 2017-08
+- id: 162042f8-646f-41fb-b9e5-409e3d3d894c
+  type: topic
+  name: Unidentified Aerial Phenomena (UAP)
+- id: 35710694-16ba-4182-ba6c-f73c4c5cc7de
+  type: topic
+  name: anomalous aerial vehicle (AAV)
+domain_claims:
+- id: dd88e9df-d1b5-4faf-9f81-9bb8dc58eb73
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
     name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: false
+  location: char:569-809
+  refs:
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: 6c6d4367-8138-423c-bb4d-7d9631d770b2
+    name: Office of the Secretary of Defense (OSD)
+  - id: 7148f489-5742-49a3-b56a-b30b52687902
+    name: John Greenewald
+  quote: |-
+    The Under Secretary of Defense for Intelligence & Security, a component of the Office of the Secretary of Defense, conducted a search of their records systems and located eight pages determined to be responsive to parts one and two of your request.
+  text: |-
+    The Office of the Under Secretary of Defense for Intelligence and Security, a component of the Office of the Secretary of Defense, located eight pages determined responsive to parts one and two of John Greenewald's Freedom of Information Act request.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d91f7a19-4486-443d-a603-eaa6cfe055dc
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: true
+  location: char:946-1172
+  refs:
+  - id: 5f4fd90d-5330-4d7f-8aa4-3ba911174912
+    name: Brian C. Kreitlow
+  quote: |-
+    has determined that portions of the eight responsive pages are exempt from release pursuant to 5 U.S.C. § 552 (b)(6), as disclosure of the information would constitute a clearly unwarranted invasion of the personal privacy of individuals.
+  text: |-
+    Brian C. Kreitlow determined that portions of the eight responsive pages are exempt from release under 5 U.S.C. Section 552(b)(6) because disclosure would constitute a clearly unwarranted invasion of personal privacy.
+  entailment:
+    label: contradicts
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 8252140e-9005-45bb-9c15-d779c09e6b2f
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: false
+  location: char:2723-2798
+  refs:
+  - id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
+    name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
+  quote: |-
+    Your appeal must be postmarked within 90 calendar days of the date of this response.
+  text: |-
+    Any appeal of the FOIA Response 18-F-0324 determination must be postmarked within 90 calendar days of the date of the response.
+  entailment:
+    label: entails
+    score: 0.603
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f884219b-bd8b-4f8a-9d1d-3090fff0b55b
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:4347-4536
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: a140391b-76db-4ceb-a0cf-68752143af46
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  quote: |-
+    This memorandum summarizes recent media interest in the AATIP, which has been accentuated by the public statements of former DoD employee Luis Elizondo, who has aggrandized his role in the program.
+  text: |-
+    Luis Elizondo, a former Department of Defense employee, aggrandized his role in the Advanced Aerospace Threat Identification Program in public statements.
+  entailment:
+    label: entails
+    score: 0.957
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 4cd5f123-5578-41a2-88d5-608d0bdc3f88
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:4545-4768
+  refs:
   - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-    type: person
     name: Garry Reid
   - id: 211e289f-a0b1-4f48-9719-a8759918594a
-    type: person
     name: Luis Elizondo
-  - id: 7148f489-5742-49a3-b56a-b30b52687902
-    type: person
-    name: John Greenewald
-  - id: 5f4fd90d-5330-4d7f-8aa4-3ba911174912
-    type: person
-    name: Brian C. Kreitlow
-  - id: d26ee7b5-930f-4d78-8c26-5e399951b59c
-    type: person
-    name: Daniel Mullin
-  - id: fa0e2753-5806-43c4-9b2f-4207d9e532c3
-    type: person
-    name: Toni Fuentes
-  - id: 0d3a15c2-c01b-4726-a8f9-709b81645c82
-    type: person
-    name: Joo Chung
-  - id: c1bdaf5b-d892-4e91-8dcf-a2f3b93135ea
-    type: organisation
-    name: The Black Vault
-  - id: 6c6d4367-8138-423c-bb4d-7d9631d770b2
-    type: organisation
-    name: Office of the Secretary of Defense (OSD)
+  quote: |-
+    We are collecting facts regarding Mr. Elizondo's actual role in the AATIP, reviewing the program's history with DIA, Navy, and Air Force, and pursuing options to investigate Mr. Elizondo's possible mishandling of sensitive information.
+  text: |-
+    Garry Reid was pursuing options to investigate Luis Elizondo's possible mishandling of sensitive information.
+  entailment:
+    label: contradicts
+    score: 0.562
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b277f3c3-8e17-43d6-952f-784797ba9cb5
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:4801-4874
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
   - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-    type: organisation
     name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-  - id: 97914ee9-4e98-459b-988d-7250cd62ac21
-    type: organisation
-    name: Office of Government Information Services (OGIS)
-  - id: f0156615-19e4-44fc-b1e5-b24c69b7cff8
-    type: organisation
-    name: National Archives and Records Administration (NARA)
-  - id: af3838f6-338a-45e8-8ab6-419086272003
-    type: organisation
-    name: Defense Intelligence Agency (DIA)
-  - id: e0ca868c-cd32-4ea1-910e-e588741a5bc6
-    type: organisation
-    name: United States Navy
-  - id: 9105fcf5-fcb6-44c8-b55a-b2c7691a0a14
-    type: organisation
-    name: United States Air Force
-  - id: 3b3c9037-377a-498e-a123-c83ff7564686
-    type: organisation
-    name: Air Force Office of Special Investigations (AFOSI)
-  - id: 8921727f-97ac-45ca-a06a-5f57a785c7fe
-    type: organisation
-    name: To the Stars Academy for Arts and Sciences
-  - id: 98b53544-a9a7-4b5b-a58f-e1e5753e6ea1
-    type: organisation
-    name: The New York Times (NYT)
+  quote: Mr. Elizondo was assigned to OUSDI from September 28, 2008 to October 4, 2017.
+  text: |-
+    Luis Elizondo was assigned to the Office of the Under Secretary of Defense for Intelligence from 2008-09-28 to 2017-10-04.
+  entailment:
+    label: contradicts
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: ddec9833-fd27-4352-881f-28ecab0ed8c7
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:4880-5035
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  quote: |-
+    He served as an action officer in Partner Engagement, and subsequently as a branch chief managing classified information to support the Office of Military Commissions.
+  text: |-
+    Luis Elizondo served as an action officer in Partner Engagement at the Office of the Under Secretary of Defense for Intelligence.
+  entailment:
+    label: contradicts
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 55bfb99f-8c3f-4f8e-bafc-fd70a63d978a
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:4880-5035
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
   - id: a6417ff0-7ebf-4009-9c51-faf25df6e3f8
-    type: organisation
     name: Office of Military Commissions
-  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-    type: organisation
-    name: United States Department of Defense (DoD)
+  quote: |-
+    He served as an action officer in Partner Engagement, and subsequently as a branch chief managing classified information to support the Office of Military Commissions.
+  text: |-
+    Luis Elizondo subsequently served as a branch chief managing classified information to support the Office of Military Commissions.
+  entailment:
+    label: contradicts
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 17ebb920-9e1e-4503-a10d-55185df50fcb
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:5048-5123
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
   - id: a140391b-76db-4ceb-a0cf-68752143af46
-    type: project
     name: Advanced Aerospace Threat Identification Program (AATIP)
-  - id: 66f486a3-f3f4-4ee7-a152-d57cd5c7cdc9
-    type: organisation
-    name: National Programs Special Management Staff
-  - id: e80957db-3d4a-4e45-95cc-33e5a28f42fa
-    type: place
-    name: USA, Virginia, Alexandria
-  - id: 9dfe08d8-5b4a-4a23-abe1-d6d7ff5b0efc
-    type: place
-    name: USA, Maryland, College Park
-  - id: cc783a32-6e24-4ea7-aec5-b5a646944b79
-    type: place
-    name: USA, District of Columbia, Washington
-  - id: 0acc7cc8-d8e2-4af0-9034-b99cd6e75db9
-    type: place
-    name: USA, California, Castaic
+  quote: |-
+    To the best of my knowledge, he had no job responsibilities related to the AATIP.
+  text: |-
+    Garry Reid states that, to the best of his knowledge, Luis Elizondo had no job responsibilities related to the Advanced Aerospace Threat Identification Program.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 19ef963a-8b51-41db-891c-9e1ca0491c42
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:5130-5158
+  refs:
+  - id: a140391b-76db-4ceb-a0cf-68752143af46
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  quote: The AATIP was terminated in 2012.
+  text: The Advanced Aerospace Threat Identification Program was terminated in 2012.
+  entailment:
+    label: entails
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 777cea01-50aa-48e1-bc07-b7267c7b7027
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:5233-5345
+  date: '2017-10-03'
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
   - id: e2614a7d-8d97-4f5d-9907-0f38166fc7a9
-    type: document
     name: Luis Elizondo's first resignation letter (October 3, 2017)
-    metadata:
-      date: '2017-10-03'
+  quote: |-
+    On October 3, 2017, Mr. Elizondo submitted a resignation letter (Tab B) requesting immediate termination of his employment.
+  text: |-
+    On 2017-10-03, Luis Elizondo submitted a resignation letter requesting immediate termination of his employment.
+  entailment:
+    label: entails
+    score: 0.84
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 8e1d3010-def9-431d-b6cd-b8fcf9546671
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:5357-5393
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  quote: He was cleared out of USDI the next day.
+  text: |-
+    Luis Elizondo was cleared out of the Office of the Under Secretary of Defense for Intelligence the day after submitting his first resignation letter.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c8d9f03f-09b0-481a-b139-a4cc24a0008f
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:5398-5435
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: He provided no reason for the sudden departure.
+  text: |-
+    Garry Reid states Luis Elizondo provided no reason for the sudden departure from the Office of the Under Secretary of Defense for Intelligence.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 83165e49-47c2-40e5-ae2e-199ea9f683ec
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:5466-5616
+  date: '2017-10-04'
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
   - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-    type: document
     name: Luis Elizondo's second resignation letter (October 4, 2017)
-    metadata:
-      date: '2017-10-04'
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  quote: |-
+    On or about October 4, after Mr. Elizondo had departed the organization, a second resignation letter (Tab C) was delivered to the USDI Chief of Staff office.
+  text: |-
+    On or about 2017-10-04, after Luis Elizondo had departed, a second resignation letter was delivered to the Office of the Under Secretary of Defense for Intelligence Chief of Staff office.
+  entailment:
+    label: entails
+    score: 0.486
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5ffe9c57-0b3a-4b44-9d68-e0701b3a933b
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:5624-5811
+  refs:
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    In this letter, which is formatted as a "Memorandum for Record" but uses the salutation "Mr. Secretary," Mr. Elizondo cites concerns over anomalous aerospace threats as the basis for his resignation.
+  text: |-
+    Luis Elizondo's second resignation letter is formatted as a Memorandum for Record but uses the salutation Mr. Secretary.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 073aa6b4-66ec-4cb4-a900-d50d71bd827c
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+    relay:
+    - Garry Reid's memorandum
+  attribution_in_text: true
+  location: char:5729-5811
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  - id: 35710694-16ba-4182-ba6c-f73c4c5cc7de
+    name: anomalous aerial vehicle (AAV)
+  quote: |-
+    Mr. Elizondo cites concerns over anomalous aerospace threats as the basis for his resignation.
+  text: |-
+    In his second resignation letter, Luis Elizondo cites concerns over anomalous aerospace threats as the basis for his resignation.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 11c06711-00b9-4eff-a26c-2ae94a732f39
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:5824-5936
+  refs:
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  quote: |-
+    Given the uncertain provenance of the second letter, OUSDI retained a copy but did not provide it to the SecDef office.
+  text: |-
+    Given the uncertain provenance of Luis Elizondo's second resignation letter, the Office of the Under Secretary of Defense for Intelligence retained a copy but did not provide it to the Secretary of Defense's office.
+  entailment:
+    label: entails
+    score: 0.526
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a9fdac08-2b0f-44c1-a561-c123b6f98b2b
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: named
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:5947-6187
+  date: '2017-10-05'
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    In a phone call on October 5, when asked about the second letter, Mr. {{redacted: ~2 words}} told me that for many years he had been secretly tasked by the Secretary of Defense as the program manager for investigating UFOs and other aerial threats.
+  text: |-
+    In a phone call on 2017-10-05, Luis Elizondo told Garry Reid that for many years he had been secretly tasked by the Secretary of Defense as the program manager for investigating UFOs and other aerial threats.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: a0528307-3306-4e89-8ebc-4fc8ffd1269f
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: named
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:6196-6273
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  quote: |-
+    He said nobody in USDI was cleared for this program and would not discuss it further.
+  text: |-
+    Luis Elizondo told Garry Reid that nobody in the Office of the Under Secretary of Defense for Intelligence was cleared for the secret program he described, and would not discuss it further.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1b92d22c-f23a-4264-9b59-7f0440940c81
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:6282-6410
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    I discussed his claims with senior officials who would likely have known of such an arrangement, but was unable to substantiate them.
+  text: |-
+    Garry Reid discussed Luis Elizondo's claims of a secret program with senior officials who would likely have known of such an arrangement but was unable to substantiate them.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c0419a6c-6b4a-4f59-8b24-9309205de2fa
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:6701-6830
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
   - id: 37376372-2769-4e0b-b115-729e3acd5c7d
-    type: document
     name: Luis Elizondo's To the Stars Academy YouTube video (October 2017)
-    metadata:
-      date: '2017-10-12'
+  quote: |-
+    He asserts "for nearly the last decade I ran a sensitive Aerospace Threat Identification Program focusing on unidentified aerial technologies,"
+  text: |-
+    In his To the Stars Academy YouTube video, Luis Elizondo asserted that for nearly the last decade he ran a sensitive Aerospace Threat Identification Program focusing on unidentified aerial technologies.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 14c0a53c-0e14-46d7-a021-74786c26bd87
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:6845-6949
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: 37376372-2769-4e0b-b115-729e3acd5c7d
+    name: Luis Elizondo's To the Stars Academy YouTube video (October 2017)
+  quote: |-
+    and later says "we are (also) planning to provide never before released footage from real US government systems."
+  text: |-
+    In his To the Stars Academy YouTube video, Luis Elizondo said they were planning to provide never-before-released footage from real US government systems.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 38c72fef-5654-4931-bc67-5abb3c3c47f0
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:6985-7285
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: 3b3c9037-377a-498e-a123-c83ff7564686
+    name: Air Force Office of Special Investigations (AFOSI)
+  quote: |-
+    Following discovery of the YouTube video, I requested an informal review of Mr. Elizondo's conduct by the Air Force Office of Special Investigations (AFOSI), which is responsible for providing investigative support to the Office of the Secretary of Defense (OSD), including investigation of assigned personnel.
+  text: |-
+    Following discovery of the YouTube video, Garry Reid requested an informal review of Luis Elizondo's conduct by the Air Force Office of Special Investigations.
+  entailment:
+    label: entails
+    score: 0.658
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a0031e6c-3ea4-4987-8797-b2c60066d94a
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:7143-7285
+  refs:
+  - id: 3b3c9037-377a-498e-a123-c83ff7564686
+    name: Air Force Office of Special Investigations (AFOSI)
+  - id: 6c6d4367-8138-423c-bb4d-7d9631d770b2
+    name: Office of the Secretary of Defense (OSD)
+  quote: |-
+    which is responsible for providing investigative support to the Office of the Secretary of Defense (OSD), including investigation of assigned personnel.
+  text: |-
+    The Air Force Office of Special Investigations is responsible for providing investigative support to the Office of the Secretary of Defense, including investigation of assigned personnel.
+  entailment:
+    label: contradicts
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 7576f4ee-f8e5-4627-bcf1-55172f77e3d9
+  type: administrative
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: named
+    origin: Air Force Office of Special Investigations (AFOSI)
+  attribution_in_text: true
+  location: char:7296-7446
+  date: 2017-11
+  refs:
+  - id: 3b3c9037-377a-498e-a123-c83ff7564686
+    name: Air Force Office of Special Investigations (AFOSI)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    In late November AFOSI advised that absent more tangible indicators of possible misconduct they did not have enough information to open a case on Mr. Elizondo.
+  text: |-
+    In late November 2017, the Air Force Office of Special Investigations advised that, absent more tangible indicators of possible misconduct, they did not have enough information to open a case on Luis Elizondo.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 8004f6a1-51ab-4d38-9ec4-14de5462301d
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:7788-8050
+  date: '2017-12-15'
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: 98b53544-a9a7-4b5b-a58f-e1e5753e6ea1
+    name: The New York Times (NYT)
+  quote: |-
+    On December 15, based on information contained in the NYT inquiry, I notified the OUSDI Security Officer that Mr. Elizondo may have misused government systems and may intend to release USG footage or information that he obtained during his employment with OUSD (I).
+  text: |-
+    On 2017-12-15, based on information contained in The New York Times inquiry, Garry Reid notified the Office of the Under Secretary of Defense for Intelligence Security Officer that Luis Elizondo may have misused government systems and may intend to release US government footage or information he obtained during his employment with the office.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 45d49480-0848-4e85-a07e-d5034fe1eec5
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:8293-8402
+  date: '2017-12-17'
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: a140391b-76db-4ceb-a0cf-68752143af46
+    name: Advanced Aerospace Threat Identification Program (AATIP)
   - id: 0efaff51-0ab9-4fe3-9448-7b0798c23897
-    type: document
     name: |-
       December 17, 2017 unidentified aerial phenomena footage broadcast on national news
-    metadata:
-      date: '2017-12-17'
+  quote: |-
+    In the TV interview, Mr. Elizondo affirms his alleged role in leading the AATIP program and says "we are not alone..."
+  text: |-
+    In the December 17, 2017 television interview, Luis Elizondo affirmed his alleged role in leading the Advanced Aerospace Threat Identification Program and said 'we are not alone'.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 11e5616e-a547-42ad-9d41-9c8b6a14fcf6
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:8432-8612
+  date: '2017-12-18'
+  refs:
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: e0ca868c-cd32-4ea1-910e-e588741a5bc6
+    name: United States Navy
   - id: e68e01f6-d847-4679-8a8a-fe2f6c6e3328
-    type: document
     name: Garry Reid's classified email chain on video declassification (August 2017)
-    metadata:
-      date: 2017-08
-  - id: 162042f8-646f-41fb-b9e5-409e3d3d894c
-    type: topic
-    name: Unidentified Aerial Phenomena (UAP)
-  - id: 35710694-16ba-4182-ba6c-f73c4c5cc7de
-    type: topic
-    name: anomalous aerial vehicle (AAV)
-domain_claims:
-  - id: dd88e9df-d1b5-4faf-9f81-9bb8dc58eb73
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: false
-    location: char:569-809
-    refs:
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: 6c6d4367-8138-423c-bb4d-7d9631d770b2
-        name: Office of the Secretary of Defense (OSD)
-      - id: 7148f489-5742-49a3-b56a-b30b52687902
-        name: John Greenewald
-    quote: |-
-      The Under Secretary of Defense for Intelligence & Security, a component of the Office of the Secretary of Defense, conducted a search of their records systems and located eight pages determined to be responsive to parts one and two of your request.
-    text: |-
-      The Office of the Under Secretary of Defense for Intelligence and Security, a component of the Office of the Secretary of Defense, located eight pages determined responsive to parts one and two of John Greenewald's Freedom of Information Act request.
-  - id: d91f7a19-4486-443d-a603-eaa6cfe055dc
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: true
-    location: char:946-1172
-    refs:
-      - id: 5f4fd90d-5330-4d7f-8aa4-3ba911174912
-        name: Brian C. Kreitlow
-    quote: |-
-      has determined that portions of the eight responsive pages are exempt from release pursuant to 5 U.S.C. § 552 (b)(6), as disclosure of the information would constitute a clearly unwarranted invasion of the personal privacy of individuals.
-    text: |-
-      Brian C. Kreitlow determined that portions of the eight responsive pages are exempt from release under 5 U.S.C. Section 552(b)(6) because disclosure would constitute a clearly unwarranted invasion of personal privacy.
-  - id: 8252140e-9005-45bb-9c15-d779c09e6b2f
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: false
-    location: char:2723-2798
-    refs:
-      - id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
-        name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
-    quote: |-
-      Your appeal must be postmarked within 90 calendar days of the date of this response.
-    text: |-
-      Any appeal of the FOIA Response 18-F-0324 determination must be postmarked within 90 calendar days of the date of the response.
-  - id: f884219b-bd8b-4f8a-9d1d-3090fff0b55b
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:4347-4536
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: a140391b-76db-4ceb-a0cf-68752143af46
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-    quote: |-
-      This memorandum summarizes recent media interest in the AATIP, which has been accentuated by the public statements of former DoD employee Luis Elizondo, who has aggrandized his role in the program.
-    text: |-
-      Luis Elizondo, a former Department of Defense employee, aggrandized his role in the Advanced Aerospace Threat Identification Program in public statements.
-  - id: 4cd5f123-5578-41a2-88d5-608d0bdc3f88
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:4545-4768
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      We are collecting facts regarding Mr. Elizondo's actual role in the AATIP, reviewing the program's history with DIA, Navy, and Air Force, and pursuing options to investigate Mr. Elizondo's possible mishandling of sensitive information.
-    text: |-
-      Garry Reid was pursuing options to investigate Luis Elizondo's possible mishandling of sensitive information.
-  - id: b277f3c3-8e17-43d6-952f-784797ba9cb5
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:4801-4874
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-    quote: Mr. Elizondo was assigned to OUSDI from September 28, 2008 to October 4, 2017.
-    text: |-
-      Luis Elizondo was assigned to the Office of the Under Secretary of Defense for Intelligence from 2008-09-28 to 2017-10-04.
-  - id: ddec9833-fd27-4352-881f-28ecab0ed8c7
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:4880-5035
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-    quote: |-
-      He served as an action officer in Partner Engagement, and subsequently as a branch chief managing classified information to support the Office of Military Commissions.
-    text: |-
-      Luis Elizondo served as an action officer in Partner Engagement at the Office of the Under Secretary of Defense for Intelligence.
-  - id: 55bfb99f-8c3f-4f8e-bafc-fd70a63d978a
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:4880-5035
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: a6417ff0-7ebf-4009-9c51-faf25df6e3f8
-        name: Office of Military Commissions
-    quote: |-
-      He served as an action officer in Partner Engagement, and subsequently as a branch chief managing classified information to support the Office of Military Commissions.
-    text: |-
-      Luis Elizondo subsequently served as a branch chief managing classified information to support the Office of Military Commissions.
-  - id: 17ebb920-9e1e-4503-a10d-55185df50fcb
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:5048-5123
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: a140391b-76db-4ceb-a0cf-68752143af46
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-    quote: |-
-      To the best of my knowledge, he had no job responsibilities related to the AATIP.
-    text: |-
-      Garry Reid states that, to the best of his knowledge, Luis Elizondo had no job responsibilities related to the Advanced Aerospace Threat Identification Program.
-  - id: 19ef963a-8b51-41db-891c-9e1ca0491c42
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:5130-5158
-    refs:
-      - id: a140391b-76db-4ceb-a0cf-68752143af46
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-    quote: The AATIP was terminated in 2012.
-    text: The Advanced Aerospace Threat Identification Program was terminated in 2012.
-  - id: 777cea01-50aa-48e1-bc07-b7267c7b7027
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:5233-5345
-    date: '2017-10-03'
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: e2614a7d-8d97-4f5d-9907-0f38166fc7a9
-        name: Luis Elizondo's first resignation letter (October 3, 2017)
-    quote: |-
-      On October 3, 2017, Mr. Elizondo submitted a resignation letter (Tab B) requesting immediate termination of his employment.
-    text: |-
-      On 2017-10-03, Luis Elizondo submitted a resignation letter requesting immediate termination of his employment.
-  - id: 8e1d3010-def9-431d-b6cd-b8fcf9546671
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:5357-5393
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-    quote: He was cleared out of USDI the next day.
-    text: |-
-      Luis Elizondo was cleared out of the Office of the Under Secretary of Defense for Intelligence the day after submitting his first resignation letter.
-  - id: c8d9f03f-09b0-481a-b139-a4cc24a0008f
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:5398-5435
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: He provided no reason for the sudden departure.
-    text: |-
-      Garry Reid states Luis Elizondo provided no reason for the sudden departure from the Office of the Under Secretary of Defense for Intelligence.
-  - id: 83165e49-47c2-40e5-ae2e-199ea9f683ec
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:5466-5616
-    date: '2017-10-04'
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-    quote: |-
-      On or about October 4, after Mr. Elizondo had departed the organization, a second resignation letter (Tab C) was delivered to the USDI Chief of Staff office.
-    text: |-
-      On or about 2017-10-04, after Luis Elizondo had departed, a second resignation letter was delivered to the Office of the Under Secretary of Defense for Intelligence Chief of Staff office.
-  - id: 5ffe9c57-0b3a-4b44-9d68-e0701b3a933b
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:5624-5811
-    refs:
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      In this letter, which is formatted as a "Memorandum for Record" but uses the salutation "Mr. Secretary," Mr. Elizondo cites concerns over anomalous aerospace threats as the basis for his resignation.
-    text: |-
-      Luis Elizondo's second resignation letter is formatted as a Memorandum for Record but uses the salutation Mr. Secretary.
-  - id: 073aa6b4-66ec-4cb4-a900-d50d71bd827c
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-      relay:
-        - Garry Reid's memorandum
-    attribution_in_text: true
-    location: char:5729-5811
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-      - id: 35710694-16ba-4182-ba6c-f73c4c5cc7de
-        name: anomalous aerial vehicle (AAV)
-    quote: |-
-      Mr. Elizondo cites concerns over anomalous aerospace threats as the basis for his resignation.
-    text: |-
-      In his second resignation letter, Luis Elizondo cites concerns over anomalous aerospace threats as the basis for his resignation.
-  - id: 11c06711-00b9-4eff-a26c-2ae94a732f39
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:5824-5936
-    refs:
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-    quote: |-
-      Given the uncertain provenance of the second letter, OUSDI retained a copy but did not provide it to the SecDef office.
-    text: |-
-      Given the uncertain provenance of Luis Elizondo's second resignation letter, the Office of the Under Secretary of Defense for Intelligence retained a copy but did not provide it to the Secretary of Defense's office.
-  - id: a9fdac08-2b0f-44c1-a561-c123b6f98b2b
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: named
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:5947-6187
-    date: '2017-10-05'
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      In a phone call on October 5, when asked about the second letter, Mr. {{redacted: ~2 words}} told me that for many years he had been secretly tasked by the Secretary of Defense as the program manager for investigating UFOs and other aerial threats.
-    text: |-
-      In a phone call on 2017-10-05, Luis Elizondo told Garry Reid that for many years he had been secretly tasked by the Secretary of Defense as the program manager for investigating UFOs and other aerial threats.
-  - id: a0528307-3306-4e89-8ebc-4fc8ffd1269f
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: named
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:6196-6273
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-    quote: |-
-      He said nobody in USDI was cleared for this program and would not discuss it further.
-    text: |-
-      Luis Elizondo told Garry Reid that nobody in the Office of the Under Secretary of Defense for Intelligence was cleared for the secret program he described, and would not discuss it further.
-  - id: 1b92d22c-f23a-4264-9b59-7f0440940c81
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:6282-6410
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      I discussed his claims with senior officials who would likely have known of such an arrangement, but was unable to substantiate them.
-    text: |-
-      Garry Reid discussed Luis Elizondo's claims of a secret program with senior officials who would likely have known of such an arrangement but was unable to substantiate them.
-  - id: c0419a6c-6b4a-4f59-8b24-9309205de2fa
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:6701-6830
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: 37376372-2769-4e0b-b115-729e3acd5c7d
-        name: Luis Elizondo's To the Stars Academy YouTube video (October 2017)
-    quote: |-
-      He asserts "for nearly the last decade I ran a sensitive Aerospace Threat Identification Program focusing on unidentified aerial technologies,"
-    text: |-
-      In his To the Stars Academy YouTube video, Luis Elizondo asserted that for nearly the last decade he ran a sensitive Aerospace Threat Identification Program focusing on unidentified aerial technologies.
-  - id: 14c0a53c-0e14-46d7-a021-74786c26bd87
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:6845-6949
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: 37376372-2769-4e0b-b115-729e3acd5c7d
-        name: Luis Elizondo's To the Stars Academy YouTube video (October 2017)
-    quote: |-
-      and later says "we are (also) planning to provide never before released footage from real US government systems."
-    text: |-
-      In his To the Stars Academy YouTube video, Luis Elizondo said they were planning to provide never-before-released footage from real US government systems.
-  - id: 38c72fef-5654-4931-bc67-5abb3c3c47f0
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:6985-7285
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: 3b3c9037-377a-498e-a123-c83ff7564686
-        name: Air Force Office of Special Investigations (AFOSI)
-    quote: |-
-      Following discovery of the YouTube video, I requested an informal review of Mr. Elizondo's conduct by the Air Force Office of Special Investigations (AFOSI), which is responsible for providing investigative support to the Office of the Secretary of Defense (OSD), including investigation of assigned personnel.
-    text: |-
-      Following discovery of the YouTube video, Garry Reid requested an informal review of Luis Elizondo's conduct by the Air Force Office of Special Investigations.
-  - id: a0031e6c-3ea4-4987-8797-b2c60066d94a
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:7143-7285
-    refs:
-      - id: 3b3c9037-377a-498e-a123-c83ff7564686
-        name: Air Force Office of Special Investigations (AFOSI)
-      - id: 6c6d4367-8138-423c-bb4d-7d9631d770b2
-        name: Office of the Secretary of Defense (OSD)
-    quote: |-
-      which is responsible for providing investigative support to the Office of the Secretary of Defense (OSD), including investigation of assigned personnel.
-    text: |-
-      The Air Force Office of Special Investigations is responsible for providing investigative support to the Office of the Secretary of Defense, including investigation of assigned personnel.
-  - id: 7576f4ee-f8e5-4627-bcf1-55172f77e3d9
-    type: administrative
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: named
-      origin: Air Force Office of Special Investigations (AFOSI)
-    attribution_in_text: true
-    location: char:7296-7446
-    date: 2017-11
-    refs:
-      - id: 3b3c9037-377a-498e-a123-c83ff7564686
-        name: Air Force Office of Special Investigations (AFOSI)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      In late November AFOSI advised that absent more tangible indicators of possible misconduct they did not have enough information to open a case on Mr. Elizondo.
-    text: |-
-      In late November 2017, the Air Force Office of Special Investigations advised that, absent more tangible indicators of possible misconduct, they did not have enough information to open a case on Luis Elizondo.
-  - id: 8004f6a1-51ab-4d38-9ec4-14de5462301d
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:7788-8050
-    date: '2017-12-15'
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: 98b53544-a9a7-4b5b-a58f-e1e5753e6ea1
-        name: The New York Times (NYT)
-    quote: |-
-      On December 15, based on information contained in the NYT inquiry, I notified the OUSDI Security Officer that Mr. Elizondo may have misused government systems and may intend to release USG footage or information that he obtained during his employment with OUSD (I).
-    text: |-
-      On 2017-12-15, based on information contained in The New York Times inquiry, Garry Reid notified the Office of the Under Secretary of Defense for Intelligence Security Officer that Luis Elizondo may have misused government systems and may intend to release US government footage or information he obtained during his employment with the office.
-  - id: 45d49480-0848-4e85-a07e-d5034fe1eec5
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:8293-8402
-    date: '2017-12-17'
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: a140391b-76db-4ceb-a0cf-68752143af46
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-      - id: 0efaff51-0ab9-4fe3-9448-7b0798c23897
-        name: |-
-          December 17, 2017 unidentified aerial phenomena footage broadcast on national news
-    quote: |-
-      In the TV interview, Mr. Elizondo affirms his alleged role in leading the AATIP program and says "we are not alone..."
-    text: |-
-      In the December 17, 2017 television interview, Luis Elizondo affirmed his alleged role in leading the Advanced Aerospace Threat Identification Program and said 'we are not alone'.
-  - id: 11e5616e-a547-42ad-9d41-9c8b6a14fcf6
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:8432-8612
-    date: '2017-12-18'
-    refs:
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: e0ca868c-cd32-4ea1-910e-e588741a5bc6
-        name: United States Navy
-      - id: e68e01f6-d847-4679-8a8a-fe2f6c6e3328
-        name: Garry Reid's classified email chain on video declassification (August 2017)
-    quote: |-
-      On December 18, OUSDI located a classified email generated by Mr. Elizondo in August 2017, in which he requested assistance from a Navy civilian employee to declassify one or more videos.
-    text: |-
-      On 2017-12-18, the Office of the Under Secretary of Defense for Intelligence located a classified email generated by Luis Elizondo in August 2017 in which he requested assistance from a Navy civilian employee to declassify one or more videos.
-  - id: 2c65246e-426c-4cec-8603-17f00dbd7c1e
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:8620-8711
-    refs:
-      - id: e68e01f6-d847-4679-8a8a-fe2f6c6e3328
-        name: Garry Reid's classified email chain on video declassification (August 2017)
-      - id: 0efaff51-0ab9-4fe3-9448-7b0798c23897
-        name: |-
-          December 17, 2017 unidentified aerial phenomena footage broadcast on national news
-    quote: |-
-      The video attached to the email is the same footage broadcast on national news on December 17.
-    text: |-
-      The video attached to Luis Elizondo's August 2017 classified email requesting declassification is the same footage broadcast on national news on 2017-12-17.
-  - id: 28641d91-ce38-4499-878f-511ec87bd404
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:8715-8938
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: e68e01f6-d847-4679-8a8a-fe2f6c6e3328
-        name: Garry Reid's classified email chain on video declassification (August 2017)
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-    quote: |-
-      The email chain is incomplete, so we have yet to determine if the video was properly declassified, what process was followed, and how it ended up in the possession of the national media. We continue to research these email transactions.
-    text: |-
-      As of the memorandum's writing, the Office of the Under Secretary of Defense for Intelligence had not determined whether the video attached to Luis Elizondo's August 2017 email was properly declassified, what process was followed, or how it ended up with the national media.
-  - id: 5523afad-ef64-437d-89e3-4b1f5cc916ef
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:8972-9096
-    date: '2017-12-21'
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 3b3c9037-377a-498e-a123-c83ff7564686
-        name: Air Force Office of Special Investigations (AFOSI)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      On December 21, I met with AFOSI agents to initiate a formal inquiry into Mr. Elizondo's possible mishandling of classified materials.
-    text: |-
-      On 2017-12-21, Garry Reid met with Air Force Office of Special Investigations agents to initiate a formal inquiry into Luis Elizondo's possible mishandling of classified materials.
-  - id: f8c49283-862c-44b9-a084-63f7c53745fd
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:9189-9492
-    date: '2017-10-03'
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: e2614a7d-8d97-4f5d-9907-0f38166fc7a9
-        name: Luis Elizondo's first resignation letter (October 3, 2017)
-      - id: 66f486a3-f3f4-4ee7-a152-d57cd5c7cdc9
-        name: National Programs Special Management Staff
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-    quote: |-
-      Effective 4 October 2017, I humbly submit my resignation as Director, National Programs Special Management Staff, Office of the Under Secretary of Defense for Intelligence. In this regard, I understand I will no longer be an employee of the U.S. Government. I respectfully request I receive a "deferred retirement".
-    text: |-
-      In his first resignation letter dated 2017-10-03, Luis Elizondo submitted his resignation effective 2017-10-04 as Director, National Programs Special Management Staff, Office of the Under Secretary of Defense for Intelligence, and requested a deferred retirement.
-  - id: d30de25f-89be-4642-a207-7e5295d7d566
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:9853-10112
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-    quote: |-
-      It has been my sincere honor and pleasure to have served with some of America's finest men and women in both peace time and in war. For over 22 years, I have been blessed to learn from, and work with world-class leadership, you certainly being among the very best.
-    text: |-
-      In his second resignation letter, Luis Elizondo stated he had served with America's finest men and women for over 22 years.
-  - id: d9d795bf-e4b0-41d0-82e3-89d41b7584aa
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:10327-10616
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-    quote: |-
-      Despite overwhelming evidence at both the unclassified and classified levels, certain individuals in the Department remain staunchly opposed to further research on what could be a tactical threat to our pilots, sailors, and soldiers, and perhaps even an existential threat to our national security.
-    text: |-
-      In his second resignation letter, Luis Elizondo stated that despite overwhelming evidence at both the unclassified and classified levels, certain individuals in the Department of Defense remained staunchly opposed to further research on anomalous aerospace threats.
-  - id: 644be4a9-0845-4c3b-aeb4-9fa7b40f6022
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:10491-10616
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-    quote: |-
-      what could be a tactical threat to our pilots, sailors, and soldiers, and perhaps even an existential threat to our national security
-    text: |-
-      In his second resignation letter, Luis Elizondo considered the anomalous aerospace phenomena a potential tactical threat to pilots, sailors, and soldiers, and possibly an existential threat to national security.
-  - id: 9f2718b6-b9f3-43ba-bbbb-6ddedfcff6cf
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:10626-10748
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-    quote: |-
-      In many instances, there seems to be a direct correlation the phenomena exhibits with respect to our nuclear and military capabilities.
-    text: |-
-      In his second resignation letter, Luis Elizondo stated there seemed to be a direct correlation between the observed phenomena and US nuclear and military capabilities.
-  - id: ca99b48a-f5e8-48c7-95c9-8ece9f96faa3
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:10762-10951
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-      - id: e0ca868c-cd32-4ea1-910e-e588741a5bc6
-        name: United States Navy
-    quote: |-
-      The Department must take serious the many accounts by the Navy and other Services of unusual aerial systems interfering with military weapon platforms and displaying beyond next generation capabilities.
-    text: |-
-      In his second resignation letter, Luis Elizondo stated that the Department of Defense must take seriously the many accounts by the Navy and other services of unusual aerial systems interfering with military weapon platforms and displaying beyond next-generation capabilities.
-  - id: 1f9abe9c-4b65-42f9-9693-6fe916d5c044
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:11242-11480
-    date: '2017-10-04'
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-    quote: |-
-      For this reason, effective 4 October 2017, I humbly submit my resignation in hopes it will encourage you to ask the hard questions: "who else knows?", what are their capabilities?", and "why aren't we spending more time and effort on the issue?".
-    text: |-
-      In his second resignation letter, Luis Elizondo stated his resignation was intended to encourage the Secretary of Defense to ask who else knows about the anomalous aerospace threats, what their capabilities are, and why more time and effort was not being spent on the issue.
-  - id: 4a2644c1-4600-43cb-897c-c697e3dd104d
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:18851-18921
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      Mr. Elizondo has provided three different explanations for his sudden resignation.
-    text: |-
-      According to Garry Reid's second memorandum, Luis Elizondo provided three different explanations for his sudden resignation.
-  - id: 9980bad2-09bd-4034-8495-79b6fcd00ff5
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: named
-      origin: Luis Elizondo
-      relay:
-        - Luis Elizondo's direct supervisor
-    attribution_in_text: true
-    location: char:18934-19066
-    date: '2017-10-03'
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      On October 3rd he told his direct supervisor he was resigning because he had a fleeting job opportunity that required his immediate availability.
-    text: |-
-      On 2017-10-03, Luis Elizondo told his direct supervisor he was resigning because he had a fleeting job opportunity that required his immediate availability.
-  - id: 2e374f73-5524-4e67-a2e2-eccfc1998f6a
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:19080-19229
-    date: '2017-10-04'
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-    quote: |-
-      In a memorandum dated October 4th he cited his concerns over inaction within the Department over "anomalous aerospace threats" as the reason for his resignation.
-    text: |-
-      In a memorandum dated 2017-10-04, Luis Elizondo cited his concerns over inaction within the Department of Defense on anomalous aerospace threats as the reason for his resignation.
-  - id: b8b97b7f-8c19-44c8-942a-f75c9f548ad1
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: named
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:19242-19340
-    date: '2017-10-06'
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-    quote: |-
-      On October 6th, via a phone call, he told me he resigned because his job was too stressful on his family.
-    text: |-
-      On 2017-10-06, via a phone call, Luis Elizondo told Garry Reid he resigned because his job was too stressful on his family.
-  - id: 67532264-8b2e-4625-a7db-b7ce342b5100
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:19427-19510
-    refs:
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: 3b3c9037-377a-498e-a123-c83ff7564686
-        name: Air Force Office of Special Investigations (AFOSI)
-    quote: |-
-      Yes. We referred the timing and circumstances of Mr. Elizondo's resignation to the AFOSI.
-    text: |-
-      The Office of the Under Secretary of Defense for Intelligence referred the timing and circumstances of Luis Elizondo's resignation to the Air Force Office of Special Investigations for immediate counterintelligence review.
-  - id: f3a0eacc-cb62-4142-98f2-8cc496176525
-    type: administrative
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: named
-      origin: Air Force Office of Special Investigations (AFOSI)
-    attribution_in_text: true
-    location: char:19517-19663
-    refs:
-      - id: 3b3c9037-377a-498e-a123-c83ff7564686
-        name: Air Force Office of Special Investigations (AFOSI)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      Their informal assessment did not find any wrongdoing by Mr. Elizondo, and absent any indicators of misconduct, they were unable to open a formal investigation.
-    text: |-
-      The Air Force Office of Special Investigations' informal assessment did not find any wrongdoing by Luis Elizondo, and absent any indicators of misconduct they were unable to open a formal investigation.
-  - id: 84a722e2-7d82-4891-b8f9-b0effb92214f
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:19877-19996
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      Mr. Elizondo completed all administrative and security related out-processing, including formal debriefs for all SAPs, SCI,
-    text: |-
-      Luis Elizondo completed all administrative and security related out-processing, including formal debriefs for all Special Access Programs and Sensitive Compartmented Information, between his October 3 resignation notification and his departure 24 hours later.
-  - id: afed40fd-5cd1-4c32-b201-4ce790e9b24b
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:20167-20257
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-    quote: |-
-      The letter was hand delivered to the USDI Chief of Staff office by someone other than Mr. Elizondo.
-    text: |-
-      Luis Elizondo's second resignation letter was hand delivered to the Office of the Under Secretary of Defense for Intelligence (OUSDI) Chief of Staff office by someone other than Luis Elizondo.
-  - id: 449bfb84-09b3-4111-ad6d-8b0a18f41db2
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:20267-20365
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-      - id: e2614a7d-8d97-4f5d-9907-0f38166fc7a9
-        name: Luis Elizondo's first resignation letter (October 3, 2017)
-    quote: |-
-      The letter is not consistent with the first resignation letter Mr. Elizondo personally handed his supervisor.
-    text: |-
-      Luis Elizondo's second resignation letter was not consistent with Luis Elizondo's first resignation letter, which Luis Elizondo personally handed to his supervisor.
-  - id: 2b8f0284-d740-4d28-a484-38c36244c891
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: named
-      origin: Luis Elizondo
-      relay:
-        - a phone call with Garry Reid
-    attribution_in_text: true
-    location: char:20377-20470
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      After my phone call with Mr. Elizondo, in which he said he had been secretly working for the Secretary
-    text: |-
-      In a phone call with Garry Reid, Luis Elizondo said he had been secretly working for the Secretary of Defense.
-  - id: e6945a2b-178e-4853-a87d-9737924084e9
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:20481-20573
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      I checked with two senior officials that have knowledge of special programs; our collective assessment
-    text: |-
-      After his phone call with Luis Elizondo, Garry Reid checked with two senior officials who had knowledge of special access programmes regarding Luis Elizondo's claims.
-  - id: 861629de-1d09-4a17-a3e0-8d8f9553032c
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:20670-20778
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      was that Mr. Elizondo's claims were not credible, and the letter was not worthy of the Secretary's personal attention.
-    text: |-
-      Garry Reid and two senior officials with knowledge of special access programmes collectively assessed that Luis Elizondo's claims were not credible.
-  - id: c7f5cde0-7845-46c1-be60-08b9b3e3da0a
-    type: opinion
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:20670-20778
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-    quote: |-
-      was that Mr. Elizondo's claims were not credible, and the letter was not worthy of the Secretary's personal attention.
-    text: |-
-      Garry Reid and two senior officials with knowledge of special access programmes assessed that Luis Elizondo's second resignation letter was not worthy of the Secretary of Defense's personal attention.
-  - id: 9ce1ac19-a34d-4dcd-bbed-02f2358cc202
-    type: testimony
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: false
-    location: char:20915-20995
-    refs:
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: e68e01f6-d847-4679-8a8a-fe2f6c6e3328
-        name: Garry Reid's classified email chain on video declassification (August 2017)
-    quote: |-
-      USDI staff contacted him upon discovery of the SIPRnet email sent to him by Mr. Elizondo.
-    text: |-
-      Office of the Under Secretary of Defense for Intelligence (OUSDI) staff contacted the Navy civilian upon discovering the SIPRnet email sent to him by Luis Elizondo regarding declassification.
-  - id: f04cedcf-822f-491f-8115-74df1c81c932
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a person claiming to work as a Navy civilian employee
-      origin_ref: navy-civilian
-      relay:
-        - |-
-          a conversation with Office of the Under Secretary of Defense for Intelligence staff
-    attribution_in_text: true
-    location: char:21005-21122
-    refs:
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      He informed us that he told Mr. Elizondo that he was not the declassification release authority, and took no further action.
-    text: |-
-      The Navy civilian contacted by Office of the Under Secretary of Defense for Intelligence (OUSDI) staff told them that he had informed Luis Elizondo that he was not the declassification release authority.
-  - id: 37dab71b-5333-4581-9f09-719f27efac74
-    type: testimony
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: anonymous
-      origin: a person claiming to work as a Navy civilian employee
-      origin_ref: navy-civilian
-      relay:
-        - |-
-          a conversation with Office of the Under Secretary of Defense for Intelligence staff
-    attribution_in_text: true
-    location: char:21102-21122
-    refs:
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: and took no further action.
-    text: |-
-      The Navy civilian contacted by Office of the Under Secretary of Defense for Intelligence (OUSDI) staff took no further action after telling Luis Elizondo he was not the declassification release authority.
-  - id: 5828ea76-dc83-4c02-9b0e-56a77a46ea3f
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:21199-21285
-    refs:
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-    quote: |-
-      "Deferred Retirement" refers to delayed payment of benefits until certain criteria are met.
-    text: |-
-      Under United States federal employment rules, deferred retirement refers to delayed payment of retirement benefits until certain criteria are met.
-  - id: 2844fb82-3be9-4e84-b0ba-7c6da11cfbc2
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:21290-21485
-    refs:
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-    quote: |-
-      Deferred retirement applies to those with at least five years of Federal service who depart before reaching their Minimum Retirement Age (MRA) - which is between ages 55-57, depending on year of birth.
-    text: |-
-      Deferred retirement applies to United States federal employees with at least five years of federal service who depart before reaching their Minimum Retirement Age, which is between 55 and 57 years old depending on year of birth.
-  - id: 1e90303d-88ea-4d9a-a343-3408632a1958
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:21492-21566
-    refs:
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-    quote: Those with 5 years can opt to collect retirement benefits as early as age 62;
-    text: |-
-      United States federal employees with five years of federal service can opt to collect deferred retirement benefits as early as age 62.
-  - id: 2eb01062-13a6-47d5-9c35-ee3d5261e5dc
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:21570-21666
-    refs:
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-    quote: |-
-      those with 10 years can collect at their MRA but will sacrifice 5% for each year they are under 62.
-    text: |-
-      United States federal employees with ten years of federal service can collect deferred retirement benefits at their Minimum Retirement Age but sacrifice 5% for each year they are under age 62.
+  quote: |-
+    On December 18, OUSDI located a classified email generated by Mr. Elizondo in August 2017, in which he requested assistance from a Navy civilian employee to declassify one or more videos.
+  text: |-
+    On 2017-12-18, the Office of the Under Secretary of Defense for Intelligence located a classified email generated by Luis Elizondo in August 2017 in which he requested assistance from a Navy civilian employee to declassify one or more videos.
+  entailment:
+    label: entails
+    score: 0.801
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 2c65246e-426c-4cec-8603-17f00dbd7c1e
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:8620-8711
+  refs:
+  - id: e68e01f6-d847-4679-8a8a-fe2f6c6e3328
+    name: Garry Reid's classified email chain on video declassification (August 2017)
+  - id: 0efaff51-0ab9-4fe3-9448-7b0798c23897
+    name: |-
+      December 17, 2017 unidentified aerial phenomena footage broadcast on national news
+  quote: |-
+    The video attached to the email is the same footage broadcast on national news on December 17.
+  text: |-
+    The video attached to Luis Elizondo's August 2017 classified email requesting declassification is the same footage broadcast on national news on 2017-12-17.
+  entailment:
+    label: entails
+    score: 0.639
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 28641d91-ce38-4499-878f-511ec87bd404
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:8715-8938
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: e68e01f6-d847-4679-8a8a-fe2f6c6e3328
+    name: Garry Reid's classified email chain on video declassification (August 2017)
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  quote: |-
+    The email chain is incomplete, so we have yet to determine if the video was properly declassified, what process was followed, and how it ended up in the possession of the national media. We continue to research these email transactions.
+  text: |-
+    As of the memorandum's writing, the Office of the Under Secretary of Defense for Intelligence had not determined whether the video attached to Luis Elizondo's August 2017 email was properly declassified, what process was followed, or how it ended up with the national media.
+  entailment:
+    label: entails
+    score: 0.617
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5523afad-ef64-437d-89e3-4b1f5cc916ef
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:8972-9096
+  date: '2017-12-21'
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 3b3c9037-377a-498e-a123-c83ff7564686
+    name: Air Force Office of Special Investigations (AFOSI)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    On December 21, I met with AFOSI agents to initiate a formal inquiry into Mr. Elizondo's possible mishandling of classified materials.
+  text: |-
+    On 2017-12-21, Garry Reid met with Air Force Office of Special Investigations agents to initiate a formal inquiry into Luis Elizondo's possible mishandling of classified materials.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f8c49283-862c-44b9-a084-63f7c53745fd
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:9189-9492
+  date: '2017-10-03'
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: e2614a7d-8d97-4f5d-9907-0f38166fc7a9
+    name: Luis Elizondo's first resignation letter (October 3, 2017)
+  - id: 66f486a3-f3f4-4ee7-a152-d57cd5c7cdc9
+    name: National Programs Special Management Staff
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  quote: |-
+    Effective 4 October 2017, I humbly submit my resignation as Director, National Programs Special Management Staff, Office of the Under Secretary of Defense for Intelligence. In this regard, I understand I will no longer be an employee of the U.S. Government. I respectfully request I receive a "deferred retirement".
+  text: |-
+    In his first resignation letter dated 2017-10-03, Luis Elizondo submitted his resignation effective 2017-10-04 as Director, National Programs Special Management Staff, Office of the Under Secretary of Defense for Intelligence, and requested a deferred retirement.
+  entailment:
+    label: contradicts
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: d30de25f-89be-4642-a207-7e5295d7d566
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:9853-10112
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  quote: |-
+    It has been my sincere honor and pleasure to have served with some of America's finest men and women in both peace time and in war. For over 22 years, I have been blessed to learn from, and work with world-class leadership, you certainly being among the very best.
+  text: |-
+    In his second resignation letter, Luis Elizondo stated he had served with America's finest men and women for over 22 years.
+  entailment:
+    label: neutral
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: d9d795bf-e4b0-41d0-82e3-89d41b7584aa
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:10327-10616
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  quote: |-
+    Despite overwhelming evidence at both the unclassified and classified levels, certain individuals in the Department remain staunchly opposed to further research on what could be a tactical threat to our pilots, sailors, and soldiers, and perhaps even an existential threat to our national security.
+  text: |-
+    In his second resignation letter, Luis Elizondo stated that despite overwhelming evidence at both the unclassified and classified levels, certain individuals in the Department of Defense remained staunchly opposed to further research on anomalous aerospace threats.
+  entailment:
+    label: neutral
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 644be4a9-0845-4c3b-aeb4-9fa7b40f6022
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:10491-10616
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  quote: |-
+    what could be a tactical threat to our pilots, sailors, and soldiers, and perhaps even an existential threat to our national security
+  text: |-
+    In his second resignation letter, Luis Elizondo considered the anomalous aerospace phenomena a potential tactical threat to pilots, sailors, and soldiers, and possibly an existential threat to national security.
+  entailment:
+    label: neutral
+    score: 0.93
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9f2718b6-b9f3-43ba-bbbb-6ddedfcff6cf
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:10626-10748
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  quote: |-
+    In many instances, there seems to be a direct correlation the phenomena exhibits with respect to our nuclear and military capabilities.
+  text: |-
+    In his second resignation letter, Luis Elizondo stated there seemed to be a direct correlation between the observed phenomena and US nuclear and military capabilities.
+  entailment:
+    label: neutral
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: ca99b48a-f5e8-48c7-95c9-8ece9f96faa3
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:10762-10951
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  - id: e0ca868c-cd32-4ea1-910e-e588741a5bc6
+    name: United States Navy
+  quote: |-
+    The Department must take serious the many accounts by the Navy and other Services of unusual aerial systems interfering with military weapon platforms and displaying beyond next generation capabilities.
+  text: |-
+    In his second resignation letter, Luis Elizondo stated that the Department of Defense must take seriously the many accounts by the Navy and other services of unusual aerial systems interfering with military weapon platforms and displaying beyond next-generation capabilities.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1f9abe9c-4b65-42f9-9693-6fe916d5c044
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:11242-11480
+  date: '2017-10-04'
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  quote: |-
+    For this reason, effective 4 October 2017, I humbly submit my resignation in hopes it will encourage you to ask the hard questions: "who else knows?", what are their capabilities?", and "why aren't we spending more time and effort on the issue?".
+  text: |-
+    In his second resignation letter, Luis Elizondo stated his resignation was intended to encourage the Secretary of Defense to ask who else knows about the anomalous aerospace threats, what their capabilities are, and why more time and effort was not being spent on the issue.
+  entailment:
+    label: contradicts
+    score: 0.559
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4a2644c1-4600-43cb-897c-c697e3dd104d
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:18851-18921
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    Mr. Elizondo has provided three different explanations for his sudden resignation.
+  text: |-
+    According to Garry Reid's second memorandum, Luis Elizondo provided three different explanations for his sudden resignation.
+  entailment:
+    label: neutral
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9980bad2-09bd-4034-8495-79b6fcd00ff5
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: named
+    origin: Luis Elizondo
+    relay:
+    - Luis Elizondo's direct supervisor
+  attribution_in_text: true
+  location: char:18934-19066
+  date: '2017-10-03'
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    On October 3rd he told his direct supervisor he was resigning because he had a fleeting job opportunity that required his immediate availability.
+  text: |-
+    On 2017-10-03, Luis Elizondo told his direct supervisor he was resigning because he had a fleeting job opportunity that required his immediate availability.
+  entailment:
+    label: contradicts
+    score: 0.772
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 2e374f73-5524-4e67-a2e2-eccfc1998f6a
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:19080-19229
+  date: '2017-10-04'
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  quote: |-
+    In a memorandum dated October 4th he cited his concerns over inaction within the Department over "anomalous aerospace threats" as the reason for his resignation.
+  text: |-
+    In a memorandum dated 2017-10-04, Luis Elizondo cited his concerns over inaction within the Department of Defense on anomalous aerospace threats as the reason for his resignation.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b8b97b7f-8c19-44c8-942a-f75c9f548ad1
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: named
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:19242-19340
+  date: '2017-10-06'
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  quote: |-
+    On October 6th, via a phone call, he told me he resigned because his job was too stressful on his family.
+  text: |-
+    On 2017-10-06, via a phone call, Luis Elizondo told Garry Reid he resigned because his job was too stressful on his family.
+  entailment:
+    label: contradicts
+    score: 0.877
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 67532264-8b2e-4625-a7db-b7ce342b5100
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:19427-19510
+  refs:
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: 3b3c9037-377a-498e-a123-c83ff7564686
+    name: Air Force Office of Special Investigations (AFOSI)
+  quote: |-
+    Yes. We referred the timing and circumstances of Mr. Elizondo's resignation to the AFOSI.
+  text: |-
+    The Office of the Under Secretary of Defense for Intelligence referred the timing and circumstances of Luis Elizondo's resignation to the Air Force Office of Special Investigations for immediate counterintelligence review.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f3a0eacc-cb62-4142-98f2-8cc496176525
+  type: administrative
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: named
+    origin: Air Force Office of Special Investigations (AFOSI)
+  attribution_in_text: true
+  location: char:19517-19663
+  refs:
+  - id: 3b3c9037-377a-498e-a123-c83ff7564686
+    name: Air Force Office of Special Investigations (AFOSI)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    Their informal assessment did not find any wrongdoing by Mr. Elizondo, and absent any indicators of misconduct, they were unable to open a formal investigation.
+  text: |-
+    The Air Force Office of Special Investigations' informal assessment did not find any wrongdoing by Luis Elizondo, and absent any indicators of misconduct they were unable to open a formal investigation.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 84a722e2-7d82-4891-b8f9-b0effb92214f
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:19877-19996
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    Mr. Elizondo completed all administrative and security related out-processing, including formal debriefs for all SAPs, SCI,
+  text: |-
+    Luis Elizondo completed all administrative and security related out-processing, including formal debriefs for all Special Access Programs and Sensitive Compartmented Information, between his October 3 resignation notification and his departure 24 hours later.
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: afed40fd-5cd1-4c32-b201-4ce790e9b24b
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:20167-20257
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  quote: |-
+    The letter was hand delivered to the USDI Chief of Staff office by someone other than Mr. Elizondo.
+  text: |-
+    Luis Elizondo's second resignation letter was hand delivered to the Office of the Under Secretary of Defense for Intelligence (OUSDI) Chief of Staff office by someone other than Luis Elizondo.
+  entailment:
+    label: entails
+    score: 0.503
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 449bfb84-09b3-4111-ad6d-8b0a18f41db2
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:20267-20365
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  - id: e2614a7d-8d97-4f5d-9907-0f38166fc7a9
+    name: Luis Elizondo's first resignation letter (October 3, 2017)
+  quote: |-
+    The letter is not consistent with the first resignation letter Mr. Elizondo personally handed his supervisor.
+  text: |-
+    Luis Elizondo's second resignation letter was not consistent with Luis Elizondo's first resignation letter, which Luis Elizondo personally handed to his supervisor.
+  entailment:
+    label: entails
+    score: 0.654
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 2b8f0284-d740-4d28-a484-38c36244c891
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: named
+    origin: Luis Elizondo
+    relay:
+    - a phone call with Garry Reid
+  attribution_in_text: true
+  location: char:20377-20470
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    After my phone call with Mr. Elizondo, in which he said he had been secretly working for the Secretary
+  text: |-
+    In a phone call with Garry Reid, Luis Elizondo said he had been secretly working for the Secretary of Defense.
+  entailment:
+    label: entails
+    score: 0.737
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e6945a2b-178e-4853-a87d-9737924084e9
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:20481-20573
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    I checked with two senior officials that have knowledge of special programs; our collective assessment
+  text: |-
+    After his phone call with Luis Elizondo, Garry Reid checked with two senior officials who had knowledge of special access programmes regarding Luis Elizondo's claims.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 861629de-1d09-4a17-a3e0-8d8f9553032c
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:20670-20778
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    was that Mr. Elizondo's claims were not credible, and the letter was not worthy of the Secretary's personal attention.
+  text: |-
+    Garry Reid and two senior officials with knowledge of special access programmes collectively assessed that Luis Elizondo's claims were not credible.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c7f5cde0-7845-46c1-be60-08b9b3e3da0a
+  type: opinion
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:20670-20778
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  quote: |-
+    was that Mr. Elizondo's claims were not credible, and the letter was not worthy of the Secretary's personal attention.
+  text: |-
+    Garry Reid and two senior officials with knowledge of special access programmes assessed that Luis Elizondo's second resignation letter was not worthy of the Secretary of Defense's personal attention.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 9ce1ac19-a34d-4dcd-bbed-02f2358cc202
+  type: testimony
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: false
+  location: char:20915-20995
+  refs:
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: e68e01f6-d847-4679-8a8a-fe2f6c6e3328
+    name: Garry Reid's classified email chain on video declassification (August 2017)
+  quote: |-
+    USDI staff contacted him upon discovery of the SIPRnet email sent to him by Mr. Elizondo.
+  text: |-
+    Office of the Under Secretary of Defense for Intelligence (OUSDI) staff contacted the Navy civilian upon discovering the SIPRnet email sent to him by Luis Elizondo regarding declassification.
+  entailment:
+    label: entails
+    score: 0.567
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: f04cedcf-822f-491f-8115-74df1c81c932
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a person claiming to work as a Navy civilian employee
+    origin_ref: navy-civilian
+    relay:
+    - |-
+      a conversation with Office of the Under Secretary of Defense for Intelligence staff
+  attribution_in_text: true
+  location: char:21005-21122
+  refs:
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    He informed us that he told Mr. Elizondo that he was not the declassification release authority, and took no further action.
+  text: |-
+    The Navy civilian contacted by Office of the Under Secretary of Defense for Intelligence (OUSDI) staff told them that he had informed Luis Elizondo that he was not the declassification release authority.
+  entailment:
+    label: entails
+    score: 0.552
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 37dab71b-5333-4581-9f09-719f27efac74
+  type: testimony
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: anonymous
+    origin: a person claiming to work as a Navy civilian employee
+    origin_ref: navy-civilian
+    relay:
+    - |-
+      a conversation with Office of the Under Secretary of Defense for Intelligence staff
+  attribution_in_text: true
+  location: char:21102-21122
+  refs:
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: and took no further action.
+  text: |-
+    The Navy civilian contacted by Office of the Under Secretary of Defense for Intelligence (OUSDI) staff took no further action after telling Luis Elizondo he was not the declassification release authority.
+  entailment:
+    label: entails
+    score: 0.696
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 5828ea76-dc83-4c02-9b0e-56a77a46ea3f
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:21199-21285
+  refs:
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  quote: |-
+    "Deferred Retirement" refers to delayed payment of benefits until certain criteria are met.
+  text: |-
+    Under United States federal employment rules, deferred retirement refers to delayed payment of retirement benefits until certain criteria are met.
+  entailment:
+    label: entails
+    score: 0.461
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2844fb82-3be9-4e84-b0ba-7c6da11cfbc2
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:21290-21485
+  refs:
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  quote: |-
+    Deferred retirement applies to those with at least five years of Federal service who depart before reaching their Minimum Retirement Age (MRA) - which is between ages 55-57, depending on year of birth.
+  text: |-
+    Deferred retirement applies to United States federal employees with at least five years of federal service who depart before reaching their Minimum Retirement Age, which is between 55 and 57 years old depending on year of birth.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 1e90303d-88ea-4d9a-a343-3408632a1958
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:21492-21566
+  refs:
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  quote: Those with 5 years can opt to collect retirement benefits as early as age 62;
+  text: |-
+    United States federal employees with five years of federal service can opt to collect deferred retirement benefits as early as age 62.
+  entailment:
+    label: entails
+    score: 0.523
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2eb01062-13a6-47d5-9c35-ee3d5261e5dc
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:21570-21666
+  refs:
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  quote: |-
+    those with 10 years can collect at their MRA but will sacrifice 5% for each year they are under 62.
+  text: |-
+    United States federal employees with ten years of federal service can collect deferred retirement benefits at their Minimum Retirement Age but sacrifice 5% for each year they are under age 62.
+  entailment:
+    label: entails
+    score: 0.517
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
-  - id: c87631ce-18eb-405b-b5ff-1c2cff8ec3cc
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
-    attribution_in_text: false
-    location: char:23-120
-    refs:
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-      - id: cc783a32-6e24-4ea7-aec5-b5a646944b79
-        name: USA, District of Columbia, Washington
-    quote: |-
-      DEPARTMENT OF DEFENSE FREEDOM OF INFORMATION DIVISION 1155 DEFENSE PENTAGON WASHINGTON, DC 20301-1155
-    text: |-
-      The Department of Defense Freedom of Information Division is located at 1155 Defense Pentagon, Washington, DC 20301-1155.
-  - id: d55ca9d0-7762-4b58-becc-b867540dccf3
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
-    attribution_in_text: false
-    location: char:131-152
-    refs:
-      - id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
-        name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
-    quote: 'Ref: 18-F-0324 August 17, 2022'
-    text: |-
-      The FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents is dated 2022-08-17.
-  - id: a7e05601-2903-4379-836b-6f167bdc0353
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
-    attribution_in_text: false
-    location: char:158-240
-    refs:
-      - id: 7148f489-5742-49a3-b56a-b30b52687902
-        name: John Greenewald
-      - id: c1bdaf5b-d892-4e91-8dcf-a2f3b93135ea
-        name: The Black Vault
-      - id: 0acc7cc8-d8e2-4af0-9034-b99cd6e75db9
-        name: USA, California, Castaic
-    quote: |-
-      Mr. John Greenewald The Black Vault 27305 W. Live Oak Rd. Suite #1203 Castaic, CA 91384
-    text: |-
-      John Greenewald of The Black Vault is located at 27305 W. Live Oak Rd., Suite #1203, Castaic, CA 91384.
-  - id: 10aa148e-5bbd-46d3-883e-9e483c1bf5b1
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: false
-    location: char:269-400
-    refs:
-      - id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
-        name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
-      - id: 7148f489-5742-49a3-b56a-b30b52687902
-        name: John Greenewald
-    quote: |-
-      This is a final response to your December 17, 2017 Freedom of Information Act (FOIA) request, a copy of which is enclosed for your convenience.
-    text: |-
-      The FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents is a final response to John Greenewald's Freedom of Information Act request dated 2017-12-17.
-  - id: 4a85596c-5a38-4132-832b-3d9b53cd8b38
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: false
-    location: char:413-498
-    refs:
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-      - id: 7148f489-5742-49a3-b56a-b30b52687902
-        name: John Greenewald
-    quote: |-
-      We received your request on December 18, 2017, and assigned it FOIA case number 18-F-0324.
-    text: |-
-      The Department of Defense received John Greenewald's Freedom of Information Act request on 2017-12-18 and assigned it FOIA case number 18-F-0324.
-  - id: 250c86b4-314e-462f-8867-1bd9a98884a0
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: true
-    location: char:818-1021
-    refs:
-      - id: 5f4fd90d-5330-4d7f-8aa4-3ba911174912
-        name: Brian C. Kreitlow
-    quote: |-
-      Mr. Brian C. Kreitlow, Chief, Assessment, Capabilities, & Integration Division, in his capacity as an Initial Denial Authority, has determined that portions of the eight responsive pages are exempt from release
-    text: |-
-      Brian C. Kreitlow is Chief of the Assessment, Capabilities, and Integration Division and acted as an Initial Denial Authority in the FOIA response.
-  - id: e953bce4-3581-43ee-98d1-0106d0b573cf
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: true
-    location: char:1443-1548
-    refs:
-      - id: d26ee7b5-930f-4d78-8c26-5e399951b59c
-        name: Daniel Mullin
-      - id: 7148f489-5742-49a3-b56a-b30b52687902
-        name: John Greenewald
-    quote: |-
-      please do not hesitate to contact the Action Officer assigned to your request, Daniel Mullin, at 571-372-0465
-    text: |-
-      Daniel Mullin was the Action Officer assigned to John Greenewald's FOIA case number 18-F-0324.
-  - id: 72480aef-fb2b-447d-b5ba-592b63072bd5
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: true
-    location: char:1753-1879
-    refs:
-      - id: fa0e2753-5806-43c4-9b2f-4207d9e532c3
-        name: Toni Fuentes
-    quote: |-
-      Should you wish to inquire about mediation services, you may contact the OSD/JS FOIA Public Liaison, Toni Fuentes, at 571-372-0462
-    text: |-
-      Toni Fuentes served as the OSD/JS FOIA Public Liaison who could be contacted about mediation services for John Greenewald's FOIA request.
-  - id: b5fd364d-70ca-49e8-8060-a874af08d144
-    type: administrative
-    attestation: second_hand
-    provenance_chain:
-      origin_kind: document
-      origin: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
-    attribution_in_text: false
-    location: char:2158-2285
-    refs:
-      - id: 97914ee9-4e98-459b-988d-7250cd62ac21
-        name: Office of Government Information Services (OGIS)
-      - id: f0156615-19e4-44fc-b1e5-b24c69b7cff8
-        name: National Archives and Records Administration (NARA)
-      - id: 9dfe08d8-5b4a-4a23-abe1-d6d7ff5b0efc
-        name: USA, Maryland, College Park
-    quote: |-
-      Office of Government Information Services National Archives and Records Administration 8601 Adelphi Road-OGIS College Park, MD 20740
-    text: |-
-      The Office of Government Information Services at the National Archives and Records Administration is located at 8601 Adelphi Road-OGIS, College Park, MD 20740.
-  - id: 0fabd745-73a7-4afa-948a-5641de53fbdb
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: true
-    location: char:2405-2716
-    refs:
-      - id: 0d3a15c2-c01b-4726-a8f9-709b81645c82
-        name: Joo Chung
-      - id: 6c6d4367-8138-423c-bb4d-7d9631d770b2
-        name: Office of the Secretary of Defense (OSD)
-      - id: e80957db-3d4a-4e45-95cc-33e5a28f42fa
-        name: USA, Virginia, Alexandria
-    quote: |-
-      You have the right to appeal to the appellate authority, Ms. Joo Chung, Assistant to the Secretary of Defense for Privacy Civil Liberties, and Transparency (PCLT), Office of the Secretary of Defense, at the following address: 4800 Mark Center Drive, ATTN: PCLFD, FOIA Appeals, Mailbox #24, Alexandria, VA 22350-1700.
-    text: |-
-      Joo Chung serves as the appellate authority and Assistant to the Secretary of Defense for Privacy Civil Liberties, and Transparency, located at 4800 Mark Center Drive, Alexandria, VA 22350-1700.
-  - id: 65d22f32-ded8-45c2-9566-7673a3bb6ad2
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-      name: Stephanie L. Carr
-    provenance_chain:
-      origin_kind: speaker
-      origin: Stephanie L. Carr
-    attribution_in_text: true
-    location: char:3285-3315
-    refs:
-      - id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
-        name: Stephanie L. Carr
-      - id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
-        name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
-    quote: Sincerely, Stephanie L. Carr Chief
-    text: |-
-      Stephanie L. Carr signed the FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents as Chief.
-  - id: c9d94f9b-6526-41ae-82bb-5e14d3fe3284
-    type: administrative
-    provenance_chain:
-      origin_kind: unattributed
-    attribution_in_text: false
-    location: char:3525-3694
-    refs:
-      - id: c1bdaf5b-d892-4e91-8dcf-a2f3b93135ea
-        name: The Black Vault
-      - id: 7148f489-5742-49a3-b56a-b30b52687902
-        name: John Greenewald
-    quote: |-
-      Text describes The Black Vault as the largest online FOIA document clearinghouse in the world, crediting John Greenewald, Jr., with website URL http://www.theblackvault.com
-    text: |-
-      The Black Vault is described as the largest online Freedom of Information Act document clearinghouse in the world, credited to John Greenewald, Jr.
-  - id: a1c0b46d-24af-4db2-bc81-f21e0a0f2358
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:4053-4145
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-    quote: |-
-      FROM: Garry Reid, Director for Defense Intelligence, Office of the Under Secretary of Defense for Intelligence
-    text: |-
-      Garry Reid was Director for Defense Intelligence in the Office of the Under Secretary of Defense for Intelligence.
-  - id: c6b0cb10-af14-40e2-9d7e-2fc07ac6dbd9
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:6520-6691
-    date: '2017-10-12'
-    refs:
-      - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-        name: Garry Reid
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: 8921727f-97ac-45ca-a06a-5f57a785c7fe
-        name: To the Stars Academy for Arts and Sciences
-      - id: 37376372-2769-4e0b-b115-729e3acd5c7d
-        name: Luis Elizondo's To the Stars Academy YouTube video (October 2017)
-    quote: |-
-      On October 12, I learned of a video featuring Mr. Elizondo that was posted on YouTube by the "To the Stars Academy for Arts and Sciences," which appears to be his current employer.
-    text: |-
-      On 2017-10-12, Garry Reid learned of a video featuring Luis Elizondo that was posted on YouTube by the To the Stars Academy for Arts and Sciences, which appeared to be Elizondo's current employer.
-  - id: 24c2a944-387b-4718-827b-9e4bad574c29
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:7476-7594
-    date: '2017-12-07'
-    refs:
-      - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
-        name: United States Department of Defense (DoD)
-      - id: 98b53544-a9a7-4b5b-a58f-e1e5753e6ea1
-        name: The New York Times (NYT)
-      - id: a140391b-76db-4ceb-a0cf-68752143af46
-        name: Advanced Aerospace Threat Identification Program (AATIP)
-    quote: |-
-      On December 7, DoD was contacted by the New York Times (NYT) seeking {{redacted: ~2 words}} information regarding the AATIP
-    text: |-
-      On 2017-12-07, the Department of Defense was contacted by The New York Times seeking information regarding the Advanced Aerospace Threat Identification Program.
-  - id: 48fcb8f5-5470-46c6-945b-6d7ea4256608
-    type: hearsay
-    attestation: second_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: named
-      origin: Luis Elizondo
-      relay:
-        - The New York Times inquiry to the Department of Defense
-    attribution_in_text: true
-    location: char:7604-7757
-    refs:
-      - id: 98b53544-a9a7-4b5b-a58f-e1e5753e6ea1
-        name: The New York Times (NYT)
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-    quote: |-
-      noting that Mr. Elizondo's recent resignation was submitted "to protest what he characterized as internal opposition and lack of resources for continued research."
-    text: |-
-      The New York Times noted that Luis Elizondo's resignation was submitted to protest what he characterized as internal opposition and lack of resources for continued research.
-  - id: b2e59e3a-7dac-4414-a0ef-63d691e66528
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
-      name: Garry Reid
-    provenance_chain:
-      origin_kind: speaker
-      origin: Garry Reid
-    attribution_in_text: true
-    location: char:8074-8285
-    date: '2017-12-17'
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: 0efaff51-0ab9-4fe3-9448-7b0798c23897
-        name: |-
-          December 17, 2017 unidentified aerial phenomena footage broadcast on national news
-    quote: |-
-      On December 17, Mr. Elizondo appeared on national news programs providing commentary on a video that appears to be camera footage taken by a US military aircraft showing what he claims is an unidentified flying object.
-    text: |-
-      On 2017-12-17, Luis Elizondo appeared on national news programs providing commentary on a video that appears to be camera footage taken by a US military aircraft showing what he claims is an unidentified flying object.
-  - id: 2032fe84-42e7-497f-8668-233f945686ea
-    type: administrative
-    attestation: first_hand
-    speaker:
-      id: 211e289f-a0b1-4f48-9719-a8759918594a
-      name: Luis Elizondo
-    provenance_chain:
-      origin_kind: speaker
-      origin: Luis Elizondo
-    attribution_in_text: true
-    location: char:11780-11856
-    refs:
-      - id: 211e289f-a0b1-4f48-9719-a8759918594a
-        name: Luis Elizondo
-      - id: 66f486a3-f3f4-4ee7-a152-d57cd5c7cdc9
-        name: National Programs Special Management Staff
-      - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
-        name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
-      - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
-        name: Luis Elizondo's second resignation letter (October 4, 2017)
-    quote: Luis D. Elizondo Director National Programs Special Management Staff OUSD(I)
-    text: |-
-      Luis Elizondo signed his second resignation letter as Director, National Programs Special Management Staff, Office of the Under Secretary of Defense for Intelligence.
+- id: c87631ce-18eb-405b-b5ff-1c2cff8ec3cc
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
+  attribution_in_text: false
+  location: char:23-120
+  refs:
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  - id: cc783a32-6e24-4ea7-aec5-b5a646944b79
+    name: USA, District of Columbia, Washington
+  quote: |-
+    DEPARTMENT OF DEFENSE FREEDOM OF INFORMATION DIVISION 1155 DEFENSE PENTAGON WASHINGTON, DC 20301-1155
+  text: |-
+    The Department of Defense Freedom of Information Division is located at 1155 Defense Pentagon, Washington, DC 20301-1155.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: d55ca9d0-7762-4b58-becc-b867540dccf3
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
+  attribution_in_text: false
+  location: char:131-152
+  refs:
+  - id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
+    name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
+  quote: 'Ref: 18-F-0324 August 17, 2022'
+  text: |-
+    The FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents is dated 2022-08-17.
+  entailment:
+    label: entails
+    score: 0.55
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a7e05601-2903-4379-836b-6f167bdc0353
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
+  attribution_in_text: false
+  location: char:158-240
+  refs:
+  - id: 7148f489-5742-49a3-b56a-b30b52687902
+    name: John Greenewald
+  - id: c1bdaf5b-d892-4e91-8dcf-a2f3b93135ea
+    name: The Black Vault
+  - id: 0acc7cc8-d8e2-4af0-9034-b99cd6e75db9
+    name: USA, California, Castaic
+  quote: |-
+    Mr. John Greenewald The Black Vault 27305 W. Live Oak Rd. Suite #1203 Castaic, CA 91384
+  text: |-
+    John Greenewald of The Black Vault is located at 27305 W. Live Oak Rd., Suite #1203, Castaic, CA 91384.
+  entailment:
+    label: entails
+    score: 0.956
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 10aa148e-5bbd-46d3-883e-9e483c1bf5b1
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: false
+  location: char:269-400
+  refs:
+  - id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
+    name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
+  - id: 7148f489-5742-49a3-b56a-b30b52687902
+    name: John Greenewald
+  quote: |-
+    This is a final response to your December 17, 2017 Freedom of Information Act (FOIA) request, a copy of which is enclosed for your convenience.
+  text: |-
+    The FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents is a final response to John Greenewald's Freedom of Information Act request dated 2017-12-17.
+  entailment:
+    label: neutral
+    score: 0.952
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 4a85596c-5a38-4132-832b-3d9b53cd8b38
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: false
+  location: char:413-498
+  refs:
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  - id: 7148f489-5742-49a3-b56a-b30b52687902
+    name: John Greenewald
+  quote: |-
+    We received your request on December 18, 2017, and assigned it FOIA case number 18-F-0324.
+  text: |-
+    The Department of Defense received John Greenewald's Freedom of Information Act request on 2017-12-18 and assigned it FOIA case number 18-F-0324.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 250c86b4-314e-462f-8867-1bd9a98884a0
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: true
+  location: char:818-1021
+  refs:
+  - id: 5f4fd90d-5330-4d7f-8aa4-3ba911174912
+    name: Brian C. Kreitlow
+  quote: |-
+    Mr. Brian C. Kreitlow, Chief, Assessment, Capabilities, & Integration Division, in his capacity as an Initial Denial Authority, has determined that portions of the eight responsive pages are exempt from release
+  text: |-
+    Brian C. Kreitlow is Chief of the Assessment, Capabilities, and Integration Division and acted as an Initial Denial Authority in the FOIA response.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: e953bce4-3581-43ee-98d1-0106d0b573cf
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: true
+  location: char:1443-1548
+  refs:
+  - id: d26ee7b5-930f-4d78-8c26-5e399951b59c
+    name: Daniel Mullin
+  - id: 7148f489-5742-49a3-b56a-b30b52687902
+    name: John Greenewald
+  quote: |-
+    please do not hesitate to contact the Action Officer assigned to your request, Daniel Mullin, at 571-372-0465
+  text: |-
+    Daniel Mullin was the Action Officer assigned to John Greenewald's FOIA case number 18-F-0324.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 72480aef-fb2b-447d-b5ba-592b63072bd5
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: true
+  location: char:1753-1879
+  refs:
+  - id: fa0e2753-5806-43c4-9b2f-4207d9e532c3
+    name: Toni Fuentes
+  quote: |-
+    Should you wish to inquire about mediation services, you may contact the OSD/JS FOIA Public Liaison, Toni Fuentes, at 571-372-0462
+  text: |-
+    Toni Fuentes served as the OSD/JS FOIA Public Liaison who could be contacted about mediation services for John Greenewald's FOIA request.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: b5fd364d-70ca-49e8-8060-a874af08d144
+  type: administrative
+  attestation: second_hand
+  provenance_chain:
+    origin_kind: document
+    origin: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
+  attribution_in_text: false
+  location: char:2158-2285
+  refs:
+  - id: 97914ee9-4e98-459b-988d-7250cd62ac21
+    name: Office of Government Information Services (OGIS)
+  - id: f0156615-19e4-44fc-b1e5-b24c69b7cff8
+    name: National Archives and Records Administration (NARA)
+  - id: 9dfe08d8-5b4a-4a23-abe1-d6d7ff5b0efc
+    name: USA, Maryland, College Park
+  quote: |-
+    Office of Government Information Services National Archives and Records Administration 8601 Adelphi Road-OGIS College Park, MD 20740
+  text: |-
+    The Office of Government Information Services at the National Archives and Records Administration is located at 8601 Adelphi Road-OGIS, College Park, MD 20740.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 0fabd745-73a7-4afa-948a-5641de53fbdb
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: true
+  location: char:2405-2716
+  refs:
+  - id: 0d3a15c2-c01b-4726-a8f9-709b81645c82
+    name: Joo Chung
+  - id: 6c6d4367-8138-423c-bb4d-7d9631d770b2
+    name: Office of the Secretary of Defense (OSD)
+  - id: e80957db-3d4a-4e45-95cc-33e5a28f42fa
+    name: USA, Virginia, Alexandria
+  quote: |-
+    You have the right to appeal to the appellate authority, Ms. Joo Chung, Assistant to the Secretary of Defense for Privacy Civil Liberties, and Transparency (PCLT), Office of the Secretary of Defense, at the following address: 4800 Mark Center Drive, ATTN: PCLFD, FOIA Appeals, Mailbox #24, Alexandria, VA 22350-1700.
+  text: |-
+    Joo Chung serves as the appellate authority and Assistant to the Secretary of Defense for Privacy Civil Liberties, and Transparency, located at 4800 Mark Center Drive, Alexandria, VA 22350-1700.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: 65d22f32-ded8-45c2-9566-7673a3bb6ad2
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  provenance_chain:
+    origin_kind: speaker
+    origin: Stephanie L. Carr
+  attribution_in_text: true
+  location: char:3285-3315
+  refs:
+  - id: b2f058d3-60d2-42f0-9b72-a2459fa4af15
+    name: Stephanie L. Carr
+  - id: d14ed11b-508b-4309-85b6-a54f18ef8e7b
+    name: 'FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents'
+  quote: Sincerely, Stephanie L. Carr Chief
+  text: |-
+    Stephanie L. Carr signed the FOIA Response 18-F-0324: AATIP and Luis Elizondo Documents as Chief.
+  entailment:
+    label: entails
+    score: 0.739
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: c9d94f9b-6526-41ae-82bb-5e14d3fe3284
+  type: administrative
+  provenance_chain:
+    origin_kind: unattributed
+  attribution_in_text: false
+  location: char:3525-3694
+  refs:
+  - id: c1bdaf5b-d892-4e91-8dcf-a2f3b93135ea
+    name: The Black Vault
+  - id: 7148f489-5742-49a3-b56a-b30b52687902
+    name: John Greenewald
+  quote: |-
+    Text describes The Black Vault as the largest online FOIA document clearinghouse in the world, crediting John Greenewald, Jr., with website URL http://www.theblackvault.com
+  text: |-
+    The Black Vault is described as the largest online Freedom of Information Act document clearinghouse in the world, credited to John Greenewald, Jr.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: a1c0b46d-24af-4db2-bc81-f21e0a0f2358
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:4053-4145
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  quote: |-
+    FROM: Garry Reid, Director for Defense Intelligence, Office of the Under Secretary of Defense for Intelligence
+  text: |-
+    Garry Reid was Director for Defense Intelligence in the Office of the Under Secretary of Defense for Intelligence.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: c6b0cb10-af14-40e2-9d7e-2fc07ac6dbd9
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:6520-6691
+  date: '2017-10-12'
+  refs:
+  - id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: 8921727f-97ac-45ca-a06a-5f57a785c7fe
+    name: To the Stars Academy for Arts and Sciences
+  - id: 37376372-2769-4e0b-b115-729e3acd5c7d
+    name: Luis Elizondo's To the Stars Academy YouTube video (October 2017)
+  quote: |-
+    On October 12, I learned of a video featuring Mr. Elizondo that was posted on YouTube by the "To the Stars Academy for Arts and Sciences," which appears to be his current employer.
+  text: |-
+    On 2017-10-12, Garry Reid learned of a video featuring Luis Elizondo that was posted on YouTube by the To the Stars Academy for Arts and Sciences, which appeared to be Elizondo's current employer.
+  entailment:
+    label: entails
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 24c2a944-387b-4718-827b-9e4bad574c29
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:7476-7594
+  date: '2017-12-07'
+  refs:
+  - id: 3a8ac4d6-486f-4951-9af2-0dc82225017e
+    name: United States Department of Defense (DoD)
+  - id: 98b53544-a9a7-4b5b-a58f-e1e5753e6ea1
+    name: The New York Times (NYT)
+  - id: a140391b-76db-4ceb-a0cf-68752143af46
+    name: Advanced Aerospace Threat Identification Program (AATIP)
+  quote: |-
+    On December 7, DoD was contacted by the New York Times (NYT) seeking {{redacted: ~2 words}} information regarding the AATIP
+  text: |-
+    On 2017-12-07, the Department of Defense was contacted by The New York Times seeking information regarding the Advanced Aerospace Threat Identification Program.
+  entailment:
+    label: entails
+    score: 0.457
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 48fcb8f5-5470-46c6-945b-6d7ea4256608
+  type: hearsay
+  attestation: second_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: named
+    origin: Luis Elizondo
+    relay:
+    - The New York Times inquiry to the Department of Defense
+  attribution_in_text: true
+  location: char:7604-7757
+  refs:
+  - id: 98b53544-a9a7-4b5b-a58f-e1e5753e6ea1
+    name: The New York Times (NYT)
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  quote: |-
+    noting that Mr. Elizondo's recent resignation was submitted "to protest what he characterized as internal opposition and lack of resources for continued research."
+  text: |-
+    The New York Times noted that Luis Elizondo's resignation was submitted to protest what he characterized as internal opposition and lack of resources for continued research.
+  entailment:
+    label: contradicts
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
+- id: b2e59e3a-7dac-4414-a0ef-63d691e66528
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 7101cea1-9739-4730-be73-ea8fe1b5b9f3
+    name: Garry Reid
+  provenance_chain:
+    origin_kind: speaker
+    origin: Garry Reid
+  attribution_in_text: true
+  location: char:8074-8285
+  date: '2017-12-17'
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: 0efaff51-0ab9-4fe3-9448-7b0798c23897
+    name: |-
+      December 17, 2017 unidentified aerial phenomena footage broadcast on national news
+  quote: |-
+    On December 17, Mr. Elizondo appeared on national news programs providing commentary on a video that appears to be camera footage taken by a US military aircraft showing what he claims is an unidentified flying object.
+  text: |-
+    On 2017-12-17, Luis Elizondo appeared on national news programs providing commentary on a video that appears to be camera footage taken by a US military aircraft showing what he claims is an unidentified flying object.
+  entailment:
+    label: entails
+    score: 0.696
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
+- id: 2032fe84-42e7-497f-8668-233f945686ea
+  type: administrative
+  attestation: first_hand
+  speaker:
+    id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  provenance_chain:
+    origin_kind: speaker
+    origin: Luis Elizondo
+  attribution_in_text: true
+  location: char:11780-11856
+  refs:
+  - id: 211e289f-a0b1-4f48-9719-a8759918594a
+    name: Luis Elizondo
+  - id: 66f486a3-f3f4-4ee7-a152-d57cd5c7cdc9
+    name: National Programs Special Management Staff
+  - id: b841cdda-5f4f-4720-be32-b25575dc2fe0
+    name: Office of the Under Secretary of Defense for Intelligence (OUSDI)
+  - id: ae7c9468-09f7-4c82-bdcf-58be8e5b5ff3
+    name: Luis Elizondo's second resignation letter (October 4, 2017)
+  quote: Luis D. Elizondo Director National Programs Special Management Staff OUSD(I)
+  text: |-
+    Luis Elizondo signed his second resignation letter as Director, National Programs Special Management Staff, Office of the Under Secretary of Defense for Intelligence.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh
