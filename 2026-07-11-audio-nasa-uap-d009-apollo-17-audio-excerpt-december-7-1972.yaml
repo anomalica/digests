@@ -17,6 +17,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 8.6
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.8
 prompts:
 - pass: nodes
   id: nodes
@@ -113,10 +119,10 @@ domain_claims:
   text: |-
     During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member reported a large number of big, bright fragments visible on his window.
   entailment:
-    label: neutral
-    score: 0.958
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a299c37d-77fa-4f58-b936-7a785f4303a0
   type: observation
   provenance_chain:
@@ -192,10 +198,10 @@ domain_claims:
   text: |-
     During the Apollo 17 orbital debris sighting, December 7, 1972, a crew member took photographs of the fragments at different camera settings to try to capture their patterns.
   entailment:
-    label: neutral
-    score: 0.996
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.524
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d32b5197-60bf-48c1-838b-0bab0d510e3a
   type: opinion
   provenance_chain:

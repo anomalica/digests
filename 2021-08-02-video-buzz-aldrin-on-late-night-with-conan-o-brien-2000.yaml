@@ -20,6 +20,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 3.2
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 9.3
 prompts:
 - pass: nodes
   id: nodes
@@ -297,10 +303,10 @@ domain_claims:
   text: |-
     Buzz Aldrin and the Apollo 11 crew were focused rather than worried about what they would say during the Moon landing.
   entailment:
-    label: neutral
-    score: 0.872
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c5a94ad-9e4c-4a94-92ef-2cb3473f08da
   type: testimony
   attestation: first_hand
@@ -399,10 +405,10 @@ domain_claims:
   text: |-
     On the Moon an astronaut cannot unzip the suit to urinate; the Apollo 11 crew used a device for this instead.
   entailment:
-    label: neutral
-    score: 0.993
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6fd89f57-cc75-45d9-a580-8c5c93c20e9c
   type: observation
   attestation: first_hand
@@ -452,10 +458,10 @@ domain_claims:
   text: |-
     Buzz Aldrin calls the two-feet-at-a-time hop he performed on the Moon a kangaroo hop, not a bunny hop.
   entailment:
-    label: neutral
-    score: 0.99
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b23cfcdd-5f9e-4c7e-bba0-136ee6a1b38a
   type: testimony
   attestation: first_hand
@@ -506,10 +512,10 @@ infrastructure_claims:
   text: |-
     Buzz Aldrin appeared as a guest on Late Night with Conan O'Brien, interviewed by Conan O'Brien.
   entailment:
-    label: neutral
-    score: 0.995
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 curation:
 - at: '2026-08-28T01:13:40.625539+00:00'
   by: metadata-refresh

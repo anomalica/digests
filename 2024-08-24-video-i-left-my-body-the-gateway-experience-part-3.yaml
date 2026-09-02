@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 21.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 18.0
 prompts:
 - pass: nodes
   id: nodes
@@ -164,9 +170,9 @@ domain_claims:
     A classified assessment described the objective of the Gateway Experience process training as evaluating the effectiveness of the process as a potential means of intelligence collection.
   entailment:
     label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.577
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5c9160c2-8e52-4f9d-a832-06fbd0e76573
   type: administrative
   provenance_chain:
@@ -344,10 +350,10 @@ domain_claims:
     And I decided to teach this to a few of my friends. There was basically a group of five of us.
   text: In 1999, Graham Nichols taught the G Technique to a group of five friends.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ebef2ccd-66fa-4de7-9cfc-15f9a5b28a93
   type: testimony
   attestation: first_hand
@@ -427,9 +433,9 @@ domain_claims:
     During his 1999 out-of-body experience on Old Compton Street, Graham Nichols witnessed an explosion and saw a man run past him toward it.
   entailment:
     label: neutral
-    score: 0.994
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.787
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2be32a30-ad9b-4051-8f30-5d2dc17efa80
   type: testimony
   attestation: first_hand
@@ -477,10 +483,10 @@ domain_claims:
   text: |-
     Graham Nichols has had approximately four different out-of-body experiences with a distinctive blue-grey quality, each of which has been objectively verified in terms of the information perceived.
   entailment:
-    label: neutral
-    score: 0.653
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.834
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 03db061d-5f48-429e-b567-c0a258253b5f
   type: testimony
   attestation: first_hand
@@ -974,10 +980,10 @@ domain_claims:
   text: |-
     Graham Nichols advises practising a chosen out-of-body-experience technique consistently, ideally at least about three times a week.
   entailment:
-    label: neutral
+    label: entails
     score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9070f713-cb22-482d-b069-9c8425e6ffe8
   type: administrative
   provenance_chain:
@@ -1185,10 +1191,10 @@ domain_claims:
   text: |-
     Nelson Delis noticed other objects scattered on the desk in his vision, in addition to the paper with the number.
   entailment:
-    label: neutral
-    score: 0.979
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 38860b14-5723-4834-a5a4-ea2dbb46cdcb
   type: testimony
   attestation: first_hand
@@ -1230,10 +1236,10 @@ domain_claims:
   text: |-
     The participant's actual written number was 1734, matching the first three digits (1, 7, 3) that Nelson Delis had perceived but differing on the fourth digit, which Nelson Delis had guessed as six rather than four.
   entailment:
-    label: neutral
-    score: 0.733
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: contradicts
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 164436dd-2483-46c1-badf-f6743dc29db7
   type: opinion
   attestation: first_hand
@@ -1275,10 +1281,10 @@ domain_claims:
   text: |-
     Nelson Delis later visited the participant's actual room and found the wall was made of wood, matching what he had perceived during his session.
   entailment:
-    label: neutral
-    score: 0.662
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 55deeb84-53d3-4248-9c16-20ef824507a0
   type: observation
   attestation: first_hand
@@ -1558,10 +1564,10 @@ domain_claims:
   text: |-
     Nelson Delis reported that he could suddenly see through his closed eyelids during his out-of-body experience.
   entailment:
-    label: neutral
-    score: 0.962
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0776890e-5ff3-4a1d-82fa-74233a5fb10e
   type: testimony
   attestation: first_hand
@@ -1731,10 +1737,10 @@ domain_claims:
   text: |-
     Graham Nichols opened his eyes and ended his out-of-body experience at 6:38 a.m., having started the meditation at 5:35 a.m.
   entailment:
-    label: neutral
-    score: 0.645
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bbe05a53-c656-409d-8450-5d372f383a6e
   type: testimony
   attestation: first_hand

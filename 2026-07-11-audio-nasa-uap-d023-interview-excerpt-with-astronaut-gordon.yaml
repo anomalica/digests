@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 2.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 1.4
 prompts:
 - pass: nodes
   id: nodes
@@ -179,10 +185,10 @@ domain_claims:
   text: |-
     Gordon Cooper considers it not unfeasible that some unidentified flying object (UFO) sightings might involve human life from other planets, if such planets exist.
   entailment:
-    label: neutral
-    score: 0.994
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2728c1fb-22c8-4a2c-b703-204c6aab8478
   type: opinion
   attestation: first_hand

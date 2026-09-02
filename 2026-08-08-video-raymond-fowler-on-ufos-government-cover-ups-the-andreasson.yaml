@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 55.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 64.9
 prompts:
 - pass: nodes
   id: nodes
@@ -895,9 +901,9 @@ domain_claims:
     The United States Navy had an experimental circular aircraft nicknamed the flying flapjack, the Chance Vought V-173 ("Flying Flapjack"), in the early 1940s, which is now in a museum.
   entailment:
     label: neutral
-    score: 0.768
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.874
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b3f6d2ee-62cb-43ea-b03d-e277dd2740ca
   type: opinion
   attestation: first_hand
@@ -917,9 +923,9 @@ domain_claims:
     The Chance Vought V-173 ("Flying Flapjack") was very unwieldy and did not perform as expected.
   entailment:
     label: neutral
-    score: 0.952
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.506
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 475f861f-2e5a-45e3-982f-83134ea37b0f
   type: testimony
   speaker:
@@ -943,9 +949,9 @@ domain_claims:
     The Canadian government attempted to build a circular airfoil aircraft, which was built by the Avro Company Limited, with the United States Air Force working with them, producing the Avro Canada VZ-9 Avrocar, essentially a hovercraft that could move about one metre above the ground.
   entailment:
     label: neutral
-    score: 0.588
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.531
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 825a7449-bc22-4630-99f6-598a2509381a
   type: opinion
   attestation: first_hand
@@ -1058,10 +1064,10 @@ domain_claims:
   text: |-
     Raymond Fowler considers that when UFOs move, they do not create a sonic boom and are able to take right-angle turns.
   entailment:
-    label: neutral
-    score: 0.987
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 18fd3c74-08e7-42e4-8f28-04bc33276716
   type: opinion
   attestation: first_hand
@@ -1150,10 +1156,10 @@ domain_claims:
   text: |-
     Raymond Fowler considers that UFOs usually wobble just before changing direction after hovering, and that the observed 90-degree turns appear to occur without any curve radius, which seems almost impossible.
   entailment:
-    label: neutral
-    score: 0.91
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 339525f4-a774-4690-81e8-959660f27c1c
   type: measurement
   attestation: second_hand
@@ -1245,10 +1251,10 @@ domain_claims:
   text: |-
     William Heitz recalled that fighters were not scrambled fast enough to intercept the object his squadron's radar tracked, and its identity was never determined.
   entailment:
-    label: neutral
-    score: 0.85
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 79906ce3-a8a0-417f-afe0-22b64d3ef5cd
   type: testimony
   attestation: second_hand
@@ -1384,9 +1390,9 @@ domain_claims:
     In 1968, the United States Air Force contracted the University of Colorado to perform a supplementary investigation of UFOs, known as the Condon Committee, and Raymond Fowler served that project as early warning coordinator.
   entailment:
     label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5aed989e-29df-4568-b193-2b9bbea324f7
   type: testimony
   speaker:
@@ -1454,10 +1460,10 @@ domain_claims:
   text: |-
     Nathan Twining's 1947 memo to the commander of the Army Air Forces stated that UFOs are real and not visionary, and urged that a project be set up immediately to investigate what they were, where they came from, and what they were doing.
   entailment:
-    label: neutral
-    score: 0.982
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: contradicts
+    score: 0.536
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a23664b-8541-47a1-8dcf-ab5a77e6f7aa
   type: administrative
   speaker:
@@ -1546,10 +1552,10 @@ domain_claims:
   text: |-
     Hoyt Vandenberg publicly rejected the estimate of the situation from Project Sign, saying there was no proof.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3be92c08-91d7-48ed-b931-514b8b0363bc
   type: testimony
   speaker:
@@ -1618,10 +1624,10 @@ domain_claims:
   text: |-
     In March 1952, after a large number of UFO sightings in the United States with banner headlines and Congress pressing the Pentagon for explanations, Project Blue Book was opened, again allowing public participation in the Air Force UFO program.
   entailment:
-    label: neutral
-    score: 0.982
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.668
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c075320-25a0-4136-bed9-e31a78ad45d9
   type: testimony
   speaker:
@@ -1761,10 +1767,10 @@ domain_claims:
   text: |-
     The 1978 Japan Airlines Flight 1628 Alaska UFO sighting was kept out of the press for about a month before it broke, having first appeared in the Japanese press around 30-31 December.
   entailment:
-    label: neutral
-    score: 0.872
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.518
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 24139b91-3bf0-4b78-9118-e769fda0614c
   type: testimony
   speaker:
@@ -2004,10 +2010,10 @@ domain_claims:
   text: |-
     People at Minuteman missile bases have described objects almost as large as the object in the 1978 Japan Airlines Flight 1628 Alaska UFO sighting, coming down suddenly and hovering over the bases before going straight up again to a point source.
   entailment:
-    label: neutral
-    score: 0.997
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.886
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 44ee652e-83aa-457a-b154-dec993d231e5
   type: opinion
   attestation: first_hand
@@ -2099,10 +2105,10 @@ domain_claims:
   text: |-
     A cylindrical mothership-type UFO was observed off Crane's Beach near Ipswich, Massachusetts, in the 1970s at around 2 or 3 o'clock in the morning, exhibiting the same behaviour of dropping disc-shaped objects.
   entailment:
-    label: neutral
-    score: 0.978
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.892
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0aa1775d-277c-4f66-965a-15969f6d3421
   type: administrative
   attestation: first_hand
@@ -2227,10 +2233,10 @@ domain_claims:
   text: |-
     According to the Gordon Cooper tape transcript, camera crews set up at Edwards Air Force Base for an experimental aircraft were able to take photographs of a UFO before it took off.
   entailment:
-    label: neutral
-    score: 0.993
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cde39f35-31e3-4432-b25d-2fa13ee86ffd
   type: hearsay
   attestation: second_hand
@@ -2254,10 +2260,10 @@ domain_claims:
   text: |-
     According to the Gordon Cooper tape transcript, the film canisters from the Edwards Air Force Base UFO photographs were taken away, the crew were not allowed to see the film, and it was sent off to Washington, never to be seen again.
   entailment:
-    label: neutral
-    score: 0.981
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 189ab2dd-f4ea-44c2-9371-58c6e52df178
   type: opinion
   attestation: first_hand
@@ -2279,10 +2285,10 @@ domain_claims:
   text: |-
     Raymond Fowler considers that obtaining useful documents through the Freedom of Information Act is very hard unless you know exactly what you are asking for, and material can remain withheld if still classified.
   entailment:
-    label: neutral
-    score: 0.576
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0679ebe8-bd3f-4140-b1bc-f764d0e94558
   type: testimony
   attestation: first_hand
@@ -2509,10 +2515,10 @@ domain_claims:
   text: |-
     The RAF Woodbridge document describes armed security police advancing toward the triangular-shaped object before it took off into the woods, lighting the area with blue lights underneath and a red light on top.
   entailment:
-    label: neutral
-    score: 0.994
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7cb0c24d-c3c1-45f2-818c-ac4b4ac97d65
   type: testimony
   attestation: second_hand
@@ -2603,10 +2609,10 @@ domain_claims:
   text: |-
     Researchers use leaked military UFO documents to investigate further and interview witnesses, including retired and still-active military personnel who were present during the sightings, doing so covertly so the witnesses do not get in trouble.
   entailment:
-    label: neutral
-    score: 0.899
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5aff8e17-7bf0-445e-b05c-31faba676afd
   type: opinion
   attestation: first_hand
@@ -2646,10 +2652,10 @@ domain_claims:
   text: |-
     Raymond Fowler considers that the government's public information programme on UFOs is based on a worst-case analysis of the problem.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 128b7d6e-45a9-4d89-ab71-1bfd4eff8f65
   type: testimony
   attestation: second_hand
@@ -3026,10 +3032,10 @@ domain_claims:
   text: |-
     The Robertson Panel report outlined a complete debunking programme for UFOs, including using well-known personalities on TV and radio.
   entailment:
-    label: neutral
-    score: 0.955
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f6e637a6-c476-43f2-b014-d1ecd34086b4
   type: administrative
   attestation: second_hand
@@ -3293,10 +3299,10 @@ domain_claims:
   text: |-
     An Army officer investigating the Dayton, Texas case verified the injuries sustained by the people involved and verified that helicopters had been seen in the area.
   entailment:
-    label: neutral
+    label: entails
     score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 85d29b51-abc7-4ce9-af53-4ee47fa80afb
   type: testimony
   attestation: second_hand
@@ -3447,9 +3453,9 @@ domain_claims:
     The Navy pilot broke his oath of secrecy years later, after the statute of limitations passed, and gave Raymond Fowler the full story.
   entailment:
     label: neutral
-    score: 0.992
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.87
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27fefc37-086b-48d2-b22c-0585f58d6289
   type: testimony
   attestation: first_hand
@@ -3542,10 +3548,10 @@ domain_claims:
   text: |-
     The French government issued its first civilian UFO study, initiating a multi-million dollar investigation approximately five or six years prior, some of whose physical trace cases were found completely unexplainable and attributed to an unidentified flying machine.
   entailment:
-    label: neutral
-    score: 0.51
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.623
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5dc3052b-ba51-4497-bf3a-8b6f6dbca0dd
   type: testimony
   attestation: first_hand
@@ -4079,10 +4085,10 @@ domain_claims:
   text: |-
     William Powers was an Air Force astronomer who helped investigate the Socorro, New Mexico UFO landing.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 44c22bdc-da5c-4a1a-ad1c-406d954a984b
   type: testimony
   attestation: second_hand
@@ -4201,10 +4207,10 @@ domain_claims:
   text: |-
     At the Socorro, New Mexico UFO landing, the policeman watched the object take off slowly, with the blue plasma rising until the object was out of sight.
   entailment:
-    label: neutral
-    score: 0.979
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26dcfe0c-d630-4c6f-97ec-03cfbc5027d7
   type: testimony
   speaker:
@@ -4323,10 +4329,10 @@ domain_claims:
   text: |-
     During his 1947 sighting near Danvers, Raymond Fowler observed the object descending with a falling-leaf motion.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.662
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f61e55da-c484-492b-8fb4-1fddee6f6cd1
   type: observation
   attestation: first_hand
@@ -4347,10 +4353,10 @@ domain_claims:
   text: |-
     Raymond Fowler initially thought the object he saw near Danvers in 1947 was a parachute but found no shroud lines and no person hanging from it.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.642
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e9d16f5c-89ac-48fa-8500-cf116c752ca0
   type: testimony
   attestation: second_hand
@@ -4651,10 +4657,10 @@ domain_claims:
   text: |-
     During the Betty Andreasson abduction, Betty Andreasson was in her kitchen while her mother, father, and seven children were in the living room watching television.
   entailment:
-    label: neutral
-    score: 0.986
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 642e28e1-30c0-46fd-ae8e-5dfc17343157
   type: testimony
   attestation: third_hand
@@ -4756,10 +4762,10 @@ domain_claims:
   text: |-
     During the Betty Andreasson abduction, the father saw the creatures moving through the air rather than walking toward the house, with a sinusoidal wave-like motion, and hopping almost like grasshoppers, after which he could not remember anything else.
   entailment:
-    label: neutral
+    label: entails
     score: 0.996
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aa64e41f-59e7-4f71-ad70-43fd420f3954
   type: testimony
   attestation: third_hand
@@ -4783,10 +4789,10 @@ domain_claims:
   text: |-
     During the Betty Andreasson abduction, the creatures came through the closed kitchen door in a line, disappearing and reappearing, as if rearranging the molecules of their bodies.
   entailment:
-    label: neutral
-    score: 0.973
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ddaa48ee-33dc-45e3-bdfc-bf0d5c7e968c
   type: testimony
   attestation: third_hand
@@ -4810,10 +4816,10 @@ domain_claims:
   text: |-
     During the Betty Andreasson abduction, the family was put into a state of suspended animation, freezing in whatever they were doing.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.792
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 53b2af46-3072-457c-bfd0-3f156232253c
   type: testimony
   attestation: third_hand
@@ -4839,10 +4845,10 @@ domain_claims:
   text: |-
     During the Betty Andreasson abduction, the creatures persuaded Betty Andreasson to follow them while one of them stayed behind to watch the family.
   entailment:
-    label: neutral
-    score: 0.976
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e8e4ff5d-cb37-470b-b652-12b1db13e74d
   type: testimony
   attestation: third_hand
@@ -5073,10 +5079,10 @@ domain_claims:
   text: |-
     After a typical close encounter of the third kind, Type G experience, witnesses start having dreams about what happened during the missing time, and have flashbacks during everyday activities such as doing dishes.
   entailment:
-    label: neutral
-    score: 0.912
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5968c174-16bd-4635-9433-72d7586b3600
   type: opinion
   attestation: first_hand
@@ -5142,10 +5148,10 @@ domain_claims:
   text: |-
     Investigated alien abduction witnesses have passed lie detector tests and rigid character reference checks, and their reported experiences are similar to other cases reported in the United States and abroad.
   entailment:
-    label: neutral
-    score: 0.992
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b810ea1-fce9-4eae-970d-22cded84dd3b
   type: opinion
   attestation: first_hand
@@ -5327,10 +5333,10 @@ domain_claims:
   text: |-
     Betty Andreasson, upon hearing recordings of her own hypnosis sessions, worried that she was going crazy and wanted a psychiatrist to examine her.
   entailment:
-    label: neutral
-    score: 0.993
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8e9358bc-7018-4548-b3bf-67b8e7cab2c4
   type: testimony
   attestation: first_hand
@@ -5779,10 +5785,10 @@ infrastructure_claims:
   text: |-
     Raymond Fowler considers that a film adaptation of The Andreasson Affair almost got made until the film E.T. came along and displaced it.
   entailment:
-    label: neutral
-    score: 0.996
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.848
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9899ffbf-990c-4810-a0d2-fcc738fdfcaf
   type: administrative
   attestation: second_hand
@@ -5988,10 +5994,10 @@ infrastructure_claims:
   text: |-
     Sun Classic Pictures offered the GTE Sylvania manager money, through Raymond Fowler, to participate in a documentary, which he turned down.
   entailment:
-    label: neutral
+    label: entails
     score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2dfd793b-dc72-42d0-9cfb-dfc0ae851693
   type: administrative
   attestation: first_hand

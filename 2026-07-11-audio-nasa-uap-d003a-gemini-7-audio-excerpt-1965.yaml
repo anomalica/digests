@@ -17,6 +17,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 10.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.7
 prompts:
 - pass: nodes
   id: nodes
@@ -344,9 +350,9 @@ domain_claims:
     Frank Borman observed what looked like hundreds of little particles going by from the left, at an estimated distance of approximately 5 to 6.5 kilometres from Gemini 7 (spacecraft).
   entailment:
     label: neutral
-    score: 0.984
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.467
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e16ed030-fa0c-4f70-8d55-0a8b11cfd048
   type: observation
   attestation: first_hand
@@ -527,10 +533,10 @@ domain_claims:
   text: |-
     It was Frank Borman who reported sighting the bogey of the 1965 Gemini 7 unidentified object sighting.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.413
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 649a2fda-fd6f-4118-bd69-6a341aa5efc0
   type: administrative
   provenance_chain:

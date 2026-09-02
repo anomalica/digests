@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 2.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 1.4
 prompts:
 - pass: nodes
   id: nodes
@@ -152,10 +158,10 @@ domain_claims:
   text: |-
     A participant found they could put their hand through a glass window during an out-of-body experience (OOBE).
   entailment:
-    label: neutral
-    score: 0.784
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fb27906a-0633-4a5e-b735-11970116e6af
   type: testimony
   attestation: second_hand

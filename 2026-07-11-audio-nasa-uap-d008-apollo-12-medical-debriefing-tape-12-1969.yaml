@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 5.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.4
 prompts:
 - pass: nodes
   id: nodes
@@ -139,10 +145,10 @@ domain_claims:
   text: |-
     The light-flash phenomenon experienced by astronauts was described by an unnamed source as a known effect of discharge across the eye caused by gamma rays or cosmic particles.
   entailment:
-    label: neutral
-    score: 0.997
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 35c7d031-2389-4d2b-adc5-b4c2cf10ea7a
   type: administrative
   attestation: first_hand
@@ -164,9 +170,9 @@ domain_claims:
     Buzz Neal discussed two phenomena related to the astronaut light flash phenomenon in a letter.
   entailment:
     label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.904
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e2194c84-5594-468a-994b-e9e98232c9d9
   type: testimony
   attestation: first_hand

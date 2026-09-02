@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 4.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 15.7
 prompts:
 - pass: nodes
   id: nodes
@@ -314,10 +320,10 @@ domain_claims:
   text: |-
     A Brazilian soldier who arrived at the 1996 Brazil UFO crash site and touched the alleged craft or the being subsequently died, and an unknown bacterium or microorganism was found in his body.
   entailment:
-    label: neutral
-    score: 0.995
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.591
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 936555d6-f1aa-4fe1-8b82-949e15898edd
   type: observation
   attestation: second_hand
@@ -480,10 +486,10 @@ infrastructure_claims:
   text: |-
     James Fox brought individuals from Brazil to the Capitol to speak about the 1996 Brazil UFO crash.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.78
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c71dea8c-8742-42da-a6e4-3faddc14e9ce
   type: observation
   attestation: first_hand

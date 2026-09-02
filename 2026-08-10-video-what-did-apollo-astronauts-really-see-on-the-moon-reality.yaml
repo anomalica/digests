@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 69.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 52.0
 prompts:
 - pass: nodes
   id: nodes
@@ -391,10 +397,10 @@ domain_claims:
   text: |-
     NASA's imagery from the Moon and from shuttle missions appears to have been excluded from the purview of NASA's Unidentified Aerial Phenomena (UAP) study team.
   entailment:
-    label: neutral
-    score: 0.993
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.665
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 59dbf528-cbb9-426c-898c-b37fce0b15b3
   type: opinion
   attestation: first_hand
@@ -467,10 +473,10 @@ domain_claims:
   text: |-
     The images released in the war.gov/UFOs release could have used better quality imaging than what was published.
   entailment:
-    label: neutral
-    score: 0.991
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f6ee5d91-4017-4d87-bb74-ba07a3782a4c
   type: opinion
   attestation: first_hand
@@ -489,10 +495,10 @@ domain_claims:
   text: |-
     The imagery published in the war.gov/UFOs release is legitimate and is held in the archives.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 79100e7b-36ac-4cfa-8b52-b76e8b5145b3
   type: observation
   attestation: first_hand
@@ -545,10 +551,10 @@ domain_claims:
   text: |-
     NASA maintains an archive of more recent, higher-resolution scans of the Apollo films, managed by Arizona State University and Johnson Space Center, called the March to the Moon Archive.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0bee9c25-e7d4-4853-87e8-a11987e4736e
   type: observation
   attestation: first_hand
@@ -595,10 +601,10 @@ domain_claims:
   text: |-
     In its commentary on the Apollo 17 image of three blue lights, the United States Department of War did not describe them as three objects but used the term "potentially a physical object" in the singular.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9c228f00-3236-4d9e-9a47-7a18bdd94645
   type: observation
   attestation: first_hand
@@ -645,10 +651,10 @@ domain_claims:
   text: |-
     Maaneli "Max" Derakhshani considers a cosmic-ray-bombardment explanation for the blue lights in the Apollo 17 image to be highly implausible, given their size, spacing, and small area occupied.
   entailment:
-    label: neutral
-    score: 0.997
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2d12d0c3-be04-434a-b8fe-5d34000dcdbe
   type: observation
   attestation: first_hand
@@ -803,10 +809,10 @@ domain_claims:
   text: |-
     Maaneli "Max" Derakhshani considers there to be only two possibilities regarding Bill Nelson's statement about NASA imagery: either Bill Nelson was completely uninformed and never examined NASA's archives in detail, or Bill Nelson knew what was in NASA's archives and decided to lie to the public.
   entailment:
-    label: neutral
-    score: 0.981
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.924
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b839e37-94d4-469b-b2c4-88870fce1e99
   type: hearsay
   attestation: second_hand
@@ -926,10 +932,10 @@ domain_claims:
   text: |-
     There are instances of anomalies in Lunar Reconnaissance Orbiter (LRO) imaging that are difficult to see in the more publicly available versions of the images.
   entailment:
-    label: neutral
-    score: 0.556
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.83
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 179e5e13-8215-420d-b3e9-778fb963f1f3
   type: opinion
   attestation: first_hand
@@ -1086,10 +1092,10 @@ domain_claims:
   text: |-
     Maaneli "Max" Derakhshani considers Avi Loeb's prosaic explanation of the Apollo 17 blue-lights anomaly to be very contrived.
   entailment:
-    label: neutral
-    score: 0.993
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.797
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1ff05b80-b760-4d40-91e8-f75e1c631510
   type: testimony
   attestation: second_hand
@@ -1441,9 +1447,9 @@ domain_claims:
     In the STS-48 UAP incident footage, the camera was located in the cargo bay of Space Shuttle Discovery (STS-48), pointing towards the airglow boundary between space and Earth's atmosphere.
   entailment:
     label: neutral
-    score: 0.995
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.65
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8047e930-39d5-4d81-9d8b-632fbeb56cdc
   type: observation
   attestation: first_hand
@@ -1542,10 +1548,10 @@ domain_claims:
   text: |-
     Maaneli "Max" Derakhshani considers James Oberg's ice-particle explanation a plausible first guess, but finds the available data in the STS-48 UAP incident video do not fit that explanation well.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.668
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0e4708a5-4316-4aa4-8e0e-54e137d80ce5
   type: observation
   attestation: second_hand
@@ -2026,10 +2032,10 @@ domain_claims:
   text: |-
     The Australia, Western Australia, Harold E. Holt Naval Communications Station is a defence facility for the monitoring and broadcasting of radio waves to American nuclear attack submarines and is not generally used for any offensive capacity.
   entailment:
-    label: neutral
-    score: 0.987
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.667
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9be74a9e-b38d-4bd5-8d6d-769c0fcdb339
   type: observation
   attestation: first_hand
@@ -2080,10 +2086,10 @@ domain_claims:
   text: |-
     Maaneli "Max" Derakhshani considers it plausible that the projectiles seen in the STS-48 UAP incident footage originate from the surface of the Earth, though it is difficult to say for certain where they originate.
   entailment:
-    label: neutral
-    score: 0.993
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.575
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 427ab76c-3a6a-4501-b470-9acecc3116e4
   type: testimony
   attestation: second_hand
@@ -2138,10 +2144,10 @@ domain_claims:
   text: |-
     Ross Coulthart considers the STS-48 UAP incident location near the western coast of Australia to be orbitally very close to Australia, Western Australia, Northwest Cape.
   entailment:
-    label: neutral
-    score: 0.993
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 69b1ae03-5a4e-4cdd-8c38-9e873fbbb739
   type: observation
   attestation: first_hand
@@ -2876,10 +2882,10 @@ domain_claims:
   text: |-
     James Oberg and National Aeronautics and Space Administration (NASA) have suggested the main unidentified aerial phenomenon (UAP) of interest in the STS-48 UAP incident is an ice particle coming out of the space shuttle's shadow into sunlight.
   entailment:
-    label: neutral
-    score: 0.95
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.753
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c2a46998-0978-4985-8a86-9dd24c8e15c4
   type: observation
   attestation: first_hand
@@ -2901,10 +2907,10 @@ domain_claims:
   text: |-
     In the STS-48 UAP incident footage, the main object of interest makes an abrupt 45-degree turn, crosses the airglow boundary, brightens, and then dims as it crosses into the blackness of space.
   entailment:
-    label: neutral
-    score: 0.973
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 22fc7a65-9864-4cf8-abc5-bafbc6a752e7
   type: opinion
   attestation: first_hand
@@ -3059,9 +3065,9 @@ domain_claims:
     Aboriginal communities in the Australia, Western Australia, Northwest Cape region are aware that Ross Coulthart is interested in this subject matter and have expressed willingness to be interviewed about what they have observed.
   entailment:
     label: neutral
-    score: 0.978
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1844b085-3952-4dcb-a6ca-db5793a30fc7
   type: administrative
   attestation: first_hand
@@ -3434,10 +3440,10 @@ domain_claims:
   text: |-
     In the STS-80 UAP incident footage, the area beyond the airglow boundary is out of sunlight and in darkness, with the moon as the only source of illumination, showing clouds reflecting moonlight, ocean, land, and city lights.
   entailment:
-    label: neutral
-    score: 0.946
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5eccc037-9a75-44ea-a17b-d41580d96c25
   type: testimony
   attestation: second_hand
@@ -3519,9 +3525,9 @@ domain_claims:
     In the STS-80 UAP incident footage, a tadpole-like object, referred to as F1 by Mark Carlotto, suddenly appears near the city lights of Puerto Rico, flies into the video description information in the top left, and then seems to disappear.
   entailment:
     label: neutral
-    score: 0.995
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.843
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 80ef01b1-689e-4330-8976-813d11825c5e
   type: testimony
   attestation: second_hand
@@ -3781,10 +3787,10 @@ domain_claims:
   text: |-
     Maaneli "Max" Derakhshani considers it likely that the astronaut or camera operator filming near Antigua, Puerto Rico was aware the tadpole-like plasmatic object would appear at that location before it did.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 09c1464d-999d-42a8-9219-e18de04f5a3e
   type: observation
   attestation: first_hand
@@ -3991,10 +3997,10 @@ domain_claims:
   text: |-
     In the same Space Shuttle footage, a trio of unidentified objects appears, and the camera operator zooms in on them.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.631
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef50e18c-d305-4312-bc08-7c3a17936314
   type: observation
   attestation: first_hand
@@ -4014,10 +4020,10 @@ domain_claims:
   text: |-
     In the Space Shuttle footage, the three unidentified objects move seemingly autonomously in different directions, with one moving towards Earth, another remaining above the atmosphere, and a third object moving across the frame at extremely high speed.
   entailment:
-    label: neutral
-    score: 0.995
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.532
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc4c9d3b-ec5a-40ae-aa3a-e5de120efc0e
   type: administrative
   attestation: second_hand
@@ -4256,9 +4262,9 @@ domain_claims:
     Maaneli "Max" Derakhshani believes any honest observer of the STS-80 footage would say there is a lot to see and that Tom Jones's explanation is not satisfactory.
   entailment:
     label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.483
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5f799684-b7f1-46ff-b83e-dbf3fbaf0114
   type: opinion
   attestation: first_hand
@@ -4283,9 +4289,9 @@ domain_claims:
     Maaneli "Max" Derakhshani hopes the current National Aeronautics and Space Administration (NASA) leadership and the United States Department of War will reassess the STS-48 and STS-80 videos, or at least release them to the public.
   entailment:
     label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 09bffba0-385f-48f9-a09c-0e4a858947d4
   type: testimony
   attestation: second_hand
@@ -5269,10 +5275,10 @@ infrastructure_claims:
   text: |-
     Tom Jones, an astronaut on the STS-80 mission, wrote a blog post addressing whether unidentified flying objects (UFOs) visited the Space Shuttle Columbia during STS-80.
   entailment:
-    label: neutral
-    score: 0.757
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.818
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: de87ed39-5993-4471-8887-592076709611
   type: testimony
   attestation: second_hand

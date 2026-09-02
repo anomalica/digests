@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 4.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 1.3
 prompts:
 - pass: nodes
   id: nodes
@@ -267,10 +273,10 @@ domain_claims:
   text: |-
     Carl Wolf could not repair the malfunctioning equipment in the dark and asked to have it removed.
   entailment:
-    label: neutral
-    score: 0.997
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f33b37d2-e477-4e9d-9635-e2cf146ae091
   type: administrative
   attestation: first_hand

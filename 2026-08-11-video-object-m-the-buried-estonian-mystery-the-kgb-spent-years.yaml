@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 63.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 48.0
 prompts:
 - pass: nodes
   id: nodes
@@ -743,10 +749,10 @@ domain_claims:
   text: |-
     Mart Sander would like to think the Merivalja object is a non-human technology that has existed for hundreds of thousands of years, and believes there is strong evidence it is not a man-made object.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c736247-a067-4821-832f-02a17c9080e5
   type: opinion
   attestation: first_hand
@@ -863,10 +869,10 @@ domain_claims:
   text: |-
     State-of-the-art tests on the Merivalja object began in the 1980s across the Eastern Bloc, with the best scientists at many institutes and research centres working on it.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: contradicts
+    score: 0.411
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31de83d1-eba2-45c9-8148-74f7d0378afe
   type: observation
   attestation: first_hand
@@ -1038,10 +1044,10 @@ domain_claims:
   text: |-
     Soviet military and researchers had been digging in the backyard of the Merivalja house for a couple of years during the 1980s excavation.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.673
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2afa71da-92c4-486a-9200-40fff7abad80
   type: testimony
   attestation: second_hand
@@ -1185,10 +1191,10 @@ domain_claims:
   text: |-
     Vivika Eva's theories about the underground object beneath her garden sometimes changed depending on which scientists had been working there.
   entailment:
-    label: neutral
-    score: 0.99
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 22f5c776-446a-4776-a5bc-8678d2908fe5
   type: hearsay
   speaker:
@@ -1401,10 +1407,10 @@ domain_claims:
   text: |-
     Tests on the Merivalja object suggested the material had cooled off without gravity effects, meaning it may have been produced in space or in an environment excluding gravitational effects.
   entailment:
-    label: neutral
-    score: 0.994
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.931
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2863378d-2e34-422c-81a1-f6564a8b8efd
   type: measurement
   attestation: first_hand
@@ -1544,10 +1550,10 @@ domain_claims:
   text: |-
     Tests on the Merivalja object conducted between 2012 and 2017 showed completely different results from the earlier 1980s tests, and the research team leaders said they could no longer be sure they were testing the original pieces.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 89abbca9-b81d-4752-b367-a323de5bcffc
   type: administrative
   speaker:
@@ -1617,10 +1623,10 @@ domain_claims:
   text: |-
     Mart Sander recently found an interview in which it was claimed for the first time that the Committee for State Security (KGB) suspected the structure beneath the Merivalja house housed two dead occupants.
   entailment:
-    label: neutral
-    score: 0.994
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.523
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2a94bad-a4af-4c55-8453-2ec7ed690507
   type: opinion
   attestation: first_hand
@@ -1810,10 +1816,10 @@ domain_claims:
   text: |-
     Alexander Deyev's fall from grace within the Soviet establishment was spectacular, involving being disgraced and ridiculed at the highest level of the Soviets.
   entailment:
-    label: neutral
-    score: 0.756
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c4924817-d9ea-45c2-b865-b4c81e5e0ecc
   type: hearsay
   attestation: second_hand
@@ -1886,9 +1892,9 @@ domain_claims:
     Mart Sander thinks Alexander Deyev was genuinely interested in mysteries such as the Merivalja object and was really trying to get to the bottom of them, but also thinks Deyev was a fantasist.
   entailment:
     label: neutral
-    score: 0.992
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.771
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f4e47190-8ed1-4b64-8cd5-58ffe8bf9baa
   type: hearsay
   attestation: second_hand
@@ -2036,10 +2042,10 @@ domain_claims:
   text: |-
     The 1561 Nuremberg celestial phenomenon woodcut shows what appears to be a battle, including craft being shot down and smoking.
   entailment:
-    label: neutral
-    score: 0.924
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4efd441f-851e-42d1-835b-09e0f03b0611
   type: opinion
   attestation: first_hand
@@ -2126,10 +2132,10 @@ domain_claims:
   text: |-
     There is a theory that the Merivalja object was able to land itself relatively softly, which would explain claims of two dead occupants in the craft.
   entailment:
-    label: neutral
-    score: 0.672
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 793af556-5405-492f-8c3f-d09be9b52093
   type: administrative
   attestation: first_hand
@@ -2295,10 +2301,10 @@ domain_claims:
   text: |-
     One of Alexander Deyev's D field generators was reportedly tested by the Estonian Academy of Sciences and found to be inoperative and useless.
   entailment:
-    label: neutral
-    score: 0.971
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.414
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: eb6ad3d8-3480-4e36-980b-1760d47e7de5
   type: testimony
   attestation: first_hand
@@ -2373,10 +2379,10 @@ domain_claims:
   text: |-
     Mart Sander did not find any of Alexander Deyev's equipment when he visited the Merivalja house, as it had all been removed.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 05fa650c-a33a-4dd8-b40e-2d847b0dd943
   type: observation
   attestation: first_hand
@@ -2397,9 +2403,9 @@ domain_claims:
     Mart Sander saw that the gardens of the Merivalja house looked like a closed mine shaft, devastated from the owner's point of view.
   entailment:
     label: neutral
-    score: 0.989
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.947
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5df457d3-02a8-4c7a-9e6d-1f3eedfd4756
   type: administrative
   attestation: second_hand
@@ -2578,10 +2584,10 @@ domain_claims:
   text: |-
     The impressions Linus Kordes revealed about the Merivalja object were very much in line with what Alexander Deyev previously said.
   entailment:
-    label: neutral
-    score: 0.993
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d17100b7-4532-4984-a3fd-c77977bd9dc5
   type: administrative
   attestation: first_hand
@@ -2602,10 +2608,10 @@ domain_claims:
   text: |-
     Linus Kordes does not speak Russian and had no prior knowledge of the Merivalja object.
   entailment:
-    label: neutral
-    score: 0.993
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1473db10-ef4f-45ab-977d-d8c7d93ea8ce
   type: hearsay
   attestation: second_hand
@@ -3061,10 +3067,10 @@ domain_claims:
   text: |-
     The plan to purchase the Merivalja house and neighbouring lots induced panic among residents, some of whom remembered the Soviet deportations of the 1940s.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.644
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6b30218c-18fa-4631-8513-e03653396933
   type: hearsay
   speaker:
@@ -3104,9 +3110,9 @@ domain_claims:
     The Committee for State Security (KGB) spent years investigating the Merivalja object and spent an enormous amount of money on it.
   entailment:
     label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.547
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2724dc03-7435-4157-b021-49549b0a63e4
   type: opinion
   attestation: first_hand
@@ -3235,10 +3241,10 @@ domain_claims:
   text: |-
     Mart Sander is a filmmaker and plans to translate the Merivalja object story to the screen.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.645
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2c514d04-041d-4358-83fc-0b028cb086a2
   type: opinion
   attestation: first_hand
@@ -3747,10 +3753,10 @@ domain_claims:
   text: |-
     Mart Sander believes the final closing date of the Merivalja shaft was 1988, after Alexander Deyev was forced to leave.
   entailment:
-    label: neutral
+    label: entails
     score: 0.997
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f9529b98-e466-42ff-818b-7fe1cc9cc722
   type: administrative
   attestation: first_hand
@@ -3901,10 +3907,10 @@ domain_claims:
   text: |-
     Mart Sander is confident that there is something present at the Merivalja object site, and even hardened sceptics have confirmed this.
   entailment:
-    label: neutral
-    score: 0.992
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 161105ba-5578-4ae1-9ff7-def05f93dc0d
   type: opinion
   attestation: first_hand
@@ -3974,10 +3980,10 @@ domain_claims:
   text: |-
     Asahi TV, the biggest television network in Japan, reportedly turned up and paid an enormous amount of money for access to the Merivalja garden.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.551
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad6f30d3-9d42-4295-8126-f2d279b67d48
   type: testimony
   speaker:
@@ -3997,10 +4003,10 @@ domain_claims:
   text: |-
     The 1991 Japanese team conducted ground-penetrating radar searches of the Merivalja garden, which were photographed and filmed on video.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 395a83e8-0b89-45b7-823d-601588be4394
   type: testimony
   speaker:
@@ -4041,10 +4047,10 @@ domain_claims:
   text: |-
     Mart Sander has not gained access to the materials or report produced from the 1991 Japanese investigation of the Merivalja garden.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.613
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b7d3f788-1bba-4153-b94a-b7894d2ada15
   type: hearsay
   attestation: second_hand
@@ -4342,10 +4348,10 @@ domain_claims:
   text: |-
     Alexander Deyev took over a large electronics factory in Estonia to manufacture his own devices, which were later completely discredited.
   entailment:
-    label: neutral
-    score: 0.984
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.58
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f34920fb-13a9-4ee1-9e73-854a4ff60a36
   type: testimony
   attestation: first_hand
@@ -4586,10 +4592,10 @@ domain_claims:
   text: |-
     Mart Sander considers it established beyond doubt that something of great interest is present at the Merivalja object site, regardless of politics or nationality.
   entailment:
-    label: neutral
+    label: entails
     score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 106bbddf-8833-414e-84f8-4bf50bc75da0
   type: opinion
   attestation: first_hand

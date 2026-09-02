@@ -16,6 +16,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 3.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.5
 prompts:
 - pass: nodes
   id: nodes
@@ -163,10 +169,10 @@ domain_claims:
   text: |-
     Walter M. Schirra Jr. observed that a white object appeared to move toward him but did not actually do so, during the Mercury-Atlas 8 mission (Sigma 7).
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 63f2ee44-8181-4767-b645-20105de21023
   type: observation
   attestation: first_hand
@@ -242,10 +248,10 @@ domain_claims:
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), Walter M. Schirra Jr. was almost inverted at that point in the flight, with his nose above the horizon.
   entailment:
-    label: neutral
-    score: 0.997
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2f716739-1e57-4542-9854-e586bc33651a
   type: observation
   attestation: first_hand

@@ -21,6 +21,12 @@ ai_usage:
 - stage: check
   model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
   duration_s: 18.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 0.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 20.3
 prompts:
 - pass: nodes
   id: nodes
@@ -265,10 +271,10 @@ domain_claims:
   text: |-
     A drawing associated with an abduction case in Canada depicted a figure with eyes that wrapped around the side of its head.
   entailment:
-    label: neutral
-    score: 0.996
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b89acaf-87c3-426b-a5de-826e7f42b416
   type: opinion
   attestation: first_hand
@@ -778,10 +784,10 @@ domain_claims:
     I've never gotten involved in doing past life hypnosis. I take my mysteries one at a time.
   text: Budd Hopkins has never conducted past-life hypnosis regression with abductees.
   entailment:
-    label: neutral
+    label: entails
     score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ae47f467-2e80-478f-981f-55d62a9b5232
   type: hearsay
   attestation: second_hand
@@ -970,9 +976,9 @@ domain_claims:
     A man told Budd Hopkins that something had been inserted up his nose during an abduction at age five, causing his nose to bleed.
   entailment:
     label: neutral
-    score: 0.988
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 73f81662-0c6f-4e98-82ab-24bae448e7bb
   type: observation
   attestation: first_hand
@@ -1017,10 +1023,10 @@ domain_claims:
   text: |-
     The man recounted details of his abduction that matched material in Budd Hopkins's book Intruders that had not been printed in that book.
   entailment:
-    label: neutral
-    score: 0.999
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 985db0be-25d5-4984-a678-22e239a98853
   type: testimony
   attestation: first_hand
@@ -1202,10 +1208,10 @@ domain_claims:
   text: |-
     There appear to have been other abductions within the Brooklyn abductee's family, though this has not been thoroughly explored.
   entailment:
-    label: neutral
-    score: 0.996
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.736
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 29c2b5f0-4acb-435a-a116-f88152288e84
   type: testimony
   attestation: first_hand
@@ -1270,10 +1276,10 @@ domain_claims:
   text: |-
     The chemist abductee recalled that his body would not respond to his will during the abduction, being unable even to raise his arm to his face.
   entailment:
-    label: neutral
-    score: 0.651
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.776
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0b8ca185-8b4f-4289-9a49-5564a0e997bb
   type: testimony
   attestation: first_hand
@@ -1293,10 +1299,10 @@ domain_claims:
   text: |-
     The chemist abductee described feeling an absolute, bottomless terror because every familiar thing - his surroundings, his fellow man, and his ability to move his arm - had been taken from him with nothing to relate the experience to.
   entailment:
-    label: neutral
-    score: 0.937
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.636
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c732f092-27cb-42e4-b52f-4d1beee3ef65
   type: testimony
   attestation: first_hand
@@ -1362,10 +1368,10 @@ domain_claims:
   text: |-
     Budd Hopkins uses the term "skeleton key effect" to describe how a person's realisation that they have had abduction experiences can unlock previously unexplained strange behaviours, fears, or phobias in that person's life.
   entailment:
-    label: neutral
-    score: 0.998
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 19377a0b-93c7-4f29-aa4e-0f68eb6c7546
   type: testimony
   attestation: first_hand
@@ -1438,9 +1444,9 @@ domain_claims:
     An abductee who worked with Budd Hopkins developed a lifelong fear of black widow spiders after, as a five-year-old, waking in the night to see a spider's nest with two black widow spiders in the corner of his bedroom window.
   entailment:
     label: neutral
-    score: 0.992
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    score: 0.766
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8d5c57c6-f1b8-4a68-a097-4937224b5eab
   type: hearsay
   attestation: second_hand
@@ -1524,10 +1530,10 @@ domain_claims:
   text: |-
     From the night he saw the black widow spider's nest, the abductee developed a lasting fear of black widow spiders and would go out for years searching for them, killing them with stones when he found them.
   entailment:
-    label: neutral
-    score: 0.792
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4d343a13-471d-42e8-9cea-6da2f9c61f5b
   type: hearsay
   attestation: second_hand
@@ -1722,10 +1728,10 @@ domain_claims:
   text: |-
     Budd Hopkins considers such incongruous childhood remarks and behaviours, which he calls a 'skeleton key effect', to be usually much more profound in other cases than the light examples he described.
   entailment:
-    label: neutral
-    score: 0.963
-    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-    premise: quote
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56096fc1-c632-49f6-9f2f-e526bcef7643
   type: opinion
   attestation: first_hand
