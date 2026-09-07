@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.9
 prompts:
 - pass: nodes
   id: nodes
@@ -99,6 +105,11 @@ domain_claims:
     some guy up, I got the letters, paperwork somewhere... he said, airport is seeing flashes in a spacecraft. At night with their eyes closed.
   text: |-
     During the Apollo 12 mission, astronauts on earlier spaceflights reported seeing light flashes in the spacecraft at night when their eyes were closed.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0ef44c14-387c-4e8d-aac0-c53d2deb35df
   type: hearsay
   attestation: second_hand
@@ -115,6 +126,11 @@ domain_claims:
     that's a perfectly known phenomenon. You can get discharge across your eye from gamma rays or something.
   text: |-
     The light-flash phenomenon experienced by astronauts was described by an unnamed source as a known effect of discharge across the eye caused by gamma rays or cosmic particles.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 35c7d031-2389-4d2b-adc5-b4c2cf10ea7a
   type: administrative
   attestation: first_hand
@@ -134,6 +150,11 @@ domain_claims:
   quote: Two phenomena that came out of a letter. Buzz Neal talked about this.
   text: |-
     Buzz Neal discussed two phenomena related to the astronaut light flash phenomenon in a letter.
+  entailment:
+    label: neutral
+    score: 0.904
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e2194c84-5594-468a-994b-e9e98232c9d9
   type: testimony
   attestation: first_hand
@@ -156,6 +177,11 @@ domain_claims:
   quote: we were asked to specifically experiment with this.
   text: |-
     During Apollo 12, Charles Conrad and other crew members were specifically asked to experiment with observing the astronaut light flash phenomenon.
+  entailment:
+    label: contradicts
+    score: 0.666
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7144dfe1-8312-4036-8590-b3f33dc0e62d
   type: observation
   attestation: first_hand
@@ -175,6 +201,11 @@ domain_claims:
   quote: We had two kinds... And we get either a flag like that or we get a streak.
   text: |-
     Charles Conrad observed two distinct types of light flashes during the astronaut light flash phenomenon: a flash-like shape and a streak.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed51ce41-1af4-4222-b7e3-362761bb1e34
   type: observation
   attestation: first_hand
@@ -195,6 +226,11 @@ domain_claims:
     I, for some reason, got more with my left eye than my right eye, but I could tell which eye it was when I was concentrating on it.
   text: |-
     Charles Conrad perceived more instances of the light flash phenomenon in his left eye than in his right eye.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 66337d8e-d899-45bf-acdb-9bd62f1fb57b
   type: opinion
   provenance_chain:
@@ -211,6 +247,11 @@ domain_claims:
     I'm trying to tell him the reason he did is because his, where he slept, was always on the left side of the spacecraft.
   text: |-
     Charles Conrad's sleeping position was on the left side of the spacecraft during Apollo 12, which was suggested as the reason he perceived more light flashes in his left eye.
+  entailment:
+    label: entails
+    score: 0.419
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fee65f9b-0280-4cfe-94c1-15f63b6baf36
   type: administrative
   provenance_chain:
@@ -224,6 +265,11 @@ domain_claims:
     we started at clear back and mercury Taking photographs of the redness see if you could see his freaks across the retina stuff. We never could find any in there
   text: |-
     During earlier crewed lunar missions, NASA took photographs of astronauts' retinas to check for evidence of cosmic ray strikes but found none.
+  entailment:
+    label: entails
+    score: 0.409
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5d4cb6a-b887-4eda-8c78-4d3bd60ae2a7
   type: observation
   attestation: first_hand
@@ -244,6 +290,11 @@ domain_claims:
     I saw one night, I was looking at the MVP, a handrail up above, and one right right along, I don't know where it went, it's here, you know, right straight along that handrail for about that distance.
   text: |-
     Charles Conrad observed a light flash travel along a handrail above the MVP for a short distance while looking directly at that spot.
+  entailment:
+    label: entails
+    score: 0.524
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2d86fd5d-f03e-4c1a-8625-53a03c9c4d1a
   type: observation
   attestation: first_hand
@@ -263,6 +314,11 @@ domain_claims:
   quote: The streets I saw were horizontal.
   text: |-
     Charles Conrad observed that the light streaks he saw during the astronaut light flash phenomenon were horizontal in orientation.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a00086be-7251-44b5-8c50-119410b44a2d
   type: observation
   attestation: first_hand
@@ -283,6 +339,11 @@ domain_claims:
     Mine, it seemed to me I had the impression that they were always roughly in the same place and mine were horizontal... it always seemed like the horizontal street was a little bit above the center. And it always seemed to me it went from right to left.
   text: |-
     Charles Conrad had the impression that the horizontal light streaks he observed always appeared roughly in the same place, slightly above centre of his field of view, and moved from right to left.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2ce9de79-1ef4-4704-8956-e15cc1c43233
   type: measurement
   attestation: first_hand
@@ -302,3 +363,8 @@ domain_claims:
   quote: Yeah, I remember right about 30 degrees of horizontal when they were coming.
   text: |-
     Charles Conrad recalled that the light streaks he observed appeared at roughly 30 degrees from horizontal.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

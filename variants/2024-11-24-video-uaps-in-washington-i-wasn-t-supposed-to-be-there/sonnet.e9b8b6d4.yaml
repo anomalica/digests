@@ -15,6 +15,12 @@ ai_usage:
     calls: 3
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.8
 prompts:
 - pass: nodes
   id: nodes
@@ -188,6 +194,11 @@ domain_claims:
   quote: Of the 366 sightings included in the report, 171 remain uncharacterized.
   text: |-
     According to a report on Unidentified Aerial Phenomena (UAP), 366 sightings were included, of which 171 remain uncharacterised.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2c6ab0f-f671-4119-927f-d17eb1a60d7c
   type: opinion
   provenance_chain:
@@ -204,6 +215,11 @@ domain_claims:
     And many high-ranking individuals in the military and intelligence communities believe UAPs demand greater attention.
   text: |-
     Many high-ranking individuals in the military and intelligence communities believe Unidentified Aerial Phenomena (UAP) demand greater attention.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8ae92692-3bd9-4069-a995-4810989e11bb
   type: administrative
   provenance_chain:
@@ -223,6 +239,11 @@ domain_claims:
     What you are looking at right now is the second congressional hearing on UAPs in Washington, D.C.
   text: |-
     The 2024 United States congressional hearing on UAPs (13 November) was the second congressional hearing on Unidentified Aerial Phenomena held in Washington, D.C.
+  entailment:
+    label: contradicts
+    score: 0.952
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e160bb2e-5b7b-4dd9-8448-00a315ebd421
   type: administrative
   attestation: first_hand
@@ -242,6 +263,11 @@ domain_claims:
   quote: |-
     Ever since I got back from the Monroe Institute, take this as you will, but 11-11 has been showing up once a day at least
   text: Jesse Michaels attended the Monroe Institute prior to 2024-11-13.
+  entailment:
+    label: entails
+    score: 0.894
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 15c71d5f-8a66-46ad-b0b5-97a205b0f38a
   type: administrative
   attestation: first_hand
@@ -265,6 +291,11 @@ domain_claims:
     David Grush, UFO whistleblower, who testified before Congress last year, summer of last year.
   text: |-
     David Grush testified before the United States Congress in the summer of 2023 as a UFO whistleblower.
+  entailment:
+    label: contradicts
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e1c9265b-8bec-4d7b-b00c-76b556ae65ae
   type: hearsay
   attestation: second_hand
@@ -289,6 +320,11 @@ domain_claims:
     He made some pretty crazy claims, which is that the US has been engaging in covert reverse engineering UFO programs for the last 70, 80 years.
   text: |-
     The United States government has been conducting covert reverse-engineering programs on Unidentified Flying Objects (UFO) for approximately 70 to 80 years.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 90ce761a-ba46-4dd9-b0e1-74f62ab41eb2
   type: administrative
   attestation: first_hand
@@ -307,6 +343,11 @@ domain_claims:
     And not just that it got taken down and then you got a strike on your channel, which is like yeah That feels like that's so extreme.
   text: |-
     Jesse Michaels's YouTube channel received a strike after the video featuring David Grush was taken down.
+  entailment:
+    label: neutral
+    score: 0.703
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0b98d3b5-f7bf-4024-b3ce-c48c82d4531c
   type: administrative
   attestation: first_hand
@@ -330,6 +371,11 @@ domain_claims:
     we are at rayburn house office building where the uh the oversight committee hearing is going to happen on uap and ufos
   text: |-
     The 2024 United States congressional hearing on UAPs (13 November) was held at the Rayburn House Office Building, hosted by the Oversight Committee.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c814924c-1084-41ba-b02b-682e7133ddf8
   type: administrative
   attestation: first_hand
@@ -351,6 +397,11 @@ domain_claims:
     the last one happened july 26th 2023 it is november 13th 2024 so about a year and a half has passed
   text: |-
     The 2023 United States congressional hearing on UAPs occurred on 2023-07-26, about a year and a half before the 2024 United States congressional hearing on UAPs (13 November).
+  entailment:
+    label: entails
+    score: 0.897
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c61dd28a-c34a-432c-81c5-c13c80db05b7
   type: opinion
   attestation: first_hand
@@ -373,6 +424,11 @@ domain_claims:
     some big big changes in public perception and even public interest the topic seems to be a lot more in the zeitgeist
   text: |-
     Public perception and public interest in the Unidentified Aerial Phenomena (UAP) topic increased significantly between the 2023 United States congressional hearing on UAPs (26 July) and the 2024 United States congressional hearing on UAPs (13 November).
+  entailment:
+    label: entails
+    score: 0.641
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fbdf8369-9b0a-4ab9-a59d-f55dd498f988
   type: administrative
   provenance_chain:
@@ -387,6 +443,11 @@ domain_claims:
   quote: Are these private companies you're implying or is this non-human intelligence?
   text: |-
     Congress members were asked at the 2024 United States congressional hearing on UAPs (13 November) whether the technology involved is from private companies or represents non-human intelligence.
+  entailment:
+    label: entails
+    score: 0.446
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b7d6fc21-ad50-4530-addf-0f96f90a7b57
   type: testimony
   attestation: first_hand
@@ -407,6 +468,11 @@ domain_claims:
   quote: When it comes to Blue Force technologies, I would not be able to discuss.
   text: |-
     Lou Elizondo declined to discuss what he termed "Blue Force technologies" at the 2024 United States congressional hearing on UAPs (13 November).
+  entailment:
+    label: contradicts
+    score: 0.679
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 868a66f3-fc9f-42b0-9ad3-f89daf84c588
   type: testimony
   attestation: first_hand
@@ -426,6 +492,11 @@ domain_claims:
     I signed documentation three years ago that restricts my ability to discuss specifically crash retrievals.
   text: |-
     Lou Elizondo signed documentation approximately three years before the 2024 United States congressional hearing on UAPs (13 November) that restricts his ability to discuss UAP crash retrievals specifically.
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 32bd3a63-dcd6-45c1-96ba-327374d66b61
   type: testimony
   attestation: first_hand
@@ -444,6 +515,11 @@ domain_claims:
     I submitted for my book through the Dobson process, which took a year for it to be reviewed.
   text: |-
     Lou Elizondo submitted his book for review through what he called the "Dobson process", which took a year to complete.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1682029b-e987-431b-acc6-0876d4ba78b0
   type: testimony
   attestation: first_hand
@@ -465,6 +541,11 @@ domain_claims:
     Has the government conducted secret UAP crash retrieval programs, yes or no? ... Yes.
   text: |-
     The United States government has conducted secret Unidentified Aerial Phenomena (UAP) crash retrieval programs.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b434f355-e2cb-483a-b910-110502c2c241
   type: testimony
   attestation: first_hand
@@ -483,6 +564,11 @@ domain_claims:
   quote: Were they designed to identify and reverse engineer alien craft, yes or no? Yes.
   text: |-
     Secret UAP crash retrieval programs were designed to identify and reverse engineer alien craft.
+  entailment:
+    label: entails
+    score: 0.505
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: af0f5022-c6b7-4c09-afa8-fa0b9e6fb58e
   type: testimony
   attestation: first_hand
@@ -508,6 +594,11 @@ domain_claims:
     the U.S. military and intelligence community are sitting on a huge amount of visual and other information, still photos, video photos, other sensor information, and they have for a very long time.
   text: |-
     The United States military and intelligence community possess a large amount of visual and other sensor information on Unidentified Aerial Phenomena (UAP), including still photos, video, and other sensor data, which they have held for a long time.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2f7ed36a-08a8-4bfa-a3f9-d470975b3ecd
   type: testimony
   attestation: first_hand
@@ -528,6 +619,11 @@ domain_claims:
     And it's not those fuzzy photos and videos that we've been given those very clear... High resolution.
   text: |-
     Some of the visual material held by the United States military and intelligence community on Unidentified Aerial Phenomena (UAP) is high resolution, unlike previously released blurry footage.
+  entailment:
+    label: entails
+    score: 0.701
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d0adec43-6124-4d70-9358-e18967fb910d
   type: hearsay
   attestation: second_hand
@@ -550,6 +646,11 @@ domain_claims:
     How many, how many visuals, graphics, videos, photos? ... I mean, I've been told hundreds, you know, maybe thousands.
   text: |-
     David Grush has been told there are hundreds, possibly thousands, of visuals, graphics, videos and photos of Unidentified Aerial Phenomena (UAP) held by the government.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aac17227-c68e-4bd7-84c6-db38d114f85f
   type: testimony
   attestation: first_hand
@@ -573,6 +674,11 @@ domain_claims:
     Mr. Elizondo, in regards to these aircraft being piloted by whatever they might be non-human biologics, are you, would you agree that it's likely that they are being piloted by some mind-body connection?
   text: |-
     Anna Paulina Luna asked Lou Elizondo at the 2024 United States congressional hearing on UAPs (13 November) whether it is likely that non-human biologics piloting aircraft are connected via a mind-body connection.
+  entailment:
+    label: contradicts
+    score: 0.398
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 77a8b4f7-07f3-4513-a8db-c239c8f80993
   type: opinion
   attestation: first_hand
@@ -592,6 +698,11 @@ domain_claims:
     Ma'am, I think it is safe to presume here that they are being intelligently controlled because some cases seem to anticipate our maneuvers
   text: |-
     Lou Elizondo considers it safe to presume that unidentified aircraft observed by the United States are being intelligently controlled, because in some cases they appear to anticipate military manoeuvres.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c19af01-7d28-44ea-ac6e-30b86136da4a
   type: testimony
   attestation: second_hand
@@ -611,6 +722,11 @@ domain_claims:
   quote: And I came across an email where the word stalked was used.
   text: |-
     Lou Elizondo came across an email in which the word "stalked" was used in relation to unidentified aircraft anticipating manoeuvres.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 282d7b37-246f-4a3a-b47f-c3903ea38983
   type: hearsay
   attestation: second_hand
@@ -639,6 +755,11 @@ domain_claims:
     there are rumors that have come up to the Hill of a secretive project within the Department of Defense involving the manipulation of human genetics. with what is described as non-human genetic material, potentially for the enhancement of human capabilities, hybrids.
   text: |-
     Lauren Boebert stated that rumours have reached the United States Congress of a secretive Department of Defense (DoD) project involving the manipulation of human genetics with non-human genetic material, potentially to enhance human capabilities via hybrids.
+  entailment:
+    label: entails
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 419ef8d3-faff-4abe-9999-c7506496fd69
   type: testimony
   attestation: first_hand
@@ -663,6 +784,11 @@ domain_claims:
   quote: Are any of you familiar with that? Yes or no? ... No, ma'am. I am not, ma'am.
   text: |-
     David Grush denied being familiar with the rumoured Department of Defense (DoD) human-genetic hybridisation programme when asked by Lauren Boebert at the 2024 United States congressional hearing on UAPs (13 November).
+  entailment:
+    label: entails
+    score: 0.922
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: eb204f81-feac-452c-87d8-566d5d0c20ba
   type: hearsay
   provenance_chain:
@@ -682,6 +808,11 @@ domain_claims:
     the folks in Congress apparently received the Immaculate Constellation docs. minutes before the hearing, so they did not have time to review it.
   text: |-
     Members of the United States Congress received the Immaculate Constellation document only minutes before the 2024 United States congressional hearing on UAPs (13 November), leaving them no time to review it.
+  entailment:
+    label: entails
+    score: 0.48
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fd85e1d8-7d79-41bb-8a35-5906aaa2a001
   type: observation
   provenance_chain:
@@ -695,6 +826,11 @@ domain_claims:
   quote: there's nothing in here that talks about hybridization.
   text: |-
     The Immaculate Constellation document does not contain any content about hybridisation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7a55f1bb-13ee-4bd9-ada3-f7bc1bb8b5a5
   type: administrative
   provenance_chain:
@@ -714,6 +850,11 @@ domain_claims:
     Lou was also asked about Lockheed Martin's involvement with underwater projects and it got very dicey, very cagey, very quickly.
   text: |-
     Lou Elizondo was asked at the 2024 United States congressional hearing on UAPs (13 November) about Lockheed Martin's involvement with underwater projects.
+  entailment:
+    label: neutral
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5bfa7c5a-94f3-4d41-bc2d-73da263197dd
   type: testimony
   attestation: first_hand
@@ -736,6 +877,11 @@ domain_claims:
   quote: They wouldn't do submerged. ... No, I didn't say that, ma'am.
   text: |-
     Lou Elizondo denied stating that Lockheed Martin would not conduct submerged operations, when asked about the company's expertise at the 2024 United States congressional hearing on UAPs (13 November).
+  entailment:
+    label: neutral
+    score: 0.522
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b969403-6bc7-423f-8b1a-3812c3277b22
   type: testimony
   provenance_chain:
@@ -752,6 +898,11 @@ domain_claims:
   quote: What's Lockheed's expertise? Aerospace, ma'am. In the UAP space, that's all.
   text: |-
     Lockheed Martin's stated expertise is in aerospace, within the Unidentified Aerial Phenomena (UAP) space.
+  entailment:
+    label: entails
+    score: 0.517
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e2cf8310-e1af-4ac5-9688-16d3a5aa30ea
   type: testimony
   provenance_chain:
@@ -773,6 +924,11 @@ domain_claims:
     I was backstage with people like Ryan Graves and Lou Elizondo and the people in Congress in a small room.
   text: |-
     During the 2024 United States congressional hearing on UAPs (13 November), the narrator gained backstage access alongside Ryan Graves, Lou Elizondo, and members of Congress, while the public entered through the front doors.
+  entailment:
+    label: entails
+    score: 0.521
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bfbbf7a2-6be8-4207-bb9d-5dce65d68c23
   type: opinion
   attestation: first_hand
@@ -795,6 +951,11 @@ domain_claims:
     Jesse's the most important voice in the UFO domain right now. There's nobody that researches deeper than him. There's nobody that has the multidisciplinary approach that he has.
   text: |-
     Sean considers Jesse Michaels to be the most important voice in the UFO domain, describing him as more thorough in research and more multidisciplinary than others in the field.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dc14e454-5ecf-4733-a20e-2cb5183180a4
   type: administrative
   provenance_chain:
@@ -809,6 +970,11 @@ domain_claims:
     name: All-Domain Anomaly Resolution Office (AARO)
   quote: there was the Senate hearing on UAP featuring the head of Arrow, Dr. Kozlowski.
   text: Kozlowski is the head of the All-Domain Anomaly Resolution Office (AARO).
+  entailment:
+    label: contradicts
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6e9f2c24-34a4-41b0-bc71-5d42810f1f61
   type: administrative
   provenance_chain:
@@ -827,6 +993,11 @@ domain_claims:
     You know, several days later, there was the Senate hearing on UAP featuring the head of Arrow, Dr. Kozlowski.
   text: |-
     The 2024 United States Senate hearing on UAP took place several days after the 2024 United States congressional hearing on UAPs (13 November) and featured Kozlowski.
+  entailment:
+    label: entails
+    score: 0.614
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6eacf0bf-bf31-46b9-b9bc-370d3c8d7e69
   type: opinion
   attestation: first_hand
@@ -841,6 +1012,11 @@ domain_claims:
   quote: A bunch of nothing there, to be honest.
   text: |-
     The narrator considers the 2024 United States Senate hearing on UAP to have contained essentially nothing of substance.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: cf612484-5e94-4abf-a050-0423980b995e
   type: administrative
@@ -860,6 +1036,11 @@ infrastructure_claims:
     You may know him for his channel, American Alchemy, where he dives into the UAP subject like nobody else.
   text: |-
     Jesse Michaels runs a channel called American Alchemy, in which he covers the Unidentified Aerial Phenomena (UAP) subject.
+  entailment:
+    label: entails
+    score: 0.513
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cd717437-8c2b-4e77-a4a4-ea6fa2cbdbda
   type: administrative
   attestation: first_hand
@@ -883,6 +1064,11 @@ infrastructure_claims:
   quote: |-
     Yeah, so I made a video with Amar and Sean over here and David Grush, UFO whistleblower, who testified before Congress last year, summer of last year.
   text: Jesse Michaels made a video with Amar, Sean, and David Grush.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0d1825d1-8293-4c55-801a-3ab5537f4fbb
   type: administrative
   attestation: first_hand
@@ -907,3 +1093,8 @@ infrastructure_claims:
     It was unsearchable if you searched his name, but you couldn't find it on YouTube... Couldn't find it and we realized that it got taken down
   text: |-
     A video made by Jesse Michaels, Amar, Sean, and David Grush was removed from YouTube after initially performing well.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

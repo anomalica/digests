@@ -9,6 +9,12 @@ ai_usage:
     output: 31765
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.6
 prompts:
 - pass: nodes
   id: nodes
@@ -106,6 +112,11 @@ domain_claims:
     Earlier in the flight, you'll recall, at the start of the second revolution, we had a reference to several objects that the crew spotted. This was in the area of Antigua.
   text: |-
     During Gemini VII's second revolution, the crew spotted several unidentified objects in the area of Antigua and Barbuda, Antigua.
+  entailment:
+    label: contradicts
+    score: 0.629
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 49d28998-c4ab-493b-9ab7-45468f1c4e62
   type: observation
   attestation: second_hand
@@ -128,6 +139,11 @@ domain_claims:
     It contains references to sighting not only some particles, but as well as an unidentified object, plus the booster.
   text: |-
     The audio recording from Gemini VII contains references to crew observations of the Agena booster, numerous particles, and an unidentified object.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 977acbca-09a5-4865-847e-dff319d3312d
   type: observation
   attestation: first_hand
@@ -152,6 +168,11 @@ domain_claims:
   quote: We have a bogey at 10 o'clock high.
   text: |-
     Frank Borman observed an unidentified object at the 10 o'clock high position relative to Gemini VII.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 45ad64a4-fda3-4de5-9b51-e64aea5838b2
   type: observation
   attestation: first_hand
@@ -173,6 +194,11 @@ domain_claims:
     name: Gemini VII object sightings
   quote: We have several, looks like debris up here, actual sighting.
   text: Frank Borman observed several objects resembling debris during Gemini VII.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 03b5143a-1a13-432b-bd7d-ba497adf6234
   type: observation
   attestation: first_hand
@@ -196,6 +222,11 @@ domain_claims:
     name: Gemini VII object sightings
   quote: We also have the booster in sight.
   text: Frank Borman observed the Agena booster during Gemini VII.
+  entailment:
+    label: neutral
+    score: 0.66
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2daa6df7-5c21-4c1d-beb2-e4750de76d45
   type: measurement
   attestation: first_hand
@@ -219,6 +250,11 @@ domain_claims:
     We have very, very many it looks like hundreds of little particles going by from the left out about three to four miles.
   text: |-
     Frank Borman observed hundreds of small particles passing from the left at a distance of approximately 4.8 to 6.4 kilometres during Gemini VII.
+  entailment:
+    label: neutral
+    score: 0.537
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3dce6149-f758-4f3a-babd-2e2d0c27284c
   type: observation
   attestation: first_hand
@@ -241,6 +277,11 @@ domain_claims:
   quote: Looks like a perhaps a vehicle that's disintegrated.
   text: |-
     Frank Borman observed what appeared to be a disintegrated vehicle during Gemini VII.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e73bfcd7-18ad-41de-9475-7253dca362f1
   type: observation
   attestation: first_hand
@@ -266,6 +307,11 @@ domain_claims:
     I have the uh booster on my side there's a brilliant body of the sun [inaudible] back uh black background with various particles around it.
   text: |-
     Jim Lovell observed the Agena booster on his side of Gemini VII appearing as a brilliant body against the sun with a black background and various particles around it.
+  entailment:
+    label: entails
+    score: 0.672
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 732bee3b-4cec-4718-b4cb-ef695148c0ee
   type: observation
   attestation: first_hand
@@ -290,6 +336,11 @@ domain_claims:
   quote: It's about at my 2 o'clock position.
   text: |-
     Jim Lovell observed the Agena booster at the 2 o'clock position relative to Gemini VII.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83eb5844-38dc-46bf-9a09-73798feec8d8
   type: observation
   attestation: first_hand
@@ -314,6 +365,11 @@ domain_claims:
   quote: It's ahead of us at 2 o'clock, slowly tumbling.
   text: |-
     Jim Lovell observed the Agena booster ahead of Gemini VII at the 2 o'clock position, slowly tumbling.
+  entailment:
+    label: entails
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 82fbb7a7-a4c1-4863-af9e-00d0e2ac23f4
   type: opinion
   attestation: second_hand
@@ -332,6 +388,11 @@ domain_claims:
     This is the unidentified object in addition to particles which appear to be headed in a polar orbit, you heard Frank Borman say
   text: |-
     According to Gemini Control, particles observed during Gemini VII appeared to be headed in a polar orbit.
+  entailment:
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5d0bc2d1-4100-4302-8767-a83d9e8df131
   type: administrative
   attestation: second_hand
@@ -351,3 +412,8 @@ domain_claims:
   quote: This is Gemini-controlled Houston at four hours, 24 minutes into the flight.
   text: |-
     The radio communications between Gemini VII crew and NASA Mission Control in Houston regarding observations of unidentified objects and the Agena booster were transmitted at approximately four hours and 24 minutes into the mission.
+  entailment:
+    label: entails
+    score: 0.654
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

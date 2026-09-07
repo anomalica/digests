@@ -11,6 +11,12 @@ ai_usage:
     output: 14783
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.4
 prompts:
 - pass: nodes
   id: nodes
@@ -102,6 +108,11 @@ domain_claims:
     And I'm beginning to get the brilliant blue of sun rising in the east. Bright blue band underneath all this haze layer. I can see the haze layer.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. observed a brilliant blue band of light at sunrise in the east, with a haze layer visible beneath it.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1246da9d-31e7-462f-bb45-4c317c209ce9
   type: observation
   attestation: first_hand
@@ -123,6 +134,11 @@ domain_claims:
     These small luminescent particles drift away from you. Small in forward. In this light they appear brilliant white without seeing it all in them.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. observed small luminescent particles drifting away from the spacecraft that appeared brilliant white.
+  entailment:
+    label: entails
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 81fbc5c9-9e2c-4d8f-9166-182a0a0c92bd
   type: observation
   attestation: first_hand
@@ -144,6 +160,11 @@ domain_claims:
     Roger, you haven't seen the beacon at this time? Negative, I still haven't seen the beacon.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. had not seen the recovery beacon by that point in the mission.
+  entailment:
+    label: neutral
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a9a25fcf-001f-4ded-8e57-795641db4f5c
   type: observation
   attestation: first_hand
@@ -164,6 +185,11 @@ domain_claims:
   quote: There was considerable noise, though, as if something were departing.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. heard considerable noise, as if something were departing from the spacecraft.
+  entailment:
+    label: neutral
+    score: 0.615
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc818a31-8e22-427b-82d3-f288831435c1
   type: observation
   attestation: first_hand
@@ -185,6 +211,11 @@ domain_claims:
     There was considerable noise as the little doors sounded like the little doors blowing open, so I assume the beacon has departed.
   text: |-
     L. Gordon Cooper Jr. inferred that a recovery beacon aboard Mercury-Atlas 9 had departed, based on doors that sounded like they had blown open.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e0d4ecb5-ca00-4b0e-ad06-ea532dfa9487
   type: administrative
   provenance_chain:
@@ -199,6 +230,11 @@ domain_claims:
   quote: Roger, understand TM looks real good on the ground
   text: |-
     During Mercury-Atlas 9, ground control reported that telemetry (TM) readings looked good on the ground.
+  entailment:
+    label: entails
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b8621de8-e85b-474a-9e87-72003c575e8b
   type: administrative
   attestation: first_hand
@@ -219,6 +255,11 @@ domain_claims:
   quote: Okay, you confirm TV control switch to off. Roger. TV control is off.
   text: |-
     During Mercury-Atlas 9, the television (TV) control switch aboard the spacecraft was confirmed switched to off.
+  entailment:
+    label: neutral
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1aa6a18a-7cdd-48f8-93f3-4c9d2b7570e3
   type: measurement
   attestation: first_hand
@@ -239,6 +280,11 @@ domain_claims:
   quote: Main bus is 24.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. reported a Direct Current (DC) main bus reading of 24 volts.
+  entailment:
+    label: neutral
+    score: 0.59
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ddb2bd2-577e-46df-b894-731fdf7ea323
   type: measurement
   attestation: first_hand
@@ -259,6 +305,11 @@ domain_claims:
   quote: Isolated 28 and a half.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. reported an isolated Direct Current (DC) reading of 28.5 volts.
+  entailment:
+    label: entails
+    score: 0.645
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 619475ee-2c5c-4fba-988c-3900223425e7
   type: measurement
   attestation: first_hand
@@ -284,6 +335,11 @@ domain_claims:
     systems last computations on fuel at Hawaii gave you 88 auto 98 manual, which is somewhat better than you're indicating on board.
   text: |-
     During Mercury-Atlas 9, Walter Schirra, serving as ground control ("Wally"), reported that the latest fuel computations at USA, Hawaii gave L. Gordon Cooper Jr. 88 percent fuel on automatic control.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6fa71bfc-ac57-4aed-8db7-b229d8c10cf1
   type: measurement
   attestation: first_hand
@@ -309,6 +365,11 @@ domain_claims:
     systems last computations on fuel at Hawaii gave you 88 auto 98 manual, which is somewhat better than you're indicating on board.
   text: |-
     During Mercury-Atlas 9, Walter Schirra, serving as ground control ("Wally"), reported that the latest fuel computations at USA, Hawaii gave L. Gordon Cooper Jr. 98 percent fuel on manual control.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26e6429b-f09a-4c4a-b8da-a1400868a8be
   type: measurement
   attestation: first_hand
@@ -329,6 +390,11 @@ domain_claims:
   quote: On board, I'm indicating 9-6 and 1-0-2.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr.'s onboard instruments indicated 96 percent fuel on automatic control.
+  entailment:
+    label: neutral
+    score: 0.413
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: af907c7a-0851-4011-8b6c-c121f1b93145
   type: measurement
   attestation: first_hand
@@ -349,6 +415,11 @@ domain_claims:
   quote: On board, I'm indicating 9-6 and 1-0-2.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr.'s onboard instruments indicated 102 percent fuel on manual control.
+  entailment:
+    label: neutral
+    score: 0.383
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 32b57aa2-0f58-4c8d-bef8-2ad6f0a852db
   type: observation
   attestation: first_hand
@@ -372,6 +443,11 @@ domain_claims:
     The whole state is clear. I can see I'm just about off. There's been a beautiful view coming over Florida.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. observed a clear view of the entire state of USA, Florida from orbit.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 81d16d7c-099a-4335-a220-2b5204844866
   type: observation
   attestation: first_hand
@@ -392,6 +468,11 @@ domain_claims:
   quote: It's light in sight. It is below me. It's quite a brownish, reddish-brown.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. observed a light below the spacecraft that was brownish, reddish-brown in colour.
+  entailment:
+    label: entails
+    score: 0.619
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9a7eb0a-b195-4bdc-b2ff-db2aa69deee0
   type: observation
   attestation: first_hand
@@ -412,6 +493,11 @@ domain_claims:
   quote: and considerable altitude above the ground.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. observed that the reddish-brown light below the spacecraft appeared to be at considerable altitude above the ground.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 93598793-ac04-4d76-af3f-f34bf2e4a8bd
   type: observation
   attestation: first_hand
@@ -432,6 +518,11 @@ domain_claims:
   quote: On my fiery pitch-down thruster, I get a shower of these little fireflies.
   text: |-
     During Mercury-Atlas 9, when L. Gordon Cooper Jr. fired the spacecraft's pitch-down thruster, he observed a shower of small firefly-like particles.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 98a40e3e-6cb3-4849-a349-f9240bb4c2cf
   type: observation
   attestation: first_hand
@@ -452,6 +543,11 @@ domain_claims:
   quote: It is flashing now. It is the light. It's quite bright, quite discernible.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. observed that the reddish-brown light below the spacecraft was flashing and quite bright and discernible.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8110e892-5e07-4155-8f0e-f35fae1ede56
   type: measurement
   attestation: first_hand
@@ -472,6 +568,11 @@ domain_claims:
   quote: Must be about 10 to 12 miles away.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. estimated the flashing reddish-brown light was approximately 16 to 19 kilometres away.
+  entailment:
+    label: contradicts
+    score: 0.926
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f7b458a5-a03a-438e-a0bc-59ab02c1d169
   type: measurement
   attestation: first_hand
@@ -492,3 +593,8 @@ domain_claims:
   quote: At the order of a second magnitude star now.
   text: |-
     During Mercury-Atlas 9, L. Gordon Cooper Jr. estimated the brightness of the flashing reddish-brown light as being on the order of a second magnitude star.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

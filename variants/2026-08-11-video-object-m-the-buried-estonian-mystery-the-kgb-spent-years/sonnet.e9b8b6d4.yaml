@@ -15,6 +15,12 @@ ai_usage:
     calls: 5
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 14.8
 prompts:
 - pass: nodes
   id: nodes
@@ -259,6 +265,11 @@ domain_claims:
     In 1991, the former Soviet Socialist Republic of Estonia freed itself from years of Soviet tyranny and became an independent Baltic nation in Northern Europe.
   text: |-
     In 1991, the former Soviet Socialist Republic of Estonia became an independent Baltic nation in Northern Europe.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 08231d62-9558-473d-913f-097d0916305d
   type: administrative
   speaker:
@@ -272,6 +283,11 @@ domain_claims:
   quote: a member of the EU and NATO since 2004.
   text: |-
     Estonia has been a member of the European Union (EU) and North Atlantic Treaty Organization (NATO) since 2004.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95e3996d-6426-4e1e-9469-b264a6c3352f
   type: administrative
   speaker:
@@ -292,6 +308,11 @@ domain_claims:
     sometime in the 1960s, a resident of the Tallinn suburb of Merivälja named Virgo Mitt decided to dig a well under his property.
   text: |-
     During the 1960s, a resident of the Tallinn suburb of Merivalja named Virgo Mitt decided to dig a well under his property.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f66018b1-1e18-4017-96b8-f7dbdfb2ab19
   type: observation
   speaker:
@@ -308,6 +329,11 @@ domain_claims:
     name: Estonia, Tallinn, Merivalja
   quote: It's a modest two-storey brick home in Merivälja.
   text: Virgo Mitt's home in Merivalja is a modest two-storey brick house.
+  entailment:
+    label: contradicts
+    score: 0.9
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 09f1a182-3d1f-4e6e-b458-412acb7c1ede
   type: observation
   speaker:
@@ -328,6 +354,11 @@ domain_claims:
     Around seven to eight metres down, he struck a metal object with a jackhammer, filling a bucket with the fragments, some of which he gave to a local geologist friend.
   text: |-
     Virgo Mitt struck a metal object with a jackhammer at around seven to eight metres depth while digging his well, filling a bucket with fragments, some of which he gave to a local geologist friend.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: df4c7be9-18e6-4764-932e-f7cb10b9cbb8
   type: administrative
   speaker:
@@ -343,6 +374,11 @@ domain_claims:
   quote: They sat on a shelf in a local university laboratory for many years.
   text: |-
     The fragments Virgo Mitt gave to a geologist friend sat on a shelf in a local university laboratory for many years before being investigated.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9692622b-1c7d-489a-a89f-a0113e12962a
   type: hearsay
   attestation: second_hand
@@ -363,6 +399,11 @@ domain_claims:
     the Merivälja object samples were reported in the Russian newspaper Pravda to have highly anomalous properties.
   text: |-
     The Russian newspaper Pravda reported that the Merivalja object samples had highly anomalous properties.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 39db8204-5d27-434d-8d18-51d3b629caee
   type: hearsay
   speaker:
@@ -379,6 +420,11 @@ domain_claims:
     They supposedly caused electrical shocks and tingles, causing an engineer that was examining them to lose consciousness.
   text: |-
     The Merivalja object samples supposedly caused electrical shocks and tingles, causing an engineer examining them to lose consciousness.
+  entailment:
+    label: entails
+    score: 0.664
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ddd587bf-78c8-489f-9437-71c12d13166b
   type: administrative
   speaker:
@@ -395,6 +441,11 @@ domain_claims:
     and eventually they were sent across the Soviet Union to labs in Moscow, Leningrad and Kyiv.
   text: |-
     The Merivalja object samples were eventually sent to laboratories in Moscow, Leningrad and Kyiv.
+  entailment:
+    label: entails
+    score: 0.516
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6eda2d84-b9d0-4b82-adeb-1df74b1d497c
   type: administrative
   speaker:
@@ -413,6 +464,11 @@ domain_claims:
     For around 10 years, Soviet scientists, researchers, KGB spies and military investigated the so-called Merivälja object.
   text: |-
     For around 10 years, Soviet scientists, researchers, KGB agents and military personnel investigated the Merivalja object.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cfe68258-fbe2-4db6-8e54-a92fa8b824d5
   type: measurement
   speaker:
@@ -431,6 +487,11 @@ domain_claims:
     They concluded there was an oval metal object about 15 meters long, weighing 200 tons, partially under the house, extending into the garden.
   text: |-
     Soviet investigators concluded the Merivalja object was an oval metal object about 15 metres long, weighing 200 tonnes, partially under the house and extending into the garden.
+  entailment:
+    label: entails
+    score: 0.687
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: df7c4c89-621e-4ad3-9fef-ba6fb808e099
   type: hearsay
   speaker:
@@ -450,6 +511,11 @@ domain_claims:
     Sometime in the 1980s there was an attempted excavation or dig that lasted for months and this was stopped when one of the workers reportedly received a blow to his stomach that came from the object.
   text: |-
     In the 1980s there was an attempted excavation of the Merivalja object that lasted for months, which was stopped when one of the workers reportedly received a blow to his stomach that came from the object.
+  entailment:
+    label: entails
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b01fe977-a889-485f-9453-32fd0b8303af
   type: hearsay
   speaker:
@@ -465,6 +531,11 @@ domain_claims:
   quote: It supposedly left a burned triangular scar on his body.
   text: |-
     The blow to the worker's stomach during the 1980s excavation of the Merivalja object supposedly left a burned triangular scar on his body.
+  entailment:
+    label: entails
+    score: 0.886
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 731b51ca-b1b2-4d13-93c0-ec905c475030
   type: administrative
   speaker:
@@ -481,6 +552,11 @@ domain_claims:
     He actually holds, I was laughing about this, the Guinness World Record for the most characters played by one actor in a single film, 48 distinct roles.
   text: |-
     Mart Sander holds the Guinness World Record for the most characters played by one actor in a single film, having played 48 distinct roles.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5edc851f-2bd1-44b9-bd4f-58a37c56bc1b
   type: opinion
   attestation: first_hand
@@ -500,6 +576,11 @@ domain_claims:
   quote: What fascinates me most is probably the amount of contradictions surrounding it.
   text: |-
     Mart Sander considers the amount of contradictions surrounding the Merivalja object story the most fascinating aspect of it.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bcf23045-8942-44cd-8b94-589c8665528b
   type: observation
   attestation: first_hand
@@ -520,6 +601,11 @@ domain_claims:
     A lot of evidence that the mysterious object or structure, however we choose to call it, that lies beneath this little suburban garden in Tallinn dates from really like pre-ice age era. It's based on the sediments that cover it.
   text: |-
     Some scientific evidence suggests the mysterious object or structure beneath the Merivalja garden dates from a pre-ice-age era, based on the sediments covering it.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40633fc1-a734-4131-9153-3d413231397a
   type: hearsay
   speaker:
@@ -537,6 +623,11 @@ domain_claims:
     we seem to have another conflicting theory that the object was buried there as late as in 1917.
   text: |-
     Another conflicting theory holds that the Merivalja object was buried there as late as 1917.
+  entailment:
+    label: entails
+    score: 0.569
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 846b60ca-655d-436f-92a6-2ad8f0c8b7fc
   type: measurement
   attestation: first_hand
@@ -550,6 +641,11 @@ domain_claims:
   location: 00:07:08.9-00:07:14.6
   quote: The last ice age began roughly 115,000 years ago.
   text: The last ice age began roughly 115,000 years ago.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8c0bff00-788a-43d8-8a02-c84787cba764
   type: opinion
   attestation: first_hand
@@ -570,6 +666,11 @@ domain_claims:
     So once the evidence differs by more than 100,000 years, it surely proves that there is something there that we don't really understand about.
   text: |-
     Mart Sander considers that the more than 100,000-year discrepancy between dating theories of the Merivalja object proves there is something about it that is not understood.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a06ea42-5935-4c3a-ad89-23dab524c4ba
   type: opinion
   attestation: first_hand
@@ -590,6 +691,11 @@ domain_claims:
     Well, I would like to keep an open mind, but as a filmmaker and an author and also as a scientist, I really don't want to form opinions before I have all the facts.
   text: |-
     Mart Sander says he prefers to keep an open mind and, as a filmmaker, author and scientist, does not want to form opinions before having all the facts about the Merivalja object.
+  entailment:
+    label: neutral
+    score: 0.902
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bea7b3a3-502f-4e6f-b3cf-90508d5dfa18
   type: opinion
   attestation: first_hand
@@ -610,6 +716,11 @@ domain_claims:
     personally, I would like to think of this object as some kind of like a... surveillance station or a monitoring device it's like a like an ancient let's say it's an ancient wildlife camera it's a bird cam and we are of course the wildlife
   text: |-
     Mart Sander personally likes to think of the Merivalja object as a surveillance station or monitoring device, like an ancient wildlife camera observing human civilisation.
+  entailment:
+    label: entails
+    score: 0.866
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f8661f81-159c-4a84-b70e-e860c36fcd62
   type: opinion
   attestation: first_hand
@@ -630,6 +741,11 @@ domain_claims:
     I would like to think that. I really would. And there is strong evidence to support that it's not really a man-made object.
   text: |-
     Mart Sander would like to think the Merivalja object is a non-human technology that has existed for hundreds of thousands of years, and believes there is strong evidence it is not a man-made object.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c736247-a067-4821-832f-02a17c9080e5
   type: opinion
   attestation: first_hand
@@ -648,6 +764,11 @@ domain_claims:
     To this day, the size of it, the structure of it, the material, has not been proven conclusively.
   text: |-
     The size, structure and material of the Merivalja object have not been conclusively proven to this day.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f7739e81-455d-48ee-92c0-79de2f7fe036
   type: observation
   attestation: first_hand
@@ -666,6 +787,11 @@ domain_claims:
     We only have... bits, shards of what is called the outer layer of the structure that lies beneath it.
   text: |-
     Only fragments, or shards, of what is called the outer layer of the structure beneath the Merivalja garden have been recovered.
+  entailment:
+    label: neutral
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9aa04324-b8e4-4a63-9217-e8d8bb3416e6
   type: opinion
   attestation: first_hand
@@ -686,6 +812,11 @@ domain_claims:
     the mainstream science wishes to play it down and to somehow prove or suggest that it is either a man-made material alloy or a completely natural formation.
   text: |-
     Mart Sander believes mainstream science wishes to downplay the Merivalja object and suggest it is either a man-made alloy or a natural formation.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e6bfef14-8231-459d-ab78-0f5f6910b0df
   type: administrative
   attestation: first_hand
@@ -706,6 +837,11 @@ domain_claims:
   quote: |-
     it's been studied for 55 years ago when we first heard about it, when it was dug up in 1969.
   text: The Merivalja object was first dug up in 1969.
+  entailment:
+    label: contradicts
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a040112-be01-4bc8-8dff-7e767a5849c2
   type: administrative
   attestation: first_hand
@@ -725,6 +861,11 @@ domain_claims:
     A state of the art tests began in the 1980s all around the Eastern Bloc. The best scientists in many, many institutes and research centers worked on it.
   text: |-
     State-of-the-art tests on the Merivalja object began in the 1980s across the Eastern Bloc, with the best scientists at many institutes and research centres working on it.
+  entailment:
+    label: contradicts
+    score: 0.411
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31de83d1-eba2-45c9-8148-74f7d0378afe
   type: observation
   attestation: first_hand
@@ -743,6 +884,11 @@ domain_claims:
     back then, the evidence seemed to be quite conclusive that this kind of alloy cannot be man-made and cannot be produced on our planet.
   text: |-
     In the 1980s, evidence from tests on the Merivalja object seemed conclusive that the alloy could not be man-made and could not be produced on Earth.
+  entailment:
+    label: contradicts
+    score: 0.526
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e320d979-4b4e-4c33-9bb3-68f916bc645d
   type: hearsay
   speaker:
@@ -763,6 +909,11 @@ domain_claims:
     we seem to completely overrule these conclusions and say, oh no, it's just a man-made alloy and a hundred years old at that, made during the First World War as a super alloy produced in Tallinn in the Becker shipyards, basically to fight the German army in the First World War.
   text: |-
     Later researchers overruled the earlier conclusions and claimed the Merivalja object was a man-made alloy about a hundred years old, produced during the First World War as a super alloy at the Becker shipyards in Tallinn to fight the German army.
+  entailment:
+    label: entails
+    score: 0.596
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 42f8ca80-6128-4e3b-8760-1c5829803bf9
   type: administrative
   speaker:
@@ -783,6 +934,11 @@ domain_claims:
     I found it quite serendipitous that you went to the Tallinn Secondary College, where I understand the wife of the man who dug the well that found this object was also a teacher.
   text: |-
     Mart Sander went to the Tallinn Secondary College, where the wife of the man who dug the well that found the Merivalja object was also a teacher.
+  entailment:
+    label: neutral
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 444a7875-755e-4b9d-aebf-aea4d0448dbc
   type: testimony
   attestation: first_hand
@@ -803,6 +959,11 @@ domain_claims:
     she was my favorite teacher... Hefty woman with a hearty laugh and great sense of humor. She was our English teacher... And she also had been studying opera.
   text: |-
     Vivika Eva, Virgo Mitt's wife, was Mart Sander's favourite English teacher at school, widely loved, with a hearty laugh and great sense of humour, and had also studied opera.
+  entailment:
+    label: contradicts
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e65024f5-33f0-41d3-b5d1-46c6bea78c27
   type: testimony
   attestation: second_hand
@@ -825,6 +986,11 @@ domain_claims:
     her husband, who owned the house, was actually starting to have severe mental issues and was paralyzed.
   text: |-
     Vivika Eva's husband, who owned the house at Merivalja, began to have severe mental issues and was paralysed during the period of the 1980s excavations at the house.
+  entailment:
+    label: neutral
+    score: 0.909
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e019009a-168e-4447-99eb-53788c305d22
   type: testimony
   attestation: second_hand
@@ -845,6 +1011,11 @@ domain_claims:
     her son, who was actually born in that house, was also born with a rare brain damage.
   text: |-
     Vivika Eva's son, who was born in the Merivalja house, was born with a rare brain damage.
+  entailment:
+    label: contradicts
+    score: 0.803
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ffdd2ebd-99f1-4c63-92d4-c92e04c3e68a
   type: testimony
   attestation: second_hand
@@ -865,6 +1036,11 @@ domain_claims:
     Soviet military and researchers had been digging back there for a couple of years.
   text: |-
     Soviet military and researchers had been digging in the backyard of the Merivalja house for a couple of years during the 1980s excavation.
+  entailment:
+    label: entails
+    score: 0.674
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2afa71da-92c4-486a-9200-40fff7abad80
   type: testimony
   attestation: second_hand
@@ -884,6 +1060,11 @@ domain_claims:
   quote: The Japanese were about to arrive.
   text: |-
     A Japanese team was about to arrive at the Merivalja house during the period of the 1980s excavation.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 44c33b11-a349-478a-84b1-5acc0a0c7aa0
   type: administrative
   attestation: first_hand
@@ -904,6 +1085,11 @@ domain_claims:
     During the Soviet era, which means that Estonia was occupied by the Soviet Union until the late 80s, this wasn't really talked about. These secrets were like official secrets... But you couldn't really buy a newspaper and learn more about this or buy a book or go online. But these things were whispered.
   text: |-
     During the Soviet era, when Estonia was occupied by the Soviet Union until the late 1980s, the Merivalja object was treated as an official secret that could not be discussed in newspapers, books, or publicly, though people whispered about it.
+  entailment:
+    label: entails
+    score: 0.662
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4ff3c445-9a8b-4da8-b9da-abaa8c89c8a0
   type: administrative
   attestation: first_hand
@@ -924,6 +1110,11 @@ domain_claims:
     there was a lot of UFO or paranormal research going on in the Soviet Union at that time.
   text: |-
     There was a lot of UFO and paranormal research going on in the Soviet Union at the time the Merivalja object was investigated.
+  entailment:
+    label: contradicts
+    score: 0.766
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0b2764e7-31ea-4603-906a-200c0d1f054a
   type: opinion
   attestation: first_hand
@@ -942,6 +1133,11 @@ domain_claims:
     one of these things was the Merivälja object, which had really grown into almost like a lore, like a national myth. but nobody really knew anything about it.
   text: |-
     The Merivalja object grew into a national myth or lore in Estonia, but nobody really knew anything factual about it.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bf91565d-5edd-4869-97d1-29e4c33631e6
   type: testimony
   attestation: first_hand
@@ -962,6 +1158,11 @@ domain_claims:
     I'm also really lucky to have received a small bit of the mysterious material, which now is considered to be the outer layer of something that is hidden beneath it.
   text: |-
     Mart Sander received a small bit of the mysterious material considered to be the outer layer of the object hidden beneath the Merivalja garden.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bdb1a47a-6264-49b0-8c09-a035ea29ed4d
   type: testimony
   attestation: second_hand
@@ -982,6 +1183,11 @@ domain_claims:
     She thought it was everything. I mean, it sometimes changed, according to the scientists who had been working there.
   text: |-
     Vivika Eva's theories about the underground object beneath her garden sometimes changed depending on which scientists had been working there.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 22f5c776-446a-4776-a5bc-8678d2908fe5
   type: hearsay
   speaker:
@@ -1002,6 +1208,11 @@ domain_claims:
     it's been said that she really upheld this lore, this mystery, because she was paid to do so. And of course, she was indeed employed as a caretaker, as a custodian to the house and the gardens. once the the the scientists were not there so she was actually paid a princely sum to keep it up
   text: |-
     It has been said that Vivika Eva upheld the Merivalja object mystery lore because she was paid to do so as a caretaker and custodian of the house and gardens after the scientists left.
+  entailment:
+    label: entails
+    score: 0.778
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c67fe9d9-0951-432c-9a26-5df5d64d7db9
   type: testimony
   attestation: second_hand
@@ -1022,6 +1233,11 @@ domain_claims:
     she did think that this was one of the... or one of a grid of surveillance stations or beacons that have been installed on this planet in prehistoric times and which seem to be dormant at the moment but waiting for either a signal or an event so this could be activated again.
   text: |-
     Vivika Eva's favourite theory was that the Merivalja object was one of a grid of surveillance stations or beacons installed on Earth in prehistoric times, dormant but waiting for a signal or event to be activated again.
+  entailment:
+    label: entails
+    score: 0.467
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d17dd699-5996-40dd-993a-d575f573f8ef
   type: observation
   speaker:
@@ -1042,6 +1258,11 @@ domain_claims:
     in the course of using a pneumatic drill, a compressed air drill, he hit a solid metal object about seven or eight metres down in the garden.
   text: |-
     Virgo Mitt hit a solid metal object about seven to eight metres down in the garden while using a pneumatic compressed-air drill to dig a well.
+  entailment:
+    label: contradicts
+    score: 0.888
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f29d9b21-9013-4d6c-bfdc-b412aae2c45b
   type: administrative
   speaker:
@@ -1060,6 +1281,11 @@ domain_claims:
     Those fragments were given to a local technical college and they were eventually tested.
   text: |-
     Fragments from the metal object Virgo Mitt struck were given to a local technical college and eventually tested.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 18146ce5-d2d3-4e10-9c71-64b035d50f5e
   type: administrative
   attestation: first_hand
@@ -1079,6 +1305,11 @@ domain_claims:
     name: 1969 discovery of the Merivalja object
   quote: This happened in 1969.
   text: The metal fragments from the Merivalja object discovery happened in 1969.
+  entailment:
+    label: entails
+    score: 0.515
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0e266fa3-7706-450f-b69d-1a46b3dc3c79
   type: administrative
   attestation: first_hand
@@ -1099,6 +1330,11 @@ domain_claims:
     it wasn't until the late 70s or early 80s that these pieces actually found their way to the local Institute of Geology.
   text: |-
     It was not until the late 1970s or early 1980s that the Merivalja object fragments found their way to the Estonian Institute of Geology.
+  entailment:
+    label: neutral
+    score: 0.423
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: de1723b8-7c97-4e05-a241-9fa407008627
   type: hearsay
   speaker:
@@ -1117,6 +1353,11 @@ domain_claims:
     until one of these pieces was handed to a lab assistant who received an electric shock in front of everyone. and actually is reported to have lost consciousness for a couple of seconds.
   text: |-
     At the Estonian Institute of Geology, one of the Merivalja object fragments was handed to a lab assistant who received an electric shock in front of everyone and reportedly lost consciousness for a couple of seconds.
+  entailment:
+    label: contradicts
+    score: 0.749
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3c5f2935-5727-4fc4-bf7c-baed6aa0dae7
   type: measurement
   attestation: first_hand
@@ -1135,6 +1376,11 @@ domain_claims:
     these shards were tested with different methods and found to be made of materials that cannot really coexist on Earth as we know these materials to behave.
   text: |-
     Tests on the Merivalja object shards found they were made of materials that cannot coexist on Earth as those materials are known to behave.
+  entailment:
+    label: entails
+    score: 0.683
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c0c0f2f1-a8d8-4dbe-a92b-0f15ab92bae1
   type: measurement
   attestation: first_hand
@@ -1153,6 +1399,11 @@ domain_claims:
     it also had many suggestions that they have been, like, cooling off without the gravity effects, which are, of course, here on Earth, meaning that it was produced somewhere either out of space or in an environment that somehow excluded gravitational effects.
   text: |-
     Tests on the Merivalja object suggested the material had cooled off without gravity effects, meaning it may have been produced in space or in an environment excluding gravitational effects.
+  entailment:
+    label: entails
+    score: 0.931
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2863378d-2e34-422c-81a1-f6564a8b8efd
   type: measurement
   attestation: first_hand
@@ -1171,6 +1422,11 @@ domain_claims:
     these shards were sent to four different laboratories around the Soviet Union and Eastern Bloc countries. And these, as far as I know, confirmed mostly the fact that this cannot be a man-made alloy.
   text: |-
     The Merivalja object shards were sent to four different laboratories around the Soviet Union and Eastern Bloc countries, which confirmed the alloy could not be man-made.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b94015ca-d78b-41b6-801f-e7c1a549ee2d
   type: measurement
   attestation: second_hand
@@ -1191,6 +1447,11 @@ domain_claims:
     there were i think 40 elements uh obviously iron was one of the constituents there was also titanium and a whole series of elements that were very unusual to be combined into such an alloy
   text: |-
     The Estonian Academy of Sciences report found about 40 elements in the Merivalja object alloy, including iron and titanium along with a series of elements unusual to be combined into such an alloy.
+  entailment:
+    label: entails
+    score: 0.817
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 319a4037-bbcf-4ae7-93b7-7c60a96ac72e
   type: measurement
   attestation: second_hand
@@ -1213,6 +1474,11 @@ domain_claims:
     the estonian academy of sciences did conclude that it was physically impossible for that kind of metal to have been manufactured on the planet
   text: |-
     The Estonian Academy of Sciences concluded it was physically impossible for the Merivalja object's metal to have been manufactured on Earth.
+  entailment:
+    label: entails
+    score: 0.659
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0d97278a-bf52-4dba-8b17-66e0561c8664
   type: opinion
   attestation: first_hand
@@ -1231,6 +1497,11 @@ domain_claims:
     these tests were concluded mostly not in Estonia, because this was probably deemed to be too either important or secret or have military applications. So these tests were all concluded either in Moscow, in Leningrad, in Kyiv.
   text: |-
     Most tests on the Merivalja object material in the 1980s were conducted outside Estonia, in Moscow, Leningrad and Kyiv, likely because it was deemed important, secret, or of military application.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 201d113b-b879-4cc0-8a9f-f3a6a4dd9591
   type: administrative
   attestation: first_hand
@@ -1247,6 +1518,11 @@ domain_claims:
     name: Merivalja object
   quote: most of these shards were taken away from Estonia completely.
   text: Most of the Merivalja object shards were taken away from Estonia completely.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 96b8f70a-66cd-4b23-8bba-01d2f8ced684
   type: measurement
   attestation: first_hand
@@ -1266,6 +1542,11 @@ domain_claims:
     The tests that were conducted back in 2012 through 2017 they showed some completely different results, but of course even the research team leaders said that they can no longer be sure that they were actually testing the original pieces
   text: |-
     Tests on the Merivalja object conducted between 2012 and 2017 showed completely different results from the earlier 1980s tests, and the research team leaders said they could no longer be sure they were testing the original pieces.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 89abbca9-b81d-4752-b367-a323de5bcffc
   type: administrative
   speaker:
@@ -1284,6 +1565,11 @@ domain_claims:
     the Russian secret police, the spy agency, the KGB, no less, it got involved in this whole investigation.
   text: |-
     The Russian secret police agency, the Committee for State Security (KGB), got involved in investigating the object under the house at Merivalja.
+  entailment:
+    label: contradicts
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9cf58922-8803-4533-8138-f93f7508832e
   type: administrative
   speaker:
@@ -1302,6 +1588,11 @@ domain_claims:
     So that was the KGB stamp that they put all over this file. ... Sovacheno sekretno means completely, totally secret.
   text: |-
     The Committee for State Security (KGB) stamped its files on the Merivalja object 'sovacheno sekretno', meaning completely, totally secret.
+  entailment:
+    label: entails
+    score: 0.492
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 775ab6df-76d5-4d7b-af89-263b01915475
   type: hearsay
   attestation: second_hand
@@ -1324,6 +1615,11 @@ domain_claims:
     even as late as a couple of days ago, I found another interview online, which was the first time I actually read that the KGB suspected that the structure really housed two dead occupants
   text: |-
     Mart Sander recently found an interview in which it was claimed for the first time that the Committee for State Security (KGB) suspected the structure beneath the Merivalja house housed two dead occupants.
+  entailment:
+    label: entails
+    score: 0.523
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2a94bad-a4af-4c55-8453-2ec7ed690507
   type: opinion
   attestation: first_hand
@@ -1346,6 +1642,11 @@ domain_claims:
     I have not been able to corroborate this in any way, but I shall be looking into it.
   text: |-
     Mart Sander has not been able to corroborate the claim that the Committee for State Security (KGB) suspected the Merivalja object housed two dead occupants, but intends to look into it.
+  entailment:
+    label: entails
+    score: 0.875
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2c770357-37b2-4a09-9430-6c31bef476f1
   type: administrative
   speaker:
@@ -1361,6 +1662,11 @@ domain_claims:
   quote: he was an aviation engineer who had ties to the Soviet Defense Ministry.
   text: |-
     Alexander Deyev was an aviation engineer who had ties to the Soviet Defense Ministry.
+  entailment:
+    label: contradicts
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e239df60-43b8-4020-9ecd-00b7a93b3c25
   type: administrative
   speaker:
@@ -1379,6 +1685,11 @@ domain_claims:
     He was passionately interested in the paranormal even before the investigations into this object.
   text: |-
     Alexander Deyev was passionately interested in the paranormal even before the investigations into the Merivalja object.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 91706ebe-2e6b-4c18-b682-f0972979999c
   type: administrative
   speaker:
@@ -1399,6 +1710,11 @@ domain_claims:
     he ended up working for a top secret Soviet UFO investigation team headed by a physicist, Felix Siegel.
   text: |-
     Alexander Deyev worked for a top secret Soviet UFO investigation team headed by physicist Felix Siegel.
+  entailment:
+    label: contradicts
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0728573f-daec-4a44-bda9-b7668342a1f3
   type: administrative
   speaker:
@@ -1417,6 +1733,11 @@ domain_claims:
     it was Alexander Deyev who came knocking on the door in this little street in Merivälja, wasn't it?
   text: |-
     Alexander Deyev was the person who came to the door of the house in Merivalja regarding the object.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c1fdc114-bdcd-4fe7-9720-f59f353e9ad8
   type: opinion
   attestation: first_hand
@@ -1437,6 +1758,11 @@ domain_claims:
     he's kind of a mixed bag, and he's turned into this protagonist or antagonist or whoever in my book because he's just such a classic villain, a very interesting type with a very dark past.
   text: |-
     Mart Sander describes Alexander Deyev as a classic villain-type figure with a very dark past who became a protagonist or antagonist in his book.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c399780e-a275-4882-8692-1ddf9f7946ed
   type: opinion
   attestation: first_hand
@@ -1457,6 +1783,11 @@ domain_claims:
     he's always been like this on this cutting edge, perhaps employed by the KGB, perhaps as one of the best known psychics, let's call it that way, in the Soviet Union, who were used by the KGB.
   text: |-
     Alexander Deyev may have been employed by the Committee for State Security (KGB) as one of the best known psychics used by the KGB in the Soviet Union.
+  entailment:
+    label: entails
+    score: 0.707
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 77f4f2ff-4d91-49a3-83e4-7b964508da2c
   type: opinion
   attestation: first_hand
@@ -1477,6 +1808,11 @@ domain_claims:
     his fall from grace was spectacular. The way he was disgraced and ridiculed is something to marvel at. And this will stand on the highest level of the Soviets.
   text: |-
     Alexander Deyev's fall from grace within the Soviet establishment was spectacular, involving being disgraced and ridiculed at the highest level of the Soviets.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c4924817-d9ea-45c2-b865-b4c81e5e0ecc
   type: hearsay
   attestation: second_hand
@@ -1497,6 +1833,11 @@ domain_claims:
     He made a fuss about a smoky glass orb he had, which supposedly generated what he called the D field.
   text: |-
     Alexander Deyev possessed a smoky glass orb that he claimed generated what he called the D field.
+  entailment:
+    label: entails
+    score: 0.638
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd8d1715-3a25-4575-a2fa-809446abb15e
   type: hearsay
   speaker:
@@ -1515,6 +1856,11 @@ domain_claims:
     a lot of people said that glass orb was really something that had been used in a previous century to iron shirt sleeves.
   text: |-
     Some people said the smoky glass orb that Alexander Deyev attributed to the D field was really a device that had been used in a previous century to iron shirt sleeves.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cf156e28-90f5-4084-bd5b-9e3377acc57b
   type: opinion
   attestation: first_hand
@@ -1537,6 +1883,11 @@ domain_claims:
     I think he was genuinely interested in all these things. He was really trying to get to the bottom of this mystery and probably other mysteries as well. But then again, I think he was a fantasist, a necromancer, whatever you call it, as well.
   text: |-
     Mart Sander thinks Alexander Deyev was genuinely interested in mysteries such as the Merivalja object and was really trying to get to the bottom of them, but also thinks Deyev was a fantasist.
+  entailment:
+    label: neutral
+    score: 0.772
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f4e47190-8ed1-4b64-8cd5-58ffe8bf9baa
   type: hearsay
   attestation: second_hand
@@ -1557,6 +1908,11 @@ domain_claims:
     How can modern science not conclude whether the piece is millions of years old, as he first suggested, and evidently was able to prove it by scientific methods? Or how can the same object be about a century-old ironing device
   text: |-
     Alexander Deyev initially suggested the smoky glass orb was millions of years old and claimed to have proven this by scientific methods, contradicting later claims that it was a century-old ironing device.
+  entailment:
+    label: entails
+    score: 0.699
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9ee2a1dc-4724-491f-ba14-c24b53752f67
   type: hearsay
   attestation: second_hand
@@ -1578,6 +1934,11 @@ domain_claims:
   quote: he reportedly calculated the whereabouts of the event
   text: |-
     Alexander Deyev reportedly calculated the location of the 1561 Nuremberg celestial phenomenon.
+  entailment:
+    label: contradicts
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 97e00330-9121-4579-8d5e-b00f2ecc85dc
   type: hearsay
   attestation: second_hand
@@ -1601,6 +1962,11 @@ domain_claims:
   quote: he calculated reportedly that this event took place over the Gulf of Finland
   text: |-
     Alexander Deyev reportedly concluded that the 1561 Nuremberg celestial phenomenon took place over the Gulf of Finland.
+  entailment:
+    label: contradicts
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ceafe1f0-ff10-4062-912c-0ae0c07857ea
   type: measurement
   attestation: first_hand
@@ -1619,6 +1985,11 @@ domain_claims:
     Tallinn and Helsinki are two capitals separated only by less than 80 kilometers of sea
   text: |-
     Tallinn and Helsinki are two capitals separated by less than 80 kilometres of sea.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 50a22b65-efa6-4c65-a424-3ef7b8082f9c
   type: opinion
   attestation: first_hand
@@ -1641,6 +2012,11 @@ domain_claims:
     If this battle took place over the Gulf of Finland, it's very plausible that the debris fell from the skies to what we now call Merivalja in Talium, where the object lies.
   text: |-
     Mart Sander considers it plausible that if the 1561 Nuremberg celestial phenomenon battle took place over the Gulf of Finland, debris fell from the sky to what is now called Merivalja in Tallinn, where the Merivalja object lies.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 767d40e0-e377-4797-9df5-d3617d025728
   type: observation
   attestation: first_hand
@@ -1658,6 +2034,11 @@ domain_claims:
   quote: It shows a battle. It even shows a couple of craft being shot down. and smoking.
   text: |-
     The 1561 Nuremberg celestial phenomenon woodcut shows what appears to be a battle, including craft being shot down and smoking.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4efd441f-851e-42d1-835b-09e0f03b0611
   type: opinion
   attestation: first_hand
@@ -1676,6 +2057,11 @@ domain_claims:
     It's pretty much like the Indian epics describing the aerial battles above the cities.
   text: |-
     Mart Sander compares the imagery in the 1561 Nuremberg celestial phenomenon woodcut to Indian epics describing aerial battles above cities.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f42387e5-118b-427b-8a0b-0889ef9c3b15
   type: observation
   attestation: first_hand
@@ -1694,6 +2080,11 @@ domain_claims:
     Back then, Merivalja would have been seabed. The sea has actually receded a lot during the last five or six hundred years
   text: |-
     The area now known as Merivalja in Tallinn was seabed several hundred years ago, and the sea has receded significantly over the last five to six hundred years.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5b711d72-a7ee-4b96-845a-4399841873dc
   type: observation
   attestation: first_hand
@@ -1712,6 +2103,11 @@ domain_claims:
     name: Estonia, Tallinn, Merivalja
   quote: there is not really a crater, not an impact site
   text: There is no impact crater or impact site at the Merivalja object location.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f6d50e52-3d7f-4c5d-8b9c-b93bc992c316
   type: hearsay
   speaker:
@@ -1728,6 +2124,11 @@ domain_claims:
     Perhaps it was able to land itself reasonably softly. That would, of course, explain the theory that there are two dead occupants. in what I can only refer to as a craft.
   text: |-
     There is a theory that the Merivalja object was able to land itself relatively softly, which would explain claims of two dead occupants in the craft.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 793af556-5405-492f-8c3f-d09be9b52093
   type: administrative
   attestation: first_hand
@@ -1749,6 +2150,11 @@ domain_claims:
     in 2024, there was a discovery in the Vatican archives that made mention of things that Estonian peasants were reporting not many years afterwards
   text: |-
     In 2024, a document was discovered in the Vatican archives mentioning that Estonian peasants reported dragon sightings not long after the 1561 Nuremberg celestial phenomenon.
+  entailment:
+    label: neutral
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 49cd5160-6a6a-4cd5-bc6f-6d85d8495d9e
   type: administrative
   attestation: first_hand
@@ -1767,6 +2173,11 @@ domain_claims:
     this booklet, which was actually published and circulated widely and even translated to other languages, dates from about 20 years after this celestial event
   text: |-
     The 1585 Vatican archive booklet on Estonian dragon sightings was published and circulated widely, and was even translated into other languages.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 006a3c7d-fd2b-4bb4-9c23-dbd776c1bc65
   type: administrative
   attestation: first_hand
@@ -1786,6 +2197,11 @@ domain_claims:
   quote: dates from about 20 years after this celestial event
   text: |-
     The 1585 Vatican archive booklet on Estonian dragon sightings dates from about 20 years after the 1561 Nuremberg celestial phenomenon.
+  entailment:
+    label: neutral
+    score: 0.393
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ccaee50b-0f7b-44e6-9abc-0b568a0235e6
   type: hearsay
   speaker:
@@ -1802,6 +2218,11 @@ domain_claims:
     Estonians reportedly were worried about flying dragons in the sky. ... Estonian peasants, what would they call these objects in the sky with flames and smoke emitting from them? Obviously, dragons.
   text: |-
     Estonian peasants reportedly described the objects seen in the sky, with flames and smoke emitting from them, as dragons.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 87b95eec-c710-4ff0-9b42-fa948b1d05ab
   type: observation
   attestation: first_hand
@@ -1822,6 +2243,11 @@ domain_claims:
     name: Estonia, Tallinn, Merivalja
   quote: he set up a laboratory in the house, which must have driven the owners crazy
   text: Alexander Deyev set up a laboratory in the house above the Merivalja object.
+  entailment:
+    label: contradicts
+    score: 0.525
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6c424738-e06b-4b61-99dd-bc6ebf3a1541
   type: hearsay
   speaker:
@@ -1842,6 +2268,11 @@ domain_claims:
     he started using his alleged D-generators... these energy creating devices that he used supposedly to try and lure the UFO craft to come to the surface
   text: |-
     Alexander Deyev allegedly used D-generators, described as energy-creating devices, supposedly to try to lure the Merivalja object to the surface.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7acb35d2-df64-45d4-8b96-39592a766a94
   type: hearsay
   speaker:
@@ -1862,6 +2293,11 @@ domain_claims:
     one of these generators was reportedly tested by the Student Academy of Sciences and found to be quite inoperative and useless
   text: |-
     One of Alexander Deyev's D field generators was reportedly tested by the Estonian Academy of Sciences and found to be inoperative and useless.
+  entailment:
+    label: entails
+    score: 0.414
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: eb6ad3d8-3480-4e36-980b-1760d47e7de5
   type: testimony
   attestation: first_hand
@@ -1884,6 +2320,11 @@ domain_claims:
     I visited Vivica's house on this, which, by the way, means Silver Fir Road. a couple of years or a year after Deyev was forced to leave
   text: |-
     Mart Sander visited the Merivalja house, whose name means Silver Fir Road, about a year or two after Alexander Deyev was forced to leave.
+  entailment:
+    label: contradicts
+    score: 0.389
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fcd93ac8-7d11-4c18-805d-56552fe44009
   type: observation
   attestation: first_hand
@@ -1906,6 +2347,11 @@ domain_claims:
     a year after Deyev was forced to leave because that's when the political situations started to change and the KGB and Soviet defense systems were no longer welcome in Estonia
   text: |-
     Alexander Deyev was forced to leave Merivalja when the political situation changed and the Committee for State Security (KGB) and Soviet defence systems were no longer welcome in Estonia.
+  entailment:
+    label: neutral
+    score: 0.923
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b6d0b0ce-f36a-4f29-af3f-82dc510e638b
   type: testimony
   attestation: first_hand
@@ -1925,6 +2371,11 @@ domain_claims:
   quote: I sadly did not find any equipment. He had removed everything
   text: |-
     Mart Sander did not find any of Alexander Deyev's equipment when he visited the Merivalja house, as it had all been removed.
+  entailment:
+    label: entails
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 05fa650c-a33a-4dd8-b40e-2d847b0dd943
   type: observation
   attestation: first_hand
@@ -1943,6 +2394,11 @@ domain_claims:
     I saw the gardens in the state that they were in. It looked like a closed mine shaft. really devastating from the point of view of the owner of the house.
   text: |-
     Mart Sander saw that the gardens of the Merivalja house looked like a closed mine shaft, devastated from the owner's point of view.
+  entailment:
+    label: neutral
+    score: 0.947
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5df457d3-02a8-4c7a-9e6d-1f3eedfd4756
   type: administrative
   attestation: second_hand
@@ -1965,6 +2421,11 @@ domain_claims:
     there are illustrations that have been published in the media in Estonia from the KGB files that show a gigantic object underneath this garden
   text: |-
     Illustrations published in Estonian media, sourced from Committee for State Security (KGB) files, show a gigantic object underneath the Merivalja garden.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ba03877b-cb85-47f9-a620-d6162f914e18
   type: opinion
   attestation: first_hand
@@ -1982,6 +2443,11 @@ domain_claims:
   quote: It looks like, dare I say, Mart, a UFO, a flying saucer, a disc.
   text: |-
     The illustrations of the Merivalja object from Committee for State Security (KGB) files look like a UFO, a flying saucer, a disc.
+  entailment:
+    label: neutral
+    score: 0.809
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d6d9c69-ffb8-4535-b154-18b674f6b36f
   type: hearsay
   attestation: first_hand
@@ -2004,6 +2470,11 @@ domain_claims:
     a man who was a self-styled academic of the people, meaning he didn't really have an academic education, but he was a mentalist, he was telepathically in contact with the object
   text: |-
     Alexander Deyev was a self-styled academic without a formal academic education, who Mart Sander describes as a mentalist claiming telepathic contact with the Merivalja object.
+  entailment:
+    label: contradicts
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c7d3cfd8-35af-4b7e-b69a-7ab1f44d4730
   type: testimony
   attestation: first_hand
@@ -2024,6 +2495,11 @@ domain_claims:
     should I jump forward and say that we've also established a telepathic contact with the object?
   text: |-
     Mart Sander states that telepathic contact has also been established with the Merivalja object more recently, beyond Alexander Deyev's claims.
+  entailment:
+    label: entails
+    score: 0.513
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a226f5a-cda4-4182-97c8-84ae19914103
   type: testimony
   attestation: second_hand
@@ -2046,6 +2522,11 @@ domain_claims:
     you brought one of Sweden's most illustrious and well-known psychics across from Sweden, and they tried to communicate with the object
   text: |-
     Mart Sander brought a well-known Swedish psychic to attempt to communicate with the Merivalja object.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 534a7a57-5500-485a-a037-715146181a49
   type: administrative
   attestation: first_hand
@@ -2068,6 +2549,11 @@ domain_claims:
     Linus Kordes is, yes, he's a young psychic, a mentalist, and he is a channeler mostly. He channels... the otherworldly consciousness. And he tried to connect, to tap into the object.
   text: |-
     Linus Kordes is a young Swedish psychic, mentalist, and channeler who tried to make telepathic contact with the Merivalja object.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c79ed08f-3e39-4ac2-b1de-3f165b2caa9b
   type: observation
   attestation: first_hand
@@ -2090,6 +2576,11 @@ domain_claims:
     he revealed quite interesting things which are actually very much in line with what Dejev said
   text: |-
     The impressions Linus Kordes revealed about the Merivalja object were very much in line with what Alexander Deyev previously said.
+  entailment:
+    label: entails
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d17100b7-4532-4984-a3fd-c77977bd9dc5
   type: administrative
   attestation: first_hand
@@ -2109,6 +2600,11 @@ domain_claims:
   quote: Linus does not speak Russian. He had no knowledge of this object at all.
   text: |-
     Linus Kordes does not speak Russian and had no prior knowledge of the Merivalja object.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1473db10-ef4f-45ab-977d-d8c7d93ea8ce
   type: hearsay
   attestation: second_hand
@@ -2129,6 +2625,11 @@ domain_claims:
     the object or the structure or the whole grid or part of the grid can be switched on by a specific sound frequency
   text: |-
     Mart Sander states the Merivalja object, or its associated structure or grid, can be switched on by a specific sound frequency.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e9f9e080-c38b-44c6-b742-23c28cb49d86
   type: hearsay
   attestation: second_hand
@@ -2153,6 +2654,11 @@ domain_claims:
     I found this one Russian document that said Deyev was trying to sing to the object and to lure it, to awaken it by a specific sound which was produced by his magical apparatus
   text: |-
     A Russian document indicated Alexander Deyev tried to sing to the Merivalja object to lure it and awaken it using a specific sound produced by his apparatus.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 200232e1-e785-4a30-843a-48bd06877813
   type: hearsay
   attestation: second_hand
@@ -2175,6 +2681,11 @@ domain_claims:
     Linus said that it's the sound of C sharp that would at a precise moment be the frequency that awakens the object
   text: |-
     Linus Kordes said the sound of C-sharp would, at a precise moment, be the frequency that awakens the Merivalja object.
+  entailment:
+    label: entails
+    score: 0.582
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a48aa27c-8234-481e-a862-62d8bcb856fe
   type: administrative
   speaker:
@@ -2193,6 +2704,11 @@ domain_claims:
     there are photographs from the time of the Soviet retrieval showing the tunnel that was built down through the garden
   text: |-
     There are photographs from the time of the Soviet retrieval attempt showing the tunnel built down through the Merivalja garden.
+  entailment:
+    label: neutral
+    score: 0.957
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d27c4db-0a6f-4c3f-8ae5-0c54ce653449
   type: measurement
   attestation: first_hand
@@ -2212,6 +2728,11 @@ domain_claims:
   quote: I think it went down as far as 10 meters at one stage
   text: |-
     The tunnel dug down through the Merivalja garden during the Soviet excavation went down as far as about 10 metres at one stage.
+  entailment:
+    label: neutral
+    score: 0.937
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 98630342-0d9f-4d19-b594-66f1fe686485
   type: observation
   attestation: first_hand
@@ -2232,6 +2753,11 @@ domain_claims:
     you never see a photograph of the actual object... why the hell is there no picture of the actual object?
   text: |-
     No photograph of the actual Merivalja object has ever been produced, despite photographs existing of people standing inside the excavation tunnel.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a3f15d7-7372-4959-9cb1-dd153dd96e87
   type: observation
   attestation: first_hand
@@ -2251,6 +2777,11 @@ domain_claims:
   quote: Because the object was never seen nor reached.
   text: |-
     The Merivalja object was never actually seen or reached by the Soviet excavation team.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 314fd629-a2a8-4010-9f2b-f2261d070886
   type: hearsay
   speaker:
@@ -2269,6 +2800,11 @@ domain_claims:
     many people reportedly suffered from burns, from heart failure, strange occurrences once they got too close to the object, which was beneath the shaft
   text: |-
     Many people involved in the Soviet excavation reportedly suffered burns, heart failure, and strange occurrences once they got too close to the Merivalja object beneath the excavation shaft.
+  entailment:
+    label: contradicts
+    score: 0.626
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9e0e622c-229d-4447-9c5a-45fbe9c6ed85
   type: hearsay
   speaker:
@@ -2287,6 +2823,11 @@ domain_claims:
     they did not break through the shield, which reportedly shields and covers the object which is beneath
   text: |-
     The Soviet excavation team did not break through a shield that reportedly covers the Merivalja object.
+  entailment:
+    label: entails
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f6b4eb2a-fb4f-4b36-a717-4c529c7324b3
   type: hearsay
   speaker:
@@ -2301,6 +2842,11 @@ domain_claims:
     name: Merivalja object
   quote: The upper layer is very large indeed.
   text: The upper layer covering the Merivalja object is described as very large.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10dd7d41-2074-477a-a44a-473e889a2f25
   type: hearsay
   speaker:
@@ -2317,6 +2863,11 @@ domain_claims:
     the semicircular thing, the disc, let's call it that, is beneath the upper layer. So this has never, to my knowledge, this has never been even breached.
   text: |-
     According to illustrations, the Merivalja object is a semicircular disc-shaped object beneath the upper layer, which has never been breached.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 419c8ba9-8faa-493f-9802-8316200f8dd5
   type: hearsay
   attestation: second_hand
@@ -2339,6 +2890,11 @@ domain_claims:
     very dramatic claims aired in the Estonian media by a ufologist called Igor Volker, and he suggested there were actually two objects beneath the property
   text: |-
     Ufologist Igor Volker claimed in the Estonian media that there were actually two objects beneath the Merivalja property.
+  entailment:
+    label: neutral
+    score: 0.666
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 404cb0f1-6b12-4f6b-8e0c-b8c1e6c543e1
   type: hearsay
   attestation: second_hand
@@ -2360,6 +2916,11 @@ domain_claims:
   quote: One elliptical, the disc, which was enormous, 17 by 22 meters.
   text: |-
     Igor Volker claimed one of the two objects beneath the Merivalja property was an elliptical disc measuring 17 by 22 metres.
+  entailment:
+    label: contradicts
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a5e32dc9-3d00-4e3d-9c0a-51150ac2a7df
   type: hearsay
   attestation: second_hand
@@ -2381,6 +2942,11 @@ domain_claims:
   quote: The other was a grenade-shaped object, two by four meters.
   text: |-
     Igor Volker claimed the other object beneath the Merivalja property was grenade-shaped and measured two by four metres.
+  entailment:
+    label: contradicts
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 89c316aa-d578-40b5-8577-19d9991b25b2
   type: hearsay
   speaker:
@@ -2397,6 +2963,11 @@ domain_claims:
     There was even talk of some kind of headset that the Soviets were trying to get hold of that allowed the psychic connection with the craft allegedly retrieved from one of these objects.
   text: |-
     There were claims of a headset the Soviets were trying to obtain that allegedly allowed a psychic connection with the craft supposedly retrieved from one of the objects beneath the Merivalja property.
+  entailment:
+    label: neutral
+    score: 0.395
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 54da4db6-5d26-42b6-b623-8c78d4cf681b
   type: observation
   attestation: first_hand
@@ -2416,6 +2987,11 @@ domain_claims:
   quote: we never saw any hard evidence of either of these objects, did we?
   text: |-
     No hard evidence was ever produced for either of the two objects Igor Volker claimed were beneath the Merivalja property.
+  entailment:
+    label: entails
+    score: 0.79
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b6f1dd42-4158-4042-9bdd-d2d593336a2b
   type: observation
   attestation: first_hand
@@ -2434,6 +3010,11 @@ domain_claims:
     there's nothing to be shown except these drawings which were made mostly by mentalists who claimed to have reached out for the object and probed it by the power of their minds
   text: |-
     The only material produced regarding the objects beneath the Merivalja property consists of drawings made mostly by mentalists who claimed to have reached out for the object and probed it with their minds.
+  entailment:
+    label: entails
+    score: 0.702
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fad51bb0-3e98-4893-aa04-95db7bf0543b
   type: hearsay
   attestation: first_hand
@@ -2455,6 +3036,11 @@ domain_claims:
     in the late 80s, just before the Soviet power collapse and Dejev was forced to return to Russia in disgrace, there were plans to purchase the house and also the neighboring lots to clear them for the scientific research
   text: |-
     In the late 1980s, before the Soviet collapse and Alexander Deyev's forced return to Russia in disgrace, there were plans to purchase the Merivalja house and neighbouring lots to clear them for scientific research.
+  entailment:
+    label: neutral
+    score: 0.44
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a40c963-d8ae-400c-bb08-4623dc13e159
   type: hearsay
   attestation: first_hand
@@ -2473,6 +3059,11 @@ domain_claims:
     it induced quite a panic in the area. Because back then, I mean, people even remembered the Soviet deportations of the 1940s
   text: |-
     The plan to purchase the Merivalja house and neighbouring lots induced panic among residents, some of whom remembered the Soviet deportations of the 1940s.
+  entailment:
+    label: entails
+    score: 0.645
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6b30218c-18fa-4631-8513-e03653396933
   type: hearsay
   speaker:
@@ -2486,6 +3077,11 @@ domain_claims:
     people were given 30 minutes to pack one suitcase and they were sent off into the night into Siberia
   text: |-
     During the Soviet deportations of the 1940s, people were given 30 minutes to pack one suitcase before being sent into Siberia.
+  entailment:
+    label: entails
+    score: 0.912
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b56dea8c-c0fc-4e7a-ac54-d2c18fbd9da0
   type: observation
   attestation: first_hand
@@ -2505,6 +3101,11 @@ domain_claims:
   quote: It spent years investigating this. It spent an enormous amount of money.
   text: |-
     The Committee for State Security (KGB) spent years investigating the Merivalja object and spent an enormous amount of money on it.
+  entailment:
+    label: neutral
+    score: 0.546
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2724dc03-7435-4157-b021-49549b0a63e4
   type: opinion
   attestation: first_hand
@@ -2525,6 +3126,11 @@ domain_claims:
     KGB's pockets were bottomless, and the money spent on this research must have been huge
   text: |-
     Mart Sander states that the money the Committee for State Security (KGB) spent researching the Merivalja object must have been huge, given the KGB's bottomless resources.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1facec53-1bae-46ed-8f64-8a9a782e7bf5
   type: hearsay
   attestation: second_hand
@@ -2547,6 +3153,11 @@ domain_claims:
     Mr. Volker reportedly said that this, it's a very dangerous object and it should be and must be closed
   text: |-
     Igor Volker reportedly said the Merivalja object is a very dangerous object that should and must be closed.
+  entailment:
+    label: entails
+    score: 0.414
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 834863c5-6590-4494-97ca-4e33f00f19c5
   type: testimony
   attestation: first_hand
@@ -2570,6 +3181,11 @@ domain_claims:
     after the day I've left in the late 80s, '88, he performed this, dare I call it, ritual of closing the shafts... to make sure that it stays dormant
   text: |-
     Igor Volker performed a ritual to close the shafts at the Merivalja site after Alexander Deyev left in 1988, believing this would keep the object dormant.
+  entailment:
+    label: neutral
+    score: 0.788
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 25c375f2-139a-4dfe-8136-350ef2dab0f3
   type: opinion
   attestation: second_hand
@@ -2592,6 +3208,11 @@ domain_claims:
     he was quite convinced that once this object awakens, it will have dire consequences for everyone
   text: |-
     Igor Volker was convinced that once the Merivalja object awakens, it will have dire consequences for everyone.
+  entailment:
+    label: entails
+    score: 0.612
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 976ee434-7a74-457c-8f59-ca5db0384e0d
   type: administrative
   attestation: first_hand
@@ -2612,6 +3233,11 @@ domain_claims:
     you're talking to a filmmaker. So yes, I'm planning to. It's my dream to actually translate this story to the screen
   text: |-
     Mart Sander is a filmmaker and plans to translate the Merivalja object story to the screen.
+  entailment:
+    label: entails
+    score: 0.644
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2c514d04-041d-4358-83fc-0b028cb086a2
   type: opinion
   attestation: first_hand
@@ -2630,6 +3256,11 @@ domain_claims:
     no, it most probably could not have been a meteorite, unless it really slowed down nicely. There is no impact creator of any kind
   text: |-
     Mart Sander considers it unlikely the Merivalja object was a meteorite, since there is no impact crater of any kind at the site.
+  entailment:
+    label: entails
+    score: 0.653
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2bb06bd1-12ab-43b6-9eda-6900ae4d048c
   type: administrative
   attestation: first_hand
@@ -2650,6 +3281,11 @@ domain_claims:
     there is this very magical place called Kali on the island of Saaremaa, which has also been referred to as the island of Thule, Ultima Thule, the end of the world
   text: |-
     The Kaali crater on the island of Saaremaa in Estonia has also been referred to as the island of Thule, or Ultima Thule, the end of the world.
+  entailment:
+    label: contradicts
+    score: 0.673
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 03363055-0615-4062-b24c-6ed6ec31b599
   type: hearsay
   speaker:
@@ -2665,6 +3301,11 @@ domain_claims:
   quote: |-
     which has also been referred to as the island of Thule, Ultima Thule, the end of the world, and which was investigated even reportedly the ancient Greeks
   text: The island of Saaremaa was reportedly investigated even by the ancient Greeks.
+  entailment:
+    label: contradicts
+    score: 0.623
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 432dc9e7-e23a-4aca-8c98-ab0c7220bcae
   type: hearsay
   speaker:
@@ -2680,6 +3321,11 @@ domain_claims:
   quote: |-
     there is this huge, not huge, huge to our standards crater, impact crater, which has also been referred to as a crash landing site of a craft, yes
   text: The Kaali crater has also been referred to as the crash landing site of a craft.
+  entailment:
+    label: contradicts
+    score: 0.617
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2f10fe2f-dacd-4d4d-9b0f-9a8183a4af81
   type: opinion
   attestation: first_hand
@@ -2700,6 +3346,11 @@ domain_claims:
     comparing these two becomes quite evident that this cannot be a meteorite crash site
   text: |-
     Mart Sander considers that comparing the Kaali crater with the Merivalja object site shows the Merivalja object cannot be a meteorite crash site, since the Merivalja site lacks an impact crater.
+  entailment:
+    label: entails
+    score: 0.719
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3e9a0aa0-5bc2-4dab-8736-8d8b00d45264
   type: hearsay
   attestation: second_hand
@@ -2726,6 +3377,11 @@ domain_claims:
     there was a geologist called Anto Raukus that suggested that it was actually a forgotten military super alloy that was developed in World War I. that was developed in the local Tallinn shipyard
   text: |-
     Geologist Anto Raukas suggested the Merivalja object was actually a forgotten military super alloy developed during World War I at the local Tallinn shipyard.
+  entailment:
+    label: entails
+    score: 0.911
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2095aab4-c6f1-4f3e-8f22-8022a9786a49
   type: hearsay
   attestation: second_hand
@@ -2749,6 +3405,11 @@ domain_claims:
     when they were fearing that the Germans might take over this part of Estonia in 1917, the suggestion was it was hurriedly buried in this particular location in Merivälja in order to conceal it from the advancing Germans
   text: |-
     Anto Raukas suggested the alleged super alloy was hurriedly buried at Merivalja in 1917 to conceal it from advancing German forces during fears the Germans would take over the area.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8eb7dbc3-86b2-4790-bea6-ab5a6d45d664
   type: opinion
   attestation: first_hand
@@ -2769,6 +3430,11 @@ domain_claims:
     how could we have produced this kind of super alloy during the First World War that would still amaze the scientists in the best laboratories of the Soviet Union and now in the world, when they concluded that this kind of alloy cannot be produced with our current knowledge
   text: |-
     Mart Sander is skeptical that a super alloy could have been produced during World War I that would still amaze scientists in the best laboratories of the Soviet Union and the world today, who concluded such an alloy cannot be produced with current knowledge.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f3b35e78-f9b9-401a-82d2-59f4c186c4a9
   type: observation
   attestation: first_hand
@@ -2787,6 +3453,11 @@ domain_claims:
     there is no, absolutely no documented evidence of this kind of alloy being buried anywhere
   text: |-
     There is no documented evidence of any such super alloy being buried at Merivalja.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 459d36b8-6f28-4c66-b004-157b107ad5a3
   type: observation
   attestation: first_hand
@@ -2806,6 +3477,11 @@ domain_claims:
   quote: only Mr. Raukas has ever suggested that
   text: |-
     Only Anto Raukas has ever suggested the buried super-alloy explanation for the Merivalja object.
+  entailment:
+    label: neutral
+    score: 0.358
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9aef3e29-9494-40c5-ad94-1c2f96b61a9a
   type: opinion
   attestation: first_hand
@@ -2825,6 +3501,11 @@ domain_claims:
   quote: They probably spent hundreds of thousands of rubles, if not millions.
   text: |-
     The Soviets probably spent hundreds of thousands of rubles, if not millions, digging around the Merivalja house.
+  entailment:
+    label: neutral
+    score: 0.746
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c089a1c-91bd-4108-9759-e2748e708a7e
   type: hearsay
   speaker:
@@ -2843,6 +3524,11 @@ domain_claims:
     there was all sorts of paranormal poltergeist phenomena reported at the house during this time. Books flying across the room, pillows getting shredded.
   text: |-
     There were claims that during the Soviet digs at the Merivalja house, paranormal poltergeist phenomena were reported, including books flying across the room and pillows being shredded.
+  entailment:
+    label: neutral
+    score: 0.784
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d8c42307-666d-4a2e-8d7c-782a82c90bfc
   type: hearsay
   speaker:
@@ -2860,6 +3546,11 @@ domain_claims:
   quote: I think a dog was thrown a couple of times through a window.
   text: |-
     A dog was reportedly thrown through a window a couple of times during the Soviet excavation at the Merivalja house.
+  entailment:
+    label: neutral
+    score: 0.711
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4590a049-08a5-4edb-b4e8-8e4ce7ab591f
   type: testimony
   attestation: second_hand
@@ -2882,6 +3573,11 @@ domain_claims:
     Vivica told me all about this and I've actually met the dog. The dog was a nervous wreck
   text: |-
     Vivika Eva told Mart Sander about the paranormal phenomena at the Merivalja house, and Mart Sander met the dog, which was described as a nervous wreck.
+  entailment:
+    label: entails
+    score: 0.522
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 83ccfc5a-d78c-4bdc-8bb6-6e0e47b10483
   type: observation
   attestation: first_hand
@@ -2900,6 +3596,11 @@ domain_claims:
     I've witnessed the dog actually launch out at something, bark at something quite invisible when we were there. We were having tea and suddenly the dog just became bizarre seeing something.
   text: |-
     Mart Sander witnessed the dog at the Merivalja house launch out and bark at something invisible while they were having tea.
+  entailment:
+    label: entails
+    score: 0.561
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 534a8f1e-4a0b-4574-933f-54b2e592a99c
   type: testimony
   attestation: second_hand
@@ -2922,6 +3623,11 @@ domain_claims:
     So Vivica confirmed she'd seen paranormal phenomena? Absolutely, absolutely, yes. She discussed these things.
   text: |-
     Vivika Eva confirmed to Mart Sander that she had witnessed paranormal phenomena at the Merivalja house.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 47433adc-fd12-498a-b14a-a895feed39c2
   type: hearsay
   speaker:
@@ -2938,6 +3644,11 @@ domain_claims:
     later on, it's been said that, of course, she just kept feeding on this legend to somehow monetize it, to be the custodian of the legend or the gateway of whatever
   text: |-
     It was later suggested that Vivika Eva kept feeding the Merivalja legend to monetise it and act as its custodian.
+  entailment:
+    label: entails
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d9de8378-6e05-4116-a41e-71f47920dba1
   type: opinion
   attestation: first_hand
@@ -2956,6 +3667,11 @@ domain_claims:
     I can vouch that the dog probably wasn't on it and wasn't paid to act strangely in the vicinity of strangers
   text: |-
     Mart Sander does not believe the dog at the Merivalja house was paid or trained to act strangely, based on witnessing its behaviour.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1682b492-da9a-4934-9846-e703671aecbc
   type: administrative
   attestation: first_hand
@@ -2978,6 +3694,11 @@ domain_claims:
     there was a decision made after the advice of a mystic called Vormsi Enn that this thing needed to be reburied
   text: |-
     A decision was made, after the advice of a mystic called Vormsi Enn, that the Merivalja object needed to be reburied.
+  entailment:
+    label: entails
+    score: 0.531
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 97abdace-3fc7-4395-8fb3-1f058f2a29cb
   type: administrative
   attestation: first_hand
@@ -2998,6 +3719,11 @@ domain_claims:
   quote: I think by 15th of November, 1985, the hole was all filled in.
   text: |-
     By 1985-11-15, the excavation shaft at the Merivalja site had been completely filled in.
+  entailment:
+    label: entails
+    score: 0.723
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: edc25c95-5458-4814-b90f-cdd2bf375a0c
   type: opinion
   attestation: first_hand
@@ -3019,6 +3745,11 @@ domain_claims:
     I think the final closing date was 1988. It must have been after Deyev was forced to leave.
   text: |-
     Mart Sander believes the final closing date of the Merivalja shaft was 1988, after Alexander Deyev was forced to leave.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f9529b98-e466-42ff-818b-7fe1cc9cc722
   type: administrative
   attestation: first_hand
@@ -3038,6 +3769,11 @@ domain_claims:
   quote: We must not forget that the Japanese crew arrived a couple of days.
   text: |-
     A Japanese crew arrived at the Merivalja site a couple of days around the time of the shaft's final closure.
+  entailment:
+    label: entails
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d031ce6-81ba-4b80-98ba-f9209a312287
   type: opinion
   attestation: first_hand
@@ -3060,6 +3796,11 @@ domain_claims:
     I think these gentlemen who are by now, sadly, all passed on, both Vormsi and Mr. Volker, they were not really interested in the KGB and their doings.
   text: |-
     Vormsi Enn and Igor Volker were not really interested in the KGB's (Committee for State Security) activities.
+  entailment:
+    label: entails
+    score: 0.528
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 814e5ee7-27e3-4974-be2b-a3f7f3c31129
   type: opinion
   attestation: first_hand
@@ -3082,6 +3823,11 @@ domain_claims:
     They were really concerned and deeply worried about the effects of what this object or structure might have on the country, on the city.
   text: |-
     Vormsi Enn and Igor Volker were deeply worried about the effects that the Merivalja object or structure might have on the country and the city.
+  entailment:
+    label: entails
+    score: 0.437
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3bc6dfd7-e245-4925-925b-a0f03b9da51b
   type: testimony
   attestation: first_hand
@@ -3106,6 +3852,11 @@ domain_claims:
     they really suggested that this must be reburied and the shafts refilled and they managed to do that by 1988.
   text: |-
     Vormsi Enn and Igor Volker suggested that the Merivalja object be reburied and the excavation shafts refilled.
+  entailment:
+    label: entails
+    score: 0.494
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5acc4b2e-f8c7-4909-8fe5-872a7b44a1ca
   type: testimony
   attestation: first_hand
@@ -3125,6 +3876,11 @@ domain_claims:
     name: 1985 reburial of the Merivalja shaft
   quote: they managed to do that by 1988.
   text: The reburial of the Merivalja shafts was completed by 1988.
+  entailment:
+    label: entails
+    score: 0.601
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 80f4a9de-f86c-4022-bd08-cec6c9cd661b
   type: opinion
   attestation: first_hand
@@ -3143,6 +3899,11 @@ domain_claims:
     Oh yes, absolutely. There's never been any doubt that there's something there. I mean, the most hardened skeptics have all confirmed that there is something there.
   text: |-
     Mart Sander is confident that there is something present at the Merivalja object site, and even hardened sceptics have confirmed this.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 161105ba-5578-4ae1-9ff7-def05f93dc0d
   type: opinion
   attestation: first_hand
@@ -3161,6 +3922,11 @@ domain_claims:
     Is it just a natural object, just something that has formed in the course of millions of years? Is it a relatively new man-made alloy dating like 100 years ago? Or is it something in between? And there we have as many different opinions as there are different research groups.
   text: |-
     Different research groups hold differing opinions on whether the Merivalja object is a natural object formed over millions of years, a man-made alloy roughly 100 years old, or something in between.
+  entailment:
+    label: entails
+    score: 0.892
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0274a106-251b-4c20-9442-3765d7ab5bbe
   type: administrative
   attestation: first_hand
@@ -3179,6 +3945,11 @@ domain_claims:
     Now, Glasnost came, the end of the Cold War, and all of a sudden the West could get in and we started hearing about the Merivälja object
   text: |-
     After Glasnost and the end of the Cold War, the West began learning about the Merivalja object.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ed02c0cc-778c-43a6-bed8-9526dd1a796d
   type: hearsay
   attestation: second_hand
@@ -3201,6 +3972,11 @@ domain_claims:
     Japanese TV, Asahi TV, the biggest TV network in Japan, apparently turned up. They paid an enormous amount of money, apparently, to get access to the garden.
   text: |-
     Asahi TV, the biggest television network in Japan, reportedly turned up and paid an enormous amount of money for access to the Merivalja garden.
+  entailment:
+    label: entails
+    score: 0.55
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad6f30d3-9d42-4295-8126-f2d279b67d48
   type: testimony
   speaker:
@@ -3219,6 +3995,11 @@ domain_claims:
     And they did ground penetrating radar searches, which there are photographs of. There's even video of them doing this.
   text: |-
     The 1991 Japanese team conducted ground-penetrating radar searches of the Merivalja garden, which were photographed and filmed on video.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 395a83e8-0b89-45b7-823d-601588be4394
   type: testimony
   speaker:
@@ -3235,6 +4016,11 @@ domain_claims:
   quote: We also know they did electromagnetic sensing.
   text: |-
     The 1991 Japanese team also carried out electromagnetic sensing at the Merivalja garden.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 80985008-5ee7-447d-b6c1-19877aee34f3
   type: testimony
   attestation: first_hand
@@ -3253,6 +4039,11 @@ domain_claims:
     Well, sadly, I don't know. And it seems that you, sir, know more than I do because I have not gained any access to these materials.
   text: |-
     Mart Sander has not gained access to the materials or report produced from the 1991 Japanese investigation of the Merivalja garden.
+  entailment:
+    label: entails
+    score: 0.614
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b7d3f788-1bba-4153-b94a-b7894d2ada15
   type: hearsay
   attestation: second_hand
@@ -3271,6 +4062,11 @@ domain_claims:
     There is speculation that that so-called Japanese team was in fact intelligence cover for the Americans.
   text: |-
     There is speculation that the Japanese television team that investigated the Merivalja garden in 1991 was in fact intelligence cover for the Americans.
+  entailment:
+    label: entails
+    score: 0.9
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8e50ad0d-081d-4736-a13d-83782b49b51a
   type: testimony
   attestation: first_hand
@@ -3293,6 +4089,11 @@ domain_claims:
     I've actually made inquiries in Japan with Asahi TV because that's who it was reported to be. And nobody at Asahi TV could find anything about this UFO story in their files.
   text: |-
     Ross Coulthart made inquiries with Asahi TV in Japan and found that nobody at Asahi TV could find any record of the story about the 1991 investigation of the Merivalja object in their files.
+  entailment:
+    label: entails
+    score: 0.481
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bb04f5c2-78ea-4abe-b8e9-42d1cfbbc0e0
   type: hearsay
   attestation: second_hand
@@ -3316,6 +4117,11 @@ domain_claims:
     But I have a strong suspicion from what I've been told by people in Estonia that this might have been a group of Japanese looking people who were operating undercover for the Americans to find out what was on this site
   text: |-
     Ross Coulthart has a strong suspicion, based on what he has been told by people in Estonia, that the 1991 Japanese team investigating the Merivalja garden may have been Japanese-looking people operating undercover for the Americans.
+  entailment:
+    label: neutral
+    score: 0.92
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d8a18922-138b-43fd-8af3-9080cafd43aa
   type: administrative
   attestation: first_hand
@@ -3334,6 +4140,11 @@ domain_claims:
     because there is no published record as to what it was that this Japanese team allegedly found.
   text: |-
     There is no published record of what the 1991 Japanese team allegedly found during their investigation of the Merivalja garden.
+  entailment:
+    label: neutral
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f848cca3-17df-475c-a12e-505cb2be9647
   type: hearsay
   attestation: second_hand
@@ -3356,6 +4167,11 @@ domain_claims:
     But I've heard that Mr. Volker, who passed away two years ago, has or had some of the footage filmed by the crew.
   text: |-
     Igor Volker, who died two years before this conversation, reportedly had some of the footage filmed by the 1991 Japanese investigation crew at the Merivalja garden.
+  entailment:
+    label: neutral
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b43a6d70-21b1-49e2-b888-c303b9038a62
   type: hearsay
   attestation: second_hand
@@ -3376,6 +4192,11 @@ domain_claims:
     And of course, it was later reported that the crew were mostly intelligent people and only the cameraman was like a real cameraman who really actually filmed the whole thing.
   text: |-
     It was later reported that most of the 1991 Japanese investigation crew at the Merivalja garden were intelligence personnel, with only the cameraman being a genuine cameraman who filmed the whole event.
+  entailment:
+    label: entails
+    score: 0.433
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2b4f75a8-feb2-4d90-a46d-e61b340d7cec
   type: hearsay
   attestation: second_hand
@@ -3396,6 +4217,11 @@ domain_claims:
     including the absolutely fantastic tale of everyone in the team mysteriously dying in course of a couple of months with only one person surviving. And again, I have been trying to find any kind of written evidence to corroborate, but it does sound like an urban legend, doesn't it?
   text: |-
     There is an urban-legend-like tale that everyone on the 1991 Japanese investigation team mysteriously died within a couple of months, with only one person surviving, though Mart Sander has found no written evidence to corroborate it.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4523d880-7d03-46e3-bc85-a49f0336ea9c
   type: administrative
   attestation: second_hand
@@ -3416,6 +4242,11 @@ domain_claims:
     What we do know is the Estonian Academy of Scientists did give credit to the idea that the metallic fragments that were recovered were anomalous.
   text: |-
     The Estonian Academy of Sciences gave credit to the idea that the metallic fragments recovered from the Merivalja object were anomalous.
+  entailment:
+    label: neutral
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 25df5b67-32ea-4469-96c8-bb79086c11e2
   type: administrative
   attestation: first_hand
@@ -3438,6 +4269,11 @@ domain_claims:
     the gentleman from the KGB who was promoting this as being an anomalous object, Alexander Deyev,
   text: |-
     Alexander Deyev, a KGB (Committee for State Security) figure, promoted the Merivalja object as anomalous.
+  entailment:
+    label: entails
+    score: 0.807
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4c7c3b13-3800-4c5e-bb27-60db3f559dbf
   type: administrative
   attestation: first_hand
@@ -3458,6 +4294,11 @@ domain_claims:
     He was discredited in a really serious way by Estonian investigations into the alleged worthlessness of his D-generator device.
   text: |-
     Alexander Deyev was discredited by Estonian investigations into the alleged worthlessness of his smoky glass orb (D field generator) device.
+  entailment:
+    label: contradicts
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 47a043ec-e1fb-4df4-a594-350d41eaf06e
   type: administrative
   attestation: first_hand
@@ -3476,6 +4317,11 @@ domain_claims:
     name: Estonia, Saaremaa
   quote: Basically, he was hounded out of Estonia for being a bit of a fraud, wasn't he?
   text: Alexander Deyev was hounded out of Estonia for being considered a fraud.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e69e363e-4fe9-4f4c-ab0c-fa10d7eacc9a
   type: testimony
   attestation: first_hand
@@ -3494,6 +4340,11 @@ domain_claims:
     He did some shady business in Estonia. He took over this large electronics factory to manufacture or produce his own magical systems, which were then later on discredited completely.
   text: |-
     Alexander Deyev took over a large electronics factory in Estonia to manufacture his own devices, which were later completely discredited.
+  entailment:
+    label: entails
+    score: 0.58
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f34920fb-13a9-4ee1-9e73-854a4ff60a36
   type: testimony
   attestation: first_hand
@@ -3514,6 +4365,11 @@ domain_claims:
     his downfall wasn't orchestrated in Estonia, it was orchestrated from the highest level of the Communist Party of the Soviet Union, because the way they attacked him publicly, it was really like a public execution with all the, like a special TV program produced, ridiculing him, the pamphlets being written about him
   text: |-
     Alexander Deyev's downfall was orchestrated from the highest level of the Communist Party of the Soviet Union, including a special television programme ridiculing him and pamphlets written about him.
+  entailment:
+    label: entails
+    score: 0.571
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aae294cf-bc43-48fd-b442-f6b111ff3a19
   type: opinion
   attestation: first_hand
@@ -3534,6 +4390,11 @@ domain_claims:
     Well, I'm just wondering if it wasn't a cover-up. I mean, one good way of stopping the West from taking an interest in this object at the beginning of the end of the Cold War as Glasnost began would be to suggest the whole thing was just a silly hoax by this Alexander Deyev guy.
   text: |-
     Ross Coulthart wonders whether discrediting Alexander Deyev as a hoaxer was a cover-up intended to stop the West from taking an interest in the Merivalja object as the Cold War ended.
+  entailment:
+    label: entails
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b61800dc-5a25-41ca-858c-57d20dfa3cb5
   type: opinion
   attestation: first_hand
@@ -3552,6 +4413,11 @@ domain_claims:
     But we have to remember that by that time, Soviet Union was facing so many internal problems that perhaps it was eclipsing this little mystery.
   text: |-
     Mart Sander considers it possible that the Soviet Union's internal problems at the time eclipsed the mystery of the Merivalja object, rather than the interest being deliberately suppressed.
+  entailment:
+    label: entails
+    score: 0.708
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a30ce3f4-f9c0-413a-9fdb-38d7e1607d2a
   type: opinion
   attestation: first_hand
@@ -3570,6 +4436,11 @@ domain_claims:
     knowing how the Russian system works, the way the system attacked Deyev who had been its priceless asset for many years. It is spectacular and it can only prove that this public execution was organized to really, really discredit everything that he had dealings with.
   text: |-
     Mart Sander considers the scale of the public campaign against Alexander Deyev, who had been a valuable Soviet asset for many years, proof that the campaign was organised to thoroughly discredit everything he had been involved with.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: aa7ae1ed-e21c-4d59-8a07-432a70e8d47c
   type: administrative
   attestation: first_hand
@@ -3590,6 +4461,11 @@ domain_claims:
     there's no evidence if there was a gigantic disc-shaped craft hidden under that house, there is no evidence that it was ever retrieved by the Soviets or any administration after the Soviets left Estonia, is there?
   text: |-
     There is no evidence that a disc-shaped craft hidden under the Merivalja house was ever retrieved by the Soviets or by any administration after the Soviets left Estonia.
+  entailment:
+    label: neutral
+    score: 0.656
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f6bb877e-123a-4ddf-b57e-393dfe4eb64f
   type: hearsay
   attestation: second_hand
@@ -3612,6 +4488,11 @@ domain_claims:
     Well, we only know that Vivica was approached by a couple of gentlemen, this time not wearing uniforms anymore, because this happened after the Russians had left and Estonia had regained the independence. And they reportedly offered her a suitcase full of money.
   text: |-
     After the Russians had left and Estonia had regained independence, Vivika Eva was approached by men not wearing uniforms who reportedly offered her a suitcase full of money for the Merivalja property.
+  entailment:
+    label: entails
+    score: 0.668
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a18a07de-d5ab-4bd0-8424-ab17a7fefc86
   type: hearsay
   attestation: second_hand
@@ -3632,6 +4513,11 @@ domain_claims:
     They were reportedly Russians accompanied by an Estonian gentleman whom Vivica knew.
   text: |-
     The men who offered Vivika Eva a suitcase of money were reportedly Russians accompanied by an Estonian man she knew.
+  entailment:
+    label: entails
+    score: 0.574
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a2209815-e899-4333-8e71-904bdad9c8e2
   type: testimony
   attestation: second_hand
@@ -3651,6 +4537,11 @@ domain_claims:
   quote: And Vivica declined.
   text: |-
     Vivika Eva declined the offer of a suitcase full of money for the Merivalja property.
+  entailment:
+    label: entails
+    score: 0.568
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc3c14fe-0a2f-4be8-b88a-d37ec02c665d
   type: hearsay
   attestation: second_hand
@@ -3670,6 +4561,11 @@ domain_claims:
   quote: And later on, she jokingly said, had they offered less, I would have accepted.
   text: |-
     Vivika Eva later joked that had the offer been for less money, she would have accepted it.
+  entailment:
+    label: entails
+    score: 0.645
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0ea3f4dd-2938-4f9a-b1ff-9d11259cc0cc
   type: opinion
   attestation: first_hand
@@ -3688,6 +4584,11 @@ domain_claims:
     I'm quite sure that we've established the one indisputable fact that something is there, something of great interest to many parties, regardless of politics or nationality.
   text: |-
     Mart Sander considers it established beyond doubt that something of great interest is present at the Merivalja object site, regardless of politics or nationality.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 106bbddf-8833-414e-84f8-4bf50bc75da0
   type: opinion
   attestation: first_hand
@@ -3708,6 +4609,11 @@ domain_claims:
     KGB would not have been so dedicated to get its hands on the property had it been just a suspicion of there might be something. I mean, Soviet Union was such a large territory uh one-sixth of the world why should they be concentrated on this very very little provincial spot unless they were pretty sure that a priceless priceless thing is is almost at the reach of their fingers
   text: |-
     Mart Sander believes the KGB (Committee for State Security) would not have been so dedicated to obtaining the Merivalja property unless they were fairly certain something of great value was within reach, given that the Soviet Union spanned one-sixth of the world's land and had no reason to focus on such a small provincial spot otherwise.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fe19a3a1-502c-4652-8ae2-c9e28dc25cce
   type: opinion
   attestation: first_hand
@@ -3728,6 +4634,11 @@ domain_claims:
     Personally, I'm not ashamed to say that, yes, I'm quite sure that what lies there is definitely not a natural formation, it's not a man-made object, it's not an Estonian superalloy buried there 100 years ago.
   text: |-
     Mart Sander personally believes that what lies beneath the Merivalja house is definitely not a natural formation, not a man-made object, and not an Estonian superalloy buried around 100 years ago.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4972a3d2-7321-4bb6-8668-8f22d44ab115
   type: opinion
   attestation: first_hand
@@ -3746,6 +4657,11 @@ domain_claims:
     The scientific proof strongly suggests that what's hidden there has been there for a long, long time, probably either since the end of the last ice age, which occurred around 12,000 years ago or before the beginning of the first ice age, which began 115,000 years ago.
   text: |-
     Mart Sander believes scientific proof strongly suggests that whatever is hidden beneath the Merivalja house has been there since either the end of the last ice age, roughly 12,000 years ago, or before the beginning of the first ice age, roughly 115,000 years ago.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 30723dbb-b614-4119-b513-317df485056e
   type: opinion
   attestation: first_hand
@@ -3764,6 +4680,11 @@ domain_claims:
     the most plausible explanation is that, yes, this is an artificial object. It's either from the remnants of a civilization that came before us, hundreds of thousands of years before us, or it's a more recent or even an older object. planted here, buried here, crushed here, or just keeping an eye on us or being a beacon for other civilizations.
   text: |-
     Mart Sander considers the most plausible explanation to be that the Merivalja object is an artificial object, possibly the remnant of a civilisation that predates humanity by hundreds of thousands of years, or a more recent or older object placed, buried, or crashed there, or serving as a beacon or observation device for other civilisations.
+  entailment:
+    label: entails
+    score: 0.67
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e42c3ab7-0717-418e-8fcf-cc2e4fd809ec
   type: testimony
   attestation: first_hand
@@ -3784,6 +4705,11 @@ domain_claims:
     I suggest once it's been dug up, I was thinking of going to America to be as far as possible. from this event.
   text: |-
     Mart Sander intends to move to America to be as far as possible from the Merivalja object site once it is dug up.
+  entailment:
+    label: entails
+    score: 0.445
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: c3f13b4b-177a-4f58-8ff5-efabd23c76dd
   type: administrative
@@ -3801,6 +4727,11 @@ infrastructure_claims:
     He's an Estonian filmmaker, actor, author, musician, singer, TV host and artist, a true polymath who works across opera, swing music, film, literature, painting and TV.
   text: |-
     Mart Sander is an Estonian filmmaker, actor, author, musician, singer, TV host and artist who works across opera, swing music, film, literature, painting and TV.
+  entailment:
+    label: contradicts
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4e4f60a3-c147-4367-9de2-77d0e66f9e6b
   type: administrative
   speaker:
@@ -3817,6 +4748,11 @@ infrastructure_claims:
     He has over 30 acting credits in film and TV, including popular Finnish and Estonian dramas and comedies.
   text: |-
     Mart Sander has over 30 acting credits in film and TV, including popular Finnish and Estonian dramas and comedies.
+  entailment:
+    label: contradicts
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9c3bd3d7-5c4d-466a-a720-ee6b5cb4b749
   type: administrative
   speaker:
@@ -3832,6 +4768,11 @@ infrastructure_claims:
   quote: |-
     He's also famous for his role as the well-known host of Estonia's Dancing with the Stars on TV.
   text: Mart Sander is known as the host of Estonia's Dancing with the Stars on TV.
+  entailment:
+    label: contradicts
+    score: 0.884
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d4075bd0-9079-447b-a091-856ad76bc8e9
   type: administrative
   speaker:
@@ -3852,6 +4793,11 @@ infrastructure_claims:
     he's just published a brand new book called Object M, Estonia's Buried Mystery. And it's all about the Marivalja object.
   text: |-
     Mart Sander has published a book called Object M, Estonia's Buried Mystery, about the Merivalja object.
+  entailment:
+    label: contradicts
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4519efbc-6342-4f1e-abb2-a3f92613f18d
   type: administrative
   speaker:
@@ -3871,6 +4817,11 @@ infrastructure_claims:
   quote: |-
     we know that there was a report done by the Estonian Academy of Sciences, which is your most illustrious scientific body in Estonia.
   text: The Estonian Academy of Sciences produced a report on the Merivalja object.
+  entailment:
+    label: neutral
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cec5a526-989b-458b-a593-90a3cac19e13
   type: administrative
   attestation: first_hand
@@ -3892,6 +4843,11 @@ infrastructure_claims:
   quote: I've reproduced them in my book.
   text: |-
     Mart Sander reproduced the hand-drawn illustrations of the Merivalja object from the Committee for State Security (KGB) files in his book.
+  entailment:
+    label: entails
+    score: 0.833
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9ad6c6fe-a1c2-4e6d-8101-0ba3a77334fe
   type: administrative
   attestation: first_hand
@@ -3914,3 +4870,8 @@ infrastructure_claims:
     Where can people buy your Object M book? Oh, the Object M book is quite available. You can go to Amazon and buy all my interesting books there.
   text: |-
     Mart Sander has written a book about the Merivalja object titled Object M, available for purchase on Amazon.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

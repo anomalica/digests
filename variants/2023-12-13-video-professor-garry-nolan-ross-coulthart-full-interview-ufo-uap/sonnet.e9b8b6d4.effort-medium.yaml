@@ -15,6 +15,12 @@ ai_usage:
     calls: 5
   route: cli
   effort: medium
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 17.6
 prompts:
 - pass: nodes
   id: nodes
@@ -281,6 +287,11 @@ domain_claims:
     name: Stanford University
   quote: He's a Stanford University based professor of immunology.
   text: Garry Nolan is a Stanford University-based professor of immunology.
+  entailment:
+    label: contradicts
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 94f2ef30-553c-4f9b-a00d-677c9dadbbea
   type: administrative
   attestation: first_hand
@@ -298,6 +309,11 @@ domain_claims:
     name: Garry Nolan
   quote: At the moment, he's a nominee for the Nobel Prize.
   text: As of this interview, Garry Nolan is a nominee for the Nobel Prize.
+  entailment:
+    label: contradicts
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fba491ec-9167-4d14-ad42-3fa78f3c4d5b
   type: administrative
   attestation: first_hand
@@ -316,6 +332,11 @@ domain_claims:
     He's got multiple patents, huge numbers of papers that have been published in his name.
   text: |-
     Garry Nolan holds multiple patents and has published a large number of papers under his name.
+  entailment:
+    label: contradicts
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c15aaf16-fb60-4ec1-b57e-4f945710fcfd
   type: administrative
   attestation: first_hand
@@ -335,6 +356,11 @@ domain_claims:
   quote: |-
     He's got two companies listed on the NASDAQ because of successful inventions that he's made.
   text: Garry Nolan has two companies listed on NASDAQ resulting from his inventions.
+  entailment:
+    label: contradicts
+    score: 0.791
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 793933ff-8869-42b6-8047-c68cc9dd9d8a
   type: administrative
   attestation: first_hand
@@ -355,6 +381,11 @@ domain_claims:
     He's decided to take a very public profile because he's actually an experiencer himself.
   text: |-
     Garry Nolan is an experiencer of unidentified aerial phenomena (UAP) himself, which is why he has taken a public profile on the subject.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ca8e2940-0cec-4506-9569-fe1b5a4d889a
   type: opinion
   attestation: first_hand
@@ -375,6 +406,11 @@ domain_claims:
     I think it tells us that, first of all, the government has been lying to us for the last 60 or 70 years.
   text: |-
     The US government has lied to the public about unidentified aerial phenomena (UAP) for the last 60 to 70 years.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d73b2601-c68b-464b-bb11-c64fe5b446cc
   type: opinion
   attestation: first_hand
@@ -395,6 +431,11 @@ domain_claims:
     I think it gives solace to people who have been told that they were crazy to have been believing or seeing this.
   text: |-
     The US government's admission that unidentified aerial phenomena (UAP) are real gives solace to people who had previously been told they were crazy for believing in or seeing UAP.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: babbb58c-d92d-437b-b9df-7adf9b5568d4
   type: opinion
   attestation: first_hand
@@ -415,6 +456,11 @@ domain_claims:
     I think it's because, frankly, they didn't understand what it was, and nobody wanted to admit that, first of all.
   text: |-
     Garry Nolan believes the US government lied about unidentified aerial phenomena (UAP) because it did not understand what the phenomena were and did not want to admit that.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2d807546-77d0-464c-b684-f6971fd0f51f
   type: opinion
   attestation: first_hand
@@ -435,6 +481,11 @@ domain_claims:
     But second, they didn't want to admit that they didn't have control over our airspace. We didn't have control over our own airspace.
   text: |-
     Garry Nolan believes the US government also lied about unidentified aerial phenomena (UAP) because it did not want to admit that it lacked control over US airspace.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c5879ca0-d2ce-4c52-bf23-e8e6ac69f097
   type: opinion
   attestation: first_hand
@@ -455,6 +506,11 @@ domain_claims:
     I mean, there has been both a cover up as well as a disinformation campaign to make people look like they were crazy.
   text: |-
     Garry Nolan believes there has been both a cover-up and a disinformation campaign designed to make people who reported unidentified aerial phenomena (UAP) look crazy.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a2b48921-26ba-498a-b53e-6c2952943ea5
   type: opinion
   attestation: first_hand
@@ -475,6 +531,11 @@ domain_claims:
     I think that this is the kind of thing that if we continue to ignore it, if we continue to ignore the potential danger of what it might represent, we are putting ourselves at risk, both to what it might do to us sometime in the future, but then ignoring the physics of what these things are capable of doing.
   text: |-
     Garry Nolan considers it dangerous to continue ignoring the potential danger represented by unidentified aerial phenomena (UAP), given uncertainty about what they might do in the future and the physics of their capabilities.
+  entailment:
+    label: entails
+    score: 0.809
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2af0fb43-bd12-4378-be14-9bd8244b3ea8
   type: opinion
   attestation: second_hand
@@ -497,6 +558,11 @@ domain_claims:
     You know, I wish I knew, and of all the people that I've spoken with on the inside, there's really very little unanimity about what it is, except for that whatever it is appears to be so far advanced from us that it beggars understanding.
   text: |-
     Among the insiders Garry Nolan has spoken with, there is very little unanimity about what unidentified aerial phenomena (UAP) actually are, except that they appear far more advanced than human technology.
+  entailment:
+    label: entails
+    score: 0.859
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0381e07a-cf9d-4f31-89f6-57bdb2672bf8
   type: opinion
   attestation: first_hand
@@ -516,6 +582,11 @@ domain_claims:
   quote: I'm sure it's not human.
   text: |-
     Garry Nolan is sure that unidentified aerial phenomena (UAP) are not of human origin.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33d8f581-772e-41a7-ab06-9e0927e5ddc8
   type: opinion
   attestation: first_hand
@@ -535,6 +606,11 @@ domain_claims:
   quote: Yes. It certainly acts it, and in some cases it seems to have a sense of humor.
   text: |-
     Garry Nolan considers unidentified aerial phenomena (UAP) to be intelligent, and believes they in some cases appear to have a sense of humour.
+  entailment:
+    label: entails
+    score: 0.524
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 88d75fce-7b60-4f2b-b4a6-31f23217adf1
   type: opinion
   attestation: first_hand
@@ -555,6 +631,11 @@ domain_claims:
     Yeah, I almost hesitate even to call it a civilization. A civilization implies a lot of interacting parts that are moving towards some sort of goal. I couldn't even say whether or not what it is that is being observed is something like that.
   text: |-
     Garry Nolan hesitates to describe what is behind unidentified aerial phenomena (UAP) as a civilisation, since he cannot say whether what is observed involves interacting parts moving toward a shared goal.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c438aee3-b377-4b4a-9c90-5488f79c1249
   type: opinion
   attestation: first_hand
@@ -575,6 +656,11 @@ domain_claims:
     Do you think the highest probability is that whatever they are, they are extraterrestrial? I don't think so, no.
   text: |-
     Garry Nolan does not think the highest-probability explanation for unidentified aerial phenomena (UAP) is that they are extraterrestrial.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cdba8d66-2b2b-4eea-b3d5-bdbd631adbf2
   type: opinion
   attestation: first_hand
@@ -595,6 +681,11 @@ domain_claims:
     I think whatever it is, it's been here a long time, and certainly it's been here longer than we've been civilized.
   text: |-
     Garry Nolan believes that whatever is behind unidentified aerial phenomena (UAP) has been present on Earth for a long time, longer than human civilisation has existed.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 546384cd-9162-4e33-8b79-d0d2aca8ba03
   type: administrative
   attestation: first_hand
@@ -612,6 +703,11 @@ domain_claims:
   quote: |-
     Now, you're good mates with Lou Elizondo, who we've interviewed, who was the former head of the Pentagon UFO program.
   text: Luis Elizondo was the former head of the Pentagon's UFO programme.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 11efb7ce-5ce1-48ab-a2df-7fa745206ff9
   type: opinion
   attestation: second_hand
@@ -632,6 +728,11 @@ domain_claims:
     And Lou has suggested publicly that whatever this is, the extraterrestrial explanation doesn't quite explain it.
   text: |-
     Luis Elizondo has publicly suggested that the extraterrestrial explanation does not fully account for unidentified aerial phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a7ca1ec-a3f1-4b9a-b451-80ba28328aa4
   type: opinion
   attestation: first_hand
@@ -654,6 +755,11 @@ domain_claims:
     you could equally, and this is Jacques Vallée's original hypothesis that he got in a lot of trouble decades ago over, the interdimensional hypothesis.
   text: |-
     Jacques Vallée originated the interdimensional hypothesis for unidentified aerial phenomena (UAP), for which he got into a lot of trouble decades ago.
+  entailment:
+    label: entails
+    score: 0.513
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc8a1099-8e36-476e-8dec-263c5bdc0ff8
   type: opinion
   attestation: first_hand
@@ -674,6 +780,11 @@ domain_claims:
     So the data, frankly, is in the videos, first of all, that we've all seen now, by now. And if you haven't seen them, I'd go look up the Nimitz UFO encounter videos.
   text: |-
     Garry Nolan considers the 2004 USS Nimitz UAP encounter videos to be part of the primary data evidencing unidentified aerial phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 803c9ed9-aafa-4aa4-abe3-46480ca5eba4
   type: opinion
   attestation: first_hand
@@ -694,6 +805,11 @@ domain_claims:
     The other evidence is in the thousands of reports of things that people have seen. Now that to me, you can call it anecdotal, but to me I call it preliminary data.
   text: |-
     Garry Nolan considers thousands of reports of unidentified aerial phenomena (UAP) sightings, though anecdotal, to constitute preliminary data.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b10c4d0-119a-461c-acbc-79dde3c9aade
   type: hearsay
   attestation: second_hand
@@ -713,6 +829,11 @@ domain_claims:
     And so perhaps the best evidence that is thought to exist is the stuff that is being held in government hands that many people again anecdotally have come forward and said this exists and it's not from here.
   text: |-
     Unnamed people have anecdotally come forward saying that evidence held in government hands regarding unidentified aerial phenomena (UAP) is not from Earth.
+  entailment:
+    label: entails
+    score: 0.602
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b379f58-04db-4396-aa78-76968e6a4de1
   type: testimony
   attestation: first_hand
@@ -735,6 +856,11 @@ domain_claims:
     You've had the CIA come knocking on your door asking you to actually do tests on people who have been exposed to UAPs. Correct? Yes.
   text: |-
     Garry Nolan has been approached by the Central Intelligence Agency (CIA), which asked him to conduct tests on people who had been exposed to unidentified aerial phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.883
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f28b7f00-eab2-42ae-b5c3-26bfbc85909d
   type: testimony
   attestation: first_hand
@@ -755,6 +881,11 @@ domain_claims:
     Well, the reason apparently that they came to me is because we had developed instrumentation for blood analysis that nobody else in the world had.
   text: |-
     Garry Nolan believes the Central Intelligence Agency (CIA) approached him because his laboratory had developed instrumentation for blood analysis that nobody else in the world had.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8eca252a-4c47-42db-b554-68bbbe5f66a9
   type: testimony
   attestation: first_hand
@@ -775,6 +906,11 @@ domain_claims:
     They came to me for that and then I guess the embracing came because most of the other scientists with whom they had met ran away. And I was just drawn towards this.
   text: |-
     Garry Nolan became more deeply involved with government-linked unidentified aerial phenomena (UAP) research after most other scientists approached by these officials had backed away.
+  entailment:
+    label: entails
+    score: 0.877
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ed359d02-b9d1-4375-b325-52580b1188cc
   type: measurement
   attestation: first_hand
@@ -795,6 +931,11 @@ domain_claims:
     In some cases, not the pilots especially, but for some of the ground personnel, we were able to see damage in their brain tissue. That was considerable.
   text: |-
     Garry Nolan's research subjects include ground personnel, not pilots, who were exposed to unidentified aerial phenomena (UAP) and whose brain tissue Garry Nolan's team observed to have considerable damage.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 41d469dd-eb83-4c70-bfa7-7e46653f4731
   type: hearsay
   attestation: second_hand
@@ -817,6 +958,11 @@ domain_claims:
     They claim it. Now, again, I'm... Many of the people viewing will walk away saying that I said something happened. No, I am relaying what it is that was told to me.
   text: |-
     Unnamed research subjects examined by Garry Nolan claimed that their brain injuries were caused by exposure to unidentified aerial phenomena (UAP), a claim Garry Nolan is relaying rather than personally confirming.
+  entailment:
+    label: entails
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 909d02f6-2901-4511-a8ce-58ff71f3f01e
   type: measurement
   attestation: first_hand
@@ -835,6 +981,11 @@ domain_claims:
     The confirmatory evidence that I have are the MRIs that basically show that anybody could look at repeatedly and see that there was damage.
   text: |-
     Garry Nolan's confirmatory evidence for brain injury in these research subjects consists of magnetic resonance imaging (MRI) scans that repeatedly show visible damage.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 72c046e8-540a-4496-a05c-c8b584d59637
   type: measurement
   attestation: first_hand
@@ -853,6 +1004,11 @@ domain_claims:
     You would call it a sclerosis. It would be seen as a scar tissue in the body or the brain, dead tissue.
   text: |-
     The brain damage observed by Garry Nolan's team in exposed research subjects would be classified as sclerosis, appearing as scar tissue or dead tissue in the brain.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5dfc9a81-2dbe-4ed2-a425-f256b23de670
   type: measurement
   attestation: first_hand
@@ -870,6 +1026,11 @@ domain_claims:
   quote: We generally call it white matter disease.
   text: |-
     Garry Nolan's team generally refers to the brain damage observed in exposed research subjects as white matter disease.
+  entailment:
+    label: entails
+    score: 0.627
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 75862e39-6d79-44bf-bc57-62abd2b19767
   type: hearsay
   attestation: second_hand
@@ -890,6 +1051,11 @@ domain_claims:
     Now, one of the known examples of this that is public is there's a fellow called Thomas Winterton who's featured on the Skinwalker Ranch TV show. And he allegedly was exposed to some kind of radiation or energy. And you could actually see on his MRI a difference in his brain.
   text: |-
     Thomas Winterton, featured on the Skinwalker Ranch television show, was allegedly exposed to some kind of radiation or energy, and a difference could be seen on his magnetic resonance imaging (MRI) scan of his brain.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a10b7da2-efdd-45eb-acb8-a94c09ade005
   type: measurement
   attestation: first_hand
@@ -910,6 +1076,11 @@ domain_claims:
     Well, that was a horrific event. I mean, not only was the brain matter damaged, but there was an edema across the back of his head.
   text: |-
     Thomas Winterton's brain injury was a horrific event in which the brain matter was damaged and there was an edema across the back of his head.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ca6593eb-fa16-4226-a685-f5b0992456ac
   type: opinion
   attestation: first_hand
@@ -932,6 +1103,11 @@ domain_claims:
     But I think in this case, this particular case, this was probably more a Havana syndrome-like interaction where somebody with an energy weapon pointed it at them.
   text: |-
     Garry Nolan believes Thomas Winterton's brain injury was probably a Havana syndrome-like interaction caused by someone pointing an energy weapon at him.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aa92390a-962f-489b-9fc4-b75a0486389b
   type: measurement
   attestation: first_hand
@@ -952,6 +1128,11 @@ domain_claims:
     we were able to determine the relative strength of the energy based on how far into the brain travelled.
   text: |-
     Garry Nolan's team was able to determine the relative strength of the energy involved in Thomas Winterton's injury based on how far it travelled into the brain.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a9118e6a-d840-4409-a08c-06662392f84d
   type: testimony
   attestation: second_hand
@@ -975,6 +1156,11 @@ domain_claims:
     And there's one case I'm fascinated with, which is the Council Bluffs Iowa event in December 1977. And tell me if I'm wrong, Police and 11 different witnesses from four different groups came across a pile of molten slag that they saw fall from a craft of some kind. A blinking craft.
   text: |-
     In 1977-12, at Council Bluffs, Iowa, police and eleven witnesses from four different groups witnessed a pile of molten slag fall from a blinking craft of some kind.
+  entailment:
+    label: entails
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d9e46071-88b1-46ed-b690-d5a976b70d31
   type: testimony
   attestation: second_hand
@@ -995,6 +1181,11 @@ domain_claims:
     It was still bubbling and hot. The police testified to this as well. They were on the scene and everybody says it came from this craft.
   text: |-
     The molten slag at the Council Bluffs, Iowa event in December 1977 was still bubbling and hot, and police testified to this.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cd48df3a-1c7d-4133-ac13-b013fbf12dec
   type: testimony
   attestation: first_hand
@@ -1014,6 +1205,11 @@ domain_claims:
   quote: And I have the original Polaroids from the police of the event.
   text: |-
     Garry Nolan possesses the original Polaroid photographs taken by police of the Council Bluffs, Iowa molten slag event.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0a77f778-c38a-4627-b6ec-be0faae00561
   type: testimony
   attestation: first_hand
@@ -1035,6 +1231,11 @@ domain_claims:
     And quite a bit of investigation was done back at the time on this where they looked at the metals and actually it was beautifully looked at because they looked at all the possible normal ways that this might have occurred. Thermite. Is there a nearby foundry?
   text: |-
     Investigators at the time of the Council Bluffs, Iowa molten slag event examined the metals and considered possible normal explanations, including thermite and a nearby foundry.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2073fe00-1873-4fb7-a9f7-0ba1db064bb9
   type: testimony
   attestation: first_hand
@@ -1053,6 +1254,11 @@ domain_claims:
   quote: There was a nearby foundry, but how do you get four by six feet of slag?
   text: |-
     There was a nearby foundry to the site of the Council Bluffs, Iowa molten slag event, but that would not explain a slab of slag measuring approximately 1.2 by 1.8 metres.
+  entailment:
+    label: entails
+    score: 0.733
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d2caedbe-fcf7-438f-94e7-3258f9327d41
   type: opinion
   attestation: first_hand
@@ -1074,6 +1280,11 @@ domain_claims:
     You would have to have dragged it, and you certainly aren't going to put it in any kind of balloon and then float it over a park and then drop it.
   text: |-
     Producing the Council Bluffs, Iowa molten slag would have required dragging it, since it could not have been transported in a balloon and dropped.
+  entailment:
+    label: entails
+    score: 0.781
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 35178fae-ec07-4db2-9789-0840101a51af
   type: measurement
   attestation: first_hand
@@ -1095,6 +1306,11 @@ domain_claims:
     Molten metal. I mean, it was molten iron. And so one of the things it was looked at to see whether or not it was steel. It was not steel. It had iron in it, nickel, a few other impurities.
   text: |-
     Analysis of the Council Bluffs, Iowa molten slag sample determined it was not steel, but molten iron containing nickel and a few other impurities.
+  entailment:
+    label: entails
+    score: 0.706
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14944b7d-8cc2-4f5c-a276-c28e28f725eb
   type: measurement
   attestation: first_hand
@@ -1115,6 +1331,11 @@ domain_claims:
     we found nothing unusual about isotopic ratios or elements that you wouldn't normally find in metals like this
   text: |-
     Garry Nolan's analysis of the Council Bluffs molten slag sample found nothing unusual about its isotopic ratios or elemental composition compared with normal metals.
+  entailment:
+    label: entails
+    score: 0.584
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1865f3ff-1956-4543-98f2-5fac9da6a294
   type: measurement
   attestation: first_hand
@@ -1135,6 +1356,11 @@ domain_claims:
     what I found most interesting in our analysis of it... was what we would call the inhomogeneity of the material, meaning it was incompletely mixed. So if you looked in one part of the material, you found all the same elements, but the ratios were different than if you looked in another area.
   text: |-
     Garry Nolan's most notable finding in the Council Bluffs molten slag sample was its inhomogeneity, meaning the material was incompletely mixed, showing the same elements in different ratios in different parts of the sample.
+  entailment:
+    label: entails
+    score: 0.863
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ac7bc4a-812f-421d-9d5f-c68b8d842aef
   type: opinion
   attestation: first_hand
@@ -1155,6 +1381,11 @@ domain_claims:
     And it's not the only story like this. In fact, there are multiple stories of these craft dropping stuff.
   text: |-
     There are multiple other reported cases of craft dropping material, in addition to the Council Bluffs, Iowa molten slag event.
+  entailment:
+    label: neutral
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2482dd69-3e32-4f2d-88b2-4d9a0bd6e0f9
   type: hearsay
   attestation: second_hand
@@ -1179,6 +1410,11 @@ domain_claims:
     In fact, there's a case nearby that when I get the time, Jacques and I will visit with exactly the same multiple times seen in Fresno, these objects, and one of them apparently dropped something right on these people's driveway.
   text: |-
     There is a case in Fresno, California, in which similar objects were seen multiple times and one apparently dropped something on people's driveway, which Garry Nolan intends to visit with Jacques Vallée.
+  entailment:
+    label: entails
+    score: 0.793
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4a417058-f0c9-4050-be61-a7272bf69446
   type: opinion
   attestation: first_hand
@@ -1199,6 +1435,11 @@ domain_claims:
     maybe this is part of the propulsion system and maybe when you're done with enough of the propulsion or something has gone wrong, some imbalance, you essentially squirt it out the back and offload it.
   text: |-
     Garry Nolan speculates that the material dropped by craft such as at Council Bluffs might be part of a propulsion system that is offloaded when something goes wrong or when the propulsion is no longer needed.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 546858c6-a10e-461e-9648-63fefc2f9f18
   type: measurement
   attestation: first_hand
@@ -1218,6 +1459,11 @@ domain_claims:
   quote: It is a layered material of bismuth, a little bit of lead and magnesium.
   text: |-
     The bismuth-magnesium material sample is a layered material composed of bismuth, a small amount of lead, and magnesium.
+  entailment:
+    label: entails
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ef11f2a5-8004-4d5d-8034-bdbd317f3e37
   type: measurement
   attestation: first_hand
@@ -1238,6 +1484,11 @@ domain_claims:
     I've looked at the ratios of the isotopes there and there's nothing unusual about it, but I will be getting a hold of a much, much larger sample of it that will allow me to do some other kinds of tests.
   text: |-
     Garry Nolan's analysis of the isotope ratios in the bismuth-magnesium material sample found nothing unusual.
+  entailment:
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40de713b-11b6-45e3-b482-2f074913b790
   type: testimony
   attestation: first_hand
@@ -1258,6 +1509,11 @@ domain_claims:
     but I will be getting a hold of a much, much larger sample of it that will allow me to do some other kinds of tests.
   text: |-
     Garry Nolan plans to obtain a much larger sample of the bismuth-magnesium material to conduct further tests.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8395de55-eec8-4d6c-bbb7-256ccf8d3949
   type: hearsay
   attestation: second_hand
@@ -1277,6 +1533,11 @@ domain_claims:
     One of the things that's been speculated about this particular piece of bismuth magnesium is that if you put a wave form through it, I know this sounds daffy, it will levitate.
   text: |-
     It has been speculated that the bismuth-magnesium material sample will levitate if a waveform is put through it.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 67690937-fcd4-4b77-b667-cf90b148506a
   type: hearsay
   attestation: second_hand
@@ -1296,6 +1557,11 @@ domain_claims:
   quote: I have heard of this result. I've not seen it with my own eyes.
   text: |-
     Garry Nolan has heard of the result that the bismuth-magnesium material sample levitates under a waveform, but has not personally witnessed it.
+  entailment:
+    label: entails
+    score: 0.906
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d71d30e1-5518-45f9-80c4-0191322caddf
   type: testimony
   attestation: first_hand
@@ -1316,6 +1582,11 @@ domain_claims:
     Have you tried? No, because the waveform that they needed to put through it is terahertz waves.
   text: |-
     Garry Nolan has not tried to reproduce the levitation effect on the bismuth-magnesium material sample because the required waveform is terahertz waves, which he does not have access to.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b4dc361d-adf9-4e33-acb1-369d1ca8b72b
   type: administrative
   attestation: first_hand
@@ -1343,6 +1614,11 @@ domain_claims:
     And that was why Tom DeLonge's To The Stars Academy did the CRADA, the research agreement with the U.S. Army, because they're the only people that have got the terahertz transmitter that you'd need.
   text: |-
     Tom DeLonge's To The Stars Academy entered into the Cooperative Research and Development Agreement (CRADA) with the United States Army because the Army possesses the terahertz transmitter needed to test the bismuth-magnesium material sample.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ff64bfef-4d36-496f-b62c-962c608cb06d
   type: testimony
   attestation: first_hand
@@ -1366,6 +1642,11 @@ domain_claims:
     Do we know whether that research has been done now? I'm not allowed to talk about that.
   text: |-
     Garry Nolan is not allowed to discuss whether research on the bismuth-magnesium material sample using a terahertz transmitter under the Cooperative Research and Development Agreement (CRADA) between To The Stars Academy and the United States Army has been completed.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 575bb083-d24e-476a-a594-7e81fa6fbea7
   type: administrative
   attestation: first_hand
@@ -1384,6 +1665,11 @@ domain_claims:
     the thing that fascinates me about that is some of the material that To The Stars Academy was saying that it was going to be researching was material that was provided to it by the US government.
   text: |-
     Some of the material To The Stars Academy said it would research was material provided to it by the US government.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f397c91b-4870-44f5-acc9-e5dd95d693fd
   type: opinion
   attestation: second_hand
@@ -1402,6 +1688,11 @@ domain_claims:
     Lou Elizondo has said publicly, as have others, that he believes the United States government is in possession of exotic materials.
   text: |-
     Luis Elizondo has publicly said that he believes the United States government is in possession of exotic materials.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 75559e16-f5ac-4c66-83d3-4a0ce7475ed9
   type: opinion
   attestation: second_hand
@@ -1420,6 +1711,11 @@ domain_claims:
     Dr. Eric Davis, whom I know you know, very eminent physicist, has also said that he believes that the US government has recovered craft.
   text: |-
     Eric Davis, described as a very eminent physicist, has said that he believes the US government has recovered craft.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 790e377d-8760-4144-944d-57eda3a471b4
   type: opinion
   attestation: first_hand
@@ -1442,6 +1738,11 @@ domain_claims:
     The best way I can put it is that I can see no reason that any of these people would lie, especially Eric Davis and Lou.
   text: |-
     Garry Nolan sees no reason that Eric Davis or Luis Elizondo would lie about the US government secretly holding non-human technology.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 42b56ab6-ab97-42f1-8fd3-0dfcb9f2094e
   type: opinion
   attestation: first_hand
@@ -1464,6 +1765,11 @@ domain_claims:
     in more private conversations that I've had with them, I've pressed them on the issue... So in my heart, it's more, maybe it's more of a hope that it exists because I'm excited about the potential of what we can learn.
   text: |-
     Garry Nolan has pressed Eric Davis and Luis Elizondo privately on whether the US government secretly holds non-human technology, and hopes it exists because he is excited about the potential of what could be learned from it.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0d5b892b-dd59-4f2e-bbfe-c959f434adb8
   type: measurement
   attestation: first_hand
@@ -1484,6 +1790,11 @@ domain_claims:
     the objects can move and accelerate to 5,000 miles an hour instantly and decelerate.
   text: |-
     An object able to move like an observed unidentified aerial phenomenon (UAP) can accelerate to approximately 8,000 kilometres per hour instantly and decelerate again.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95e8e5c8-957d-46a2-a3a8-3bb1f4480e0f
   type: opinion
   attestation: first_hand
@@ -1504,6 +1815,11 @@ domain_claims:
     So whoever is in there didn't get squished. And so therefore, they have control over momentum as well as gravity.
   text: |-
     Garry Nolan believes that whatever is inside these unidentified aerial phenomena (UAP) has control over momentum as well as gravity, since occupants would not be crushed by the observed instantaneous acceleration and deceleration.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a654cfb-b7a9-4076-9fad-4364333d184d
   type: observation
   attestation: first_hand
@@ -1522,6 +1838,11 @@ domain_claims:
     name: Unidentified Aerial Phenomena (UAP)
   quote: These things can hover.
   text: These unidentified aerial phenomena (UAP) can hover.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9ec9e6ed-7c6e-40bd-8699-ff805fe9e04d
   type: hearsay
   attestation: second_hand
@@ -1543,6 +1864,11 @@ domain_claims:
     another physicist has published, if you were to take an object, assume it's one ton of weight and you were to move it instantaneously from 50 feet to 14 miles into space, which there has been observations of this, The total energy required for that instantaneous acceleration and deceleration is more than the nuclear output basically of the whole planet for a year.
   text: |-
     Another physicist has published a calculation that the total energy required to instantaneously move a one-ton object from approximately 15 metres to approximately 22.5 kilometres in altitude is more than the nuclear output of the entire planet for a year.
+  entailment:
+    label: entails
+    score: 0.85
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6e520177-f4e3-4f17-abd7-a45c77b1acac
   type: opinion
   attestation: first_hand
@@ -1562,6 +1888,11 @@ domain_claims:
   quote: And they're doing it apparently every second.
   text: |-
     Garry Nolan believes these instantaneous accelerations and decelerations of unidentified aerial phenomena (UAP), each requiring more energy than the planet's annual nuclear output, are apparently occurring every second.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6e645aca-1253-47ce-a2af-324542958411
   type: observation
   attestation: first_hand
@@ -1582,6 +1913,11 @@ domain_claims:
     It is observed visually by individuals, at least the instantaneous disappearance of the thing, but then it is observed by radar and other electronic means to be occurring.
   text: |-
     The instantaneous disappearance of unidentified aerial phenomena (UAP) is observed visually by individuals and separately confirmed by radar and other electronic means.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9439038f-3ce6-4e32-a789-007bd311710c
   type: administrative
   attestation: first_hand
@@ -1600,6 +1936,11 @@ domain_claims:
     It's interesting because one of the most important bases that America has for monitoring things in orbit and things on the ground that might be signs of ICBM launches is Pine Gap in Austra
   text: |-
     Pine Gap in Australia's Northern Territory is one of the most important bases America has for monitoring things in orbit and on the ground that might be signs of intercontinental ballistic missile (ICBM) launches.
+  entailment:
+    label: entails
+    score: 0.562
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ed164324-b0f9-4469-8187-de9b287db760
   type: hearsay
   attestation: first_hand
@@ -1618,6 +1959,11 @@ domain_claims:
     there are other bases like Northwest Cape in Western Australia that's been the location for some very, very weird paranormal phenomena. Giant craft,
   text: |-
     Northwest Cape in Western Australia has been the site of unusual paranormal phenomena, including sightings of giant craft.
+  entailment:
+    label: entails
+    score: 0.948
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 249cf850-5384-439c-81d2-af4c37a9eb39
   type: hearsay
   attestation: second_hand
@@ -1638,6 +1984,11 @@ domain_claims:
     even military records recording observations of spheres over the base at times of acute DEFCON heightening during the Middle East war.
   text: |-
     Military records document observations of spheres over the Northwest Cape base in Western Australia during periods of heightened Defense Readiness Condition (DEFCON) alert during a Middle East war.
+  entailment:
+    label: entails
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ba553183-d4a5-48dc-a1f7-b55a843c0961
   type: hearsay
   attestation: first_hand
@@ -1656,6 +2007,11 @@ domain_claims:
     The Chinese are taking an interest in this very sensitive Australian military base
   text: |-
     China has taken interest in Northwest Cape, a sensitive Australian military base.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 979783ff-0faf-4e8a-98fb-0a9cbee72c5b
   type: administrative
   attestation: first_hand
@@ -1674,6 +2030,11 @@ domain_claims:
     that's actually used by America to contact its nuclear submarines in the event of nuclear war.
   text: |-
     Northwest Cape in Western Australia is used by the United States to contact its nuclear submarines in the event of nuclear war.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 442b3bc6-ccc7-4994-8116-30e50673d41c
   type: testimony
   attestation: first_hand
@@ -1689,6 +2050,11 @@ domain_claims:
     The Chinese have admitted that they have a program to investigate this openly. They have admitted that.
   text: |-
     The Chinese government has publicly admitted to having a programme to investigate the UAP phenomenon.
+  entailment:
+    label: entails
+    score: 0.956
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 29a8b16b-3d15-4349-8df3-6319df87e090
   type: opinion
   attestation: first_hand
@@ -1703,6 +2069,11 @@ domain_claims:
   quote: I wouldn't be surprised.
   text: |-
     Garry Nolan would not be surprised if China has recovered the same UAP-related technology that the United States has recovered.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 638b1409-4108-41fc-853d-eec44f980e2e
   type: testimony
   attestation: first_hand
@@ -1716,6 +2087,11 @@ domain_claims:
   location: 00:21:09.6-00:21:11.8
   quote: I mean, Brazil has had events.
   text: Brazil has experienced UAP events.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b01d4230-60ce-4eeb-a049-95ef5062a1b3
   type: testimony
   attestation: first_hand
@@ -1729,6 +2105,11 @@ domain_claims:
   location: 00:21:12.3-00:21:13.0
   quote: Italy has had events.
   text: Italy has experienced UAP events.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a50ac322-7465-4335-899d-ff04c4c0ae02
   type: testimony
   attestation: first_hand
@@ -1742,6 +2123,11 @@ domain_claims:
   location: 00:21:13.4-00:21:14.0
   quote: Russia has had events.
   text: Russia has experienced UAP events.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3eaf80d1-18f6-440e-b7d3-424a7017f0af
   type: opinion
   attestation: first_hand
@@ -1755,6 +2141,11 @@ domain_claims:
   location: 00:21:15.0-00:21:15.9
   quote: I don't think they're avoiding China.
   text: Garry Nolan does not think China has been spared UAP events either.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 725288a6-b8ae-4797-9819-f7d36e4094df
   type: opinion
   attestation: first_hand
@@ -1772,6 +2163,11 @@ domain_claims:
   quote: Well, I mean, it's a game changer, obviously.
   text: |-
     Garry Nolan considers the technology behind the UAP phenomenon, if mastered by a country, to be a 'game changer'.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 37103470-69b4-485e-afa0-1251b4a740a3
   type: opinion
   attestation: first_hand
@@ -1790,6 +2186,11 @@ domain_claims:
     if you have anti-gravity and you give it to everybody, anybody could go out to the asteroid belt and push something our way.
   text: |-
     Garry Nolan believes that if anti-gravity technology were given to everyone, any individual could pose a threat, for example by pushing an object from the asteroid belt toward Earth.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 93ade9ca-c24f-49be-94e4-8c713c3ce576
   type: opinion
   attestation: first_hand
@@ -1808,6 +2209,11 @@ domain_claims:
     if you have access to the supposed levels of energy that these things require to move around everybody's got a bomb you know that is you know of dangerous levels of consequence
   text: |-
     Garry Nolan considers the energy levels required for anti-gravity technology dangerous enough that widespread access to it would carry consequences comparable to everyone possessing a bomb.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6895e2e7-48b3-4a36-ad54-62161a63b6f8
   type: opinion
   attestation: first_hand
@@ -1826,6 +2232,11 @@ domain_claims:
     if you're asking questions why might the u.s government want to limit knowledge of this they might have a perfectly good reason for doing so
   text: |-
     Garry Nolan considers it plausible that the United States government wants to limit public knowledge of the UAP phenomenon because of the danger the underlying technology poses.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6a93d742-4f52-4de3-9788-298a625e7af1
   type: administrative
   speaker:
@@ -1844,6 +2255,11 @@ domain_claims:
     we now are creating an internal secret channel for people to break their NDAs and come forward and give information to Congress.
   text: |-
     The United States government has created an internal channel through which individuals can break their non-disclosure agreements (NDAs) and provide UAP-related information to the United States Congress.
+  entailment:
+    label: entails
+    score: 0.651
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e894c4e0-523f-41a3-ad06-bd4d998ca2f0
   type: administrative
   speaker:
@@ -1862,6 +2278,11 @@ domain_claims:
     They've publicly put in the record now for funding to bring, it says exactly this, cadres of scientists to the table who can have classification to study this.
   text: |-
     The United States government has publicly requested funding to bring in groups of scientists with security classification to study the UAP phenomenon.
+  entailment:
+    label: entails
+    score: 0.856
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 694d3fba-42b8-46bf-a0d1-62d92d1d5481
   type: testimony
   attestation: first_hand
@@ -1880,6 +2301,11 @@ domain_claims:
     I actually wrote a white paper to these internal groups that said exactly this, that we need to bring in scientists in a classified manner.
   text: |-
     Garry Nolan wrote a white paper submitted to internal government groups arguing for bringing scientists into a classified programme to study the UAP phenomenon.
+  entailment:
+    label: entails
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 42fc48b1-e9a7-485d-9c24-a36f3036224e
   type: opinion
   attestation: first_hand
@@ -1897,6 +2323,11 @@ domain_claims:
   quote: i just i i don't think so i but who knows i i if they have kudos
   text: |-
     Garry Nolan does not think the United States government has secretly developed anti-gravity technology and built a working spacecraft, though he says he cannot be certain.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 816f4e43-2a9c-46bd-ac7a-20ad57000841
   type: opinion
   attestation: first_hand
@@ -1915,6 +2346,11 @@ domain_claims:
     if they have cracked gravity, it means they have an understanding of gravity that we don't even today have in our current physics.
   text: |-
     Garry Nolan states that if the United States government has cracked gravity, it would represent an understanding of gravity beyond current physics.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cd9ba2ce-9248-467d-8844-a17d30793983
   type: opinion
   attestation: first_hand
@@ -1929,6 +2365,11 @@ domain_claims:
   quote: |-
     We don't even understand gravity today with all of the equations that get thrown around by physicists.
   text: Current physics does not fully explain gravity.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cdd6e3e3-a8f6-4dd3-ad05-09a60f0d7986
   type: opinion
   attestation: first_hand
@@ -1947,6 +2388,11 @@ domain_claims:
     Well, I think years of decades, frankly, of this kind of disinformation and purposeful diminution of people's opinions has had its logical outcome.
   text: |-
     Garry Nolan attributes the stigma surrounding discussion of the UAP phenomenon to decades of disinformation and the deliberate diminishment of people's opinions on the topic.
+  entailment:
+    label: entails
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 052269de-6e9f-4ec1-9fe2-0a2313e776c4
   type: opinion
   attestation: first_hand
@@ -1964,6 +2410,11 @@ domain_claims:
   quote: I think it's totally unjustified.
   text: |-
     Garry Nolan considers the stigma surrounding investigation of the UAP phenomenon to be totally unjustified.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 779bd9f4-0677-4b8c-b6e8-217be2dcdbea
   type: testimony
   attestation: first_hand
@@ -1982,6 +2433,11 @@ domain_claims:
     I, of course, have been approached by scientific colleagues and said, Gary, you're going to ruin your reputation with this.
   text: |-
     Scientific colleagues have warned Garry Nolan that investigating the UAP phenomenon could damage his professional reputation.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 99e8cd2d-bcdf-4e67-a5ce-97551ca772ef
   type: opinion
   attestation: first_hand
@@ -1996,6 +2452,11 @@ domain_claims:
   quote: Well, that would put us not at the top of the food chain, first of all.
   text: |-
     Garry Nolan considers that acknowledging non-human intelligent life would mean humanity is not at the top of the food chain.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8acb5eaa-fccd-42c6-a685-a32ceb7646b7
   type: opinion
   attestation: first_hand
@@ -2011,6 +2472,11 @@ domain_claims:
     And from a religious point of view, it's a context clash. that okay uh well if these things exist and they're there where do they fit in the hierarchy to angels and god if that's your religion
   text: |-
     Garry Nolan considers the existence of non-human intelligent life to present a conflict with religious frameworks, raising questions of where such beings would fit within religious hierarchies such as angels and God.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b56be55a-3006-49dd-aeef-ae2f1279eea3
   type: opinion
   attestation: first_hand
@@ -2026,6 +2492,11 @@ domain_claims:
     uh or angels and demons so that you know you need an explanation for something so you put it into your whatever your current mythology is
   text: |-
     Garry Nolan suggests that when people cannot explain a phenomenon, they interpret it through their existing mythology, such as angels or demons.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 204fce4e-e777-45d7-9fd8-8041970c6add
   type: testimony
   attestation: first_hand
@@ -2040,6 +2511,11 @@ domain_claims:
   quote: Yeah, I've had a lot of people come to me about the whole DNA thing.
   text: |-
     Many people have approached Garry Nolan claiming that a superior intelligence is tinkering with human DNA.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c630dfe-f997-4fc7-9082-aeec52727fe9
   type: opinion
   attestation: first_hand
@@ -2055,6 +2531,11 @@ domain_claims:
     I think there's a lot more ways you can guide a species other than directly interacting with its DNA. I mean, look at what we've done with dogs over just a few tens of thousands of years.
   text: |-
     Garry Nolan believes there are more ways to guide the evolution of a species than by directly interacting with its DNA, citing the selective breeding of dogs over tens of thousands of years as an example.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f17b8295-fe2a-43c4-bf3c-1183732bb4e2
   type: hearsay
   attestation: second_hand
@@ -2075,6 +2556,11 @@ domain_claims:
     he suggested that there are anomalies in human DNA that suggest some kind of intervention.
   text: |-
     The Wow Signal DNA paper's analysis of DNA sequence probabilities suggests there are anomalies in human DNA indicating some kind of intervention.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9d3b342a-47f0-40bd-b1aa-973d905ecec6
   type: opinion
   attestation: first_hand
@@ -2092,6 +2578,11 @@ domain_claims:
   quote: Well, mathematically it's sound.
   text: |-
     Garry Nolan considers the mathematics presented in the Wow Signal DNA paper to be sound.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 35413dfd-6f37-46e2-88f5-ccefb7fd0f38
   type: opinion
   attestation: first_hand
@@ -2110,6 +2601,11 @@ domain_claims:
     It is strangely ordered, which the only way you can, I think, countenance it is to say there's something about the structure of life that required that order.
   text: |-
     Garry Nolan finds the DNA sequence described in the Wow Signal DNA paper to be strangely and unusually ordered, as though intentionally designed.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 863edc9d-dacf-4ec2-8b69-abee5f526abe
   type: opinion
   attestation: first_hand
@@ -2128,6 +2624,11 @@ domain_claims:
     So you either created the order because you designed it, or the structure of life required it, and that's why it came out to be looking like somebody made it.
   text: |-
     Garry Nolan suggests that the ordered structure of the DNA sequence in the Wow Signal DNA paper indicates either that it was deliberately designed or that the structure of life itself required that order.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 561ae4cd-bbcb-4813-ad83-3e8ba1b65000
   type: hearsay
   attestation: second_hand
@@ -2148,6 +2649,11 @@ domain_claims:
     what she found fascinating is that many of these angels showed up as white orbs. And then it kind of clicked in her head that this was the same story of people who were seeing UFOs.
   text: |-
     Diana Pasulka found that many historical depictions of angels described them appearing as white orbs, resembling accounts of UFO sightings.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7cb357d3-170e-4cf1-9d00-0bfad021227e
   type: testimony
   attestation: first_hand
@@ -2167,6 +2673,11 @@ domain_claims:
     they were moving as if there was a light behind me that was moving, which caused me to look up and see an object right at the top of the trees go right over my head silently. ... It just was a kind of roundish object with, I remember, kind of like four or five whitish lights.
   text: |-
     As a child, while working as a paperboy in Windsor, Connecticut, Garry Nolan personally observed a roundish object with four or five whitish lights pass silently over the treetops.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6389e9fe-bfc3-44a8-9594-31b1cfd593ed
   type: testimony
   attestation: first_hand
@@ -2185,6 +2696,11 @@ domain_claims:
     But I can't even remember how old I was, 10 or 12, whatever it was. ... this would have been 1972, 73.
   text: |-
     Garry Nolan estimates he was between 10 and 12 years old at the time of the Windsor, Connecticut sighting, which he believes occurred around 1972 or 1973.
+  entailment:
+    label: neutral
+    score: 0.772
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4a4f6f3c-d655-49bf-9ef9-5b219c81be99
   type: testimony
   attestation: first_hand
@@ -2203,6 +2719,11 @@ domain_claims:
     No. I wasn't scared because I didn't know what it was. ... I didn't say, oh, there was a UFO because I didn't even know what a UFO was.
   text: |-
     Garry Nolan did not feel scared during the Windsor, Connecticut sighting because he did not know what a UFO was at the time.
+  entailment:
+    label: neutral
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 61b1f047-5ef2-40ed-acd4-7b78eefbe696
   type: testimony
   attestation: first_hand
@@ -2221,6 +2742,11 @@ domain_claims:
     it really wasn't until about 20 years or so later that as I paid attention as anybody does to movies and things and UFOs and it kind of clicked in my head. I said, wait, was that what I saw?
   text: |-
     Garry Nolan did not connect his childhood Windsor, Connecticut sighting to the concept of UFOs until about 20 years later.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ab4ed0ee-117d-40a7-9a31-fae3e81bcd9a
   type: opinion
   attestation: first_hand
@@ -2239,6 +2765,11 @@ domain_claims:
     I now look at that as, I would call it again, preliminary evidence, preliminary data. ... And if other people are seeing the same thing, that's a kind of confirmation.
   text: |-
     Garry Nolan regards his childhood Windsor, Connecticut object sighting as preliminary evidence worth understanding, particularly if corroborated by similar accounts from other people.
+  entailment:
+    label: entails
+    score: 0.952
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b12e6d13-5714-46eb-80ac-9fe0839d4d34
   type: testimony
   attestation: first_hand
@@ -2257,6 +2788,11 @@ domain_claims:
     As you wake up as a young boy, I would have been probably six or seven because it was in our first house that my parents had bought in Windsor, of little men in the bedroom. ... I saw these little men in the bedroom and it went on for I guess a few weeks and then it just stopped.
   text: |-
     As a young boy of about six or seven, in his family's first house in Windsor, Connecticut, Garry Nolan experienced seeing 'little men' in his bedroom while awake, an experience that recurred for a few weeks before stopping.
+  entailment:
+    label: entails
+    score: 0.886
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 08d2e3cf-a4fa-469d-beb0-6edd03c5066f
   type: testimony
   attestation: first_hand
@@ -2271,6 +2807,11 @@ domain_claims:
   quote: I remember telling my parents the next day about it.
   text: |-
     Garry Nolan told his parents about seeing 'little men' in his bedroom the day after the experience occurred.
+  entailment:
+    label: entails
+    score: 0.575
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fe26e0be-4fc6-4cdc-98f4-e1a3a1a410a1
   type: testimony
   attestation: first_hand
@@ -2291,6 +2832,11 @@ domain_claims:
     about 20 years again later, actually here in Palo Alto, I was at a used bookstore. and I pulled out a book ... Communion. And there on the front cover was, and I can feel the hair on my arms going up, was what I saw.
   text: |-
     About 20 years after his childhood experience, while at a used bookstore in Palo Alto, California, Garry Nolan recognised the face depicted on the cover of the book 'Communion' as matching what he had seen as a child.
+  entailment:
+    label: entails
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 34c48a9f-fe1f-4953-9e1a-ddbda01c50e3
   type: opinion
   attestation: first_hand
@@ -2309,6 +2855,11 @@ domain_claims:
     part of my self-explanation for what it was that I was seeing was just some collective unconscious genetic memory that we all have that has nothing to do with anything from outside.
   text: |-
     Garry Nolan considers a possible explanation for his childhood 'little men' sighting to be a shared collective unconscious genetic memory rather than an external entity.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 32883cb2-85d4-4c4a-91b8-54776fd363e5
   type: opinion
   attestation: first_hand
@@ -2323,6 +2874,11 @@ domain_claims:
   quote: Can't. Absolutely not.
   text: |-
     As a scientist, Garry Nolan says he cannot conclude that what he saw as a child was an extraterrestrial being.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4d060fe-503e-4e6e-93ba-a053f6bce057
   type: testimony
   attestation: first_hand
@@ -2338,6 +2894,11 @@ domain_claims:
     lying there in the bed in the hotel, I woke up with my entire body buzzing like I was sitting in an electric water bath.
   text: |-
     While staying in a hotel in London, Garry Nolan woke up with his entire body buzzing, a sensation he compared to sitting in an electric water bath.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7753e119-9729-4203-a76c-362c26bbadaa
   type: testimony
   attestation: first_hand
@@ -2353,6 +2914,11 @@ domain_claims:
     there were I don't even can't even call them words there was a say there was words in my head that said this is how you connect
   text: |-
     During his London buzzing experience, Garry Nolan perceived words in his head conveying the message 'this is how you connect'.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26ac32ad-91a0-4c9d-8dfa-500b5e28b40d
   type: testimony
   attestation: first_hand
@@ -2368,6 +2934,11 @@ domain_claims:
     after about 10 to 15 seconds of this, I just ... I just said, this has to stop. Make it stop. And it did.
   text: |-
     The buzzing sensation and perceived message during Garry Nolan's London experience lasted about 10 to 15 seconds before stopping after he mentally demanded it stop.
+  entailment:
+    label: entails
+    score: 0.587
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d5c946d0-3881-4620-b8f0-d7332c87bbef
   type: opinion
   attestation: first_hand
@@ -2383,6 +2954,11 @@ domain_claims:
     this is why I don't think it was physiologic necessarily, some sort of odd physiologic effect.
   text: |-
     Garry Nolan does not believe his London buzzing experience was caused by an ordinary physiological effect.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 649e1dc6-fc50-4044-8425-a9cf2e70b9da
   type: opinion
   attestation: first_hand
@@ -2401,6 +2977,11 @@ domain_claims:
     I think the advice is don't be ashamed, first of all. ... Believe that you're not crazy. I think that's the first thing to do.
   text: |-
     Garry Nolan advises people who have had unexplained experiences related to the UAP phenomenon not to be ashamed and to believe they are not 'crazy'.
+  entailment:
+    label: entails
+    score: 0.735
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c48fad50-9b64-4671-8fe1-7a7a6c681469
   type: opinion
   attestation: first_hand
@@ -2419,6 +3000,11 @@ domain_claims:
     for thousands of years, even going back to Plato, we would think of the atom as an object, right? ... but now we realize they're all waves.
   text: |-
     Garry Nolan notes that for thousands of years, dating back to Plato, atoms were thought of as solid objects, but are now understood by physics to exist as waves.
+  entailment:
+    label: entails
+    score: 0.592
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f5ba1b6a-e3d5-4a90-a710-7ea176469e3a
   type: opinion
   attestation: first_hand
@@ -2434,6 +3020,11 @@ domain_claims:
     a particle doesn't exist in any one place. It actually exists in a superposition in many places at once.
   text: |-
     Garry Nolan states that a particle does not exist in a single location but exists in superposition across many places at once.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f712a7ee-b76b-4cc4-80f7-208badcd0c4e
   type: testimony
   attestation: first_hand
@@ -2452,6 +3043,11 @@ domain_claims:
     Now one thing you've been doing is you've been looking at the brains of experiences. You've been using MRI imaging.
   text: |-
     Garry Nolan has used magnetic resonance imaging (MRI) to study the brains of people who report experiences with the UAP phenomenon.
+  entailment:
+    label: entails
+    score: 0.664
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a58cc0a6-271d-444c-8322-37c4742262bf
   type: measurement
   attestation: first_hand
@@ -2470,6 +3066,11 @@ domain_claims:
     we found that there is a bundle of nerves at the head of the caudate and putamen in their basal ganglia. ... this one area at the head of the caudate impotainment, had overdeveloped interactions with this, compared to normals.
   text: |-
     Garry Nolan's MRI research found overdeveloped interactions in a bundle of nerves at the head of the caudate and putamen within the basal ganglia among individuals who reported experiences with the UAP phenomenon, compared to normal controls.
+  entailment:
+    label: entails
+    score: 0.893
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 926f56bd-bb84-46f2-9f59-57a54d82aa3d
   type: opinion
   attestation: first_hand
@@ -2485,6 +3086,11 @@ domain_claims:
     This is an important area of the brain that has to do with sensory perceptions and actually integration of that information for goal seeking.
   text: |-
     The head of the caudate and putamen in the basal ganglia is an area of the brain associated with sensory perception and the integration of information for goal-seeking behaviour.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26f92cc1-2714-4df3-b96d-1591a6732d3a
   type: measurement
   attestation: first_hand
@@ -2502,6 +3108,11 @@ domain_claims:
   quote: There was a density of neuronal structure there.
   text: |-
     Garry Nolan's MRI research found a greater density of neuronal structure in the head of the caudate and putamen among individuals who reported UAP phenomenon-related experiences, compared to normal controls.
+  entailment:
+    label: neutral
+    score: 0.58
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3cd9a237-40fe-4167-b0c3-a35d4a5b64d6
   type: testimony
   attestation: first_hand
@@ -2517,6 +3128,11 @@ domain_claims:
     So these are all people who came from the intelligence agencies, pilots, high-level physicists, basically smart people.
   text: |-
     The individuals studied in Garry Nolan's MRI research included people from intelligence agencies, pilots, and high-level physicists, described as high-functioning individuals.
+  entailment:
+    label: entails
+    score: 0.736
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dda679ee-30d7-496d-a928-780e9e0a9c8f
   type: measurement
   attestation: first_hand
@@ -2535,6 +3151,11 @@ domain_claims:
     time didn't know, but now has been confirmed not only by us, but by multiple other laboratories who have nothing to do with the paranormal aspects of this, but have shown that the caudate is involved in intuition and intelligence.
   text: |-
     Multiple independent laboratories have confirmed that the caudate nucleus in the brain is involved in intuition and intelligence.
+  entailment:
+    label: entails
+    score: 0.655
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b675ab39-41b8-4d24-acc8-96584cf433b6
   type: opinion
   attestation: first_hand
@@ -2555,6 +3176,11 @@ domain_claims:
     So these people who are having these experiences with unidentified aerial phenomena, they actually have differences in their brain in some of the cases you've seen that might explain why they're seeing them.
   text: |-
     People who report experiences with Unidentified Aerial Phenomena (UAP) show differences in brain structure, in some of the cases studied, that may explain why they perceive these phenomena while others do not.
+  entailment:
+    label: entails
+    score: 0.796
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ed09d25e-c858-493f-ac25-dfc59cd45dfd
   type: opinion
   attestation: first_hand
@@ -2575,6 +3201,11 @@ domain_claims:
     Yeah, that they're basically smarter and they realize what's sitting in front of them and they don't ignore it.
   text: |-
     People who perceive Unidentified Aerial Phenomena (UAP) tend to be more intelligent and recognise what is in front of them rather than ignoring it.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 80a5633c-e125-4aa5-8ab6-cb6308d2fe12
   type: measurement
   attestation: first_hand
@@ -2593,6 +3224,11 @@ domain_claims:
     No, because in some of the individuals we actually were able to go back and look at their MRIs 10 years earlier and see that they still had it. They're born with it.
   text: |-
     In some individuals studied, MRI scans taken ten years earlier already showed the same brain feature linked to intuition and intelligence, indicating the trait is present from birth rather than caused by any interaction with a phenomenon.
+  entailment:
+    label: entails
+    score: 0.91
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 643b0020-7fc0-4cc7-b56a-d0f1fa2111b9
   type: observation
   attestation: first_hand
@@ -2610,6 +3246,11 @@ domain_claims:
   quote: And what's fascinating is it runs in families.
   text: |-
     The brain trait linked to intuition and intelligence associated with perceiving UAP runs in families.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cbb4cf02-ef5d-4ef1-8804-896d26367d4c
   type: testimony
   attestation: first_hand
@@ -2628,6 +3269,11 @@ domain_claims:
     Yes, my family has it. We're way up on the scale. ... so it's my mother, my brother, and my sister, we all.
   text: |-
     Garry Nolan tested himself and found that he and his family, including his mother, brother and sister, have the brain trait linked to intuition and intelligence, at a level well above average.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0cf90acf-edcd-44b2-8ab2-b0a91bd413c3
   type: testimony
   attestation: first_hand
@@ -2646,6 +3292,11 @@ domain_claims:
     Since I did the documentary last year and wrote my book, I've been amazed by the number of people who've told me that the phenomenon of sighting these objects and having these weird experiences that I suppose you could call them paranormal, it runs in the family. Mum had it, dad had it, granddad had it.
   text: |-
     Many people have told Ross Coulthart, since he made his documentary and wrote his book, that the phenomenon of sighting unidentified objects and having similar experiences runs in their families.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fa11ef05-ea34-43d4-9650-ae55c318267b
   type: opinion
   attestation: first_hand
@@ -2664,6 +3315,11 @@ domain_claims:
     it's almost like it's a dominant trait. Because if it's a multigenic trait, multiple genes all coming together to enable a certain, what we would call phenotype, it would be much more disparate and less likely to be passed within immediate families.
   text: |-
     Garry Nolan considers the brain trait linked to perceiving UAP to behave like a dominant genetic trait rather than a multigenic one, since a multigenic trait would be less likely to be passed consistently within immediate families.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5645f2a7-a6a6-4e8b-9dcb-d59962701560
   type: measurement
   attestation: first_hand
@@ -2681,6 +3337,11 @@ domain_claims:
   quote: It's found in about 1 in 100 people on average, to 1 in 200 people.
   text: |-
     The brain trait linked to intuition, intelligence, and perceiving UAP is found in approximately 1 in 100 to 1 in 200 people on average.
+  entailment:
+    label: entails
+    score: 0.751
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c8cb3bc1-280a-43c6-ae25-b03312381899
   type: observation
   attestation: first_hand
@@ -2699,6 +3360,11 @@ domain_claims:
     In a group of about, let's say, 20 people, we found two husband-wife pairs, both of whom had it.
   text: |-
     In a study group of about 20 people, two husband-and-wife pairs were both found to have the brain trait linked to intuition, intelligence, and perceiving UAP.
+  entailment:
+    label: neutral
+    score: 0.675
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8e7c7bb1-2ad0-44d7-a416-3d6c9c2fcb05
   type: opinion
   attestation: first_hand
@@ -2717,6 +3383,11 @@ domain_claims:
     From a really fascinating evolutionary point of view, this is what you would call the beginnings of speciation. So speciation is when you have a uniform breeding population and let's say a mountain range over time comes between them. They now are separated, no longer interbreeding.
   text: |-
     Garry Nolan considers the concentration of the brain trait linked to perceiving UAP within couples and families to represent the early stages of a form of speciation, similar to how a geographically separated breeding population diverges over time.
+  entailment:
+    label: entails
+    score: 0.838
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a7f070a2-0cd0-4d8d-a975-547d393cb90b
   type: hearsay
   attestation: second_hand
@@ -2738,6 +3409,11 @@ domain_claims:
   quote: |-
     Jim's a guy who claims to have had abduction experiences ever since he was a little boy.
   text: Jim (Texas) claims to have had abduction experiences since he was a small boy.
+  entailment:
+    label: entails
+    score: 0.562
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e33b7c7b-9cc1-40bd-b469-3094d17da5f1
   type: hearsay
   attestation: second_hand
@@ -2760,6 +3436,11 @@ domain_claims:
     He describes beings with big heads, grey aliens coming through the wall to take him away.
   text: |-
     Jim (Texas) describes the beings from his alleged abduction experiences as having big heads, grey aliens that come through a wall to take him away.
+  entailment:
+    label: contradicts
+    score: 0.653
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dc375b7e-e2a2-42e1-a8bc-ab6387cbdf4b
   type: hearsay
   attestation: third_hand
@@ -2786,6 +3467,11 @@ domain_claims:
     he tells us he's got this sphere, this object that he was given by a friend that the friend saw fall from a UFO, a craft of some kind.
   text: |-
     Jim (Texas) was given Jim's metal sphere by a friend who said he saw it fall from a UFO.
+  entailment:
+    label: entails
+    score: 0.405
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e11e674d-3ff5-413b-b012-96dfc1267daf
   type: observation
   attestation: first_hand
@@ -2808,6 +3494,11 @@ domain_claims:
     Well I have seen the videos that you've seen of this ball spontaneously rolling around the floor and Jim has apparently had this for 40 years and so why would it move?
   text: |-
     Garry Nolan has seen videos showing Jim's metal sphere spontaneously rolling around the floor, an object Jim (Texas) has reportedly had for 40 years.
+  entailment:
+    label: entails
+    score: 0.824
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ff644ca1-171e-4074-95fd-dd56ec79fac6
   type: hearsay
   attestation: second_hand
@@ -2831,6 +3522,11 @@ domain_claims:
     The metal sphere story came to my attention because of a gentleman in England had been noticing in a lot of the pictures of claimed UFOs that they were often, you'd have the central object and then there would be at least three or four of these metal spheres that would be surrounding and almost as if they were scouts or guards. And it's fascinating because he could go back 30, 40 years and find this exact same phenomenon.
   text: |-
     An unnamed researcher in England identified that many photographs of claimed UFOs, dating back three to four decades, show a central object surrounded by three or four metal spheres, appearing to act as scouts or guards, a pattern resembling Jim's metal sphere.
+  entailment:
+    label: entails
+    score: 0.681
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ad318a7f-0c49-416e-8c2f-eb7d81cc2d33
   type: testimony
   speaker:
@@ -2851,6 +3547,11 @@ domain_claims:
     There was a family in Florida in the mid 1970s who found in a forest a metallic ball, slightly smaller than the one that we've seen, but nonetheless a solid metallic sphere.
   text: |-
     The Betz sphere was found by a family in USA, Florida, in the mid-1970s in a forest.
+  entailment:
+    label: neutral
+    score: 0.824
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 22a1bc8c-d2f2-4531-896d-9aedf0ce9483
   type: observation
   attestation: first_hand
@@ -2871,6 +3572,11 @@ domain_claims:
     found in a forest a metallic ball, slightly smaller than the one that we've seen, but nonetheless a solid metallic sphere.
   text: |-
     The Betz sphere is a solid metallic sphere, slightly smaller than Jim's metal sphere.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 30cefbef-a209-4408-b892-995b97eb4c88
   type: observation
   speaker:
@@ -2886,6 +3592,11 @@ domain_claims:
   quote: |-
     It did the same sort of things that are being described by Jim. It moved around on its own accord in the house
   text: The Betz sphere moved around on its own accord within the family's house.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6dd7d99b-79b1-49ed-b963-73bf3bf9dd09
   type: testimony
   speaker:
@@ -2902,6 +3613,11 @@ domain_claims:
     and became the subject of great hilarity and fascination by different media and indeed the US military got involved. And at one stage they admitted that they couldn't explain it.
   text: |-
     The Betz sphere became the subject of media attention, and the United States military examined it and at one stage admitted they could not explain it.
+  entailment:
+    label: entails
+    score: 0.739
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 461e7e36-5085-4280-b218-467398c062ee
   type: testimony
   speaker:
@@ -2920,6 +3636,11 @@ domain_claims:
     The US Navy took it for testing and apparently when it came back, it didn't work anymore.
   text: |-
     The United States Navy took the Betz sphere for testing, and when it was returned it no longer worked.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c4aab78e-4116-4e76-b811-2c03d8831d15
   type: hearsay
   attestation: second_hand
@@ -2941,6 +3662,11 @@ domain_claims:
     one of the explanations that was given for the Betz ball when it was discovered in the 1970s was that it was part of a ball valve, that it was identical to or similar to a ball valve that's found inside some industrial technology.
   text: |-
     An explanation offered when the Betz sphere was discovered in the 1970s was that it was part of a ball valve, identical or similar to one found in industrial technology.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2ca9cec2-cb4d-4230-bc51-18b635c7d92c
   type: testimony
   attestation: first_hand
@@ -2963,6 +3689,11 @@ domain_claims:
     We took, as you suggested, some scrapings of the corrosion on the side of the sphere.
   text: |-
     Ross Coulthart's team took scrapings of the corrosion from the side of Jim's metal sphere to give to Garry Nolan for laboratory analysis.
+  entailment:
+    label: entails
+    score: 0.81
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f8deb1e9-1c7d-424b-957e-9ec077ea8ec9
   type: testimony
   attestation: first_hand
@@ -2983,6 +3714,11 @@ domain_claims:
     I mean, I would do the same kind of mass spectrometry experiments that I've done before, and then also there's a kind of non-destructive analysis you can do. It's called an electron backscatter approach to determine what some of the elements are.
   text: |-
     Garry Nolan proposes analysing the corrosion sample from Jim's metal sphere using mass spectrometry, as he has done with previous samples, and also using electron backscatter analysis, a non-destructive method to determine elemental composition.
+  entailment:
+    label: entails
+    score: 0.508
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a6fb6a4c-30dc-4a26-9864-6ac2e1dc8c4d
   type: opinion
   attestation: first_hand
@@ -3001,6 +3737,11 @@ domain_claims:
     Any mass spectrometry approach is inherently partly destructive, so I would be using the least of the destructive approaches for this.
   text: |-
     Mass spectrometry analysis is inherently at least partly destructive to the sample being tested.
+  entailment:
+    label: entails
+    score: 0.76
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 949600b3-eb4b-444c-8f8e-91f2e1c49307
   type: opinion
   attestation: first_hand
@@ -3021,6 +3762,11 @@ domain_claims:
     Well I wouldn't put it in a scanner unless that scanner was in the middle of a field surrounded by concrete because I wouldn't want something bad to happen.
   text: |-
     Garry Nolan would not put Jim's metal sphere into a scanner unless the scanner were located in the middle of a field surrounded by concrete, out of concern that something bad could happen.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 90a4232d-dc1f-44b7-a67b-7e3352afbea4
   type: opinion
   attestation: first_hand
@@ -3041,6 +3787,11 @@ domain_claims:
     I think there are very simple mobile scanners that might cost a few thousand dollars that you wouldn't mind losing, first of all, to see if there's any kind of structure inside of the object.
   text: |-
     Simple mobile scanners that could examine the interior structure of Jim's metal sphere might cost a few thousand dollars.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6e480441-5681-4de3-853b-71c4d27c30c7
   type: measurement
   attestation: first_hand
@@ -3061,6 +3812,11 @@ domain_claims:
     As you know, you measured the weight, you measured the circumference, we could figure out what the density was.
   text: |-
     The weight and circumference of Jim's metal sphere were measured, allowing its density to be calculated.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: eaeed55b-781c-443f-90e4-a40b760d5286
   type: measurement
   attestation: first_hand
@@ -3080,6 +3836,11 @@ domain_claims:
   quote: |-
     It wasn't pure iron. Basically, the size of it, if it were iron or anything else, it wasn't pure iron.
   text: Based on its measured density, Jim's metal sphere is not pure iron.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 68af67c5-959a-4696-974a-ad55e8b0ad63
   type: opinion
   attestation: first_hand
@@ -3100,6 +3861,11 @@ domain_claims:
     It's a manufactured alloy, or it has steel on the outside and it has something else on the inside.
   text: |-
     Jim's metal sphere is a manufactured alloy, or has steel on the outside with a different material on the inside.
+  entailment:
+    label: entails
+    score: 0.81
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3796fa3e-42c8-4ac8-a5e3-d8abe0f72bed
   type: observation
   attestation: first_hand
@@ -3120,6 +3886,11 @@ domain_claims:
     It was moving around within a few minutes of when we put it on the ground. It appeared to be stopped. It appeared to be stable. But then somehow it started moving. So maybe it was movement from us walking across the floor or something like that that made it move. We can't exclude that possibility.
   text: |-
     Ross Coulthart observed Jim's metal sphere begin moving within a few minutes of being placed on the ground, after initially appearing stopped and stable, and considers it possible the movement was caused by people walking across the floor.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4bab29d6-d1cd-4a25-82c9-b5452d7277cb
   type: testimony
   attestation: first_hand
@@ -3138,6 +3909,11 @@ domain_claims:
     Oh, yes. Oh, yeah. That's a standard. ... I would say that there are people I know in the government that would have such instrumentation.
   text: |-
     There is standard machinery capable of looking through dense steel, and people Garry Nolan knows in the government have such instrumentation.
+  entailment:
+    label: entails
+    score: 0.697
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f7efb87b-5a57-49f4-8539-84d67f94400a
   type: testimony
   attestation: first_hand
@@ -3156,6 +3932,11 @@ domain_claims:
     I know it for a fact. ... Because I've spoken to the people who are about to come out and whistleblow on it. ... so there has been a cover-up yeah and there's been an active cover-up
   text: |-
     Garry Nolan is confident, because he has personally spoken to people who are about to become whistleblowers, that there has been an active government cover-up of information about UAP.
+  entailment:
+    label: neutral
+    score: 0.773
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0b9aceda-0792-404d-a22c-d6bb69966d7e
   type: administrative
   attestation: first_hand
@@ -3175,6 +3956,11 @@ domain_claims:
     just look at what the department of defense announced last week they announced an office to study the phenomenon. Money put aside. They've said we're going to go back to 1947,
   text: |-
     In approximately December 2023, an office was newly announced to study the UAP phenomenon, with funding set aside, and a stated intent to examine records going back to 1947.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cb6295dc-eb4d-4013-97a7-5d9169655e5c
   type: observation
   attestation: first_hand
@@ -3189,6 +3975,11 @@ domain_claims:
   date: '1947'
   quote: which is incredible. That's the date of Roswell.
   text: 1947 is the year of the Roswell incident.
+  entailment:
+    label: entails
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e0d3f18b-10f5-497a-a1e8-d800abfc364e
   type: administrative
   attestation: first_hand
@@ -3204,6 +3995,11 @@ domain_claims:
     We want a list of every every operation that you've done to disinform and misinform, we want, and this is fascinating that they did this,
   text: |-
     The newly announced UAP-study office is compiling a list of every operation involving disinformation and misinformation related to UAP-related programmes.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c73638e3-0dfd-404c-aacf-d736853817fc
   type: administrative
   attestation: first_hand
@@ -3219,6 +4015,11 @@ domain_claims:
     we want a list of all of the NDAs, the non-disclosure agreements that have been instituted around these kinds of programs. ... it's the people who signed the NDAs because that then is the paper trail to the individuals and the programs in which they're associated.
   text: |-
     The newly announced UAP-study office is compiling a list of all non-disclosure agreements instituted around UAP-related programmes, because the signatories provide a paper trail to the individuals and programmes involved.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9cfc957a-356c-4ef7-a23d-49c5830fe5f2
   type: opinion
   attestation: first_hand
@@ -3237,6 +4038,11 @@ domain_claims:
     name: Admiral Wilson document
   quote: Do you think it's genuine? ... Yes.
   text: Garry Nolan believes the Admiral Wilson document is genuine.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b2337e1-658e-41b7-b04b-d753f9f9c2ae
   type: opinion
   attestation: first_hand
@@ -3256,6 +4062,11 @@ domain_claims:
   quote: |-
     I mean, I know Eric Davis and Eric is of a kind of character that it's just impossible for him to lie.
   text: Garry Nolan considers Eric Davis to be someone incapable of lying.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cf73ce2f-f12d-41ba-92dc-3648f62a352d
   type: administrative
   speaker:
@@ -3274,6 +4085,11 @@ domain_claims:
     The former immediate director of the Defense Intelligence Agency, Admiral Thomas Wilson,
   text: |-
     Thomas Wilson was formerly the immediate director of the Defense Intelligence Agency (DIA).
+  entailment:
+    label: entails
+    score: 0.581
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c7dbf212-a7a6-4564-9a4d-a6ac3c00a569
   type: hearsay
   attestation: second_hand
@@ -3300,6 +4116,11 @@ domain_claims:
     The former immediate director of the Defense Intelligence Agency, Admiral Thomas Wilson, allegedly had a conversation with Dr. Eric Davis, a renowned physicist, where he imparted his discovery that there was a secret UFO reverse engineering program going on inside the US government where they were hiding recovered spacecraft.
   text: |-
     According to the Admiral Wilson document, Thomas Wilson allegedly told Eric Davis in a conversation that a secret UFO reverse-engineering programme was operating inside the US government, involving recovered spacecraft.
+  entailment:
+    label: entails
+    score: 0.887
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1519d677-0b08-4a2f-844b-21634aff7c44
   type: hearsay
   attestation: second_hand
@@ -3320,6 +4141,11 @@ domain_claims:
     And it was being hidden in private aerospace, in a private aerospace corporation.
   text: |-
     According to the Admiral Wilson document, the recovered spacecraft referenced by Thomas Wilson were being hidden within a private aerospace corporation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b66ad35f-85e2-4aba-9d73-156b766fefe5
   type: testimony
   attestation: first_hand
@@ -3342,6 +4168,11 @@ domain_claims:
     It was found in Edgar Mitchell's... effects after he died. So it wasn't like anybody went out of their way to put it out there.
   text: |-
     The Admiral Wilson document was found among Edgar Mitchell's effects after his death, rather than having been deliberately released by anyone.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9128518f-8791-4cdf-a749-a8ac372d7d55
   type: administrative
   speaker:
@@ -3356,6 +4187,11 @@ domain_claims:
     name: Edgar Mitchell
   quote: And it's Apollo 14 astronaut, Edgar Mitchell.
   text: Edgar Mitchell was the Apollo 14 astronaut.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ededbfab-b537-4a02-87c4-8636dc2ae638
   type: testimony
   attestation: first_hand
@@ -3374,6 +4210,11 @@ domain_claims:
     name: Admiral Wilson document
   quote: And Eric Davis had written it,
   text: Eric Davis wrote the Admiral Wilson document.
+  entailment:
+    label: neutral
+    score: 0.919
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c6374503-3465-4fce-b572-2eb94ec1f1f6
   type: testimony
   attestation: first_hand
@@ -3394,6 +4235,11 @@ domain_claims:
     It was the work of journalists who finally got a hold of Edgar's materials who decided to release it.
   text: |-
     The Admiral Wilson document was released to the public by journalists who obtained Edgar Mitchell's materials after his death, rather than by anyone actively seeking to reveal it.
+  entailment:
+    label: entails
+    score: 0.55
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ba5371ac-18f8-4e34-9436-8be56ba1f39c
   type: observation
   attestation: first_hand
@@ -3414,6 +4260,11 @@ domain_claims:
     And Eric quite conspicuously has never made any comment one way or the other about the veracity of the document.
   text: |-
     Eric Davis has never publicly commented one way or the other on the veracity of the Admiral Wilson document.
+  entailment:
+    label: neutral
+    score: 0.947
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3381c12f-180f-45a4-b4e0-4d90225c9688
   type: testimony
   attestation: first_hand
@@ -3436,6 +4287,11 @@ domain_claims:
     Well before this came to light, I already knew of the document. So, because, you know, Eric was part of a group that I was associated with around this.
   text: |-
     Garry Nolan already knew of the Admiral Wilson document before it became public, because Eric Davis was part of a group Garry Nolan was associated with.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cfa5f1d6-d87f-4def-b929-d4651abcd0cc
   type: opinion
   attestation: first_hand
@@ -3454,6 +4310,11 @@ domain_claims:
     you've told me that you You believe on evidence that there is a non-human intelligence of advanced technology on this planet. ... Right, advanced capabilities.
   text: |-
     Garry Nolan believes, based on evidence he has personally seen, that a non-human intelligence with advanced capabilities is present on Earth.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b66441cf-da3f-4a87-a05e-070bd53ecd73
   type: opinion
   attestation: first_hand
@@ -3472,6 +4333,11 @@ domain_claims:
     I don't know whether it's a technology per se, because I'm leaving open the idea that it's some form of consciousness that is non-material.
   text: |-
     Garry Nolan is open to the possibility that the advanced capabilities he attributes to a non-human intelligence are not a material technology, but instead some form of non-material consciousness.
+  entailment:
+    label: entails
+    score: 0.908
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a7588c52-f0d4-40f3-92b2-e807e61607d9
   type: opinion
   attestation: first_hand
@@ -3490,6 +4356,11 @@ domain_claims:
     my reputation takes a hit. I'm sure that there are prizes and other things that I am never going to get because I'm talking about this.
   text: |-
     Garry Nolan expects that discussing this subject publicly will damage his professional reputation and cost him prizes and other recognition he might otherwise have received.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a9af8945-470b-4fd5-810b-e55cc18ad576
   type: opinion
   attestation: first_hand
@@ -3510,6 +4381,11 @@ domain_claims:
     either it's a gigantic Folie à deux right? It's a folie bazillion people, or it's real. And so... On the off chance that it's real, I'm willing to spend any amount of time doing it.
   text: |-
     Garry Nolan considers that current UAP developments are either an enormous case of Folie à deux affecting a huge number of people, or the phenomenon is real, and he is willing to spend any amount of time investigating it in case it is real.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 96f0a7cf-8f10-4877-beef-8517b2d97695
   type: opinion
   attestation: first_hand
@@ -3532,6 +4408,11 @@ domain_claims:
     I think it's been extremely difficult for them up until what Lou Elizondo and Chris Mellon have accomplished, right? Basically getting the US government to come out and create now an atmosphere of allowance to talk about it.
   text: |-
     Garry Nolan considers that it was extremely difficult for whistleblowers to come forward with what they know about a government cover-up until efforts by Luis Elizondo and Chris Mellon led the US government to create an atmosphere allowing people to talk about it.
+  entailment:
+    label: entails
+    score: 0.895
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c8f90db3-7959-45c0-a5a0-1002cb04c76e
   type: administrative
   attestation: first_hand
@@ -3551,6 +4432,11 @@ domain_claims:
     it happened even like two years ago with the Navy where they said, now we want you to tell us about these events that you're seeing. We want you to stop hiding it.
   text: |-
     Around 2021, the United States Navy told its personnel that it wanted them to report UAP-related events they were seeing rather than continue hiding them.
+  entailment:
+    label: neutral
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e2df01f2-c500-4b94-89a5-33feea615cc1
   type: opinion
   attestation: first_hand
@@ -3571,6 +4457,11 @@ domain_claims:
     I'm very cynical about the idea that elements of the US armed forces have suddenly undergone a religious conversion and decided that they want to be disclosure activists. I just don't buy it. I mean, I think the U.S. Air Force in particular is trying to gag this whole story, isn't it?
   text: |-
     Ross Coulthart is cynical that elements of the US armed forces have genuinely become disclosure activists and considers that the United States Air Force in particular is trying to suppress the UAP story.
+  entailment:
+    label: neutral
+    score: 0.572
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a21fc6d5-f9a4-46fb-942f-897d934f776d
   type: opinion
   attestation: first_hand
@@ -3589,6 +4480,11 @@ domain_claims:
     It's pretty well known that the people within the government who are the most anti-letting of this information out are religious fundamentalists who believe that this is, I mean, talk about crazy.
   text: |-
     Garry Nolan considers it well known that the people within the US government most opposed to releasing UAP-related information are religious fundamentalists.
+  entailment:
+    label: entails
+    score: 0.663
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fe334ff8-2238-4e9d-a3f1-a5013dffa008
   type: hearsay
   attestation: second_hand
@@ -3611,6 +4507,11 @@ domain_claims:
     I've actually had conversations with people in the US Air Force who've told me this is demonic.
   text: |-
     Unnamed individuals claiming to work in the United States Air Force told Ross Coulthart that they consider the unidentified aerial phenomenon (UAP) demonic.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed98bdfe-18b2-443d-b967-b0370ae134a7
   type: hearsay
   attestation: second_hand
@@ -3632,6 +4533,11 @@ domain_claims:
   quote: Ross, you shouldn't be looking at this. This is evil.
   text: |-
     Unnamed individuals claiming to work in the United States Air Force warned Ross Coulthart that the unidentified aerial phenomenon (UAP) he was investigating was evil and that he should not be looking into it.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 82116d63-6b6a-4567-9ebd-fca25733017d
   type: opinion
   attestation: first_hand
@@ -3652,6 +4558,11 @@ domain_claims:
     To me, even if it is demonic, I want to understand what they're doing. and what their intent is.
   text: |-
     Garry Nolan wants to understand what the unidentified aerial phenomenon (UAP) is doing and what its intent is, even if it is demonic.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 64efd4c7-bf85-4adf-a877-6cec841538ac
   type: opinion
   attestation: first_hand
@@ -3671,6 +4582,11 @@ domain_claims:
   quote: I think it's neutral, to be honest.
   text: |-
     Garry Nolan considers the unidentified aerial phenomenon (UAP) to be neutral rather than well- or ill-intentioned toward humanity.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 561aa208-d31b-4346-8218-accf35f0573c
   type: opinion
   attestation: first_hand
@@ -3690,6 +4606,11 @@ domain_claims:
   quote: 'Ross Coulthart: It''s ambivalent about humanity. Garry Nolan: It''s ambivalent.'
   text: |-
     Garry Nolan considers the unidentified aerial phenomenon (UAP) to be ambivalent about humanity.
+  entailment:
+    label: neutral
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 23c05e28-b5b1-4d89-a30d-7b34bdc989ba
   type: opinion
   attestation: first_hand
@@ -3709,6 +4630,11 @@ domain_claims:
   quote: if we kind of get in the way of whatever it is they're doing, you can get hurt.
   text: |-
     Garry Nolan believes that if humans interfere with whatever the unidentified aerial phenomenon (UAP) is doing, they can be harmed.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 55371fed-d130-4edf-8459-808a9b72d119
   type: opinion
   attestation: first_hand
@@ -3729,6 +4655,11 @@ domain_claims:
     Well, they're obviously not doing much to hide themselves. I think they're showing us what they can do.
   text: |-
     Garry Nolan believes the unidentified aerial phenomenon (UAP) is not doing much to conceal itself and is showing humanity what it can do.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7747db52-482c-4db4-987b-d7b3ac71f988
   type: opinion
   attestation: first_hand
@@ -3748,6 +4679,11 @@ domain_claims:
   quote: They've shown up around the nuclear sites. We all know this now.
   text: |-
     Garry Nolan says the unidentified aerial phenomenon (UAP) has been observed appearing around nuclear sites.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8ebf7e59-95f8-4311-a2cc-b2bb0e8b7967
   type: opinion
   attestation: first_hand
@@ -3767,6 +4703,11 @@ domain_claims:
   quote: We've seen them over bases in Australia.
   text: |-
     Ross Coulthart says unidentified aerial phenomena (UAP) have been observed over military bases in Australia.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1fc42f26-d5fd-4111-b5f0-505fb9f5dedd
   type: opinion
   attestation: first_hand
@@ -3786,6 +4727,11 @@ domain_claims:
   quote: We've seen them around the USS Nimitz, and it happens multiple times a week.
   text: |-
     Garry Nolan says unidentified aerial phenomena (UAP) have been observed around the USS Nimitz multiple times a week.
+  entailment:
+    label: entails
+    score: 0.747
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 571b491b-cc7c-4b78-8c50-b4d3b0d89164
   type: opinion
   attestation: first_hand
@@ -3806,6 +4752,11 @@ domain_claims:
     it's by definition a threat because they're breaching the security of some of the most sensitive military installations on the planet.
   text: |-
     Ross Coulthart considers the unidentified aerial phenomenon (UAP) breaching the security of sensitive military installations to be a threat by definition.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7acb66b2-1507-409b-a5e6-230d8f6d9d0b
   type: opinion
   attestation: first_hand
@@ -3822,6 +4773,11 @@ domain_claims:
     name: Garry Nolan
   quote: So humanity, I think, is on the verge of leaving the planet, as we know.
   text: Garry Nolan believes humanity is on the verge of leaving the planet Earth.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc4ac608-9a0b-4813-ab97-c3627a9be2ab
   type: opinion
   attestation: first_hand
@@ -3840,6 +4796,11 @@ domain_claims:
     I think any intelligence that was looking at us from the outside, that's been around as long as perhaps they have, knows what the trajectory of humanity might be. And that would be to move out into the solar system and maybe eventually, even if it takes conventional means to accomplish it, move out into other stars.
   text: |-
     Garry Nolan believes any outside intelligence that has observed humanity for a long time would recognise humanity's likely trajectory is to expand into the solar system and eventually to other star systems.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 002002d6-0132-4e23-8124-1a3c9e9cf11b
   type: opinion
   attestation: first_hand
@@ -3857,6 +4818,11 @@ domain_claims:
   quote: It might take us a thousand, ten thousand years to do it.
   text: |-
     Garry Nolan estimates it might take humanity between one thousand and ten thousand years to expand out into the nearby galactic neighbourhood.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7c255a4d-fd15-4c89-b86f-7bcd421f3e38
   type: opinion
   attestation: first_hand
@@ -3874,6 +4840,11 @@ domain_claims:
   quote: Maybe our neighbors want to know what it is that we're capable of doing.
   text: |-
     Garry Nolan suggests that neighbouring intelligences may want to know what humanity is capable of doing.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 87aff072-9794-4089-bf3a-6f8866819361
   type: administrative
   attestation: first_hand
@@ -3893,6 +4864,11 @@ domain_claims:
   quote: Chris Mellon had accidentally left it on his website
   text: |-
     Chris Mellon accidentally left the Slide 9 document publicly accessible on his own website.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 994a3797-e65b-4440-aeb0-2c77fa821c98
   type: administrative
   attestation: first_hand
@@ -3913,6 +4889,11 @@ domain_claims:
     it was discovered by a very clever British researcher who was just going through and checking to see what Chris had on his website.
   text: |-
     The Slide 9 document was discovered on Chris Mellon's website by a British researcher who was reviewing the site's contents.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c45cbde9-363f-4c9f-96ae-2af0896097e8
   type: administrative
   attestation: first_hand
@@ -3933,6 +4914,11 @@ domain_claims:
     It's a document that was prepared as a briefing document for the Undersecretary of Defence by members of the UFO task force.
   text: |-
     Slide 9 is a document prepared as a briefing document for the Under Secretary of Defense by members of the unidentified flying object (UFO) task force.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 68c0f2a0-aa70-4c47-8900-9150545ab2c1
   type: opinion
   attestation: first_hand
@@ -3954,6 +4940,11 @@ domain_claims:
   quote: I think Louis Elizondo's team.
   text: |-
     Ross Coulthart believes the Slide 9 document was likely prepared by Luis Elizondo's team.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a8e87bbc-e3eb-4bfa-b8cd-a80ba0960f36
   type: administrative
   attestation: second_hand
@@ -3976,6 +4967,11 @@ domain_claims:
     It's a document that was prepared as a briefing document for the Undersecretary of Defence by members of the UFO task force... Whatever the phenomenon is, it's capable of manipulating human perception, human consciousness.
   text: |-
     Slide 9 advises that whatever the unidentified aerial phenomenon (UAP) is, it is capable of manipulating human perception and human consciousness.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 903714dd-684c-4471-bf2b-14f3790ef12c
   type: administrative
   attestation: second_hand
@@ -3997,6 +4993,11 @@ domain_claims:
   quote: It can make us see things that aren't there.
   text: |-
     Slide 9 states that the unidentified aerial phenomenon (UAP) can make people see things that are not there.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 43b6dc6e-b1af-40d8-bd74-c0290bc78863
   type: opinion
   attestation: first_hand
@@ -4019,6 +5020,11 @@ domain_claims:
     Ross Coulthart: Do you think that's possibly what we're seeing in the sky in the form of UFOs? Garry Nolan: Yeah, I mean, I think that's part of what makes it so difficult to reproduce is that different people see different things.
   text: |-
     Garry Nolan considers perception manipulation by the unidentified aerial phenomenon (UAP) a possible explanation for what is seen in the sky as unidentified flying objects (UFOs), and believes variability in what different people perceive is part of what makes the phenomenon difficult to reproduce scientifically.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a60e2485-9fc3-4055-8f79-dc7d78d1e916
   type: hearsay
   attestation: third_hand
@@ -4042,6 +5048,11 @@ domain_claims:
     the best example of this that I know is a story that Jacques Vallée brought to me of a family in France driving down the highway. This was like in the last five to 10 years. And they had a glass topped car. And they look up and they see a UFO basically paralleling them down the highway.
   text: |-
     Jacques Vallée told Garry Nolan about a family in France who, while driving on a highway in a car with a glass roof within the last five to ten years, saw an object appearing to parallel their vehicle in the sky.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: df7b202c-6361-4592-9dc5-2caa60324af7
   type: hearsay
   attestation: third_hand
@@ -4065,6 +5076,11 @@ domain_claims:
     The mother looks around and sees that no other individuals nearby are freaking out about this thing above them.
   text: |-
     In the anecdote relayed to Garry Nolan by Jacques Vallée, the mother in the family noticed that no other nearby motorists appeared to react to the object above them.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e3bff1fd-f509-4d15-8c7a-014923db9ad3
   type: hearsay
   attestation: third_hand
@@ -4087,6 +5103,11 @@ domain_claims:
   quote: The children in the back take out their cell phones, take a picture of it.
   text: |-
     In the anecdote relayed to Garry Nolan by Jacques Vallée, the children in the back of the car photographed the object using their mobile phones.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9e58cfd2-5668-48b8-aaab-6af30c216acb
   type: hearsay
   attestation: third_hand
@@ -4110,6 +5131,11 @@ domain_claims:
     they don't see an object they see a little star-shaped thing about 30 so feet above it... it's like a... I think it has like seven spokes and a a central hole of some sort
   text: |-
     In the anecdote relayed to Garry Nolan by Jacques Vallée, when the family later reviewed the photographs they did not show the object they had seen but instead a small star-shaped object with seven spokes and a central hole, approximately 9 metres above the car.
+  entailment:
+    label: entails
+    score: 0.523
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2cdaab99-5990-4569-8e23-eed20d4fb90c
   type: observation
   attestation: first_hand
@@ -4129,6 +5155,11 @@ domain_claims:
   quote: i have the picture
   text: |-
     Garry Nolan possesses a photograph of the star-shaped object from the French highway sighting described to him by Jacques Vallée.
+  entailment:
+    label: neutral
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f2016e2a-a139-4c2b-a6f2-e2ff82beed33
   type: opinion
   attestation: first_hand
@@ -4146,6 +5177,11 @@ domain_claims:
   quote: that doesn't look anything like a drone
   text: |-
     Garry Nolan does not think the photographed star-shaped object resembles a drone.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ee0c2adb-e2df-4920-91c8-bd68c4da7072
   type: hearsay
   attestation: third_hand
@@ -4169,6 +5205,11 @@ domain_claims:
     They saw a giant craft, but the picture shows that there was nothing else there. Nobody else could see it.
   text: |-
     In the French highway sighting relayed to Garry Nolan by Jacques Vallée, the family perceived seeing a large craft, but the photograph showed nothing else present besides the small star-shaped object, and nobody else could see the object.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c93a9820-5114-40b6-a9e8-647624c09030
   type: opinion
   attestation: first_hand
@@ -4187,6 +5228,11 @@ domain_claims:
     So even if it was an object, that was there. Others weren't capable of seeing it, so it was manipulating vision.
   text: |-
     Garry Nolan concludes from the French highway sighting that even if the object was physically present, other people were unable to see it, indicating manipulation of vision by whatever the phenomenon is.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd4cfa14-a3e4-43c9-992f-74ac37cf2e20
   type: opinion
   attestation: first_hand
@@ -4205,6 +5251,11 @@ domain_claims:
     Ross Coulthart: There's a possibility, Gary, that you are one of the few scientists in the world who are investigating what is potentially the biggest scientific discovery of all time, isn't there? Garry Nolan: Yes, and what I actually hope to find...
   text: |-
     Garry Nolan agrees he may be one of the few scientists in the world investigating what is potentially the biggest scientific discovery of all time.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6187b1bf-be90-41d8-9f86-e266d44a03bf
   type: opinion
   attestation: first_hand
@@ -4225,6 +5276,11 @@ domain_claims:
     what I actually hope to find, let's say, is that on the inside there are other scientists who've been working on this problem for many more years than I've even been interested in it.
   text: |-
     Garry Nolan hopes that other scientists working inside classified programmes have already been studying the unidentified aerial phenomenon (UAP) for longer than he has.
+  entailment:
+    label: entails
+    score: 0.871
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 44174d04-b2e3-46a9-be00-72210b80d145
   type: opinion
   attestation: first_hand
@@ -4245,6 +5301,11 @@ domain_claims:
     they can basically, I'd be perfectly happy with them stepping forward and taking the limelight.
   text: |-
     Garry Nolan would be content for insider scientists studying the unidentified aerial phenomenon (UAP) to step forward and take credit for the discovery.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 19a35b81-ac1b-48c9-a77d-e090b8d9f425
   type: opinion
   attestation: first_hand
@@ -4262,6 +5323,11 @@ domain_claims:
   quote: Because it's not about what I want to find, it's about what is.
   text: |-
     Garry Nolan says his interest is not in personally being credited with the discovery but in establishing what is actually true.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c8c91b08-c1c2-4e71-ac63-c4467c0fbcad
   type: opinion
   attestation: first_hand
@@ -4281,6 +5347,11 @@ domain_claims:
   quote: if others are there which already know it, let's catch everybody else up.
   text: |-
     Garry Nolan wants to bring everyone else up to speed if others already possess knowledge of the unidentified aerial phenomenon (UAP).
+  entailment:
+    label: entails
+    score: 0.929
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9fd32c84-e189-4140-89f5-629229161314
   type: testimony
   attestation: second_hand
@@ -4303,6 +5374,11 @@ domain_claims:
     Jim's happy to be interrogated. He wants to be challenged. He's so thrilled that there might be any kind of scientific investigation into what he says.
   text: |-
     Jim (Texas) is willing to have the object he possesses interrogated and scientifically challenged, and is enthusiastic about the possibility of scientific investigation into what he claims.
+  entailment:
+    label: entails
+    score: 0.792
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 367173d9-fa3d-4adb-bdb3-fbcca9503805
   type: opinion
   attestation: first_hand
@@ -4323,6 +5399,11 @@ domain_claims:
     Oh, absolutely. I would, but again, it's the resources and capability have to be there.
   text: |-
     Garry Nolan is interested in examining the object possessed by Jim (Texas), subject to having adequate resources and analytical capability.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8730a65c-53d1-4a7c-8dba-cd2dff91f747
   type: opinion
   attestation: first_hand
@@ -4345,6 +5426,11 @@ domain_claims:
     If and when you've got a laboratory that will accept this technology and be able to scan it properly, you'll do it. Oh, absolutely. Why not?
   text: |-
     Garry Nolan will analyse the sample belonging to Jim (Texas) once he has access to a laboratory able to scan it properly.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: de0b2b73-9881-4c62-bf07-321494fe3c19
   type: administrative
   speaker:
@@ -4362,6 +5448,11 @@ domain_claims:
     name: Atacama mummy
   quote: Somebody wanted it to be an alien.
   text: Someone wanted the Atacama mummy to be identified as an alien.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b8d0da78-d227-4e9f-ac92-e26ab71f5498
   type: testimony
   attestation: first_hand
@@ -4380,6 +5471,11 @@ domain_claims:
     name: Atacama mummy
   quote: I said, hmm, let's use science to study it.
   text: Garry Nolan applied scientific analysis to study the Atacama mummy.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: eff6e3c0-a4e6-4e7f-8500-18270da7f702
   type: measurement
   attestation: first_hand
@@ -4399,6 +5495,11 @@ domain_claims:
   quote: No, it turns out to be, unfortunately, probably a stillbirth of some kind.
   text: |-
     Garry Nolan's scientific analysis found the Atacama mummy was probably a stillbirth of some kind.
+  entailment:
+    label: entails
+    score: 0.88
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 20ab91f0-430d-4d58-8c3c-5d79c02fd209
   type: hearsay
   attestation: second_hand
@@ -4425,6 +5526,11 @@ domain_claims:
     I noticed Dr. Greer has maintained that you were obviously got at by the intelligence agencies to stop you from revealing the fact that it was alien.
   text: |-
     Steven Greer has claimed that intelligence agencies pressured Garry Nolan to prevent him from revealing that the Atacama mummy was alien.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: db4da687-4182-4a0d-9d4c-e0e9e3ce3642
   type: opinion
   attestation: first_hand
@@ -4447,6 +5553,11 @@ domain_claims:
     Well, he knows where the sample is, and the good thing about science is he could go back and test it again.
   text: |-
     Garry Nolan says Steven Greer knows the location of the Atacama mummy sample and could retest it.
+  entailment:
+    label: entails
+    score: 0.585
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 70b48774-22b5-4487-8916-09509f786de0
   type: testimony
   attestation: first_hand
@@ -4466,6 +5577,11 @@ domain_claims:
   quote: |-
     There's actually another, they called it the star child skull, that I basically got my hands on to look at.
   text: Garry Nolan examined an artefact known as the star child skull.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2ad0a2ea-23f9-49c1-ada8-8e613975f602
   type: measurement
   attestation: first_hand
@@ -4484,6 +5600,11 @@ domain_claims:
     name: Star child skull
   quote: It also is just human.
   text: Garry Nolan's examination found the star child skull to be human.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 19dff1b9-dccb-4c10-a93c-98cdfd3ee118
   type: opinion
   attestation: first_hand
@@ -4502,6 +5623,11 @@ domain_claims:
     The best science is always noticing the points that are off the curve, that are the unexpected
   text: |-
     Garry Nolan believes the best science comes from noticing data points that are off the expected curve, i.e. unexpected results.
+  entailment:
+    label: entails
+    score: 0.889
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 110d31de-c804-47f0-b2ff-e07fce8f9408
   type: opinion
   attestation: first_hand
@@ -4520,6 +5646,11 @@ domain_claims:
     you have to explain why that point is off the curve, because there might be something wrong with your experiment.
   text: |-
     Garry Nolan believes an anomalous data point must first be explained because it might indicate an error in the experiment.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6ec6d03e-32c1-4e58-b141-836f1e8b7e93
   type: opinion
   attestation: first_hand
@@ -4538,6 +5669,11 @@ domain_claims:
     if it is off the curve, and it's absolutely reproducible, then you've discovered something novel.
   text: |-
     Garry Nolan believes that if an anomalous result is real and reliably reproducible, it represents a novel discovery.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ef5b43a8-bb1a-4d1f-abd9-a5c39e8ea3a0
   type: opinion
   attestation: first_hand
@@ -4557,6 +5693,11 @@ domain_claims:
   quote: This is what we're looking at right now. It's off the curve.
   text: |-
     Garry Nolan considers the unidentified aerial phenomenon (UAP) currently under investigation to be an anomalous, 'off the curve' result.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 99b221b2-94f5-4dae-9fca-74de49570bbf
   type: opinion
   attestation: first_hand
@@ -4576,6 +5717,11 @@ domain_claims:
   quote: If it is real, it is, as you say, the biggest discovery in human history.
   text: |-
     Garry Nolan agrees that if the unidentified aerial phenomenon (UAP) is real, it would be the biggest discovery in human history.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 566d2fbe-9f38-4ed8-b799-90c4426b9524
   type: opinion
   attestation: first_hand
@@ -4595,6 +5741,11 @@ domain_claims:
   quote: But if it is real, it's already been discovered by the governments.
   text: |-
     Garry Nolan believes that if the unidentified aerial phenomenon (UAP) is real, governments have already discovered it.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ece459b2-b358-42c9-a947-3561cf304cea
   type: opinion
   attestation: first_hand
@@ -4615,6 +5766,11 @@ domain_claims:
     So let's just get it over with and get the information out and start bringing the collective intelligence of the planet to study it.
   text: |-
     Garry Nolan believes information about the unidentified aerial phenomenon (UAP) should be released so the collective intelligence of the planet can study it.
+  entailment:
+    label: entails
+    score: 0.909
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: da0ce5d2-1b4e-40c0-b043-9fe266a814d1
   type: opinion
   attestation: first_hand
@@ -4641,6 +5797,11 @@ domain_claims:
     Ross Coulthart: From what you know of these whistleblowers and the determination of the people in the Congress and people like Lou Elizondo and Chris Mellon, do you think we're going to get answers soon? Garry Nolan: Yes.
   text: |-
     Garry Nolan believes that, based on the determination of whistleblowers and members of the United States Congress including Luis Elizondo and Chris Mellon, answers about the unidentified aerial phenomenon (UAP) will come soon.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: da00eafb-86a5-46d6-aeea-333e4a7bb812
   type: opinion
   attestation: first_hand
@@ -4661,6 +5822,11 @@ domain_claims:
   quote: 'Ross Coulthart: How soon? Garry Nolan: I think in the next two years.'
   text: |-
     As of 2023-12-13, Garry Nolan expects answers about the unidentified aerial phenomenon (UAP) within approximately the next two years.
+  entailment:
+    label: neutral
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 25856c04-149a-4545-ba9d-b765c73ed466
   type: opinion
   attestation: first_hand
@@ -4682,6 +5848,11 @@ domain_claims:
   quote: Whether they're public hearings at the beginning, no, I don't think.
   text: |-
     Garry Nolan does not think there will be public congressional hearings revealing what officials know about the unidentified aerial phenomenon (UAP) at the outset.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: baef9bdb-35e7-4597-9866-30a01fc34770
   type: opinion
   attestation: first_hand
@@ -4701,6 +5872,11 @@ domain_claims:
   quote: But I think we are getting ready for a public announcement.
   text: |-
     Garry Nolan believes preparations are underway for a public announcement about the unidentified aerial phenomenon (UAP).
+  entailment:
+    label: entails
+    score: 0.877
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f43aee11-84a2-49a4-8ad4-527598c91c53
   type: opinion
   attestation: first_hand
@@ -4721,6 +5897,11 @@ domain_claims:
     Ross Coulthart: And do you think that public announcement might be there is another life form of intelligence on this planet? Garry Nolan: Yes.
   text: |-
     Garry Nolan believes the anticipated public announcement about the unidentified aerial phenomenon (UAP) may reveal that there is another intelligent life form present on Earth.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 29100541-9529-4d70-8985-a0c7c216cdca
   type: opinion
   attestation: first_hand
@@ -4739,6 +5920,11 @@ domain_claims:
     I mean, that's the only trajectory we've got. I mean, I've always said that I've only ever been interested in studying the inevitable or working on the inevitable in my science. So I think it's inevitable.
   text: |-
     Garry Nolan believes contact with or disclosure of another intelligent life form is the only trajectory possible and considers it inevitable, consistent with his approach of only ever studying or working on the inevitable throughout his scientific career.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 70581e2d-8e60-4012-adc6-cf40c7ef9461
   type: administrative
@@ -4758,6 +5944,11 @@ infrastructure_claims:
     I read a Hungarian scientist's paper. He's a mathematician, and he looked at the probabilities of DNA sequences. ... Is this the wow signal paper? Yeah.
   text: |-
     Ross Coulthart read a paper by a Hungarian mathematician analysing the probabilities of DNA sequences, later identified as the Wow Signal DNA paper.
+  entailment:
+    label: entails
+    score: 0.499
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8f5af7d5-1d56-4370-ba49-811a7d274d0c
   type: opinion
   attestation: first_hand
@@ -4778,6 +5969,11 @@ infrastructure_claims:
     The counter to the mathematics is that selection can create something which is statistically low.
   text: |-
     Garry Nolan notes that, per Richard Dawkins' account of natural selection, selection can produce outcomes that are statistically improbable, as a counterargument to the Wow Signal DNA paper's implication of intentional design.
+  entailment:
+    label: entails
+    score: 0.806
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a863d625-14a7-4ee1-a13a-33e62bc64a7f
   type: administrative
   attestation: second_hand
@@ -4800,6 +5996,11 @@ infrastructure_claims:
     Jacques Vallée actually took that approach in his book, The Wonders in the Sky, where he went back literally into the libraries to get the original documents from the scientists and statesmen of the day who had recorded these events which if you basically just translated the words, they basically had encountered UFOs at the time, shields in the sky, etc.
   text: |-
     In his book 'The Wonders in the Sky', Jacques Vallée examined original historical documents from scientists and statesmen describing events that, when translated, describe encounters resembling UFOs, such as 'shields in the sky'.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e6651ea1-dd74-4530-a86b-a0788c707273
   type: administrative
   attestation: second_hand
@@ -4818,6 +6019,11 @@ infrastructure_claims:
     name: Diana Pasulka
   quote: She's a theologian of Catholicism.
   text: Diana Pasulka is a theologian of Catholicism.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5989b5f-5d00-4cd7-a958-55b6911dfa3d
   type: administrative
   attestation: second_hand
@@ -4838,6 +6044,11 @@ infrastructure_claims:
     She was actually originally studying the ecstasies of the saints. ... She was studying the ecstasies of the saints and very often their interaction with angels, as they said.
   text: |-
     Diana Pasulka originally studied the ecstasies of Catholic saints and their historical accounts of interaction with angels.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 07fc172d-0f01-449d-b782-a2c5d3149384
   type: opinion
   attestation: first_hand
@@ -4860,6 +6071,11 @@ infrastructure_claims:
     that's the, you know, Thomas Kuhn's book, The Structure of Scientific Revolutions. eventually the anomalies and the things that don't fit the picture add up to the point where you can't ignore it anymore. And so that's what has just recently happened. We're watching a Kuhnian moment.
   text: |-
     Garry Nolan considers the current period in the UAP field to represent a Kuhnian moment, referencing Thomas Kuhn's book The Structure of Scientific Revolutions, in which accumulating anomalies eventually can no longer be ignored.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 05515237-b15e-4f42-a0cf-db1c9e862366
   type: administrative
   attestation: first_hand
@@ -4878,3 +6094,8 @@ infrastructure_claims:
     name: Slide 9 (UAP briefing document)
   quote: There's a document I wrote about in my book called Slide 9.
   text: Ross Coulthart wrote about a document called Slide 9 in his book.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

@@ -10,6 +10,12 @@ ai_usage:
     output: 14451
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.1
 prompts:
 - pass: nodes
   id: nodes
@@ -52,6 +58,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957
   text: |-
     An unidentified observer observed two round, white Unidentified Aerial Phenomena (UAP) in the vicinity of grid reference 35SQT3423692957 at 1653 UTC.
+  entailment:
+    label: entails
+    score: 0.472
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d6950622-c963-487c-a29a-f6ec5df4d182
   type: observation
   attestation: second_hand
@@ -64,6 +75,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957
   text: |-
     An unidentified observer detected two Unidentified Aerial Phenomena (UAP) in the vicinity of grid reference 35SQT3423692957 at 1653 UTC with a hot thermal signature.
+  entailment:
+    label: entails
+    score: 0.441
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5172aea0-4b0d-405b-99d0-73280eace96e
   type: observation
   attestation: second_hand
@@ -76,6 +92,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957
   text: |-
     An unidentified observer recorded two Unidentified Aerial Phenomena (UAP) in the vicinity of grid reference 35SQT3423692957 at 1653 UTC exhibiting dynamic movement in a southward direction.
+  entailment:
+    label: entails
+    score: 0.858
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8e7d726c-ed5e-4f61-b7e8-5c9a7db7c60c
   type: measurement
   attestation: second_hand
@@ -88,3 +109,8 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957
   text: |-
     An unidentified observer recorded two Unidentified Aerial Phenomena (UAP) in the vicinity of grid reference 35SQT3423692957 at 1653 UTC moving at approximately 444 kilometres per hour.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

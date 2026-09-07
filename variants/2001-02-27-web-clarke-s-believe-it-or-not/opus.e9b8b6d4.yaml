@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 6.2
 prompts:
 - pass: nodes
   id: nodes
@@ -121,6 +127,11 @@ domain_claims:
     Arthur Clarke is known for spinning elaborate, visionary tales of futures that might be, none more famous than *2001: A Space Odyssey*.
   text: |-
     Arthur C. Clarke is known for visionary fiction about possible futures, most famously 2001: A Space Odyssey.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4a72df87-194f-421e-8a90-f3439f95b301
   type: opinion
   attestation: first_hand
@@ -144,6 +155,11 @@ domain_claims:
   quote: |-
     "I'm fairly convinced that we have discovered life on Mars," Clarke told *SPACE.com*
   text: Arthur C. Clarke is fairly convinced that life has been discovered on Mars.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2590da1e-d2b4-407b-a035-53fd5de6b48b
   type: opinion
   attestation: first_hand
@@ -168,6 +184,11 @@ domain_claims:
     "There are some incredible photographs from [the Jet Propulsion Laboratory], which to me are pretty convincing proof of the existence of large forms of life on Mars! Have a look at them. I don't see any other interpretation."
   text: |-
     Arthur C. Clarke regards photographs from the Jet Propulsion Laboratory (JPL) as pretty convincing proof of the existence of large forms of life on Mars.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 810e2c68-e97a-4268-8a5f-5bee863f43e6
   type: opinion
   attestation: first_hand
@@ -189,6 +210,11 @@ domain_claims:
   quote: I don't see any other interpretation.
   text: |-
     Arthur C. Clarke sees no interpretation of the Jet Propulsion Laboratory (JPL) Mars photographs other than large forms of life.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2908f79-56ad-4e8f-85e3-e1c6af2e7876
   type: observation
   attestation: first_hand
@@ -213,6 +239,11 @@ domain_claims:
     Aldrin did not comment, but responded by referring to another remarkable topic, so-called zero-point energy
   text: |-
     Buzz Aldrin did not comment on Arthur C. Clarke's assertion about life on Mars and instead raised the topic of zero-point energy.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6dd05710-c9e1-4dc2-8cea-dc1066b2f1b1
   type: administrative
   speaker:
@@ -230,6 +261,11 @@ domain_claims:
     so-called zero-point energy, theorized by some physicists as being a powerful energy source that exists in the vacuum of space
   text: |-
     Zero-point energy is theorised by some physicists as a powerful energy source existing in the vacuum of space.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a808544d-01a0-4ca3-9415-685f92efb895
   type: opinion
   attestation: first_hand
@@ -252,6 +288,11 @@ domain_claims:
     Aldrin said, "To put this into a perspective where Arthur and I agree: It may take 200, 300 or 400 years, but it's going to take zero-point energy to get us to Alpha Centauri."
   text: |-
     Buzz Aldrin believes it will take zero-point energy to reach Alpha Centauri, possibly 200, 300 or 400 years from now.
+  entailment:
+    label: entails
+    score: 0.685
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 54d3b951-d291-47c0-bfcc-6fe7fb648a1e
   type: opinion
   attestation: first_hand
@@ -274,6 +315,11 @@ domain_claims:
     "To put this into a perspective where Arthur and I agree..." Turning to Clarke, he added, "Correct?"
   text: |-
     Buzz Aldrin considers his view on zero-point energy to be a point of agreement with Arthur C. Clarke, and asked Clarke to confirm it.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 58b82700-5205-4515-adbf-c474d0ec8a41
   type: opinion
   attestation: first_hand
@@ -295,6 +341,11 @@ domain_claims:
   quote: '"I''m glad that Buzz has raised this rather controversial question," Clarke said.'
   text: |-
     Arthur C. Clarke was glad that Buzz Aldrin raised the controversial question of zero-point energy.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 44887a3b-93b0-4f17-9194-50f8c4aecded
   type: hearsay
   attestation: second_hand
@@ -317,6 +368,11 @@ domain_claims:
   quote: '"A lot of my scientist friends are crazy to believe there''s anything in this."'
   text: |-
     Arthur C. Clarke said many of his scientist friends think it is crazy to believe there is anything in zero-point energy.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: db9cd84c-ab7c-4b30-98b7-68475dbf95c9
   type: opinion
   attestation: first_hand
@@ -339,6 +395,11 @@ domain_claims:
     It started with this so-called cold fusion business, which everybody laughed out of court.
   text: |-
     Arthur C. Clarke traced the controversy over new energy forms to the cold fusion episode, which everybody laughed out of court.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ba0e545f-1fa0-41d6-bb33-d3e606dd6316
   type: opinion
   attestation: first_hand
@@ -361,6 +422,11 @@ domain_claims:
     But I'm now convinced that there are new forms of energy, which we are tapping, and they make even nuclear energy look trivial in comparison.
   text: |-
     Arthur C. Clarke is convinced that there are new forms of energy being tapped that make nuclear energy look trivial in comparison.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 73008238-7a19-4c93-9f56-4787189641c0
   type: opinion
   attestation: first_hand
@@ -380,6 +446,11 @@ domain_claims:
   quote: And when we control those energy sources, the universe will open up.
   text: |-
     Arthur C. Clarke believes that once humanity controls these new energy sources, the universe will open up.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14942fe7-d6a7-4c19-a7ef-96daa7dbb1c3
   type: observation
   attestation: first_hand
@@ -402,6 +473,11 @@ domain_claims:
     And then Clarke took an opportunity to rebut those who refuse to believe even well documented events, specifically, the Apollo moon missions. Responding to a recent television program claiming the Apollo landings were faked
   text: |-
     Arthur C. Clarke rebutted those who refuse to believe the Apollo Moon missions occurred, responding to a recent television programme claiming the Apollo landings were faked.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 28669622-26f4-417d-9b30-02710ddb993f
   type: opinion
   attestation: first_hand
@@ -424,6 +500,11 @@ domain_claims:
     "I can't imagine anybody being stupid enough to think that a program involving hundreds of thousands of people, carried out over a period of [more than a decade], in a blaze of publicity, could possibly be faked."
   text: |-
     Arthur C. Clarke cannot imagine anybody being stupid enough to think that Project Apollo, involving hundreds of thousands of people over more than a decade in a blaze of publicity, could possibly be faked.
+  entailment:
+    label: entails
+    score: 0.788
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27327722-5c7a-4455-9577-f1c4c039c148
   type: testimony
   attestation: first_hand
@@ -444,6 +525,11 @@ domain_claims:
     a program involving hundreds of thousands of people, carried out over a period of [more than a decade], in a blaze of publicity
   text: |-
     Project Apollo involved hundreds of thousands of people and was carried out over more than a decade in a blaze of publicity.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6b46a093-a5dd-4db0-85af-29f553934858
   type: hearsay
   attestation: second_hand
@@ -466,6 +552,11 @@ domain_claims:
     Ben Franklin said, 'A conspiracy of three people can be kept secret, if two of them are dead!'
   text: |-
     Arthur C. Clarke quoted Benjamin Franklin as saying that a conspiracy of three people can be kept secret if two of them are dead.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: 54cb70cf-8119-40fc-91a6-81a3cc4c22ac
   type: administrative
@@ -486,3 +577,8 @@ infrastructure_claims:
     name: Buzz Aldrin
   quote: Clarke told *SPACE.com* Sunday as Buzz Aldrin listened.
   text: Arthur C. Clarke spoke to SPACE.com on a Sunday while Buzz Aldrin listened.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

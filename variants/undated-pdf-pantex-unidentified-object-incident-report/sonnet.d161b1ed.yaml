@@ -9,6 +9,12 @@ ai_usage:
     output: 3057
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 0.0
 prompts:
 - pass: nodes
   id: nodes
@@ -69,6 +75,11 @@ domain_claims:
     Ground surveillance radar tower image showing a wide, mostly featureless gray field. A red circle in the upper right area highlights a small dark dot representing the unidentified object.
   text: |-
     A ground surveillance radar tower image of the Pantex unidentified object shows it as a small dark dot against a mostly featureless gray field.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e9aa505a-8ae9-4d96-a984-db437043b5af
   type: administrative
   attestation: second_hand
@@ -86,6 +97,11 @@ domain_claims:
     Two enhanced images of the unidentified object, processed by Sandia National Labs.
   text: |-
     Sandia National Laboratories processed enhanced images of the Pantex unidentified object.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0c9ac0f9-0e1a-47c8-a5bc-59308b58a3b6
   type: observation
   attestation: second_hand
@@ -103,6 +119,11 @@ domain_claims:
     Both images show a blurry, dark object against a light background. The upper image is larger and shows a shape resembling a rounded top with a narrower base, somewhat like a mushroom or goblet form.
   text: |-
     The Sandia National Laboratories enhanced images of the Pantex unidentified object show a blurry, dark object against a light background with a shape resembling a rounded top and narrower base, similar to a mushroom or goblet.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a5a252c6-ba0e-4bcd-a518-387b9cb56081
   type: observation
   attestation: second_hand
@@ -120,3 +141,8 @@ domain_claims:
     The lower image is smaller and shows a similar shape, slightly more compact, also with a rounded top and narrow base.
   text: |-
     A second, smaller enhanced image of the Pantex unidentified object shows a similar but more compact shape, also with a rounded top and narrow base.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

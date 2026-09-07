@@ -9,6 +9,12 @@ ai_usage:
     input: 8526
     output: 2401
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.9
 prompts:
 - pass: nodes
   id: nodes
@@ -93,6 +99,11 @@ domain_claims:
     i'm not sure what it is right now and i sure think we should identify what it is for America to make such gross expenditures again for human habitation on the moon
   text: |-
     Buzz Aldrin believes the United States should identify what is important to be developed from the Moon before again making large expenditures for human habitation on the Moon.
+  entailment:
+    label: entails
+    score: 0.911
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 093475be-8617-4aef-bea2-92ec02bb9a82
   type: opinion
   attestation: first_hand
@@ -113,6 +124,11 @@ domain_claims:
   quote: |-
     we can help we can join with together we can explore the moon and develop the moon
   text: Buzz Aldrin advocates joining together to explore and develop the Moon.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ccf598ce-be06-49bd-841d-ad6ff4ffb671
   type: opinion
   attestation: first_hand
@@ -130,6 +146,11 @@ domain_claims:
     name: Aldrin, Buzz
   quote: We should go boldly where man has not gone before.
   text: Buzz Aldrin advocates going boldly where man has not gone before.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 092ac726-f399-47ec-b3a5-04b57ccfe792
   type: opinion
   attestation: first_hand
@@ -147,6 +168,11 @@ domain_claims:
     name: Aldrin, Buzz
   quote: Fly by the comets, visit asteroids, visit the moon of Mars.
   text: Buzz Aldrin advocates flying by comets.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5330b511-3579-4091-8bbe-2aaee90035fb
   type: opinion
   attestation: first_hand
@@ -164,6 +190,11 @@ domain_claims:
     name: Aldrin, Buzz
   quote: Fly by the comets, visit asteroids, visit the moon of Mars.
   text: Buzz Aldrin advocates visiting asteroids.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a71cfe56-22e1-4466-90c4-b4849f0e764d
   type: opinion
   attestation: first_hand
@@ -185,6 +216,11 @@ domain_claims:
     name: Mars
   quote: Fly by the comets, visit asteroids, visit the moon of Mars.
   text: Buzz Aldrin advocates visiting Phobos, the moon of Mars.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5189f2b8-3c5e-4b9c-bf9f-9812b7dce252
   type: observation
   attestation: first_hand
@@ -207,6 +243,11 @@ domain_claims:
   quote: |-
     There's a monolith there, a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours.
   text: The Phobos Monolith is located on Phobos, a moon of Mars.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc6702e0-ee0d-4b1c-a1b5-2e552f307b55
   type: opinion
   attestation: first_hand
@@ -229,6 +270,11 @@ domain_claims:
   quote: |-
     There's a monolith there, a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours.
   text: Buzz Aldrin describes the Phobos Monolith as a very unusual structure.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bb8cb51a-3d85-4ee2-a86a-0ccb6f7b5abb
   type: observation
   attestation: first_hand
@@ -248,6 +294,11 @@ domain_claims:
     name: Mars
   quote: this little potato-shaped object that goes around Mars once in seven hours
   text: Phobos, a moon of Mars, is a small potato-shaped object.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a356433c-fd68-49f9-bc64-bab72a4d427e
   type: measurement
   attestation: first_hand
@@ -267,6 +318,11 @@ domain_claims:
     name: Mars
   quote: this little potato-shaped object that goes around Mars once in seven hours
   text: Phobos orbits Mars once every seven hours.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 09c3dc40-e40a-4c24-ac4f-189c9928f4cd
   type: opinion
   attestation: first_hand
@@ -290,6 +346,11 @@ domain_claims:
     When people find out about that they're going to say, who put that there? Who put that there? Well, the universe put it there.
   text: |-
     Buzz Aldrin attributes the presence of the Phobos Monolith on Phobos to the universe.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47096ef7-4d7b-443f-ad5d-8fe7bdce83d7
   type: opinion
   attestation: first_hand
@@ -314,6 +375,11 @@ domain_claims:
   quote: Well, the universe put it there. If you choose, God put it there.
   text: |-
     Buzz Aldrin offers that, if one chooses, God placed the Phobos Monolith on Phobos.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 2d272f35-e494-4817-8ae7-4ea466b0f009
   type: administrative
@@ -344,3 +410,8 @@ infrastructure_claims:
     There's a monolith there, a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours.
   text: |-
     On 2009-07-22, Buzz Aldrin discussed the monolith on a moon of Mars in an interview with the Cable-Satellite Public Affairs Network (C-SPAN).
+  entailment:
+    label: neutral
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -10,6 +10,12 @@ ai_usage:
     output: 1110
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 0.0
 prompts:
 - pass: nodes
   id: nodes
@@ -83,3 +89,8 @@ domain_claims:
     Its about uh three quarters of a mile out Thought maybe a capsule uh after the liftoff, but [inaudible]
   text: |-
     During Mercury-Redstone 4 on 1961-07-21, a recovery team member observed an object approximately 1.2 kilometres out and thought it might be the capsule after the liftoff.
+  entailment:
+    label: entails
+    score: 0.73
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

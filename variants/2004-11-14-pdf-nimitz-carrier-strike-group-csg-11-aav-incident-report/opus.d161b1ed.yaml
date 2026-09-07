@@ -10,6 +10,12 @@ ai_usage:
     output: 78236
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 18.7
 prompts:
 - pass: nodes
   id: nodes
@@ -231,6 +237,11 @@ domain_claims:
     During the period of approximately 10-16 November 2004, the Nimitz Carrier Strike Group (CSG) was operating off the western coast of the United States in preparation for their deployment to the Arabian Sea.
   text: |-
     During approximately 2004-11-10 to 2004-11-16, the Nimitz Carrier Strike Group (CSG-11) was operating off the western coast of the United States in preparation for deployment to the Arabian Sea.
+  entailment:
+    label: neutral
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f2033015-a118-4766-b9aa-630d51cbe77a
   type: observation
   attestation: second_hand
@@ -253,6 +264,11 @@ domain_claims:
     The USS Princeton on several occasions detected multiple Anomalous Aerial Vehicles (AAVs) operating in and around the vicinity of the CSG.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the USS Princeton (CG-59) on several occasions detected multiple Anomalous Aerial Vehicles (AAVs) operating in and around the vicinity of the Nimitz Carrier Strike Group (CSG-11).
+  entailment:
+    label: neutral
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7683fe93-11bb-4284-9859-cdf61a3d4030
   type: measurement
   attestation: second_hand
@@ -271,6 +287,11 @@ domain_claims:
     The AAVs would descend "very rapidly" from approximately 60,000 feet down to approximately 50 feet in a matter of seconds.
   text: |-
     The Anomalous Aerial Vehicles (AAVs) detected during the 2004 USS Nimitz encounter would descend "very rapidly" from approximately 18,000 metres down to approximately 15 metres in a matter of seconds.
+  entailment:
+    label: contradicts
+    score: 0.867
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d505949d-c935-467e-8b7f-038ea7041cc5
   type: observation
   attestation: second_hand
@@ -289,6 +310,11 @@ domain_claims:
     They would then hover or stay stationary on the radar for a short time and depart at high velocities and turn rates.
   text: |-
     The Anomalous Aerial Vehicles (AAVs) detected during the 2004 USS Nimitz encounter would hover or stay stationary on radar for a short time and then depart at high velocities and turn rates.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: daa40578-fbac-4560-8c0e-2c9e0ec18816
   type: administrative
   attestation: second_hand
@@ -311,6 +337,11 @@ domain_claims:
     On 14 November after again detecting the AAV, the USS Princeton took the opportunity of having a flight of two F/A-18Fs returning from a training mission to further investigate the AAV.
   text: |-
     On 2004-11-14, after again detecting an Anomalous Aerial Vehicle (AAV), the USS Princeton (CG-59) used a flight of two F/A-18F aircraft returning from a training mission to further investigate the AAV.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bfc443d7-6d38-4d4f-9022-fe07fdb5ea59
   type: administrative
   attestation: second_hand
@@ -333,6 +364,11 @@ domain_claims:
     The USS Princeton took over control of the F/A-18s from the E-2C Airborne Early Warning aircraft and vectored in the F/A-18s for intercept
   text: |-
     On 2004-11-14 the USS Princeton (CG-59) took over control of the F/A-18 aircraft from the E-2C Hawkeye airborne early warning aircraft and vectored them in for intercept of the Anomalous Aerial Vehicle (AAV).
+  entailment:
+    label: entails
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b389b75a-ea0e-43fc-b6a5-b5a9ef760e2b
   type: observation
   attestation: second_hand
@@ -352,6 +388,11 @@ domain_claims:
   quote: leading to visual contact approximately one mile away from the AAV
   text: |-
     During the 2004 USS Nimitz encounter, the F/A-18 crews made visual contact with the Anomalous Aerial Vehicle (AAV) at approximately 1.9 kilometres away.
+  entailment:
+    label: contradicts
+    score: 0.518
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9a784934-1c6d-48fd-acd5-8d954102a0a6
   type: observation
   attestation: second_hand
@@ -370,6 +411,11 @@ domain_claims:
     which was reported to be "an elongated egg or a 'Tic Tac' shape with a discernable midline horizontal axis"
   text: |-
     The Anomalous Aerial Vehicle (AAV) observed during the 2004 USS Nimitz encounter was reported to be "an elongated egg or a 'Tic Tac' shape with a discernable midline horizontal axis".
+  entailment:
+    label: entails
+    score: 0.425
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cd98644e-8ec4-43ca-a402-814bc915688e
   type: observation
   attestation: second_hand
@@ -387,6 +433,11 @@ domain_claims:
   quote: It was "solid white, smooth, with no edges.
   text: |-
     The Anomalous Aerial Vehicle (AAV) observed during the 2004 USS Nimitz encounter was solid white, smooth, with no edges.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8fa6fda7-cac2-475c-aeee-960ad1efb91b
   type: measurement
   attestation: second_hand
@@ -404,6 +455,11 @@ domain_claims:
   quote: It was approximately 46 feet in length.
   text: |-
     The Anomalous Aerial Vehicle (AAV) observed during the 2004 USS Nimitz encounter was approximately 14 metres in length.
+  entailment:
+    label: contradicts
+    score: 0.938
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1183627d-158a-43c2-b525-3a62348f1f25
   type: observation
   attestation: second_hand
@@ -423,6 +479,11 @@ domain_claims:
   quote: The F/A-18Fs radar could not obtain a 'lock' on the AAV
   text: |-
     The F/A-18F radar could not obtain a lock on the Anomalous Aerial Vehicle (AAV) during the 2004 USS Nimitz encounter.
+  entailment:
+    label: entails
+    score: 0.428
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 950e727e-31f4-48ea-80d7-895b1a57bd9e
   type: observation
   attestation: second_hand
@@ -441,6 +502,11 @@ domain_claims:
     however it could be tracked while stationary and at slower speeds with the Forward Looking Infrared (FLIR)
   text: |-
     The Anomalous Aerial Vehicle (AAV) of the 2004 USS Nimitz encounter could be tracked while stationary and at slower speeds with forward-looking infrared (FLIR).
+  entailment:
+    label: entails
+    score: 0.433
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b742cad0-750a-4250-9392-ff01980e1b93
   type: observation
   attestation: second_hand
@@ -461,6 +527,11 @@ domain_claims:
     The AAV did take evasive actions upon intercept by the F/A-18 demonstrating an advanced acceleration (G), aerodynamic, and propulsion capability.
   text: |-
     The Anomalous Aerial Vehicle (AAV) took evasive action upon intercept by the F/A-18 during the 2004 USS Nimitz encounter, demonstrating advanced acceleration (G), aerodynamic and propulsion capability.
+  entailment:
+    label: entails
+    score: 0.432
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 742aa565-c2f6-4392-821c-048fae013dd0
   type: observation
   attestation: second_hand
@@ -480,6 +551,11 @@ domain_claims:
   quote: The AAV did not take any offensive action against the CSG;
   text: |-
     The Anomalous Aerial Vehicle (AAV) took no offensive action against the Nimitz Carrier Strike Group (CSG-11) during the 2004 USS Nimitz encounter.
+  entailment:
+    label: entails
+    score: 0.484
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e61baf3d-2cc7-491b-b452-d46ff97e014f
   type: opinion
   attestation: second_hand
@@ -500,6 +576,11 @@ domain_claims:
     given its ability to operate unchallenged in close vicinity to the CSG it demonstrated the potential to conduct undetected reconnaissance leaving the CSG with a limited ability to detect, track, and/or engage the AAV.
   text: |-
     By operating unchallenged in close vicinity to the Nimitz Carrier Strike Group (CSG-11), the Anomalous Aerial Vehicle (AAV) demonstrated the potential to conduct undetected reconnaissance, leaving the strike group with a limited ability to detect, track and/or engage it.
+  entailment:
+    label: entails
+    score: 0.473
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d57f1bad-49fe-491b-959e-4eacc72323b9
   type: opinion
   attestation: second_hand
@@ -520,6 +601,11 @@ domain_claims:
     The Anomalous Aerial Vehicle (AAV) was no known aircraft or air vehicle currently in the inventory of the United States or any foreign nation.
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) AAV Incident Report assessed that the Anomalous Aerial Vehicle (AAV) of the 2004 USS Nimitz encounter was no known aircraft or air vehicle currently in the inventory of the United States or any foreign nation.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 097bec5a-f606-49e0-85ca-26a4a68beb9a
   type: opinion
   attestation: second_hand
@@ -538,6 +624,11 @@ domain_claims:
     The AAV exhibited advanced low observable characteristics at multiple radar bands rendering US radar based engagement capabilities ineffective.
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) AAV Incident Report assessed that the Anomalous Aerial Vehicle (AAV) exhibited advanced low observable characteristics at multiple radar bands, rendering US radar-based engagement capabilities ineffective.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dae49b64-82b7-4df8-a5a8-43e6bf9d49fe
   type: opinion
   attestation: second_hand
@@ -556,6 +647,11 @@ domain_claims:
     The AAV exhibited advanced aerodynamic performance with no visible control surfaces and no visible means to generate lift.
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) AAV Incident Report assessed that the Anomalous Aerial Vehicle (AAV) exhibited advanced aerodynamic performance with no visible control surfaces and no visible means to generate lift.
+  entailment:
+    label: entails
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aec07be9-3ff6-4500-8a59-8e74e86673b3
   type: opinion
   attestation: second_hand
@@ -574,6 +670,11 @@ domain_claims:
     The AAV exhibited advanced propulsion capability by demonstrating the ability to remain stationary with little to no variation in altitude transitioning to horizontal and/or vertical velocities far greater than any known aerial vehicle with little to no visible signature.
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) AAV Incident Report assessed that the Anomalous Aerial Vehicle (AAV) exhibited advanced propulsion capability by remaining stationary with little to no variation in altitude before transitioning to horizontal and/or vertical velocities far greater than any known aerial vehicle, with little to no visible signature.
+  entailment:
+    label: entails
+    score: 0.474
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56207fb0-0c3b-41d8-9cdc-0f8f883bfe5f
   type: opinion
   attestation: second_hand
@@ -592,6 +693,11 @@ domain_claims:
     The AAV possibly demonstrated the ability to 'cloak' or become invisible to the human eye or human observation.
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) AAV Incident Report assessed that the Anomalous Aerial Vehicle (AAV) possibly demonstrated the ability to 'cloak' or become invisible to the human eye or human observation.
+  entailment:
+    label: entails
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cf0bae61-5c75-4f95-aec1-ac5b20caba14
   type: opinion
   attestation: second_hand
@@ -610,6 +716,11 @@ domain_claims:
     The AAV possibly demonstrated a highly advanced capability to operate undersea completely undetectable by our most advanced sensors.
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) AAV Incident Report assessed that the Anomalous Aerial Vehicle (AAV) possibly demonstrated a highly advanced capability to operate undersea completely undetectable by the most advanced US sensors.
+  entailment:
+    label: entails
+    score: 0.371
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3879e3be-6da1-4cd8-ae98-9f26bcf68a1a
   type: administrative
   attestation: second_hand
@@ -628,6 +739,11 @@ domain_claims:
     The following events took place during deployment preparation of the Nimitz Carrier Strike Group (CSG) during the months of November and December 2004 in the SOCAL Operating Area off the coast of California and Mexico.
   text: |-
     The events of the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter took place during deployment preparation of the Nimitz Carrier Strike Group (CSG-11) in November and December 2004 in the Southern California (SOCAL) Operating Area off the coast of California and Mexico.
+  entailment:
+    label: entails
+    score: 0.446
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e63c3b21-ed6c-4031-a2f3-ec1d58d0db5d
   type: administrative
   attestation: second_hand
@@ -654,6 +770,11 @@ domain_claims:
     The CSG was comprised of the following ships and submarine: USS Nimitz (CVN-68), USS Princeton (CG-59), USS Chafee (DDG-90), USS Higgins (DDG-76), and the USS Louisville (SSN-724).
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) in November 2004 comprised the USS Nimitz (CVN-68), USS Princeton (CG-59), USS Chafee (DDG-90), USS Higgins (DDG-76) and the submarine USS Louisville (SSN-724).
+  entailment:
+    label: entails
+    score: 0.557
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 69e33b61-330d-4cf0-9dc4-a631b0a5612a
   type: administrative
   attestation: second_hand
@@ -698,6 +819,11 @@ domain_claims:
     The Nimitz was home to Carrier Air Wing 11 (CVW-11) comprised of VMFA-232 (USMC F/A-18C), VFA-14 (F/A-18E), VFA-41 (F/A-18F), VFA-94 (F/A-18C), VAQ-135 (EA-6B), VAW-117 (E-2C), HS-6 (H-60), and VRC-30 Det 3 (C-2A).
   text: |-
     The USS Nimitz (CVN-68) was home to Carrier Air Wing 11 (CVW-11), comprising Marine Fighter Attack Squadron 232 (VMFA-232) with USMC F/A-18C, Strike Fighter Squadron 14 (VFA-14) with F/A-18E, Strike Fighter Squadron 41 (VFA-41) with F/A-18F, Strike Fighter Squadron 94 (VFA-94) with F/A-18C, Electronic Attack Squadron 135 (VAQ-135) with EA-6B, Carrier Airborne Early Warning Squadron 117 (VAW-117) with E-2C, Helicopter Anti-Submarine Squadron 6 (HS-6) with H-60, and Fleet Logistics Support Squadron 30 (VRC-30) Detachment 3 with C-2A.
+  entailment:
+    label: entails
+    score: 0.465
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f0a59eec-7040-4a2a-8952-5578e1d8cebf
   type: administrative
   attestation: second_hand
@@ -722,6 +848,11 @@ domain_claims:
     The only participants in the events surrounding the detection and intercept of the AAV are the USS Princeton, VAW-117, VMFA-232, and VFA-41.
   text: |-
     The only participants in the detection and intercept of the Anomalous Aerial Vehicle (AAV) during the 2004 USS Nimitz encounter were the USS Princeton (CG-59), Carrier Airborne Early Warning Squadron 117 (VAW-117), Marine Fighter Attack Squadron 232 (VMFA-232) and Strike Fighter Squadron 41 (VFA-41).
+  entailment:
+    label: entails
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ab8bfa4e-7323-40ee-b21f-d9e465d51661
   type: administrative
   attestation: second_hand
@@ -741,6 +872,11 @@ domain_claims:
     USS Princeton (CG-59) is a Ticonderoga-class cruiser guided-missile cruiser serving in the United States Navy.
   text: |-
     The USS Princeton (CG-59) is a Ticonderoga-class guided-missile cruiser serving in the United States Navy.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5002d6bf-bfcf-42b2-9dea-4c6b71bc026f
   type: administrative
   attestation: second_hand
@@ -758,6 +894,11 @@ domain_claims:
     Armed with naval guns and anti-air, anti-surface, and anti-submarine missiles, plus other weapons, she is equipped for surface-to-air, surface-to-surface, and anti-submarine warfare.
   text: |-
     The USS Princeton (CG-59) is armed with naval guns and anti-air, anti-surface and anti-submarine missiles, and is equipped for surface-to-air, surface-to-surface and anti-submarine warfare.
+  entailment:
+    label: entails
+    score: 0.495
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b4456fbc-cb7a-4b2b-89c7-d9a1069b559b
   type: administrative
   attestation: second_hand
@@ -773,6 +914,11 @@ domain_claims:
     name: USS Princeton (CG-59)
   quote: She also is the home of two Seahawk LAMPS III helicopters.
   text: The USS Princeton (CG-59) is home to two Seahawk LAMPS III helicopters.
+  entailment:
+    label: entails
+    score: 0.681
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc1d033c-20fc-4171-bead-9bbae7f50efa
   type: administrative
   attestation: second_hand
@@ -792,6 +938,11 @@ domain_claims:
     The Princeton was the first Ticonderoga-class cruiser to carry the upgraded AN/SPY-1B radar system.
   text: |-
     The USS Princeton (CG-59) was the first Ticonderoga-class cruiser to carry the upgraded AN/SPY-1B radar system.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dd0afb85-3002-42c2-bd39-53f194da0c44
   type: administrative
   attestation: second_hand
@@ -809,6 +960,11 @@ domain_claims:
     The AN/SPY-1 is an advanced, automatic detect and track, multifunctional phased-array radar.
   text: |-
     The AN/SPY-1 is an advanced, automatic detect and track, multifunctional phased-array radar.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e80be42c-9705-4caa-94a3-47cac2655e26
   type: measurement
   attestation: second_hand
@@ -826,6 +982,11 @@ domain_claims:
     This high-powered (4 MW) radar is able to perform search, track and missile guidance functions simultaneously with a capability of over 100 targets.
   text: |-
     The AN/SPY-1 radar is a high-powered 4 megawatt radar able to perform search, track and missile guidance functions simultaneously with a capability of over 100 targets.
+  entailment:
+    label: entails
+    score: 0.542
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 919a9272-f53e-445f-9a1c-9dc0bd6520e8
   type: administrative
   attestation: second_hand
@@ -843,6 +1004,11 @@ domain_claims:
     The four fixed arrays of "SPY" send out beams of electromagnetic energy in all directions simultaneously, continuously providing a search and tracking capability for hundreds of target at the same time.
   text: |-
     The AN/SPY-1 radar's four fixed arrays send out beams of electromagnetic energy in all directions simultaneously, continuously providing search and tracking capability for hundreds of targets at the same time.
+  entailment:
+    label: entails
+    score: 0.466
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a4b588db-5e63-4d31-a767-8b2597ecc9cf
   type: administrative
   attestation: second_hand
@@ -860,6 +1026,11 @@ domain_claims:
     The computer-controlled phased array can concentrate energy where it is needed. The operator can boost the range and resolution in a particular direction without blinding the ship to threats from another side.
   text: |-
     The AN/SPY-1 radar's computer-controlled phased array can concentrate energy where it is needed, allowing the operator to boost range and resolution in a particular direction without blinding the ship to threats from another side.
+  entailment:
+    label: entails
+    score: 0.525
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ba99c88c-6f9f-4988-a75c-e58f74e158c0
   type: administrative
   attestation: second_hand
@@ -877,6 +1048,11 @@ domain_claims:
     SPY-1's S-band frequency range permits optimum performance in all-weather operations ... mid-course guidance for semi-active missiles, such as the Evolved Sea Sparrow Missile, SM-2 and SM-3.
   text: |-
     The AN/SPY-1 radar's S-band frequency range permits optimum performance in all-weather operations and provides mid-course guidance for semi-active missiles such as the Evolved Sea Sparrow Missile, SM-2 and SM-3.
+  entailment:
+    label: entails
+    score: 0.874
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 196b5dfe-021b-4b19-9fe1-804cacccfb92
   type: administrative
   attestation: second_hand
@@ -895,6 +1071,11 @@ domain_claims:
     The USS Princeton was part of the Nimitz Carrier Battle Group, during the period of approximately 10-16 November 2004 while completing Tailored Ships Training Availability (TSTA) in preparation for their deployment to the Arabian Sea.
   text: |-
     During approximately 2004-11-10 to 2004-11-16 the USS Princeton (CG-59) was part of the Nimitz Carrier Battle Group while completing Tailored Ships Training Availability (TSTA) in preparation for deployment to the Arabian Sea.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cffc0b7f-21f0-4dc5-be10-adbce939b4b7
   type: testimony
   attestation: second_hand
@@ -919,6 +1100,11 @@ domain_claims:
     The Fire Control Officer, {{redacted}} and his technician, FCSS {{redacted}} initially thought the contacts were part of the COMPTUX exercise.
   text: |-
     The Fire Control Officer of the USS Princeton (CG-59) and his technician initially thought the Anomalous Aerial Vehicle (AAV) contacts detected in November 2004 were part of the COMPTUX exercise.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 62005f48-a62b-4e61-8cc7-413382818c50
   type: testimony
   attestation: second_hand
@@ -943,6 +1129,11 @@ domain_claims:
     According to Senior Chief {{redacted: ~1 word}} the AAVs would descend from a very high altitude into the scan volume of the AN/SPY-1 at a high velocity.
   text: |-
     According to an unnamed Senior Chief aboard the USS Princeton (CG-59) whose name is redacted, the Anomalous Aerial Vehicles (AAVs) detected in November 2004 would descend from a very high altitude into the scan volume of the AN/SPY-1 radar at high velocity.
+  entailment:
+    label: entails
+    score: 0.472
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8885b6da-7593-46c2-9ba3-bf112a64a2d8
   type: measurement
   attestation: second_hand
@@ -966,6 +1157,11 @@ domain_claims:
   quote: The top of the scan volume would put the AAVs at higher than 60,000 feet.
   text: |-
     The top of the AN/SPY-1 radar scan volume put the Anomalous Aerial Vehicles (AAVs) detected by the USS Princeton (CG-59) in November 2004 at higher than approximately 18,000 metres.
+  entailment:
+    label: entails
+    score: 0.758
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e29a5f6c-bb70-46c8-b51f-2c135b07ce7a
   type: opinion
   attestation: second_hand
@@ -988,6 +1184,11 @@ domain_claims:
     Senior Chief {{redacted: ~1 word}} added that based on his experience, which is 17 years as a Fire Control on Aegis cruisers, the AAV exhibited Ballistic Missile Characteristics in reference to its appearance, velocity, and indications on the radar.
   text: |-
     An unnamed Senior Chief aboard the USS Princeton (CG-59), with 17 years' experience as a Fire Controlman on Aegis cruisers, considered that the Anomalous Aerial Vehicle (AAV) exhibited ballistic missile characteristics in its appearance, velocity and indications on the radar.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 648d2938-834c-4ed8-913c-1df14c948300
   type: observation
   attestation: second_hand
@@ -1008,6 +1209,11 @@ domain_claims:
     Since the radar was in the mode to handle Air Intercept of conventional aircraft it never obtained an accurate track of the AAVs and was quickly "dropped" by the radar meaning it was eliminated by the computer to reduce the amount of clutter on the radar, as any other false target is handled.
   text: |-
     Because the AN/SPY-1 radar aboard the USS Princeton (CG-59) was in a mode to handle air intercept of conventional aircraft, it never obtained an accurate track of the Anomalous Aerial Vehicles (AAVs) in November 2004, and the contacts were quickly dropped by the computer to reduce radar clutter as with any other false target.
+  entailment:
+    label: entails
+    score: 0.482
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fff4c3a9-5d1d-42c5-b985-2c572853b089
   type: opinion
   attestation: second_hand
@@ -1028,6 +1234,11 @@ domain_claims:
     If the radar were set up in a mode for Ballistic Missile tracking they likely would have had the capability to track the AAV.
   text: |-
     Had the AN/SPY-1 radar aboard the USS Princeton (CG-59) been set up in a ballistic missile tracking mode, the crew would likely have had the capability to track the Anomalous Aerial Vehicle (AAV) in November 2004.
+  entailment:
+    label: entails
+    score: 0.929
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a7bf21b3-801a-411b-94b9-9d900ca3b010
   type: observation
   attestation: second_hand
@@ -1046,6 +1257,11 @@ domain_claims:
     They were detected three separate times during the week operating off the western coast of the United States and Mexico.
   text: |-
     The Anomalous Aerial Vehicles (AAVs) were detected three separate times during the week of operations off the western coast of the United States and Mexico in November 2004.
+  entailment:
+    label: entails
+    score: 0.483
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c332f438-d7c7-476e-bdf4-11a8db5a0780
   type: testimony
   attestation: second_hand
@@ -1070,6 +1286,11 @@ domain_claims:
     The Tactical Air Officer onboard the Princeton could not identify the radar contact and given the high speed and altitude was perplexed.
   text: |-
     The Tactical Air Officer onboard the USS Princeton (CG-59) could not identify the radar contact during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter and was perplexed by its high speed and altitude.
+  entailment:
+    label: entails
+    score: 0.442
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6dd661c3-42dd-4b2c-a993-138dd62f1f27
   type: administrative
   attestation: second_hand
@@ -1094,6 +1315,11 @@ domain_claims:
     The Meteorological Officer (METOC) onboard the Princeton provided a briefing that discussed a high altitude weather phenomena where ice crystals can form and be detected by the AN/SPY-1.
   text: |-
     The Meteorological Officer onboard the USS Princeton (CG-59) gave a briefing during the November 2004 detections discussing a high-altitude weather phenomenon in which ice crystals can form and be detected by the AN/SPY-1 radar.
+  entailment:
+    label: neutral
+    score: 0.578
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a866dce4-1498-4c30-bcb2-ae28ceef6c44
   type: administrative
   attestation: second_hand
@@ -1116,6 +1342,11 @@ domain_claims:
     On 14 November 2004, after again detecting an AAV took the opportunity of two F/A-18s airborne in the vicinity to task them for airborne reconnaissance of the AAV.
   text: |-
     On 2004-11-14, after again detecting an Anomalous Aerial Vehicle (AAV), the USS Princeton (CG-59) tasked two F/A-18 aircraft airborne in the vicinity for airborne reconnaissance of the AAV.
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 77a24cb7-f3f1-4f0e-83d9-6bfa5a711754
   type: administrative
   attestation: second_hand
@@ -1135,6 +1366,11 @@ domain_claims:
     The Grumman E-2 Hawkeye is an American all-weather, aircraft carrier-based tactical Airborne Early Warning (AEW) aircraft.
   text: |-
     The Grumman E-2 Hawkeye is an American all-weather, aircraft carrier-based tactical airborne early warning (AEW) aircraft.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6d1c1f6c-962c-43f8-b65d-17911ce813f2
   type: administrative
   attestation: second_hand
@@ -1156,6 +1392,11 @@ domain_claims:
     The twin turboprop aircraft was designed and developed in the 1950s by Grumman for the United States Navy as a replacement for the E-1 Tracer.
   text: |-
     The twin turboprop E-2 Hawkeye was designed and developed in the 1950s by Grumman for the United States Navy as a replacement for the E-1 Tracer.
+  entailment:
+    label: entails
+    score: 0.458
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b90d8d60-8c14-4273-88fe-674019075823
   type: administrative
   attestation: second_hand
@@ -1172,6 +1413,11 @@ domain_claims:
     name: E-2C Hawkeye
   quote: progressively updated with the latest variant, the E-2D, first flying in 2007.
   text: The latest variant of the E-2 Hawkeye, the E-2D, first flew in 2007.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2e09555e-65cf-4f6b-8861-4322c992ab18
   type: administrative
   attestation: second_hand
@@ -1189,6 +1435,11 @@ domain_claims:
     The Hawkeye provides all-weather airborne early warning and command and control functions for the carrier battle group. Additional missions include surface surveillance coordination, strike and interceptor control, search and rescue guidance and communications relay.
   text: |-
     The E-2 Hawkeye provides all-weather airborne early warning and command and control functions for the carrier battle group, with additional missions including surface surveillance coordination, strike and interceptor control, search and rescue guidance and communications relay.
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aca50ad4-2382-476e-9a55-0e3565071cee
   type: measurement
   attestation: second_hand
@@ -1206,6 +1457,11 @@ domain_claims:
     It is a high-wing aircraft with stacked antennae elements contained in a 24-foot (7.3 m) rotating dome above the fuselage.
   text: |-
     The E-2C Hawkeye is a high-wing aircraft with stacked antennae elements contained in a rotating dome approximately 7.3 metres across above the fuselage.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fbb6cbd1-65e3-424f-991f-e2cb9ca7957c
   type: administrative
   attestation: second_hand
@@ -1225,6 +1481,11 @@ domain_claims:
     This sophisticated system is the latest in a long line of airborne early warning systems from Lockheed Martin.
   text: |-
     The AN/APS-145 Airborne Surveillance Radar is the latest in a line of airborne early warning systems from Lockheed Martin.
+  entailment:
+    label: entails
+    score: 0.542
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3c5c12c0-cbb7-499c-9362-c192ae68674f
   type: administrative
   attestation: second_hand
@@ -1244,6 +1505,11 @@ domain_claims:
     Over 100 E-2C's have been completing nearly 100 percent of their missions, day in and day out, for more than two decades.
   text: |-
     More than 100 E-2C Hawkeye aircraft have been completing nearly 100 per cent of their missions for more than two decades.
+  entailment:
+    label: entails
+    score: 0.928
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 99d90e62-f44d-4ea1-8870-3cbac45618fd
   type: administrative
   attestation: second_hand
@@ -1261,6 +1527,11 @@ domain_claims:
     High-power UHF Doppler radar that utilizes a rotating antenna within a circular radome mounted atop the aircraft.
   text: |-
     The AN/APS-145 is a high-power UHF Doppler radar that uses a rotating antenna within a circular radome mounted atop the aircraft.
+  entailment:
+    label: entails
+    score: 0.544
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ea5ea7d0-4749-4c25-adf7-5cae51289b3e
   type: administrative
   attestation: second_hand
@@ -1277,6 +1548,11 @@ domain_claims:
   quote: Range is greater than any airborne surveillance radar in the world
   text: |-
     The range of the AN/APS-145 radar is greater than that of any airborne surveillance radar in the world.
+  entailment:
+    label: entails
+    score: 0.522
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4a98c6dc-4ac7-4ac1-a20c-8a98b00fffc9
   type: measurement
   attestation: second_hand
@@ -1293,6 +1569,11 @@ domain_claims:
   quote: Will monitor and track more than 20,000 targets simultaneously
   text: |-
     The AN/APS-145 radar will monitor and track more than 20,000 targets simultaneously.
+  entailment:
+    label: entails
+    score: 0.46
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0e193bb2-1fd6-4a20-931c-59cbe4b492f7
   type: administrative
   attestation: second_hand
@@ -1310,6 +1591,11 @@ domain_claims:
     Sophisticated jam avoidance and ECCM techniques assure unparalleled performance in dense EMI and jamming environments
   text: |-
     The AN/APS-145 radar uses sophisticated jam avoidance and electronic counter-countermeasures techniques for performance in dense electromagnetic interference and jamming environments.
+  entailment:
+    label: entails
+    score: 0.93
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a26bb06-5689-4fa2-97c9-24a307bce0af
   type: administrative
   attestation: second_hand
@@ -1327,6 +1613,11 @@ domain_claims:
     Adaptive signal processing provides superior target detection and tracking in complex target environments / Adapts to dynamic operating conditions automatically over varied terrain with no operator intervention
   text: |-
     The AN/APS-145 radar uses adaptive signal processing to provide target detection and tracking in complex target environments and adapts automatically to dynamic operating conditions over varied terrain with no operator intervention.
+  entailment:
+    label: entails
+    score: 0.453
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d5ae11ce-0338-4930-a5cf-4a1c7daf391c
   type: administrative
   attestation: second_hand
@@ -1347,6 +1638,11 @@ domain_claims:
     On 14 November 2004, {{redacted: ~2 words}} E-2C NFO, was in VAW-117 and airborne during the contact. Additionally, he was the squadron's avionics division officer and would be responsible for any and all RADAR recordings, etc...
   text: |-
     On 2004-11-14 an E-2C Hawkeye naval flight officer of Carrier Airborne Early Warning Squadron 117 (VAW-117), whose name is redacted, was airborne during the Anomalous Aerial Vehicle (AAV) contact and was also the squadron's avionics division officer responsible for any radar recordings.
+  entailment:
+    label: entails
+    score: 0.485
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4748076a-87bd-475f-8f75-88ec7bac9203
   type: administrative
   attestation: second_hand
@@ -1362,6 +1658,11 @@ domain_claims:
     Unfortunately in the E-2C, it is not routine to have any kind of recording engaged unless it is pre coordinated which is typically only used during airborne testing of new capabilities, etc...
   text: |-
     In the E-2C Hawkeye it is not routine to have any kind of recording engaged unless pre-coordinated, which is typically only done during airborne testing of new capabilities.
+  entailment:
+    label: entails
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 02135d10-283c-4cde-923c-aaf370d59f24
   type: administrative
   attestation: second_hand
@@ -1379,6 +1680,11 @@ domain_claims:
   quote: There was no recording of this event.
   text: |-
     There was no E-2C Hawkeye radar recording of the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.66
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d6e56bc2-84eb-4c49-b8f2-5e56ddb5cb4d
   type: administrative
   attestation: second_hand
@@ -1401,6 +1707,11 @@ domain_claims:
     LT {{redacted: ~1 word}} was flying as the Air Control Officer (ACO) on the mission where the AAV was observed by the flight of F/A-18s. He was controlling the F/A-18s that were flying as part of their work ups prior to deployment.
   text: |-
     An unnamed lieutenant was flying as the Air Control Officer on the E-2C Hawkeye mission during which the Anomalous Aerial Vehicle (AAV) was observed by the flight of F/A-18s on 2004-11-14, controlling the F/A-18s flying as part of their pre-deployment work-ups.
+  entailment:
+    label: entails
+    score: 0.494
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f77237ec-4678-4424-86ca-8fa2d0715ba5
   type: testimony
   attestation: second_hand
@@ -1425,6 +1736,11 @@ domain_claims:
     He did not see the object on his radar (raw video) until the USS Princeton directed the contact and gave the E-2 the general direction to steer its radar.
   text: |-
     The unnamed E-2C Hawkeye Air Control Officer did not see the Anomalous Aerial Vehicle (AAV) on his raw video radar on 2004-11-14 until the USS Princeton (CG-59) directed the contact and gave the E-2C the general direction to steer its radar.
+  entailment:
+    label: entails
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 75fdf940-4cde-41de-a36b-91aac89565d9
   type: testimony
   attestation: second_hand
@@ -1447,6 +1763,11 @@ domain_claims:
     LT {{redacted: ~1 word}} initially thought the return was a wave because in a high sea state (4 or greater) the E-2C RADAR can actually detect the waves.
   text: |-
     The unnamed E-2C Hawkeye Air Control Officer initially thought the radar return of the Anomalous Aerial Vehicle (AAV) on 2004-11-14 was a wave, because in a high sea state of 4 or greater the E-2C radar can detect waves.
+  entailment:
+    label: entails
+    score: 0.467
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec21e827-9fb5-4b16-923b-064d615fc6aa
   type: observation
   attestation: second_hand
@@ -1471,6 +1792,11 @@ domain_claims:
     Additionally, the target was so low and the return was so faint that without the inputs from the USS Princeton the return would have been missed/ignored.
   text: |-
     The Anomalous Aerial Vehicle (AAV) target was so low and its radar return so faint on 2004-11-14 that without inputs from the USS Princeton (CG-59) the E-2C Hawkeye return would have been missed or ignored.
+  entailment:
+    label: neutral
+    score: 0.741
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 90c90f4d-1468-480c-9bc8-3d6df5d36ecd
   type: measurement
   attestation: second_hand
@@ -1489,6 +1815,11 @@ domain_claims:
     the USS Princeton initially reported the target to be at 15,000 - 20,000 feet MSL
   text: |-
     The USS Princeton (CG-59) initially reported the Anomalous Aerial Vehicle (AAV) target on 2004-11-14 to be at approximately 4,600 to 6,100 metres above mean sea level.
+  entailment:
+    label: contradicts
+    score: 0.701
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd83292d-8b16-4e3c-8b27-e1e398019774
   type: observation
   attestation: second_hand
@@ -1506,6 +1837,11 @@ domain_claims:
   quote: Due to the intermittent radar return from the target, velocity was unavailable.
   text: |-
     Due to the intermittent radar return from the Anomalous Aerial Vehicle (AAV) target on 2004-11-14, velocity data was unavailable to the E-2C Hawkeye crew.
+  entailment:
+    label: entails
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 39b9e330-c4b8-42d9-ab7f-11353ec69f58
   type: administrative
   attestation: second_hand
@@ -1526,6 +1862,11 @@ domain_claims:
     the USS Princeton took control of the F/A-18s and the E-2C remained Airborne but was no longer involved in the contact or control. The fighters were being controlled by the USS Princeton for the duration of the contact and intercept.
   text: |-
     On 2004-11-14 the USS Princeton (CG-59) took control of the F/A-18s for the duration of the contact and intercept, and the E-2C Hawkeye remained airborne but was no longer involved in the contact or control.
+  entailment:
+    label: entails
+    score: 0.453
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4298d765-170d-472a-be73-0ae112006916
   type: observation
   attestation: second_hand
@@ -1544,6 +1885,11 @@ domain_claims:
     The E-2 aircrew on board monitored the Air Defense Control (ADC) Net during the contact puzzled while listening to all of the merge calls coming over the net (typical of what you would hear during the Airborne Intercept of an enemy fighter).
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the E-2C Hawkeye aircrew monitored the Air Defense Control Net and were puzzled listening to the merge calls, typical of what would be heard during an airborne intercept of an enemy fighter.
+  entailment:
+    label: entails
+    score: 0.536
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0dbbd863-e4e5-4e89-9b52-4be0a4b8f1dc
   type: opinion
   attestation: second_hand
@@ -1562,6 +1908,11 @@ domain_claims:
     It was obvious there was something out there and the fighters were taking it seriously.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter it was obvious to the E-2C Hawkeye aircrew that there was something out there and that the fighters were taking it seriously.
+  entailment:
+    label: entails
+    score: 0.465
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fb607a88-3ad2-42a3-8c06-4b605fb071e6
   type: observation
   attestation: second_hand
@@ -1584,6 +1935,11 @@ domain_claims:
     pilots and weapon system operators (WSOs) from VFA-41 that were able to get both a visual and sensor contact with the AAV on 14 November 2004 at approximately N31 20' W117 10' about 70nm south of the U.S./Mexico Border 30 nm off the Baja Mexico Coast
   text: |-
     The F/A-18 crews of Strike Fighter Squadron 41 (VFA-41) obtained both visual and sensor contact with the Anomalous Aerial Vehicle (AAV) on 2004-11-14 at approximately N31 20' W117 10', about 130 kilometres south of the US/Mexico border and 56 kilometres off the Baja Mexico coast.
+  entailment:
+    label: contradicts
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2c3bf2d2-96a5-4767-8f2c-a552b584bf3a
   type: administrative
   attestation: second_hand
@@ -1606,6 +1962,11 @@ domain_claims:
     Lt. Col {{redacted: ~1 word}} Commanding Officer VMFA-232, was flying a single-seat F/A-18C that launched from the USS Nimitz at approximately 1030L to conduct a Functional Check Flight of an aircraft that had recently completed significant maintenance.
   text: |-
     The Commanding Officer of Marine Fighter Attack Squadron 232 (VMFA-232), a US Marine Corps lieutenant colonel whose name is redacted, was flying a single-seat F/A-18C that launched from the USS Nimitz (CVN-68) at approximately 1030 local time on 2004-11-14 to conduct a functional check flight of an aircraft that had recently completed significant maintenance.
+  entailment:
+    label: entails
+    score: 0.955
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10e8d1ee-0a96-42d3-9bc2-9eef70f04e5b
   type: observation
   attestation: second_hand
@@ -1626,6 +1987,11 @@ domain_claims:
     He noted the weather that day was blue skies, no clouds, and unlimited visibility.
   text: |-
     The weather on 2004-11-14 during the USS Nimitz Anomalous Aerial Vehicle (AAV) encounter was blue skies, no clouds and unlimited visibility.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5fbaf3f3-00ac-4e17-9c06-1354cb07fb93
   type: testimony
   attestation: second_hand
@@ -1648,6 +2014,11 @@ domain_claims:
     After 30 minutes into his flight he received a radio call from his air controller asking him to investigate an unidentified airborne contact. This was not a standard request.
   text: |-
     Thirty minutes into his flight on 2004-11-14, the Commanding Officer of Marine Fighter Attack Squadron 232 (VMFA-232) received a radio call from his air controller asking him to investigate an unidentified airborne contact, which was not a standard request.
+  entailment:
+    label: neutral
+    score: 0.424
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4970322f-5ef5-45b7-96c4-d9ec2aebda7f
   type: testimony
   attestation: second_hand
@@ -1670,6 +2041,11 @@ domain_claims:
     Additionally the controller asked if he had ordnance onboard, which was odd since no controller had ever asked that question during a situation of identifying an unknown contact over U.S. or International territory. He responded that he had no ordnance onboard.
   text: |-
     The air controller asked the Commanding Officer of Marine Fighter Attack Squadron 232 (VMFA-232) whether he had ordnance onboard on 2004-11-14, which he found odd since no controller had ever asked that question during identification of an unknown contact over US or international territory, and he responded that he had no ordnance onboard.
+  entailment:
+    label: entails
+    score: 0.431
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33c73e0a-7fbd-4b32-a4d1-e2830e8838a0
   type: observation
   attestation: second_hand
@@ -1691,6 +2067,11 @@ domain_claims:
   quote: The object was reported to be at "slow speed and low altitude".
   text: |-
     The Anomalous Aerial Vehicle (AAV) was reported to the Marine Fighter Attack Squadron 232 (VMFA-232) F/A-18C pilot on 2004-11-14 as being at "slow speed and low altitude".
+  entailment:
+    label: entails
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5c533ab-8cef-423e-bd2a-a09ae58acfee
   type: observation
   attestation: second_hand
@@ -1715,6 +2096,11 @@ domain_claims:
     While enroute at approximately 250 knots indicated/400 knots groundspeed at medium altitude (15-25,000 feet), he gained radar contact of what he believed to be two F/A-18Fs that were approaching the AAV from the west at low altitude (500-5,000 feet).
   text: |-
     While en route at approximately 460 kilometres per hour indicated and 740 kilometres per hour groundspeed at an altitude of approximately 4,600 to 7,600 metres on 2004-11-14, the Commanding Officer of Marine Fighter Attack Squadron 232 (VMFA-232) gained radar contact on what he believed to be two F/A-18F aircraft approaching the Anomalous Aerial Vehicle (AAV) from the west at low altitude of approximately 150 to 1,500 metres.
+  entailment:
+    label: contradicts
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: acb06eb6-cc91-4dcc-b728-b0735d73a429
   type: observation
   attestation: second_hand
@@ -1738,6 +2124,11 @@ domain_claims:
   quote: There was no other traffic on the radar.
   text: |-
     There was no other traffic on the radar of the Marine Fighter Attack Squadron 232 (VMFA-232) F/A-18C during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: contradicts
+    score: 0.766
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c3ea284-6bfc-48a1-b5ef-faf9b49b539b
   type: testimony
   attestation: second_hand
@@ -1762,6 +2153,11 @@ domain_claims:
     The controller informed him to remain above 10,000 feet, as there was other fighter traffic at low altitude investigating the AAV.
   text: |-
     The controller instructed the Marine Fighter Attack Squadron 232 (VMFA-232) F/A-18C pilot to remain above approximately 3,000 metres on 2004-11-14 as there was other fighter traffic at low altitude investigating the Anomalous Aerial Vehicle (AAV).
+  entailment:
+    label: contradicts
+    score: 0.683
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e82bc5b0-d2e4-4edd-9530-035717f69afc
   type: observation
   attestation: second_hand
@@ -1786,6 +2182,11 @@ domain_claims:
     As he approached approximately 15nm from the AAV descending through approximately 15,000 feet, he could see a water disturbance in the ocean surface.
   text: |-
     As he approached approximately 28 kilometres from the Anomalous Aerial Vehicle (AAV) descending through approximately 4,600 metres on 2004-11-14, the Commanding Officer of Marine Fighter Attack Squadron 232 (VMFA-232) could see a water disturbance on the ocean surface.
+  entailment:
+    label: neutral
+    score: 0.571
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 445e5a88-a87a-493b-b0e8-9ee32fea8cf8
   type: observation
   attestation: second_hand
@@ -1805,6 +2206,11 @@ domain_claims:
   quote: He recalled that the sea state was low (calm).
   text: |-
     The sea state during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter on 2004-11-14 was low and calm.
+  entailment:
+    label: entails
+    score: 0.76
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 68e6e451-fe3a-4f13-990f-88a2c7ae877e
   type: testimony
   attestation: second_hand
@@ -1827,6 +2233,11 @@ domain_claims:
     At approximately 5-10 nm away from the AAV, the controller told him to "skip it" and return to his operating area. Since he was close he elected to fly over the water disturbance to try and see what was causing it.
   text: |-
     At approximately 9 to 19 kilometres from the Anomalous Aerial Vehicle (AAV) on 2004-11-14 the controller told the Marine Fighter Attack Squadron 232 (VMFA-232) pilot to "skip it" and return to his operating area, but as he was close he elected to fly over the water disturbance to try to see what was causing it.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d690f038-e0dc-4df3-a31b-b2538752991e
   type: measurement
   attestation: second_hand
@@ -1846,6 +2257,11 @@ domain_claims:
   quote: The disturbance appeared to be 50 to 100 meters in diameter and close to round.
   text: |-
     The water disturbance seen during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter appeared to be 50 to 100 metres in diameter and close to round.
+  entailment:
+    label: entails
+    score: 0.442
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0444e2c5-a845-4f49-ad26-e5e0fece952a
   type: observation
   attestation: second_hand
@@ -1868,6 +2284,11 @@ domain_claims:
     It was the only area and type of whitewater activity that could be seen and reminded him of images of something rapidly submerging from the surface like a submarine or ship sinking.
   text: |-
     The water disturbance during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter was the only area and type of whitewater activity visible, and reminded the Marine Fighter Attack Squadron 232 (VMFA-232) pilot of images of something rapidly submerging from the surface like a submarine or ship sinking.
+  entailment:
+    label: entails
+    score: 0.441
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cfa66dc3-d644-4311-8596-26a746be4b11
   type: observation
   attestation: second_hand
@@ -1888,6 +2309,11 @@ domain_claims:
     It also looked like a possible area of shoal water where the swell was breaking over a barely submerged reef or island.
   text: |-
     The water disturbance during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter also looked like a possible area of shoal water where swell was breaking over a barely submerged reef or island.
+  entailment:
+    label: neutral
+    score: 0.57
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a1df41c4-0e56-429d-bbae-aac2d3ae072a
   type: observation
   attestation: second_hand
@@ -1910,6 +2336,11 @@ domain_claims:
     He overflew the disturbance and turned back to the northwest. As he was flying away he could see the disturbance clearing and could no longer identify the place where it occurred.
   text: |-
     After overflying the water disturbance on 2004-11-14 and turning back to the northwest, the Marine Fighter Attack Squadron 232 (VMFA-232) pilot could see the disturbance clearing and could no longer identify the place where it had occurred.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c04f42c-c5ba-4539-9375-7f1f6e3eb38e
   type: observation
   attestation: second_hand
@@ -1932,6 +2363,11 @@ domain_claims:
     He did not see any object or vessel associated with the disturbance either above the surface, on the surface, or below the surface.
   text: |-
     The Marine Fighter Attack Squadron 232 (VMFA-232) pilot did not see any object or vessel associated with the water disturbance, either above the surface, on the surface, or below the surface.
+  entailment:
+    label: entails
+    score: 0.431
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1049dfed-0c05-43ee-8fdd-fad3f25e124c
   type: observation
   attestation: second_hand
@@ -1954,6 +2390,11 @@ domain_claims:
     He also never made visual contact with the other fighter aircraft that were vectored to the location or the AAV.
   text: |-
     The Marine Fighter Attack Squadron 232 (VMFA-232) pilot never made visual contact with the other fighter aircraft vectored to the location or with the Anomalous Aerial Vehicle (AAV) on 2004-11-14.
+  entailment:
+    label: entails
+    score: 0.422
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5437a729-a84c-4e41-82d9-68d76ee12f98
   type: opinion
   attestation: second_hand
@@ -1974,6 +2415,11 @@ domain_claims:
     It is possible that the disturbance was being caused by an AAV but that the AAV was 'cloaked' or invisible to the human eye.
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) AAV Incident Report assessed it possible that the water disturbance observed on 2004-11-14 was being caused by an Anomalous Aerial Vehicle (AAV) that was 'cloaked' or invisible to the human eye.
+  entailment:
+    label: entails
+    score: 0.419
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d9e56d66-5dab-4c09-a995-052e055fba2e
   type: administrative
   attestation: second_hand
@@ -1995,6 +2441,11 @@ domain_claims:
   quote: 'Lt Col {{redacted: ~1 word}} recovered aboard the Nimitz at approximately 1200L.'
   text: |-
     The Commanding Officer of Marine Fighter Attack Squadron 232 (VMFA-232) recovered aboard the USS Nimitz (CVN-68) at approximately 1200 local time on 2004-11-14.
+  entailment:
+    label: entails
+    score: 0.399
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fbb56dfa-f5fc-4ae8-80b0-01c15dcb956f
   type: testimony
   attestation: second_hand
@@ -2019,6 +2470,11 @@ domain_claims:
     He reported to the Carrier Intelligence Center (CVIC) and was asked by his Intelligence Officer, 1stLt {{redacted: ~2 words}} if he saw the "supersonic Tic Tac"?
   text: |-
     On reporting to the Carrier Intelligence Center aboard the USS Nimitz (CVN-68) on 2004-11-14, the Commanding Officer of Marine Fighter Attack Squadron 232 (VMFA-232) was asked by his intelligence officer, a first lieutenant, whether he had seen the "supersonic Tic Tac".
+  entailment:
+    label: entails
+    score: 0.421
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4850de6-cc7f-4ee8-a90a-91869103b582
   type: administrative
   attestation: second_hand
@@ -2036,6 +2492,11 @@ domain_claims:
     We questioned now Capt. {{redacted: ~2 words}} to determine if he had any further information but based on his position in CVIC at the time he was not involved in any further discussions concerning the AAV.
   text: |-
     The intelligence officer who asked about the "supersonic Tic Tac", by then holding the rank of captain, was questioned by the authors of the Nimitz Carrier Strike Group (CSG-11) AAV Incident Report but, based on his position in the Carrier Intelligence Center at the time, was not involved in any further discussions concerning the Anomalous Aerial Vehicle (AAV).
+  entailment:
+    label: entails
+    score: 0.432
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f3788c4c-660a-4987-a57c-fe19e6b307bd
   type: administrative
   attestation: second_hand
@@ -2056,6 +2517,11 @@ domain_claims:
     **FASTEAGLE 01** Pilot: CDR David 'Sex' Fravor, USN/WSO: LT {{redacted: ~3 words}}, USN
   text: |-
     On 2004-11-14 the aircraft with callsign FASTEAGLE 01 was crewed by pilot CDR David 'Sex' Fravor of the United States Navy and a weapon systems officer whose name is redacted.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a8273ff-951b-4b35-9aad-66894c2be087
   type: administrative
   attestation: second_hand
@@ -2076,6 +2542,11 @@ domain_claims:
     **FASTEAGLE 02** Pilot: LT Alex 'Cardiac' Dietrich, USN/WSO: LCDR {{redacted: ~2 words}}, USN
   text: |-
     On 2004-11-14 the aircraft with callsign FASTEAGLE 02 was crewed by pilot LT Alex 'Cardiac' Dietrich of the United States Navy and a weapon systems officer whose name is redacted.
+  entailment:
+    label: entails
+    score: 0.482
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 94cb0847-2939-45ec-b5cc-c79c933c8d58
   type: administrative
   attestation: second_hand
@@ -2093,6 +2564,11 @@ domain_claims:
   quote: CDR Fravor, Commanding Officer VFA-41, was the pilot of FastEagle 01.
   text: |-
     David Fravor was the Commanding Officer of Strike Fighter Squadron 41 (VFA-41) at the time of the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.448
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f7e1ea90-7bee-49d0-8fe6-ad215ab4a59f
   type: administrative
   attestation: second_hand
@@ -2113,6 +2589,11 @@ domain_claims:
     He and LT {{redacted: ~2 words}} were in the lead aircraft of the first F/A-18F section airborne that day from VFA-41, call sign FastEagle 01.
   text: |-
     On 2004-11-14 David Fravor and his weapon systems officer were in the lead aircraft of the first F/A-18F section airborne that day from Strike Fighter Squadron 41 (VFA-41).
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40bccc79-d992-4ff9-91a3-b92165f5c7ec
   type: administrative
   attestation: second_hand
@@ -2133,6 +2614,11 @@ domain_claims:
     The flight walked, started and launched with no issue. They completed their departure from the USS Nimitz and flew to the working area to conduct the training portion of the flight.
   text: |-
     The FastEagle flight of Strike Fighter Squadron 41 (VFA-41) walked, started and launched with no issue on 2004-11-14, departed the USS Nimitz (CVN-68) and flew to the working area to conduct the training portion of the flight.
+  entailment:
+    label: entails
+    score: 0.426
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 20905a63-b5d7-4404-8cbf-c69731585edc
   type: administrative
   attestation: second_hand
@@ -2153,6 +2639,11 @@ domain_claims:
     After they completed their training the E-2C controller handed them off to the USS Princeton callsign 'Poison' where they received vectors via Bearing Range Altitude Aspect (BRAA) to an unknown contact flying into the working area from the south.
   text: |-
     After completing their training on 2004-11-14, the E-2C Hawkeye controller handed the FastEagle flight off to the USS Princeton (CG-59), which gave them Bearing Range Altitude Aspect vectors to an unknown contact flying into the working area from the south.
+  entailment:
+    label: entails
+    score: 0.415
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d2b23965-175b-4cd7-8169-655b6f2bdf67
   type: testimony
   attestation: second_hand
@@ -2173,6 +2664,11 @@ domain_claims:
     Poison asked what ordnance they had on board. LT {{redacted: ~1 word}} told Poison control that they had two captive training AIM-9Ms (CATM-9) and no other ordnance.
   text: |-
     The USS Princeton (CG-59) asked the FastEagle flight what ordnance they had on board on 2004-11-14, and the weapon systems officer replied that they carried two captive training AIM-9M Sidewinder missiles and no other ordnance.
+  entailment:
+    label: entails
+    score: 0.417
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5fc6f82f-2c39-4072-be9a-701d7a51db09
   type: measurement
   attestation: second_hand
@@ -2190,6 +2686,11 @@ domain_claims:
   quote: The flight descended to between 20-24,000 feet and proceeded to the contact.
   text: |-
     The FastEagle flight descended to between approximately 6,100 and 7,300 metres and proceeded to the unknown contact on 2004-11-14.
+  entailment:
+    label: contradicts
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2d45cf99-7e84-41c6-9c75-46dcd6247534
   type: testimony
   attestation: first_hand
@@ -2212,6 +2713,11 @@ domain_claims:
   quote: CDR Fravor did not recall any indications via on-board sensor of the object.
   text: |-
     David Fravor did not recall any indication of the Anomalous Aerial Vehicle (AAV) via on-board sensors during the 2004 USS Nimitz encounter.
+  entailment:
+    label: entails
+    score: 0.766
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cdfd2459-1214-4967-a546-f1394217df6b
   type: administrative
   attestation: second_hand
@@ -2231,6 +2737,11 @@ domain_claims:
   quote: Their aircraft was not carrying a Forward Looking Infrared (FLIR) pod onboard.
   text: |-
     The F/A-18F flown by David Fravor during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter was not carrying a forward-looking infrared (FLIR) pod.
+  entailment:
+    label: entails
+    score: 0.558
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 25d6c3c7-9527-449c-88f8-bf2df923df67
   type: testimony
   attestation: first_hand
@@ -2253,6 +2764,11 @@ domain_claims:
   quote: As CDR Fravor remembers it, the Radar Attack Display was clean (no targets).
   text: |-
     David Fravor remembered the Radar Attack Display of his F/A-18F as clean, showing no targets, during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.765
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d8a468c-d9a3-4e6b-8cee-b861060eb016
   type: administrative
   attestation: second_hand
@@ -2275,6 +2791,11 @@ domain_claims:
     Their F/A-18F had an APG-73 radar and was set to the following parameters: Range While Search (RWS) / Range Gated High / 80NM scale
   text: |-
     The F/A-18F flown by David Fravor during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter had an APG-73 radar set to Range While Search, Range Gated High, and a 148 kilometre scale.
+  entailment:
+    label: contradicts
+    score: 0.752
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 52c8c73d-e585-4729-abda-c0ea4575f5f0
   type: observation
   attestation: second_hand
@@ -2295,6 +2816,11 @@ domain_claims:
     CDR Fravor and LT {{redacted: ~1 word}} were attempting acquire the object visually as they heard "merge plot" from Poison.
   text: |-
     David Fravor and his weapon systems officer were attempting to acquire the Anomalous Aerial Vehicle (AAV) visually when they heard "merge plot" from the USS Princeton (CG-59) on 2004-11-14.
+  entailment:
+    label: entails
+    score: 0.471
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d33defd1-2ac2-4820-a3ce-c704451f7e2a
   type: observation
   attestation: second_hand
@@ -2315,6 +2841,11 @@ domain_claims:
     Situational awareness to the object was initially received via sporadic Link-16 tracks (Link-16 is a time division multiple access data-link) via an off-board sensor.
   text: |-
     Situational awareness to the Anomalous Aerial Vehicle (AAV) was initially received by the FastEagle crews via sporadic Link-16 tracks from an off-board sensor on 2004-11-14.
+  entailment:
+    label: entails
+    score: 0.399
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: be11228d-42b2-40e5-8377-34390ad6293d
   type: administrative
   attestation: second_hand
@@ -2328,6 +2859,11 @@ domain_claims:
     name: Link-16
   quote: (Link-16 is a time division multiple access data-link)
   text: Link-16 is a time division multiple access data link.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 034a8732-12d5-40c8-964f-9350d8a2de31
   type: opinion
   attestation: second_hand
@@ -2354,6 +2890,11 @@ domain_claims:
     Lt {{redacted: ~1 word}} assumed that the sensor providing the information was the USS Princeton's SPY-1 radar.
   text: |-
     The weapon systems officer of FASTEAGLE 01 assumed that the off-board sensor providing the Link-16 track information on the Anomalous Aerial Vehicle (AAV) on 2004-11-14 was the AN/SPY-1 radar of the USS Princeton (CG-59).
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7a9a14cd-2f19-47f2-b82f-7abcd9521fa4
   type: observation
   attestation: first_hand
@@ -2377,6 +2918,11 @@ domain_claims:
     According to CDR Fravor the first indication he had of the unknown contact was a visual of a disturbance on the water below the AAV. As he scanned the area he gained a visual on the object.
   text: |-
     David Fravor's first indication of the unknown contact during the 2004 USS Nimitz encounter was a visual of a disturbance on the water below the Anomalous Aerial Vehicle (AAV), and as he scanned the area he gained a visual on the object itself.
+  entailment:
+    label: neutral
+    score: 0.908
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 920497ac-5ca1-40d2-9228-1f8333d83255
   type: observation
   attestation: first_hand
@@ -2400,6 +2946,11 @@ domain_claims:
     when asked to describe the disturbance on the water he stated that it was localized underneath the object, did not appear as a trail or wake, and looked like frothy waves and foam almost as if the water was boiling.
   text: |-
     David Fravor described the water disturbance during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter as localised underneath the object, not appearing as a trail or wake, and looking like frothy waves and foam almost as if the water was boiling.
+  entailment:
+    label: entails
+    score: 0.766
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4cf7ebeb-d173-4cdd-8ee9-40bb6f20d07d
   type: observation
   attestation: second_hand
@@ -2420,6 +2971,11 @@ domain_claims:
     At this point CDR Fravor detached FASTEAGLE02, which held at approximately 20,000 feet, and FASTEAGLE01 descended to between 12-16,000 feet.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter David Fravor detached FASTEAGLE 02, flown by Alex Dietrich, which held at approximately 6,100 metres, while FASTEAGLE 01 descended to between approximately 3,700 and 4,900 metres.
+  entailment:
+    label: contradicts
+    score: 0.503
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 34a03b6a-4a12-4d8b-ae9e-f1bd498cfb6b
   type: observation
   attestation: first_hand
@@ -2442,6 +2998,11 @@ domain_claims:
   quote: CDR Fravor attempted a "helmet lock" that was unsuccessful.
   text: |-
     David Fravor attempted a "helmet lock" on the Anomalous Aerial Vehicle (AAV) during the 2004 USS Nimitz encounter, which was unsuccessful.
+  entailment:
+    label: neutral
+    score: 0.678
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9af46fa1-4991-4a3d-a959-1097e265f0ef
   type: administrative
   attestation: second_hand
@@ -2462,6 +3023,11 @@ domain_claims:
     CDR Fravor was using the Joint Helmet Mounted Cuing System which will cue the aircraft sensors such as the radar to 'lock on' to what the pilot is looking at and it also has a recording capability.
   text: |-
     David Fravor was using the Joint Helmet Mounted Cuing System during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, a system which cues aircraft sensors such as the radar to lock on to what the pilot is looking at and which also has a recording capability.
+  entailment:
+    label: entails
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f62ea908-e51f-4279-9c1c-576e6b3e6236
   type: opinion
   attestation: second_hand
@@ -2480,6 +3046,11 @@ domain_claims:
     It may have been useful in this situation but typically because of the large amount of head movement it is not practical.
   text: |-
     The recording capability of the Joint Helmet Mounted Cuing System may have been useful during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter but is typically not practical because of the large amount of head movement.
+  entailment:
+    label: entails
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 67c4140c-e224-4e5a-bb8a-321d09fc438a
   type: testimony
   attestation: first_hand
@@ -2503,6 +3074,11 @@ domain_claims:
     CDR Fravor stated that the helmet's recording capability was rarely used therefore he did not think to use it that day.
   text: |-
     The recording capability of the Joint Helmet Mounted Cuing System was rarely used, and David Fravor therefore did not think to use it on 2004-11-14.
+  entailment:
+    label: entails
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4ad8690f-7768-406f-8067-c2512c82cda9
   type: testimony
   attestation: second_hand
@@ -2525,6 +3101,11 @@ domain_claims:
     LT {{redacted: ~1 word}} communicated what they were seeing with Poison control and said that he had a running dialogue on the Interflight radio with FastEagle 02.
   text: |-
     The weapon systems officer of FASTEAGLE 01 communicated what the crew were seeing to the USS Princeton (CG-59) and had a running dialogue on the interflight radio with FASTEAGLE 02 during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.437
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0f935c11-bf9d-4448-8c9e-81dd69e1deef
   type: observation
   attestation: first_hand
@@ -2550,6 +3131,11 @@ domain_claims:
     CDR Fravor stated that the object was "holding like a Harrier." (Referring to the AV-8B jet aircraft, which is capable of hovering and Vertical/Short Takeoff and Landing (V/STOL) via thrust vectoring.)
   text: |-
     David Fravor described the Anomalous Aerial Vehicle (AAV) during the 2004 USS Nimitz encounter as "holding like a Harrier", referring to the AV-8B jet aircraft, which is capable of hovering and vertical/short takeoff and landing via thrust vectoring.
+  entailment:
+    label: entails
+    score: 0.681
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 538218d1-0a24-49b7-8019-09d15aa0fcd5
   type: observation
   attestation: first_hand
@@ -2573,6 +3159,11 @@ domain_claims:
     According to CDR Fravor, the object's shape was like an elongated egg or a 'Tic Tac' and had a discernable midline horizontal axis.
   text: |-
     David Fravor described the shape of the Anomalous Aerial Vehicle (AAV) in the 2004 USS Nimitz encounter as like an elongated egg or a 'Tic Tac' with a discernible midline horizontal axis.
+  entailment:
+    label: entails
+    score: 0.784
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 79d3c029-e6a4-4b06-a797-0a3a8992c5a8
   type: observation
   attestation: first_hand
@@ -2595,6 +3186,11 @@ domain_claims:
   quote: However, the object was uniformly white across the entire body.
   text: |-
     The Anomalous Aerial Vehicle (AAV) observed by David Fravor during the 2004 USS Nimitz encounter was uniformly white across its entire body.
+  entailment:
+    label: entails
+    score: 0.742
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 98a13233-34d3-42a5-b0d8-d0b262ca3fff
   type: measurement
   attestation: first_hand
@@ -2617,6 +3213,11 @@ domain_claims:
   quote: It was approximately 46 feet in length.
   text: |-
     The Anomalous Aerial Vehicle (AAV) observed by the FASTEAGLE 01 crew during the 2004 USS Nimitz encounter was approximately 14 metres in length.
+  entailment:
+    label: contradicts
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 66f2bcaf-d344-4c7b-8ffc-7b07e674ebaa
   type: observation
   attestation: second_hand
@@ -2636,6 +3237,11 @@ domain_claims:
     "solid white, smooth, with no edges. It was uniformly colored with no nacelles, pylons, or wings."
   text: |-
     A redacted lieutenant from the FASTEAGLE flight during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter described the anomalous aerial vehicle (AAV) as solid white, smooth, with no edges.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aff9cfcc-fe2f-45ec-8f93-b07e79527b47
   type: observation
   attestation: second_hand
@@ -2654,6 +3260,11 @@ domain_claims:
   quote: It was uniformly colored with no nacelles, pylons, or wings.
   text: |-
     A redacted lieutenant from the FASTEAGLE flight described the anomalous aerial vehicle (AAV) seen during the 2004 USS Nimitz encounter as uniformly coloured with no nacelles, pylons, or wings.
+  entailment:
+    label: entails
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e6682f88-1255-427f-b1b6-19e9bc223085
   type: observation
   attestation: second_hand
@@ -2673,6 +3284,11 @@ domain_claims:
     "neither, it looked like it had a white candy-coated shell, almost like a white board."
   text: |-
     A redacted lieutenant from the FASTEAGLE flight said the anomalous aerial vehicle (AAV) seen during the 2004 USS Nimitz encounter neither glowed nor reflected sunlight, and looked as if it had a white candy-coated shell, almost like a white board.
+  entailment:
+    label: entails
+    score: 0.577
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a04d3609-308a-493a-a2f8-63b80d1f4b0f
   type: measurement
   attestation: second_hand
@@ -2694,6 +3310,11 @@ domain_claims:
     His report differs from CDR Fravor in that he reported the object traveling level at approximately 500-1000 feet at approximately 500 knots.
   text: |-
     A redacted lieutenant from the FASTEAGLE flight reported the anomalous aerial vehicle (AAV) travelling level at approximately 150 to 300 metres altitude at approximately 930 kilometres per hour, differing from David Fravor's account.
+  entailment:
+    label: entails
+    score: 0.472
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b6dd680e-b78f-4a73-be7d-342b5968b9b5
   type: observation
   provenance_chain:
@@ -2710,6 +3331,11 @@ domain_claims:
   quote: The object was pointed in a north/south orientation
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the anomalous aerial vehicle (AAV) was pointed in a north/south orientation.
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d145bb0c-39b7-474d-ba75-7b063c09e4a1
   type: observation
   provenance_chain:
@@ -2727,6 +3353,11 @@ domain_claims:
     was moving both north & south and east & west, while maintaining a consistent altitude
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the anomalous aerial vehicle (AAV) moved both north and south and east and west while maintaining a consistent altitude.
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 97cbbeda-5529-4d97-8300-09a80b79db63
   type: observation
   attestation: first_hand
@@ -2749,6 +3380,11 @@ domain_claims:
   quote: These displacements, according to CDR Fravor, were minor.
   text: |-
     David Fravor considered the north/south and east/west displacements of the anomalous aerial vehicle (AAV) during the 2004 USS Nimitz encounter to be minor.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e06ecf86-06fe-4bfa-aacb-ab842c10d759
   type: testimony
   attestation: first_hand
@@ -2772,6 +3408,11 @@ domain_claims:
     CDR Fravor stated he then began a descent with the intention to take a close aboard pass with the object in an attempt to visually identify it.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, David Fravor began a descent intending to take a close aboard pass with the anomalous aerial vehicle (AAV) in an attempt to visually identify it.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b146f31-438f-4a30-8532-eab1f41f45a3
   type: measurement
   attestation: first_hand
@@ -2795,6 +3436,11 @@ domain_claims:
     They began the decent as they rolled in from about 10,000ft and approximately 350 knots to take the object close aboard.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, David Fravor's flight began its descent by rolling in from about 3,000 metres at approximately 650 kilometres per hour to take the anomalous aerial vehicle (AAV) close aboard.
+  entailment:
+    label: contradicts
+    score: 0.971
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 64dd74d4-f866-4c8c-b03e-bcb8be948c8a
   type: observation
   attestation: first_hand
@@ -2817,6 +3463,11 @@ domain_claims:
   quote: CDR Fravor pulled nose on and then pulled trail (aft) of the object.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, David Fravor pulled nose on and then pulled trail (aft) of the anomalous aerial vehicle (AAV).
+  entailment:
+    label: entails
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 76c9e9a3-df9e-4c52-9fd8-3ec59a7a799e
   type: opinion
   attestation: first_hand
@@ -2839,6 +3490,11 @@ domain_claims:
   quote: 'the object appeared, according to CDR Fravor: "to recognize us."'
   text: |-
     David Fravor assessed that the anomalous aerial vehicle (AAV) in the 2004 USS Nimitz encounter appeared "to recognize us" as his flight manoeuvred.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95fb3380-078b-4fc0-9840-5fa0161c910c
   type: observation
   attestation: first_hand
@@ -2862,6 +3518,11 @@ domain_claims:
     He assessed this from the fact the object "pointed" (realigned it's axis) in the direction of their aircraft.
   text: |-
     David Fravor based his assessment that the anomalous aerial vehicle (AAV) recognised his flight on the fact that the object realigned its axis to point in the direction of their aircraft during the 2004 USS Nimitz encounter.
+  entailment:
+    label: entails
+    score: 0.434
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d0ca6f8-7565-41ac-91d3-f5a9068b0359
   type: observation
   attestation: first_hand
@@ -2884,6 +3545,11 @@ domain_claims:
   quote: At this time, according to CDR Fravor, the disturbance on the water ceased.
   text: |-
     At the moment the anomalous aerial vehicle (AAV) realigned towards the aircraft during the 2004 USS Nimitz encounter, the disturbance on the water ceased, according to David Fravor.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60001246-451e-4868-8fb6-da13a4eb0d3d
   type: observation
   attestation: first_hand
@@ -2907,6 +3573,11 @@ domain_claims:
     the object ascended quickly and pulled lift vector on and aft of them at a supersonic speed
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the anomalous aerial vehicle (AAV) ascended quickly and pulled lift vector on and aft of David Fravor's aircraft at supersonic speed.
+  entailment:
+    label: entails
+    score: 0.483
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 44532de0-e2c1-406d-a114-19e0d717bd51
   type: observation
   attestation: first_hand
@@ -2930,6 +3601,11 @@ domain_claims:
     CDR Fravor commanded the radar through the Short Range radar set and asked for a picture from Poison.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, David Fravor commanded the radar through the short range radar set and asked the USS Princeton (CG-59) for a picture.
+  entailment:
+    label: contradicts
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f0fb18c5-32f7-41be-aaab-ef424e231e43
   type: observation
   attestation: second_hand
@@ -2952,6 +3628,11 @@ domain_claims:
   quote: Poison initially reported that the "picture was clean" (no contact)
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the USS Princeton (CG-59) initially reported that the picture was clean, meaning no contact.
+  entailment:
+    label: entails
+    score: 0.425
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed90bf6a-baa0-48c9-8040-9c8e358b48c8
   type: observation
   attestation: second_hand
@@ -2977,6 +3658,11 @@ domain_claims:
     then stated "you're not going to believe this, its at your CAP" meaning that the AAV had flown to their training CAP, which was located in the southern end of the training area and had climbed to approximately 24,000 feet
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the USS Princeton (CG-59) then radioed "you're not going to believe this, its at your CAP", indicating the anomalous aerial vehicle (AAV) had flown to the flight's training combat air patrol point in the southern end of the training area and had climbed to approximately 7,300 metres.
+  entailment:
+    label: entails
+    score: 0.409
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cb1a0a93-14d5-4bfb-a231-385d30f0bf5d
   type: testimony
   attestation: first_hand
@@ -3000,6 +3686,11 @@ domain_claims:
     CDR Fravor stated that the flight attempted to locate both the object and the disturbance with no success.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, David Fravor's flight attempted to relocate both the anomalous aerial vehicle (AAV) and the water disturbance with no success.
+  entailment:
+    label: entails
+    score: 0.937
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 69b6bb1a-0c30-4196-800b-78e5e8df7d4b
   type: observation
   attestation: first_hand
@@ -3021,6 +3712,11 @@ domain_claims:
     CDR Fravor stated that nothing was seen on the surface or subsurface and that there were no indications of the previous disturbance.
   text: |-
     David Fravor saw nothing on the surface or subsurface and no indications of the previous water disturbance when his flight returned to the area during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d61cd8a-a36e-4ec7-aa06-1269b79cbfa0
   type: observation
   provenance_chain:
@@ -3039,6 +3735,11 @@ domain_claims:
   quote: Following the engagement, the flight rejoined and returned to the USS Nimitz.
   text: |-
     Following the engagement with the anomalous aerial vehicle (AAV) on 2004-11-14, David Fravor's flight rejoined and returned to the USS Nimitz (CVN-68).
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fa31793e-f688-4bcf-8a3f-80b9761d4fd9
   type: testimony
   attestation: first_hand
@@ -3062,6 +3763,11 @@ domain_claims:
     "the jets were brand new, less than 100 hrs on them. They were working perfectly."
   text: |-
     David Fravor said the F/A-18 jets flown during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter were brand new with less than 100 hours on them and were working perfectly, with no indications of system malfunction.
+  entailment:
+    label: entails
+    score: 0.83
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 727a3d75-0c7b-49af-ad7c-2d0f03b38955
   type: testimony
   attestation: second_hand
@@ -3079,6 +3785,11 @@ domain_claims:
     LT {{redacted: ~1 word}} when asked, said that all aircraft systems were functional. That there were no mission computer issues or avionics issues
   text: |-
     A redacted lieutenant from the FASTEAGLE flight said all aircraft systems were functional during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, with no mission computer or avionics issues.
+  entailment:
+    label: entails
+    score: 0.531
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f98db9e2-45e1-407d-a5db-0a0e0323aaf2
   type: testimony
   attestation: second_hand
@@ -3095,6 +3806,11 @@ domain_claims:
   quote: there was no radio or communication interference
   text: |-
     A redacted lieutenant from the FASTEAGLE flight said there was no radio or communication interference during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e93facc4-8aed-465e-8672-1295838e2f99
   type: testimony
   attestation: second_hand
@@ -3116,6 +3832,11 @@ domain_claims:
     entry into the Link-16 network
   text: |-
     A redacted lieutenant from the FASTEAGLE flight said the aircraft had entry into the Link-16 network during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.445
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 30799b11-f9df-4d30-9f82-05fe74394a5f
   type: testimony
   attestation: second_hand
@@ -3133,6 +3854,11 @@ domain_claims:
     When asked LT {{redacted: ~1 word}} couldn't confirm any physiological or psychological feelings that were out of the ordinary.
   text: |-
     A redacted lieutenant from the FASTEAGLE flight could not confirm any physiological or psychological feelings out of the ordinary during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 787a06ad-9434-4421-88c9-47d2f69d328b
   type: observation
   provenance_chain:
@@ -3152,6 +3878,11 @@ domain_claims:
     The flight met up with LT {{redacted: ~2 words}} and LT Chad Underwood's flight in the paraloft and passed what they had seen.
   text: |-
     After returning to the USS Nimitz (CVN-68) on 2004-11-14, the FASTEAGLE flight met Chad Underwood's flight in the paraloft and passed on what they had seen.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d2df0dc8-9e59-41fd-b643-619d84fef062
   type: observation
   attestation: second_hand
@@ -3173,6 +3904,11 @@ domain_claims:
     LT {{redacted: ~1 word}} noted that the sailors in CIVC had donned tin-foil caps and wanted to know about the "UFO flight."
   text: |-
     A redacted lieutenant from the FASTEAGLE flight observed that sailors in the Carrier Intelligence Center (CVIC) aboard the USS Nimitz (CVN-68) had donned tin-foil caps and wanted to know about the "UFO flight" after the 2004 Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8efa0aa5-2577-4341-bc70-ef2c2351cc50
   type: observation
   provenance_chain:
@@ -3188,6 +3924,11 @@ domain_claims:
     They reviewed the tapes and described to CIVC what they had seen and what the flight had done.
   text: |-
     After the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the FASTEAGLE flight reviewed the tapes and described to the Carrier Intelligence Center (CVIC) what they had seen and done.
+  entailment:
+    label: entails
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b3497e92-3655-421e-b826-c674ff2dadc2
   type: testimony
   attestation: second_hand
@@ -3203,6 +3944,11 @@ domain_claims:
   quote: He was not asked to sign any non-disclosure agreement
   text: |-
     A redacted lieutenant from the FASTEAGLE flight was not asked to sign any non-disclosure agreement after the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.465
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec0136fb-e5de-4618-b726-4fb7f684ce98
   type: testimony
   attestation: second_hand
@@ -3219,6 +3965,11 @@ domain_claims:
     he is uncertain how far up the chain the reporting went past his commanding officer
   text: |-
     A redacted lieutenant from the FASTEAGLE flight was uncertain how far up the chain of command the reporting of the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter went past his commanding officer.
+  entailment:
+    label: entails
+    score: 0.485
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83a5091a-59bd-46fa-8004-07327eebbecf
   type: administrative
   provenance_chain:
@@ -3240,6 +3991,11 @@ domain_claims:
     Lt Underwood was a member of VFA-41 and was the Weapons and Sensors Officer (WSO) flying with LT {{redacted: ~2 words}}.
   text: |-
     Chad Underwood was a member of Strike Fighter Squadron 41 (VFA-41) and served as the Weapon Systems Officer (WSO) on the F/A-18F that recorded forward-looking infrared (FLIR) imagery during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e9255797-e03e-4c1d-b0b4-d098155b0203
   type: administrative
   provenance_chain:
@@ -3261,6 +4017,11 @@ domain_claims:
     They were a part of the second F/A-18F section airborne that day from VFA-41. Their flight launched following the FASTEAGLE flight.
   text: |-
     Chad Underwood's crew formed the second F/A-18F section airborne from Strike Fighter Squadron 41 (VFA-41) on 2004-11-14, launching after the FASTEAGLE flight.
+  entailment:
+    label: entails
+    score: 0.435
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: babe0299-b409-43b2-a8c2-cc68715c1092
   type: observation
   provenance_chain:
@@ -3280,6 +4041,11 @@ domain_claims:
     The crews spoke with each other in the paraloft, discussed the object and that the flights were scheduled for the same working area.
   text: |-
     Before launching on 2004-11-14, the FASTEAGLE crews and Chad Underwood's crew spoke in the paraloft, discussed the anomalous aerial vehicle (AAV) and noted that the flights were scheduled for the same working area.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d1464701-ba9a-4ed2-a34d-54537104bca5
   type: observation
   provenance_chain:
@@ -3301,6 +4067,11 @@ domain_claims:
     FASTEAGLE flight told LT Underwood's flight what they saw and to try to see and record what they could.
   text: |-
     The FASTEAGLE flight told Chad Underwood's flight what they had seen and asked them to try to see and record what they could of the anomalous aerial vehicle (AAV) on 2004-11-14.
+  entailment:
+    label: neutral
+    score: 0.955
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a6e019c-d058-49df-b544-bea275615a69
   type: observation
   attestation: first_hand
@@ -3322,6 +4093,11 @@ domain_claims:
     According to LT Underwood it was a clear day. There were no clouds and there was a discernable blue horizon.
   text: |-
     Chad Underwood observed that 2004-11-14 was a clear day with no clouds and a discernible blue horizon during the USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: neutral
+    score: 0.758
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 12f53c01-7601-4a38-b5a5-701d6fcfdeaf
   type: measurement
   attestation: first_hand
@@ -3342,6 +4118,11 @@ domain_claims:
   quote: The time was approximately 1500L.
   text: |-
     Chad Underwood's flight was airborne at approximately 15:00 local time during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 15f28805-ecb0-4d1e-bf95-69db4207fc63
   type: observation
   provenance_chain:
@@ -3362,6 +4143,11 @@ domain_claims:
   quote: The flight checked with the E-2C and separated.
   text: |-
     Chad Underwood's flight checked in with the E-2C Hawkeye and separated after departing the USS Nimitz (CVN-68) on 2004-11-14.
+  entailment:
+    label: neutral
+    score: 0.898
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 42648b08-a7f2-46b2-9d33-f507822f68fc
   type: measurement
   provenance_chain:
@@ -3379,6 +4165,11 @@ domain_claims:
     Their jet proceeded south to the southern cap. They flew at 20,000 feet and were flying a max endurance profile at approximately 300 knots ground speed.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, Chad Underwood's jet proceeded south to the southern combat air patrol point, flying at approximately 6,100 metres on a maximum endurance profile at approximately 560 kilometres per hour ground speed.
+  entailment:
+    label: contradicts
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 58a63d03-b7a7-4871-81c2-436c8a07001d
   type: observation
   attestation: first_hand
@@ -3401,6 +4192,11 @@ domain_claims:
   quote: All on board systems were functioning normally.
   text: |-
     All on-board systems of Chad Underwood's F/A-18F were functioning normally during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d5758282-5003-4ed6-a3c2-0f3e2e43cc36
   type: measurement
   provenance_chain:
@@ -3419,6 +4215,11 @@ domain_claims:
   quote: The radar was in a standard search mode (RWS/ 80NM/ 4bar/ intr)
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the radar on Chad Underwood's F/A-18F was in a standard search mode, namely Range While Search at approximately 150 kilometres range, four-bar, interleaved.
+  entailment:
+    label: neutral
+    score: 0.418
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b738c43c-12d2-4e37-b6a3-9b0a2e26884a
   type: observation
   provenance_chain:
@@ -3435,6 +4236,11 @@ domain_claims:
   quote: the FLIR was in L+S slave (the FLIR would point in direction of an L+S track)
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the forward-looking infrared (FLIR) on Chad Underwood's F/A-18F was in launch-and-steering slave mode, pointing in the direction of the launch-and-steering track.
+  entailment:
+    label: entails
+    score: 0.435
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3d86641f-e0af-4bb6-b717-db473df929c0
   type: observation
   provenance_chain:
@@ -3454,6 +4260,11 @@ domain_claims:
     There were no radio or communication interference and they had entry into the Link-16 network.
   text: |-
     There was no radio or communication interference on Chad Underwood's F/A-18F during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, and the aircraft had entry into the Link-16 network.
+  entailment:
+    label: entails
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2030bd7b-3532-49df-9e23-15f717dbcddb
   type: measurement
   provenance_chain:
@@ -3473,6 +4284,11 @@ domain_claims:
     Initial awareness of an object came via the radar. According to the radar display, the initial tracks were at approximately 30-40 nm to the south of the aircraft.
   text: |-
     Chad Underwood's crew first became aware of the anomalous aerial vehicle (AAV) on 2004-11-14 via the radar, with initial tracks at approximately 55 to 75 kilometres to the south of the aircraft.
+  entailment:
+    label: contradicts
+    score: 0.784
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e6d77a21-989d-4fde-8b89-65a6327c1f6a
   type: observation
   attestation: first_hand
@@ -3496,6 +4312,11 @@ domain_claims:
     LT Underwood was controlling the radar and FLIR and attempted multiple times to transition the radar to Single Target Track (STT) mode on the object.
   text: |-
     Chad Underwood controlled the radar and forward-looking infrared (FLIR) and attempted multiple times to transition the radar to Single Target Track (STT) mode on the anomalous aerial vehicle (AAV) during the 2004 USS Nimitz encounter.
+  entailment:
+    label: neutral
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 66b98422-9ee2-47ee-a571-7935da0e9d2d
   type: observation
   attestation: first_hand
@@ -3521,6 +4342,11 @@ domain_claims:
     The radar could not take a lock, the b-sweep would raster around the hit, build an initial aspect vector (which never stabilized) and then would drop and continue normal RWS b-sweep.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the radar could not take a lock on the anomalous aerial vehicle (AAV): the b-sweep would raster around the hit, build an initial aspect vector that never stabilised, then drop and continue normal Range While Search b-sweep.
+  entailment:
+    label: neutral
+    score: 0.915
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef449589-d9dd-4175-8d18-afab7b13f8eb
   type: observation
   attestation: first_hand
@@ -3544,6 +4370,11 @@ domain_claims:
     LT Underwood stated that there were no jamming cues (strobe, champagne bubbles, "any normal EA indications").
   text: |-
     Chad Underwood observed no jamming cues — no strobe, champagne bubbles or any normal electronic attack indications — during the radar tracking of the anomalous aerial vehicle (AAV) in the 2004 USS Nimitz encounter.
+  entailment:
+    label: entails
+    score: 0.363
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0b4b09a5-a0a8-49d4-bc48-7ea058e12f51
   type: opinion
   attestation: first_hand
@@ -3564,6 +4395,11 @@ domain_claims:
   quote: It "just appeared as if the radar couldn't hack it."
   text: |-
     Chad Underwood said the radar behaviour during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter "just appeared as if the radar couldn't hack it".
+  entailment:
+    label: entails
+    score: 0.487
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 22d6d928-52d7-4040-a673-a57146044616
   type: observation
   attestation: first_hand
@@ -3587,6 +4423,11 @@ domain_claims:
     The radar couldn't receive enough information to create a single target track file.
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the radar could not receive enough information to create a single target track file on the anomalous aerial vehicle (AAV).
+  entailment:
+    label: neutral
+    score: 0.783
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aa0549d7-be8a-436b-a2dd-48f901a6952c
   type: measurement
   provenance_chain:
@@ -3603,6 +4444,11 @@ domain_claims:
   quote: The FLIR showed an object at 0 ATA and approximately -5deg elevation (Figure 2).
   text: |-
     During the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the forward-looking infrared (FLIR) in launch-and-steering slave showed the anomalous aerial vehicle (AAV) at 0 degrees antenna train angle and approximately -5 degrees elevation.
+  entailment:
+    label: neutral
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6242b4f1-f12f-4e94-bbcf-61e5599273e3
   type: measurement
   attestation: first_hand
@@ -3626,6 +4472,11 @@ domain_claims:
     "the target was best guess co-altitude or a few thousand feet below," estimating the object to be between 15-20 thousand feet.
   text: |-
     Chad Underwood estimated the anomalous aerial vehicle (AAV) in the 2004 USS Nimitz encounter to be at best guess co-altitude or a few thousand feet below his aircraft, between approximately 4,600 and 6,100 metres.
+  entailment:
+    label: contradicts
+    score: 0.773
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e688b88e-7685-48f9-971c-8852a701a3a2
   type: observation
   provenance_chain:
@@ -3643,6 +4494,11 @@ domain_claims:
     The object, according to the FLIR, appeared stationary (Figure 3). There was no discernable movement from the object with the only closure being a result of the aircraft's movement.
   text: |-
     In the forward-looking infrared (FLIR) imagery from the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, the anomalous aerial vehicle (AAV) appeared stationary, with no discernible movement and the only closure resulting from the aircraft's movement.
+  entailment:
+    label: entails
+    score: 0.545
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a7b41325-1308-4b76-952c-98d122378951
   type: observation
   attestation: first_hand
@@ -3666,6 +4522,11 @@ domain_claims:
     As LT Underwood watched the object it began to move out of FLIR field of view to the left.
   text: |-
     As Chad Underwood watched the anomalous aerial vehicle (AAV) during the 2004 USS Nimitz encounter, it began to move out of the forward-looking infrared (FLIR) field of view to the left.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 94dddee9-201d-4050-a3e1-c39f06df9149
   type: observation
   attestation: first_hand
@@ -3689,6 +4550,11 @@ domain_claims:
     LT Underwood made no attempt to slew the FLIR and subsequently lost situational awareness to the object.
   text: |-
     Chad Underwood made no attempt to slew the forward-looking infrared (FLIR) and subsequently lost situational awareness of the anomalous aerial vehicle (AAV) during the 2004 USS Nimitz encounter.
+  entailment:
+    label: entails
+    score: 0.505
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d1f6832d-3a7e-44bd-95ee-035418754a52
   type: observation
   provenance_chain:
@@ -3707,6 +4573,11 @@ domain_claims:
   quote: The Flight continued with training mission with no further contact with object.
   text: |-
     Chad Underwood's flight continued with its training mission with no further contact with the anomalous aerial vehicle (AAV) after the 2004-11-14 forward-looking infrared (FLIR) tracking.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3dbaac69-a9d3-46c5-bfa9-6f3bfc46ce26
   type: testimony
   attestation: first_hand
@@ -3732,6 +4603,11 @@ domain_claims:
     LT Underwood was clear in that he couldn't confirm that it was the same object as described by FASTEAGLE flight.
   text: |-
     Chad Underwood could not confirm that the object he tracked on forward-looking infrared (FLIR) was the same object described by the FASTEAGLE flight during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.473
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0e193672-0c1c-4f0e-aa5a-6570e3e7079f
   type: observation
   attestation: first_hand
@@ -3754,6 +4630,11 @@ domain_claims:
   quote: He never had visual, only seeing the object via the FLIR.
   text: |-
     Chad Underwood never had a visual on the anomalous aerial vehicle (AAV) during the 2004 USS Nimitz encounter, seeing it only via the forward-looking infrared (FLIR).
+  entailment:
+    label: contradicts
+    score: 0.612
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e3bcc85e-c25c-4a0a-9804-1314a70a5d05
   type: testimony
   attestation: first_hand
@@ -3776,6 +4657,11 @@ domain_claims:
   quote: He reaffirmed that all systems were functional.
   text: |-
     Chad Underwood reaffirmed that all systems of his F/A-18F were functional during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: neutral
+    score: 0.621
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b3e9fb0-5054-4c9f-bb62-d096af9ee6d7
   type: observation
   provenance_chain:
@@ -3795,6 +4681,11 @@ domain_claims:
     the section returned to the ship for a normal approach, landing and shutdown. The crew met in CVIC and debriefed.
   text: |-
     After completing the training portion on 2004-11-14, Chad Underwood's section returned to the USS Nimitz (CVN-68) for a normal approach, landing and shutdown, and the crew debriefed in the Carrier Intelligence Center (CVIC).
+  entailment:
+    label: entails
+    score: 0.414
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 93a9cc9a-d72e-43d1-9203-b88c51879b56
   type: testimony
   attestation: first_hand
@@ -3818,6 +4709,11 @@ domain_claims:
     LT Underwood said that the CIVC section attempted to collect his tapes but he refused.
   text: |-
     Chad Underwood said the Carrier Intelligence Center (CVIC) section aboard the USS Nimitz (CVN-68) attempted to collect his tapes after the 2004 Anomalous Aerial Vehicle (AAV) encounter but he refused.
+  entailment:
+    label: entails
+    score: 0.448
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d47e44ef-d5d7-4096-b952-c7feee3bb620
   type: observation
   provenance_chain:
@@ -3837,6 +4733,11 @@ domain_claims:
     They proceeded to their ready room where they debriefed with CDR Fravor and his flight.
   text: |-
     After the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, Chad Underwood's crew proceeded to their ready room and debriefed with David Fravor and his flight.
+  entailment:
+    label: entails
+    score: 0.378
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bbebf315-5782-4051-9119-946499c5b554
   type: administrative
   provenance_chain:
@@ -3852,6 +4753,11 @@ domain_claims:
     Copies of the tapes were made with a set being turned into the intelligence section.
   text: |-
     Copies of the tapes from the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter were made, with a set turned in to the intelligence section.
+  entailment:
+    label: entails
+    score: 0.433
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6eb223fb-5a4c-4530-86d3-a2afcc91a049
   type: testimony
   attestation: first_hand
@@ -3871,6 +4777,11 @@ domain_claims:
   quote: LT Underwood was not asked to sign any non-disclosure agreement
   text: |-
     Chad Underwood was not asked to sign any non-disclosure agreement after the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 51cea5b0-4ba4-4b88-a0fe-5f64be449604
   type: testimony
   attestation: first_hand
@@ -3891,6 +4802,11 @@ domain_claims:
     he is uncertain how far up the chain the reporting went past his commanding officer
   text: |-
     Chad Underwood was uncertain how far up the chain of command the reporting of the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter went past his commanding officer.
+  entailment:
+    label: entails
+    score: 0.474
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 03037bc2-4223-47e8-830b-1af0da5ed8ff
   type: testimony
   attestation: first_hand
@@ -3912,6 +4828,11 @@ domain_claims:
     When asked LT Underwood couldn't confirm any physiological or psychological feelings that were out of the ordinary. He only expressed a feeling of confusion during the event.
   text: |-
     Chad Underwood could not confirm any physiological or psychological feelings out of the ordinary during the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, expressing only a feeling of confusion during the event.
+  entailment:
+    label: entails
+    score: 0.459
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 879f8bf7-e766-453b-b0c8-35f01bc4ba5d
   type: administrative
   attestation: second_hand
@@ -3929,6 +4850,11 @@ domain_claims:
     The USS Louisville USS Louisville (SSN-724) is a Los Angeles-class nuclear fast attack submarine.
   text: |-
     The USS Louisville (SSN-724) is a Los Angeles-class nuclear fast attack submarine.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 01f4e5da-9166-497f-9b91-85f497c58cf4
   type: administrative
   provenance_chain:
@@ -3950,6 +4876,11 @@ domain_claims:
     She was operating in the vicinity of the USS Nimitz as part of the CSG during the detection and intercept of the AAV.
   text: |-
     The USS Louisville (SSN-724) was operating in the vicinity of the USS Nimitz (CVN-68) as part of the Nimitz Carrier Strike Group (CSG-11) during the detection and intercept of the anomalous aerial vehicle (AAV) in November 2004.
+  entailment:
+    label: entails
+    score: 0.415
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9ed3ba05-b7de-45b0-b0e5-4f5832ec74b9
   type: testimony
   attestation: second_hand
@@ -3972,6 +4903,11 @@ domain_claims:
     According to former LT {{redacted: ~3 words}} now a civilian working for the US Navy, who was a qualified Submarine Officer onboard the Louisville in November 2004 during the AAV activity there were no unidentified sonar contacts in the vicinity of the aerial sightings or at anytime during the operations off the coast of California.
   text: |-
     A former lieutenant whose name is redacted, now a civilian working for the US Navy and a qualified submarine officer aboard the USS Louisville (SSN-724) in November 2004, said there were no unidentified sonar contacts in the vicinity of the 2004 USS Nimitz aerial sightings or at any time during the operations off the coast of California.
+  entailment:
+    label: entails
+    score: 0.467
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 409ded94-59e2-40e3-952f-1e325578d9be
   type: testimony
   attestation: second_hand
@@ -3992,6 +4928,11 @@ domain_claims:
     The former commander of the USS Louisville, CAPT {{redacted: ~2 words}} confirmed that there was no anomalous undersea activity during this period.
   text: |-
     The former commanding officer of the USS Louisville (SSN-724), a captain whose name is redacted, confirmed that there was no anomalous undersea activity during the November 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter period.
+  entailment:
+    label: entails
+    score: 0.475
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5afccbd6-19b7-486f-9624-464397838022
   type: administrative
   provenance_chain:
@@ -4011,6 +4952,11 @@ domain_claims:
     There was a live fire exercise conducted by the USS Louisville during the period of and in the vicinity of the AAV sightings;
   text: |-
     A live fire exercise was conducted by the USS Louisville (SSN-724) during the period of and in the vicinity of the November 2004 anomalous aerial vehicle (AAV) sightings.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: da59c7a5-b61d-45bd-ae5d-4f4258eda1ea
   type: opinion
   provenance_chain:
@@ -4030,6 +4976,11 @@ domain_claims:
     however, the weapon in use did not match the flight profile or visible characteristics of the AAV
   text: |-
     The weapon used in the USS Louisville (SSN-724) live fire exercise in November 2004 did not match the flight profile or visible characteristics of the anomalous aerial vehicle (AAV).
+  entailment:
+    label: entails
+    score: 0.533
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 732a2b80-ff30-4dcd-8312-b895560f087b
   type: opinion
   provenance_chain:
@@ -4046,6 +4997,11 @@ domain_claims:
     Additionally any live fire would have been coordinated throughout the CSG and all air traffic would have been well aware of the launch and operation of the weapon system.
   text: |-
     Any live fire during the November 2004 Nimitz Carrier Strike Group (CSG-11) operations would have been coordinated throughout the strike group and all air traffic would have been well aware of the launch and operation of the weapon system.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6ea10c3e-5cc4-4e13-a2b3-c56ad59a0cb8
   type: opinion
   provenance_chain:
@@ -4062,6 +5018,11 @@ domain_claims:
     Aircraft would not have been vectored for the intercept of a US Weapon in-flight.
   text: |-
     Aircraft would not have been vectored for the intercept of a US weapon in flight during the November 2004 Nimitz Carrier Strike Group (CSG-11) operations.
+  entailment:
+    label: entails
+    score: 0.493
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9a18e334-b160-4b3f-b628-90e831af55dc
   type: opinion
   provenance_chain:
@@ -4078,6 +5039,11 @@ domain_claims:
     Based on the lack of detection of any unidentified sonar contacts it is highly unlikely that an AAV operated below the surface of the ocean;
   text: |-
     Based on the lack of any unidentified sonar contacts, it is highly unlikely that the anomalous aerial vehicle (AAV) of the 2004 USS Nimitz encounter operated below the surface of the ocean.
+  entailment:
+    label: neutral
+    score: 0.922
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd38025e-4c0e-4028-a713-3e5df85ed8c9
   type: opinion
   provenance_chain:
@@ -4094,6 +5060,11 @@ domain_claims:
     it is possible that the AAV demonstrated the ability to be cloaked or invisible to the human eye based on pilot reporting of the water disturbance with no visible craft
   text: |-
     It is possible that the anomalous aerial vehicle (AAV) of the 2004 USS Nimitz encounter demonstrated an ability to be cloaked or invisible to the human eye, based on pilot reporting of a water disturbance with no visible craft.
+  entailment:
+    label: entails
+    score: 0.437
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f540bef3-85f7-4713-a554-4d9ba1c1ee9d
   type: opinion
   attestation: second_hand
@@ -4113,6 +5084,11 @@ domain_claims:
     Based on the assessment of Mr. {{redacted: ~2 words}} if the AAV did operate underwater undetected it would represent a highly advanced capability given the advanced capability of our sensors.
   text: |-
     A redacted civilian assessor holds that if the anomalous aerial vehicle (AAV) of the 2004 USS Nimitz encounter did operate underwater undetected, that would represent a highly advanced capability given the advanced capability of US sensors.
+  entailment:
+    label: entails
+    score: 0.453
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4ccc8d8e-bd89-4eca-90e0-6c2b6d34bc66
   type: administrative
   provenance_chain:
@@ -4127,6 +5103,11 @@ domain_claims:
     Typically most if not all reporting on any CSG mission related air activity is completed in CVIC by the Intelligence personnel.
   text: |-
     Most if not all reporting on Carrier Strike Group mission-related air activity is completed in the Carrier Intelligence Center (CVIC) by intelligence personnel.
+  entailment:
+    label: entails
+    score: 0.425
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c49e68be-3e75-4edb-bf8f-c970de853aea
   type: administrative
   provenance_chain:
@@ -4141,6 +5122,11 @@ domain_claims:
     At least one pilot or aircrew member of each flight or aircraft will stop by CVIC to be debriefed by intelligence.
   text: |-
     At least one pilot or aircrew member of each flight or aircraft stops by the Carrier Intelligence Center (CVIC) to be debriefed by intelligence.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 516661fe-1ff9-4fc4-b688-e8ffe48ec0fa
   type: administrative
   provenance_chain:
@@ -4155,6 +5141,11 @@ domain_claims:
     Intelligence personnel will then take the information provided by the pilot or aircrew member and complete a mission report (MISREP).
   text: |-
     Intelligence personnel take the information provided by the pilot or aircrew member and complete a mission report (MISREP).
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e66d61be-956f-484f-a6af-3f2df414edb4
   type: administrative
   provenance_chain:
@@ -4169,6 +5160,11 @@ domain_claims:
     During contingency or wartime operations a MISREP is filed even if the aircrew had nothing significant to report (NSTR).
   text: |-
     During contingency or wartime operations a mission report (MISREP) is filed even if the aircrew had nothing significant to report.
+  entailment:
+    label: entails
+    score: 0.441
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9f34ab7a-8f19-4ee5-a890-5eb5d8ca505c
   type: administrative
   provenance_chain:
@@ -4188,6 +5184,11 @@ domain_claims:
     On 14 November following the intercept of the AAV, CDR Fravor reported to CVIC to debrief with Intelligence. He discussed the entire mission and AAV contact with LCDR {{redacted: ~2 words}} the Carrier Air Wing Intelligence Officer.
   text: |-
     On 2004-11-14, following the intercept of the anomalous aerial vehicle (AAV), David Fravor reported to the Carrier Intelligence Center (CVIC) to debrief with intelligence and discussed the entire mission and AAV contact with the Carrier Air Wing Intelligence Officer, a lieutenant commander whose name is redacted.
+  entailment:
+    label: entails
+    score: 0.42
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8ef26fc5-f694-46e0-8276-23b4b2c1c965
   type: testimony
   attestation: second_hand
@@ -4209,6 +5210,11 @@ domain_claims:
   quote: 'According to LCDR {{redacted: ~1 word}} he "wasn''t sure what to do".'
   text: |-
     The Carrier Air Wing Intelligence Officer, a lieutenant commander whose name is redacted, said he "wasn't sure what to do" when David Fravor debriefed him on the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.415
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: da8c3bce-e07e-408a-ad3a-c4d3accb3a1d
   type: testimony
   attestation: second_hand
@@ -4228,6 +5234,11 @@ domain_claims:
   quote: He also stated that they "didn't take it seriously" at first;
   text: |-
     The Carrier Air Wing Intelligence Officer, a lieutenant commander whose name is redacted, said the intelligence staff "didn't take it seriously" at first when David Fravor reported the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.596
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 225e9cdb-f804-47ee-9598-d4a2e6c40f6b
   type: opinion
   attestation: second_hand
@@ -4249,6 +5260,11 @@ domain_claims:
     however, they had absolutely no reason to question the report from a very experienced and well-respected F/A-18 squadron commanding officer
   text: |-
     The Carrier Air Wing Intelligence Officer, a lieutenant commander whose name is redacted, had absolutely no reason to question the 2004 anomalous aerial vehicle (AAV) report from David Fravor, described as a very experienced and well-respected F/A-18 squadron commanding officer.
+  entailment:
+    label: entails
+    score: 0.47
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d07fb444-f44a-4800-9484-c31f50b13958
   type: opinion
   attestation: second_hand
@@ -4266,6 +5282,11 @@ domain_claims:
     LCDR {{redacted: ~1 word}} added that they likely would have not given as much attention if it came from a lesser-experienced aviator.
   text: |-
     The Carrier Air Wing Intelligence Officer, a lieutenant commander whose name is redacted, said the 2004 anomalous aerial vehicle (AAV) report would likely have received less attention had it come from a less experienced aviator.
+  entailment:
+    label: entails
+    score: 0.453
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9551167f-9981-44ba-9375-8aa157e6bb2b
   type: testimony
   attestation: second_hand
@@ -4286,6 +5307,11 @@ domain_claims:
     He reported it to the Commander of the Air Wing, CAPT {{redacted: ~2 words}} also a highly experienced aviator but he did not take it very serious.
   text: |-
     The Carrier Air Wing Intelligence Officer reported the 2004 anomalous aerial vehicle (AAV) contact to the Commander of the Air Wing, a captain whose name is redacted and who was also a highly experienced aviator, but that officer did not take it very seriously.
+  entailment:
+    label: entails
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9f7eecf8-adc5-460a-9bbd-a02cceeafb43
   type: administrative
   attestation: second_hand
@@ -4306,6 +5332,11 @@ domain_claims:
     LCDR {{redacted: ~1 word}} completed an email based MISREP. It was submitted via email because the F/A-18s were on a training mission.
   text: |-
     The Carrier Air Wing Intelligence Officer completed an email-based mission report (MISREP) on the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, submitted by email because the F/A-18s were on a training mission.
+  entailment:
+    label: entails
+    score: 0.437
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fe68efc1-1b0c-48bf-b0ed-0b236e70a475
   type: administrative
   attestation: second_hand
@@ -4326,6 +5357,11 @@ domain_claims:
     The email-based report including the FLIR video was sent via a secure system to CAPT {{redacted: ~2 words}} at 3rd Fleet Intelligence, their higher echelon command.
   text: |-
     The email-based mission report (MISREP) on the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter, including the forward-looking infrared (FLIR) video, was sent via a secure system to a captain at United States Third Fleet Intelligence, the higher echelon command.
+  entailment:
+    label: entails
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 42f8d664-9e5c-47ad-89f2-e897ec0cb693
   type: testimony
   attestation: second_hand
@@ -4344,6 +5380,11 @@ domain_claims:
     Finally, LCDR {{redacted: ~1 word}} admitted and detailed the high level of ridicule that the aircrew experienced over the next few weeks.
   text: |-
     The Carrier Air Wing Intelligence Officer, a lieutenant commander whose name is redacted, described a high level of ridicule that the aircrew of the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter experienced over the following weeks.
+  entailment:
+    label: entails
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 21c35c75-6013-4a41-896a-a3bab19dd81b
   type: testimony
   attestation: second_hand
@@ -4366,6 +5407,11 @@ domain_claims:
     Capt {{redacted}} confirmed that the CSG leadership asked him if any additional reporting was required and he advised that since they were in a training environment an email based MISREP to 3rd Fleet N2 was the only report required.
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) Senior Intelligence Officer (N2), a captain whose name is redacted, said the strike group leadership asked him whether any additional reporting on the 2004 anomalous aerial vehicle (AAV) encounter was required, and he advised that since they were in a training environment an email-based mission report (MISREP) to United States Third Fleet N2 was the only report required.
+  entailment:
+    label: entails
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 84f876e5-25af-4d24-9e81-d1628e0b8f78
   type: opinion
   attestation: second_hand
@@ -4387,6 +5433,11 @@ domain_claims:
     When asked what he thought the AAV was he replied that he believed it was part of a counterdrug operation based on the area of operations.
   text: |-
     The Nimitz Carrier Strike Group (CSG-11) Senior Intelligence Officer (N2), a captain whose name is redacted, believed the 2004 anomalous aerial vehicle (AAV) was part of a counterdrug operation, based on the area of operations.
+  entailment:
+    label: entails
+    score: 0.538
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60aa258f-aaf2-46b4-a5ce-4a8ea0e7ae15
   type: administrative
   provenance_chain:
@@ -4405,6 +5456,11 @@ domain_claims:
     The 3rd Fleet N2 at the time of the event was CAPT {{redacted}}. CAPT {{redacted}} has since retired from the US Navy and could not be located;
   text: |-
     The United States Third Fleet N2 at the time of the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter was a captain whose name is redacted, who has since retired from the US Navy and could not be located.
+  entailment:
+    label: entails
+    score: 0.708
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5b12d2a5-be8c-4f9c-8626-aadecd7b76d9
   type: administrative
   provenance_chain:
@@ -4420,6 +5476,11 @@ domain_claims:
   quote: however, his deputy N2 was CAPT {{redacted}}.
   text: |-
     The deputy N2 of United States Third Fleet at the time of the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter was a captain whose name is redacted.
+  entailment:
+    label: entails
+    score: 0.546
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9f89aa5e-b12f-45f7-9f84-161709b7f516
   type: testimony
   attestation: second_hand
@@ -4440,6 +5501,11 @@ domain_claims:
     CAPT {{redacted}} confirmed that the MISREP was received via email on or about 14 November 2004.
   text: |-
     The deputy N2 of United States Third Fleet, a captain whose name is redacted, confirmed that the mission report (MISREP) on the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter was received via email on or about 2004-11-14.
+  entailment:
+    label: entails
+    score: 0.572
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ba41f491-040b-4f40-8854-bb5d66f26692
   type: administrative
   attestation: second_hand
@@ -4460,6 +5526,11 @@ domain_claims:
     Since this MISREP was completed during training and preparation for deployment it was read and acknowledged by 3rd Fleet N2 but was not forwarded to anyone up the chain of command.
   text: |-
     Because the mission report (MISREP) on the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter was completed during training and preparation for deployment, it was read and acknowledged by United States Third Fleet N2 but was not forwarded to anyone up the chain of command.
+  entailment:
+    label: entails
+    score: 0.56
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 915f4ac9-91b9-493e-bb6f-376f19cc6151
   type: testimony
   attestation: second_hand
@@ -4481,6 +5552,11 @@ domain_claims:
     Additionally CAPT {{redacted}} stated that it was not likely archived but deleted at some point later as there is no requirement to keep these reports and it was likely in file folder with all of the other training MISREPS sent in by the CSG during deployment preparation.
   text: |-
     The deputy N2 of United States Third Fleet, a captain whose name is redacted, said the mission report (MISREP) on the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter was not likely archived but deleted at some point later, as there is no requirement to keep such reports, and it was likely in a file folder with the other training MISREPs sent in by the Nimitz Carrier Strike Group (CSG-11) during deployment preparation.
+  entailment:
+    label: entails
+    score: 0.47
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d1ea28b5-9005-4bbd-8cae-3a1e27664250
   type: administrative
   provenance_chain:
@@ -4500,6 +5576,11 @@ domain_claims:
     The commander of the Nimitz Carrier Strike Group during the intercept was Rear Admiral D.C. Curtis
   text: |-
     The commander of the Nimitz Carrier Strike Group (CSG-11) during the 2004 anomalous aerial vehicle (AAV) intercept was Rear Admiral D.C. Curtis.
+  entailment:
+    label: entails
+    score: 0.518
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 45c7f194-a55a-4c2f-8f0e-7b64dac7f490
   type: administrative
   provenance_chain:
@@ -4516,6 +5597,11 @@ domain_claims:
     now a Vice Admiral (VADM) and is commander of Naval Surface Forces and the Pacific Fleet's Naval Surface Force
   text: |-
     D.C. Curtis is now a Vice Admiral and is commander of Naval Surface Force, US Pacific Fleet.
+  entailment:
+    label: entails
+    score: 0.814
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cd1b1c27-1a39-46ad-8a6c-a6a669a393ad
   type: administrative
   provenance_chain:
@@ -4537,6 +5623,11 @@ domain_claims:
     All of the AAV activity was reported to VADM Curtis by the Commanding Officer, USS Princeton and Commanding Officer, VFA-41.
   text: |-
     All of the anomalous aerial vehicle (AAV) activity in the 2004 USS Nimitz encounter was reported to D.C. Curtis by the Commanding Officer of the USS Princeton (CG-59) and the Commanding Officer of Strike Fighter Squadron 41 (VFA-41).
+  entailment:
+    label: entails
+    score: 0.814
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d6b0134c-fe68-4f1a-8c18-af91cfcfe358
   type: opinion
   provenance_chain:
@@ -4553,6 +5644,11 @@ domain_claims:
     Based on all of the conversation with those involved and among the leadership of the various combatants within the CSG, VADM Curtis was a well respected, competent, and thorough Naval Officer.
   text: |-
     Based on conversations with those involved and the leadership of the various combatants within the Nimitz Carrier Strike Group (CSG-11), D.C. Curtis was a well respected, competent and thorough naval officer.
+  entailment:
+    label: entails
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c8ab110d-a05d-4dd6-a6ba-d0bbd77a72ec
   type: opinion
   provenance_chain:
@@ -4569,6 +5665,11 @@ domain_claims:
     There is no question in anyone's mind that he followed any and all regulations and guidance applicable to his command.
   text: |-
     There is no question in anyone's mind that D.C. Curtis followed any and all regulations and guidance applicable to his command of the Nimitz Carrier Strike Group (CSG-11).
+  entailment:
+    label: entails
+    score: 0.846
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4aa96e6-348a-4a60-9f34-0e191a46c48f
   type: administrative
   provenance_chain:
@@ -4586,6 +5687,11 @@ domain_claims:
     Capt {{redacted}} was the Director of Operations (N3) for CSG-11 at the time of the intercept.
   text: |-
     The Director of Operations (N3) for the Nimitz Carrier Strike Group (CSG-11) at the time of the 2004 anomalous aerial vehicle (AAV) intercept was a captain whose name is redacted.
+  entailment:
+    label: entails
+    score: 0.579
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c7913f95-168e-4497-b702-412c16338c2a
   type: testimony
   attestation: second_hand
@@ -4604,6 +5710,11 @@ domain_claims:
     Capt {{redacted}} confirmed that other than the MISREP there was no other official report or statement from the CSG.
   text: |-
     The Director of Operations (N3) for the Nimitz Carrier Strike Group (CSG-11), a captain whose name is redacted, confirmed that other than the mission report (MISREP) there was no other official report or statement from the strike group on the 2004 anomalous aerial vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.457
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 237465b4-50cd-4bcc-8aa4-0fdc539763f5
   type: testimony
   attestation: second_hand
@@ -4624,6 +5735,11 @@ domain_claims:
     He also stated that at no time did they consider the AAV a threat to the battle group.
   text: |-
     The Director of Operations (N3) for the Nimitz Carrier Strike Group (CSG-11), a captain whose name is redacted, said that at no time did they consider the 2004 anomalous aerial vehicle (AAV) a threat to the battle group.
+  entailment:
+    label: entails
+    score: 0.48
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3d77129e-ea3d-4447-b7e4-af00fa22105d
   type: testimony
   attestation: second_hand
@@ -4642,6 +5758,11 @@ domain_claims:
     Additionally they had no advanced knowledge of live fire events, US Weapons Testing or any other experimental aircraft operating in the area.
   text: |-
     The Director of Operations (N3) for the Nimitz Carrier Strike Group (CSG-11), a captain whose name is redacted, said they had no advance knowledge of live fire events, US weapons testing or any other experimental aircraft operating in the area during the 2004 anomalous aerial vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fea20de5-6a0b-4d23-9437-cebd76bd729c
   type: testimony
   attestation: second_hand
@@ -4661,6 +5782,11 @@ domain_claims:
   quote: Finally, they had never seen anything like this before and never again.
   text: |-
     The Director of Operations (N3) for the Nimitz Carrier Strike Group (CSG-11), a captain whose name is redacted, said they had never seen anything like the 2004 anomalous aerial vehicle (AAV) before and never again.
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b0a5589e-6d98-48c1-abaa-3c5dd5497d8f
   type: administrative
   provenance_chain:
@@ -4680,6 +5806,11 @@ domain_claims:
     Admiral Peter Daly assumed command of the CSG in January 2005 after the intercept
   text: |-
     Admiral Peter Daly assumed command of the Nimitz Carrier Strike Group (CSG-11) in January 2005, after the 2004 anomalous aerial vehicle (AAV) intercept.
+  entailment:
+    label: entails
+    score: 0.776
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bf02eab6-fa8a-4109-b2ca-19475992f516
   type: administrative
   provenance_chain:
@@ -4695,3 +5826,8 @@ domain_claims:
   quote: and had no knowledge or involvement in this incident
   text: |-
     Peter Daly had no knowledge of or involvement in the 2004 USS Nimitz Anomalous Aerial Vehicle (AAV) encounter.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

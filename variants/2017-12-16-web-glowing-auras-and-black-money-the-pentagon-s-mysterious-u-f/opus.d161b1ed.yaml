@@ -9,6 +9,12 @@ ai_usage:
     output: 42974
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 0.0
 prompts:
 - pass: nodes
   id: nodes
@@ -203,6 +209,11 @@ domain_claims:
     In the $600 billion annual Defense Department budgets, the $22 million spent on the Advanced Aerospace Threat Identification Program was almost impossible to find.
   text: |-
     The United States Department of Defense (DoD) had annual budgets of approximately 600 billion dollars.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 51b390d1-4a80-49e6-a211-8d3176fd6d34
   type: administrative
   provenance_chain:
@@ -219,6 +230,11 @@ domain_claims:
     the $22 million spent on the Advanced Aerospace Threat Identification Program was almost impossible to find. Which was how the Pentagon wanted it.
   text: |-
     Approximately 22 million dollars was spent on the Advanced Aerospace Threat Identification Program (AATIP), an amount that was almost impossible to find within the United States Department of Defense budget.
+  entailment:
+    label: neutral
+    score: 0.913
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d2a5de6d-19ff-4374-a114-da2d84d387c1
   type: administrative
   provenance_chain:
@@ -242,6 +258,11 @@ domain_claims:
     For years, the program investigated reports of unidentified flying objects, according to Defense Department officials, interviews with program participants and records obtained by The New York Times.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) investigated reports of unidentified flying objects for years.
+  entailment:
+    label: neutral
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c7d32011-ba6e-4554-b1db-ab089e308987
   type: administrative
   provenance_chain:
@@ -260,6 +281,11 @@ domain_claims:
     It was run by a military intelligence official, Luis Elizondo, on the fifth floor of the Pentagon’s C Ring, deep within the building’s maze.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) was run by military intelligence official Luis Elizondo, on the fifth floor of the Pentagon's C Ring.
+  entailment:
+    label: neutral
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 88054963-850e-4dc0-bb34-e671d7b43e33
   type: administrative
   attestation: second_hand
@@ -278,6 +304,11 @@ domain_claims:
     The Defense Department has never before acknowledged the existence of the program, which it says it shut down in 2012.
   text: |-
     The United States Department of Defense (DoD) says it shut down the Advanced Aerospace Threat Identification Program (AATIP) in 2012, and had never before acknowledged the programme's existence.
+  entailment:
+    label: entails
+    score: 0.752
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: df0e9e54-4165-446b-a3b0-c227d9f885e7
   type: testimony
   attestation: second_hand
@@ -299,6 +330,11 @@ domain_claims:
     But its backers say that, while the Pentagon ended funding for the effort at that time, the program remains in existence. For the past five years, they say, officials with the program have continued to investigate episodes brought to them by service members, while also carrying out their other Defense Department duties.
   text: |-
     Backers of the Advanced Aerospace Threat Identification Program (AATIP) say that although the Pentagon ended funding for the effort in 2012, the programme remains in existence, with officials continuing to investigate episodes brought to them by service members while carrying out their other Defense Department duties.
+  entailment:
+    label: neutral
+    score: 0.918
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 39c3fe3f-2c56-43d5-997f-59a690ca1a89
   type: administrative
   provenance_chain:
@@ -313,6 +349,11 @@ domain_claims:
   quote: The shadowy program — parts of it remain classified — began in 2007
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) began in 2007, and parts of it remain classified.
+  entailment:
+    label: neutral
+    score: 0.835
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7415e7c9-d4ed-4ebe-b4ce-7de8d5dc67bf
   type: administrative
   provenance_chain:
@@ -331,6 +372,11 @@ domain_claims:
     initially it was largely funded at the request of Harry Reid, the Nevada Democrat who was the Senate majority leader at the time and who has long had an interest in space phenomena.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) was initially largely funded at the request of Harry Reid, the Nevada Democrat who was the Senate majority leader at the time.
+  entailment:
+    label: neutral
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bccc6a31-4641-4ba0-acae-7d8e4d85a2c5
   type: administrative
   provenance_chain:
@@ -344,6 +390,11 @@ domain_claims:
   quote: |-
     Harry Reid, the Nevada Democrat who was the Senate majority leader at the time and who has long had an interest in space phenomena.
   text: Harry Reid has long had an interest in space phenomena.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3279400f-8ba2-461c-a125-708e1c8e72a3
   type: administrative
   provenance_chain:
@@ -362,6 +413,11 @@ domain_claims:
     Most of the money went to an aerospace research company run by a billionaire entrepreneur and longtime friend of Mr. Reid’s, Robert Bigelow
   text: |-
     Most of the money for the Advanced Aerospace Threat Identification Program (AATIP) went to an aerospace research company run by billionaire entrepreneur Robert Bigelow, a longtime friend of Harry Reid.
+  entailment:
+    label: neutral
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4a506fd6-e52f-4c00-b3e2-70513d7dffad
   type: administrative
   provenance_chain:
@@ -378,6 +434,11 @@ domain_claims:
     who is currently working with NASA to produce expandable craft for humans to use in space.
   text: |-
     Robert Bigelow is currently working with NASA to produce expandable craft for humans to use in space.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 261e26a4-02be-448e-8564-b183e2d6fbeb
   type: opinion
   attestation: first_hand
@@ -400,6 +461,11 @@ domain_claims:
     On CBS’s “60 Minutes” in May, Mr. Bigelow said he was “absolutely convinced” that aliens exist and that U.F.O.s have visited Earth.
   text: |-
     Robert Bigelow is absolutely convinced that aliens exist and that UFOs have visited Earth.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0b12bc23-bfd7-46dc-9ddd-2531eb5e7e60
   type: administrative
   provenance_chain:
@@ -418,6 +484,11 @@ domain_claims:
     the program produced documents that describe sightings of aircraft that seemed to move at very high velocities with no visible signs of propulsion, or that hovered with no apparent means of lift.
   text: |-
     Working with Robert Bigelow's Las Vegas-based company, the Advanced Aerospace Threat Identification Program (AATIP) produced documents describing sightings of aircraft that seemed to move at very high velocities with no visible signs of propulsion, or that hovered with no apparent means of lift.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f5b2446e-df1e-4e74-94a2-dc7b2f448a8e
   type: administrative
   provenance_chain:
@@ -443,6 +514,11 @@ domain_claims:
     Officials with the program have also studied videos of encounters between unknown objects and American military aircraft — including one released in August of a whitish oval object, about the size of a commercial plane, chased by two Navy F/A-18F fighter jets from the aircraft carrier Nimitz off the coast of San Diego in 2004.
   text: |-
     Officials with the Advanced Aerospace Threat Identification Program (AATIP) studied videos of encounters between unknown objects and American military aircraft, including one released in August of a whitish oval object about the size of a commercial plane, chased by two Navy F/A-18F fighter jets from the aircraft carrier USS Nimitz off the coast of San Diego in 2004.
+  entailment:
+    label: neutral
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: df26bf38-67d1-4ceb-8800-b98241988291
   type: administrative
   provenance_chain:
@@ -458,6 +534,11 @@ domain_claims:
     name: United States Congress
   quote: Mr. Reid, who retired from Congress this year
   text: Harry Reid retired from Congress in 2017.
+  entailment:
+    label: neutral
+    score: 0.716
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 700fbed5-8468-4991-b010-d9f36497c047
   type: opinion
   attestation: first_hand
@@ -478,6 +559,11 @@ domain_claims:
     “I’m not embarrassed or ashamed or sorry I got this thing going,” Mr. Reid said in a recent interview in Nevada. “I think it’s one of the good things I did in my congressional service. I’ve done something that no one has done before.”
   text: |-
     Harry Reid is proud of the Advanced Aerospace Threat Identification Program (AATIP) and considers it one of the good things he did in his congressional service.
+  entailment:
+    label: neutral
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2b7bae6a-5f1d-44a5-a27e-a3642691ebdf
   type: administrative
   provenance_chain:
@@ -498,6 +584,11 @@ domain_claims:
     Two other former senators and top members of a defense spending subcommittee — Ted Stevens, an Alaska Republican, and Daniel K. Inouye, a Hawaii Democrat — also supported the program.
   text: |-
     Two former senators and top members of a defence spending subcommittee, Ted Stevens, an Alaska Republican, and Daniel K. Inouye, a Hawaii Democrat, also supported the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: neutral
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1440d2c0-5628-4dd8-8959-ea73a67dc72f
   type: administrative
   provenance_chain:
@@ -511,6 +602,11 @@ domain_claims:
     name: Stevens, Ted
   quote: Mr. Stevens died in 2010, and Mr. Inouye in 2012.
   text: Ted Stevens died in 2010.
+  entailment:
+    label: neutral
+    score: 0.62
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 313eee2d-8748-4dff-9e36-9b6648a8c60e
   type: administrative
   provenance_chain:
@@ -524,6 +620,11 @@ domain_claims:
     name: Inouye, Daniel K.
   quote: Mr. Stevens died in 2010, and Mr. Inouye in 2012.
   text: Daniel K. Inouye died in 2012.
+  entailment:
+    label: entails
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b42641b6-fc03-428c-a410-a9a759dbd3e1
   type: administrative
   provenance_chain:
@@ -539,6 +640,11 @@ domain_claims:
   quote: Sara Seager, an astrophysicist at M.I.T.
   text: |-
     Sara Seager is an astrophysicist at the Massachusetts Institute of Technology (MIT).
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0685a40f-32ff-41e5-b2b7-4ead7d3352a2
   type: opinion
   attestation: first_hand
@@ -557,6 +663,11 @@ domain_claims:
     Sara Seager, an astrophysicist at M.I.T., cautioned that not knowing the origin of an object does not mean that it is from another planet or galaxy.
   text: |-
     Sara Seager cautioned that not knowing the origin of an object does not mean that it is from another planet or galaxy.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a859c8a6-2d05-4dc8-aa5e-956b2117944d
   type: opinion
   attestation: first_hand
@@ -575,6 +686,11 @@ domain_claims:
     “When people claim to observe truly unusual phenomena, sometimes it’s worth investigating seriously,” she said. But, she added, “what people sometimes don’t get about science is that we often have phenomena that remain unexplained.”
   text: |-
     Sara Seager considers that science often has phenomena that remain unexplained, and that when people claim to observe truly unusual phenomena it is sometimes worth investigating seriously.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a2dbb350-0f0b-4d78-990c-f3bdce94630a
   type: administrative
   provenance_chain:
@@ -593,6 +709,11 @@ domain_claims:
     James E. Oberg, a former NASA space shuttle engineer and the author of 10 books on spaceflight who often debunks U.F.O. sightings
   text: |-
     James E. Oberg is a former NASA space shuttle engineer and the author of 10 books on spaceflight who often debunks UFO sightings.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 374b6c26-52ba-44a9-956f-0941a89c6af9
   type: opinion
   attestation: first_hand
@@ -611,6 +732,11 @@ domain_claims:
     “There are plenty of prosaic events and human perceptual traits that can account for these stories,” Mr. Oberg said. “Lots of people are active in the air and don’t want others to know about it. They are happy to lurk unrecognized in the noise, or even to stir it up as camouflage.”
   text: |-
     James E. Oberg considers that there are plenty of prosaic events and human perceptual traits that can account for UFO stories, and that many people are active in the air who do not want others to know about it.
+  entailment:
+    label: neutral
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bef3abf3-06e8-46a0-929a-ac44c37d197e
   type: opinion
   attestation: first_hand
@@ -629,6 +755,11 @@ domain_claims:
     Still, Mr. Oberg said he welcomed research. “There could well be a pearl there,” he said.
   text: |-
     James E. Oberg welcomed research into UFO sightings, saying there could well be a pearl there.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2554b081-d762-46db-9ab6-7990ef67f35e
   type: administrative
   attestation: second_hand
@@ -651,6 +782,11 @@ domain_claims:
     In response to questions from The Times, Pentagon officials this month acknowledged the existence of the program, which began as part of the Defense Intelligence Agency. Officials insisted that the effort had ended after five years, in 2012.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) began as part of the Defense Intelligence Agency (DIA), and Pentagon officials acknowledged the programme's existence in December 2017 in response to questions from The New York Times, insisting the effort had ended after five years in 2012.
+  entailment:
+    label: neutral
+    score: 0.618
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 97119e30-523b-4f6d-b887-6cc1abf915ba
   type: administrative
   attestation: first_hand
@@ -675,6 +811,11 @@ domain_claims:
     “It was determined that there were other, higher priority issues that merited funding, and it was in the best interest of the DoD to make a change,” a Pentagon spokesman, Thomas Crosson, said in an email, referring to the Department of Defense.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) was ended because it was determined there were other, higher priority issues that merited funding, and it was in the best interest of the DoD to make a change.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8fd5e2cd-17ae-4c28-ad10-a8fed41c4e8b
   type: administrative
   provenance_chain:
@@ -689,6 +830,11 @@ domain_claims:
     name: The Pentagon
   quote: a Pentagon spokesman, Thomas Crosson, said in an email
   text: Thomas Crosson is a Pentagon spokesman.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 42d3ffe4-2f6c-4d79-9dad-240a9a279301
   type: testimony
   attestation: first_hand
@@ -714,6 +860,11 @@ domain_claims:
     But Mr. Elizondo said the only thing that had ended was the effort’s government funding, which dried up in 2012. From then on, Mr. Elizondo said in an interview, he worked with officials from the Navy and the C.I.A.
   text: |-
     The only thing that had ended in 2012 was the government funding of the Advanced Aerospace Threat Identification Program (AATIP), and from then on Luis Elizondo worked with officials from the Navy and the CIA.
+  entailment:
+    label: neutral
+    score: 0.876
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a638c529-cb44-43a4-b127-bb63e380c33a
   type: administrative
   provenance_chain:
@@ -731,6 +882,11 @@ domain_claims:
     He continued to work out of his Pentagon office until this past October, when he resigned to protest what he characterized as excessive secrecy and internal opposition.
   text: |-
     Luis Elizondo continued to work out of his Pentagon office until October 2017, when he resigned to protest what he characterised as excessive secrecy and internal opposition.
+  entailment:
+    label: neutral
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b85cafe3-2f1f-4124-9c0b-0d6b3ba219be
   type: opinion
   attestation: first_hand
@@ -751,6 +907,11 @@ domain_claims:
     “Why aren’t we spending more time and effort on this issue?” Mr. Elizondo wrote in a resignation letter to Defense Secretary Jim Mattis.
   text: |-
     In his resignation letter to Defense Secretary Jim Mattis, Luis Elizondo questioned why more time and effort was not being spent on the issue of unidentified aerial phenomena.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2102c1ab-da01-4d8a-a6c1-3379a829a0ea
   type: administrative
   provenance_chain:
@@ -766,6 +927,11 @@ domain_claims:
   quote: Mr. Elizondo wrote in a resignation letter to Defense Secretary Jim Mattis.
   text: |-
     Jim Mattis was Defense Secretary at the time of Luis Elizondo's October 2017 resignation.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1d426d68-01e4-4bc1-8c0d-146e2632fc7a
   type: testimony
   attestation: first_hand
@@ -786,6 +952,11 @@ domain_claims:
     Mr. Elizondo said that the effort continued and that he had a successor, whom he declined to name.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) effort continued after Luis Elizondo's resignation, and Elizondo had a successor whom he declined to name.
+  entailment:
+    label: neutral
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 014b2c8c-0b0a-44aa-910e-5f6d0133a01e
   type: administrative
   provenance_chain:
@@ -803,6 +974,11 @@ domain_claims:
     In 1947, the Air Force began a series of studies that investigated more than 12,000 claimed U.F.O. sightings before it was officially ended in 1969.
   text: |-
     In 1947, the United States Air Force began a series of studies that investigated more than 12,000 claimed UFO sightings before being officially ended in 1969.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2e1613b8-d19d-4f21-9d48-bfa0fc437063
   type: administrative
   provenance_chain:
@@ -822,6 +998,11 @@ domain_claims:
     The project, which included a study code-named Project Blue Book, started in 1952, concluded that most sightings involved stars, clouds, conventional aircraft or spy planes, although 701 remained unexplained.
   text: |-
     Project Blue Book, a study code-named as part of the United States Air Force UFO studies, started in 1952 and concluded that most sightings involved stars, clouds, conventional aircraft or spy planes, although 701 remained unexplained.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d6c8d5fb-77ff-4d5c-b04a-514619887c73
   type: administrative
   provenance_chain:
@@ -839,6 +1020,11 @@ domain_claims:
   quote: Robert C. Seamans Jr., the secretary of the Air Force at the time
   text: |-
     Robert C. Seamans Jr. was the secretary of the Air Force at the time Project Blue Book ended.
+  entailment:
+    label: neutral
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cafd0d5e-8ae2-4e25-9494-ccd3b632474c
   type: administrative
   attestation: second_hand
@@ -859,6 +1045,11 @@ domain_claims:
     said in a memorandum announcing the end of Project Blue Book that it “no longer can be justified either on the ground of national security or in the interest of science.”
   text: |-
     In a memorandum announcing the end of Project Blue Book, Robert C. Seamans Jr. said it could no longer be justified either on the ground of national security or in the interest of science.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c64c78b7-83a3-4e63-899b-c3638f669b02
   type: testimony
   attestation: first_hand
@@ -879,6 +1070,11 @@ domain_claims:
     name: Unidentified Flying Object (UFO)
   quote: Mr. Reid said his interest in U.F.O.s came from Mr. Bigelow.
   text: Harry Reid's interest in UFOs came from Robert Bigelow.
+  entailment:
+    label: entails
+    score: 0.496
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 034d3f5e-54cb-488f-8641-a8488695f305
   type: hearsay
   attestation: second_hand
@@ -904,6 +1100,11 @@ domain_claims:
     In 2007, Mr. Reid said in the interview, Mr. Bigelow told him that an official with the Defense Intelligence Agency had approached him wanting to visit Mr. Bigelow’s ranch in Utah, where he conducted research.
   text: |-
     In 2007, Robert Bigelow told Harry Reid that an official with the Defense Intelligence Agency (DIA) had approached Bigelow wanting to visit Bigelow's ranch in Utah, where he conducted research.
+  entailment:
+    label: neutral
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 71e76742-d5a4-4508-997d-fbe7edde245c
   type: administrative
   provenance_chain:
@@ -916,6 +1117,11 @@ domain_claims:
     name: Bigelow, Robert
   quote: Mr. Bigelow’s ranch in Utah, where he conducted research.
   text: Robert Bigelow conducted research at his ranch in Utah.
+  entailment:
+    label: entails
+    score: 0.779
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 586639e4-5cbc-4c1e-bdff-f59a26f779fd
   type: testimony
   attestation: first_hand
@@ -938,6 +1144,11 @@ domain_claims:
     Mr. Reid said he met with agency officials shortly after his meeting with Mr. Bigelow and learned that they wanted to start a research program on U.F.O.s.
   text: |-
     Harry Reid met with Defense Intelligence Agency (DIA) officials shortly after his 2007 meeting with Robert Bigelow and learned that they wanted to start a research program on UFOs.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b7a4fc1f-c568-473d-9111-61b6bc0b8923
   type: testimony
   attestation: first_hand
@@ -962,6 +1173,11 @@ domain_claims:
     Mr. Reid then summoned Mr. Stevens and Mr. Inouye to a secure room in the Capitol.
   text: |-
     Harry Reid summoned Ted Stevens and Daniel K. Inouye to a secure room in the United States Capitol to discuss the UFO research programme.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 24ecbe72-27c3-4399-9671-6363d5ad4689
   type: administrative
   provenance_chain:
@@ -975,6 +1191,11 @@ domain_claims:
     name: Glenn, John
   quote: referring to the astronaut and former senator from Ohio, who died in 2016.
   text: John Glenn was an astronaut and former senator from Ohio who died in 2016.
+  entailment:
+    label: neutral
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 019a7eb6-6f4f-4ba8-8fbb-550873b50a08
   type: opinion
   attestation: second_hand
@@ -999,6 +1220,11 @@ domain_claims:
     Mr. Glenn, Mr. Reid said, had told him he thought that the federal government should be looking seriously into U.F.O.s, and should be talking to military service members, particularly pilots, who had reported seeing aircraft they could not identify or explain.
   text: |-
     John Glenn told Harry Reid that he thought the federal government should be looking seriously into UFOs and should be talking to military service members, particularly pilots, who had reported seeing aircraft they could not identify or explain.
+  entailment:
+    label: entails
+    score: 0.931
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: edc7a2c4-28b0-478a-8d18-57f43c6b38f0
   type: opinion
   attestation: first_hand
@@ -1019,6 +1245,11 @@ domain_claims:
     The sightings were not often reported up the military’s chain of command, Mr. Reid said, because service members were afraid they would be laughed at or stigmatized.
   text: |-
     UFO sightings were not often reported up the military's chain of command because service members were afraid they would be laughed at or stigmatised.
+  entailment:
+    label: neutral
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fac3f8b1-7697-4b23-a568-de7a6893e30b
   type: hearsay
   attestation: second_hand
@@ -1043,6 +1274,11 @@ domain_claims:
     He added, “Ted Stevens said, ‘I’ve been waiting to do this since I was in the Air Force.’”
   text: |-
     At the meeting in the United States Capitol, Ted Stevens said he had been waiting to fund a UFO research programme since he was in the Air Force.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3809aa28-6c20-4588-82de-a077adf373d1
   type: administrative
   provenance_chain:
@@ -1057,6 +1293,11 @@ domain_claims:
     (The Alaska senator had been a pilot in the Army’s air force, flying transport missions over China during World War II.)
   text: |-
     Ted Stevens had been a pilot in the Army's air force, flying transport missions over China during World War II.
+  entailment:
+    label: neutral
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: aab0d835-b0f4-42ba-b102-98499186edc7
   type: hearsay
   attestation: second_hand
@@ -1079,6 +1320,11 @@ domain_claims:
     During the meeting, Mr. Reid said, Mr. Stevens recounted being tailed by a strange aircraft with no known origin, which he said had followed his plane for miles.
   text: |-
     During the Capitol meeting, Ted Stevens recounted being tailed by a strange aircraft with no known origin, which he said had followed his plane for miles.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3f7a91b2-ece2-4c26-8e25-9de51048f454
   type: testimony
   attestation: first_hand
@@ -1107,6 +1353,11 @@ domain_claims:
     None of the three senators wanted a public debate on the Senate floor about the funding for the program, Mr. Reid said. “This was so-called black money,” he said. “Stevens knows about it, Inouye knows about it. But that was it, and that’s how we wanted it.” Mr. Reid was referring to the Pentagon budget for classified programs.
   text: |-
     None of the three senators Harry Reid, Ted Stevens and Daniel K. Inouye wanted a public debate on the Senate floor about the funding for the Advanced Aerospace Threat Identification Program (AATIP), which was funded through the Pentagon budget for classified programmes referred to as black money.
+  entailment:
+    label: neutral
+    score: 0.756
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 59ab8c5f-2bdf-4922-a758-bf3e34d45709
   type: administrative
   attestation: second_hand
@@ -1129,6 +1380,11 @@ domain_claims:
     Contracts obtained by The Times show a congressional appropriation of just under $22 million beginning in late 2008 through 2011. The money was used for management of the program, research and assessments of the threat posed by the objects.
   text: |-
     Contracts obtained by The New York Times show a congressional appropriation of just under 22 million dollars for the Advanced Aerospace Threat Identification Program (AATIP) beginning in late 2008 through 2011, used for management of the programme, research and assessments of the threat posed by the objects.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d1cae2b7-4fb8-4a93-a969-a11b917f2dea
   type: administrative
   provenance_chain:
@@ -1147,6 +1403,11 @@ domain_claims:
     The funding went to Mr. Bigelow’s company, Bigelow Aerospace, which hired subcontractors and solicited research for the program.
   text: |-
     The funding for the Advanced Aerospace Threat Identification Program (AATIP) went to Robert Bigelow's company, Bigelow Aerospace, which hired subcontractors and solicited research for the programme.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7210aa67-ece3-44fc-be09-02656c2600ad
   type: testimony
   attestation: second_hand
@@ -1172,6 +1433,11 @@ domain_claims:
     Under Mr. Bigelow’s direction, the company modified buildings in Las Vegas for the storage of metal alloys and other materials that Mr. Elizondo and program contractors said had been recovered from unidentified aerial phenomena.
   text: |-
     Under Robert Bigelow's direction, Bigelow Aerospace modified buildings in Las Vegas for the storage of metal alloys and other materials that Luis Elizondo and programme contractors said had been recovered from unidentified aerial phenomena.
+  entailment:
+    label: entails
+    score: 0.384
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b71dd17d-f741-4957-a9cb-ddbe1f26ec7d
   type: administrative
   provenance_chain:
@@ -1188,6 +1454,11 @@ domain_claims:
     Researchers also studied people who said they had experienced physical effects from encounters with the objects and examined them for any physiological changes.
   text: |-
     Researchers with the Advanced Aerospace Threat Identification Program (AATIP) studied people who said they had experienced physical effects from encounters with unidentified aerial phenomena and examined them for any physiological changes.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e5624acf-0e50-402c-aa70-f615af75b14c
   type: administrative
   provenance_chain:
@@ -1202,6 +1473,11 @@ domain_claims:
     In addition, researchers spoke to military service members who had reported sightings of strange aircraft.
   text: |-
     Researchers with the Advanced Aerospace Threat Identification Program (AATIP) spoke to military service members who had reported sightings of strange aircraft.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d21ac002-367e-4448-a8bf-0ac7f4583ddd
   type: administrative
   provenance_chain:
@@ -1220,6 +1496,11 @@ domain_claims:
     said Harold E. Puthoff, an engineer who has conducted research on extrasensory perception for the C.I.A. and later worked as a contractor for the program.
   text: |-
     Harold E. Puthoff is an engineer who has conducted research on extrasensory perception for the CIA and later worked as a contractor for the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: neutral
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 01d51e72-008b-48ee-a584-2b3361fb69ac
   type: opinion
   attestation: first_hand
@@ -1238,6 +1519,11 @@ domain_claims:
     “We’re sort of in the position of what would happen if you gave Leonardo da Vinci a garage-door opener,” said Harold E. Puthoff... “First of all, he’d try to figure out what is this plastic stuff. He wouldn’t know anything about the electromagnetic signals involved or its function.”
   text: |-
     Harold E. Puthoff likened the position of researchers studying recovered materials to what would happen if Leonardo da Vinci were given a garage-door opener, unable to understand the electromagnetic signals or function involved.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 237d7020-da53-46e5-826a-8dc00f24dd11
   type: administrative
   provenance_chain:
@@ -1258,6 +1544,11 @@ domain_claims:
     The program collected video and audio recordings of reported U.F.O. incidents, including footage from a Navy F/A-18 Super Hornet showing an aircraft surrounded by some kind of glowing aura traveling at high speed and rotating as it moves.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) collected video and audio recordings of reported UFO incidents, including footage from a Navy F/A-18 Super Hornet showing an aircraft surrounded by a glowing aura travelling at high speed and rotating as it moves.
+  entailment:
+    label: neutral
+    score: 0.783
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cac07c62-0f0d-4aba-8569-7e9f715ab1bc
   type: observation
   attestation: third_hand
@@ -1279,6 +1570,11 @@ domain_claims:
     The Navy pilots can be heard trying to understand what they are seeing. “There’s a whole fleet of them,” one exclaims.
   text: |-
     In the Navy F/A-18 Super Hornet footage of a glowing-aura object, one of the Navy pilots can be heard exclaiming that there is a whole fleet of them.
+  entailment:
+    label: neutral
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b60541fc-3870-4202-9022-fd9765dfa50e
   type: administrative
   provenance_chain:
@@ -1294,6 +1590,11 @@ domain_claims:
   quote: Defense officials declined to release the location and date of the incident.
   text: |-
     Defense officials declined to release the location and date of the glowing-aura incident filmed by a Navy F/A-18 Super Hornet.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cb3bb159-ee92-4419-954d-536851eeb62c
   type: opinion
   attestation: first_hand
@@ -1314,6 +1615,11 @@ domain_claims:
     “Internationally, we are the most backward country in the world on this issue,” Mr. Bigelow said in an interview. “Our scientists are scared of being ostracized, and our media is scared of the stigma. China and Russia are much more open and work on this with huge organizations within their countries. Smaller countries like Belgium, France, England and South American countries like Chile are more open, too...”
   text: |-
     Robert Bigelow considers the United States the most backward country in the world on the issue of UFOs, saying its scientists are scared of being ostracised and its media scared of the stigma, while China and Russia are much more open and work on it with huge organisations, and smaller countries like Belgium, France, England and Chile are more open too.
+  entailment:
+    label: entails
+    score: 0.869
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c551f353-f299-4ef8-9d32-8e86f0c75410
   type: administrative
   provenance_chain:
@@ -1331,6 +1637,11 @@ domain_claims:
     By 2009, Mr. Reid decided that the program had made such extraordinary discoveries that he argued for heightened security to protect it.
   text: |-
     By 2009, Harry Reid decided that the Advanced Aerospace Threat Identification Program (AATIP) had made such extraordinary discoveries that he argued for heightened security to protect it.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 27797974-2086-4b04-9dd3-85c9529fc41e
   type: administrative
   attestation: second_hand
@@ -1354,6 +1665,11 @@ domain_claims:
     “Much progress has been made with the identification of several highly sensitive, unconventional aerospace-related findings,” Mr. Reid said in a letter to William Lynn III, a deputy defense secretary at the time, requesting that it be designated a “restricted special access program” limited to a few listed officials.
   text: |-
     In a 2009 letter to deputy defense secretary William Lynn III, Harry Reid requested that the Advanced Aerospace Threat Identification Program (AATIP) be designated a restricted special access program limited to a few listed officials, citing that much progress had been made with the identification of several highly sensitive, unconventional aerospace-related findings.
+  entailment:
+    label: neutral
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7e42e6b6-ba5c-4258-930f-b5f406412e4f
   type: administrative
   provenance_chain:
@@ -1368,6 +1684,11 @@ domain_claims:
     name: United States Department of Defense (DoD)
   quote: William Lynn III, a deputy defense secretary at the time
   text: William Lynn III was a deputy defense secretary in 2009.
+  entailment:
+    label: neutral
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3bb5700a-3efb-47ca-b50a-aa1bf49f2986
   type: administrative
   attestation: second_hand
@@ -1386,6 +1707,11 @@ domain_claims:
     A 2009 Pentagon briefing summary of the program prepared by its director at the time asserted that “what was considered science fiction is now science fact,” and that the United States was incapable of defending itself against some of the technologies discovered.
   text: |-
     A 2009 Pentagon briefing summary of the Advanced Aerospace Threat Identification Program (AATIP), prepared by its director at the time, asserted that what was considered science fiction is now science fact, and that the United States was incapable of defending itself against some of the technologies discovered.
+  entailment:
+    label: neutral
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5e170bd8-bed8-4ef2-8b0b-7e6a905a912a
   type: administrative
   provenance_chain:
@@ -1401,6 +1727,11 @@ domain_claims:
   quote: Mr. Reid’s request for the special designation was denied.
   text: |-
     Harry Reid's request for the restricted special access program designation for the Advanced Aerospace Threat Identification Program (AATIP) was denied.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ad5f6df1-32c8-45e1-a062-8fc4ff03f6c9
   type: opinion
   attestation: second_hand
@@ -1422,6 +1753,11 @@ domain_claims:
     Mr. Elizondo, in his resignation letter of Oct. 4, said there was a need for more serious attention to “the many accounts from the Navy and other services of unusual aerial systems interfering with military weapon platforms and displaying beyond-next-generation capabilities.”
   text: |-
     In his resignation letter of 2017-10-04, Luis Elizondo said there was a need for more serious attention to the many accounts from the Navy and other services of unusual aerial systems interfering with military weapon platforms and displaying beyond-next-generation capabilities.
+  entailment:
+    label: contradicts
+    score: 0.918
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a6274fc4-6d8a-46a4-b92c-8b49f2a0175c
   type: opinion
   attestation: second_hand
@@ -1444,6 +1780,11 @@ domain_claims:
     telling Mr. Mattis that “there remains a vital need to ascertain capability and intent of these phenomena for the benefit of the armed forces and the nation.”
   text: |-
     Luis Elizondo told Jim Mattis that there remains a vital need to ascertain the capability and intent of unidentified aerial phenomena for the benefit of the armed forces and the nation.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 29c9d753-050d-496b-a008-1897f26cc06e
   type: administrative
   provenance_chain:
@@ -1460,6 +1801,11 @@ domain_claims:
     another former Defense Department official, Christopher K. Mellon, who was a deputy assistant secretary of defense for intelligence
   text: |-
     Christopher K. Mellon is a former Defense Department official who was a deputy assistant secretary of defense for intelligence.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e2ed04ef-b898-45db-930a-74b09c89c3fa
   type: administrative
   provenance_chain:
@@ -1482,6 +1828,11 @@ domain_claims:
     Mr. Elizondo has now joined Mr. Puthoff and another former Defense Department official, Christopher K. Mellon... in a new commercial venture called To the Stars Academy of Arts and Science. They are speaking publicly about their efforts as their venture aims to raise money for research into U.F.O.s.
   text: |-
     Luis Elizondo has joined Harold E. Puthoff and Christopher K. Mellon in a new commercial venture called To the Stars Academy of Arts and Science, which aims to raise money for research into UFOs.
+  entailment:
+    label: entails
+    score: 0.568
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fd69c5bb-1c14-4c52-b574-64ea493fa2f6
   type: testimony
   attestation: first_hand
@@ -1502,6 +1853,11 @@ domain_claims:
     Mr. Elizondo said he and his government colleagues had determined that the phenomena they had studied did not seem to originate from any country.
   text: |-
     Luis Elizondo and his government colleagues determined that the unidentified aerial phenomena they had studied did not seem to originate from any country.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b1b28053-9e86-45ac-9665-8f7998e8c465
   type: opinion
   attestation: first_hand
@@ -1520,6 +1876,11 @@ domain_claims:
     “That fact is not something any government or institution should classify in order to keep secret from the people,” he said.
   text: |-
     Luis Elizondo considers that the fact that the studied phenomena did not seem to originate from any country is not something any government or institution should classify in order to keep secret from the people.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2ff7d3a0-4d84-4cdb-ac3c-97f64a1eafca
   type: opinion
   attestation: first_hand
@@ -1538,3 +1899,8 @@ domain_claims:
     Mr. Reid said he did not know where the objects had come from. “If anyone says they have the answers now, they’re fooling themselves,” he said. “We do not know.”
   text: |-
     Harry Reid said he did not know where the unidentified objects had come from, and that anyone who says they have the answers now is fooling themselves.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

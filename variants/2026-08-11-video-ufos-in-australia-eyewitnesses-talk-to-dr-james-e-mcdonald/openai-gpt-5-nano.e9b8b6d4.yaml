@@ -13,6 +13,12 @@ ai_usage:
     cache_write: 0
     calls: 4
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.4
 prompts:
 - pass: nodes
   id: nodes
@@ -239,6 +245,11 @@ domain_claims:
     Certainly as a scientist, I am not entirely happy with taking hearsay evidence, and I've been down here in Australia interviewing witnesses to find out for myself, in direct, face-to-face, or in some cases, phone interviewing, exactly what happened in individual cases and what the credibility of the witness is, how witnesses may be, how thoroughly the cases have been
   text: |-
     James E. McDonald stated that as a scientist he was not entirely happy with taking hearsay evidence and had been down here in Australia interviewing witnesses to find out for himself what happened in individual cases and what the credibility of the witness is, how witnesses may be, how thoroughly the cases have been.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 82ca201d-4e9f-4cde-8216-7b760e9b632a
   type: testimony
   attestation: second_hand
@@ -260,6 +271,11 @@ domain_claims:
   quote: I saw a cigar-shaped object, approximately 1949 this would be.
   text: |-
     Mrs. Smith from South Caulfield saw a cigar-shaped object stationary in the sky over Hawthorne in approximately 1949.
+  entailment:
+    label: contradicts
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fc5a47d9-7b52-4635-835b-28fc6dbeebd7
   type: testimony
   attestation: second_hand
@@ -281,6 +297,11 @@ domain_claims:
   quote: he had also seen it and he was inundated with calls.
   text: |-
     The Sun's switchboard operator reported that he had also seen it and he was inundated with calls.
+  entailment:
+    label: entails
+    score: 0.527
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ecc1eeb7-084e-41af-a546-10f245ea9896
   type: testimony
   attestation: second_hand
@@ -302,6 +323,11 @@ domain_claims:
   quote: |-
     There was nothing much in the paper the next morning about it. Just a tiny little paragraph.
   text: The Sun carried only a tiny paragraph about the sighting the next morning.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d1a2e5d4-4d22-41e4-a951-b349d82a6ff3
   type: testimony
   attestation: second_hand
@@ -322,6 +348,11 @@ domain_claims:
     name: James E. McDonald
   quote: it was clear and almost cloudless but um
   text: The weather at the time was clear and almost cloudless.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4d061e0c-1fa7-44ad-86a6-50b06f977988
   type: testimony
   attestation: second_hand
@@ -342,6 +373,11 @@ domain_claims:
     name: James E. McDonald
   quote: it was stationary.
   text: The object was stationary.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a69a433-d5b8-47c4-a8dc-2f4a120dec49
   type: testimony
   attestation: second_hand
@@ -364,6 +400,11 @@ domain_claims:
     it was low down about the height that a plane would fly when it's flying fairly low.
   text: |-
     The object was low down, about the height that a plane would fly when it's flying fairly low.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3545fe43-1e84-4906-8868-0c0a3913ba5d
   type: testimony
   attestation: second_hand
@@ -384,6 +425,11 @@ domain_claims:
     name: James E. McDonald
   quote: It's a man-made object. No doubt about it.
   text: The object was a man-made object.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9499e36b-e2d8-412c-b33f-239e07ee4acb
   type: administrative
   attestation: third_hand
@@ -410,6 +456,11 @@ domain_claims:
     On the 7th of June, I was at the United Nations speaking to the Outer Space Affairs Group about the UFO problem, submitted some formal statements to them, urging UN action on the UFO problem.
   text: |-
     On 1967-06-07, the United Nations Outer Space Affairs Group UFO statement was made; McDonald was at the United Nations delivering statements urging UN action on the UFO problem.
+  entailment:
+    label: entails
+    score: 0.579
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2bff8df3-ea7d-46c0-8c19-06758e2a5c28
   type: opinion
   attestation: third_hand
@@ -437,6 +488,11 @@ domain_claims:
     Subsequently, however, in some kind of an exchange with Drew Pearson, U Thant made a statement now about four or five days ago, I guess six days ago, that the UFO problem is probably the most important international problem, with the present exception of the Vietnam War.
   text: |-
     U Thant made a statement that the UFO problem is probably the most important international problem, with the present exception of the Vietnam War.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 440d56d5-15ec-4495-ba06-fd346c2b23f1
   type: testimony
   attestation: second_hand
@@ -459,6 +515,11 @@ domain_claims:
     Let me tell you, we were down with the Melbourne UFO group, the Victorian Flying Saucer Society, very helpfully have been taking me around the countryside to some of the key witnesses.
   text: |-
     The Melbourne UFO group, the Victorian Flying Saucer Society, took James E. McDonald around the countryside to some of the key witnesses.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: da57c355-b90e-4f4b-8a72-d7a8273204d0
   type: testimony
   attestation: second_hand
@@ -484,6 +545,11 @@ domain_claims:
     we were down in Mowi, in the Gippsland area, talking to a farmer named Brew, who was milking 0700 on February of 1963. All of a sudden, coming out of the overcast was a large disc-like object which hovered over a tree 100 yards away. ... The cattle, he was most impressed by the way in which the cattle jumped and stampeded, the dogs started barking, horses broke loose and so on.
   text: |-
     A farmer named Brew in Gippsland described a large disc-like object that hovered over a tree about 100 yards away; the cattle jumped and stampeded, the dogs started barking, and the horses broke loose.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 635e3e25-9dde-4b6f-9e84-4da6cf7215f9
   type: opinion
   attestation: second_hand
@@ -502,6 +568,11 @@ domain_claims:
   quote: |-
     vidence added to the American evidence and much, much other evidence clearly attested that, let's hope that UN scientific groups will get right onto it.
   text: The United Nations scientific groups should investigate the UFO issue.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4d1d7534-a8b6-4694-821e-62c6dec16586
   type: opinion
   attestation: second_hand
@@ -523,6 +594,11 @@ domain_claims:
     Incidentally, before any Freudians ring up, I should qualify what I said before about Carl Gustav Jung. He was, of course, the disciple of Freud, but he's neither the first or the last disciple to break away somewhat from the teachings of his master, which he did when he reached middle life.
   text: |-
     Carl Gustav Jung was the disciple of Sigmund Freud, but he eventually broke away from Freud's teachings in middle life.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2864e185-1cb7-44e1-bcae-9d972434ff3e
   type: testimony
   attestation: second_hand
@@ -544,6 +620,11 @@ domain_claims:
     uh well i was on a train actually that went from Christchurch over to the west coast of New Zealand yes to the um i was going to see the Fox Glacier actually and the day was the 17th of the 11th '55. ... I saw two objects spinning in the sky. They were white in colour and disappeared after a while. I was going to call the other passengers in the train to see them, but we went through one of the many tunnels at this time and they disappeared when we came out the other side of the tunnel. They were gone.
   text: |-
     A New Zealand sighting on 1955-11-17 involved two white, spinning objects observed from a Christchurch train journey.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ca230b1e-233b-4002-8b4b-c6cf09b78492
   type: testimony
   attestation: second_hand
@@ -563,6 +644,11 @@ domain_claims:
     uh well i was on a train actually that went from Christchurch over to the west coast of New Zealand yes to the um i was going to see the Fox Glacier actually and the day was the 17th of the 11th '55. ... I saw two objects spinning in the sky. They were white in colour and disappeared after a while. I was going to call the other passengers in the train to see them, but we went through one of the many tunnels at this time and they disappeared when we came out the other side of the tunnel. They were gone.
   text: |-
     The witnesses reported the two white objects were semi-circular and spun at a terrific speed.
+  entailment:
+    label: entails
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14b5712e-be76-4551-8d5a-982332c0f032
   type: testimony
   attestation: second_hand
@@ -579,6 +665,11 @@ domain_claims:
     name: Royal Air Force (RAF)
   quote: You never reported that to the RAF or the New Zealand Air Force? No, not at all.
   text: The witness did not report the sighting to the Royal Air Force (RAF).
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 373b43d1-08db-412c-8d72-6d5c77279719
   type: observation
   attestation: second_hand
@@ -600,6 +691,11 @@ domain_claims:
     The official position is that it's a lot of nonsense, burdensome duty that the Air Force is unable to get away with. The suggestion that the Air Force has a lot of competence to look at these problems is correct. There is expertise at the disposal of the American Air Force, but when you go digging, as I have, you find it just isn't being used and hasn't been used for 15 years. Project Blue Book consists of three people at present. The American Air Force Investigatory Program is a major, a sergeant, and a secretary.
   text: |-
     Project Blue Book consists of three people at present: a major, a sergeant, and a secretary.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e2f01d45-b743-4848-94f4-c4acd50fc9f2
   type: opinion
   attestation: second_hand
@@ -618,6 +714,11 @@ domain_claims:
   quote: It has to be regarded as essentially zero. It is not a scientific investigation.
   text: |-
     The Project Blue Book investigation has been done superficially and is not a scientific investigation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c13cfaff-1b8c-4044-a41c-62fbfae69ac5
   type: observation
   attestation: second_hand
@@ -639,6 +740,11 @@ domain_claims:
     The type of sightings that are on record, thousands of cases in the U.S., involve cigar-shaped objects, disks, hovering sometimes at very low altitude.
   text: |-
     There are thousands of cases on record in the United States involving cigar-shaped objects.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f40daca8-b49a-443b-835c-30a7310beb50
   type: observation
   attestation: second_hand
@@ -657,6 +763,11 @@ domain_claims:
   quote: |-
     same type of sightings that are on record, thousands of cases in the U.S., involve cigar-shaped objects, disks, hovering sometimes at very low altitude.
   text: Disk-shaped objects have been reported in UFO sightings.
+  entailment:
+    label: entails
+    score: 0.828
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 25e791ba-62f1-4d75-8574-8396d38cd7a5
   type: observation
   attestation: second_hand
@@ -675,6 +786,11 @@ domain_claims:
     There are thousands of cases on record in the U.S., involve cigar-shaped objects, disks, hovering sometimes at very low altitude. There's a wide range of other phenomena. I won't take time to give you all the details. Many inexplicable, scientifically inexplicable, baffling phenomena, very high accelerations. sometimes high-speed objects moving without any obvious sonic booms, though I'd hasten to interject that sometimes there are unexplained sonic booms that could be UFOs, many peculiar luminous phenomena, and Some of them down in Australia will really baffle every scientist who ever takes a look at these.
   text: |-
     Some unidentified aerial phenomena move with very high accelerations and at high speeds, sometimes without obvious sonic booms.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 258b8d81-607f-477a-b4f2-4eccc5adfd87
   type: observation
   attestation: second_hand
@@ -694,6 +810,11 @@ domain_claims:
     many peculiar luminous phenomena, and Some of them down in Australia will really baffle every scientist who ever takes a look at these.
   text: |-
     Peculiar luminous phenomena have been reported in association with UFO sightings.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d38694c6-e3b6-4d31-8a2c-71e3e461543b
   type: opinion
   attestation: second_hand
@@ -714,6 +835,11 @@ domain_claims:
     experenced investigators such as those that have been working in Sydney and Melbourne and Tasmania and in other parts of the world, these are private investigating groups, not the official groups.
   text: |-
     Private investigating groups exist in Sydney, Melbourne, and Tasmania and are not the official groups.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0fb18b99-1e9f-49e6-abd9-64b638a0dead
   type: opinion
   attestation: second_hand
@@ -734,6 +860,11 @@ domain_claims:
   quote: |-
     the official groups, it's very hard to know what to say about them they come out with such outrageously absurd explanations that one is really hard put to know how to sort them
   text: Official explanations from the official groups are outrageously absurd.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d9a4a152-e6e2-4d1c-b1ce-66b499a810b3
   type: observation
   attestation: second_hand
@@ -755,6 +886,11 @@ domain_claims:
     There is expertise at the disposal of the American Air Force, but when you go digging, as I have, you find it just isn't being used and hasn't been used for 15 years. Project Blue Book consists of three people at present.
   text: |-
     The official Air Force investigation (Project Blue Book) has been in operation for about fourteen years.
+  entailment:
+    label: entails
+    score: 0.518
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26cfb93c-4507-4e21-abba-969a2e6bdb12
   type: observation
   attestation: second_hand
@@ -774,6 +910,11 @@ domain_claims:
   quote: American physicist Professor James E. MacDonald of the University of Arizona.
   text: |-
     James E. McDonald is an American physicist and professor at the University of Arizona.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 26e376f4-fad0-4a47-8c46-8cd4bb10838d
   type: observation
   attestation: second_hand
@@ -794,6 +935,11 @@ domain_claims:
   quote: |-
     what are these UFOs the ones that passed the test of not being put aside as fireballs and planets, so what could they be?
   text: Sightings discussed in the document are Unidentified Flying Object (UFO) cases.
+  entailment:
+    label: entails
+    score: 0.856
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a7d691fe-600f-4c25-ab25-2f06d6bb20c5
   type: hearsay
   attestation: third_hand
@@ -819,6 +965,11 @@ domain_claims:
     Only A Very Short Time Ago, A Very Interesting Statement Was Made By U Thant To Drew Pearson That The Problem Of The UFOs. Now this is the Secretary General of the United Nations speaking, saying that the problem of the UFOs is the greatest international problem second only to the present one of the Vietnam War.
   text: |-
     U Thant, the Secretary-General of the United Nations, told Drew Pearson that the problem of the UFOs is the greatest international problem, second only to the present one of the Vietnam War.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fddf9497-9319-4538-94cf-878601e42895
   type: testimony
   attestation: second_hand
@@ -842,4 +993,9 @@ domain_claims:
     I spoke along these lines only a short time ago this summer in the United Nations at the outer space affairs group presented a statement to the outer space affairs group urging immediate UN action on the problem was very pleased to see that it had some effect by the way I also sent copies of that statement to about 60 embassies in Washington, 60 foreign embassies, care of their scientific attachés, hoping to stimulate more interest in any and all parts of the world.
   text: |-
     James E. McDonald spoke at the United Nations, at the Outer Space Affairs Group, presenting a statement urging immediate UN action on the UFO problem, and he sent copies of that statement to about sixty embassies in Washington.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 run_kind: comparison

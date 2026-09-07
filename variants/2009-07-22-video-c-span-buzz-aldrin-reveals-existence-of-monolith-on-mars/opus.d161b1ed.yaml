@@ -10,6 +10,12 @@ ai_usage:
     output: 4116
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 4.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -100,6 +106,11 @@ domain_claims:
     habitation on the moon we can visit other people with their habitation we can keep track
   text: |-
     Buzz Aldrin considers that human habitation on the Moon would allow visits between separate habitations and the ability to keep track of one another.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c846a7b2-a776-45ec-9d21-3250c2d9c280
   type: opinion
   attestation: first_hand
@@ -123,6 +134,11 @@ domain_claims:
     if there's something very important to be developed from the moon i'm not sure what it is right now
   text: |-
     Buzz Aldrin is not certain what very important thing might be developed from the Moon.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9934be4d-2e7a-45a2-b82e-626477ea3fcf
   type: opinion
   attestation: first_hand
@@ -146,6 +162,11 @@ domain_claims:
     i sure think we should identify what it is for America to make such gross expenditures again for human habitation on the moon
   text: |-
     Buzz Aldrin believes what can be developed from the Moon should be identified before the United States makes gross expenditures again for human habitation on the Moon.
+  entailment:
+    label: entails
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 06b2c2ea-81fb-4a60-aa7b-ce166dea9add
   type: opinion
   attestation: first_hand
@@ -169,6 +190,11 @@ domain_claims:
     we can help we can join with together we can explore the moon and develop the moon
   text: |-
     Buzz Aldrin advocates joining together with others to explore and develop the Moon.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 462dbc7f-eb8b-4be9-803a-41b56eb82669
   type: opinion
   attestation: first_hand
@@ -187,6 +213,11 @@ domain_claims:
   quote: We should go boldly where man has not gone before.
   text: |-
     Buzz Aldrin advocates that humans should go boldly where man has not gone before.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9bc33e52-4781-4d15-82bb-334e76b5a71b
   type: opinion
   attestation: first_hand
@@ -204,6 +235,11 @@ domain_claims:
     name: Aldrin, Buzz
   quote: Fly by the comets, visit asteroids, visit the moon of Mars.
   text: Buzz Aldrin advocates flying by comets as a future spaceflight objective.
+  entailment:
+    label: entails
+    score: 0.69
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 599bb7ff-ef2b-4bdb-9e51-116b488899fd
   type: opinion
   attestation: first_hand
@@ -221,6 +257,11 @@ domain_claims:
     name: Aldrin, Buzz
   quote: Fly by the comets, visit asteroids, visit the moon of Mars.
   text: Buzz Aldrin advocates visiting asteroids as a future spaceflight objective.
+  entailment:
+    label: entails
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4d42d0e7-ab48-4738-b8ec-effba33c6090
   type: opinion
   attestation: first_hand
@@ -243,6 +284,11 @@ domain_claims:
   quote: Fly by the comets, visit asteroids, visit the moon of Mars.
   text: |-
     Buzz Aldrin advocates visiting Phobos, a moon of Mars, as a future spaceflight objective.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e10a12fb-85dd-4018-84d9-72dd3bee05b0
   type: testimony
   attestation: first_hand
@@ -267,6 +313,11 @@ domain_claims:
   quote: |-
     There's a monolith there, a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours.
   text: Buzz Aldrin asserts there is a monolith on Phobos, a moon of Mars.
+  entailment:
+    label: entails
+    score: 0.787
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: eae383d6-ddc6-4623-bd26-d5e181c7a1ff
   type: opinion
   attestation: first_hand
@@ -288,6 +339,11 @@ domain_claims:
     name: Phobos
   quote: a very unusual structure on this little potato-shaped object
   text: Buzz Aldrin describes the Phobos monolith as a very unusual structure.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9d230fe5-653d-4360-8030-ee3cd8c26dcf
   type: observation
   attestation: first_hand
@@ -305,6 +361,11 @@ domain_claims:
     name: Phobos
   quote: this little potato-shaped object
   text: Phobos is a small potato-shaped object.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 84bb8e02-7251-4d94-bb41-1274a083186f
   type: measurement
   attestation: first_hand
@@ -324,6 +385,11 @@ domain_claims:
     name: Mars
   quote: that goes around Mars once in seven hours
   text: Phobos orbits Mars once every seven hours.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9f7e9ad2-b527-43d4-bfed-3b5d208d4c74
   type: opinion
   attestation: first_hand
@@ -347,6 +413,11 @@ domain_claims:
     When people find out about that they're going to say, who put that there? Who put that there?
   text: |-
     Buzz Aldrin expects that when people find out about the monolith on Phobos they will ask who put it there.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b12b7cb2-4e31-4b2f-a0a5-f29d55932b0b
   type: opinion
   attestation: first_hand
@@ -369,3 +440,8 @@ domain_claims:
   quote: Well, the universe put it there. If you choose, God put it there.
   text: |-
     Buzz Aldrin holds that the universe put the monolith on Phobos there, or, if one chooses, God put it there.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

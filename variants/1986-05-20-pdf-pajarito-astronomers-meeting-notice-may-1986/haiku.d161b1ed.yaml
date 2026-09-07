@@ -9,6 +9,12 @@ ai_usage:
     output: 16453
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 4.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.9
 prompts:
 - pass: nodes
   id: nodes
@@ -84,6 +90,11 @@ domain_claims:
   quote: P.O. Box 1092, Los Alamos NM, 87544
   text: |-
     Pajarito Astronomers maintains a mailing address at P.O. Box 1092, Los Alamos, New Mexico 87544.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cf18435c-dcda-4fe3-a26a-b2e52b26bc46
   type: administrative
   attestation: second_hand
@@ -100,6 +111,11 @@ domain_claims:
     name: Club 1663
   quote: Sponsored by Club 1663
   text: Pajarito Astronomers is sponsored by Club 1663.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 37410249-3358-4d82-855a-296e5451b9cf
   type: administrative
   attestation: second_hand
@@ -116,6 +132,11 @@ domain_claims:
     name: Pajarito Astronomers Meeting - May 29, 1986
   quote: Our next meeting will be **Thursday, May 29, 1986**
   text: Pajarito Astronomers will hold a meeting on 1986-05-29.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d7a8106d-ef36-49ac-b3f6-ea0926539940
   type: administrative
   attestation: second_hand
@@ -133,6 +154,11 @@ domain_claims:
   quote: in the **Ranch Room at Fuller Lodge**
   text: |-
     The Pajarito Astronomers Meeting on 1986-05-29 will be held in the Ranch Room at Fuller Lodge.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e226f4ae-4bce-44fc-857b-7e1a7c364afc
   type: administrative
   attestation: second_hand
@@ -147,6 +173,11 @@ domain_claims:
     name: Pajarito Astronomers Meeting - May 29, 1986
   quote: at **7:30 p.m.**
   text: The Pajarito Astronomers Meeting on 1986-05-29 will commence at 19:30.
+  entailment:
+    label: contradicts
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 82f038a2-0526-46ee-bc5e-c093b941c0e4
   type: administrative
   attestation: second_hand
@@ -164,6 +195,11 @@ domain_claims:
   quote: Guest speaker will be **Dr. John Warren**
   text: |-
     Dr. John Warren will be the guest speaker at the Pajarito Astronomers Meeting on 1986-05-29.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 41c943d0-3d1f-45a0-ba4d-06699b156781
   type: administrative
   attestation: second_hand
@@ -180,6 +216,11 @@ domain_claims:
     name: AT-6
   quote: '**Dr. John Warren** of AT-6'
   text: Dr. John Warren is affiliated with AT-6.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2c526a99-94f6-4de0-96d5-690ec5e8e62e
   type: administrative
   attestation: second_hand
@@ -199,6 +240,11 @@ domain_claims:
   quote: whose topic will be "**Why Should a Scientist be Concerned about UFO's?**"
   text: |-
     Dr. John Warren's presentation at the Pajarito Astronomers Meeting on 1986-05-29 is titled 'Why Should a Scientist be Concerned about UFOs?'
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 87262950-792d-42f3-b4fd-681f7f584f96
   type: administrative
   attestation: second_hand
@@ -215,3 +261,8 @@ domain_claims:
     To find the Ranch Room, go around (outside) to the south end of the Lodge (facing Central Ave.), and go upstairs.
   text: |-
     The Ranch Room at Fuller Lodge is located at the south end of the building (facing Central Avenue) and is accessed by exiting the main building and proceeding upstairs.
+  entailment:
+    label: entails
+    score: 0.868
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

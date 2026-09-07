@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 8.4
 prompts:
 - pass: nodes
   id: nodes
@@ -162,6 +168,11 @@ domain_claims:
     name: OKAS
   quote: 'AT 0337Z {{redacted: 1.4a}} TOOK OFF FROM OKAS.'
   text: An aircraft on this mission took off from OKAS at 03:37 Zulu on 2020-08-08.
+  entailment:
+    label: entails
+    score: 0.812
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f17d69ae-65cf-40ea-bd3a-a5910e14e714
   type: administrative
   attestation: second_hand
@@ -174,6 +185,11 @@ domain_claims:
   quote: 'AT 0359Z, {{redacted: 1.4a}} HANDED OVER FROM THE LRE.'
   text: |-
     The aircraft was handed over from the Launch and Recovery Element at 03:59 Zulu on 2020-08-08.
+  entailment:
+    label: contradicts
+    score: 0.555
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ebc2e783-d7f4-43c9-8295-80f3e06ff862
   type: administrative
   attestation: second_hand
@@ -186,6 +202,11 @@ domain_claims:
   quote: 'FROM 0434Z TO 2300Z, {{redacted: 1.4a}} COLLECTED SIGINT VIA AIRHANDLER.'
   text: |-
     From 04:34 to 23:00 Zulu on 2020-08-08, the aircraft collected signals intelligence (SIGINT) via a system called Airhandler.
+  entailment:
+    label: entails
+    score: 0.704
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9e22d52-ac74-40f2-a376-f73e9e181b6d
   type: administrative
   attestation: second_hand
@@ -208,6 +229,11 @@ domain_claims:
     FROM 0513Z TO 2256Z, {{redacted: 1.4a}} SUPPORTED NAVCENT TO OPERATION {{redacted: 1.4a}} IVO ARABIAN GULF, STRAIT OF HORMUZ AND GULF OF OMAN.
   text: |-
     From 05:13 to 22:56 Zulu on 2020-08-08, the aircraft supported United States Naval Forces Central Command (NAVCENT) in the vicinity of the Arabian Gulf, Strait of Hormuz and Gulf of Oman.
+  entailment:
+    label: entails
+    score: 0.508
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 00c73c10-abb1-4d94-a58b-17e6e8b38c23
   type: observation
   provenance_chain:
@@ -222,6 +248,11 @@ domain_claims:
   quote: 'AT 0726Z, {{redacted: 1.4a}} OBSERVED NOTEWORTHY ACTIVITY. SEE OBS LINE 1.'
   text: |-
     During the 2020-08-08 Arabian Gulf UAP Observation, the aircrew observed noteworthy activity at 07:26 Zulu.
+  entailment:
+    label: neutral
+    score: 0.59
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e552e050-ade4-489d-8904-dc62edc17ce4
   type: administrative
   attestation: second_hand
@@ -233,6 +264,11 @@ domain_claims:
   date: '2020-08-08'
   quote: 'AT 2256Z, {{redacted: 1.4a}} WAS CLEARED TO RTB.'
   text: The aircraft was cleared to return to base (RTB) at 22:56 Zulu on 2020-08-08.
+  entailment:
+    label: contradicts
+    score: 0.601
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 87cd51d8-e48b-4bf8-8c38-8d561ca13a40
   type: administrative
   attestation: second_hand
@@ -245,6 +281,11 @@ domain_claims:
   quote: 'AT 0017Z, {{redacted: 1.4a}} HANDED BACK TO THE LRE.'
   text: |-
     The aircraft was handed back to the Launch and Recovery Element at 00:17 Zulu on 2020-08-09.
+  entailment:
+    label: contradicts
+    score: 0.594
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc364011-e478-4da6-b4b8-87ebe7b271ba
   type: administrative
   attestation: second_hand
@@ -259,6 +300,11 @@ domain_claims:
     name: OKAS
   quote: 'AT 0045Z, {{redacted: 1.4a}} LANDED AT OKAS.'
   text: The aircraft landed at OKAS at 00:45 Zulu on 2020-08-09.
+  entailment:
+    label: contradicts
+    score: 0.56
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b8321f0c-9c6a-49b5-949c-55006c0e04ec
   type: administrative
   attestation: second_hand
@@ -274,6 +320,11 @@ domain_claims:
   quote: FMV WAS EXPLOITED BY DGS1.
   text: |-
     Full-motion video (FMV) from this mission was exploited by Distributed Ground Station 1 (DGS-1).
+  entailment:
+    label: entails
+    score: 0.709
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1624bec1-9e70-4c8d-98ef-8792b173a019
   type: measurement
   attestation: second_hand
@@ -285,6 +336,11 @@ domain_claims:
   date: '2020-08-08'
   quote: 20.3 MISSION HOURS
   text: The mission lasted 20.3 mission hours.
+  entailment:
+    label: entails
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 38bf1469-9b55-45d3-b60a-0cd6a8706a90
   type: measurement
   attestation: second_hand
@@ -297,6 +353,11 @@ domain_claims:
   quote: 17.7 IMINT HOURS, 1 IMINT TASKING PROSECUTED
   text: |-
     The mission logged 17.7 imagery intelligence (IMINT) hours with 1 IMINT tasking prosecuted.
+  entailment:
+    label: entails
+    score: 0.571
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fe33d573-f1d0-4105-a0ab-d70064fc9381
   type: measurement
   attestation: second_hand
@@ -309,6 +370,11 @@ domain_claims:
   quote: 18.4 SIGINT HOURS, 1 SIGINT TASKING PROSECUTED, 2 TOTAL TASKINGS PROSECUTED
   text: |-
     The mission logged 18.4 signals intelligence (SIGINT) hours with 1 SIGINT tasking prosecuted, for a total of 2 taskings prosecuted.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6458e4f2-96f8-4c2c-b76b-f4122bb0d0ad
   type: administrative
   attestation: second_hand
@@ -319,6 +385,11 @@ domain_claims:
   location: char:1011-1047
   quote: '**Declassification Date (YYYYMMDD):** 20450301'
   text: This Mission Report has a declassification date of 2045-03-01.
+  entailment:
+    label: contradicts
+    score: 0.505
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 631b8362-9dfe-4039-89c5-d5c31dfec07b
   type: administrative
   attestation: second_hand
@@ -329,6 +400,11 @@ domain_claims:
   location: char:933-999
   quote: '**Classification Source (MS or Classification Guide ID):** MULTIPLE SOURCES'
   text: This Mission Report's classification source is listed as multiple sources.
+  entailment:
+    label: entails
+    score: 0.71
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 703ebce9-682d-4981-8cdf-b9633860ce93
   type: administrative
   attestation: second_hand
@@ -339,6 +415,11 @@ domain_claims:
   location: char:1112-1122
   quote: '**Domain:** AIR'
   text: The operation associated with this mission was conducted in the AIR domain.
+  entailment:
+    label: entails
+    score: 0.552
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0eca8c06-267a-4956-9cda-5bbc410fbf9e
   type: administrative
   attestation: second_hand
@@ -353,6 +434,11 @@ domain_claims:
   quote: '**Operations Center:** 609th'
   text: |-
     The operations centre for this mission was the 609th Air Operations Center (609 AOC).
+  entailment:
+    label: entails
+    score: 0.517
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 98e1361c-6e8a-4e79-b427-5b1043c48405
   type: administrative
   attestation: second_hand
@@ -366,6 +452,11 @@ domain_claims:
     name: Air Combat Command (ACC)
   quote: '**Major Command (MAJCOM):** ACC'
   text: The major command for this mission was Air Combat Command (ACC).
+  entailment:
+    label: entails
+    score: 0.445
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f4dde4ed-40db-43b6-bfe0-bf101afc54d2
   type: administrative
   attestation: second_hand
@@ -380,6 +471,11 @@ domain_claims:
   quote: '**Combatant Command (COCOM):** USCENTCOM'
   text: |-
     The combatant command for this mission was United States Central Command (USCENTCOM).
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 240f782f-f700-4839-8773-012b2a6385c7
   type: administrative
   attestation: second_hand
@@ -390,6 +486,11 @@ domain_claims:
   location: char:1250-1265
   quote: '**Report Type:** MISREP'
   text: This report is a Mission Report (MISREP).
+  entailment:
+    label: entails
+    score: 0.496
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 897a2acf-8e2d-4359-8995-c5722c2152da
   type: administrative
   attestation: second_hand
@@ -403,6 +504,11 @@ domain_claims:
     name: 482nd Attack Squadron (482ATKS)
   quote: '**Originator (Unit or Sqnadron):** 482ATKS'
   text: This Mission Report was originated by the 482nd Attack Squadron (482ATKS).
+  entailment:
+    label: entails
+    score: 0.471
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b61629c3-d3de-4bb5-b76a-57bf658a3261
   type: administrative
   attestation: second_hand
@@ -413,6 +519,11 @@ domain_claims:
   location: char:1475-1491
   quote: '**Mission Type:** AREC'
   text: The mission type for this Air Tasking Order entry was AREC.
+  entailment:
+    label: entails
+    score: 0.65
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1efb9030-c66c-4993-b1dd-1c0ec945220f
   type: administrative
   attestation: second_hand
@@ -423,6 +534,11 @@ domain_claims:
   location: char:1545-1575
   quote: '**Country Tasked:** US - UNITED STATES'
   text: The tasked country for this mission was the United States.
+  entailment:
+    label: entails
+    score: 0.885
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5e6d3530-1b9f-46d4-bea4-b718bc0fc9cc
   type: administrative
   attestation: second_hand
@@ -433,6 +549,11 @@ domain_claims:
   location: char:1586-1612
   quote: '**Service Tasked:** A - AIR FORCE'
   text: The tasked service for this mission was the Air Force.
+  entailment:
+    label: entails
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 617745b9-f03d-49ef-9591-376546e806fd
   type: administrative
   attestation: second_hand
@@ -452,6 +573,11 @@ domain_claims:
     **Rank:** SrA ... **Unit:** 482ATKS ... **Wing:** 432 AEW ... **Service:** Air Force ... **Operations Center:** 603 AOC
   text: |-
     The point of contact for this mission held the rank of Senior Airman (SrA) and belonged to the 482nd Attack Squadron (482ATKS), the 432nd Air Expeditionary Wing (432 AEW), Air Force, and worked in the 603rd Air Operations Center (603 AOC).
+  entailment:
+    label: entails
+    score: 0.552
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 37d8ebd4-4c62-4c99-bedb-e22cc6faabb7
   type: administrative
   attestation: second_hand
@@ -466,6 +592,11 @@ domain_claims:
   quote: '**Rank:** Ctr ... **Unit:** PAROC IDAT ... **Service:** Air Force'
   text: |-
     The quality control reviewer for this Mission Report held the rank of Contractor (Ctr) and belonged to PAROC IDAT, Air Force.
+  entailment:
+    label: entails
+    score: 0.381
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 488e2803-d3c5-489b-bb70-971ec2b87e36
   type: administrative
   attestation: second_hand
@@ -481,6 +612,11 @@ domain_claims:
     **Rank:** 1st Lt ... **Unit:** 609th AOC ... **Service:** Air Force ... **Operations Center:** 609 CAOC
   text: |-
     The approver of this Mission Report held the rank of 1st Lieutenant and belonged to the 609th Air Operations Center (609 AOC), Air Force.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a46c46ff-8e44-414c-a649-81f6f068ba65
   type: administrative
   attestation: second_hand
@@ -495,6 +631,11 @@ domain_claims:
     name: ANDAS4 targeting pod
   quote: '**TGT Pod Name or Designator:** ANDAS4'
   text: The targeting pod fitted to the aircraft on this mission was named ANDAS4.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 342334bd-cf67-4f98-9f61-fbfc2feb01a2
   type: administrative
   attestation: second_hand
@@ -510,6 +651,11 @@ domain_claims:
   quote: '**Additional Avionics:** AH_GMESH'
   text: |-
     The additional avionics fitted to the aircraft on this mission included the AH_GMESH sensor system.
+  entailment:
+    label: entails
+    score: 0.465
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 567a8461-f97a-4e8d-bc3c-8933f800c9e1
   type: administrative
   attestation: second_hand
@@ -524,6 +670,11 @@ domain_claims:
     name: OKAS
   quote: '**Last Land Location (ICAO Code):** OKAS'
   text: The aircraft's last landing location on this mission was OKAS.
+  entailment:
+    label: entails
+    score: 0.634
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: db565d8b-4864-416a-8a5f-7246de957470
   type: administrative
   attestation: second_hand
@@ -535,6 +686,11 @@ domain_claims:
   date: '2020-08-09'
   quote: '**Last Land Time:** 090045:00ZAUG20'
   text: The aircraft's last land time on this mission was 00:45 Zulu on 2020-08-09.
+  entailment:
+    label: entails
+    score: 0.555
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 31f79148-70a3-4008-93c2-12134d72c7fa
   type: administrative
   attestation: second_hand
@@ -547,6 +703,11 @@ domain_claims:
   quote: '**Last Engine Shutdown Time:** 090055:00ZAUG20'
   text: |-
     The aircraft's last engine shutdown time on this mission was 00:55 Zulu on 2020-08-09.
+  entailment:
+    label: entails
+    score: 0.569
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 40c0a129-a0b3-4675-82d0-679c355590ff
   type: measurement
   attestation: second_hand
@@ -558,6 +719,11 @@ domain_claims:
   date: '2020-08-08'
   quote: '**Total Mission Time:** 21 hours 8 minutes'
   text: The total mission time for this mission was 21 hours 8 minutes.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 77c07755-322c-48b3-9474-af82a3df84d5
   type: administrative
   attestation: second_hand
@@ -574,6 +740,11 @@ domain_claims:
     **GUARDCALL DTG:** 081250:00ZAUG20 ... **Ground Station Callsign:** IRANIAN AIR DEFENSE GUARD
   text: |-
     At 12:50 Zulu on 2020-08-08, the aircraft was hailed on the guard frequency by a ground station identified as Iranian Air Defense.
+  entailment:
+    label: entails
+    score: 0.952
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2889401e-7df8-4e08-a589-4153ba78daaa
   type: measurement
   attestation: second_hand
@@ -587,6 +758,11 @@ domain_claims:
     **Aircraft Heading:** HDG 200 ... **Aircraft Altitude:** FL 170 ... **Aircraft Airspeed:** 110 KIAS
   text: |-
     At the time of this guard call, the aircraft was heading 200 degrees, at flight level 170, with an airspeed of approximately 200 kilometres per hour.
+  entailment:
+    label: entails
+    score: 0.821
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 19dc1c85-9827-42d0-8640-6edc2dc9b041
   type: observation
   provenance_chain:
@@ -602,6 +778,11 @@ domain_claims:
     **Number of Calls Noted from the Same Agency:** 1 ... **Guardcall Tone:** PROFESSIONAL
   text: |-
     There was 1 call noted from the Iranian Air Defense agency during this guard call event, and the tone of the guard call was assessed as professional.
+  entailment:
+    label: entails
+    score: 0.708
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c1d95852-7b71-4aa0-8c5b-d832f29de894
   type: administrative
   attestation: second_hand
@@ -618,6 +799,11 @@ domain_claims:
     AT 1250Z, {{redacted: 1.4a}} WAS HAILED ON GUARD {{redacted: 1.4a}} BY IRANIAN AIR DEFENSE. ORDERS GIVEN: STANDARD CALL. {{redacted: 1.4a}} RESPONDED STANDARD RESPONSE. NO IMPACT TO THE MISSION
   text: |-
     At 12:50 Zulu on 2020-08-08, the aircraft was hailed on the guard frequency by Iranian Air Defense, which gave a standard call, to which the aircraft gave the standard response, with no impact to the mission.
+  entailment:
+    label: entails
+    score: 0.782
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d8666160-e42b-4712-af9b-785cc9fbdeca
   type: observation
   provenance_chain:
@@ -632,6 +818,11 @@ domain_claims:
   quote: '**Observation DTG:** 080726:00ZAUG20'
   text: |-
     During the 2020-08-08 Arabian Gulf UAP Observation, the observation date-time group was recorded as 07:26 Zulu on 2020-08-08.
+  entailment:
+    label: entails
+    score: 0.924
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f5c3b92a-1498-47d5-9c8a-1bf58fcdceb1
   type: observation
   provenance_chain:
@@ -647,6 +838,11 @@ domain_claims:
     **Observed Activity Description:** TRANSITTING ... **Method of Observation:** FMV
   text: |-
     During the 2020-08-08 Arabian Gulf UAP Observation, the observed activity was described as transiting, using full-motion video (FMV) as the method of observation.
+  entailment:
+    label: entails
+    score: 0.873
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 11775af9-938c-493a-aad6-46020ef265ee
   type: observation
   provenance_chain:
@@ -664,6 +860,11 @@ domain_claims:
     AT 0726Z, {{redacted: 1.4a}} OBSERVED 1X UAP IVO 39RWL08{{redacted: 1.4a}}52{{redacted: 1.4a}} NO IMPACT TO MISSION.
   text: |-
     During the 2020-08-08 Arabian Gulf UAP Observation, the aircrew observed one Unidentified Aerial Phenomena (UAP) at 07:26 Zulu on 2020-08-08, with no impact to the mission.
+  entailment:
+    label: entails
+    score: 0.662
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7548138f-996d-4f5b-a0bc-8f46487f4e61
   type: observation
   provenance_chain:
@@ -674,6 +875,11 @@ domain_claims:
   date: '2020-08-08'
   quote: '**Weather:** WEATHER WAS NOT A FACTOR'
   text: During this mission, weather was not a factor.
+  entailment:
+    label: entails
+    score: 0.522
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 012004df-86af-4a61-923f-03acf541b4b6
   type: administrative
   attestation: second_hand
@@ -688,6 +894,11 @@ domain_claims:
     name: OKAS
   quote: '**Takeoff Location (ICAO Code):** OKAS ... **Takeoff Time DTG:** 080337:00ZAUG20'
   text: The aircraft took off from OKAS at 03:37 Zulu on 2020-08-08.
+  entailment:
+    label: entails
+    score: 0.498
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3bf208b3-5dcd-480e-b250-97a348f9439a
   type: administrative
   attestation: second_hand
@@ -699,6 +910,11 @@ domain_claims:
   date: '2020-08-08'
   quote: '**Number of Aircraft:** 1'
   text: The mission's takeoff involved a single aircraft.
+  entailment:
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8098dc3e-5dab-4a15-96b1-9f7c74a50a16
   type: administrative
   attestation: second_hand
@@ -711,6 +927,11 @@ domain_claims:
   quote: '**Time On Station DTG:** 080359:00ZAUG20 ... **Mission Type:** AREC'
   text: |-
     The aircraft came on station at 03:59 Zulu on 2020-08-08 for a mission of type AREC.
+  entailment:
+    label: entails
+    score: 0.503
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c8c62f72-8072-4862-a8c1-c520304b7979
   type: administrative
   attestation: second_hand
@@ -724,6 +945,11 @@ domain_claims:
     **Time-on Station DTG:** 080513:00ZAUG20 ... **Time-off Station DTG:** 082256:00ZAUG20
   text: |-
     The aircraft was on intelligence, surveillance and reconnaissance (ISR) station from 05:13 Zulu to 22:56 Zulu on 2020-08-08.
+  entailment:
+    label: contradicts
+    score: 0.81
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f28bce1d-edd6-43c7-86f6-a1f692962687
   type: administrative
   attestation: second_hand
@@ -738,6 +964,11 @@ domain_claims:
     name: ANDAS4 targeting pod
   quote: '**Primary Sensor:** ANDAS4'
   text: The primary sensor used during the ISR tasking on this mission was ANDAS4.
+  entailment:
+    label: entails
+    score: 0.812
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef5c574a-b4b1-4671-8b91-d436e29e717c
   type: administrative
   attestation: second_hand
@@ -752,6 +983,11 @@ domain_claims:
     name: AH_GMESH sensor system
   quote: '**Sensors Available:** AH\GMESH'
   text: The sensors available during the ISR tasking on this mission included AH_GMESH.
+  entailment:
+    label: entails
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: baf6ec81-4002-479c-8b70-67b3fbeab26c
   type: administrative
   attestation: second_hand
@@ -768,6 +1004,11 @@ domain_claims:
     {{redacted: 1.4a}} COORDINATED WITH NAVCENT 24 HOURS PRIOR TO TAKE OFF. PRECOORD WAS SATISFACTORY.
   text: |-
     The aircraft coordinated with United States Naval Forces Central Command (NAVCENT) 24 hours prior to take off, and the pre-coordination was assessed as satisfactory.
+  entailment:
+    label: entails
+    score: 0.754
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5a99f79a-7d6d-486b-a922-da727a9d8ae2
   type: administrative
   attestation: second_hand
@@ -784,6 +1025,11 @@ domain_claims:
     AT 0513Z, {{redacted: 1.4a}} ARRIVED ON STATION ISO NAVCENT TO OPERATION {{redacted: 1.4a}} TO CONDUCT SCANS FOR IDENTIFIED IRIN\IRGCN VESSELS TO ESTABLISH PATTERN OF LIFE, UAS ACTIVITY AND CHARACTERIZE ACTIVITY OUTSIDE OF PORTS.
   text: |-
     At 05:13 Zulu on 2020-08-08, the aircraft arrived on station in support of United States Naval Forces Central Command (NAVCENT) to conduct scans for identified Islamic Republic of Iran Navy (IRIN) and Islamic Revolutionary Guard Corps Navy (IRGCN) vessels, to establish a pattern of life, unmanned aircraft system (UAS) activity, and to characterise activity outside of ports.
+  entailment:
+    label: entails
+    score: 0.806
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 92da842f-60b8-4234-ad3f-f27aa98092a7
   type: administrative
   attestation: second_hand
@@ -800,6 +1046,11 @@ domain_claims:
     FROM 0513Z TO 2256Z, {{redacted: 1.4a}} CONDUCTED SCANS IAW THE TARGET DECK IN THE ARABIAN GULF (AG).
   text: |-
     From 05:13 to 22:56 Zulu on 2020-08-08, the aircraft conducted scans in accordance with the target deck in the Arabian Gulf.
+  entailment:
+    label: entails
+    score: 0.489
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4733a200-3e37-4437-b60f-e6da5465289a
   type: administrative
   attestation: second_hand
@@ -812,6 +1063,11 @@ domain_claims:
   quote: 'AT 2256Z, {{redacted: 1.4a}} WAS CLEARED OFF TASKING AND RETURNED TO BASE (RTB)'
   text: |-
     At 22:56 Zulu on 2020-08-08, the aircraft was cleared off tasking and returned to base.
+  entailment:
+    label: entails
+    score: 0.539
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bfdfab78-c239-4f5a-ae96-9f16e1dc12e4
   type: administrative
   attestation: second_hand
@@ -827,6 +1083,11 @@ domain_claims:
   quote: '**Supported Unit:** NAVCENT'
   text: |-
     The unit supported by this ISR mission was United States Naval Forces Central Command (NAVCENT).
+  entailment:
+    label: entails
+    score: 0.92
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31ee81fe-7310-4c23-97a7-01603b639e7b
   type: administrative
   attestation: second_hand
@@ -839,6 +1100,11 @@ domain_claims:
   quote: '**Precoord Time:** 24 HOURS ... **Precoord Effectiveness:** SATISFACTORY'
   text: |-
     The pre-coordination time for this ISR tasking was 24 hours, and its effectiveness was rated satisfactory.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aa7b2262-9429-4c74-8498-e45c12c1a4a5
   type: observation
   provenance_chain:
@@ -850,6 +1116,11 @@ domain_claims:
   quote: '**Weather:** DENSE CLOUD COVERAGE INTERMITTANTLY IMPACTED FMV COLLECTION'
   text: |-
     Dense cloud coverage intermittently impacted full-motion video (FMV) collection during this mission.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ac605680-0196-4a12-a901-b71a732c6f00
   type: administrative
   attestation: second_hand
@@ -861,6 +1132,11 @@ domain_claims:
   date: '2020-08-08'
   quote: '**Intel Gap Filled?:** No'
   text: For this mission, no intelligence gap was noted as filled.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 66d4bdde-af9e-4021-8055-7624b96ffbe9
   type: measurement
   attestation: second_hand
@@ -874,3 +1150,8 @@ domain_claims:
     **Time Off Station DTG:** 090017:00ZAUG20 ... **Total Time On Station:** 20 hours 18 minutes
   text: |-
     The aircraft went off station at 00:17 Zulu on 2020-08-09, with a total time on station of 20 hours 18 minutes.
+  entailment:
+    label: entails
+    score: 0.488
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

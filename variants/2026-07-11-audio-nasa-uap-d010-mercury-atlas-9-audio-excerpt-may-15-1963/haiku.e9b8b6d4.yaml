@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.3
 prompts:
 - pass: nodes
   id: nodes
@@ -96,6 +102,11 @@ domain_claims:
     And now at one hour at this time, I now have one hour and 21 minutes, and I am observing John's fireflies drifting away from me. I can observe them departing from the spacecraft.
   text: |-
     Gordon Cooper observed luminous objects drifting away from the spacecraft during the Mercury-Atlas 9 mission.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 80f2e211-0507-40fc-8820-1464533a1e40
   type: observation
   attestation: first_hand
@@ -119,6 +130,11 @@ domain_claims:
     and drifting out to the rear. I can see some of them. A considerable distance out to the rear.
   text: |-
     The luminous objects drifted out to the rear of the spacecraft at a considerable distance.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8b859e9c-c623-4374-8049-8513892bc75b
   type: observation
   attestation: first_hand
@@ -142,6 +158,11 @@ domain_claims:
     Fireflies appear to be white, very whitish, with almost a green like rail fireflies.
   text: |-
     The luminous objects appeared white or whitish in colour, with an almost green tint, resembling fireflies.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9dc8ba12-2e0b-42b0-a976-c1949b4999bc
   type: observation
   attestation: first_hand
@@ -164,6 +185,11 @@ domain_claims:
   quote: Clouds on the Earth below are changing color, are getting quite light.
   text: |-
     Clouds on Earth below changed colour and became increasingly bright during the mission.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4a203a86-3e56-46da-96b8-0256e9ebf704
   type: observation
   attestation: first_hand
@@ -187,6 +213,11 @@ domain_claims:
     The sun is coming up behind me. I'm beginning to get the glow on the clouds. I am now on the day side. The sun is not yet quite up.
   text: |-
     Gordon Cooper observed the sun rising behind the spacecraft as he transitioned from night side to day side of Earth.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8229c473-0eef-4337-9b64-0cfc7f4e3c55
   type: observation
   attestation: first_hand
@@ -210,3 +241,8 @@ domain_claims:
     I am observing stars. The Earth is light below me. The sun is still behind me. The sky looks dark above me, and I can see stars very distinctly.
   text: |-
     Stars remained distinctly visible from the spacecraft despite approaching daylight.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

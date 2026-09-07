@@ -10,6 +10,12 @@ ai_usage:
     input: 13182
     output: 4413
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.8
 prompts:
 - pass: nodes
   id: nodes
@@ -91,6 +97,11 @@ domain_claims:
     habitation on the moon we can visit other people with their habitation we can keep track if there's something very important to be developed from the moon i'm not sure what it is right now and i sure think we should identify what it is for America to make such gross expenditures again for human habitation on the moon
   text: |-
     Buzz Aldrin considers that human habitation on Earth's Moon would allow people to visit others' habitations and keep track of developments, but is unsure what important development from Earth's Moon would justify America making gross expenditures for it.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dadf9768-0782-4bcc-b6fc-ca64e3e6ed63
   type: opinion
   attestation: first_hand
@@ -110,6 +121,11 @@ domain_claims:
   quote: we can join with together we can explore the moon and develop the moon
   text: |-
     Buzz Aldrin believes humanity should explore and develop Earth's Moon cooperatively.
+  entailment:
+    label: entails
+    score: 0.697
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 75604b77-028d-417e-b7e8-3e694c29667f
   type: opinion
   attestation: first_hand
@@ -127,6 +143,11 @@ domain_claims:
   quote: We should go boldly where man has not gone before.
   text: |-
     Buzz Aldrin advocates that humanity should go boldly where man has not gone before.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7d05af44-72e8-4061-a01a-bbfbbc386e03
   type: opinion
   attestation: first_hand
@@ -143,6 +164,11 @@ domain_claims:
     name: Aldrin, Buzz
   quote: Fly by the comets, visit asteroids, visit the moon of Mars.
   text: Buzz Aldrin advocates fly-bys of comets.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cd2734ff-25f3-49da-994d-be39354ec1b4
   type: opinion
   attestation: first_hand
@@ -159,6 +185,11 @@ domain_claims:
     name: Aldrin, Buzz
   quote: Fly by the comets, visit asteroids, visit the moon of Mars.
   text: Buzz Aldrin advocates visiting asteroids.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4c61d4a1-83af-44fb-985d-55e26de8662d
   type: opinion
   attestation: first_hand
@@ -179,6 +210,11 @@ domain_claims:
     name: Mars
   quote: visit the moon of Mars
   text: Buzz Aldrin advocates visiting the moon of Mars, Phobos.
+  entailment:
+    label: neutral
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2b8f1254-eb2b-4a71-aa0c-a7bec9b97f10
   type: observation
   attestation: first_hand
@@ -203,6 +239,11 @@ domain_claims:
     There's a monolith there, a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours.
   text: |-
     There is a Phobos Monolith on Phobos, described by Buzz Aldrin as a very unusual structure.
+  entailment:
+    label: entails
+    score: 0.613
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6ce94b34-7e69-45b7-9041-e3517abb68c0
   type: observation
   attestation: first_hand
@@ -224,6 +265,11 @@ domain_claims:
   quote: this little potato-shaped object that goes around Mars once in seven hours
   text: |-
     Buzz Aldrin describes Phobos as a little potato-shaped object that goes around Mars once in seven hours.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1bc12496-f890-4f26-8bb9-7277ddeaa013
   type: opinion
   attestation: first_hand
@@ -245,6 +291,11 @@ domain_claims:
     Who put that there?
   text: |-
     Buzz Aldrin predicts that when people find out about the Phobos Monolith they will ask who put it there.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5b363c4c-9a09-4d4c-91d1-a3ed5ff2142e
   type: opinion
   attestation: first_hand
@@ -263,6 +314,11 @@ domain_claims:
     name: Phobos Monolith
   quote: Well, the universe put it there.
   text: Buzz Aldrin considers that the universe put the Phobos Monolith there.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4f650171-e8b0-4e26-b80e-18e4e8bdca65
   type: opinion
   attestation: first_hand
@@ -281,6 +337,11 @@ domain_claims:
     name: Phobos Monolith
   quote: If you choose, God put it there.
   text: Buzz Aldrin offers that, if one chooses, God put the Phobos Monolith there.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: e4fd48d8-c776-40a9-85d3-2b8848e8230d
   type: administrative
@@ -300,6 +361,11 @@ infrastructure_claims:
   quote: 'C-SPAN: Buzz Aldrin Reveals Existence of Monolith on Mars Moon (2009-07-22)'
   text: |-
     On 2009-07-22, Cable-Satellite Public Affairs Network (C-SPAN) broadcast the video titled "Buzz Aldrin Reveals Existence of Monolith on Mars Moon".
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 42ae4986-d8a9-4833-a478-7d8f3f6945d0
   type: administrative
   attestation: second_hand
@@ -320,3 +386,8 @@ infrastructure_claims:
   quote: 'speaker: Buzz Aldrin'
   text: |-
     Buzz Aldrin appeared in the C-SPAN video titled "Buzz Aldrin Reveals Existence of Monolith on Mars Moon" dated 2009-07-22.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

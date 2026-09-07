@@ -9,6 +9,12 @@ ai_usage:
     output: 144654
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 16.2
 prompts:
 - pass: nodes
   id: nodes
@@ -391,6 +397,11 @@ domain_claims:
     You got into, you came into, uh, our project in 2023. I got to meet you in 2023. You reached out on Instagram
   text: |-
     Luigi Vendittelli first connected with Chris Ramsay's project in 2023 after reaching out on Instagram.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e7a01ad7-b6b3-4189-be8d-1995ec16da86
   type: administrative
   attestation: first_hand
@@ -407,6 +418,11 @@ domain_claims:
     name: Vendittelli, Luigi
   quote: I'm 51 I just turned 51 three days ago
   text: Luigi Vendittelli turned 51 years old three days before this recording.
+  entailment:
+    label: entails
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 17aff3d0-b543-4c8f-9846-a6c37a1d866f
   type: administrative
   attestation: first_hand
@@ -426,6 +442,11 @@ domain_claims:
     name: 'S4: The Bob Lazar Story'
   quote: I started this in 2021 and did not know what I was going to get myself into
   text: 'Luigi Vendittelli began the S4: The Bob Lazar Story project in 2021.'
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 271d11cb-938c-45c2-a3b3-a9845ba0c86d
   type: administrative
   attestation: first_hand
@@ -446,6 +467,11 @@ domain_claims:
     how much are you in do you think like conservatively in this project out of your own pocket / two million / so two million dollars out of your own pocket / yeah
   text: |-
     Luigi Vendittelli spent approximately two million US dollars of his own money making S4: The Bob Lazar Story.
+  entailment:
+    label: entails
+    score: 0.541
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8b860801-c987-418e-8990-a089c7702a3c
   type: opinion
   attestation: first_hand
@@ -464,6 +490,11 @@ domain_claims:
     the fear that he has, a real fear of not remembering this stuff. It's an insecurity he has, and rightfully so, because it's one of the reasons why he is reluctant to talk about it
   text: |-
     Bob Lazar has a fear of not remembering details of his story, which contributes to his reluctance to talk about his experiences.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e7af112b-475e-4163-b244-5497e8ae6fdb
   type: opinion
   attestation: first_hand
@@ -484,6 +515,11 @@ domain_claims:
     I think that fear comes from not because he can't remember. I think he I don't even call it fear. I think it's PTSD.
   text: |-
     Luigi Vendittelli believes Bob Lazar's fear of forgetting details stems from post-traumatic stress disorder (PTSD) rather than simple memory issues.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 91a4616a-a305-4ede-bc9f-a3ec6b0c0e0e
   type: testimony
   attestation: first_hand
@@ -506,6 +542,11 @@ domain_claims:
     if I said, uh, how far do you think the doors were from the hill by the Papoose mountain range?
   text: |-
     Luigi Vendittelli asked Bob Lazar how far the hangar doors were from the hill near the Papoose Mountain Range as a test of his memory for accuracy.
+  entailment:
+    label: contradicts
+    score: 0.902
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 336f3b4f-e498-4648-8e0b-d53e7910dbdd
   type: testimony
   attestation: first_hand
@@ -526,6 +567,11 @@ domain_claims:
     I started pretending that I was Bob Lazar and people would start asking me questions about my high school... what was the color of your locker
   text: |-
     Luigi Vendittelli tested people's ability to recall details about their own past, such as asking about the colour of their high school locker, to demonstrate that failing to remember specific facts is not evidence of dishonesty about the Bob Lazar story.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a1f2a32-23e0-410c-89d4-8330dff9b765
   type: administrative
   attestation: first_hand
@@ -546,6 +592,11 @@ domain_claims:
     Go watch it on Amazon or go to WeAreNotAlone.com. This is Luigi's brand new platform where he'll be bringing not only behind the scenes, completely unedited interviews
   text: |-
     WeAreNotAlone.com (WANA) is a new platform created by Luigi Vendittelli that will feature unedited behind-the-scenes interviews and other UFO-related content.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f02f765d-536d-49c3-a21a-62e6642a0486
   type: administrative
   attestation: first_hand
@@ -564,6 +615,11 @@ domain_claims:
     Movies from different production companies, different directors. It's a brand new venture.
   text: |-
     WeAreNotAlone.com will feature movies and content from different production companies and directors covering UFO topics.
+  entailment:
+    label: entails
+    score: 0.623
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9682f34e-7e03-4f2a-a05a-6d700c156d83
   type: administrative
   attestation: first_hand
@@ -582,6 +638,11 @@ domain_claims:
     name: Mutual UFO Network (MUFON)
   quote: the fact that you, sir, were an investigator for MUFON. / I was.
   text: Luigi Vendittelli was an investigator for the Mutual UFO Network (MUFON).
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dd44804a-7f8f-4b14-ad02-74ae069f34bc
   type: administrative
   attestation: second_hand
@@ -603,6 +664,11 @@ domain_claims:
   quote: you are officially the youngest member of MUFON in the world.
   text: |-
     Luigi Vendittelli was the youngest member of the Mutual UFO Network (MUFON) at the time he joined.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4cab9644-f9b7-4ec7-9305-4083400394d5
   type: administrative
   attestation: first_hand
@@ -626,6 +692,11 @@ domain_claims:
     That was back in 19, I still struggle to know if it was 1987 or 88. I do think it was 87 because I remember Gulf Breeze was 87. So I remember it specifically because of that, because it was an active case when I became a member of MUFON.
   text: |-
     Luigi Vendittelli joined the Mutual UFO Network (MUFON) around 1987, during the time of the 1987 Gulf Breeze UFO sightings.
+  entailment:
+    label: entails
+    score: 0.799
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9af0331f-fe6b-418f-b0a5-4eaf1536e7a5
   type: testimony
   attestation: first_hand
@@ -650,6 +721,11 @@ domain_claims:
     At the time, I went to Plattsburgh, New York with my mom, my grandmother, my sister. We used to go there from Montreal to go shopping. And it was the first time I found anything about a like flying saucers
   text: |-
     Luigi Vendittelli first discovered printed material about UFOs and flying saucers, including a MUFON membership application, while visiting Plattsburgh, New York with his mother, grandmother and sister.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b79ae93e-f1bc-4642-910b-a3e594ece366
   type: administrative
   attestation: first_hand
@@ -669,6 +745,11 @@ domain_claims:
   quote: how old were you again? / Uh, 12 or 13, something like that.
   text: |-
     Luigi Vendittelli was 12 or 13 years old when he joined the Mutual UFO Network (MUFON).
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b7b59376-86bd-4346-951e-c193a427485e
   type: testimony
   attestation: first_hand
@@ -688,6 +769,11 @@ domain_claims:
   quote: I knew a lot about astronomy... So I wrote astronomy on the application.
   text: |-
     Luigi Vendittelli listed astronomy as his specialty on his Mutual UFO Network (MUFON) membership application because it was the only relevant knowledge he had at the time.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3fa88ed4-4d07-4955-bed1-bc162fe1c1d0
   type: administrative
   attestation: first_hand
@@ -709,6 +795,11 @@ domain_claims:
   quote: it was signed by Walt Andres and they had a letter.
   text: |-
     Luigi Vendittelli's Mutual UFO Network (MUFON) membership card was signed by Walt Andres.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 76f90561-166b-4c9e-9812-acee19ba4018
   type: administrative
   attestation: first_hand
@@ -729,6 +820,11 @@ domain_claims:
     Walt Andres was the director says, you are officially the youngest member of MUFON in the world.
   text: |-
     Walt Andres was the director of the Mutual UFO Network (MUFON) at the time Luigi Vendittelli joined.
+  entailment:
+    label: entails
+    score: 0.874
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4cfbb23a-4a9f-4aed-82a4-c87031ac5878
   type: testimony
   attestation: first_hand
@@ -748,6 +844,11 @@ domain_claims:
   quote: The Aztec book, the Socorro stuff, the obviously Roswell. Billy Meiers
   text: |-
     Luigi Vendittelli read books about UFO cases including the Aztec case, the Socorro case, the Roswell case, and Billy Meier's claims.
+  entailment:
+    label: entails
+    score: 0.929
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aa24c047-1305-41ec-8267-c9bb8281faea
   type: testimony
   attestation: first_hand
@@ -770,6 +871,11 @@ domain_claims:
     the Billy Meiers stuff I had heard of through Jacques Vallée. I remember because he was debunking it.
   text: |-
     Luigi Vendittelli first learned about Billy Meier's claims through Jacques Vallée's writing, which was debunking Meier.
+  entailment:
+    label: entails
+    score: 0.948
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0616def4-39de-4368-b5e4-76ed181a61d9
   type: testimony
   attestation: first_hand
@@ -788,6 +894,11 @@ domain_claims:
     name: Vallée, Jacques
   quote: I had some Jacques Vallée stuff as well.
   text: Luigi Vendittelli read books by Jacques Vallée as a young UFO enthusiast.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14ba2913-d5a8-43de-b4dd-fc446ac20ca5
   type: testimony
   attestation: first_hand
@@ -807,6 +918,11 @@ domain_claims:
   quote: and the Gulf Breeze case.
   text: |-
     Luigi Vendittelli read about the Gulf Breeze case as part of his early UFO research.
+  entailment:
+    label: entails
+    score: 0.701
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e0cc5b76-22b7-4a3d-8e82-351138c0dfe0
   type: testimony
   attestation: first_hand
@@ -825,6 +941,11 @@ domain_claims:
     i remember a couple of friends of mine who did become friends of mine but they... dude, what's with all the UFO books
   text: |-
     Luigi Vendittelli experienced social isolation as a teenager because of his interest in UFOs, as friends found his UFO books and posters strange.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cdb20deb-a5dd-4702-a762-b97a61fa1cf9
   type: testimony
   attestation: first_hand
@@ -843,6 +964,11 @@ domain_claims:
     I would go into magazines, cut out like a close encounter movie pictures, put them on the wall and it's all alien stuff.
   text: |-
     Luigi Vendittelli decorated his room with pictures cut from magazines depicting close encounter films and alien imagery.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 854ddc2d-4453-473b-a8fd-eba212d45fff
   type: testimony
   attestation: first_hand
@@ -861,6 +987,11 @@ domain_claims:
     then i had a telescope so i tried to make the telescope cool... i would show them jupiter or something
   text: |-
     Luigi Vendittelli owned a telescope as a teenager and tried to make astronomy interesting to his friends by showing them Jupiter.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: da795dc9-3d2c-4a66-b19b-deed2c1ac999
   type: testimony
   attestation: first_hand
@@ -879,6 +1010,11 @@ domain_claims:
     I eventually had to start hiding. I was like a closet UFO lover because I was like, I couldn't tell people because it was always causing me problems.
   text: |-
     Luigi Vendittelli hid his interest in UFOs from most people because it caused him social problems.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0db4df1e-238f-4dac-abfb-63655bcceb5a
   type: administrative
   attestation: first_hand
@@ -901,6 +1037,11 @@ domain_claims:
     When I first started with MUFON, there was a MUFON Quebec group here. It was a MUFON group in Montreal.
   text: |-
     Luigi Vendittelli was involved with a MUFON Quebec group based in Montreal when he first started with the Mutual UFO Network (MUFON).
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 734b6b77-1f56-4302-82c4-9ae21d87ef93
   type: testimony
   attestation: first_hand
@@ -922,6 +1063,11 @@ domain_claims:
   quote: I wrote a letter to Ed Walters, the guy who took pictures of Gulf Breeze.
   text: |-
     Luigi Vendittelli wrote a letter to Ed Walters, who took photographs of the 1987 Gulf Breeze UFO sightings.
+  entailment:
+    label: neutral
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: efbe4c96-cc4c-42b7-b1f8-0a0a70b833b0
   type: testimony
   attestation: first_hand
@@ -940,6 +1086,11 @@ domain_claims:
     name: USA, Florida, Gulf Breeze
   quote: The guy who had all those experiences in Gulf Breeze, Florida.
   text: Ed Walters had experiences in Gulf Breeze, Florida.
+  entailment:
+    label: contradicts
+    score: 0.928
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 484aea7b-3467-4d26-86bb-b131e24f4a7d
   type: testimony
   attestation: first_hand
@@ -962,6 +1113,11 @@ domain_claims:
     I had read his book and I had read all the information in the MUFON journal, all that.
   text: |-
     Luigi Vendittelli had read Ed Walters's book and articles in the Mutual UFO Network (MUFON) journal before writing to him.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3dfba7d6-f3ca-4413-a0a4-49b7a2b11c4e
   type: testimony
   attestation: first_hand
@@ -982,6 +1138,11 @@ domain_claims:
     he wrote me back and he sent me a videotape of him talking to me, a video of the actual craft in the air
   text: |-
     Ed Walters wrote back to Luigi Vendittelli and sent him a videotape of himself talking, along with video of the craft he photographed in the air.
+  entailment:
+    label: contradicts
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6dff8d53-cb91-4e7d-8da8-969db528dde0
   type: testimony
   attestation: first_hand
@@ -1006,6 +1167,11 @@ domain_claims:
     So I ended up going to this MUFON thing one night. It was in Verdun, if I remember it, in Montreal... And I was presenting on stage.
   text: |-
     Luigi Vendittelli attended a Mutual UFO Network (MUFON) meeting in Verdun, Montreal, and presented on stage about the Gulf Breeze case.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fccbe174-4c05-4a08-be9e-b465dfb3df29
   type: testimony
   attestation: first_hand
@@ -1023,6 +1189,11 @@ domain_claims:
   quote: How old where you? / 13
   text: |-
     Luigi Vendittelli was 13 years old when he presented on the Gulf Breeze case at a Mutual UFO Network (MUFON) meeting in Verdun, Montreal.
+  entailment:
+    label: neutral
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2027c1f9-f552-4e4b-9d2f-1bf07023b5eb
   type: testimony
   attestation: first_hand
@@ -1040,6 +1211,11 @@ domain_claims:
   quote: My dad drove me there. He walks in because he's not like, what are you doing?
   text: |-
     Luigi Vendittelli's father drove him to the Mutual UFO Network (MUFON) meeting in Verdun, Montreal, where he presented on the Gulf Breeze case.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e15f91e5-b3c1-4439-816a-a0800232fc0f
   type: testimony
   attestation: first_hand
@@ -1058,6 +1234,11 @@ domain_claims:
     But as soon as I left that, I was being laughed at in any, in every other circle. So I decided to kind of step away publicly.
   text: |-
     After presenting at age 13, Luigi Vendittelli decided to step away from publicly discussing UFOs because he was mocked in other social circles.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a4006f67-172c-473e-8183-84e6b346c4b8
   type: observation
   attestation: second_hand
@@ -1077,6 +1258,11 @@ domain_claims:
   quote: the National Enquirer... had pictures of Hillary Clinton holding an alien baby
   text: |-
     The National Enquirer published pictures of Hillary Clinton holding an alien baby.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 062af47f-a87b-4648-893f-822d2ff92a9a
   type: administrative
   attestation: first_hand
@@ -1097,6 +1283,11 @@ domain_claims:
     what happened after that is I became the national director for investigations of MUFON in Canada.
   text: |-
     Luigi Vendittelli became the national director for investigations of Mutual UFO Network Canada (MUFON Canada).
+  entailment:
+    label: contradicts
+    score: 0.789
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 91fac8c1-67ac-4b85-85a7-05dad90a78d4
   type: testimony
   attestation: first_hand
@@ -1117,6 +1308,11 @@ domain_claims:
     I am managing the investigators who are investigating the witnesses and the accounts.
   text: |-
     As national director for investigations of Mutual UFO Network Canada (MUFON Canada), Luigi Vendittelli managed investigators rather than dealing directly with witnesses.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 77e420f9-e10d-4f4d-adff-3833ebe72608
   type: administrative
   attestation: first_hand
@@ -1136,6 +1332,11 @@ domain_claims:
   quote: So I passed, I had done the work... So I became an official field investigator.
   text: |-
     Luigi Vendittelli became an official field investigator for Mutual UFO Network Canada (MUFON Canada) after passing an exam.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 198ac4af-86ef-4b46-9f78-a5809bfaa7c6
   type: testimony
   attestation: first_hand
@@ -1156,6 +1357,11 @@ domain_claims:
     you have to have like 80% or more in order for you to pass to become a field investigator
   text: |-
     A candidate needs a score of 80 percent or more to pass the exam and become a Mutual UFO Network (MUFON) field investigator.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 355d2190-518a-4bd5-887a-0588be20e825
   type: testimony
   attestation: first_hand
@@ -1176,6 +1382,11 @@ domain_claims:
     it's very good it teaches you how to not you know the misidentifications of venus or or constellations or stars or the moon and looking at you know air aircraft landing lights
   text: |-
     The Mutual UFO Network Field Investigator's Manual teaches trainees how to identify misidentifications such as Venus, constellations, stars, the moon, and aircraft landing lights.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 08e504b8-f47a-4175-9859-861bb913226f
   type: testimony
   attestation: first_hand
@@ -1195,6 +1406,11 @@ domain_claims:
   quote: the horizon how to measure height and altitude of things
   text: |-
     The Mutual UFO Network Field Investigator's Manual teaches how to measure the height and altitude of observed objects.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ded01fa3-c1f1-45d0-b520-4f14b6b1e2ba
   type: testimony
   attestation: first_hand
@@ -1214,6 +1430,11 @@ domain_claims:
   quote: how to ask them certain questions to not lead them on
   text: |-
     The Mutual UFO Network Field Investigator's Manual teaches investigators how to question witnesses without leading them on.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c1f48a83-c21e-49db-9dca-d34724bed726
   type: testimony
   attestation: first_hand
@@ -1236,6 +1457,11 @@ domain_claims:
     There's a system called CMS. In that CMS system, there's all the information on that. The person who called said, this happened to me.
   text: |-
     Mutual UFO Network Canada (MUFON Canada) field investigators receive cases assigned from a head office through a system called the Case Management System (CMS), which contains information vetted from callers reporting sightings.
+  entailment:
+    label: entails
+    score: 0.718
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f3147abf-8328-4b88-883e-26175afe76ec
   type: testimony
   attestation: first_hand
@@ -1254,6 +1480,11 @@ domain_claims:
     name: Mutual UFO Network (MUFON)
   quote: so there's nobody getting paid for this right it's volunteer work
   text: Mutual UFO Network (MUFON) investigation work is unpaid volunteer work.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 30901d91-3e8f-408d-8ce3-185362c646f1
   type: opinion
   attestation: first_hand
@@ -1274,6 +1505,11 @@ domain_claims:
     So a lot of MUFON investigations turned out to be very conventional, non-extraterrestrial. / What percentage? / I would say 90% more, if not more.
   text: |-
     Luigi Vendittelli estimates that 90 percent or more of Mutual UFO Network (MUFON) investigations turn out to be conventional, non-extraterrestrial explanations.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 053f927d-daa7-4857-a78a-c8a7aa1e698f
   type: opinion
   attestation: first_hand
@@ -1292,6 +1528,11 @@ domain_claims:
     I get sent things where To like 95 to all the way up to 99%. I have an explanation.
   text: |-
     Chris Ramsay estimates that 95 to 99 percent of the videos, photos, and cases he receives have a conventional explanation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ffc2e767-88db-4b13-add5-ec4b367d23cf
   type: testimony
   attestation: first_hand
@@ -1311,6 +1552,11 @@ domain_claims:
   quote: as a director, I was re I was receiving like 30 a day.
   text: |-
     As director of Mutual UFO Network Canada (MUFON Canada) investigations, Luigi Vendittelli was receiving approximately 30 case reports a day.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6ad049fb-7490-4dd4-b7d4-63314cc6dc23
   type: testimony
   attestation: first_hand
@@ -1332,6 +1578,11 @@ domain_claims:
   quote: I was trained by David Jacobs for two years personally on alien abd
   text: |-
     Luigi Vendittelli was trained personally by David Jacobs for two years on alien abduction.
+  entailment:
+    label: entails
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3db2f9c4-bb17-4d11-a2b3-885563e1006a
   type: opinion
   attestation: first_hand
@@ -1350,6 +1601,11 @@ domain_claims:
     David Jacobs is considered one of the best, was considered one of the best in the field.
   text: |-
     David Jacobs is considered one of the best investigators in the UFO/abduction field.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d9788a5f-8f5c-4e2b-aee7-9f58ad029267
   type: observation
   attestation: first_hand
@@ -1366,6 +1622,11 @@ domain_claims:
     name: Jacobs, David
   quote: He's no longer active, but definitely was.
   text: David Jacobs is no longer active in UFO/abduction investigation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3867fad7-a90d-420c-b2e0-d8020c3324c6
   type: observation
   attestation: first_hand
@@ -1384,6 +1645,11 @@ domain_claims:
     name: Donderry, Don
   quote: Worked alongside, also with Don Donderry for a little bit of time.
   text: Luigi Vendittelli worked alongside Don Donderry for a period of time.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0c4af5f7-8f90-4581-9b30-05fc591c96cd
   type: opinion
   attestation: first_hand
@@ -1404,6 +1670,11 @@ domain_claims:
     So there are objects that have been flying in the skies of the earth for many, many years, decades, if not centuries, or even millennia, who knows, that do not perform the same way our conventional aircrafts perform.
   text: |-
     Luigi Vendittelli believes that objects have been flying in the earth's skies for many years, decades, if not centuries or millennia, and do not perform the way conventional aircraft perform.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8e112832-d99b-4236-ae65-b91f89d937a9
   type: opinion
   attestation: first_hand
@@ -1422,6 +1693,11 @@ domain_claims:
     So I always stayed very grounded and I was trained by some of the most grounded people in the field. And that was something that I considered to be like the most important part of my training was always stay grounded.
   text: |-
     Luigi Vendittelli was trained by some of the most grounded people in the UFO investigation field, and considers staying grounded and not jumping to conclusions the most important part of his training.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 65d152f3-a36d-4403-8fa0-beee70a33183
   type: testimony
   attestation: second_hand
@@ -1444,6 +1720,11 @@ domain_claims:
     I would consult with David Jacobs, with Don Donderry, both of which would always tell me, relax, take it, put it in a filing drawer, close it, don't overthink it, and move on.
   text: |-
     David Jacobs and Don Donderry advised Luigi Vendittelli to relax about difficult UFO cases, file them away, not overthink them, and move on.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 08790c33-995e-41ae-8fa0-ffb0b3e7d4b3
   type: opinion
   attestation: first_hand
@@ -1462,6 +1743,11 @@ domain_claims:
     Do not jump to conclusions. Do not make this an unknown. Do not turn it into an extraterrestrial or interdimensional investigation. Everything could be explained away conventionally.
   text: |-
     Luigi Vendittelli's primary directive as an investigator was not to jump to conclusions, not to treat a case as an unknown, and not to turn it into an extraterrestrial or interdimensional investigation, since everything could potentially be explained away conventionally.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: da935ec6-5127-4d20-b054-e3c6cee7ae8d
   type: observation
   attestation: first_hand
@@ -1486,6 +1772,11 @@ domain_claims:
     I went and I went with a friend of mine and he he still is a federal police officer for the RCMP came with me.
   text: |-
     Luigi Vendittelli invited a friend who was a federal police officer with the Royal Canadian Mounted Police to attend Don Donderry's talk on flying saucers at McGill University in Montreal.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d5c9634f-6538-4b55-bfca-6fba9d184967
   type: observation
   attestation: first_hand
@@ -1508,6 +1799,11 @@ domain_claims:
     And this guy comes up to me and says, Are you Luigi? ... he says, somebody with the Montreal Police Department would like to talk to you.
   text: |-
     During a pause in Don Donderry's talk at McGill University, a man approached Luigi Vendittelli and asked if he was Luigi, then said someone with the Montreal Police Department wanted to talk to him.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dcc7a2b5-83a5-43d3-a6f3-d1733b8b982f
   type: observation
   attestation: first_hand
@@ -1535,6 +1831,11 @@ domain_claims:
     And it was an officer from the SPVM, the Montreal Police Department, who had been the officer on the call for the... Oh, the Cavendish Mall Siding. The Cavendish Mall Siding in Montreal in 2010, which was, by the way, a very big sighting.
   text: |-
     The Montreal Police Department officer who contacted Luigi Vendittelli had been the officer on the call for the 2010 Cavendish Mall Sighting in Montreal.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9a498ffc-2e6b-44ee-8d08-a9697d3156d4
   type: observation
   attestation: first_hand
@@ -1555,6 +1856,11 @@ domain_claims:
   quote: It was sighted by multiple people in the middle of the night.
   text: |-
     The 2010 Cavendish Mall Sighting in Montreal was witnessed by multiple people in the middle of the night.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 73d0e380-02e2-4221-8443-a7de31a515c8
   type: observation
   attestation: first_hand
@@ -1579,6 +1885,11 @@ domain_claims:
     So we arranged to meet at this cafe in front of Concordia University in downtown Montreal. He showed up dressed in his uniform.
   text: |-
     Luigi Vendittelli arranged to meet the SPVM police officer at a cafe in front of Concordia University in downtown Montreal, and the officer showed up in uniform with an envelope.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 24cf0e40-1942-4717-a9aa-c8e052d2979f
   type: testimony
   attestation: second_hand
@@ -1599,6 +1910,11 @@ domain_claims:
     He says, well, we have a witness who, um, has a picture of one of these... He goes, no, we have a picture of a being.
   text: |-
     The SPVM officer told Luigi Vendittelli that a witness had a picture of a being, not a craft.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5c9b162f-2955-403e-8cca-d9fcbae93b8d
   type: testimony
   attestation: second_hand
@@ -1619,6 +1935,11 @@ domain_claims:
     And he said, we have multiple pictures and we cannot figure out what it is. And it's been in the drawer at the police station for three years.
   text: |-
     The SPVM officer told Luigi Vendittelli that there were multiple pictures of the being that police could not figure out, and they had been kept in a drawer at the police station for three years.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef7db845-14b0-4316-8486-8ba279231dd5
   type: testimony
   attestation: second_hand
@@ -1639,6 +1960,11 @@ domain_claims:
     uh but I can share them with you but you have to sign something that you're not going to distribute them these are not you're not allowed to distribute these
   text: |-
     The SPVM officer required Luigi Vendittelli to sign an agreement not to distribute the photographs of the being before sharing them with him.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10d7ef62-a615-4835-aba8-d2f014a934d7
   type: testimony
   attestation: second_hand
@@ -1659,6 +1985,11 @@ domain_claims:
     he goes it's not a dog... he goes well it's not a human being but it's also not a dog
   text: |-
     The SPVM officer described the being in the photographs as not a dog and not a human being.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ab1d6fa9-3697-476f-a730-6ce62426fc06
   type: observation
   attestation: first_hand
@@ -1679,6 +2010,11 @@ domain_claims:
     Some of them show a Doberman King dog in the images. That's not the dog. That's not the being. There is a Doberman dog in the event.
   text: |-
     Some of the photographs Luigi Vendittelli received from the SPVM officer showed a Doberman dog named King, but the dog was not the being in the images; there was a Doberman dog present at the event separately.
+  entailment:
+    label: entails
+    score: 0.537
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cf2b0634-25e9-4455-af93-26008e9550d8
   type: observation
   speaker:
@@ -1700,6 +2036,11 @@ domain_claims:
     But it's a woman in Montreal who was woken up in the middle of the night at around 1:15, 1:30 a.m. in an apartment building on the 14th floor. And her dog, the Doberman King, made a sound.
   text: |-
     A woman in Montreal was woken around 1:15-1:30 a.m. in her 14th-floor apartment by her Doberman dog King making a sound.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3de18102-7a85-4549-b729-a3ac3661e8b2
   type: observation
   speaker:
@@ -1718,6 +2059,11 @@ domain_claims:
     there was a they the her door frame to go into the hallway had been broken into a week prior because they had forgotten their keys in the apartment so there was a tiny little gap where you can actually see from the interior of the apartment out in the hallway
   text: |-
     The door frame between the woman's apartment and the hallway had been broken into a week prior after they had forgotten their keys inside, leaving a small gap through which she could see into the hallway.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9fbdbfb8-b43b-443d-bb16-c3e01bf5c878
   type: observation
   speaker:
@@ -1736,6 +2082,11 @@ domain_claims:
     And she thought the dog was having a stroke because it was completely immobile with its ears up as if it's on alert, but it's like paralyzed.
   text: |-
     The woman found her dog paralyzed and immobile with its ears up as if on alert, and initially thought it was having a stroke.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 54cee2b0-6996-4612-9596-c9144ca7c271
   type: observation
   attestation: third_hand
@@ -1763,6 +2114,11 @@ domain_claims:
     So she grabs her cell phone and aligns her camera on the on the iPhone back in 2010, in January in 2010... She snaps multiple pictures of what she said was a creature that was standing that was about three foot tall and very, very skinny with a big head and big black eyes. And its arms were positioned like this, like a praying mantis or like a bird, I guess.
   text: |-
     The woman used her iPhone in January 2010 to take multiple pictures through the gap in the door frame of what she said was a creature about one metre tall, very skinny, with a big head and big black eyes, its arms positioned like a praying mantis or bird.
+  entailment:
+    label: contradicts
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c20a98b3-7f6d-4770-b554-9aaac7846b26
   type: opinion
   attestation: first_hand
@@ -1781,6 +2137,11 @@ domain_claims:
     It was the biggest oh my God moment that I had ever experienced in all the years that I have ever worked in this.
   text: |-
     Luigi Vendittelli described seeing the photographs of the being as the biggest 'oh my God' moment he had experienced in all his years working in UFO investigation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3ce4ae50-eb19-4511-bdf3-eb6279083cc9
   type: opinion
   attestation: first_hand
@@ -1800,6 +2161,11 @@ domain_claims:
   quote: And there's five consecutive images that are really solid.
   text: |-
     There are five consecutive images from the 2010 Cavendish Mall Sighting photographs that Luigi Vendittelli considers really solid.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc93ee96-0f40-4a65-8274-e4a1536e7c67
   type: observation
   attestation: first_hand
@@ -1824,6 +2190,11 @@ domain_claims:
     There's a woman who is originally from Great Britain. She was living in Quebec. Her name is Sarah, and she had been abducted, and she was living in Val D'or, which is about eight hours north of here in the middle of nowhere.
   text: |-
     A woman named Sarah, originally from Great Britain, living in Val-d'Or, Quebec, had reported experiencing an alien abduction and was referred to Luigi Vendittelli because he had knowledge of abductions.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9fa479d6-6c54-41da-aade-d40485ddf26f
   type: testimony
   attestation: second_hand
@@ -1846,6 +2217,11 @@ domain_claims:
     And he said on the call, there's one thing, though, that she doesn't want to talk about is because apparently one of these beings, the way its arms was positioned, looked like a praying mantis.
   text: |-
     Sarah's boyfriend told Luigi Vendittelli that one of the beings Sarah encountered had arms positioned like a praying mantis, which Sarah was reluctant to discuss.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2e3359d6-f191-4c16-af34-813b383bddad
   type: testimony
   attestation: second_hand
@@ -1866,6 +2242,11 @@ domain_claims:
     She said, well, he said, well, it was very skinny, big head, black eyes, and the arms were like this.
   text: |-
     Sarah's boyfriend described the being to Luigi Vendittelli as very skinny with a big head, black eyes, and arms positioned like a praying mantis.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a91412cc-069c-4b16-8952-022dfc89afb3
   type: observation
   attestation: first_hand
@@ -1888,6 +2269,11 @@ domain_claims:
     And so she, he emailed me her drawing while we're on the call and I get the drawing and the drawing was almost the same thing as what I saw in a picture.
   text: |-
     Sarah's boyfriend emailed Luigi Vendittelli a drawing made by Sarah that closely matched what Vendittelli had seen in the Cavendish Mall Sighting photographs.
+  entailment:
+    label: entails
+    score: 0.957
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bfba4a4a-94b8-45dc-9ed5-ac2a8a99a946
   type: observation
   attestation: first_hand
@@ -1907,6 +2293,11 @@ domain_claims:
   quote: Um, I got to meet her about a month later.
   text: |-
     Luigi Vendittelli met Sarah in person about a month after their first phone conversation.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 437f7a8a-b5aa-416b-aefa-4a598c7d399c
   type: observation
   attestation: first_hand
@@ -1934,6 +2325,11 @@ domain_claims:
     on that day, I was with Benoit Maillard, who was a case I was investigating in Northern Quebec of black triangular crafts... It was at his house. There was the cop... Don Donderry also came.
   text: |-
     Luigi Vendittelli met Sarah at the house of Benoit Maillard, in the presence of the SPVM police officer and Don Donderry, on a day in early September.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: beb07fe6-1d52-4750-a6bb-296082dbd741
   type: observation
   attestation: first_hand
@@ -1954,6 +2350,11 @@ domain_claims:
     I was with Benoit Maillard, who was a case I was investigating in Northern Quebec of black triangular crafts. He had to take a picture and was on the front page of the newspaper.
   text: |-
     Luigi Vendittelli was investigating a case involving black triangular crafts in Northern Quebec, in which Benoit Maillard had taken a picture and appeared on the front page of a newspaper.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8f1d9b9d-123d-428e-93fd-5db82263a680
   type: observation
   attestation: first_hand
@@ -1973,6 +2374,11 @@ domain_claims:
   quote: He actually came to see if it could just all be debunked really quickly.
   text: |-
     The SPVM police officer attended the meeting with Sarah to see if her account could be debunked.
+  entailment:
+    label: entails
+    score: 0.695
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9654e695-63b2-4639-8124-4d147f301388
   type: testimony
   attestation: first_hand
@@ -1992,6 +2398,11 @@ domain_claims:
   quote: I've been abducted since I was a little girl. I lived in England all my life.
   text: |-
     Sarah said she had been abducted since she was a little girl and had lived in England all her life.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 08a1ae7b-a8ac-4af8-aabd-5a42bf31f9a8
   type: testimony
   attestation: first_hand
@@ -2012,6 +2423,11 @@ domain_claims:
     She said they would come in my room all the time when I was a little girl. They were tall. She called them tall white people. They were all dressed in white, very, very tall... She says they were almost tall to the ceiling of the room, and they were human looking, but extremely tall.
   text: |-
     Sarah said tall white beings, which she called tall white people, would come into her room regularly when she was a little girl in England; they were dressed all in white, human-looking, and nearly as tall as the ceiling.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 94996467-591b-4e82-8256-905921f6804c
   type: testimony
   attestation: first_hand
@@ -2032,6 +2448,11 @@ domain_claims:
     So she, she thought that was normal because that would happen to her all the time. She thought everybody has these tall people in their house.
   text: |-
     Sarah said that as a child she believed the tall white beings visiting her room were normal, assuming everybody had similar visitors in their house.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3d4b8c68-41fa-4022-aa5d-fd72f5fa6c57
   type: testimony
   attestation: first_hand
@@ -2052,6 +2473,11 @@ domain_claims:
     But at night, she would have these little beings, these guys, like these little greys, she drew them, that would come and hurt her in her tummy, she said.
   text: |-
     Sarah said that at night, small grey-like beings would come and hurt her stomach.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b4a87f3c-e784-47ce-8e11-81395216a364
   type: testimony
   attestation: first_hand
@@ -2072,6 +2498,11 @@ domain_claims:
     she asked her mother, as a little girl, if her mother could sew buttons on the bottom of her shirt and make holes on the top of her pants so that she could button the sweater to her pants so that these beings couldn't access her tummy
   text: |-
     Sarah said that as a little girl she asked her mother to sew buttons on the bottom of her shirt and make holes at the top of her pants so she could button them together to prevent the beings from accessing her stomach.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8aeba8d1-bf80-4ed9-a1e2-0c1abd25e763
   type: testimony
   attestation: first_hand
@@ -2092,6 +2523,11 @@ domain_claims:
     they came back many many times I don't know why there was never an explanation they would just appear in a room she wouldn't remember what was going on but she would remember being in pain in her stomach and this went on for years
   text: |-
     Sarah said this pattern of the beings hurting her stomach continued repeatedly for years, with no explanation, and she would not remember the events themselves but would remember the pain in her stomach afterward.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 91c4d40e-4aba-486b-9199-1a9e40a53955
   type: testimony
   attestation: first_hand
@@ -2109,6 +2545,11 @@ domain_claims:
   quote: |-
     She went to Cambodia. She went to Germany. She went to Israel. She traveled quite a bit.
   text: Sarah traveled to Cambodia, Germany, and Israel during her life.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1c4db1b5-3b01-452e-bf92-f18ee70d8937
   type: testimony
   attestation: first_hand
@@ -2130,6 +2571,11 @@ domain_claims:
     she went to Israel and walked all the way near the Palestinian border this is going back like 2000 and I don't know 2010 2011... she wanted to cross over into Palestine it was closed it was all these soldiers there and all that stuff and she said there was a man who showed up... It's as if she said, it's as if no one saw him.
   text: |-
     Sarah said that around 2010-2011, while walking near the Palestinian border in Israel trying to cross into Palestine, which was closed with soldiers present, a man approached her whom no one else seemed to notice.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 78537986-6f03-4cf4-aa27-54be47e70632
   type: testimony
   attestation: first_hand
@@ -2150,6 +2596,11 @@ domain_claims:
     said to her, her beauty is like a palm tree in the desert on a starry night, something like that... And he finished it by saying, Sarah Tamar, daughter of mine... She turned around to see if anybody was watching this and he was gone.
   text: |-
     Sarah said the man at the Israeli-Palestinian border told her something poetic comparing her beauty to a palm tree in the desert on a starry night, and called her 'Sarah Tamar, daughter of mine,' before she turned around and found he had vanished.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bc28dd8f-fe9d-4353-8f5b-72e3f7a00623
   type: hearsay
   attestation: second_hand
@@ -2172,6 +2623,11 @@ domain_claims:
     there is some link to religion and these beings, something to do with Jesus and these beings.
   text: |-
     Sarah told Luigi Vendittelli's group there was a link to religion and the beings involved in the encounters, related to Jesus.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ca7d4499-2316-4e8e-8612-ee7ca740e540
   type: testimony
   attestation: second_hand
@@ -2196,6 +2652,11 @@ domain_claims:
   quote: She says, tonight at 1111, a craft will fly over this house.
   text: |-
     Sarah predicted that a craft would fly over the house in Saint-Adolphe-d'Howard at 11:11 that night.
+  entailment:
+    label: neutral
+    score: 0.865
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7618bc1c-338d-473c-a9ac-03faaf859eb6
   type: observation
   attestation: first_hand
@@ -2218,6 +2679,11 @@ domain_claims:
     In Saint-Adolphe, it's beautiful. It's in the Laurentians, where the mountains are.
   text: |-
     The 2010 Saint-Adolphe UFO overflight prediction event took place at a house in Saint-Adolphe-d'Howard, in the Laurentians region of Quebec.
+  entailment:
+    label: neutral
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c7f38105-9998-4d42-8634-7d716a4f1cd8
   type: administrative
   attestation: first_hand
@@ -2238,6 +2704,11 @@ domain_claims:
     name: Vendittelli, Luigi
   quote: Jenny is also a dancer for Cirque du Soleil.
   text: Jenny is a friend of Luigi Vendittelli's who is a dancer for Cirque du Soleil.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd096be4-0102-4967-b938-ff167e344c3f
   type: testimony
   attestation: first_hand
@@ -2263,6 +2734,11 @@ domain_claims:
     She looks at Lisa and says, she's O negative blood type, isn't she?... And she goes, yeah, I'm O negative.
   text: |-
     During the 2010 Saint-Adolphe UFO overflight prediction event, Sarah told Lisa she had O negative blood type without having been told this in advance, and Lisa confirmed this was correct.
+  entailment:
+    label: entails
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 64ecfb36-f383-42aa-b0d2-6db08123eca0
   type: testimony
   attestation: first_hand
@@ -2286,6 +2762,11 @@ domain_claims:
     And she said, he's O negative as well. And that person knew English and said, yeah, I am.
   text: |-
     During the 2010 Saint-Adolphe UFO overflight prediction event, Sarah identified a second person present as also having O negative blood type, which that person confirmed.
+  entailment:
+    label: entails
+    score: 0.676
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: edda4415-ad85-4ee8-a63c-f080a909864d
   type: observation
   attestation: first_hand
@@ -2307,6 +2788,11 @@ domain_claims:
     We were nine people that night. We were all looking up and a craft appeared out of nowhere... It came into existence. It didn't come from the horizon. It appeared out of nowhere and flew right over the house.
   text: |-
     At the 2010 Saint-Adolphe UFO overflight prediction event, a black craft appeared suddenly out of nowhere directly overhead, without approaching from the horizon, and was witnessed by nine people including Luigi Vendittelli.
+  entailment:
+    label: neutral
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 729943cd-e192-427d-96ed-b5e9b87cc0af
   type: observation
   attestation: first_hand
@@ -2328,6 +2814,11 @@ domain_claims:
     It was black... it wasn't round... wasn't a cigar shape. It wasn't a... disc shape.
   text: |-
     The craft observed at the 2010 Saint-Adolphe UFO overflight prediction event was black, not perfectly round, not cylindrical or cigar-shaped, and not disc-shaped.
+  entailment:
+    label: neutral
+    score: 0.425
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 07ed10a1-0957-4853-9006-7281e5e25366
   type: observation
   attestation: first_hand
@@ -2349,6 +2840,11 @@ domain_claims:
     Some of us said look like a triangle... it looked like an in between a black triangular craft and something that had... energetic features on its sides... it had like a point to it.
   text: |-
     The craft observed at the 2010 Saint-Adolphe UFO overflight prediction event appeared to some witnesses to be triangular, though Luigi Vendittelli did not see it as a perfect triangle, and it had a point and what looked like energetic features on its sides.
+  entailment:
+    label: neutral
+    score: 0.907
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3720b197-de55-4ac7-80ce-c00d42b359d6
   type: observation
   attestation: first_hand
@@ -2369,6 +2865,11 @@ domain_claims:
   quote: And it just went and it had some orange light on it and it went right over us.
   text: |-
     The craft observed at the 2010 Saint-Adolphe UFO overflight prediction event had an orange light on it as it flew over the witnesses.
+  entailment:
+    label: entails
+    score: 0.498
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b26a74ae-5ad1-43d8-bb2d-4161137ccf61
   type: testimony
   attestation: second_hand
@@ -2392,6 +2893,11 @@ domain_claims:
     And Sarah, she's right next to me. And just looks at me super calm and says, aren't they funny? They got a sense of humor.
   text: |-
     After witnessing the craft at the 2010 Saint-Adolphe UFO overflight prediction event, Sarah calmly told Luigi Vendittelli that the beings have a sense of humor.
+  entailment:
+    label: entails
+    score: 0.913
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 90e74709-5aaa-4373-86a2-69426afaea76
   type: opinion
   attestation: first_hand
@@ -2413,6 +2919,11 @@ domain_claims:
     So that was a big deal for me because I experienced it now... It wasn't something that was told to me. It wasn't something that I had to listen to as an investigator or through an investigator. I saw it.
   text: |-
     Luigi Vendittelli considers the 2010 Saint-Adolphe UFO overflight prediction event significant because he personally witnessed it directly along with eight other people, rather than hearing about it second-hand as an investigator.
+  entailment:
+    label: entails
+    score: 0.611
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d7e2c830-0b1d-4812-9024-17efef0d12dd
   type: observation
   attestation: first_hand
@@ -2435,6 +2946,11 @@ domain_claims:
   quote: She predicted it at the exact moment.
   text: |-
     Sarah predicted the craft's appearance at the exact moment of 11:11 during the 2010 Saint-Adolphe UFO overflight prediction event.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2468648d-7463-4830-a075-fab331fab564
   type: opinion
   attestation: first_hand
@@ -2458,6 +2974,11 @@ domain_claims:
     I investigated UFOs for years. I don't know what that was. I can't describe it to you. I don't know what aircraft that was.
   text: |-
     Luigi Vendittelli, who investigated UFOs for years, could not explain or identify the craft he saw at the 2010 Saint-Adolphe UFO overflight prediction event.
+  entailment:
+    label: entails
+    score: 0.801
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8993b26c-a308-4623-afe2-eb7666e110a1
   type: testimony
   attestation: second_hand
@@ -2481,6 +3002,11 @@ domain_claims:
     She calls me to say that she was moving back to England, that her and her boyfriend had not worked out, mostly because she had to go back to England and he was not going to move there.
   text: |-
     After the 2010 Saint-Adolphe UFO overflight prediction event, Sarah told Luigi Vendittelli she was moving back to England because she and her boyfriend had not worked out, since she had to return to England and he was not willing to move there.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 45308bd4-b47d-417b-9da4-c44079e5faa9
   type: testimony
   attestation: first_hand
@@ -2504,6 +3030,11 @@ domain_claims:
     So we did. So she comes to Montreal and instead of staying one day, she decided to stay two days... It was by the way, it was October. So it was like about a month after.
   text: |-
     Sarah visited Luigi Vendittelli in Montreal for two days in October, staying overnight before her flight home from Montreal airport to England.
+  entailment:
+    label: neutral
+    score: 0.873
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 18f91e06-289d-4434-a3c3-5e9842787381
   type: testimony
   attestation: second_hand
@@ -2527,6 +3058,11 @@ domain_claims:
     And she said, there's an energy of a cat in your house. And I don't have cats... I never had a cat before I never wanted to get because I'm allergic to cats.
   text: |-
     When Sarah visited Luigi Vendittelli's house in Montreal, she said there was an energy of a cat in the house, though Vendittelli had never had a cat and is allergic to cats.
+  entailment:
+    label: entails
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7478a32b-da1d-4810-bea6-46664a8ea0cb
   type: testimony
   attestation: first_hand
@@ -2550,6 +3086,11 @@ domain_claims:
     And she says, where did that picture get taken, you know, of the creature?... We go to the building... We got to the 14th floor. We go to that apartment door and she's just standing there and she's like, yeah, she goes, this is where it happened.
   text: |-
     Sarah asked Luigi Vendittelli to take her to the apartment building in Verdun where the photograph of the creature had been taken, and they visited the 14th floor apartment door together.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 13775b2e-c971-4422-b15c-4082ab558d3a
   type: testimony
   attestation: first_hand
@@ -2573,6 +3114,11 @@ domain_claims:
     And as we're driving, I go in front of the St. Joseph's Oratory in Montreal, which is a gigantic church... So I bring her up there and she goes, let's go inside really fast.
   text: |-
     Luigi Vendittelli took Sarah to St. Joseph's Oratory in Montreal, a large church, during her October 2010 visit.
+  entailment:
+    label: neutral
+    score: 0.425
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8d1b4521-e92e-4e0b-be12-d2e2c5e1abe2
   type: testimony
   attestation: second_hand
@@ -2596,6 +3142,11 @@ domain_claims:
     She grabbed me again under my arm... and she looks and she goes, that's how big it is inside the ships. That's how big they are.
   text: |-
     Inside St. Joseph's Oratory in Montreal, Sarah told Luigi Vendittelli that the interior's scale was similar to how big the ships were inside.
+  entailment:
+    label: entails
+    score: 0.71
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a50e9108-4e91-43a6-9af8-f1df835300fe
   type: observation
   attestation: first_hand
@@ -2616,6 +3167,11 @@ domain_claims:
     Now at the altar, there's a big cross with Jesus crucified. It's made out of wood and there's the Holy Mary, there's Virgin Mary and there's Mary Magdalene. They're both praying, looking up.
   text: |-
     At the altar of St. Joseph's Oratory, there is a large wooden cross with Jesus crucified, and statues of the Virgin Mary and Mary Magdalene praying, looking up.
+  entailment:
+    label: entails
+    score: 0.533
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8a4d6cc7-5306-4039-b7df-f92380a20415
   type: hearsay
   attestation: second_hand
@@ -2641,6 +3197,11 @@ domain_claims:
     She says, I am likely to be the reincarnation of the daughter of Mary Magdalene and Jesus.
   text: |-
     At St. Joseph's Oratory in Montreal, Sarah told Luigi Vendittelli that she is likely the reincarnation of the daughter of Mary Magdalene and Jesus.
+  entailment:
+    label: entails
+    score: 0.47
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3d7c1f89-9201-4eae-b483-7574ece495ee
   type: opinion
   attestation: first_hand
@@ -2664,6 +3225,11 @@ domain_claims:
     I did not believe her... I really thought that was a coincidence. I got scammed into something. This person is, is delusional.
   text: |-
     Luigi Vendittelli did not believe Sarah's claim that she was likely the reincarnation of the daughter of Mary Magdalene and Jesus, and initially thought she might be delusional or that he had been scammed.
+  entailment:
+    label: entails
+    score: 0.769
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1a0cf62b-8d5a-4cf3-a509-f0c31e67844c
   type: hearsay
   attestation: second_hand
@@ -2686,6 +3252,11 @@ domain_claims:
     I was taken up in a ship one time, and they introduced me to a little girl. I was in a room, and there was a woman that looked like a human, but not 100%... And there was a gray with her.
   text: |-
     Sarah told Luigi Vendittelli in the car that she had once been taken aboard a ship and introduced to a little girl by a human-looking but not fully human woman with thinning hair, accompanied by a grey alien being.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6badd48b-0fc5-4ca4-b704-573e5e7bc072
   type: hearsay
   attestation: second_hand
@@ -2708,6 +3279,11 @@ domain_claims:
     she's telling me this... you need to name her... She says, I'm gonna call her Lily and gives back the baby.
   text: |-
     Sarah told Luigi Vendittelli that during this abduction experience she was told the baby girl was hers and that she was pressured to name the child, and she named the girl Lily.
+  entailment:
+    label: neutral
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 71d13582-d600-4d98-9cea-eedaa9caedb4
   type: hearsay
   attestation: second_hand
@@ -2729,6 +3305,11 @@ domain_claims:
   quote: I have a little girl that is somewhere up there and I don't know where she is.
   text: |-
     Sarah told Luigi Vendittelli that she has a little girl somewhere that she does not know the location of.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d2c3ad8c-ddfb-4ec5-acb8-733cb835eedd
   type: opinion
   attestation: first_hand
@@ -2749,6 +3330,11 @@ domain_claims:
     As a person who investigated abductions or encounters before, this is not the first time that I hear that somebody's had a baby, that they've kept the baby. This is a very common thing for anybody who is familiar with this.
   text: |-
     Luigi Vendittelli considers it a fairly common theme among abduction and encounter accounts he investigated for people to report having had a baby that was kept from them.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 39d05780-d4e2-4c10-8d04-5c9b9f228754
   type: opinion
   attestation: first_hand
@@ -2771,6 +3357,11 @@ domain_claims:
     Lisa is French Canadian... And I certainly do believe that Lisa has some type of link to something very strange... because her mother had been abducted and all that stuff.
   text: |-
     Lisa is French Canadian and Luigi Vendittelli believes she has some type of link to something strange, noting that her mother had also been abducted and recently passed away.
+  entailment:
+    label: entails
+    score: 0.62
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b29f804c-d658-4f3e-9fe1-e666e9cb24fe
   type: observation
   attestation: first_hand
@@ -2793,6 +3384,11 @@ domain_claims:
     I could hear Lisa speaking French and Sarah answering in English coherently to what Lisa had said and vice versa, as if they were speaking the same language... I know Lisa doesn't understand English.
   text: |-
     At Luigi Vendittelli's house, he overheard Lisa speaking French and Sarah answering coherently in English as if they understood each other, despite Lisa not understanding English.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 44579170-e8d9-43bd-9823-366843fec86d
   type: administrative
   attestation: first_hand
@@ -2815,6 +3411,11 @@ domain_claims:
     I'll never forget Verna, uh, Don Donderry's wife, who's also gone, she passed away
   text: |-
     Don Donderry's wife, Verna, attended the dinner Luigi Vendittelli hosted at his house.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c529529d-ce88-4b86-af85-c0173cd20379
   type: testimony
   attestation: second_hand
@@ -2837,6 +3438,11 @@ domain_claims:
     Can you ask her if the name Lily means anything to her? ... She says, yes, that's my daughter in space.
   text: |-
     Sarah told Luigi Vendittelli, relayed through a police officer, that the name Lily referred to her daughter, whom she said was in space.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1415c89b-c7b6-4ce0-a685-746d1ce28fb7
   type: observation
   attestation: first_hand
@@ -2859,6 +3465,11 @@ domain_claims:
     She goes to the guest room. She had brought her binder with all her drawings, and she pulled out the drawing she made of Lily...I sent him the drawing.
   text: |-
     Sarah had a drawing she had made of a girl she called Lily, which Luigi Vendittelli photographed and sent to a police officer.
+  entailment:
+    label: entails
+    score: 0.393
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5463b667-8da0-4989-a323-644be5edf210
   type: observation
   attestation: first_hand
@@ -2879,6 +3490,11 @@ domain_claims:
     he texts me a picture of a little girl...They are an identical match. The drawing and the picture are identical...he says, her name is Lily.
   text: |-
     Luigi Vendittelli observed that a photograph of a girl named Lily, sent to him by a police officer, was an identical match to the drawing Sarah had made of Lily.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47c978f9-15d1-41ed-b44f-8866389083fe
   type: observation
   attestation: second_hand
@@ -2899,6 +3515,11 @@ domain_claims:
     she screamed and she goes, oh my God, that's her...That is a hundred percent her.
   text: |-
     Sarah reacted with shock upon seeing the photograph of Lily and said the girl in the photograph was one hundred percent the same person she knew.
+  entailment:
+    label: entails
+    score: 0.55
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 727a291e-24aa-438a-bc60-9586cccfab36
   type: testimony
   attestation: second_hand
@@ -2917,6 +3538,11 @@ domain_claims:
     there was a little Canadian flag stuck in my hiking boot in the middle of a forest in Germany. And so she said, I have to go to Canada.
   text: |-
     Sarah told Luigi Vendittelli that she decided to travel to Canada after finding a small Canadian flag stuck in her hiking boot during a hike in a forest in Germany.
+  entailment:
+    label: entails
+    score: 0.727
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 11d376a6-d5a5-42a6-826a-a165c411406a
   type: hearsay
   attestation: second_hand
@@ -2940,6 +3566,11 @@ domain_claims:
     her mother was introduced to her daughter on a spaceship. And it was Jesus who introduced her to her daughter. And she doesn't talk about anything else but Mary Magdalene all the time.
   text: |-
     A friend of Lily's mother told Luigi Vendittelli that Lily's mother was introduced to her daughter on a spaceship by Jesus, and that the mother talks about Mary Magdalene constantly.
+  entailment:
+    label: entails
+    score: 0.605
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 099e9b5f-c88c-4f8f-a837-258defe5770a
   type: observation
   attestation: first_hand
@@ -2962,6 +3593,11 @@ domain_claims:
     I get a call out of the blue from the same guy who had come up to me at McGill University that day when Don Donderry was talking...I need you to meet somebody in downtown Montreal if you have time. She's been abducted and she's going through a lot of trauma.
   text: |-
     Luigi Vendittelli was called by the same man who had approached him at McGill University during Don Donderry's talk on flying saucers, asking him to meet a woman in downtown Montreal who had been abducted and was experiencing trauma.
+  entailment:
+    label: entails
+    score: 0.621
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc608ab1-6eec-4438-b06b-183397ff46e5
   type: observation
   attestation: first_hand
@@ -2980,6 +3616,11 @@ domain_claims:
     I kept seeing 444 on my phone. Every day, I kept seeing 444. And I started screenshotting it.
   text: |-
     During the week before meeting Emily (Montreal abductee), Luigi Vendittelli repeatedly saw the number 444 on his phone and began screenshotting it.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8a63a8af-a1d5-446c-b800-7de0de8a9bae
   type: testimony
   attestation: second_hand
@@ -3002,6 +3643,11 @@ domain_claims:
     She said to me, my name is Emily, and I have been visited by them on multiple occasions. I'm not from Montreal, but I was told to come to Montreal.
   text: |-
     Emily (Montreal abductee) told Luigi Vendittelli that she had been visited by extraterrestrial beings on multiple occasions and was told to come to Montreal.
+  entailment:
+    label: entails
+    score: 0.932
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8c93c740-f078-4953-b467-dae8e9d6a5d3
   type: testimony
   attestation: second_hand
@@ -3028,6 +3674,11 @@ domain_claims:
     I want to start by saying that 444 is very important. And I was told to come to Montreal, because there's a little girl here called Lily, and her mother's Sarah, and she's the daughter of Mary Magdalene.
   text: |-
     Emily (Montreal abductee) told Luigi Vendittelli that the number 444 was very important, and that she had been told to come to Montreal because a girl named Lily lived there whose mother, Sarah, was the daughter of Mary Magdalene.
+  entailment:
+    label: entails
+    score: 0.566
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 41306173-d751-4c37-8b4a-7f8603fd29ec
   type: administrative
   attestation: first_hand
@@ -3050,6 +3701,11 @@ domain_claims:
     I've worked closely with Emily Trim, who was a witness at the Ariel Primary School.
   text: |-
     Luigi Vendittelli has worked closely with Emily Trim, a witness at the 1994 Ariel School UFO sighting.
+  entailment:
+    label: neutral
+    score: 0.605
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 74d136ae-76cb-4c39-9692-04394cc856af
   type: administrative
   attestation: first_hand
@@ -3071,6 +3727,11 @@ domain_claims:
   quote: I know Liesl Field from Ariel Primary School.
   text: |-
     Luigi Vendittelli knows Liesl Field, who is connected to the Ariel Primary School in Zimbabwe.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d87bef54-9ba0-4cd7-a0ef-0ccb01c5f5d4
   type: administrative
   attestation: first_hand
@@ -3094,6 +3755,11 @@ domain_claims:
   quote: I now know Emily's brother, Paul, who was also a witness.
   text: |-
     Luigi Vendittelli knows Paul Trim, Emily Trim's brother, who was also a witness at the 1994 Ariel School UFO sighting.
+  entailment:
+    label: entails
+    score: 0.527
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a076eb4-4894-45f0-89f1-5e59e9dca9f6
   type: administrative
   attestation: first_hand
@@ -3112,6 +3778,11 @@ domain_claims:
     name: Jacobs, David
   quote: I got trained by David Jacobs on abductions and encounters.
   text: Luigi Vendittelli was trained by David Jacobs on abductions and encounters.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c0c3f33e-d6b7-4bdb-a71d-993d18346d9f
   type: administrative
   attestation: first_hand
@@ -3132,6 +3803,11 @@ domain_claims:
     I got trained by Don Donderry on how to speak the psychology, perceptive psychology of this phenomenon.
   text: |-
     Luigi Vendittelli was trained by Don Donderry on the perceptive psychology of the UFO abduction phenomenon.
+  entailment:
+    label: entails
+    score: 0.813
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7f534389-5dd9-4833-bdf1-527e962c30ac
   type: administrative
   attestation: first_hand
@@ -3151,6 +3827,11 @@ domain_claims:
     name: Lily
   quote: This happened in 2015...She speaks French, and we start talking.
   text: In 2015, Luigi Vendittelli spoke by phone in French with Lily's mother.
+  entailment:
+    label: entails
+    score: 0.919
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f1fd93b-b155-4ce0-abd6-c94250763b38
   type: testimony
   attestation: second_hand
@@ -3172,6 +3853,11 @@ domain_claims:
     I was brought in, I was taken, I was brought onto a spaceship...It was a round room, and there were other women sitting in the room with me...they looked like robots, like they were not activated.
   text: |-
     Lily's mother told Luigi Vendittelli that she had been taken onto a spaceship, into a round room with other women who appeared to be shut off, like robots that were not activated.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4f13939-19bf-4c7e-b5b7-80e8d62f744e
   type: testimony
   attestation: second_hand
@@ -3195,6 +3881,11 @@ domain_claims:
     I met Jesus. He came into the room and said to me, you are about to become a mother and I will introduce you to your child. He left the room and the little girl ran into the room and said, Mama, Mama, je m'appelle Lily.
   text: |-
     Lily's mother told Luigi Vendittelli that on the spaceship she met a man she identified as Jesus, who told her she was about to become a mother and would introduce her to her child, then brought in the little girl who said her name was Lily.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60dccfc8-92f6-4a3a-b402-fe7433bc5261
   type: testimony
   attestation: second_hand
@@ -3216,6 +3907,11 @@ domain_claims:
     I was returned and I was impregnated by my husband and I had her. And she ended up looking identical to the little girl I saw on the ship.
   text: |-
     Lily's mother told Luigi Vendittelli that after being returned from the spaceship, she was impregnated by her husband and gave birth to a daughter who looked identical to the girl she had seen on the ship.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 066b8386-0879-49f4-ab6f-2febf2d7fb6d
   type: testimony
   attestation: second_hand
@@ -3237,6 +3933,11 @@ domain_claims:
     not practicing. She says, but I do feel a connection to Mary Magdalene. I don't know why.
   text: |-
     Lily's mother told Luigi Vendittelli that she is not a practicing Catholic but feels a connection to Mary Magdalene that she cannot explain.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0106657d-156c-4826-91ec-a440b10774df
   type: observation
   attestation: first_hand
@@ -3255,6 +3956,11 @@ domain_claims:
     name: Lily
   quote: Her husband is a billionaire, by the way, who's a very wealthy man.
   text: Lily's mother is married to a billionaire.
+  entailment:
+    label: entails
+    score: 0.861
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2de1a08c-2d9a-4e1e-8ad5-4d763f415837
   type: observation
   attestation: first_hand
@@ -3277,6 +3983,11 @@ domain_claims:
     I met her one time. I met, believe it or not, out of all places, I met her in a church...It was a Christmas event here in the Laurentians...I met her here in the Laurentians and I was gonna meet the mother.
   text: |-
     Luigi Vendittelli met Lily's mother and Lily in person years later at a Christmas event in the Laurentians, Quebec.
+  entailment:
+    label: entails
+    score: 0.957
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5fa6fcf2-5600-47ff-9c16-1cfb4d880112
   type: testimony
   attestation: first_hand
@@ -3292,6 +4003,11 @@ domain_claims:
     name: Lisa
   quote: Yeah, Lisa, whose mother was abducted.
   text: Lisa's mother was abducted.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6213a131-37a2-44e2-a9fd-afe6a12e8d27
   type: testimony
   attestation: first_hand
@@ -3314,6 +4030,11 @@ domain_claims:
     she was born in the ex and raised in the exact same place where Lisa was raised... Very far away from here, north of Quebec.
   text: |-
     Lisa was born and raised far north of Quebec, in the same place as a woman Luigi Vendittelli met who was the mother of a girl named Lily.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 55a717b6-7a86-447e-a567-64de24587867
   type: observation
   attestation: first_hand
@@ -3329,6 +4050,11 @@ domain_claims:
     name: Lisa
   quote: Lisa, who's also 6'3. Yeah, 6'3. Blonde, blue eyes.
   text: Lisa is 6'3" (approximately 190 centimetres) tall, blonde, and has blue eyes.
+  entailment:
+    label: entails
+    score: 0.682
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 04234172-e4ab-449b-a17f-2990812e9530
   type: hearsay
   attestation: third_hand
@@ -3352,6 +4078,11 @@ domain_claims:
     She had met Travis Walton. Travis said she looks identical to what, what he had seen.
   text: |-
     Lisa met Travis Walton, who told her she looks identical to what he had seen during his own encounter.
+  entailment:
+    label: entails
+    score: 0.583
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3722b6b1-a673-4598-95ce-c37e425f96cb
   type: administrative
   attestation: first_hand
@@ -3369,6 +4100,11 @@ domain_claims:
     name: Vendittelli, Luigi
   quote: When my father passed away, my dad died in 2008.
   text: Luigi Vendittelli's father died in 2008.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bf1030bf-ce2f-40fc-afb7-def76a657d28
   type: testimony
   attestation: first_hand
@@ -3387,6 +4123,11 @@ domain_claims:
     The night after he died, I dreamt of my dad... he gave me a look... he looked at me like my dad would have looked at me when I was younger, basically saying, you still have a lot to learn.
   text: |-
     The night after his father died in 2008, Luigi Vendittelli had a dream in which his father appeared young, in good health, wearing a suit, and gave him a meaningful, unhappy look conveying that Vendittelli still had a lot to learn.
+  entailment:
+    label: entails
+    score: 0.66
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2ea50694-2a93-46a7-8a7d-564a99b78bd9
   type: testimony
   attestation: first_hand
@@ -3405,6 +4146,11 @@ domain_claims:
     it, it was a piece of masking tape... and it was written with a black marker. 113.90.
   text: |-
     In his 2008 dream, Luigi Vendittelli saw a piece of beige painter's masking tape on his deceased father's black suit with the number "113.90" written on it in black marker.
+  entailment:
+    label: neutral
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8e26a1e2-8e8a-4501-8037-c256ad2823bf
   type: testimony
   attestation: first_hand
@@ -3427,6 +4173,11 @@ domain_claims:
     And so Sarah calls from Great Britain says, I'm going to be going to the United States. I have to go see a friend of mine in, uh, New Jersey.
   text: |-
     Sarah called Luigi Vendittelli from Great Britain to say she was travelling to the United States to see a friend in Bethlehem, New Jersey.
+  entailment:
+    label: neutral
+    score: 0.384
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 402afebc-7ab7-41f1-b103-219eb340499b
   type: testimony
   attestation: first_hand
@@ -3451,6 +4202,11 @@ domain_claims:
     i called emily and i said emily there's this woman would you like to come with me... Sarah arrived in New Jersey. She was staying with a friend of her friend at an Airbnb with a friend of hers. And Emily and I arrived.
   text: |-
     Luigi Vendittelli and Emily travelled together to New Jersey to meet Sarah, who was staying at an Airbnb/bed and breakfast with a friend of hers.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 874184a8-4b50-4aee-a414-f280bbb67a80
   type: observation
   attestation: first_hand
@@ -3471,6 +4227,11 @@ domain_claims:
     Emily had some type of really good, friendly connection with Sarah. So they were always laughing and talking and they got really got along.
   text: |-
     Emily developed a good, friendly connection with Sarah when they met in New Jersey.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 437d0c70-83cc-4882-9800-47d7ec7e7cde
   type: testimony
   attestation: first_hand
@@ -3496,6 +4257,11 @@ domain_claims:
   quote: This guy, Ken, get in his truck... Oh, oh, it's in Bethlehem, New Jersey.
   text: |-
     A man named Ken drove Luigi Vendittelli, Sarah, and Emily to a crystal cave located in Bethlehem, New Jersey.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f42aa64b-1b71-4450-9d72-a4f66bfa26ab
   type: testimony
   attestation: first_hand
@@ -3516,6 +4282,11 @@ domain_claims:
     you like crystals, don't you? Cause I, I collect expensive crystals... Cause she had come to my house and she had seen some.
   text: |-
     Sarah knew that Luigi Vendittelli collected expensive crystals, having seen some at his house.
+  entailment:
+    label: entails
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ce28c6c3-2a0e-4491-82c8-736e966bd345
   type: testimony
   attestation: first_hand
@@ -3538,6 +4309,11 @@ domain_claims:
     I suddenly bring up the fact that I've been for the longest time trying to figure out what this 113.9 means... Sarah just turns around and says, oh, I know what it is... She says it's in the Bible... She goes Psalms 113.9.
   text: |-
     During the drive to the crystal cave, Luigi Vendittelli mentioned to Emily that he had long been trying to figure out what the number 113.9 meant, and Sarah then said she knew what it meant, telling him it referred to Psalms 113:9 in the Bible.
+  entailment:
+    label: entails
+    score: 0.496
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0e18eb99-480a-4f33-87f9-02964e7de8a8
   type: observation
   attestation: first_hand
@@ -3556,6 +4332,11 @@ domain_claims:
     It's he who gives house, he who cares for barren women, women that have children, not by men.
   text: |-
     Psalms 113:9 concerns God giving a house and caring for barren women who have children not by men.
+  entailment:
+    label: entails
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9c253fef-9651-4788-a577-6d68166b6785
   type: opinion
   attestation: first_hand
@@ -3576,6 +4357,11 @@ domain_claims:
     every time I used to do abduction cases, it's women who either got impregnated or had these fetuses taken away from them, but they weren't having these kids with their husbands, which I found really weird.
   text: |-
     Luigi Vendittelli considers it significant that in many of the abduction cases he investigated, women became pregnant or had fetuses taken from them despite not conceiving with their husbands.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 07ca91e2-e47c-437d-bdc7-448604506736
   type: observation
   attestation: first_hand
@@ -3596,6 +4382,11 @@ domain_claims:
     So we finally get off the exit to go to Bethlehem was, I took a picture of it... It's a Virgin Mary exit.
   text: |-
     On the way to Bethlehem, New Jersey, Luigi Vendittelli took a photo of a highway exit sign reading "Virgin Mary".
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47259ffd-f193-491d-a065-fb6723210e82
   type: testimony
   attestation: first_hand
@@ -3616,6 +4407,11 @@ domain_claims:
     I met with Don Donderry and I said, look... this is not normal. And he says, you need to start writing all this down for real because there there's always coincidences in life. But this seems like there's just too many.
   text: |-
     After returning from the trip to see Sarah in New Jersey, Luigi Vendittelli met with Don Donderry, who told him he needed to start writing everything down because there were too many coincidences to be normal.
+  entailment:
+    label: entails
+    score: 0.611
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a7c876b-ef07-4629-8cad-0ceb1110a849
   type: opinion
   attestation: first_hand
@@ -3640,6 +4436,11 @@ domain_claims:
     if you think about stories in all my in all my career as investigating the this phenomena, That is by far the one that had so many pieces that made no sense to me
   text: |-
     Luigi Vendittelli considers the story involving Sarah, Lily, and the number 113.9 to be, out of his entire career investigating the UFO phenomenon, the one story with the most pieces that made no sense to him.
+  entailment:
+    label: entails
+    score: 0.556
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7fa03856-6635-40c8-9e87-201654f7967d
   type: testimony
   attestation: first_hand
@@ -3658,6 +4459,11 @@ domain_claims:
     name: United Kingdom, England, Holy Island
   quote: she went back to great Britain. She lived on a place. She lived on Holy Island.
   text: Sarah returned to Great Britain and lived on Holy Island.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1dba5d74-ad14-49ce-a234-4b54cbb685e3
   type: testimony
   attestation: first_hand
@@ -3678,6 +4484,11 @@ domain_claims:
     i was in communication with her almost every three four days we would talk... and about maybe a month or two before i lost complete contact with her
   text: |-
     Luigi Vendittelli was in communication with Sarah almost every three to four days before he lost complete contact with her.
+  entailment:
+    label: entails
+    score: 0.838
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c6a36ce-914b-4172-a0ef-fd0cada0c5ab
   type: testimony
   attestation: first_hand
@@ -3698,6 +4509,11 @@ domain_claims:
     apparently in the night, I wrote gibberish on a text message to her and I sent her the text. The next morning she wrote me, she says, what the hell did you write me? And I said, I never wrote you.
   text: |-
     About a month or two before losing contact with Sarah, Luigi Vendittelli unknowingly sent her a text message of gibberish in the middle of the night, which he did not recall writing.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 79519bf2-2553-4e67-8a7a-02aca679e750
   type: testimony
   attestation: second_hand
@@ -3720,6 +4536,11 @@ domain_claims:
     I don't feel safe anymore. I don't, I don't know what will happen with all that, everything that's happened. She goes, I'm very sad about that.
   text: |-
     After the gibberish text incident, Sarah told Luigi Vendittelli that she no longer felt safe and was sad about everything that had happened.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2194b8f5-6c2b-424a-8faa-3cee6126322a
   type: testimony
   attestation: second_hand
@@ -3742,6 +4563,11 @@ domain_claims:
     I never got to meet Lily because regardless of the fact that we did connect with the mom, the mom hadn't wanted nothing to do with that.
   text: |-
     Sarah never got to meet Lily because Lily's mother did not want anything to do with the situation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a4dd0d8-b7c0-4249-ab16-7017e421851a
   type: testimony
   attestation: first_hand
@@ -3761,6 +4587,11 @@ domain_claims:
   quote: |-
     She was never angry. She was just sad that it never happened. She never got angry.
   text: Sarah was never angry about not meeting Lily, only sad that it never happened.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7d102322-646b-43c5-a2cf-f61b57b4babf
   type: testimony
   attestation: first_hand
@@ -3785,6 +4616,11 @@ domain_claims:
     we were all in Montreal together and we got word that Sarah was being threatened. Somebody was threatening Sarah, some crazy person.
   text: |-
     Luigi Vendittelli, Sarah, and Emily Trim were all hanging out together in Montreal when they received word that Sarah was being threatened by someone.
+  entailment:
+    label: entails
+    score: 0.609
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f04fb17c-989d-4c7c-be26-a40be16ebb31
   type: testimony
   attestation: first_hand
@@ -3805,6 +4641,11 @@ domain_claims:
     she said, I'm gonna try my best to lay low... I never heard back from her ever again.
   text: |-
     After being threatened, Sarah said she would try her best to lay low, and Luigi Vendittelli never heard from her again.
+  entailment:
+    label: entails
+    score: 0.847
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f5ac9e9b-da55-4db4-91ff-e4b7c2a8286c
   type: testimony
   attestation: first_hand
@@ -3827,6 +4668,11 @@ domain_claims:
     I reached out to people on holy islands, very small, by the way. I, nobody's ever been able to give me her information or what happened to Sarah. I knew her address. Nobody ever saw her again.
   text: |-
     Luigi Vendittelli reached out to people on Holy Island but nobody could tell him what happened to Sarah, despite him knowing her address.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ae1fc7b7-998d-4c14-9332-84be5cb5355f
   type: testimony
   attestation: second_hand
@@ -3851,6 +4697,11 @@ domain_claims:
     it was right before I met her in Quebec, when she was on her way to Quebec, she landed in New York City... she ended up staying in New York for a day, and she was at Grand Central Station.
   text: |-
     Shortly before meeting Luigi Vendittelli in Quebec, Sarah flew to North America and landed in New York City, staying a day at Grand Central Terminal.
+  entailment:
+    label: entails
+    score: 0.914
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 17fbb8a1-aebe-4394-b3a4-20d1618c5065
   type: hearsay
   attestation: second_hand
@@ -3875,6 +4726,11 @@ domain_claims:
     she was sitting there with her luggage. And she said two men came close to her and said... one of them had a ring, a big giant Mason sign... he just stopped, looked at her and said something like, we know who you are. We know why you're here.
   text: |-
     Sarah told Luigi Vendittelli that while sitting with her luggage at Grand Central Terminal, two men approached her, one wearing a large Masonic ring, and said "we know who you are, we know why you're here."
+  entailment:
+    label: entails
+    score: 0.507
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f2c1ae97-1f89-46e9-bae7-1b57ccf724a4
   type: hearsay
   attestation: second_hand
@@ -3897,6 +4753,11 @@ domain_claims:
     they were very weird, like like they were aware of who she was. It wasn't like they were trying to take her... they knew where you're going.
   text: |-
     Sarah described the two men at Grand Central Terminal as seeming aware of who she was and where she was going, without appearing to try to take her.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 68f71dac-8e46-41e6-92fe-02c50056df1a
   type: hearsay
   attestation: second_hand
@@ -3919,6 +4780,11 @@ domain_claims:
     She had another interaction when she was on Holy Island, where there was a man and another guy in a car... they were following her all the time. But she said they didn't look like they belonged on Holy Island, didn't look like people from there.
   text: |-
     Sarah told Luigi Vendittelli about another incident on Holy Island where two men, one in a car and one on foot, followed her repeatedly and did not look like they belonged there.
+  entailment:
+    label: entails
+    score: 0.562
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cb0b653e-547e-4cd5-a2ba-7c605e42befb
   type: opinion
   attestation: first_hand
@@ -3943,6 +4809,11 @@ domain_claims:
     It's probably the reason why I left the field permanently, because after that, and after losing my friend Emily, which is the Ariel case, I didn't wanna investigate this anymore.
   text: |-
     Luigi Vendittelli considers it probable that the events involving Sarah, along with the loss of his friend Emily Trim in the Ariel School case, are the reason he left the field of UFO investigation permanently.
+  entailment:
+    label: entails
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7027adc3-7161-4697-bc6a-3ecc121e604c
   type: opinion
   attestation: first_hand
@@ -3960,6 +4831,11 @@ domain_claims:
   quote: I'm just gonna tell stories now. I'm gonna make the stories come to life.
   text: |-
     After leaving the field of UFO investigation, Luigi Vendittelli decided to focus on telling stories instead.
+  entailment:
+    label: entails
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: de080574-06b9-442c-8bfc-b36c1e1e99ce
   type: opinion
   attestation: first_hand
@@ -3980,6 +4856,11 @@ domain_claims:
     I don't think the government is gonna give us an answer on the nuts and bolts. And I don't think that the aliens are gonna give us an answer as to why Mary Magdalene fits into the picture.
   text: |-
     Luigi Vendittelli does not believe humanity will ever get an answer from the government on the technical details, nor from the aliens as to why Mary Magdalene fits into the picture.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1439b8d4-7f92-4a64-a451-74721597ce1e
   type: testimony
   attestation: first_hand
@@ -4006,6 +4887,11 @@ domain_claims:
     After I met with the mother, the friend of the mother of Lily, I had gone to Toronto to see Emily Trim... she lived in Etobicoke at the time.
   text: |-
     After meeting the mother of Lily's friend, Luigi Vendittelli travelled to Toronto to see Emily Trim, who at the time lived in Etobicoke.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ae143a6f-0f58-488f-9cd5-15f57873cfc4
   type: testimony
   attestation: first_hand
@@ -4025,6 +4911,11 @@ domain_claims:
   quote: Emily had no idea at all that I was working on that, at all, absolutely zero.
   text: |-
     Emily Trim had no idea that Luigi Vendittelli had been investigating this story when he picked her up in Etobicoke.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 78e93938-7665-40ef-b44d-8c0d103fa013
   type: testimony
   attestation: first_hand
@@ -4047,6 +4938,11 @@ domain_claims:
     she brought her diary with her in the car. It was a red book... She goes, cause I wanted you to read it... If you read my diary, you'll have some answers to a lot of things because I write a lot in it. It's very personal.
   text: |-
     Emily Trim brought her red diary in the car and showed it to Luigi Vendittelli, saying she wanted him to read it because she writes a lot in it and it is very personal.
+  entailment:
+    label: entails
+    score: 0.907
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0d0f59a3-d5b0-4d04-b43b-fc85a05bbb9d
   type: testimony
   attestation: first_hand
@@ -4069,6 +4965,11 @@ domain_claims:
     She opened the book and in big black, like she wrote it with a black marker and she wrote it super big on both pages... without knowing anything. She wrote Mary Magdalene on both pages.
   text: |-
     Emily Trim opened her diary and showed Luigi Vendittelli that she had written "Mary Magdalene" in big black marker on both pages, without knowing anything about its significance to the story.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b07c838a-253d-458f-8a97-43eaf8780d7d
   type: administrative
   attestation: first_hand
@@ -4092,6 +4993,11 @@ domain_claims:
     name: 2015 Luigi Vendittelli Vatican visit with Sarah
   quote: have made in 2015 i went to the vatican with sarah
   text: In 2015, Luigi Vendittelli went to the Vatican with Sarah.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a5e3ab0b-d9c3-46e3-8fad-19c1aa4b4c4c
   type: administrative
   attestation: first_hand
@@ -4110,6 +5016,11 @@ domain_claims:
     name: Italy, Lazio, Rome
   quote: yeah this is from italy from rome... your mom's
   text: Luigi Vendittelli's mother is originally from Rome, Italy.
+  entailment:
+    label: entails
+    score: 0.881
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c1736a1f-178a-43e5-bfad-3ee8ed8d6bec
   type: testimony
   attestation: first_hand
@@ -4130,6 +5041,11 @@ domain_claims:
     i used to go to the vatican on sundays... okay like that was my grandfather would take me to church on sunday it would be the vatican
   text: |-
     As a child, Luigi Vendittelli's grandfather used to take him to the Vatican for church on Sundays.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2ed1de10-0068-4163-98fe-921004261ce9
   type: observation
   attestation: first_hand
@@ -4152,6 +5068,11 @@ domain_claims:
     There was a there's a section that is no longer accessible to the public... on the left side, if you go into the Basilica, on the left side, you have to walk a walk. It used to be a place where they had it corded off
   text: |-
     During his 2015 Vatican visit, Luigi Vendittelli found a section on the left side of the Basilica that was, at the time, still accessible to the public with a roped-off area.
+  entailment:
+    label: contradicts
+    score: 0.56
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bf376d1e-d964-4ce9-ae37-c39f8d03786e
   type: observation
   attestation: first_hand
@@ -4173,6 +5094,11 @@ domain_claims:
     I went back in 2019 and they've closed it off. It's no longer. They made a wall. You can't even see where I'm talking about now.
   text: |-
     When Luigi Vendittelli returned to the Vatican in 2019, the previously accessible section had been closed off with a wall.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6f0f31e8-2810-4fd9-b341-0daadc8e700a
   type: observation
   attestation: first_hand
@@ -4193,6 +5119,11 @@ domain_claims:
     it says no photo about a hundred times like a hundred places... they're also saying no photo no photo
   text: |-
     Photography was forbidden many times over in the roped-off Vatican section Luigi Vendittelli visited, with signs and guards repeatedly saying "no photo."
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f02dd974-6988-4db4-95db-b5ea3ab91c02
   type: observation
   attestation: first_hand
@@ -4213,6 +5144,11 @@ domain_claims:
     there's a gold, there's an altar. It's a small altar... there's the bones of one of the apostles.
   text: |-
     In the roped-off Vatican section, Luigi Vendittelli observed a small altar with a gold container holding the bones of one of the apostles.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27457762-992b-4c74-a61e-3e329f74ce16
   type: observation
   attestation: first_hand
@@ -4233,6 +5169,11 @@ domain_claims:
     there's a painting of Jesus Christ holding a baby and a bouquet of lilies, lily flowers. And there's a halo around the head of Jesus and on the head of the child... He and the child had a white halo.
   text: |-
     On the wall of the roped-off Vatican section, Luigi Vendittelli observed a painting of Jesus Christ holding a baby and a bouquet of lily flowers, with a white halo around both of their heads.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c63dd4b-69ba-4c63-a85a-61c78b01590a
   type: opinion
   attestation: first_hand
@@ -4254,6 +5195,11 @@ domain_claims:
   quote: What did the child look like? It looked like Lily.
   text: |-
     In the Vatican painting observed by Luigi Vendittelli, the child in Jesus Christ's arms resembled Lily.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a7f6404c-50ca-4209-857e-bfa0446337f4
   type: testimony
   attestation: first_hand
@@ -4274,6 +5220,11 @@ domain_claims:
     I asked the guard there, I said, in Italian, I said, who's the baby? And the guard looked at me and he says, it's not a baby... He says, just a representation of hope. Keep walking.
   text: |-
     A Vatican guard told Luigi Vendittelli, in Italian, that the child in the painting was not a baby or a child but "just a representation of hope."
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f912a22b-300b-4045-9ce9-ea45c37bad39
   type: testimony
   attestation: first_hand
@@ -4293,6 +5244,11 @@ domain_claims:
   quote: So I took a picture when they said not to.
   text: |-
     Luigi Vendittelli took a photo in the roped-off Vatican section despite being told not to.
+  entailment:
+    label: entails
+    score: 0.512
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b13acf96-0a38-4fd3-ae80-bff26f04078b
   type: opinion
   attestation: first_hand
@@ -4313,6 +5269,11 @@ domain_claims:
     and that's why that's why i became um that's why it became such a big part of my life at that time ... and it was also i couldn't i'm gonna say this and get get grabbed for it but i don't think i could ever have beaten that as a case ... so i i stopped yeah i i just walked away
   text: |-
     Luigi Vendittelli believes he could never surpass the Mary Magdalene and daughter of Jesus reincarnation claim as a case, which contributed to him stopping his UFO investigations.
+  entailment:
+    label: neutral
+    score: 0.859
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7db036dd-599a-488a-85b8-6d649516fd71
   type: opinion
   attestation: first_hand
@@ -4333,6 +5294,11 @@ domain_claims:
     then we are not just dealing with some type of extraterrestrial faction or some extraterrestrial civilization. There's something that is integrally related to our belief systems.
   text: |-
     Luigi Vendittelli believes that if there is truth to the UFO phenomenon, humanity is not just dealing with an extraterrestrial faction or civilisation, but with something integrally related to human belief systems.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 856c208d-30e6-4e63-b4c4-e1edbf356dbd
   type: opinion
   attestation: first_hand
@@ -4353,6 +5319,11 @@ domain_claims:
     Maybe that's why religion is kept so far away from this research. Because if you do, you start becoming criticized the same way I used to get criticized in the 80s.
   text: |-
     Luigi Vendittelli believes religion is kept far away from UFO research because researchers who connect the two get criticised, as he was criticised in the 1980s.
+  entailment:
+    label: entails
+    score: 0.827
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9da78fc-a0f1-4941-879b-db0a56e51c4e
   type: hearsay
   attestation: second_hand
@@ -4373,6 +5344,11 @@ domain_claims:
     name: Bob Lazar's briefing folder documents on religion
   quote: The blue documents. He read that Jesus was some type of hybrid or something.
   text: Bob Lazar read documents claiming that Jesus was some type of hybrid being.
+  entailment:
+    label: contradicts
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6df33046-9cf3-42bb-88cb-cf5c1d0e3d48
   type: testimony
   attestation: second_hand
@@ -4397,6 +5373,11 @@ domain_claims:
     in the story of Bob Lazar, Bob was given access to a bunch of folders that were inside the briefing room. And there was a book, a book, a file in there this thick on religion.
   text: |-
     Bob Lazar was given access to a set of folders inside the S4 briefing room, one of which was a thick file on religion.
+  entailment:
+    label: neutral
+    score: 0.513
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 632cd39f-be3c-4b54-9860-494d10c552c8
   type: hearsay
   attestation: third_hand
@@ -4422,6 +5403,11 @@ domain_claims:
     But Gene Huff says the way it was written, because he remembered how Bob said that it was written, it says, the Christian God as you know him doesn't exist. Not that the Christian God doesn't exist. The Christian God, as you know him, those words are important.
   text: |-
     According to Gene Huff's recollection of what Bob Lazar told him, Bob Lazar's briefing folder documents on religion stated that "the Christian God as you know him doesn't exist" rather than that the Christian God doesn't exist at all.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5dc39cee-1c49-430d-97cf-40776ea890a1
   type: testimony
   attestation: first_hand
@@ -4448,6 +5434,11 @@ domain_claims:
     in the process of me making this film, I had the opportunity and the honor ... to meet with Lane Keck, who was the hypnotist who hypnotized Bob Lazar after all this happened.
   text: |-
     During the making of S4: The Bob Lazar Story, Luigi Vendittelli met with Lane Keck, the hypnotist who hypnotised Bob Lazar after his experiences at S4.
+  entailment:
+    label: entails
+    score: 0.955
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cbdd22b6-8319-4d87-9ed9-4c96834d2a16
   type: testimony
   attestation: second_hand
@@ -4472,6 +5463,11 @@ domain_claims:
   quote: |-
     april of 1989 so this was like yeah i mean right there and uh Bob did a few sessions with him
   text: Lane Keck conducted hypnosis sessions with Bob Lazar in April 1989.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 42c7f86d-d6aa-4a3b-b823-ad1d3b1fa509
   type: testimony
   attestation: second_hand
@@ -4496,6 +5492,11 @@ domain_claims:
     the reason why he had done that was because he said i just he just wanted to see if the if the regressions could clarify more memory i mean he said i was shown so much stuff that I couldn't remember everything
   text: |-
     Bob Lazar underwent hypnosis with Lane Keck to see if the regressions could clarify memories of things he had been shown that he could not otherwise remember.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 050ed4b3-7649-40f5-9112-e95d04d6a0ba
   type: testimony
   attestation: second_hand
@@ -4518,6 +5519,11 @@ domain_claims:
     name: Lane Keck's handwritten hypnosis notes on Bob Lazar
   quote: So Lane did those regressions, took notes, handwritten notes at the time.
   text: Lane Keck took handwritten notes during his hypnosis sessions with Bob Lazar.
+  entailment:
+    label: contradicts
+    score: 0.865
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 95c54570-dd9a-4deb-a5e4-d311c5320e3b
   type: testimony
   attestation: second_hand
@@ -4539,6 +5545,11 @@ domain_claims:
   quote: And he said, I have all the original notes that I have never shown anybody.
   text: |-
     Lane Keck told Luigi Vendittelli that he had all his original hypnosis notes on Bob Lazar and had never shown them to anybody before.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d4b62939-d976-49a3-b6e3-352238363000
   type: testimony
   attestation: second_hand
@@ -4565,6 +5576,11 @@ domain_claims:
     If Bob gives me permission, I will share them with you. And you would be the very first person I ever share them with.
   text: |-
     Lane Keck told Luigi Vendittelli that if Bob Lazar gave permission, he would share his hypnosis notes with him, and that Luigi Vendittelli would be the first person he ever shared them with.
+  entailment:
+    label: entails
+    score: 0.913
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aaca0012-405d-48ba-a665-aee4615ba482
   type: testimony
   attestation: second_hand
@@ -4590,6 +5606,11 @@ domain_claims:
   quote: Bob said, no problem. You could give them all to Luigi.
   text: |-
     Bob Lazar gave Lane Keck permission to give his hypnosis notes to Luigi Vendittelli.
+  entailment:
+    label: entails
+    score: 0.505
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6fa78c08-20a5-4410-971c-1682cc7c6e16
   type: testimony
   attestation: first_hand
@@ -4610,6 +5631,11 @@ domain_claims:
     And there's information about about Jesus and and who he is and where it comes from and why he was left here.
   text: |-
     Lane Keck's handwritten hypnosis notes on Bob Lazar contain information about who Jesus is, where he came from, and why he was left on Earth.
+  entailment:
+    label: contradicts
+    score: 0.703
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e0a757f6-ab46-419b-946c-e3302adb4826
   type: hearsay
   attestation: third_hand
@@ -4633,6 +5659,11 @@ domain_claims:
     And he said, you know, they they were talking about the fact that Jesus was left here was was ... left behind with somebody else.
   text: |-
     According to Gene Huff, Bob Lazar told him that Jesus was left behind on Earth with somebody else.
+  entailment:
+    label: contradicts
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d2a0cbe5-dad7-44a8-a013-e42c13729093
   type: testimony
   attestation: first_hand
@@ -4651,6 +5682,11 @@ domain_claims:
     he sat up and looked at me and he says, I've learned so many things in this life. That I've learned that I haven't learned anything yet.
   text: |-
     Luigi Vendittelli's father told him, before he passed away, that he had learned so many things in life that he had learned he had not learned anything yet.
+  entailment:
+    label: contradicts
+    score: 0.577
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ce148639-d324-4442-b440-7b25ca71f33f
   type: opinion
   attestation: first_hand
@@ -4671,6 +5707,11 @@ domain_claims:
     Yes, 100%. A hundred percent. There's no question in my mind it merits a second look.
   text: |-
     Luigi Vendittelli believes the 1987 Gulf Breeze UFO sightings merit a second look.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 81410920-57ab-4321-ac98-ae26532220d7
   type: opinion
   attestation: first_hand
@@ -4693,6 +5734,11 @@ domain_claims:
     there was just too many, uh, people in Gulf Breeze that had seen the craft, uh, flying around there in 1987, 88, 89. There was just too many people. And if there were not so many people in Gulf Breeze that would have seen that craft, I would have said, maybe it is a hoax.
   text: |-
     Luigi Vendittelli believes too many people in Gulf Breeze, Florida saw the craft flying around during 1987-1989 for the sightings to be a hoax.
+  entailment:
+    label: entails
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 16796241-528c-44ac-8edf-1853a77023f4
   type: testimony
   attestation: second_hand
@@ -4717,6 +5763,11 @@ domain_claims:
     Bruce Maccabee, I remember at the time, Bruce Maccabee is no longer with us, had investigated the images and the one image of that craft low to the ground near the road. He had determined, deemed it 100% authentic.
   text: |-
     Bruce Maccabee investigated the images from the 1987 Gulf Breeze UFO sightings, including an image of the craft low to the ground near a road, and determined the image to be 100% authentic.
+  entailment:
+    label: entails
+    score: 0.789
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: caddfb57-5438-45e0-a6bc-cc889b68eadd
   type: observation
   attestation: first_hand
@@ -4733,6 +5784,11 @@ domain_claims:
     name: Maccabee, Bruce
   quote: Bruce Maccabee is no longer with us
   text: Bruce Maccabee has died.
+  entailment:
+    label: entails
+    score: 0.861
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4ff3bf42-04c9-4870-b126-15f98deab985
   type: testimony
   attestation: first_hand
@@ -4752,6 +5808,11 @@ domain_claims:
   quote: there were, I think, 200 to 300 people in Gulf Breeze whose scene saw the craft.
   text: |-
     Approximately 200 to 300 people in Gulf Breeze, Florida witnessed the craft during the 1987 Gulf Breeze UFO sightings.
+  entailment:
+    label: entails
+    score: 0.645
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bae296a5-77b3-49a2-8eba-c8c8e3009811
   type: testimony
   attestation: first_hand
@@ -4771,6 +5832,11 @@ domain_claims:
   quote: There is. I have I have one. ... But I have one video, the original.
   text: |-
     Luigi Vendittelli possesses the original nighttime video of the craft from the 1987 Gulf Breeze UFO sightings.
+  entailment:
+    label: entails
+    score: 0.529
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 39650263-34b4-426e-975c-f9695aacf5dd
   type: opinion
   attestation: first_hand
@@ -4793,6 +5859,11 @@ domain_claims:
     that's why i say we need to find Ed Walters a lot i haven't heard from him anymore and i would love a deeper dive in uh Gulf Breeze i'd love
   text: |-
     Luigi Vendittelli has not heard from Ed Walters in a while and would like to do a deeper investigation into the 1987 Gulf Breeze UFO sightings with him.
+  entailment:
+    label: entails
+    score: 0.431
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c6c8051-28a6-4f55-bafa-755b0c08a1a1
   type: opinion
   attestation: first_hand
@@ -4813,6 +5884,11 @@ domain_claims:
     there are some of these species that have technology that render them independent of all authority. Never forget that. If they can bend space, time, and gravity, they are no longer relying on an authority.
   text: |-
     Luigi Vendittelli believes some non-human species involved in the UFO phenomenon possess technology, such as the ability to bend space, time, and gravity, that renders them independent of any authority.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 12c2ab44-c93a-449f-98db-c9b1639e3840
   type: opinion
   attestation: first_hand
@@ -4833,6 +5909,11 @@ domain_claims:
     This is not one species. This is not one type. ... Imagine one species has multiple agendas. Now imagine multiple species with multiple agendas.
   text: |-
     Luigi Vendittelli believes the UFO phenomenon involves multiple non-human species with multiple different agendas, not a single species or type.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 19c46364-4792-4517-96ab-6b2bcdca4463
   type: opinion
   attestation: first_hand
@@ -4853,6 +5934,11 @@ domain_claims:
     the, the right answer is no. Okay. And I'm pretty sure that 99% of MUFON people, individuals at, at the head office and around all of the MUFON, uh, offices around the world will say no.
   text: |-
     Luigi Vendittelli believes that MUFON (Mutual UFO Network) officials at the head office and around the world would publicly say MUFON is not told to keep certain cases quiet to hide secret military craft.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9da361db-4be1-41d7-80b2-5ba2ad4f7332
   type: testimony
   attestation: first_hand
@@ -4873,6 +5959,11 @@ domain_claims:
     When I was there, I had a bad feeling about certain people that were in charge at MUFON at the time, and I did not trust them at all.
   text: |-
     When Luigi Vendittelli worked at the Mutual UFO Network (MUFON), he had a bad feeling about certain people in charge at MUFON at the time and did not trust them.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1d33eeed-fc23-476f-9945-578dd1e62ebd
   type: opinion
   attestation: first_hand
@@ -4893,6 +5984,11 @@ domain_claims:
     So yeah, I would be very cautious with any organization that is in charge of getting all information on UFOs or flying saucers or aliens or anything like that.
   text: |-
     Luigi Vendittelli considers it prudent to be cautious with any organisation in charge of gathering information on UFOs, flying saucers, or aliens.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b323723f-0790-430d-9f58-a6e6bdd7d6cd
   type: opinion
   attestation: first_hand
@@ -4912,6 +6008,11 @@ domain_claims:
   quote: If I was the intelligence community, I would 100% infiltrate that. 100%.
   text: |-
     Luigi Vendittelli believes that if he were part of the intelligence community, he would infiltrate an organisation in charge of gathering UFO information such as the Mutual UFO Network (MUFON).
+  entailment:
+    label: entails
+    score: 0.928
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cf17740e-c535-42a5-867a-7bc5e795d960
   type: opinion
   attestation: first_hand
@@ -4931,6 +6032,11 @@ domain_claims:
   quote: We can assume they have. / They have. Absolutely.
   text: |-
     Luigi Vendittelli believes the intelligence community has infiltrated the Mutual UFO Network (MUFON).
+  entailment:
+    label: neutral
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 113eef9b-79dc-4124-902f-481567099d9c
   type: opinion
   attestation: first_hand
@@ -4950,6 +6056,11 @@ domain_claims:
   quote: And I don't have any evidence of it, so it sounds like conspiratorial.
   text: |-
     Luigi Vendittelli has no evidence that the intelligence community has infiltrated the Mutual UFO Network (MUFON), and acknowledges the claim sounds conspiratorial.
+  entailment:
+    label: entails
+    score: 0.65
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 04c09a01-3fcd-4c18-bc4d-ff3b87344b3d
   type: testimony
   attestation: second_hand
@@ -4973,6 +6084,11 @@ domain_claims:
     Robert Bigelow gave MUFON a lot of money and the caveat to it was he was going to receive all the case information before everybody else.
   text: |-
     Robert Bigelow gave the Mutual UFO Network (MUFON) a large sum of money in the past, on the condition that he would receive all case information before everybody else.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1c7b0d5c-7302-4322-89b2-5bf16b46260d
   type: testimony
   attestation: first_hand
@@ -4994,6 +6110,11 @@ domain_claims:
   quote: So, you know, I mean, that, that I know was, was true.
   text: |-
     Luigi Vendittelli confirms that the account of Robert Bigelow paying the Mutual UFO Network (MUFON) for early access to case information was true.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 286400a4-0eb7-4fd6-b5bd-17bac40be4c8
   type: opinion
   attestation: first_hand
@@ -5012,6 +6133,11 @@ domain_claims:
     In most cases, you know, somebody would be out at night smoking a cigarette at two in the morning, see a giant craft over their head. And the first thing in the morning... They haven't told anybody.
   text: |-
     Chris Ramsay observes that in most UFO sighting cases, witnesses had not told anyone before someone else was already at the scene the next morning.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 88ac7dca-8c93-4d05-8e59-e739a14e64a0
   type: opinion
   attestation: first_hand
@@ -5030,6 +6156,11 @@ domain_claims:
     I believe that the ETs or this technology, I don't know who it is, but I believe that that technology which I also believe ended up in the hands of some human component of society, whether it be government, contract, whoever it is, humans got their hands on it, has some type of radar that can perceive consciousness, not just little pieces of metal in the sky.
   text: |-
     Luigi Vendittelli believes that a technology, possibly held by extraterrestrials or by a human component of society such as government or contractors, has a type of radar or capability that can perceive consciousness rather than just detect metal objects in the sky.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fc9df88f-458c-4c5b-9335-0489b736dea7
   type: hearsay
   attestation: second_hand
@@ -5053,6 +6184,11 @@ domain_claims:
     You know, I had a guy reach out and he, he left a message on one of these episodes and I followed up with him. And, uh, you know, he said, Hey, uh, so-and-so and I work for an unacknowledged special access program... he's a contractor. He's not in the military or anything.
   text: |-
     Chris Ramsay was contacted by a man who left a message on one of his podcast episodes claiming to work for an unacknowledged special access program as a contractor, not military.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d44cef67-2943-4f59-97b9-3929a1e94810
   type: hearsay
   attestation: second_hand
@@ -5076,6 +6212,11 @@ domain_claims:
     he gave me this like really crazy story of how he was in a skiff and like this being appeared and like whatever
   text: |-
     A person claiming to be a contractor working for an unacknowledged special access program, in a message left on one of Chris Ramsay's podcast episodes and followed up in conversation, told Chris Ramsay a story of being in a SKIF (secure facility) when a being appeared.
+  entailment:
+    label: entails
+    score: 0.726
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b95a5d28-0dd3-4fbc-a7aa-1408e54fe434
   type: hearsay
   attestation: second_hand
@@ -5099,6 +6240,11 @@ domain_claims:
     the systems that we have, he goes, I think are of non-human origin... they're predictive. Um, he goes, we were aware of like an incursion from an enemy three, three hours before. And this is before the enemy even knew that they were gonna go.
   text: |-
     A person claiming to be a contractor working for an unacknowledged special access program told Chris Ramsay that the systems he worked with are, in his view, of non-human origin because they are predictive, citing an instance where they were aware of an enemy incursion three hours before the enemy itself knew it would happen.
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e2bca797-3f25-4841-93ab-e312f8c0ea9a
   type: opinion
   attestation: first_hand
@@ -5117,6 +6263,11 @@ domain_claims:
     Like if you think of quantum computing and how we're trying to get there, know that the government, whatever we're doing right now, they're 30 years ahead.
   text: |-
     Chris Ramsay considers it plausible that government quantum computing capability is decades ahead of publicly known efforts.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bcb24993-8f83-4262-8d42-f8791be08764
   type: opinion
   attestation: first_hand
@@ -5137,6 +6288,11 @@ domain_claims:
     I will say this to that specifically about that, which could be something maybe related to Looking Glass and that he figured something out.
   text: |-
     Luigi Vendittelli believes the predictive capability described by Chris Ramsay's contact could be related to the Looking Glass (alleged S4 device), which the contact may have partly figured out.
+  entailment:
+    label: entails
+    score: 0.726
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e98d4cc3-8f57-486b-b7c4-111d2fed966c
   type: opinion
   attestation: first_hand
@@ -5155,6 +6311,11 @@ domain_claims:
     That's the reason why we haven't gotten to interstellar travel is because we're still not fast enough in computing.
   text: |-
     Luigi Vendittelli believes humanity has not achieved interstellar travel because current computing is not fast enough.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3f3cd125-bde1-4048-9f98-9d19f31ad912
   type: opinion
   attestation: first_hand
@@ -5175,6 +6336,11 @@ domain_claims:
     If you have a technology like they had at S4, where if you consider the reactor, which is being utilized for propulsion purposes, but could be utilized for other reasons as well.
   text: |-
     Luigi Vendittelli states that S4 (USA, Nevada) had a technology involving a reactor used for propulsion purposes that could also be utilised for other purposes.
+  entailment:
+    label: entails
+    score: 0.77
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b3074f1c-ae22-4e68-83d1-560cf987431e
   type: opinion
   attestation: first_hand
@@ -5198,6 +6364,11 @@ domain_claims:
   quote: So they had looking glass and sidekick.
   text: |-
     Luigi Vendittelli states that S4 (USA, Nevada) had two devices known as Looking Glass and Sidekick.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6d084b98-a29b-4824-99bb-bd8a3c8377db
   type: opinion
   attestation: first_hand
@@ -5218,6 +6389,11 @@ domain_claims:
     And if you consider looking glass, it's time dilation or it's it's the observation of time dilation.
   text: |-
     Luigi Vendittelli describes the Looking Glass (alleged S4 device) as involving the observation of time dilation.
+  entailment:
+    label: entails
+    score: 0.598
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a70b2360-e028-4383-82dc-d3901571c119
   type: opinion
   attestation: first_hand
@@ -5238,6 +6414,11 @@ domain_claims:
     Could we not utilize the technology to create the fastest computer ever where it will predict the future simply because it's stopping time?
   text: |-
     Luigi Vendittelli speculates that if the time-dilation phenomenon associated with the Looking Glass (alleged S4 device) could be integrated into a computer, it could be used to create the fastest computer ever, capable of predicting the future by effectively stopping time.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 50d6dce5-b013-4ad6-9efd-fb1eeaf6dd49
   type: opinion
   attestation: first_hand
@@ -5258,6 +6439,11 @@ domain_claims:
     So something that would need 18 million years to compute can happen instantly with something like this integrated time.
   text: |-
     Luigi Vendittelli speculates that a computation requiring 18 million years could be performed instantly using technology that integrates time manipulation like that of the Looking Glass (alleged S4 device).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9d48b4fd-a856-4e68-855e-a3020680628d
   type: opinion
   attestation: first_hand
@@ -5278,6 +6464,11 @@ domain_claims:
     So I certainly believe that they messed with that because it's an incredible weapon.
   text: |-
     Luigi Vendittelli believes that whoever developed or acquired the Looking Glass (alleged S4 device) technology tampered with it because it constitutes an incredible weapon.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: fdecf269-c94b-4da2-9592-2bf95796bb95
   type: opinion
@@ -5300,6 +6491,11 @@ infrastructure_claims:
   quote: |-
     And then you go on Rotten Tomatoes and you've got like the highest rating I've ever seen on Rotten Tomatoes by audience.
   text: 'S4: The Bob Lazar Story received a very high audience rating on Rotten Tomatoes.'
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 101900c1-bd29-438e-99e2-e7b9af23b5e6
   type: administrative
   attestation: first_hand
@@ -5321,6 +6517,11 @@ infrastructure_claims:
   quote: you were on rogan crushing it
   text: |-
     Luigi Vendittelli appeared on The Joe Rogan Experience to discuss S4: The Bob Lazar Story.
+  entailment:
+    label: contradicts
+    score: 0.935
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: da01d5db-f3a8-4172-869e-13de454dfc7e
   type: administrative
   attestation: first_hand
@@ -5339,6 +6540,11 @@ infrastructure_claims:
     I know there's a guy online, Eyes on Cinema. He does a really great job of just uploading everything and everything he finds
   text: |-
     A person going by 'Eyes on Cinema' uploads a large amount of archival UFO material online.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9af27ae2-d0bb-4e56-9449-d8ce018fb2e4
   type: administrative
   attestation: first_hand
@@ -5361,6 +6567,11 @@ infrastructure_claims:
     And Gene Huff covered that a lot in my interviews, and you're going to see that on our We Are Not Alone channel.
   text: |-
     Gene Huff discussed Bob Lazar's briefing folder documents on religion extensively in interviews for the WeAreNotAlone.com (WANA) channel.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95faeb95-031e-4aeb-b225-8472a5ac504c
   type: testimony
   attestation: first_hand
@@ -5385,6 +6596,11 @@ infrastructure_claims:
     He doesn't, didn't, absolutely did not want me to put any of that in the, in the film ... That's why we didn't put it in there. Bob said, don't put any of the stuff in there.
   text: |-
     Bob Lazar asked Luigi Vendittelli not to include the content of the religion documents in the documentary S4: The Bob Lazar Story.
+  entailment:
+    label: entails
+    score: 0.453
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 53affaff-b87a-46dd-a07d-85a779c98aee
   type: administrative
   attestation: second_hand
@@ -5407,6 +6623,11 @@ infrastructure_claims:
     in the hitchhiker's guide of the galaxy the book by douglas adams there's this machine that they use to punish people and it's called the total perspective vortex
   text: |-
     Douglas Adams wrote The Hitchhiker's Guide to the Galaxy, which features a machine called the Total Perspective Vortex, used to punish people.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 709705d0-4e90-4c0d-b0e8-8d4592791da5
   type: administrative
   attestation: second_hand
@@ -5427,6 +6648,11 @@ infrastructure_claims:
     what it does is that it puts you in perspective of how small infinitesimally small you are compared to the vastness of the universe and you start to comprehend it and the fact that you comprehend it literally drives you crazy and it like blows your mind literally blows your mind you become completely useless
   text: |-
     In The Hitchhiker's Guide to the Galaxy, the Total Perspective Vortex shows a person how infinitesimally small they are compared to the vastness of the universe, and comprehending this drives the person crazy and renders them useless.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b530d3b6-e451-4a0f-a932-7fcbe11ff553
   type: opinion
   attestation: second_hand
@@ -5449,6 +6675,11 @@ infrastructure_claims:
     I think Linda Moulton Howe touched on this once and I thought it was a really interesting concept, but she said that, you know, What if some of these aliens are impersonating other aliens?
   text: |-
     Linda Moulton Howe raised the concept that some aliens might be impersonating other aliens.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c0f93065-3a7c-426d-b82b-9cb77231db05
   type: administrative
   attestation: first_hand
@@ -5471,3 +6702,8 @@ infrastructure_claims:
     I was even saying this on Rogan when I was on the show, and it's I'm going to go into a little bit more detail here.
   text: |-
     Luigi Vendittelli discussed the topic of the Looking Glass (alleged S4 device) and quantum computing on The Joe Rogan Experience.
+  entailment:
+    label: neutral
+    score: 0.649
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

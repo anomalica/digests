@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -97,6 +103,11 @@ domain_claims:
     name: USA, New Mexico, Los Alamos
   quote: P.O. Box 1092, Los Alamos NM, 87544
   text: Pajarito Astronomers is located at P.O. Box 1092, Los Alamos, New Mexico 87544.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b664586-b956-4d57-8123-60a1249dffb7
   type: administrative
   attestation: second_hand
@@ -112,6 +123,11 @@ domain_claims:
     name: Club 1663
   quote: Sponsored by Club 1663
   text: Pajarito Astronomers is sponsored by Club 1663.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0516f0b8-f655-4802-9b49-da3e70fed985
   type: administrative
   attestation: second_hand
@@ -130,6 +146,11 @@ domain_claims:
     Our next meeting will be Thursday, May 29, 1986, in the Ranch Room at Fuller Lodge, at 7:30 p.m.
   text: |-
     The Pajarito Astronomers May 1986 Meeting is scheduled for Thursday, 1986-05-29, at 7:30 p.m.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 94e27b77-f5b9-4b09-8f3d-77b240bd6661
   type: administrative
   attestation: second_hand
@@ -149,6 +170,11 @@ domain_claims:
   quote: in the Ranch Room at Fuller Lodge
   text: |-
     The Pajarito Astronomers May 1986 Meeting will be held at the Ranch Room at Fuller Lodge in Los Alamos, New Mexico.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4e11175-0cf3-464b-ae5e-02123e4d85ff
   type: administrative
   attestation: second_hand
@@ -168,6 +194,11 @@ domain_claims:
   quote: Guest speaker will be Dr. John Warren of AT-6
   text: |-
     Dr. John Warren of AT-6 is the guest speaker at the Pajarito Astronomers May 1986 Meeting.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c802d57b-53fb-48c4-a901-1821122b87b0
   type: administrative
   attestation: second_hand
@@ -187,6 +218,11 @@ domain_claims:
   quote: whose topic will be "Why Should a Scientist be Concerned about UFO's?"
   text: |-
     Dr. John Warren's presentation topic at the Pajarito Astronomers May 1986 Meeting is 'Why Should a Scientist be Concerned about Unidentified Flying Objects (UFOs)?'
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9da9078f-7ed1-4853-906e-434fa39bca70
   type: administrative
   attestation: second_hand
@@ -203,6 +239,11 @@ domain_claims:
     name: Pajarito Astronomers
   quote: Tuesday, May 20, 1986
   text: The Pajarito Astronomers Meeting Notice - May 1986 is dated Tuesday, 1986-05-20.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f3aa818e-2999-49ba-a525-240e46b0583a
   type: administrative
   attestation: second_hand
@@ -220,3 +261,8 @@ domain_claims:
     To find the Ranch Room, go around (outside) to the south end of the Lodge (facing Central Ave.), and go upstairs.
   text: |-
     The Ranch Room at Fuller Lodge in Los Alamos, New Mexico, is accessible by going around to the south end of Fuller Lodge (facing Central Avenue) and going upstairs.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

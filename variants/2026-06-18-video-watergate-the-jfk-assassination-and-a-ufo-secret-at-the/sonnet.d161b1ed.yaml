@@ -9,6 +9,12 @@ ai_usage:
     output: 136077
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 8.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 14.6
 prompts:
 - pass: nodes
   id: nodes
@@ -520,6 +526,11 @@ domain_claims:
     I'm delighted to have today with me Jonathan Caplan, KC. He's a leading barrister, a King's Council, He's practiced for over 50 years
   text: |-
     Jonathan Caplan is a King's Counsel (KC) barrister who has practiced law for over 50 years.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7b99d2b5-0253-43fa-8430-f983eaf02128
   type: administrative
   attestation: first_hand
@@ -539,6 +550,11 @@ domain_claims:
   quote: The rogue trader frauds of Nick Leeson, who took Baring's bank for $1.4 billion
   text: |-
     Jonathan Caplan acted in the rogue trader fraud case of Nick Leeson, who caused Barings Bank to lose $1.4 billion.
+  entailment:
+    label: contradicts
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 329aecdb-51a0-4e4a-82e7-f2a779b7d8f8
   type: administrative
   attestation: first_hand
@@ -557,6 +573,11 @@ domain_claims:
     name: Maxwell, Robert
   quote: media baron Robert Maxwell's pension scandal fraud
   text: Jonathan Caplan acted in Robert Maxwell's pension scandal fraud case.
+  entailment:
+    label: contradicts
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 61aa00eb-6bc5-4402-88f5-20185dbf5305
   type: administrative
   attestation: first_hand
@@ -575,6 +596,11 @@ domain_claims:
     the Leveson inquiry into the British press's scandalous conduct, the phone hacking scandal
   text: |-
     Jonathan Caplan acted in the Leveson inquiry into the conduct of the British press, including the phone hacking scandal.
+  entailment:
+    label: contradicts
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d41f1dca-8089-43e5-a383-dd5de6e4c372
   type: administrative
   attestation: first_hand
@@ -594,6 +620,11 @@ domain_claims:
   quote: He has researched UAPs for over 50 years
   text: |-
     Jonathan Caplan has researched Unidentified Aerial Phenomena (UAP) for over 50 years.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4788baa5-229c-4c43-a029-0702c3426c5d
   type: administrative
   attestation: first_hand
@@ -614,6 +645,11 @@ domain_claims:
     he's previously served on the editorial board of a leading international UFO journal
   text: |-
     Jonathan Caplan previously served on the editorial board of Flying Saucer Review.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 20a55630-21ec-47fe-a7ab-a80f615499c7
   type: testimony
   attestation: first_hand
@@ -630,6 +666,11 @@ domain_claims:
     name: Caplan, Jonathan
   quote: my interest goes back, I'm afraid, to the early 1970s
   text: Jonathan Caplan's interest in UFOs began in the early 1970s.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a38a8e2b-3836-4dcb-b8e1-7a2c7fbecd51
   type: testimony
   attestation: first_hand
@@ -648,6 +689,11 @@ domain_claims:
     I saw an item on a television program here about a flying saucer following a passenger plane, which piqued my interest
   text: |-
     Jonathan Caplan's interest in UFOs was piqued after seeing a television programme item about a flying saucer following a passenger plane.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: aef3097d-5f7b-4340-ad9e-b55a927370b4
   type: opinion
   attestation: first_hand
@@ -668,6 +714,11 @@ domain_claims:
     I ended up joining the board of an international magazine called Flying Saucer Review, which I think at the time was the leading magazine in this subject
   text: |-
     Jonathan Caplan joined the board of Flying Saucer Review, which he considered the leading UFO magazine at the time.
+  entailment:
+    label: entails
+    score: 0.771
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 115c0bc8-cf5c-415c-9b59-888bb30b31a0
   type: testimony
   attestation: first_hand
@@ -688,6 +739,11 @@ domain_claims:
     We had correspondents such as Jacques Vallée and many other leading ufologists who supplied material for the magazine
   text: |-
     Flying Saucer Review had correspondents including Jacques Vallée who supplied material for the magazine.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 89db58db-541f-47c3-9932-7fcbb7725c1e
   type: testimony
   attestation: first_hand
@@ -708,6 +764,11 @@ domain_claims:
     One of my jobs was to deliver each copy to the equerry of Prince Philip, who was interested in the subject
   text: |-
     Jonathan Caplan personally delivered each copy of Flying Saucer Review to the equerry of Prince Philip, Duke of Edinburgh.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0a60cbdf-4bab-411a-96da-66b5a5ece22d
   type: testimony
   attestation: first_hand
@@ -724,6 +785,11 @@ domain_claims:
     name: Philip, Prince (Duke of Edinburgh)
   quote: the equerry of Prince Philip, who was interested in the subject
   text: Prince Philip, Duke of Edinburgh, was interested in the subject of UFOs.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c240851-21c4-4a79-bb6a-2abc7ad71099
   type: testimony
   attestation: first_hand
@@ -748,6 +814,11 @@ domain_claims:
     I met through the editors who were Gordon Crichton, Charles Bowen, many of the leading researchers at the time
   text: |-
     Gordon Crichton and Charles Bowen were editors of Flying Saucer Review whom Jonathan Caplan met.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d91027c7-3edf-4b0c-b5f0-c328aff42482
   type: hearsay
   attestation: second_hand
@@ -772,6 +843,11 @@ domain_claims:
     a former senior officer of MI6 told me that this subject had never crossed his desk
   text: |-
     A former senior officer of MI6 told Jonathan Caplan that the UFO subject had never crossed his desk.
+  entailment:
+    label: entails
+    score: 0.64
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60ab4314-48fc-4e87-904d-eed09f358a69
   type: opinion
   attestation: first_hand
@@ -792,6 +868,11 @@ domain_claims:
     we don't have a budget most countries don't have a budget for this topic and it is kept I think very much outside of the principal powers... within small departments of the Department of Defence, whose principal interest is national security and ensuring that there is no threat to our airspace or our oceans
   text: |-
     Jonathan Caplan believes most countries, including the UK, do not maintain a budget for the UFO subject, which is kept within small departments of the Ministry of Defence focused on national security and airspace and ocean protection.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fa39f189-9ad0-4105-8945-e08e3464fe4b
   type: opinion
   attestation: first_hand
@@ -811,6 +892,11 @@ domain_claims:
   quote: I think Rendlesham was an interesting case
   text: |-
     Jonathan Caplan considers the Rendlesham Forest incident an interesting UK UAP case worthy of public attention.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 899a8b38-5ecb-402a-b8ba-a9c00da1b1bb
   type: opinion
   attestation: first_hand
@@ -829,6 +915,11 @@ domain_claims:
     I'm aware of that having been alleged and I'm aware possibly of one individual who I think may well have been on such a mission but I don't have any direct knowledge
   text: |-
     Jonathan Caplan is aware of allegations that British special forces have been involved in retrievals of non-human craft or suspected exotic technology.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 606bca39-9819-47b0-9e71-851ff712b276
   type: testimony
   attestation: first_hand
@@ -848,6 +939,11 @@ domain_claims:
   quote: I'm afraid it hasn't actually, no, but now you've mentioned it, Ross
   text: |-
     Jonathan Caplan was not aware of a video, circulated online, purportedly showing an exchange of a dead non-human being with British authorities at Goodwood Aerodrome.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 84e9c50a-99fd-49c2-bdb8-32bedf58c4b5
   type: testimony
   attestation: first_hand
@@ -868,6 +964,11 @@ domain_claims:
     Sir Peter Townsley, who was his equerry and a former Air Force officer, used to interview witnesses at the palace and Prince Philip would receive reports of Peter Townsley's investigations
   text: |-
     Peter Townsend, a former Air Force officer and equerry to Prince Philip, interviewed UFO witnesses at the palace and Prince Philip received reports of these investigations.
+  entailment:
+    label: entails
+    score: 0.548
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 07c5f506-772f-494b-9d81-dcc3d19c4b3a
   type: administrative
   speaker:
@@ -882,6 +983,11 @@ domain_claims:
     name: Mountbatten, Louis
   quote: Lord Louis Mountbatten, who sadly was murdered by the IRA
   text: Louis Mountbatten was murdered by the IRA.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1b976bcc-64c7-48fb-912d-f657166adc97
   type: testimony
   attestation: first_hand
@@ -898,6 +1004,11 @@ domain_claims:
     name: Mountbatten, Louis
   quote: Yes, he had an interest too
   text: Louis Mountbatten took an interest in UFOs.
+  entailment:
+    label: entails
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5cdea913-6821-4681-980c-7e539b0ac3dc
   type: hearsay
   attestation: second_hand
@@ -921,6 +1032,11 @@ domain_claims:
     there are rumours, I've never been able to substantiate them, that in fact a craft has landed on his estate and that had been seen by a gardener. I've heard that from a couple of people in the employment of Lee Mountbatten, but I can't confirm it, but that's certainly a rumor
   text: |-
     There are unsubstantiated rumours that a craft landed on Louis Mountbatten's estate and was seen by a gardener, according to accounts Jonathan Caplan heard from people in Mountbatten's employment.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bb0ce978-af2f-48a0-acc7-aaad9b883ad0
   type: testimony
   attestation: second_hand
@@ -942,6 +1058,11 @@ domain_claims:
   quote: a woman called Mrs. Markham, who had a flat in Chelsea, fashionable Chelsea
   text: |-
     Mrs Markham had a flat in Chelsea, London, where Peter Townsend was introduced to Mr Janus.
+  entailment:
+    label: entails
+    score: 0.888
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d0c5bbff-8533-4741-b8ee-8adcee1a33bc
   type: testimony
   attestation: second_hand
@@ -964,6 +1085,11 @@ domain_claims:
     he immediately became aware that Mr Janus was able to read his mind and was able to tell him of a number of confidential matters which were not public
   text: |-
     Peter Townsend believed Mr Janus was able to read his mind and reveal confidential matters not otherwise public.
+  entailment:
+    label: contradicts
+    score: 0.928
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9bb15529-de78-4dbc-aa52-eac65d081822
   type: hearsay
   attestation: second_hand
@@ -986,6 +1112,11 @@ domain_claims:
     he proceeded then to give him a detailed account of how another civilization had become so advanced that they were interested in developing life and sustaining life elsewhere
   text: |-
     Mr Janus gave Peter Townsend a detailed account of an advanced civilisation interested in developing and sustaining life elsewhere.
+  entailment:
+    label: contradicts
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b041ec9f-007d-409e-a5e1-1879c40a7468
   type: hearsay
   attestation: second_hand
@@ -1008,6 +1139,11 @@ domain_claims:
     he very much wanted Mr Janus to meet Prince Philip, who he felt was a man who was attuned to nature, to animals, to the ecology of the planet
   text: |-
     Mr Janus wanted to meet Prince Philip, whom he felt was attuned to nature, animals, and the ecology of the planet.
+  entailment:
+    label: entails
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3c145397-6d0e-481d-bfd2-e294a274a957
   type: opinion
   attestation: second_hand
@@ -1030,6 +1166,11 @@ domain_claims:
     He came pretty much to the conclusion that Mr. Janus was an extraterrestrial, not somebody of this human civilization
   text: |-
     Peter Townsend concluded that Mr Janus was likely an extraterrestrial rather than a member of human civilisation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c49306b-8c09-4d30-aaae-731264424373
   type: testimony
   attestation: second_hand
@@ -1052,6 +1193,11 @@ domain_claims:
     He made a report immediately of the conversation, contemporaneous report as soon as he left
   text: |-
     Peter Townsend made a contemporaneous report of his conversation with Mr Janus immediately after leaving the meeting.
+  entailment:
+    label: entails
+    score: 0.756
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d31ceb74-ffa1-4d0f-8fd4-d4846f564299
   type: testimony
   attestation: second_hand
@@ -1074,6 +1220,11 @@ domain_claims:
     went back to Mrs Markham's flat sometime later. But she was not there, the flat was empty, and he was unable to make any further contact with her
   text: |-
     When Peter Townsend returned to Mrs Markham's flat some time later, it was empty and he was unable to make any further contact with her.
+  entailment:
+    label: contradicts
+    score: 0.752
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 14859f80-d81e-4395-a88d-9e705e92ef29
   type: testimony
   attestation: second_hand
@@ -1097,6 +1248,11 @@ domain_claims:
   quote: he decided very much that he was not going to make that introduction
   text: |-
     Peter Townsend decided not to arrange an introduction between Mr Janus and Prince Philip.
+  entailment:
+    label: contradicts
+    score: 0.622
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d66de243-1b1a-457a-99d6-f40d35e08215
   type: hearsay
   attestation: second_hand
@@ -1119,6 +1275,11 @@ domain_claims:
     he was flying over a decommissioned airfield, which was situated at Drem. And as he came out of cloud, he saw planes and people in yellow uniforms on the ground, which was a very accurate description of that airfield. But that only happened several years later because it was decommissioned at the time he came out of the clouds
   text: |-
     Victor Goddard, while flying over the decommissioned airfield at Drem in Scotland in the 1930s, saw planes and people in yellow uniforms on the ground that accurately matched how the airfield later appeared, years before it was in that state.
+  entailment:
+    label: contradicts
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c8465dbf-094b-47fe-a610-8a7874129c34
   type: hearsay
   attestation: second_hand
@@ -1139,6 +1300,11 @@ domain_claims:
     another officer told Goddard that he shouldn't take a particular flight because he foresaw Goddard crashing. The flight did crash, but Goddard survived
   text: |-
     Another officer told Victor Goddard he should not take a particular flight because he foresaw Goddard crashing; the flight did crash, but Goddard survived.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0448335a-507e-4f7b-95d1-48521535a735
   type: testimony
   attestation: first_hand
@@ -1159,6 +1325,11 @@ domain_claims:
     in his later life, Goddard began lecturing about flying saucers and gave a lecture at Caxton Hall in London, where he expounded his own theories
   text: |-
     Victor Goddard later gave a lecture about flying saucers at Caxton Hall in London.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 29435514-3d0e-4d56-9fd5-b7bc64f5d6f9
   type: testimony
   attestation: first_hand
@@ -1178,6 +1349,11 @@ domain_claims:
   quote: |-
     one of those people was Air Marshal Victor Goddard, who saw Forrestal and I can't remember whether he saw Eisenhower as well in October
   text: James Forrestal met with Victor Goddard in October 1947.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 372b256b-43cb-46cf-84ed-8a70acb28237
   type: opinion
   attestation: first_hand
@@ -1197,6 +1373,11 @@ domain_claims:
   quote: i conclude that a majestic 12 existed and that the documents are real
   text: |-
     Jonathan Caplan concludes that Majestic 12 (MJ-12) existed and that the associated documents are real.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b22e0770-f922-4605-8d5e-16f64a3f64b0
   type: opinion
   attestation: first_hand
@@ -1221,6 +1402,11 @@ domain_claims:
     within one week of the Truman directive to Bush and James Forrestal to, in fact, set up Majestic 12... Forrestal then had a meeting with Sir Henry Tizard... And it is extremely unlikely that Forrestal did not tell Sir Henry about Majestic 12, the reason that it had been set up because of the craft that had been found and the biologics that went with it
   text: |-
     Jonathan Caplan considers it extremely unlikely that James Forrestal did not tell Henry Tizard about Majestic 12 (MJ-12) and the reason it had been set up, given that Forrestal met Tizard within a week of the Truman Directive establishing Majestic 12.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2d9852a4-e0fa-4c41-a8bd-bae227b23dca
   type: testimony
   attestation: first_hand
@@ -1241,6 +1427,11 @@ domain_claims:
     Sir Henry Tizard, in fact, came back to the United Kingdom and did set up a secret flying saucer working party in the Ministry of Defence
   text: |-
     Henry Tizard returned to the United Kingdom and set up a secret flying saucer working party within the Ministry of Defence.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ab95b647-8376-4717-978b-c1cb6b51647c
   type: testimony
   attestation: first_hand
@@ -1263,6 +1454,11 @@ domain_claims:
     Forrestal then had, in the month of October 1947, a number of meetings with other Air Force officers and British Ministry of Defence officials
   text: |-
     In October 1947, James Forrestal held a number of meetings with other Air Force officers and British Ministry of Defence officials.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c5873050-6d3f-48c2-b6b5-f332494d8700
   type: administrative
   attestation: first_hand
@@ -1281,6 +1477,11 @@ domain_claims:
     name: Truman, Harry
   quote: There was a Truman Directive 24th of September 1947
   text: The Truman Directive establishing Majestic 12 was dated 24 September 1947.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 50b61ea2-b2e1-4297-bee5-64cc3d216db0
   type: administrative
   attestation: first_hand
@@ -1298,6 +1499,11 @@ domain_claims:
   quote: in a document that was leaked in 1980 or so to two filmmakers
   text: |-
     The document establishing the Truman Directive was leaked around 1980 to two filmmakers.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 178e62d1-1c79-4c75-adf1-5397febc76b2
   type: administrative
   attestation: first_hand
@@ -1318,6 +1524,11 @@ domain_claims:
     those documents became known as the Majestic 12 documents, the provenance of which is still, of course, disputed officially by the FBI and the US military
   text: |-
     The provenance of the Majestic 12 documents is officially disputed by the FBI and the US military.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 063b37ce-8bda-46da-8e1b-6a3833e40d08
   type: administrative
   attestation: second_hand
@@ -1336,6 +1547,11 @@ domain_claims:
     they established allegedly Majestic 12 as the group responsible for the retrieval of non-human craft
   text: |-
     The Majestic 12 documents allegedly established Majestic 12 as the group responsible for the retrieval of non-human craft.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 305e5e75-99a5-4e07-a139-a4e2e8a24d3d
   type: administrative
   attestation: first_hand
@@ -1358,6 +1574,11 @@ domain_claims:
     It was issued at the request of Dr. Vannevar Bush and James Forrestal, the Secretary of Defense
   text: |-
     The Truman Directive establishing Majestic 12 was issued at the request of Vannevar Bush and James Forrestal, the Secretary of Defense.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c6f9f87b-8275-45c2-b515-c7622a82ba0b
   type: opinion
   attestation: second_hand
@@ -1378,6 +1599,11 @@ domain_claims:
     you mention it in your book as one of the most consistent documents in the mj-12 corpus and you place strong emphasis on it being genuine
   text: |-
     Jonathan Caplan considers the Truman Directive establishing Majestic 12 to be one of the most consistent documents in the MJ-12 corpus and places strong emphasis on it being genuine.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10665e11-0b93-4437-bfe1-b0feb28c5a35
   type: opinion
   attestation: first_hand
@@ -1396,6 +1622,11 @@ domain_claims:
     to be told as these documents relate that the president was being informed that craft had crashed which were not of this earth presented a new and very real threat to the united states and indeed the world
   text: |-
     Jonathan Caplan considers it a matter of crisis and urgency for the United States that Truman was informed craft not of this earth had crashed, presenting a new threat.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 19bab9d7-8ff6-4968-a5a3-694df5bc66d0
   type: opinion
   attestation: first_hand
@@ -1416,6 +1647,11 @@ domain_claims:
     I think it's the quantity of the documents, it's not just the directive, the other documents which preceded in the 1940s and in the early 1950s, the detail, the personnel involved, when you look at them and look at their histories, they are people who, in fact, did have positions... They're the type of people you would expect to be involved in these events
   text: |-
     Jonathan Caplan's assessment of the Majestic 12 documents' authenticity relies partly on the quantity of documents, their level of detail, and the personnel involved having had positions consistent with such events.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e680899d-166b-4401-9512-1004f81b521b
   type: opinion
   attestation: first_hand
@@ -1442,6 +1678,11 @@ domain_claims:
     the detail of the documents check out with contemporary diaries, which were not released at the time. The meetings that are referred to in the documents are reflected in the diaries of not just the president, but Forrestal, Eisenhower. I've looked at the diaries of the head of the Atomic Energy Commission, and it just does knit together
   text: |-
     Jonathan Caplan states that the detail of the Majestic 12 documents corresponds with contemporary diaries that were not released at the time, including the diaries of Truman, Forrestal, Eisenhower, and the head of the Atomic Energy Commission.
+  entailment:
+    label: entails
+    score: 0.641
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3625bbf9-96e3-427a-a2f0-19d903a6b3a2
   type: opinion
   attestation: first_hand
@@ -1462,6 +1703,11 @@ domain_claims:
     The only other alternative is that this is some kind of counterintelligence operation. And I think I really do discount that because... the detail checks out, they are such a quantity of these documents, many of which don't have any counterintelligence consequence at all
   text: |-
     Jonathan Caplan discounts the theory that the Majestic 12 documents are a counterintelligence operation, citing that details check out and that many of the documents carry no counterintelligence value.
+  entailment:
+    label: entails
+    score: 0.686
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3c7aae83-d748-42cd-832e-0af7dd2ad292
   type: opinion
   attestation: first_hand
@@ -1481,6 +1727,11 @@ domain_claims:
   quote: I'm pretty sure that most of them, not all of them, but most of them are genuine
   text: |-
     Jonathan Caplan believes most, though not all, of the Majestic 12 documents are genuine.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27691a63-81a3-4b08-bcf4-b3a9cb4a386d
   type: administrative
   attestation: third_hand
@@ -1504,6 +1755,11 @@ domain_claims:
     the president was actually at Blair House because the White House was being rebuilt
   text: |-
     At the time referenced in one of the Majestic 12 documents, the US president was staying at Blair House because the White House was being rebuilt.
+  entailment:
+    label: entails
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ecc5825c-b630-4433-b4db-27271c7bb784
   type: administrative
   attestation: second_hand
@@ -1531,6 +1787,11 @@ domain_claims:
     They held a lunch, Forrestal and Bush, Vannevar Bush, held a lunch with the British scientist, Sir Henry Tizard, the chief scientific adviser to the UK Ministry of Defence. On, as you say, the 1st of October 1947
   text: |-
     James Forrestal and Vannevar Bush held a lunch with Henry Tizard, the chief scientific adviser to the UK Ministry of Defence, on 1 October 1947.
+  entailment:
+    label: entails
+    score: 0.957
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3ca5562d-d0b9-42aa-a3b1-c58a58eb8356
   type: administrative
   attestation: first_hand
@@ -1548,6 +1809,11 @@ domain_claims:
   quote: |-
     they knew each other because Tizard had worked on the radar, cavity magnetron radar
   text: Henry Tizard had worked on cavity magnetron radar.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7de8dc01-d50e-4a35-8a47-691787c4fca4
   type: testimony
   attestation: second_hand
@@ -1570,6 +1836,11 @@ domain_claims:
     the report which was then produced by the Ministry of Defence has these words, not precisely, but almost. Following the American lead, it is desirable that should be as little publicity as possible given to this matter and only one copy of this report will be produced and that will be sent to Sir Henry Tizard
   text: |-
     A report produced by the UK Ministry of Defence following the American lead stated it was desirable that as little publicity as possible be given to the UFO matter, and that only one copy of the report would be produced, to be sent to Henry Tizard.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bfc6546f-94a9-4506-8e65-338c92f2e65d
   type: opinion
   attestation: first_hand
@@ -1590,6 +1861,11 @@ domain_claims:
     it clearly is the case that Forrestal impressed on Tizard that this had to be kept under wraps that they should go away and do their own research and that they should limit the documents that they're producing, possibly only for his own personal use
   text: |-
     James Forrestal impressed on Henry Tizard that the UFO matter had to be kept under wraps, that the UK should conduct its own research, and that documents produced should be limited, possibly for Tizard's own personal use.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 475d6199-8165-48da-b534-b03001ad042b
   type: testimony
   attestation: first_hand
@@ -1610,6 +1886,11 @@ domain_claims:
   quote: No, it hasn't been possible to do that.
   text: |-
     Jonathan Caplan checked Henry Tizard's papers in the UK but it was not possible to find corroboration of Majestic 12 material there.
+  entailment:
+    label: contradicts
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5e740f4f-4a89-4235-b01f-1c03ea9e3376
   type: testimony
   attestation: second_hand
@@ -1626,6 +1907,11 @@ domain_claims:
     name: Blair House meeting on Majestic 12
   quote: That was a meeting held in... July 1949
   text: The Blair House meeting on Majestic 12 was held in July 1949.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 00150f2c-40e4-44e1-800a-5e04c3373d0e
   type: testimony
   attestation: second_hand
@@ -1649,6 +1935,11 @@ domain_claims:
     one of the people that was present there was the chairman of the Atomic Energy Commission, David Lilienthal.
   text: |-
     David Lilienthal, chairman of the United States Atomic Energy Commission, was present at the Blair House meeting on Majestic 12.
+  entailment:
+    label: neutral
+    score: 0.678
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 57c926f5-1b2e-4dad-b8c6-a512d08dc79e
   type: testimony
   attestation: first_hand
@@ -1664,6 +1955,11 @@ domain_claims:
     name: Lilienthal, David
   quote: His diary is at Princeton University.
   text: David Lilienthal's diary is held at Princeton University.
+  entailment:
+    label: contradicts
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0d98a70d-eaf7-4215-93ca-96f6e60c9da1
   type: testimony
   attestation: first_hand
@@ -1679,6 +1975,11 @@ domain_claims:
     name: Blair House meeting on Majestic 12
   quote: And this was an off the record meeting.
   text: The Blair House meeting on Majestic 12 was an off-the-record meeting.
+  entailment:
+    label: neutral
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9d32cf93-d1b0-4176-be25-73ed68dd6844
   type: testimony
   attestation: first_hand
@@ -1700,6 +2001,11 @@ domain_claims:
     So I did manage to get access to his diary and he refers in detail to this meeting.
   text: |-
     Jonathan Caplan obtained access to David Lilienthal's diary and found that it refers in detail to the Blair House meeting on Majestic 12.
+  entailment:
+    label: entails
+    score: 0.508
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 079d906c-e33d-4e24-8e50-1f3561ae2a29
   type: hearsay
   attestation: third_hand
@@ -1723,6 +2029,11 @@ domain_claims:
     Well, this is a secret we should keep to ourselves. This is not something that we should share with the British.
   text: |-
     According to David Lilienthal's diary, some people present at the Blair House meeting on Majestic 12 said it was a secret they should keep to themselves and not share with the British.
+  entailment:
+    label: entails
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 43faa1eb-a997-4f36-888f-a406f433d766
   type: hearsay
   attestation: second_hand
@@ -1746,6 +2057,11 @@ domain_claims:
     there is reference to a report which Truman is so unusual out of this world that Truman, there's only one copy of it. And there's no access to this agreement.
   text: |-
     According to David Lilienthal's diary, there was reference at the Blair House meeting to a report described by Harry Truman as so unusual that there was only one copy of it, with no access to an associated agreement.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a67f2f7a-ce82-4c07-a979-266ba3885827
   type: hearsay
   attestation: third_hand
@@ -1768,6 +2084,11 @@ domain_claims:
     And Truman says in Lillian to record it. Well, that agreement is staying in my safe and nobody is having access to it.
   text: |-
     According to David Lilienthal's diary, Harry Truman said the agreement was staying in his safe and nobody was to have access to it.
+  entailment:
+    label: entails
+    score: 0.692
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 89ff77b2-6b0a-44e3-bd2e-5f6a13b8c7a1
   type: opinion
   attestation: first_hand
@@ -1789,6 +2110,11 @@ domain_claims:
     But in the context of the discussion that we're having, it's very likely that it's something to do, I would say, with Majestic 12.
   text: |-
     Jonathan Caplan believes the unspecified agreement Harry Truman kept in his safe is very likely something to do with Majestic 12.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33f66899-e5a1-49b0-9808-8d360b5f95f4
   type: administrative
   attestation: second_hand
@@ -1806,6 +2132,11 @@ domain_claims:
     somebody who's spent a large part of your career investigating corporate frauds, corporate misfeasance, criminal frauds
   text: |-
     Jonathan Caplan has spent a large part of his career investigating corporate frauds, corporate misfeasance, and criminal frauds as a lawyer.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 565a62d7-d4cd-4b13-a393-31d6451b3711
   type: testimony
   attestation: second_hand
@@ -1825,6 +2156,11 @@ domain_claims:
     You've looked at the typography, the printing, the format, the watermarks, the terminology used, the corroboration from other diaries.
   text: |-
     Jonathan Caplan examined the typography, printing, format, watermarks, and terminology of the Majestic 12 documents, and corroboration from other diaries, to verify their provenance.
+  entailment:
+    label: entails
+    score: 0.854
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3809b5e4-f968-481f-9ba9-3a450646fc10
   type: opinion
   attestation: first_hand
@@ -1844,6 +2180,11 @@ domain_claims:
     I have found one or two documents which are not original, don't purport to be original documents of the time, but which are typescript documents which were disclosed amongst the Majestic 12 material, which I do believe were forged.
   text: |-
     Jonathan Caplan has found one or two typescript documents disclosed among the Majestic 12 material that he believes were forged.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1362f309-5342-47e4-b451-0f141df3f99a
   type: testimony
   attestation: second_hand
@@ -1867,6 +2208,11 @@ domain_claims:
     it purports to be an account of Truman being called to give evidence at Congress in 1963 or 1964, where he's asked about MJ-12 and he is embarrassed and gives various answers.
   text: |-
     The Truman and Congress document (forged) purports to be an account of Harry Truman being called to give evidence to Congress in 1963 or 1964 about MJ-12, where he is embarrassed and gives various answers.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4e87225d-5b9f-462d-94c7-9cd9f86ef7e1
   type: testimony
   attestation: first_hand
@@ -1888,6 +2234,11 @@ domain_claims:
     Now that clearly didn't happen because I've checked with the Eisenhower Library and he was never in Washington. at that time.
   text: |-
     Jonathan Caplan determined the Truman and Congress document (forged) is fake because he checked with the Eisenhower Library and confirmed Harry Truman was never in Washington at the time the document claims.
+  entailment:
+    label: entails
+    score: 0.689
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 893656c0-9d5a-4bbf-af3f-d8e2a198153b
   type: administrative
   attestation: second_hand
@@ -1909,6 +2260,11 @@ domain_claims:
     a lot of the classic MJ-12 documents came via a gentleman called Tim Cooper, Timothy Cooper, who was a US Marine Corps veteran
   text: |-
     Timothy Cooper, a United States Marine Corps veteran, was the source through whom a lot of the classic MJ-12 documents came.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 704bd056-a378-4c94-9fe7-dde7fa4ea269
   type: testimony
   attestation: second_hand
@@ -1928,6 +2284,11 @@ domain_claims:
     His dad ran the reproduction and graphics at Holloman Air Force Base and printed classified material.
   text: |-
     Timothy Cooper's father ran the reproduction and graphics operation at Holloman Air Force Base and printed classified material.
+  entailment:
+    label: contradicts
+    score: 0.598
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fc55ec62-d88e-4c07-82b6-6add868e2daa
   type: administrative
   attestation: second_hand
@@ -1946,6 +2307,11 @@ domain_claims:
   quote: |-
     you've obtained key new documents that were held by Ryan Wood, who's one of the keepers of the MJ-12 archive.
   text: Ryan Wood is one of the keepers of the MJ-12 archive.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ba12224a-57ab-4fdb-9682-a86b850dae21
   type: testimony
   attestation: first_hand
@@ -1969,6 +2335,11 @@ domain_claims:
     when I was in Washington about two years ago, I met with Ryan Wood And I asked him whether he felt that Tim Cooper had handed over all the Majestic documents to his father
   text: |-
     About two years before this interview, Jonathan Caplan met Ryan Wood in Washington and asked whether Timothy Cooper had handed over all the Majestic 12 documents to his father.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7eac5e9d-95c5-4d3a-871a-523c2c21ae18
   type: testimony
   attestation: second_hand
@@ -1990,6 +2361,11 @@ domain_claims:
     there was a filing cabinet and that Robert Wood had taken the documents that he was offered and there might be others in the Cooper household.
   text: |-
     Robert Wood had taken documents that were offered to him from a filing cabinet, and there might have been other documents remaining in the Cooper household.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dac90e58-7062-4eff-af7c-0ca27b45df54
   type: testimony
   attestation: first_hand
@@ -2009,6 +2385,11 @@ domain_claims:
     Ryan would go back and visit Tim Cooper's house, who had not been very cooperative since and has really withdrawn from the subject.
   text: |-
     Timothy Cooper had become uncooperative and withdrawn from the UFO subject before Ryan Wood returned to his house.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cce2cbb2-f99f-4a5c-97be-544779fea9a4
   type: testimony
   attestation: second_hand
@@ -2030,6 +2411,11 @@ domain_claims:
     Unfortunately, Tim had died quite recently, but his son was there and agreed that Ryan could have access to his father's files.
   text: |-
     Timothy Cooper died shortly before Ryan Wood returned to visit his house, and Cooper's son granted Ryan Wood access to his father's files.
+  entailment:
+    label: entails
+    score: 0.57
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 48e9b3ac-a528-4764-a175-20c5a8a46ef8
   type: testimony
   attestation: first_hand
@@ -2051,6 +2437,11 @@ domain_claims:
     amongst the files, we found two new, well, I say new documents that hadn't been disclosed before.
   text: |-
     Among Timothy Cooper's files, Ryan Wood and Jonathan Caplan found two new documents that had not been previously disclosed.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 018e4f1f-c51e-4cd5-aefb-c5823bc9914f
   type: testimony
   attestation: first_hand
@@ -2073,6 +2464,11 @@ domain_claims:
     One of them is the document of the meeting at Blair House on the 14th of July, 1949, which is part of an annex to a Majestic 12 report.
   text: |-
     One of the newly found documents is the record of the Blair House meeting on 1949-07-14, forming part of an annex to a Majestic 12 report.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c85bb003-ac38-4128-ae00-c702dd377efd
   type: testimony
   attestation: first_hand
@@ -2090,6 +2486,11 @@ domain_claims:
     Another part of that annex had already been disclosed. That was paragraphs nine, I think onwards. This is paragraphs one to eight, and this page had not been disclosed.
   text: |-
     Part of the Blair House meeting annex document, paragraphs nine onward, had already been disclosed previously, but paragraphs one to eight had not.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd7695cd-3718-43b5-ac61-80cab23257b1
   type: testimony
   attestation: second_hand
@@ -2113,6 +2514,11 @@ domain_claims:
     And this is the page which talks about Truman wanting to share some of the Majestic material with his allies.
   text: |-
     The newly disclosed page of the Blair House meeting annex document discusses Harry Truman wanting to share some Majestic 12 material with US allies.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0fa4a725-51f1-4971-bd62-ee3ea5d5afda
   type: testimony
   attestation: second_hand
@@ -2134,6 +2540,11 @@ domain_claims:
     it goes on to talk about some other matters, for example, the risks of approaching craft and the number of casualties that had occurred with Air Force planes being shot down
   text: |-
     The Blair House meeting annex document discusses the risks of approaching craft and the number of casualties from United States Air Force planes being shot down.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 911d0c0b-6688-42fe-841c-5c06898f5346
   type: testimony
   attestation: first_hand
@@ -2151,6 +2562,11 @@ domain_claims:
     there had been an agreement signed between the Americans and the British, which limited the production of atomic weapons immediately after the Second World War.
   text: |-
     An agreement signed between the Americans and British immediately after the Second World War limited the production of atomic weapons.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 57e47859-a4b0-4d25-a6a2-576c5a7f4851
   type: hearsay
   attestation: second_hand
@@ -2172,6 +2588,11 @@ domain_claims:
     Truman and Eisenhower felt that the risk of these craft that were coming in numbers with an agenda that wasn't known might mean that we were facing imminent attack.
   text: |-
     Harry Truman and Dwight Eisenhower felt that the risk of craft arriving in numbers with an unknown agenda might mean the United States was facing imminent attack.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dc87e27b-5c93-4918-9660-2092074bd214
   type: hearsay
   attestation: second_hand
@@ -2193,6 +2614,11 @@ domain_claims:
     they wanted to increase the production of atomic weapons because they felt there might be a war that had to be fought in space. and they would have to deliver these weapons in or near space.
   text: |-
     Harry Truman and Dwight Eisenhower wanted to increase the production of atomic weapons because they felt there might be a war that had to be fought in space, requiring delivery of weapons in or near space.
+  entailment:
+    label: entails
+    score: 0.937
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5513e2fb-e38d-4699-854a-615b6621ac91
   type: testimony
   attestation: second_hand
@@ -2212,6 +2638,11 @@ domain_claims:
     the problem with the bombs at Hiroshima and Nagasaki was that they weighed 10,000 pounds and they would need to find a method of miniaturizing the nuclear weapons for delivery in any war against the invaders
   text: |-
     The atomic bombs dropped on Hiroshima and Nagasaki weighed approximately 4,500 kilograms, and officials felt they needed to find a method of miniaturising nuclear weapons for delivery in any war against the craft's occupants.
+  entailment:
+    label: entails
+    score: 0.852
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f4318d3b-aa3d-4f29-a218-c9797deb9cf4
   type: opinion
   attestation: first_hand
@@ -2229,6 +2660,11 @@ domain_claims:
     the Blair House meeting was important from that point of view because they'd have to tell the British if they were going to increase the production of atomic weapons.
   text: |-
     The Blair House meeting on Majestic 12 was important because the Americans would have had to tell the British if they were going to increase atomic weapon production.
+  entailment:
+    label: entails
+    score: 0.69
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 048893e6-e68f-4acc-9499-a2ac204fe849
   type: opinion
   attestation: first_hand
@@ -2246,6 +2682,11 @@ domain_claims:
     And the Canadians, of course, were also interested in this. And that, I think, led to the meeting with the British. And that's why they had to bring them in and discuss the plans for possible alien defence.
   text: |-
     The Canadians were also interested in the increased production of atomic weapons discussed at the Blair House meeting, which led to a further meeting with the British to discuss plans for possible alien defence.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 647ad9ec-008c-4f14-ba49-6dd3294260bb
   type: opinion
   attestation: second_hand
@@ -2265,6 +2706,11 @@ domain_claims:
     the implication is that there were certainly very senior public servants like Sir Henry Tizard who were being briefed into aspects of the program
   text: |-
     Henry Tizard was a very senior public servant being briefed into aspects of Majestic 12.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c20bd57-45c1-4bdc-8cb1-e247ad116a16
   type: testimony
   attestation: first_hand
@@ -2284,6 +2730,11 @@ domain_claims:
     i've spoken to two former living australian prime ministers and they swear black and blue that they've never been read into any anything relating to uaps
   text: |-
     Ross Coulthart has spoken to two former living Australian prime ministers who swear they were never briefed on anything relating to UAP.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a0705cbc-8f3d-4a67-af76-1ebba7271903
   type: hearsay
   attestation: second_hand
@@ -2306,6 +2757,11 @@ domain_claims:
     one very senior intelligence mandarin here in australia and he's hinted very darkly that he does know something but he can't talk about it
   text: |-
     A very senior Australian intelligence figure hinted darkly to Ross Coulthart that he knows something about UAP but cannot talk about it.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2c91d1c9-184d-493f-8763-7cdb3dd3cc22
   type: opinion
   attestation: first_hand
@@ -2325,6 +2781,11 @@ domain_claims:
     i totally agree and um i mean temporary employees are exactly what they are they're here and they're gone
   text: |-
     Jonathan Caplan agrees that the Americans feel more comfortable sharing UAP-related secrets with permanent senior public servants than with elected politicians.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e9a05a5c-ef37-422f-8cca-4f770c4de319
   type: opinion
   attestation: first_hand
@@ -2342,6 +2803,11 @@ domain_claims:
     there's a a very much greater trust for career and intelligence or military figures And also I think, quite frankly, they know a lot about these figures and there's some people who are reaching positions of political height who they don't trust and who they feel will leak like a sieve.
   text: |-
     Jonathan Caplan believes career intelligence and military figures are trusted much more than elected politicians who may leak.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2e66239c-faa1-467a-85c8-cc427338e4af
   type: testimony
   attestation: second_hand
@@ -2365,6 +2831,11 @@ domain_claims:
     there was a claim in that first document, I think, that talked about the crashing of an NHI craft, the idea that there was an alien craft that was forced to land the White Sands Proving Ground.
   text: |-
     The first newly found Majestic 12 document contains a claim about a non-human intelligence craft that was forced to land at White Sands Proving Ground.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: af94ff06-1a5c-4d20-9e4e-2ac3e2c02487
   type: testimony
   attestation: second_hand
@@ -2386,6 +2857,11 @@ domain_claims:
     that clearly is a statement that was recorded as having been discussed at that meeting and it was in the context of that these craft are dangerous and they should only be approached when their technology, even when they're on the ground, is not available to them.
   text: |-
     The White Sands Proving Ground craft landing was recorded as having been discussed at the Blair House meeting in the context that such craft are dangerous and should only be approached when their technology is not accessible.
+  entailment:
+    label: entails
+    score: 0.712
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 312f571f-14e3-4081-921b-ad229e47071e
   type: opinion
   attestation: first_hand
@@ -2405,6 +2881,11 @@ domain_claims:
     So I presume from that that there had been some hostile encounters with craft that had landed.
   text: |-
     Jonathan Caplan presumes from the Blair House meeting annex document that there had been some hostile encounters with craft that had landed.
+  entailment:
+    label: neutral
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e45de914-b5db-4f30-af40-3b7207bb2654
   type: testimony
   attestation: second_hand
@@ -2424,6 +2905,11 @@ domain_claims:
     a fighter pilot was flying, I think a P-51 Mustang, as high as possible, 20,000 feet, to try and intercept a metallic craft.
   text: |-
     During the Mantell UFO incident, a fighter pilot flew a P-51 Mustang as high as possible, approximately 6,100 metres, to try to intercept a metallic craft.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 816a2478-4223-4182-94b6-485a0dca77ec
   type: opinion
   attestation: second_hand
@@ -2441,6 +2927,11 @@ domain_claims:
     And it's been dispelled and debunked over the years that he was merely chasing a cloud.
   text: |-
     It has been dispelled and debunked over the years that the pilot in the Mantell UFO incident was merely chasing a cloud.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b1156881-e2c4-48f6-8abd-9ee15b49dad0
   type: testimony
   attestation: second_hand
@@ -2462,6 +2953,11 @@ domain_claims:
     The document suggests the Mantell case was indeed chasing a real non-human craft.
   text: |-
     The Blair House meeting annex document suggests the Mantell UFO incident involved the pilot chasing a real non-human craft.
+  entailment:
+    label: entails
+    score: 0.879
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 67ebdec8-407e-42c6-bb63-2a30d82e2d8a
   type: testimony
   attestation: second_hand
@@ -2485,6 +2981,11 @@ domain_claims:
     that case was cited at the Blair House meeting because too many planes were being lost in close engagements with UAPs at the time, and the advice was that they should back off and not be threatening in too many close approaches.
   text: |-
     The Mantell UFO incident was cited at the Blair House meeting because too many planes were being lost in close engagements with UAP at the time, and the advice was to back off from close approaches.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b30905c7-b4ed-4916-b8a3-4b7b336869f5
   type: administrative
   attestation: second_hand
@@ -2512,6 +3013,11 @@ domain_claims:
     the second document is a letter from Richard Drain, who was secretary of the Intelligence Advisory Committee, to a man called James Lay, who was secretary of the National Security Council.
   text: |-
     The second newly found document is a letter from Richard Drain, secretary of the Intelligence Advisory Committee, to James Lay, secretary of the United States National Security Council.
+  entailment:
+    label: entails
+    score: 0.779
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b29062b8-0684-4324-9374-268d15308b41
   type: administrative
   attestation: second_hand
@@ -2536,6 +3042,11 @@ domain_claims:
     it is dated late June 1953 and concerns advanced contact group meeting held at Holloman Air Force Base.
   text: |-
     The Drain letter to Lay on the Holloman contact group meeting is dated late June 1953 and concerns the Advanced Contact Group meeting held at Holloman Air Force Base.
+  entailment:
+    label: entails
+    score: 0.868
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d15207de-4852-4fb3-859c-99f0421284ac
   type: testimony
   attestation: second_hand
@@ -2559,6 +3070,11 @@ domain_claims:
     the purpose of the letter is to stress that all records of this advanced group meeting, advanced contact group meeting at Holloman, should be kept secret, all films should be kept secret, and none of it was to be released to anybody without the permission of, I believe it's James Lay or somebody equivalent to him.
   text: |-
     The purpose of the Drain letter to Lay was to stress that all records and films of the Advanced Contact Group meeting at Holloman Air Force Base should be kept secret and not released without James Lay's permission.
+  entailment:
+    label: entails
+    score: 0.833
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a0aa96ca-c2e3-41a2-ae5d-79c9baef3be6
   type: observation
   attestation: second_hand
@@ -2578,6 +3094,11 @@ domain_claims:
     the fact that Drain, Richard Drain's name, is all over the latest tranche of UFO files.
   text: |-
     Richard Drain's name appears prominently across the latest tranche of released UFO files.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ebd6d299-bd1b-4162-b271-f548f9af9436
   type: testimony
   attestation: second_hand
@@ -2600,6 +3121,11 @@ domain_claims:
     He's very prominently featured in the coverage from the 1953 decision after the Robertson panel. to essentially debunk UFOs, like he played a principal role in the decision, the policy decision, to essentially play down the UFO subject and to use stigma and ridicule and taboo to try to disengage public interest, to stop the public from looking at the UFO subject.
   text: |-
     Richard Drain played a principal role in the 1953 policy decision following the Robertson Panel to debunk UFOs using stigma, ridicule, and taboo to disengage public interest.
+  entailment:
+    label: contradicts
+    score: 0.894
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b35c7613-b6bc-495c-8da6-2b1cc196928b
   type: testimony
   attestation: second_hand
@@ -2623,6 +3149,11 @@ domain_claims:
     James Lay actually appears in an earlier Majestic 12 document as having been one of the people that was consulted over Roswell and who supported the establishment of MJ-12 as a separate intelligence unit.
   text: |-
     James Lay appears in an earlier Majestic 12 document as having been consulted over Roswell and having supported the establishment of MJ-12 as a separate intelligence unit.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: abe7305b-97b8-4f56-81f4-6b5d84489053
   type: testimony
   attestation: second_hand
@@ -2646,6 +3177,11 @@ domain_claims:
     He also interestingly was recommended by John McCone a later director of the CIA, for a career service award, and this is from the CIA library documents, for services in relation to intelligent projects which had involved interagency efforts.
   text: |-
     John McCone, a later director of the CIA, recommended James Lay for a career service award, per CIA library documents, for services relating to intelligence projects involving interagency efforts.
+  entailment:
+    label: entails
+    score: 0.893
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 39af7b48-aef6-4e5b-a2ac-0c1bba28dca6
   type: testimony
   attestation: first_hand
@@ -2665,6 +3201,11 @@ domain_claims:
     Robert Amory, who was the deputy director of intelligence at the CIA, who appears to have been writing presidential briefings at weekly intervals to supply to the White House.
   text: |-
     Robert Amory was the deputy director of intelligence at the CIA and appears to have been writing presidential briefings at weekly intervals for the White House.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6252ea5f-8182-4a2a-a5cd-38d7e79a5a33
   type: opinion
   attestation: first_hand
@@ -2688,6 +3229,11 @@ domain_claims:
     I don't believe so because these diaries have only been released in succeeding years and were not available. I'm sure somebody possibly in the Central Intelligence Agency might have been able to get special access to them, but they have not been available to the public and have been kept in pretty secure conditions.
   text: |-
     Jonathan Caplan believes that whoever might have crafted the MJ-12 documents deceptively would not have had access to Truman and Eisenhower's diaries, since those diaries have only been released in later years and were kept under secure conditions.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e9b467e3-4aa4-486f-83a8-71286bc1e3f4
   type: opinion
   attestation: second_hand
@@ -2709,6 +3255,11 @@ domain_claims:
     It would be the most elaborate hoax to go through and anticipate the detail of knowing what Eisenhower and Truman said in their diaries to make sure that everything you wrote was consistent in a document that was leaked in the 1980s.
   text: |-
     Jonathan Caplan considers that if the MJ-12 documents were a hoax, it would be an extremely elaborate one to anticipate the detail of Eisenhower and Truman's diaries so that everything was consistent in a document leaked in the 1980s.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 75b161ae-c8b2-4b15-8170-6c653834f563
   type: opinion
   attestation: first_hand
@@ -2728,6 +3279,11 @@ domain_claims:
     there are documents amongst the MJ-12 material which really don't have any particular counterintelligence benefit which are routine exchanges of letters between people with an MJ-12 stamp on and there's no purpose in creating that kind of material and you'd had to have had an army of people really who would have had to have had a vast amount of sources to put this material together the detail is impressive
   text: |-
     Jonathan Caplan considers the detail and consistency of the Majestic 12 documents, and their confirmation by public records, evidence of authenticity, noting some documents have no counterintelligence benefit and would have required a vast number of sources to fabricate.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8911eb79-8897-49be-8b73-6dbd63cb0e95
   type: opinion
   attestation: first_hand
@@ -2749,6 +3305,11 @@ domain_claims:
     It just wasn't handed over. I think it was very much a question of getting what Tim Cooper was prepared to give them. And some of the material was left behind.
   text: |-
     Timothy Cooper did not hand over all Majestic 12 material previously, and some material was left behind, which is why Jonathan Caplan and Ryan Wood went back to search his household.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b21cf64e-e1b3-4876-a841-702f462ac732
   type: testimony
   attestation: first_hand
@@ -2768,6 +3329,11 @@ domain_claims:
     There's also, by the way, a quantity of photographs which were obtained, which have never properly been looked at. And I have looked at them and have selected what I think are some key ones.
   text: |-
     A quantity of photographs found among Timothy Cooper's files had never properly been examined before Jonathan Caplan looked at them.
+  entailment:
+    label: entails
+    score: 0.943
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9993cd7-27df-4c7d-9dbf-e2778791f0c3
   type: observation
   attestation: first_hand
@@ -2785,6 +3351,11 @@ domain_claims:
     one is an extraordinary photograph of what is a saucer-shaped craft with a number of chairs in front of it. And it very much is a black and white photograph... It's a photograph which is consistent with photography or photograph the kind you'd have in the 1940s or the 1950s.
   text: |-
     Among the photographs is one showing what appears to be a saucer-shaped craft with a number of chairs in front of it, a black-and-white photograph consistent with 1940s or 1950s photography.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b823daa0-d3ef-41fb-b0d3-5e5629a59312
   type: opinion
   attestation: first_hand
@@ -2802,6 +3373,11 @@ domain_claims:
     I've got the original... it is either of a saucer-shaped craft being projected onto a screen and chairs in front of it, or of a craft behind a glass panel in a facility and chairs there for people to observe it but it is i can't vouch for its provenance but it does look to me like a genuine photograph
   text: |-
     Jonathan Caplan possesses the original of the saucer-shaped craft photograph and believes it depicts either a craft projected onto a screen or a craft behind a glass panel in a facility, with chairs for observers, though he cannot vouch for its provenance.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6f20191d-36bc-4da6-8ac6-39358aa01016
   type: testimony
   attestation: first_hand
@@ -2819,6 +3395,11 @@ domain_claims:
     amongst those photographs were photographs of a number of people with MJ-12 on the back and these were um scientists many of them paperclip scientists who um we know from other sources um have worked for MJ-12
   text: |-
     Among the photographs found were images of a number of people with 'MJ-12' written on the back, described as paperclip scientists who worked for MJ-12.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4c9ad598-1f3e-42c1-917b-89e4279c2b34
   type: testimony
   attestation: first_hand
@@ -2841,6 +3422,11 @@ domain_claims:
   quote: those are people like John von Neumann, zillard edward teller
   text: |-
     The scientists pictured in the MJ-12 photographs include John von Neumann, Leo Szilard, and Edward Teller.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7698fbdd-88e5-4dfa-b2ad-129a33b215cd
   type: hearsay
   attestation: third_hand
@@ -2867,6 +3453,11 @@ domain_claims:
     dr eric walker has spoken to other uh ufologists many years ago william steinman to confirm um that van neumann actually was working at MJ-12
   text: |-
     Eric Walker told other ufologists many years ago that John von Neumann worked at MJ-12, corroborated by William Steinman.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 96897964-5a40-4e33-92dd-3df01407ce85
   type: testimony
   attestation: second_hand
@@ -2886,6 +3477,11 @@ domain_claims:
     name: Majestic 12 (MJ-12)
   quote: eric walker confirms he had worked at MJ-12
   text: Eric Walker confirmed that he himself had worked at MJ-12.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2c90ea58-3c09-4d72-ab44-ae670df36221
   type: hearsay
   attestation: second_hand
@@ -2908,6 +3504,11 @@ domain_claims:
     We know also that others have confirmed who were working at that time on these projects that van Neumann was working on MJ-12 projects.
   text: |-
     Others who were working at the time on related projects have confirmed that John von Neumann was working on MJ-12 projects.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 379e46b7-7518-40cc-bfe8-bfa90130e222
   type: testimony
   attestation: first_hand
@@ -2927,6 +3528,11 @@ domain_claims:
     I did ring the van Neumann family and tried to speak to van Neumann's wife, who is now quite elderly, and I couldn't really press her, I'm afraid, to confirm what a husband's work was 70 years ago.
   text: |-
     Jonathan Caplan tried to speak with John von Neumann's elderly wife by phone but could not press her to confirm her husband's work from 70 years earlier.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b7c95d09-1ab1-467b-a31b-bdec913a6367
   type: opinion
   attestation: first_hand
@@ -2948,6 +3554,11 @@ domain_claims:
     I'm not saying the president, but I'm certainly saying that there was a secret contact meeting, a contact group meeting at Holloman, and that this document confirms it.
   text: |-
     The Drain letter to Lay on the Holloman contact group meeting confirms that a secret contact meeting was held at Holloman Air Force Base, though Jonathan Caplan does not believe the president was present.
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9490b77d-04c6-4861-80a1-54f8b00bb820
   type: observation
   attestation: first_hand
@@ -2967,6 +3578,11 @@ domain_claims:
     there is a CIA reference number, obviously, on the document, which can obviously, others can look at.
   text: |-
     The Drain letter to Lay on the Holloman contact group meeting contains a CIA reference number.
+  entailment:
+    label: entails
+    score: 0.818
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40ad474c-9c48-4626-97ba-c2ef052aebe7
   type: testimony
   attestation: second_hand
@@ -2986,6 +3602,11 @@ domain_claims:
     we know that Dr. Eric Davis has recently spoken about a conversation he had with President Bush senior.
   text: |-
     Eric Davis told Ross Coulthart and Jonathan Caplan about a conversation he had with George H.W. Bush.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 38f658a8-31fd-4a49-9b7e-6d62004f27ba
   type: hearsay
   attestation: third_hand
@@ -3014,6 +3635,11 @@ domain_claims:
     he was briefed about a landing at Holloman, not with the president, but with a number of uniformed officers and CIA officers that had taken place and that a non-human individual of Nordic appearance had emerged from a craft and had met with these individuals at Holloman.
   text: |-
     George H.W. Bush told Eric Davis that when he became director of the CIA he was briefed about a landing at Holloman Air Force Base, not involving the president, where a non-human individual of Nordic appearance emerged from a craft and met with uniformed officers and CIA officers.
+  entailment:
+    label: contradicts
+    score: 0.607
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d75598a4-21d3-4038-aeab-78e3d36854fe
   type: opinion
   attestation: first_hand
@@ -3035,6 +3661,11 @@ domain_claims:
     i have never been persuaded myself that any president has had a meeting but i do believe um that uh what bush um told eric davis is likely to be true
   text: |-
     Jonathan Caplan has never been persuaded that any US president has personally had a meeting with non-human beings, but believes what George H.W. Bush told Eric Davis is likely to be true.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a22152ef-ff5c-4d3e-a6d4-ea87be61802d
   type: opinion
   attestation: first_hand
@@ -3058,6 +3689,11 @@ domain_claims:
     i do believe that this document because of the secrecy that was being imposed by drain in the letter to ley is confirming that this was either a meeting or plans for a contact meeting which was to be kept under very strict wraps and that Alan Dulles had been consulted as well regarding the security of the contact group meeting and film and that it simply was not to be released.
   text: |-
     Jonathan Caplan believes Allen Dulles had been consulted regarding the security of the Holloman contact group meeting and film, which was not to be released.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 46be00d3-fb25-4c31-a1b8-207c4b94619b
   type: testimony
   attestation: first_hand
@@ -3080,6 +3716,11 @@ domain_claims:
     Douglas Caddy was a lawyer who was called by Howard Hunt at the time that the Watergate burglars or just after the Watergate burglars had been discovered.
   text: |-
     Douglas Caddy was a lawyer whom Howard Hunt called at the time the Watergate burglars, or just after the Watergate burglars, had been discovered.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b9fe9e09-e395-4b70-aba8-68e3243e741c
   type: testimony
   attestation: first_hand
@@ -3101,6 +3742,11 @@ domain_claims:
   quote: And Hunt instructed him to represent both the burglars and himself.
   text: |-
     Howard Hunt instructed Douglas Caddy to represent both the Watergate burglars and himself.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e5966986-99ce-4630-b4aa-ae6e2b156071
   type: testimony
   attestation: first_hand
@@ -3119,6 +3765,11 @@ domain_claims:
     And Caddy unfortunately could not continue as the legal representative because he was cited for contempt by a judge for refusing to declare who had instructed him.
   text: |-
     Douglas Caddy could not continue as legal representative because he was cited for contempt by a judge for refusing to declare who had instructed him.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d47e88f6-df8c-4e49-9b3d-7a232665dcad
   type: hearsay
   attestation: second_hand
@@ -3143,6 +3794,11 @@ domain_claims:
     he had a dinner with Howard Hunt just before Howard Hunt was going to go to prison. And understandably, Douglas raised with Howard Hunt what had been the reason for going into Watergate.
   text: |-
     Douglas Caddy had a dinner with Howard Hunt just before Hunt went to prison, during which Caddy asked Hunt the reason for going into Watergate.
+  entailment:
+    label: entails
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8bff8caf-8186-44d9-bd80-26aca83db0e5
   type: hearsay
   attestation: second_hand
@@ -3169,6 +3825,11 @@ domain_claims:
     Hunt reluctantly said, well, it was to do with some documents there that we believed that the Democrats had from the Cubans, which reflected on President Kennedy's assassination.
   text: |-
     Howard Hunt told Douglas Caddy that the Watergate burglary was connected to documents the Democrats had obtained from the Cubans that reflected on President Kennedy's assassination.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 52d92e0e-ee9d-4cd7-8fa0-d58ccf882f35
   type: hearsay
   attestation: second_hand
@@ -3195,6 +3856,11 @@ domain_claims:
     he said, well, why was Kennedy assassinated? And Hunt came out with the memorable phrase, because he was about to reveal the alien presence.
   text: |-
     As Howard Hunt was leaving to go to prison, Douglas Caddy asked him why Kennedy was assassinated, and Hunt replied that it was because he was about to reveal the alien presence.
+  entailment:
+    label: contradicts
+    score: 0.59
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6e37cf8a-b5ac-4168-9328-dd39ea59e82a
   type: opinion
   attestation: first_hand
@@ -3217,6 +3883,11 @@ domain_claims:
     I think there is pretty conclusive evidence now that Howard Hunt and a man called Frank Sturgis were involved in the Kennedy assassination
   text: |-
     Jonathan Caplan considers there to be pretty conclusive evidence that Howard Hunt and Frank Sturgis were involved in the assassination of John F. Kennedy.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0f628f7b-6bab-4320-93a3-3b03129cf6b1
   type: hearsay
   attestation: second_hand
@@ -3247,6 +3918,11 @@ domain_claims:
     a lady called Marita Lorenz, who was the former mistress of Fidel Castro, gave a statement to one of the congressional committees that was looking at assassinations, in which she said that Frank Sturgis, a CIA contractor, was engaged in going to Dallas and was involved in the assassination of Kennedy, that Hunt had gone with them and had handed Sturgis an envelope.
   text: |-
     Marita Lorenz, the former mistress of Fidel Castro, gave a statement to one of the congressional committees looking at assassinations, stating that Frank Sturgis, a CIA contractor, went to Dallas and was involved in the assassination of Kennedy, and that Howard Hunt had gone with them and handed Sturgis an envelope.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b40f2e0d-56e9-4d55-a546-5aa22c0cdb01
   type: hearsay
   attestation: first_hand
@@ -3269,6 +3945,11 @@ domain_claims:
     Sturgis found out about this, threatened to kill her, and a police officer from the 18th Precinct, a man called Jim Rothstein, was sent to her flat to protect her.
   text: |-
     Frank Sturgis threatened to kill Marita Lorenz after learning of her statement, and a police officer from the 18th Precinct, Jim Rothstein, was sent to protect her.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a6cbf62-8a22-4833-86e1-714812286907
   type: hearsay
   attestation: second_hand
@@ -3295,6 +3976,11 @@ domain_claims:
     He arrested Sturgis, and Sturgis confessed to him that he in fact had been one of the gunmen on the grassy knoll, and had been one of the gunmen who had shot Kennedy, and that Hunt had been involved.
   text: |-
     Jim Rothstein arrested Frank Sturgis, who confessed to Rothstein that he had been one of the gunmen on the grassy knoll who shot John F. Kennedy, and that Howard Hunt had been involved.
+  entailment:
+    label: entails
+    score: 0.639
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7e4c7902-5f7e-4ff9-8eb2-652afab21272
   type: hearsay
   attestation: second_hand
@@ -3319,6 +4005,11 @@ domain_claims:
     Hunt's son also reports that his father had admitted to him that Sturgis had asked him to be involved in the assassination, but he told his son he declined.
   text: |-
     Howard Hunt's son has said his father admitted that Frank Sturgis had asked him to be involved in the assassination of John F. Kennedy, but that Hunt told his son he declined.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8aff5c6a-2c45-4e5b-9d72-b42b1e2a2d06
   type: administrative
   attestation: first_hand
@@ -3343,6 +4034,11 @@ domain_claims:
     This matter had been litigated before a jury when Hunt sued a newspaper called the Liberty Lobby. The jury had found against Hunt on the basis that he had been involved in the assassination, and so had the CIA.
   text: |-
     A jury found against Howard Hunt in litigation against the newspaper Liberty Lobby, on the basis that Hunt and the CIA had been involved in the assassination of John F. Kennedy.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 093f4397-b08d-431c-8a50-38536051c293
   type: testimony
   attestation: first_hand
@@ -3367,6 +4063,11 @@ domain_claims:
     I did find and locate Jim Rothstein, the police officer to whom Jim Sturgis confessed, and he confirmed that Sturgis had admitted to shooting Kennedy.
   text: |-
     Jonathan Caplan found and located Jim Rothstein, the police officer to whom Frank Sturgis confessed, and Rothstein confirmed that Sturgis had admitted to shooting John F. Kennedy.
+  entailment:
+    label: entails
+    score: 0.665
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 72a02b5e-65ec-464f-bb04-28101d36171a
   type: testimony
   attestation: second_hand
@@ -3391,6 +4092,11 @@ domain_claims:
     very senior CIA scientist, Christ Christ. And he was imprisoned in Cuba at around the time of the Bay of Pigs.
   text: |-
     David Lamar Christ was a senior CIA scientist who was imprisoned in Cuba around the time of the Bay of Pigs Invasion.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a86c6465-60c9-44ad-9697-175c3bd5346e
   type: hearsay
   attestation: second_hand
@@ -3417,6 +4123,11 @@ domain_claims:
     there was genuine concern inside the CIA that Christ would basically reveal what he knew. And the implication is that he was aware of the alien presence, as Howard Hunt alluded in his conversation with Douglas Caddy.
   text: |-
     There was genuine concern inside the CIA that David Lamar Christ would reveal what he knew, implying he was aware of the alien presence, similar to what Howard Hunt alluded to in his conversation with Douglas Caddy.
+  entailment:
+    label: entails
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dd80fc3a-0224-4d6e-95f2-482a28261b32
   type: opinion
   attestation: first_hand
@@ -3439,6 +4150,11 @@ domain_claims:
     The thing I find fascinating is that the primary motivation for the Watergate burglary, the very thing that brought down Richard Nixon, might have been an attempt to conceal what they knew about penetration of the UFO secrets.
   text: |-
     Ross Coulthart considers it possible that the primary motivation for the Watergate burglary, which brought down Richard Nixon, was an attempt to conceal what CIA figures knew about penetration of UFO secrets.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c3f5108c-2930-4182-984e-274e78ffa50b
   type: administrative
   attestation: first_hand
@@ -3465,6 +4181,11 @@ domain_claims:
     there's the Church Committee, there's the Rockefeller Commission, there's the Commission on Assassinations, all of them have looked at the question of whether there was CIA involvement in this.
   text: |-
     The Church Committee, the Rockefeller Commission, and the Commission on Assassinations have all examined whether the CIA was involved in the assassination of John F. Kennedy.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3eb31927-c2d7-409f-9a0d-89aaad2a711e
   type: administrative
   attestation: first_hand
@@ -3485,6 +4206,11 @@ domain_claims:
     some of them have been extremely dissatisfied with Alan Dulles' performance in relation to the Warren Commission.
   text: |-
     Some congressional committees have been extremely dissatisfied with Allen Dulles' performance in relation to the Warren Commission.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ce6e627b-c556-4c46-9e10-90b935ee6b75
   type: opinion
   attestation: first_hand
@@ -3509,6 +4235,11 @@ domain_claims:
     I do believe, yes, that Frank Sturgis, a CIA contractor, confessed to Jim Rothstein that he was one of the gunmen.
   text: |-
     Jonathan Caplan believes that Frank Sturgis, a CIA contractor, confessed to Jim Rothstein that he was one of the gunmen who shot John F. Kennedy.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 76ac7555-f439-4eba-80ab-519e28d500a8
   type: opinion
   attestation: first_hand
@@ -3533,6 +4264,11 @@ domain_claims:
     there is other evidence that Kennedy was interfering in the UFO situation because he was very concerned that after the Bay of Pigs that an a UFO might be mistaken by the Russians or vice versa as an incoming ballistic missile and he did not want that nuclear threat to exist
   text: |-
     Jonathan Caplan believes Kennedy was interfering in the UFO situation because he was concerned that after the Bay of Pigs Invasion a UAP could be mistaken by the Russians, or vice versa, as an incoming ballistic missile, and he did not want that nuclear threat to exist.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c9c0c9a7-8eba-4159-9b4c-59738f774e80
   type: opinion
   attestation: first_hand
@@ -3555,6 +4291,11 @@ domain_claims:
     he wanted there to be greater cooperation greater disclosure between America and Russia on the UAP phenomenon
   text: |-
     Kennedy wanted greater cooperation and disclosure between the United States and Russia regarding the UAP phenomenon.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 71e9c8a8-7104-4df5-afc2-4dc4c6b51969
   type: administrative
   attestation: first_hand
@@ -3578,6 +4319,11 @@ domain_claims:
     in fact we know that in 1971 eight years after Kennedy's death, an agreement was actually reached between those two countries, which recorded the fact that they would declare to each other if a UAP in fact had been seen and misidentified because they did not want a nuclear incident.
   text: |-
     In 1971, an agreement was reached between the United States and Russia, recording that each would declare to the other if a UAP had been seen and misidentified, because they did not want a nuclear incident.
+  entailment:
+    label: entails
+    score: 0.842
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 39a3fe4c-7cdb-42cd-b844-01618febbd30
   type: administrative
   attestation: first_hand
@@ -3597,6 +4343,11 @@ domain_claims:
   quote: And there's a hotline between the two countries for those reports to be made.
   text: |-
     There is a hotline between the United States and Russia for reports of UAP sightings to be made.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c3853faa-8571-4b44-8350-3039523dd66c
   type: administrative
   attestation: first_hand
@@ -3615,6 +4366,11 @@ domain_claims:
     name: Unidentified Aerial Phenomena (UAP)
   quote: It specifically mentions UAPs.
   text: The 1971 US-Soviet UAP hotline agreement document specifically mentions UAPs.
+  entailment:
+    label: entails
+    score: 0.731
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 989002f8-9ab8-4107-b10d-2d40b27ea1ce
   type: administrative
   attestation: first_hand
@@ -3637,6 +4393,11 @@ domain_claims:
     You literally have an agreement between the Russians, the Soviets and the Americans that in the event of either of them seeing a UAP, they would interdict in order to ensure that there was no misapprehension, that it was one side attacking the other.
   text: |-
     Under the 1971 US-Soviet UAP hotline agreement, if either the Soviets or the Americans saw a UAP, they would interdict to ensure it was not misapprehended as one side attacking the other.
+  entailment:
+    label: entails
+    score: 0.71
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a1fb5be-08df-46ee-86eb-f336d20525db
   type: opinion
   attestation: first_hand
@@ -3659,6 +4420,11 @@ domain_claims:
     Kennedy's wish that there should be greater cooperation over the serious UAP issues is something which would not have been welcome to the CIA who'd been bent over backwards to denigrate this subject and to keep it under wraps.
   text: |-
     Kennedy's wish for greater cooperation over UAP issues would not have been welcome to the CIA, which had worked to denigrate the subject and keep it under wraps.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 61550713-c7b1-4470-a7cf-3a2cff461aa0
   type: administrative
   attestation: first_hand
@@ -3677,6 +4443,11 @@ domain_claims:
     there is another document, a document that was purportedly retrieved from a burning fireplace, so-called Lancer document.
   text: |-
     The Lancer document is a document purportedly retrieved from a burning fireplace.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f30b0f2b-e392-4c6c-aba9-2727534f78db
   type: administrative
   attestation: first_hand
@@ -3697,6 +4468,11 @@ domain_claims:
     this is one of the documents which was leaked amongst the Majestic 12 Trove, and it's from a counterintelligence officer who worked under James Jesus Angleton,
   text: |-
     The Lancer document was one of the documents leaked as part of the Majestic 12 Trove, and it originated from a counterintelligence officer who worked under James Jesus Angleton.
+  entailment:
+    label: entails
+    score: 0.804
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 91527b39-8620-4b66-9600-fdf145e9d0de
   type: administrative
   attestation: first_hand
@@ -3715,6 +4491,11 @@ domain_claims:
     who after Angleton's death was called in to go through Angleton's safes and to destroy a number of documents.
   text: |-
     After James Jesus Angleton's death, a counterintelligence officer who had worked under him was called in to go through Angleton's safes and destroy a number of documents.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 409104a9-b233-4f44-aaca-220a7a3a569c
   type: administrative
   attestation: first_hand
@@ -3733,6 +4514,11 @@ domain_claims:
     Angleton did not put into the CIA system many documents. He had his own safes, I think about 40 of them, many of which had to be blown open after his death.
   text: |-
     James Jesus Angleton did not put many documents into the CIA system, keeping his own approximately 40 safes, many of which had to be blown open after his death.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 78c64d9b-5ce6-4641-9236-4bff44cfd799
   type: administrative
   attestation: first_hand
@@ -3753,6 +4539,11 @@ domain_claims:
     this document was in one of those safes and the instruction was to destroy it, to destroy any documents that were of this or other sensitive nature and he actually literally pulled this from the flames and in sending the document and disclosing it as part of the Majestic 12 Trove,
   text: |-
     The Lancer document was found in one of James Jesus Angleton's safes with an instruction to destroy it, but the counterintelligence officer instead pulled it from the flames and disclosed it as part of the Majestic 12 Trove.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5d2e3a22-ed54-4811-8bbb-09cd9e92fb0d
   type: hearsay
   attestation: second_hand
@@ -3776,6 +4567,11 @@ domain_claims:
     he said look this is the last piece of evidence that will tie the CIA into Kennedy's assassination
   text: |-
     The person who disclosed the Lancer document said it was the last piece of evidence that would tie the CIA to the assassination of John F. Kennedy.
+  entailment:
+    label: entails
+    score: 0.838
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 981ccfaa-5b1f-4bc1-8d8c-39f5b4a40f44
   type: observation
   attestation: first_hand
@@ -3798,6 +4594,11 @@ domain_claims:
     I've actually looked at the original I don't know if you have I looked at you I've examined the original of that document and you've probably done the same Ross and it's watermarked it has majestic stamp on it
   text: |-
     Jonathan Caplan examined the original Lancer document and observed that it is watermarked and has a Majestic stamp on it.
+  entailment:
+    label: entails
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6869defb-4f3f-4755-9983-89d617dd0ec7
   type: testimony
   attestation: second_hand
@@ -3824,6 +4625,11 @@ domain_claims:
     I know that the Woods took it to a laboratory, the Speckin Laboratory, who confirm that the inks on it and the paper are of that period and that the watermark is of government issue.
   text: |-
     The Woods took the Lancer document to the Speckin Laboratory, which confirmed that the inks and paper are of the claimed period and that the watermark is of government issue.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2b8a4725-ed97-4a87-94fc-f97d80c69465
   type: opinion
   attestation: first_hand
@@ -3841,6 +4647,11 @@ domain_claims:
   quote: So I think there's a prima facie case that it is a very real document.
   text: |-
     Jonathan Caplan considers there to be a prima facie case that the Lancer document is a very real document.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 04bda807-45db-4946-a1ea-60d1988bf8d0
   type: observation
   attestation: first_hand
@@ -3863,6 +4674,11 @@ domain_claims:
     It is chilling because it's an overt expression of intention by members of the alleged MJ-12 to murder the President of the United States.
   text: |-
     The Lancer document contains an overt expression of intention by members of the alleged Majestic 12 (MJ-12) to murder the President of the United States.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 075e6f18-300e-48c6-b7ea-a90cfa3a1022
   type: administrative
   attestation: first_hand
@@ -3880,6 +4696,11 @@ domain_claims:
   quote: |-
     The President Lancer, that was the code name, the Secret Service code name for JFK,
   text: '"Lancer" was the Secret Service code name for John F. Kennedy.'
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4abb9ced-e7f1-46b5-8f7e-f558c85e8919
   type: administrative
   attestation: second_hand
@@ -3900,6 +4721,11 @@ domain_claims:
     Lancer is making inquiries which we cannot allow and suggesting action, quote, critical to the continuance of the group.
   text: |-
     The Lancer document states that President Kennedy was making inquiries which could not be allowed, and suggests action critical to the continuance of the group referred to in the document.
+  entailment:
+    label: contradicts
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 406e91e2-2cef-4f53-abef-43bf476974e0
   type: administrative
   attestation: second_hand
@@ -3920,6 +4746,11 @@ domain_claims:
     The suggestion is that there may need to be an operation that is wet, i.e. CIA terminology for murdering somebody.
   text: |-
     The Lancer document suggests there may need to be an operation that is "wet", CIA terminology for murdering somebody.
+  entailment:
+    label: entails
+    score: 0.875
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 235d255b-ccdb-4029-a310-d9b63f1b205e
   type: opinion
   attestation: first_hand
@@ -3938,6 +4769,11 @@ domain_claims:
     when I first read that document, John, I have to admit, I thought this has got to be a fake because it's such an overt expression of what sounds like something out of a spy movie.
   text: |-
     Ross Coulthart initially thought the Lancer document had to be a fake because it is such an overt expression of what sounds like something out of a spy movie.
+  entailment:
+    label: entails
+    score: 0.748
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4b54caeb-5e79-41a9-a7eb-1eb9da7e2541
   type: opinion
   attestation: first_hand
@@ -3956,6 +4792,11 @@ domain_claims:
     the more you look at it in the context of what we've been discussing, the more credence I think it attracts. And I think prima facie, yes, I think it's a document that is worthy of very serious investigation and attention.
   text: |-
     Jonathan Caplan considers that the more the Lancer document is examined in context, the more credence it attracts, and that it is prima facie worthy of very serious investigation and attention.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d86d4fe6-2ac1-49ad-9a3f-0f7788fe5805
   type: opinion
   attestation: first_hand
@@ -3976,6 +4817,11 @@ domain_claims:
     I think there's a very strong argument that that is the case. Yes, I do believe that.
   text: |-
     Jonathan Caplan believes there is a very strong argument that the assassination of John F. Kennedy was linked to the UFO subject.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1834e9b8-22fb-4928-a978-5b4cdba9d4db
   type: opinion
   attestation: first_hand
@@ -3994,6 +4840,11 @@ domain_claims:
     the CIA had a policy. It's a very different organization today, but in those days, it had a policy of assassination. It was almost an assassination department within the CIA. It had got out of control.
   text: |-
     Jonathan Caplan considers that the CIA had a policy of assassination that had almost become an assassination department within the agency and had got out of control.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a36ebeac-a391-4d4e-afaa-ad1818020105
   type: administrative
   attestation: first_hand
@@ -4018,6 +4869,11 @@ domain_claims:
     that's why you get so many congressional committees the church committee the rockefeller commission the assassination uh committee on assassinations looking at the cia they weren't they were looking at obviously assassinating foreign leaders but they were also looking at assassinating uh people within the united states which is highly illegal
   text: |-
     The Church Committee, Rockefeller Commission and Commission on Assassinations looked at the CIA's involvement in assassinating both foreign leaders and people within the United States.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b7b166c9-d560-4c9d-afce-742f9295508a
   type: opinion
   attestation: first_hand
@@ -4038,6 +4894,11 @@ domain_claims:
     it does mount up to a serious case, I believe, that is, I think, stands up that it is highly likely that the CIA was behind the murder of President Kennedy, yes.
   text: |-
     Jonathan Caplan believes it is highly likely that the CIA was behind the murder of President Kennedy.
+  entailment:
+    label: entails
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 347cb0f5-de88-4d66-8713-339e6e0a4425
   type: opinion
   attestation: second_hand
@@ -4061,6 +4922,11 @@ domain_claims:
   quote: Well, that's what he told Rothstein.
   text: |-
     Jonathan Caplan believes Frank Sturgis was one of the trigger men on the grassy knoll in the JFK assassination, as Sturgis told Jim Rothstein.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4d29048c-6f85-4395-8a6f-7d8db6409254
   type: testimony
   attestation: first_hand
@@ -4083,6 +4949,11 @@ domain_claims:
     And was there ever any kind of adequate FBI police investigation into the allegations that he confessed to Rothstein? No.
   text: |-
     There was no adequate FBI or police investigation into Frank Sturgis's confession to Jim Rothstein.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0a6e1c2a-124a-4bbb-97b8-69e9fb6a69f2
   type: testimony
   attestation: second_hand
@@ -4107,6 +4978,11 @@ domain_claims:
     When he was taken back to the precinct, a CIA officer collected him from Rothstein's custody.
   text: |-
     When Frank Sturgis was taken back to the police precinct, a CIA officer collected him from Jim Rothstein's custody.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b447bd3a-6bba-4b30-ab83-a50e65f08f5b
   type: testimony
   attestation: second_hand
@@ -4129,6 +5005,11 @@ domain_claims:
     And Rothstein was amazed that there was no further action in relation to what he'd been told.
   text: |-
     Jim Rothstein was amazed that there was no further action taken in relation to what he had been told by Frank Sturgis.
+  entailment:
+    label: entails
+    score: 0.83
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ee011415-5242-4d89-8ffe-39dfb1a147a4
   type: administrative
   attestation: first_hand
@@ -4148,6 +5029,11 @@ domain_claims:
   quote: |-
     there should even have been, Sturgis should even have been prosecuted for his threats to kill Marieta Lorenz, but those charges were never preferred.
   text: Frank Sturgis was never prosecuted for his threats to kill Marita Lorenz.
+  entailment:
+    label: entails
+    score: 0.822
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3ea5df02-0575-4bef-acef-b370a3ba82ed
   type: administrative
   attestation: second_hand
@@ -4173,6 +5059,11 @@ domain_claims:
     a week after Kennedy's assassination, you get a very interesting article written by President Truman to the Washington Post, really, ... being very critical of the CIA and saying, look, this is not the organization that I set up or what we believed it was going to be. And it's got completely out of hand.
   text: |-
     A week after Kennedy's assassination, Harry Truman wrote an article in the Washington Post that was very critical of the CIA, saying it was not the organisation he had set up and that it had got completely out of hand.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a653877-d384-4316-8e75-97028e44db8c
   type: opinion
   attestation: first_hand
@@ -4195,6 +5086,11 @@ domain_claims:
     Now, he doesn't go into detail as to why he was saying that, and it may well be the case that he wasn't talking about, he didn't know or wasn't trying to allege that the CIA was behind Kennedy's assassination.
   text: |-
     Harry Truman's Washington Post article did not go into detail as to why he was criticising the CIA, and it may not have alleged that the CIA was behind Kennedy's assassination.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d7d11c74-cd33-49c9-8105-cc02db19dceb
   type: administrative
   attestation: first_hand
@@ -4214,6 +5110,11 @@ domain_claims:
   quote: |-
     Marilyn Monroe, who, of course, was the beautiful starlet who was having an affair with JFK, President Kennedy.
   text: Marilyn Monroe was having an affair with President John F. Kennedy.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 64ce017b-ea22-40de-a0c8-6b36bba2b3ea
   type: opinion
   attestation: first_hand
@@ -4238,6 +5139,11 @@ domain_claims:
     the real issue is because her death is so similar to the death of the journalist Dorothy Kilgallen.
   text: |-
     Jonathan Caplan considers the death of Marilyn Monroe similar to the death of journalist Dorothy Kilgallen, and worthy of investigation.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a4d3993c-4b90-4014-999d-b7ef5eee8700
   type: administrative
   attestation: first_hand
@@ -4256,6 +5162,11 @@ domain_claims:
     name: Kilgallen, Dorothy
   quote: They were friends.
   text: Marilyn Monroe and Dorothy Kilgallen were friends.
+  entailment:
+    label: entails
+    score: 0.929
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f17aa563-6f74-429d-a4b6-f703954e7ac3
   type: hearsay
   attestation: second_hand
@@ -4277,6 +5188,11 @@ domain_claims:
     Kilgallen had written stories in 1955 about crashed craft, and she'd been leaked by a senior figure in the British establishment, we never know, didn't know who, that craft had crashed, biologics had been recovered, and that this was a matter of great secrecy.
   text: |-
     In 1955 Dorothy Kilgallen wrote stories about crashed craft after being leaked information by a senior figure in the British establishment that craft had crashed and biologics had been recovered, a matter of great secrecy.
+  entailment:
+    label: entails
+    score: 0.955
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f637c7fb-cc7e-4f3b-a5d1-dd771ff630cd
   type: hearsay
   attestation: second_hand
@@ -4299,6 +5215,11 @@ domain_claims:
     We understand that Kennedy knew about this and he'd been told about it. He allegedly had told others about it, including Marilyn Monroe.
   text: |-
     Kennedy knew about the crashed craft and biologics Dorothy Kilgallen had been told about, and allegedly told others about it, including Marilyn Monroe.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 80a3b896-1e45-4aaa-bff1-0385065dedca
   type: administrative
   attestation: second_hand
@@ -4321,6 +5242,11 @@ domain_claims:
     That document is an account of a conversation on the phone between Kilgallen and another individual. And they're talking about Marilyn Monroe's dissatisfaction with the Kennedys and how she's about to leak secrets, even of his secret visit to an Air Force base where secrets, great secrets, were being held.
   text: |-
     The Kilgallen-Monroe wiretap document is an account of a phone conversation between Dorothy Kilgallen and another individual discussing Marilyn Monroe's dissatisfaction with the Kennedys and her plans to leak secrets, including about a secret visit to an Air Force base where great secrets were being held.
+  entailment:
+    label: neutral
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8d2b0c20-60b2-40c7-a682-a640c14e0233
   type: administrative
   attestation: first_hand
@@ -4344,6 +5270,11 @@ domain_claims:
     the day after that document is dated, Monroe is found dead with an overdose of Nembutal and other barbiturates. It had not been digested.
   text: |-
     The day after the Kilgallen-Monroe wiretap document was dated, Marilyn Monroe was found dead with an overdose of Nembutal and other barbiturates that had not been digested.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8ade52b4-aa86-4068-a48c-73af0c2fe9a0
   type: administrative
   attestation: first_hand
@@ -4364,6 +5295,11 @@ domain_claims:
     And the only medical conclusion was that it had either been injected or given by enema.
   text: |-
     The only medical conclusion regarding Marilyn Monroe's undigested Nembutal overdose was that it had either been injected or given by enema.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 18260b0c-fb77-4181-8800-f0ae5702ae20
   type: hearsay
   attestation: second_hand
@@ -4386,6 +5322,11 @@ domain_claims:
     some short time later, Kilgallen is saying this was not suicide. This hasn't finished by a long chalk. I'm going to investigate it.
   text: |-
     Some time after Marilyn Monroe's death, Dorothy Kilgallen said the death was not suicide and that she was going to investigate it.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 183fb3aa-2877-4623-bd58-3e6869ca8c88
   type: administrative
   attestation: first_hand
@@ -4408,6 +5349,11 @@ domain_claims:
     she began an investigation into Marilyn Monroe's death and into the Kennedy assassination.
   text: |-
     Dorothy Kilgallen began an investigation into Marilyn Monroe's death and into the Kennedy assassination.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a1cade9a-69b7-40cb-b47a-4250ebf61f52
   type: administrative
   attestation: first_hand
@@ -4427,6 +5373,11 @@ domain_claims:
     name: Death of Dorothy Kilgallen
   quote: She herself is found then dead, lying on her bed with an overdose of Nembutal.
   text: Dorothy Kilgallen was found dead lying on her bed with an overdose of Nembutal.
+  entailment:
+    label: contradicts
+    score: 0.602
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c50c9da4-4b67-4fb3-b3b7-3e3118609b18
   type: administrative
   attestation: first_hand
@@ -4449,6 +5400,11 @@ domain_claims:
     name: Death of Dorothy Kilgallen
   quote: Neither Munro or Kilgallen had been prescribed Nembutal, by the way.
   text: Neither Marilyn Monroe nor Dorothy Kilgallen had been prescribed Nembutal.
+  entailment:
+    label: entails
+    score: 0.914
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 72c5f27b-7e8f-4d06-a784-8cc676c544c0
   type: administrative
   attestation: first_hand
@@ -4470,6 +5426,11 @@ domain_claims:
     She had just done an episode the night before of the television show, What's My Line?
   text: |-
     Dorothy Kilgallen had appeared on the television show What's My Line? the night before she was found dead.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f3934e8-9720-4e1a-a4c8-14b960316758
   type: opinion
   attestation: first_hand
@@ -4492,6 +5453,11 @@ domain_claims:
     makes no sense that Kilgallen would have killed herself but both who had figured in this wiretap report die in very similar circumstances and it just raises questions that call for some investigation.
   text: |-
     Jonathan Caplan does not believe it makes sense that Dorothy Kilgallen would have killed herself, given that she and Marilyn Monroe, both figured in the Kilgallen-Monroe wiretap document, died in very similar circumstances.
+  entailment:
+    label: entails
+    score: 0.762
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e08794c7-1939-407c-b2f2-d162c1fde304
   type: opinion
   attestation: first_hand
@@ -4516,6 +5482,11 @@ domain_claims:
     your point is you're not saying Marilyn Monroe or Dorothy Kilgallen were murdered by people trying to protect the secrets of JFK or UFOs. But it certainly should have been more fully investigated at the time. That's that's that's what I'm saying.
   text: |-
     Jonathan Caplan is not asserting that Marilyn Monroe or Dorothy Kilgallen were murdered by people trying to protect the secrets of JFK or UFOs, but believes their deaths should have been more fully investigated at the time.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: df3488a7-526d-438b-9486-73304670fc4e
   type: hearsay
   attestation: second_hand
@@ -4536,6 +5507,11 @@ domain_claims:
     I have been told by more than one source that this branch exists and that it has been active in the denigration of the UFO phenomenon. And it has been doing what it can to ensure that it does not receive the attention it deserves.
   text: |-
     Jonathan Caplan has been told by more than one source that the CIA Warfare Advisory Branch exists and has been active in the denigration of the UFO phenomenon, working to ensure it does not receive the attention it deserves.
+  entailment:
+    label: entails
+    score: 0.661
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 686858f2-7739-48bc-99b4-592270556f2c
   type: opinion
   attestation: first_hand
@@ -4555,6 +5531,11 @@ domain_claims:
   quote: Do you give that story credence? Yes.
   text: |-
     Jonathan Caplan gives credence to the reporting on the CIA's Office of Global Access.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 14338b55-78d1-47c1-b8a6-c3a1a6c4bc0e
   type: opinion
   attestation: first_hand
@@ -4575,6 +5556,11 @@ domain_claims:
     That's an office. It's been renamed now, which... its purpose is to either drop people in places and other jurisdictions which are hostile or to collect things from other jurisdictions which are hostile.
   text: |-
     The CIA's Office of Global Access, since renamed, has a purpose of either dropping people into hostile jurisdictions or collecting things from hostile jurisdictions.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 37831aae-fced-416e-8234-c3fa929e41f4
   type: opinion
   attestation: first_hand
@@ -4595,6 +5581,11 @@ domain_claims:
     And yes, I do believe that that office has been responsible for obtaining craft in
   text: |-
     Jonathan Caplan believes the CIA's Office of Global Access has been responsible for obtaining non-human craft.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8017a432-d536-43cf-93a3-a02c411b051f
   type: testimony
   speaker:
@@ -4613,6 +5604,11 @@ domain_claims:
     two classic cases are Regina, where we know that a craft crashed and beings, at least one being anyway, was survived
   text: |-
     A non-human craft crashed at Regina, Brazil, and at least one being aboard survived.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83aad96a-ebca-448e-a372-d380cddb3955
   type: testimony
   speaker:
@@ -4633,6 +5629,11 @@ domain_claims:
     a aircraft from the United States came into Campinas Airport, collected the craft and the being
   text: |-
     An aircraft from the United States flew into Campinas Airport in Brazil and collected the crashed craft and the surviving being from the Regina, Brazil crash retrieval incident.
+  entailment:
+    label: contradicts
+    score: 0.617
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c5901d06-8ec0-4ab5-a0a8-b760bae43f5a
   type: hearsay
   attestation: second_hand
@@ -4655,6 +5656,11 @@ domain_claims:
   quote: a man called jonathan wagant who describes a similar situation in peru
   text: |-
     Jonathan Wagant describes a crash retrieval incident in Peru similar to the Regina, Brazil crash retrieval incident.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1888f0e4-139a-4689-93c0-a1a2f26b68a0
   type: hearsay
   attestation: second_hand
@@ -4678,6 +5684,11 @@ domain_claims:
     craft and the department of energy were on the scene uh taking the um a plane sorry taking the craft and the beings uh that were in that crash um out of peru back to the united states
   text: |-
     The United States Department of Energy was present at the scene of the Peru crash retrieval incident, removing the craft and the beings from Peru back to the United States.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e58f711b-cf00-42d3-af27-8e96530483ab
   type: opinion
   attestation: first_hand
@@ -4692,6 +5703,11 @@ domain_claims:
     one can see that the technological prizes are so huge that the americans are prepared to go extra territorially to recover what they can
   text: |-
     Jonathan Caplan believes the United States is prepared to act extraterritorially to recover non-human technology because the technological prizes involved are so great.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56a2425d-ccbc-4b89-a552-8a062c950455
   type: opinion
   attestation: first_hand
@@ -4708,6 +5724,11 @@ domain_claims:
   quote: Sometimes, as with Brazil, probably they negotiated it.
   text: |-
     Jonathan Caplan believes the United States likely negotiated with Brazil over the recovery of the craft and being from the Regina, Brazil crash retrieval incident.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c6c9278c-2dbe-4588-8377-005b5c9e6db7
   type: opinion
   attestation: first_hand
@@ -4726,6 +5747,11 @@ domain_claims:
   quote: No doubt with Peru, they may well have negotiated it.
   text: |-
     Jonathan Caplan believes the United States may well have negotiated with Peru over the recovery of the craft and beings from the Peru crash retrieval incident.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: acadce2c-139d-4a96-aa83-4648ec9b6a07
   type: hearsay
   attestation: second_hand
@@ -4747,6 +5773,11 @@ domain_claims:
     I was recently apprised of an incident that took place towards the end of the Cold War, when there was the beginning of a rapprochement between the Russians and the Americans, where an American astronaut was actually sent across to the Soviet Union to collaborate in a retrieval of a non-human craft.
   text: |-
     Ross Coulthart was recently informed of an incident near the end of the Cold War, during the early stages of rapprochement between the Russians and Americans, in which an American astronaut was sent to the Soviet Union to collaborate on the retrieval of a non-human craft.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: beabd9b1-5a63-474c-af6c-1e363872c6d4
   type: hearsay
   attestation: second_hand
@@ -4767,6 +5798,11 @@ domain_claims:
   quote: Stafford was the astronaut involved.
   text: |-
     Thomas Stafford was the astronaut involved in the retrieval of a non-human craft in the Russian Federation near the end of the Cold War.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 552b7360-dcd6-428f-aabc-95c908046ee5
   type: hearsay
   attestation: second_hand
@@ -4792,6 +5828,11 @@ domain_claims:
     you mentioned that bill clinton it became known in intelligence circles that a craft had landed in the russian federation by arrangement
   text: |-
     Jonathan Caplan's book mentions that it became known in intelligence circles that a non-human craft had landed in the Russian Federation by arrangement, during the Clinton administration.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0eabd80f-16d9-4fce-85eb-002ce5b0a220
   type: testimony
   attestation: second_hand
@@ -4815,6 +5856,11 @@ domain_claims:
     i'm pretty confident that that is the case and that that information came back during the Clinton administration to the United States and that this happened and was a real incident, yes.
   text: |-
     Jonathan Caplan is confident that a non-human craft was deliberately landed in the Russian Federation by arrangement, and that information about it came back to the United States during the Clinton administration as a real incident.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e96dc691-1379-4cc6-9fcd-6b50e24224e0
   type: hearsay
   attestation: second_hand
@@ -4836,6 +5882,11 @@ domain_claims:
     Is the implication there that Bill Clinton as president was apprised of the knowledge of this incident? My understanding is that it is yes.
   text: |-
     Jonathan Caplan understands that Bill Clinton, as president, was made aware of the knowledge of the deliberate landing of a non-human craft in the Russian Federation.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56e82c39-a90c-4ac6-ab90-7aae3cc3a844
   type: hearsay
   attestation: first_hand
@@ -4855,6 +5906,11 @@ domain_claims:
     I know he did dispatch one of his attorneys, Webster Hubble, a controversial fellow who was subsequently convicted for fraud.
   text: |-
     Bill Clinton dispatched his attorney Webster Hubbell, who was subsequently convicted for fraud, in relation to Clinton's interest in UAPs.
+  entailment:
+    label: entails
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 93657955-53ff-4db6-bfee-27e6fcc41791
   type: hearsay
   attestation: first_hand
@@ -4874,6 +5930,11 @@ domain_claims:
     I know President Clinton did take a very close interest in UAPs in his time as president, and he did ask questions about whether America had retrieved craft and didn't really get anywhere.
   text: |-
     Bill Clinton took a close interest in Unidentified Aerial Phenomena (UAP) during his presidency and asked questions about whether America had retrieved craft, without getting far.
+  entailment:
+    label: entails
+    score: 0.935
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5d1e440-8554-4425-8c36-56d6b89e3c54
   type: opinion
   attestation: first_hand
@@ -4893,6 +5954,11 @@ domain_claims:
     it's interesting because that might explain why Hillary Clinton, when she subsequently ran for the presidency, was so determined to try and get to the truth herself.
   text: |-
     Ross Coulthart suggests that Bill Clinton's interest in UAP retrieval may explain why Hillary Clinton, when she later ran for the presidency, was determined to seek the truth about UAP herself.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 43d17ce1-fe8a-4d7c-b97f-a039fc6b74a2
   type: opinion
   attestation: first_hand
@@ -4909,6 +5975,11 @@ domain_claims:
   quote: I think he probably knows more than he's let on.
   text: |-
     Jonathan Caplan believes Bill Clinton probably knows more about the non-human craft retrieval incident in the Russian Federation than he has let on.
+  entailment:
+    label: entails
+    score: 0.944
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1ec59b92-2754-4b08-bcb2-db4c635e47ee
   type: hearsay
   attestation: third_hand
@@ -4935,6 +6006,11 @@ domain_claims:
     the claims of Haim Eshed, the former Israeli space agency boss, who very controversially gave an interview to an Israeli newspaper, Hebrew language newspaper, in which he made extraordinary allegations of a galactic federation of recovered craft, of US collaboration in the recovery of and reverse engineering of non-human technology.
   text: |-
     Haim Eshed, the former Israeli Space Agency boss, gave an interview to a Hebrew-language Israeli newspaper making allegations of a Galactic Federation of recovered craft and of United States collaboration in the recovery and reverse engineering of non-human technology.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5f2e2b59-e850-4423-be35-5371d1ffbe06
   type: opinion
   attestation: first_hand
@@ -4952,6 +6028,11 @@ domain_claims:
     I wasn't quite sure that I would feel 100% about Haim's mental capacities. But it verified what Haim asserted in a Hebrew language newspaper.
   text: |-
     Ross Coulthart was not sure that Haim Eshed's mental capacities were fully sound after watching the interview, but felt it verified what Eshed had asserted in the Hebrew-language newspaper interview.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a36d82d1-90f4-4f90-977c-180ac5734b49
   type: administrative
   attestation: first_hand
@@ -4969,6 +6050,11 @@ domain_claims:
     when that book came out, it provoked international, huge international interest, although it's never been translated into English.
   text: |-
     Haim Eshed's book, which describes a Galactic Federation, provoked huge international interest but has never been translated into English.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b1a835c7-17eb-44fa-9faf-3bf54bbad07e
   type: testimony
   attestation: first_hand
@@ -4984,6 +6070,11 @@ domain_claims:
     name: Eshed, Haim
   quote: I did get it translated from Hebrew.
   text: Jonathan Caplan had Haim Eshed's book translated from Hebrew.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c2e6463-904e-4348-9a1f-430777fef50a
   type: hearsay
   attestation: second_hand
@@ -5007,6 +6098,11 @@ domain_claims:
     there's a group called the Galactic Federation. It's a group of NHIs who have our best interests at heart and who are in touch with the Americans and some other countries.
   text: |-
     According to Haim Eshed, the Galactic Federation is a group of Non-Human Intelligences (NHI) that have humanity's best interests at heart and are in touch with the Americans and some other countries.
+  entailment:
+    label: contradicts
+    score: 0.954
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f6b68ef1-4039-4118-9183-2f3c5f5453ad
   type: hearsay
   attestation: second_hand
@@ -5025,6 +6121,11 @@ domain_claims:
   quote: |-
     he goes on in the book, in fact, to talk about other crashes, which aren't well known.
   text: Haim Eshed's book discusses other crashes that are not well known.
+  entailment:
+    label: contradicts
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b15e0065-faf5-4067-a872-2f32296c0343
   type: hearsay
   attestation: second_hand
@@ -5044,6 +6145,11 @@ domain_claims:
     he talks about examining in great detail photographs that have come back from what landed on the Martian surface and transmitted photographs and how he can detect from some of those photographs artificial structures.
   text: |-
     Haim Eshed examined photographs transmitted from an object that landed on the Martian surface and claims to be able to detect artificial structures in some of those photographs.
+  entailment:
+    label: contradicts
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cc73aac3-d91c-4c9b-843a-8f6823954d7e
   type: testimony
   attestation: first_hand
@@ -5060,6 +6166,11 @@ domain_claims:
   quote: So I did go to Israel. I tried to contact him. He wasn't speaking to anybody.
   text: |-
     Jonathan Caplan travelled to Israel and attempted to contact Haim Eshed but was unable to speak with him.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 07773d24-8818-4b20-8b54-2ff5af72c9c4
   type: testimony
   attestation: first_hand
@@ -5077,6 +6188,11 @@ domain_claims:
     I contacted the journalist who co-wrote the book with him. She told me that she wasn't allowed to speak about the book.
   text: |-
     Jonathan Caplan contacted the journalist who co-wrote the book with Haim Eshed, and she told him she was not allowed to speak about the book.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 54fbd26f-6945-4853-aac1-c3414cd6d53b
   type: opinion
   attestation: first_hand
@@ -5094,6 +6210,11 @@ domain_claims:
     as time has gone on, I have no idea from where Haim Eshed might have got the information which he is claiming.
   text: |-
     Jonathan Caplan has no idea from where Haim Eshed might have obtained the information he claims about the Galactic Federation and non-human intelligence.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b881a5ae-bae0-473d-9e7b-337ed80af3f8
   type: testimony
   attestation: second_hand
@@ -5117,6 +6238,11 @@ domain_claims:
     I spoke to Paul Hellyer when he was alive, the former Canadian Ministry of Defence. He doubted the Galactic Federation story, actually, although of course he's confirmed that he was told that many races have visited Earth.
   text: |-
     Paul Hellyer, the former Canadian Minister of National Defence, doubted the Galactic Federation story described by Haim Eshed, though he had confirmed that he was told that many races have visited Earth.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 08e7ccfd-a623-4fa8-9634-558705d7beb5
   type: opinion
   attestation: first_hand
@@ -5134,6 +6260,11 @@ domain_claims:
     Because I don't think we can establish that Haim Eshed has received this information officially, I think I'd have to say one should take it with a pinch of salt at the moment.
   text: |-
     Jonathan Caplan does not think it can be established that Haim Eshed received his information about the Galactic Federation and non-human intelligence officially, and believes it should be taken with a degree of scepticism.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8912a4b1-e00a-4a57-a45a-883981beece9
   type: opinion
   attestation: first_hand
@@ -5151,6 +6282,11 @@ domain_claims:
     Some of them have, which I've reported in the book, haven't appeared elsewhere and they may well be genuine.
   text: |-
     Jonathan Caplan believes some of the crash information reported in his book that has not appeared elsewhere may well be genuine.
+  entailment:
+    label: entails
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 70192840-71dc-4008-8dbd-5000e086d188
   type: opinion
   attestation: first_hand
@@ -5170,6 +6306,11 @@ domain_claims:
     I think it's best to say that's his personal view rather than of information which he's been officially notified of.
   text: |-
     Jonathan Caplan believes Haim Eshed's claims about contact with other Non-Human Intelligences (NHI) should be regarded as his personal view rather than information he was officially notified of.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc87074c-37c7-4e55-9df9-3e0b2c034c25
   type: administrative
   attestation: first_hand
@@ -5186,6 +6327,11 @@ domain_claims:
   quote: John, you've spent many decades investigating the UAP mystery.
   text: |-
     Jonathan Caplan has spent many decades investigating the Unidentified Aerial Phenomena (UAP) mystery.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ffcfd10e-4b62-4aec-ac2c-3acf535d7725
   type: opinion
   attestation: first_hand
@@ -5203,6 +6349,11 @@ domain_claims:
     Are you in any doubt at all that there is a non-human intelligence engaging with this planet? No, none at all.
   text: |-
     Jonathan Caplan is in no doubt that there is a Non-Human Intelligence (NHI) engaging with Earth.
+  entailment:
+    label: entails
+    score: 0.885
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6b784223-eeb6-4857-94ef-089e107fbd3a
   type: opinion
   attestation: first_hand
@@ -5220,6 +6371,11 @@ domain_claims:
     I'm not sure even the Americans or the Chinese or the Russians know exactly what the source of this phenomenon is.
   text: |-
     Jonathan Caplan does not believe that even the Americans, Chinese, or Russians know exactly what the source of the Non-Human Intelligence (NHI) phenomenon is.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 148642bb-02c3-45bf-9743-e4328e0b37ad
   type: opinion
   attestation: first_hand
@@ -5237,6 +6393,11 @@ domain_claims:
     I suspect it's multi-source and I suspect a part of it must be extraterrestrial because life elsewhere in the universe is a mathematical certainty.
   text: |-
     Jonathan Caplan suspects the Non-Human Intelligence (NHI) phenomenon is multi-source, and that part of it must be extraterrestrial because life elsewhere in the universe is a mathematical certainty.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3ab11681-d43f-4483-9d5f-5809dec656ad
   type: opinion
   attestation: first_hand
@@ -5254,6 +6415,11 @@ domain_claims:
     I think there's other forms of non-human intelligence which we do not understand.
   text: |-
     Jonathan Caplan believes there are other forms of non-human intelligence that are not understood.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 30fa877f-30ba-4e35-a9df-7b6de3319640
   type: opinion
   attestation: first_hand
@@ -5268,6 +6434,11 @@ domain_claims:
     I think there's possibly some truth in the notion that there may be some kind of interactive collective consciousness which is interacting with us.
   text: |-
     Jonathan Caplan believes there may be some truth to the notion of an interactive collective consciousness interacting with humanity.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 84ddcdca-6fb4-4669-b5c0-1ff129b7abc0
   type: testimony
   attestation: first_hand
@@ -5285,6 +6456,11 @@ domain_claims:
     I spoke to John once and I met him once and he was, I think, a frightened man at the time I spoke to him.
   text: |-
     Jonathan Caplan spoke with and met John Keel once, and found him to be a frightened man at the time.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 785eed27-7a85-4c58-b779-fd517a3bcd57
   type: hearsay
   attestation: second_hand
@@ -5308,6 +6484,11 @@ domain_claims:
     John Keel hypothesized that it was essentially projecting the UAP imagery, different representations of so-called non-human beings, essentially to cause a bit of mischief.
   text: |-
     Ross Coulthart describes John Keel's theory that a sentient life form sharing the planet with humans, referred to as interdimensional or crypto-terrestrial, may explain phenomena historically dismissed as elves, goblins and fairies, and that Keel hypothesised it was projecting UAP imagery and different representations of non-human beings to cause mischief.
+  entailment:
+    label: entails
+    score: 0.721
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 641731ea-eb23-4560-8d25-1b1602e512f6
   type: testimony
   attestation: first_hand
@@ -5326,6 +6507,11 @@ domain_claims:
     this phenomenon has become much more complex since I became involved in the 1970s.
   text: |-
     The Non-Human Intelligence (NHI) phenomenon has become much more complex since Jonathan Caplan became involved in it in the 1970s.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3ca47cac-498b-450e-9159-37b5b509c6b0
   type: opinion
   attestation: first_hand
@@ -5342,6 +6528,11 @@ domain_claims:
   quote: there's certainly a dark paranormal side to this.
   text: |-
     Jonathan Caplan believes there is a dark paranormal side to the Non-Human Intelligence (NHI) phenomenon.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dde39627-14e3-4a87-9bb5-8cdf3fec6307
   type: opinion
   attestation: first_hand
@@ -5359,6 +6550,11 @@ domain_claims:
     some people refer to the hitchhiker effects of dark shapes or beings materializing in your home or materializing or in the neighborhood ... it's part of our ecology which exists um or co-exists with us which is capable of interacting with us and which may well have at times a dark side
   text: |-
     Jonathan Caplan believes the hitchhiker effect, involving dark shapes or beings materialising in one's home or neighbourhood, is part of an ecology co-existing with humans that is capable of interacting with them, sometimes with a dark side.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 03804335-d361-4ada-b48d-65f908e3b60a
   type: opinion
   attestation: first_hand
@@ -5373,6 +6569,11 @@ domain_claims:
     the catholic church has experienced and has dealt with by purgatory and prayer over the years
   text: |-
     Jonathan Caplan notes that the Catholic Church has experienced and dealt with the dark paranormal side of the Non-Human Intelligence phenomenon through purgatory and prayer over the years.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9e2ce94e-892f-4c14-a087-c2c36568ad01
   type: opinion
   attestation: second_hand
@@ -5392,6 +6593,11 @@ domain_claims:
     the Quran speaks of the Jinn these smokeless beings that are capable of being malign or benign.
   text: |-
     Jonathan Caplan notes that the Quran speaks of the Jinn as smokeless beings capable of being malign or benign.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ec773014-ea1d-4b73-82a8-dc0d9bb83591
   type: opinion
   attestation: first_hand
@@ -5411,6 +6617,11 @@ domain_claims:
     So yes, I do believe that kind of intelligence exists or coexists with us. I also believe that there's extraterrestrial races that have visited us. So there's different forms of non-human intelligence.
   text: |-
     Jonathan Caplan believes that the kind of intelligence described as Jinn exists or coexists with us, and that extraterrestrial races have also visited us, meaning there are different forms of non-human intelligence.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 12c37f1a-6b76-4823-a203-910012aece6c
   type: opinion
   attestation: first_hand
@@ -5430,6 +6641,11 @@ domain_claims:
     I think Congress had a problem when they were trying to define in the recent act, which got nowhere for the disclosure of UAP documents, what non-human intelligence meant.
   text: |-
     The United States Congress had difficulty defining what non-human intelligence meant in a recent act aimed at disclosure of UAP documents, and the act got nowhere.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5f050b38-2875-4364-96ac-e2170c117d39
   type: opinion
   attestation: first_hand
@@ -5447,6 +6663,11 @@ domain_claims:
     I do not believe, as some do, that disclosure is coming through President Trump's.
   text: |-
     Jonathan Caplan does not believe disclosure of the Non-Human Intelligence phenomenon is coming through President Donald Trump.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 87715f73-1e30-4770-ba26-d60ece2e1f93
   type: opinion
   attestation: first_hand
@@ -5461,6 +6682,11 @@ domain_claims:
     you've got the intelligence community having to confess to a canon of sins which they've committed over the last 50 years, possibly, which I believe include physical assault and murder.
   text: |-
     Jonathan Caplan believes the intelligence community would have to confess to a canon of sins committed over the last 50 years, possibly including physical assault and murder, as part of any disclosure of the Non-Human Intelligence phenomenon.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e98e43c4-9551-43b6-8062-7b3c2822f3a5
   type: opinion
   attestation: first_hand
@@ -5477,6 +6703,11 @@ domain_claims:
   quote: Murder of a president, no less. Probably murder of a president.
   text: |-
     Jonathan Caplan believes the intelligence community may have been involved in the murder of a president in connection with the Non-Human Intelligence phenomenon.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5e69a3e8-8633-4db0-aec5-39605ebe1946
   type: opinion
   attestation: first_hand
@@ -5496,6 +6727,11 @@ domain_claims:
     President Trump's very keen to be a president that's doing things no other presidents have done. So some kind of disclosure is fine for him. But as far as the three-letter agencies are concerned, as long as you keep that to saying, well, all right, this video is anomalous or this craft is anomalous, that's fine... We are not gonna hear about crash craft. We're not gonna hear about legacy programs. We're not gonna hear about biologics.
   text: |-
     Jonathan Caplan believes President Donald Trump is keen to be seen as doing things no other president has done, and that some kind of limited disclosure acknowledging anomalous phenomena is acceptable to him, but that intelligence agencies will not go further to reveal crash craft, legacy programs, or biologics.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 967c3a2d-fb27-4aa1-8e1a-5c25bde9d2d2
   type: administrative
   attestation: second_hand
@@ -5517,6 +6753,11 @@ domain_claims:
     one of the great reports into UAPs, interestingly enough, and it's often overlooked, was the Condign Report, the British Condign Report. And it looked at plasma as an explanation for the UAP mystery.
   text: |-
     The British Condign Report is a notable but often overlooked report into Unidentified Aerial Phenomena (UAP) that examined plasma as an explanation for the UAP mystery.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 06bac4c4-e0a9-4d96-9e50-d455cff9387c
   type: hearsay
   attestation: second_hand
@@ -5538,6 +6779,11 @@ domain_claims:
     I was struck this week that David Grusch, in the presentation that he gave on the steps of the Congress, when he was asked by one reporter about the life forms that he was aware of, one of the things that he mentioned was sentient plasmoids.
   text: |-
     David Grusch, in a presentation given on the steps of the United States Congress, when asked by a reporter about life forms he was aware of, mentioned sentient plasmoids.
+  entailment:
+    label: entails
+    score: 0.432
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c1d8b590-1be8-44ad-98fe-131fa59b604f
   type: testimony
   attestation: second_hand
@@ -5557,6 +6803,11 @@ domain_claims:
     I'm aware also of ongoing research involving sentient plasmoids by a team that's working currently covertly.
   text: |-
     Ross Coulthart is aware of ongoing covert research involving sentient plasmoids being conducted by a team.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2790cc9d-58c2-45fd-be71-61869a7bb340
   type: opinion
   attestation: second_hand
@@ -5578,6 +6829,11 @@ domain_claims:
     The Condign Report inferred pretty much the same thing, didn't it, 20, 30 years ago?
   text: |-
     The Condign Report inferred findings about plasma similar to sentient plasmoid research, 20 to 30 years before David Grusch's mention of sentient plasmoids.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6db8f92e-e4c0-4e94-bd66-e628ce2a7a2d
   type: opinion
   attestation: first_hand
@@ -5592,6 +6848,11 @@ domain_claims:
     I think structured craft, if there's an ET source to that, is something they can understand and which they may have.
   text: |-
     Jonathan Caplan believes that if there is an extraterrestrial source to structured craft, that is something the American intelligence services can understand and may already have.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d36c3292-c4c7-406c-ac22-ca9c8f0645b9
   type: opinion
   attestation: first_hand
@@ -5609,6 +6870,11 @@ domain_claims:
     I think the thing that has always troubled the American intelligence services is orbs and plasma and I don't think that is something that is understood
   text: |-
     Jonathan Caplan believes orbs and plasma have always troubled American intelligence services and are not well understood.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d4f4b6f0-2151-4ba8-8ca3-65efe5afadca
   type: hearsay
   attestation: second_hand
@@ -5630,6 +6896,11 @@ domain_claims:
     my understanding is that there was an orb project which the CIA began and that came out of observations of orbs which had been detected by advanced photographic platforms.
   text: |-
     The Central Intelligence Agency (CIA) began an orb project that arose out of observations of orbs detected by advanced photographic platforms.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: db52674a-237b-4679-b158-1b80f2379c53
   type: hearsay
   attestation: second_hand
@@ -5646,6 +6917,11 @@ domain_claims:
     my understanding also is that there's been some cooperation between the Americans, the Russians, and the Chinese on detection of orbs. And there's been some sharing of information about that.
   text: |-
     There has been some cooperation and sharing of information between the Americans, the Russians and the Chinese on the detection of orbs.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6ac8861e-80ce-4853-8879-a4ddb488d02d
   type: hearsay
   attestation: second_hand
@@ -5665,6 +6941,11 @@ domain_claims:
     David Grusch, for example, talked about agreements that he was able to talk about in his DOPSA.
   text: |-
     David Grusch discussed, in his testimony under the Defense Officials Personal Statement Authorization (DOPSA), agreements he was permitted to talk about relating to UAP.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd6f47f3-cd2d-4682-a6bc-77d34a767b8f
   type: opinion
   attestation: first_hand
@@ -5682,6 +6963,11 @@ domain_claims:
     Which is another reason why I'm also sceptical that we're going to see any kind of disclosure, big D disclosure... maybe there is something in those agreements that says that the human race isn't ready.
   text: |-
     Ross Coulthart is sceptical that major disclosure will occur, speculating that agreements involving UAP with foreign adversary powers or Non-Human Intelligence may include a stipulation that the human race is not ready for disclosure.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4a6910cc-746c-4ba3-8c5d-0bb1cf011153
   type: opinion
   attestation: first_hand
@@ -5699,6 +6985,11 @@ domain_claims:
     No, I don't, because I think the answers simply aren't there. And I think to disclose that the phenomenon is real, to disclose that we're not in control of our airspace or of our oceans is something which would be so destabilising that it's not really feasible.
   text: |-
     Jonathan Caplan does not think humanity is ready for disclosure of the Non-Human Intelligence phenomenon because the answers are not there, and disclosing that the phenomenon is real and that humans are not in control of their airspace or oceans would be too destabilising.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 15d8a487-4704-4eac-ba72-033b153e9bef
   type: administrative
   attestation: first_hand
@@ -5714,6 +7005,11 @@ domain_claims:
     name: Caplan, Jonathan
   quote: John Caplan KC, it's been an honor to speak with you.
   text: Jonathan Caplan holds the title King's Counsel (KC).
+  entailment:
+    label: contradicts
+    score: 0.558
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 338faf35-47d7-4a53-97b8-b9878caa96d6
   type: testimony
   attestation: first_hand
@@ -5727,6 +7023,11 @@ domain_claims:
   quote: Well, yes, I'm willing to go anywhere and looking forward to doing so.
   text: |-
     Jonathan Caplan is willing to travel anywhere for a book tour and looks forward to doing so.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b738c798-0547-453a-b56a-1d0b289b6884
   type: opinion
   attestation: first_hand
@@ -5744,6 +7045,11 @@ domain_claims:
     one of the points of the book is to have an informed debate... there's so many intelligent people that are interested in this subject, but don't know where to go to access the material. And it's so fundamental that we do that. We involve academia, we spread information, reliable information, because it's in our interest, I think, to do so.
   text: |-
     Jonathan Caplan believes one purpose of his book is to foster an informed debate about UAP, involving academia and spreading reliable information, because many intelligent people are interested in the subject but do not know where to access reliable material.
+  entailment:
+    label: entails
+    score: 0.713
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 02d045aa-d67a-43f8-abff-928a0b60d688
   type: administrative
   attestation: first_hand
@@ -5760,6 +7066,11 @@ domain_claims:
   quote: |-
     I don't know how you fitted in writing a book in the middle of your busy legal career
   text: Jonathan Caplan has a busy legal career.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: dd883297-828b-468b-9455-28351fedebc6
   type: administrative
@@ -5781,6 +7092,11 @@ infrastructure_claims:
     John is the author of the 2026 book just out, Not For Disclosure, UFOs, the world's best kept secret
   text: |-
     Jonathan Caplan is the author of the 2026 book "Not For Disclosure, UFOs, the World's Best Kept Secret".
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c2e7893a-a444-4d41-9da2-6e6e1cc8f072
   type: administrative
   attestation: first_hand
@@ -5800,6 +7116,11 @@ infrastructure_claims:
   quote: which is published just this week by Century Penguin
   text: |-
     "Not For Disclosure, UFOs, the World's Best Kept Secret" was published by Century Penguin.
+  entailment:
+    label: entails
+    score: 0.665
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 00fd7432-43b1-433c-a9b5-8bb38d370b04
   type: administrative
   attestation: second_hand
@@ -5826,6 +7147,11 @@ infrastructure_claims:
     he tells the story of being introduced to a woman called Mrs. Markham... a mysterious figure in the corner of the room who was introduced as Mr Janus
   text: |-
     Peter Townsend recounted meeting a mysterious figure introduced as Mr Janus in his book Sounds from Another Room.
+  entailment:
+    label: contradicts
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 651b6418-6fe9-401f-98f3-11ea7dcdff33
   type: testimony
   attestation: second_hand
@@ -5849,6 +7175,11 @@ infrastructure_claims:
     I remember when I interviewed David Grush in 2023, he pointed me to that particular document from the SALT talks, the 1971 agreement, and said that it was highly significant to him that that document had been declassified and he couldn't quite believe that it was in the public domain
   text: |-
     When Ross Coulthart interviewed David Grush in 2023, Grush pointed him to the 1971 US-Soviet agreement document from the Strategic Arms Limitation Talks (SALT), saying it was highly significant to him that the document had been declassified and that he was surprised it was in the public domain.
+  entailment:
+    label: entails
+    score: 0.757
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 557a3942-624c-4b77-a7be-a340c3d34d24
   type: administrative
   attestation: first_hand
@@ -5868,6 +7199,11 @@ infrastructure_claims:
   quote: The full document can be seen in the National Security Archive.
   text: |-
     The full document of the 1971 US-Soviet UAP hotline agreement can be seen in the National Security Archive.
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ceb43434-0422-4ff5-b830-fbce28f27bc2
   type: administrative
   attestation: first_hand
@@ -5890,6 +7226,11 @@ infrastructure_claims:
     there is this wiretap document which has been released or leaked as well by two different CIA officers, one to Cooper and one to Stephen Greer.
   text: |-
     The Kilgallen-Monroe wiretap document has been released or leaked by two different CIA officers, one to Timothy Cooper and one to Steven Greer.
+  entailment:
+    label: contradicts
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 90049aba-b5d9-4f00-8cfe-2abb5c390ee6
   type: administrative
   attestation: first_hand
@@ -5916,6 +7257,11 @@ infrastructure_claims:
     there was a great article written by my good friend Chris Sharp from Liberation Times over your way in the UK and Matt Ford and others that investigated the allegations of the involvement of an office called the Office of Global Access in the CIA.
   text: |-
     Chris Sharp of Liberation Times, Matt Ford, and others wrote an article investigating the allegations of the involvement of the Office of Global Access in the CIA.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cc3cfa92-7b3c-40c7-9ecd-324f38cdcb59
   type: administrative
   attestation: first_hand
@@ -5936,6 +7282,11 @@ infrastructure_claims:
     Just this week, Haim Ashed appeared on video with my friend Uri Giller, who's previously on this show. And Uri basically interviewed Haim about those claims.
   text: |-
     Haim Eshed appeared on video with Uri Geller, who was interviewed about his claims.
+  entailment:
+    label: entails
+    score: 0.604
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 38e97e28-0f02-4f56-a26e-44a407bc057b
   type: administrative
   attestation: first_hand
@@ -5955,3 +7306,8 @@ infrastructure_claims:
     Anyone who wants to know more about John Caplan's work on UAPs should buy his book, Not For Disclosure, UFOs, The World's Best Kept Secret. It's out with Penguin Publishers now in all good bookshops.
   text: |-
     Jonathan Caplan's book, Not For Disclosure, UFOs, the World's Best Kept Secret, is published by Penguin Publishers and available in bookshops.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

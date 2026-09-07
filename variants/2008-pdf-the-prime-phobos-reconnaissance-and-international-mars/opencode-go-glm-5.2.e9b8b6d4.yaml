@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.6
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 8.9
 prompts:
 - pass: nodes
   id: nodes
@@ -352,6 +358,11 @@ domain_claims:
     Pascal Lee (Mars Institute, SETI Institute & NASA Ames Research Center, pascal.lee@marsinstitute.net)
   text: |-
     Pascal Lee is affiliated with the Mars Institute, the SETI Institute, and NASA Ames Research Center.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7443d8ab-0eef-49a0-aea3-7e4da0bafa78
   type: administrative
   provenance_chain:
@@ -366,6 +377,11 @@ domain_claims:
     name: Optech Inc.
   quote: Robert Richards (Optech Inc.)
   text: Robert Richards is affiliated with Optech Inc.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2e93f6d6-f45d-4b30-a907-458eef7d62fc
   type: administrative
   provenance_chain:
@@ -380,6 +396,11 @@ domain_claims:
     name: University of Calgary
   quote: Alan Hildebrand (University of Calgary)
   text: Alan Hildebrand is affiliated with the University of Calgary.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ce144295-b25e-4ed8-b646-8fd999b9a765
   type: administrative
   attestation: second_hand
@@ -399,6 +420,11 @@ domain_claims:
     PRIME is an international robotic lander mission concept to explore Mars's inner moon Phobos to address the outstanding question of its origin.
   text: |-
     PRIME (Phobos Reconnaissance and International Mars Exploration) Mission is an international robotic lander mission concept to explore Mars's inner moon Phobos to address the outstanding question of its origin.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 23034298-4f86-48cd-a101-f718ba808ec8
   type: opinion
   attestation: second_hand
@@ -416,6 +442,11 @@ domain_claims:
     The mission could also play a significant role as a milestone in Mars Sample Return efforts.
   text: |-
     The PRIME (Phobos Reconnaissance and International Mars Exploration) Mission could play a significant role in Mars Sample Return efforts.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a366af0-fba8-439c-a824-036710279907
   type: administrative
   provenance_chain:
@@ -436,6 +467,11 @@ domain_claims:
     PRIME was proposed jointly by the Mars Institute, Optech Inc., and MDA Space Systems
   text: |-
     The PRIME (Phobos Reconnaissance and International Mars Exploration) Mission was proposed jointly by the Mars Institute, Optech Inc., and MDA Space Systems.
+  entailment:
+    label: entails
+    score: 0.914
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a0afe67-53fe-4ee1-a4f7-009a0ec9d98b
   type: administrative
   provenance_chain:
@@ -452,6 +488,11 @@ domain_claims:
   quote: was selected for conceptual study in 2007 by the Canadian Space Agency
   text: |-
     The PRIME (Phobos Reconnaissance and International Mars Exploration) Mission was selected for conceptual study in 2007 by the Canadian Space Agency (CSA).
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f4e310d-38f6-4a5a-bb2a-e2dac8c87ae0
   type: administrative
   provenance_chain:
@@ -469,6 +510,11 @@ domain_claims:
     First International Conference on the Exploration of Phobos and Deimos held at NASA Ames on Nov 5-7, 2007
   text: |-
     The First International Conference on the Exploration of Phobos and Deimos 2007 was held at NASA Ames Research Center on 2007-11-05 to 2007-11-07.
+  entailment:
+    label: entails
+    score: 0.883
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 92b50ce0-bbb9-47c6-bf48-6a9688853ac8
   type: opinion
   attestation: second_hand
@@ -486,6 +532,11 @@ domain_claims:
     the single most important science objective in the exploration of Phobos is to determine its origin
   text: |-
     The single most important science objective in the exploration of Phobos is to determine its origin.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3f42ccfa-83a9-47ab-9b52-411efa31cb80
   type: opinion
   attestation: second_hand
@@ -505,6 +556,11 @@ domain_claims:
     Resolving this issue will not only address the nature of Mars's inner satellite, but also answer fundamental questions about planet and satellite formation, small body evolution, impact cratering frequency and dynamics, Mars surface evolution
   text: |-
     Resolving the origin of Phobos will address fundamental questions about planet and satellite formation, small body evolution, impact cratering frequency and dynamics, and Mars surface evolution.
+  entailment:
+    label: entails
+    score: 0.487
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d9aaf741-6fc0-4207-b5ed-eedc6a375e4e
   type: opinion
   attestation: second_hand
@@ -532,6 +588,11 @@ domain_claims:
     Competing hypotheses concerning Phobos's origin fall into two categories (Burns, J. 1992. Mars, Univ of Arizona Press, 1283-1301.): 1) Circum-Mars Formation... 2) Capture
   text: |-
     According to Burns, J. (1992), competing hypotheses concerning Phobos's origin fall into two categories: Circum-Mars Formation and Capture.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9b81f5c6-9163-430a-97b0-7cc1381baaf9
   type: opinion
   attestation: second_hand
@@ -553,6 +614,11 @@ domain_claims:
     1) Circum-Mars Formation: Phobos is a circum-Mars formed body or the collisional remnant of a once larger body formed around Mars
   text: |-
     The Circum-Mars Formation hypothesis posits that Phobos is a circum-Mars formed body or the collisional remnant of a once larger body formed around Mars.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 15dc61a6-488f-43d5-b586-ca48719e3054
   type: opinion
   attestation: second_hand
@@ -572,6 +638,11 @@ domain_claims:
     2) Capture: Phobos is a captured small body (asteroid or comet) or the collisional remnant of a once larger object that was captured.
   text: |-
     The Capture hypothesis (Phobos origin) posits that Phobos is a captured small body (asteroid or comet) or the collisional remnant of a once larger object that was captured.
+  entailment:
+    label: entails
+    score: 0.947
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 63d6b6ef-9309-467a-b36c-b57ba899f0fc
   type: opinion
   attestation: second_hand
@@ -589,6 +660,11 @@ domain_claims:
     name: Phobos
   quote: In each of these cases, Deimos might be genetically related to Phobos, or not.
   text: Deimos might or might not be genetically related to Phobos.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a6741049-07af-4483-a871-4e464953da53
   type: administrative
   attestation: second_hand
@@ -606,6 +682,11 @@ domain_claims:
     The PRIME Lander Mars mission concept was developed with the central scientific goal of determining the nature and origin of Phobos.
   text: |-
     The central scientific goal of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission is to determine the nature and origin of Phobos.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 10fdd209-5be0-43dd-9c45-4c16a32180cb
   type: administrative
   attestation: second_hand
@@ -623,6 +704,11 @@ domain_claims:
     Important but secondary scientific goals are to understand better Phobos's evolution through time and to assess the object's current state, including the processes that affect it.
   text: |-
     Secondary scientific goals of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission are to understand Phobos's evolution through time and to assess the object's current state, including the processes that affect it.
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f30138e1-8bc5-455c-b2da-a210fbf824b2
   type: administrative
   attestation: second_hand
@@ -640,6 +726,11 @@ domain_claims:
     The primary objectives of the proposed PRIME Lander mission are to substantially advance our understanding of: - the Nature and Origin of Phobos. - the Evolution of Phobos through time. - the Current state of Phobos.
   text: |-
     The primary objectives of the proposed PRIME (Phobos Reconnaissance and International Mars Exploration) Mission are to advance understanding of the nature and origin of Phobos, the evolution of Phobos through time, and the current state of Phobos.
+  entailment:
+    label: entails
+    score: 0.832
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7581328c-d05f-4362-b99c-d90d3d7b18b7
   type: opinion
   attestation: second_hand
@@ -655,6 +746,11 @@ domain_claims:
     The single most reliable measurement that can be made to answer the question of Phobos's origin is to determine the martian moon's bulk composition.
   text: |-
     The single most reliable measurement to answer the question of Phobos's origin is to determine the Martian moon's bulk composition.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cea93798-72dd-45d8-99d3-b6dfd4ad76b4
   type: opinion
   attestation: second_hand
@@ -670,6 +766,11 @@ domain_claims:
     remote sensing studies may help constrain the bulk composition of Phobos, they characterize strictly only the composition of Phobos's surface regolith, which might not be representative of Phobos's bulk.
   text: |-
     Remote sensing studies characterise only the composition of Phobos's surface regolith, which might not be representative of Phobos's bulk.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4ee9db13-fa74-42c0-be8c-c9ee7ded3999
   type: opinion
   attestation: second_hand
@@ -685,6 +786,11 @@ domain_claims:
     Determining the bulk composition of Phobos can be done unambiguously only by determining the composition of a representative sample of Phobos's bulk.
   text: |-
     Determining the bulk composition of Phobos unambiguously requires determining the composition of a representative sample of Phobos's bulk.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 17f3ac81-61ad-478b-a0cb-020faa755551
   type: opinion
   attestation: second_hand
@@ -700,6 +806,11 @@ domain_claims:
     Access to a representative sample of Phobos's bulk for the proposed investigation can only be done reliably by contacting Phobos's surface and by examining within an arm's length fresh, dust-free lithic material, an outcrop or boulder.
   text: |-
     Access to a representative sample of Phobos's bulk can only be done reliably by contacting Phobos's surface and examining within an arm's length fresh, dust-free lithic material, an outcrop or boulder.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f41487da-e98c-43e0-a452-8485d4bfb1f9
   type: opinion
   attestation: second_hand
@@ -714,6 +825,11 @@ domain_claims:
   quote: A lander capable of precision landing is required.
   text: |-
     A lander capable of precision landing is required to access a representative sample of Phobos's bulk.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0bf86726-0639-4bee-a65a-bd6f9c75ada4
   type: administrative
   attestation: second_hand
@@ -733,6 +849,11 @@ domain_claims:
     The PRIME Lander is a fixed lander that will first characterize potential landing sites from orbit - actually pseudo-orbits about Phobos -, then soft land on Phobos using a short-range lidar (CAMELOT-2), then conduct in situ measurements.
   text: |-
     The PRIME Lander is a fixed lander that will first characterise potential landing sites from orbit, then soft land on Phobos using a short-range lidar (CAMELOT-2), then conduct in situ measurements.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 283ea5c3-18bc-4d49-bbf7-d7f20bbf9116
   type: administrative
   attestation: second_hand
@@ -752,6 +873,11 @@ domain_claims:
     The PRIME Lander's performance floor science payload will examine the landing site's immediate surroundings using a body-mounted gamma-ray spectrometer/neutron detector (GRS/NDL) and two arm-mounted instruments, a combination panoramic/microscopic color imager (CHAMP) and an alpha particle x-ray spectrometer (APXS).
   text: |-
     The PRIME Lander's performance floor science payload includes a body-mounted gamma-ray spectrometer/neutron detector (GRS/NDL) and two arm-mounted instruments: a combination panoramic/microscopic colour imager (CHAMP) and an alpha particle x-ray spectrometer (APXS).
+  entailment:
+    label: entails
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0df8adf5-ee82-428c-833e-4d946e2c2def
   type: administrative
   attestation: second_hand
@@ -771,6 +897,11 @@ domain_claims:
     Additional baseline instruments include a surface scanning lidar (PASCAL) to map the local topography and a magnetic susceptibility measurement experiment (MAG), the latter also an arm-mounted instrument.
   text: |-
     Additional baseline instruments on the PRIME Lander include a surface scanning lidar (PASCAL) to map the local topography and a magnetic susceptibility measurement experiment (MAG), the latter an arm-mounted instrument.
+  entailment:
+    label: entails
+    score: 0.482
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9813348f-640b-420d-931d-a099067424ac
   type: administrative
   attestation: second_hand
@@ -786,6 +917,11 @@ domain_claims:
     The Lander would also be equipped with an ultrastable oscillator capable of supporting Radio Science during the initial pre-landing orbital phase.
   text: |-
     The PRIME Lander is equipped with an ultrastable oscillator capable of supporting Radio Science during the initial pre-landing orbital phase.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f0c3123a-95d8-402d-837f-5d8d968718e0
   type: administrative
   provenance_chain:
@@ -800,6 +936,11 @@ domain_claims:
     name: Optech Inc.
   quote: The PRIME Lander's CAMELOT-2 lidar, designed by Optech
   text: The CAMELOT-2 lidar is designed by Optech Inc.
+  entailment:
+    label: entails
+    score: 0.48
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e1b2985e-8182-4443-8f7a-4e5044d4c8ff
   type: measurement
   attestation: second_hand
@@ -819,6 +960,11 @@ domain_claims:
     will allow a precision soft touchdown of the spacecraft within an arm's reach (< 0.5 m) of a selected block or outcrop exposed on Phobos's surface.
   text: |-
     The CAMELOT-2 lidar will allow a precision soft touchdown of the PRIME Lander within an arm's reach (less than 0.5 metres) of a selected block or outcrop exposed on Phobos's surface.
+  entailment:
+    label: entails
+    score: 0.541
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 316dc283-a01a-4116-871e-35d3ffec21d7
   type: opinion
   attestation: second_hand
@@ -835,6 +981,11 @@ domain_claims:
   quote: This "rock dock" capability is unique to the PRIME Lander mission
   text: |-
     The PRIME Lander's rock dock capability is unique to the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission.
+  entailment:
+    label: entails
+    score: 0.91
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5f431ab4-0d29-45f0-9420-df41267022b5
   type: opinion
   attestation: second_hand
@@ -852,6 +1003,11 @@ domain_claims:
     represents the key enabling technology that will allow reliable access to a representative sample of Phobos's bulk and resolution of the mystery of Phobos's origin.
   text: |-
     The PRIME Lander's rock dock capability is the key enabling technology for reliable access to a representative sample of Phobos's bulk and resolution of the mystery of Phobos's origin.
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a6ff824c-3b5d-46ee-bb7e-95cbf3a2da85
   type: opinion
   attestation: second_hand
@@ -869,6 +1025,11 @@ domain_claims:
     A PRIME Lander in situ analysis mission incorporating the "rock dock" capability, while inherently more complex than a strictly orbital mission, will more likely allow definitive resolution of the question of Phobos's bulk composition and therefore its origin.
   text: |-
     A PRIME Lander in situ analysis mission incorporating the rock dock capability will more likely allow definitive resolution of the question of Phobos's bulk composition and therefore its origin than a strictly orbital mission.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 59bc2c0a-bc10-4c37-b400-13db38898898
   type: opinion
   attestation: second_hand
@@ -888,6 +1049,11 @@ domain_claims:
     Large (1-100m scale) discrete positive relief features or DPRFs on Phobos are considered likely samples of Phobos's bulk, as opposed to accreted meteorite fragments (B. Gladman, pers. comm.).
   text: |-
     Large (1 to 100 metre scale) discrete positive relief features (DPRFs) on Phobos are considered likely samples of Phobos's bulk, as opposed to accreted meteorite fragments, according to Brett Gladman.
+  entailment:
+    label: entails
+    score: 0.834
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4f0f5f52-fe9c-405d-a1aa-b0f26541a699
   type: administrative
   attestation: second_hand
@@ -909,6 +1075,11 @@ domain_claims:
     The PRIME Team selected the boulder shown in figure 2 as a candidate landing site to illustrate the PRIME mission's unique targeting capabilities.
   text: |-
     The PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Team selected a boulder shown in a Mars Global Surveyor MOC image near Crater Stickney on Phobos as a candidate landing site to illustrate the PRIME mission's unique targeting capabilities.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 876bb7d8-3363-4c26-a798-77a8081139cd
   type: measurement
   provenance_chain:
@@ -925,6 +1096,11 @@ domain_claims:
     Mars Global Surveyor MOC image of a 90 m wide discrete positive relief feature (DPRF) near Crater Stickney on Phobos
   text: |-
     The Mars Global Surveyor MOC image shows a 90 metre wide discrete positive relief feature (DPRF) near Crater Stickney on Phobos.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ae0c962c-f16c-4534-a61f-77cf010019d4
   type: administrative
   attestation: second_hand
@@ -942,6 +1118,11 @@ domain_claims:
     With its "Rock-Dock" capability, the PRIME Lander will be able to land within an arm's length (1m) of this feature, expose fresh lithic material using an abrasion tool, and conduct in situ compositional analysis.
   text: |-
     With the rock dock capability, the PRIME Lander will be able to land within an arm's length (1 metre) of the selected boulder feature on Phobos, expose fresh lithic material using an abrasion tool, and conduct in situ compositional analysis.
+  entailment:
+    label: entails
+    score: 0.529
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 872160e6-6326-4fe9-a1fb-a0a5604152bc
   type: opinion
   attestation: second_hand
@@ -961,6 +1142,11 @@ domain_claims:
     the PRIME Lander mission involves mastery of key technologies and strategies of direct relevance for an eventual Mars Sample Return (MSR) mission, namely: 1) Orbital rendez-vous in Mars orbit, 2) Landing hazard avoidance, and 3) High precision landing (rock dock maneuver).
   text: |-
     The PRIME Lander mission involves mastery of key technologies and strategies of direct relevance for an eventual Mars Sample Return (MSR) mission, namely orbital rendezvous in Mars orbit, landing hazard avoidance, and high precision landing (rock dock manoeuvre).
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4a0da252-e9d9-4398-b877-86586c53511f
   type: opinion
   attestation: second_hand
@@ -978,6 +1164,11 @@ domain_claims:
     In this respect, the PRIME Lander mission would serve as a useful precursor to MSR.
   text: |-
     The PRIME Lander mission would serve as a useful precursor to Mars Sample Return (MSR).
+  entailment:
+    label: entails
+    score: 0.477
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2726b5f3-ce64-42b5-aea8-5cba88b0ba2b
   type: administrative
   attestation: second_hand
@@ -995,6 +1186,11 @@ domain_claims:
     The PRIME Team is currently examining an enhanced Phobos Sample Return (PSR) version of the PRIME mission or PRIME PSR
   text: |-
     The PRIME Team is examining an enhanced Phobos Sample Return (PSR) version of the PRIME mission called PRIME PSR.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 168def37-76f0-4248-8ce6-4ce3db239f49
   type: opinion
   attestation: second_hand
@@ -1010,6 +1206,11 @@ domain_claims:
     name: Mars Sample Return (MSR)
   quote: PRIME PSR which could also serve as a more complete precursor to MSR.
   text: PRIME PSR could serve as a more complete precursor to Mars Sample Return (MSR).
+  entailment:
+    label: entails
+    score: 0.49
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a0d60325-94f4-4ceb-a514-133dec9f606f
   type: opinion
   attestation: second_hand
@@ -1029,6 +1230,11 @@ domain_claims:
     PRIME PSR would provide an opportunity to test Mars sample return procedures while minimizing planetary protection risks.
   text: |-
     PRIME PSR would provide an opportunity to test Mars sample return procedures while minimising planetary protection risks.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cdacc4d0-9858-45c5-9b33-16bf3c638b1f
   type: administrative
   provenance_chain:
@@ -1048,6 +1254,11 @@ domain_claims:
   quote: Pascal Lee (PI) | Mars Institute, NASA Ames
   text: |-
     Pascal Lee is the Principal Investigator of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with Mars Institute and NASA Ames Research Center.
+  entailment:
+    label: entails
+    score: 0.724
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 871f5c65-9649-47cf-9667-533007464674
   type: administrative
   provenance_chain:
@@ -1065,6 +1276,11 @@ domain_claims:
   quote: Alan Hildebrand (DPI) | Univ. of Calgary
   text: |-
     Alan Hildebrand is the Deputy Principal Investigator of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of Calgary.
+  entailment:
+    label: entails
+    score: 0.903
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e21db06c-2bcf-47b9-a75a-e62369b1d906
   type: administrative
   provenance_chain:
@@ -1082,6 +1298,11 @@ domain_claims:
   quote: Bob Richards (PM) | Optech
   text: |-
     Robert Richards is the Program Manager of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with Optech Inc.
+  entailment:
+    label: entails
+    score: 0.495
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8e43b71b-db64-40ea-8445-6f463b3d0f80
   type: administrative
   provenance_chain:
@@ -1101,6 +1322,11 @@ domain_claims:
   quote: Stephen Braham | Mars Institute & SFU
   text: |-
     Stephen Braham is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with Mars Institute and Simon Fraser University.
+  entailment:
+    label: entails
+    score: 0.469
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10d9e783-6686-46f9-be4d-ce7c1ac2481a
   type: administrative
   provenance_chain:
@@ -1118,6 +1344,11 @@ domain_claims:
   quote: Peter Brown | Univ. of Western Ontario
   text: |-
     Peter Brown is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of Western Ontario.
+  entailment:
+    label: entails
+    score: 0.511
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 35462c4b-9d09-4ded-8592-7a9427321635
   type: administrative
   provenance_chain:
@@ -1135,6 +1366,11 @@ domain_claims:
   quote: Hugh Chesser | York Univ.
   text: |-
     Hugh Chesser is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with York University.
+  entailment:
+    label: entails
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a25b77a-9f96-4e80-bd31-6e7bc95f1602
   type: administrative
   provenance_chain:
@@ -1152,6 +1388,11 @@ domain_claims:
   quote: Ed Cloutis | Univ. of Winnipeg
   text: |-
     Ed Cloutis is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of Winnipeg.
+  entailment:
+    label: entails
+    score: 0.506
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 776cc14e-6b66-442b-8bbf-c5b9f7972a72
   type: administrative
   provenance_chain:
@@ -1169,6 +1410,11 @@ domain_claims:
   quote: Ralf Gellert | Univ. of Guelph
   text: |-
     Ralf Gellert is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of Guelph.
+  entailment:
+    label: entails
+    score: 0.497
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7f8a5d92-af50-453e-a8d3-4ddd3e8404f7
   type: administrative
   provenance_chain:
@@ -1186,6 +1432,11 @@ domain_claims:
   quote: Nadeem Ghafoor | MDA Space Systems
   text: |-
     Nadeem Ghafoor is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with MDA Space Systems.
+  entailment:
+    label: entails
+    score: 0.721
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ae3b2814-5ec7-4f19-9f0b-7f8713f6b99c
   type: administrative
   provenance_chain:
@@ -1203,6 +1454,11 @@ domain_claims:
   quote: Brett Gladman | Univ. of British Columbia
   text: |-
     Brett Gladman is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of British Columbia.
+  entailment:
+    label: entails
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b95f3409-73d4-499d-b9da-949143501044
   type: administrative
   provenance_chain:
@@ -1220,6 +1476,11 @@ domain_claims:
   quote: Brian Glass | NASA Ames
   text: |-
     Brian Glass is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with NASA Ames Research Center.
+  entailment:
+    label: entails
+    score: 0.915
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f06ac893-13d6-4936-b8ff-bb3a8e34644c
   type: administrative
   provenance_chain:
@@ -1237,6 +1498,11 @@ domain_claims:
   quote: John Hahn | Optech
   text: |-
     John Hahn is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with Optech Inc.
+  entailment:
+    label: entails
+    score: 0.708
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6ecdb6bd-b855-4857-98b7-29209c99e3e6
   type: administrative
   provenance_chain:
@@ -1254,6 +1520,11 @@ domain_claims:
   quote: Jun Kawaguchi | JAXA (Japan)
   text: |-
     Jun Kawaguchi is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with JAXA (Japan).
+  entailment:
+    label: entails
+    score: 0.877
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c516303a-fe88-421b-95fa-75cea0a37860
   type: administrative
   provenance_chain:
@@ -1271,6 +1542,11 @@ domain_claims:
   quote: Penny King | Univ. of New Mexico
   text: |-
     Penny King is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of New Mexico.
+  entailment:
+    label: entails
+    score: 0.827
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b09e7be2-38cb-4ef0-9d14-17a539efa1b3
   type: administrative
   provenance_chain:
@@ -1288,6 +1564,11 @@ domain_claims:
   quote: Igor Mitrofanov | IKI (Russia)
   text: |-
     Igor Mitrofanov is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with IKI (Russia).
+  entailment:
+    label: entails
+    score: 0.635
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 42b3dc88-2539-4053-a95e-7a74bc9cc5af
   type: administrative
   provenance_chain:
@@ -1305,6 +1586,11 @@ domain_claims:
   quote: John Parnell | Univ. of Aberdeen (UK)
   text: |-
     John Parnell is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of Aberdeen (UK).
+  entailment:
+    label: entails
+    score: 0.746
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6b1f5f08-2820-4cec-9276-d2d813f62746
   type: administrative
   provenance_chain:
@@ -1322,6 +1608,11 @@ domain_claims:
   quote: Phil Stooke | Univ. of Western Ontario
   text: |-
     Phil Stooke is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of Western Ontario.
+  entailment:
+    label: entails
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e20b4174-fe1c-440d-83a4-bb168c51a441
   type: administrative
   provenance_chain:
@@ -1339,6 +1630,11 @@ domain_claims:
   quote: Seiji Sugita | Univ. of Tokyo (Japan)
   text: |-
     Seiji Sugita is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of Tokyo (Japan).
+  entailment:
+    label: entails
+    score: 0.658
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 03408ce2-a999-4789-8806-be7056a4953a
   type: administrative
   provenance_chain:
@@ -1356,6 +1652,11 @@ domain_claims:
   quote: Peter Thomas | Cornell Univ.
   text: |-
     Peter Thomas is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with Cornell University.
+  entailment:
+    label: entails
+    score: 0.459
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a9a12e84-f955-49ba-b952-46a6ef7af0f5
   type: administrative
   provenance_chain:
@@ -1373,6 +1674,11 @@ domain_claims:
   quote: Joseph Veverka | Cornell Univ.
   text: |-
     Joseph Veverka is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with Cornell University.
+  entailment:
+    label: entails
+    score: 0.481
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 94de4c54-2a43-48f6-8caf-2cbb0e344b29
   type: administrative
   provenance_chain:
@@ -1390,6 +1696,11 @@ domain_claims:
   quote: Paul Wiegert | Univ. of Western Ontario
   text: |-
     Paul Wiegert is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Science Team, affiliated with the University of Western Ontario.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a7165842-cb52-427e-abba-4bf86758f36c
   type: administrative
   provenance_chain:
@@ -1407,6 +1718,11 @@ domain_claims:
   quote: Marc Boucher | Mars Institute
   text: |-
     Marc Boucher is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Support Team, affiliated with the Mars Institute.
+  entailment:
+    label: entails
+    score: 0.539
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e1f0d0d8-9317-4963-a9da-fc5b8b66564a
   type: administrative
   provenance_chain:
@@ -1422,6 +1738,11 @@ domain_claims:
   quote: Kieran Carroll | Consultant
   text: |-
     Kieran Carroll is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Support Team, affiliated as a Consultant.
+  entailment:
+    label: entails
+    score: 0.798
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ba52ed70-9d2a-4c0a-ab5b-fef1cfd19caf
   type: administrative
   provenance_chain:
@@ -1439,6 +1760,11 @@ domain_claims:
   quote: Camille Desportes | Mars Institute
   text: |-
     Camille Desportes is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Support Team, affiliated with the Mars Institute.
+  entailment:
+    label: entails
+    score: 0.458
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4748595-40f1-4c00-8e5f-ce9a903efaba
   type: administrative
   provenance_chain:
@@ -1456,6 +1782,11 @@ domain_claims:
   quote: Daven Maharaj | Optech
   text: |-
     Daven Maharaj is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Support Team, affiliated with Optech Inc.
+  entailment:
+    label: entails
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 86274b57-1810-4961-8bc6-6633f19e29e2
   type: administrative
   provenance_chain:
@@ -1473,6 +1804,11 @@ domain_claims:
   quote: Sam Ng | MDA Space Systems
   text: |-
     Sam Ng is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Support Team, affiliated with MDA Space Systems.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b20d8cf-75f5-48e6-8bf0-18a59cd2b4cd
   type: administrative
   provenance_chain:
@@ -1490,6 +1826,11 @@ domain_claims:
   quote: Michael West | Mars Institute
   text: |-
     Michael West is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Support Team, affiliated with the Mars Institute.
+  entailment:
+    label: entails
+    score: 0.488
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: adc80243-a87b-4496-8fce-ad17c798ca0c
   type: administrative
   provenance_chain:
@@ -1507,6 +1848,11 @@ domain_claims:
   quote: Nicholas Wilkinson | Mars Institute
   text: |-
     Nicholas Wilkinson is a member of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Support Team, affiliated with the Mars Institute.
+  entailment:
+    label: entails
+    score: 0.492
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 807d0b51-675e-41a2-9bce-64238b83cb71
   type: administrative
   provenance_chain:
@@ -1525,6 +1871,11 @@ domain_claims:
     The PRIME Lander mission concept study was selected and supported by the Canadian Space Agency (CSA) as part of its Mars mission concept study program.
   text: |-
     The PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Lander mission concept study was selected and supported by the Canadian Space Agency (CSA) as part of its Mars mission concept study programme.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 263ede8e-90f5-4325-aed3-9ea23c8862ed
   type: administrative
   provenance_chain:
@@ -1543,6 +1894,11 @@ domain_claims:
     The Mars Institute also acknowledges partial support from NASA and the home institutions of the PRIME mission's Science Team members.
   text: |-
     The Mars Institute acknowledges partial support from NASA and the home institutions of the PRIME (Phobos Reconnaissance and International Mars Exploration) Mission's Science Team members.
+  entailment:
+    label: entails
+    score: 0.853
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9bf0224b-c8d8-48c4-9640-0a6c9b3acce3
   type: administrative
   provenance_chain:
@@ -1558,6 +1914,11 @@ domain_claims:
   quote: The PRIME Lander will survey Phobos during a pre-landing orbital phase
   text: |-
     The PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Lander will survey Phobos during a pre-landing orbital phase.
+  entailment:
+    label: entails
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 55f0e06f-64ab-43d3-b12f-05fb6e07d75c
   type: administrative
   provenance_chain:
@@ -1573,6 +1934,11 @@ domain_claims:
   quote: A Mars Mission Concept Study - Supported by the Canadian Space Agency
   text: |-
     The PRIME (Phobos Reconnaissance and International Mars Exploration) Mission Lander mission concept study was supported by the Canadian Space Agency (CSA).
+  entailment:
+    label: entails
+    score: 0.468
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: ebe1cb9e-6a46-462f-b835-769bcd618dbd
   type: administrative
@@ -1593,6 +1959,11 @@ infrastructure_claims:
     Pascal Lee (Mars Institute, SETI Institute & NASA Ames Research Center, pascal.lee@marsinstitute.net), Robert Richards (Optech Inc.), Alan Hildebrand (University of Calgary)
   text: |-
     Pascal Lee, Robert Richards, Alan Hildebrand authored the document titled "The PRIME (Phobos Reconnaissance and International Mars Exploration) Mission and Mars Sample Return" dated 2008.
+  entailment:
+    label: contradicts
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 82d1c07c-dfc5-4047-b816-46a98eb44915
   type: administrative
   attestation: second_hand
@@ -1610,6 +1981,11 @@ infrastructure_claims:
     Lee P. et al. 2006. PRIME: A small body mission at Mars, Canadian Space Astronomy Workshop, Nov 23-24, 2006.
   text: |-
     The document "PRIME: A small body mission at Mars" was presented at the Canadian Space Astronomy Workshop 2006.
+  entailment:
+    label: entails
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d0d120fa-1281-45c4-9e8f-aa9d8a3bfdd2
   type: administrative
   attestation: second_hand
@@ -1627,6 +2003,11 @@ infrastructure_claims:
     Lee P. et al. 2006. PRIME Mission. Exploration Canada 2006 Workshop, Oct 17-18, 2006.
   text: |-
     The document "PRIME Mission (Exploration Canada 2006)" was presented at the Exploration Canada 2006 Workshop.
+  entailment:
+    label: entails
+    score: 0.928
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 10948cdf-77b0-4474-9f01-b215ef124d87
   type: administrative
   attestation: second_hand
@@ -1648,6 +2029,11 @@ infrastructure_claims:
     Richards, R., et al. 2007. First Int'l. Conf. on the Exploration of Phobos and Deimos, LPI Contrib. #1377, 32.
   text: |-
     Robert Richards et al. presented a paper at the First International Conference on the Exploration of Phobos and Deimos 2007 published as LPI Contribution #1377.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 55aa3b00-5b32-4762-a5b9-297d60158fd1
   type: administrative
   attestation: second_hand
@@ -1667,6 +2053,11 @@ infrastructure_claims:
     Lee, P. 2007. First Int'l. Conf. on the Exploration of Phobos and Deimos, LPI Contrib. #1377, 25.
   text: |-
     Pascal Lee presented a paper at the First International Conference on the Exploration of Phobos and Deimos 2007 published as LPI Contribution #1377.
+  entailment:
+    label: entails
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 313de42f-e407-42c6-8c60-a3600a2566d8
   type: administrative
   provenance_chain:
@@ -1689,6 +2080,11 @@ infrastructure_claims:
     Mars Global Surveyor MOC image of a 90 m wide discrete positive relief feature (DPRF) near Crater Stickney on Phobos (NASA/JPL/MSSS).
   text: |-
     The Mars Global Surveyor MOC image of the discrete positive relief feature near Crater Stickney on Phobos is credited to NASA JPL and MSSS.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b25ad8e5-8a44-44c6-b583-2ac870773573
   type: administrative
   attestation: second_hand
@@ -1710,3 +2106,8 @@ infrastructure_claims:
   quote: Burns, J. 1992. Mars, Univ of Arizona Press, 1283-1301.
   text: |-
     The Burns, J. 1992 reference is published in "Mars" by University of Arizona Press, pages 1283 to 1301.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

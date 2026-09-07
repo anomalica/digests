@@ -9,6 +9,12 @@ ai_usage:
     input: 13592
     output: 3200
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 8.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.5
 prompts:
 - pass: nodes
   id: nodes
@@ -108,6 +114,11 @@ domain_claims:
     The Department of Defense has authorized the release of three unclassified Navy videos
   text: |-
     In the Department of Defense release of Navy UAP videos (2020), the Department of Defense (DoD) authorised the release of three unclassified United States Navy videos.
+  entailment:
+    label: entails
+    score: 0.577
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c45d7531-3a48-4dcf-91e7-d1efe4c43dc4
   type: administrative
   attestation: second_hand
@@ -129,6 +140,11 @@ domain_claims:
   quote: one taken in November 2004
   text: |-
     One of the three Navy UAP videos released by the Department of Defense (DoD) was taken in 2004-11.
+  entailment:
+    label: entails
+    score: 0.971
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 401a22ae-da70-4625-a49c-e2e3e84f7875
   type: administrative
   attestation: second_hand
@@ -150,6 +166,11 @@ domain_claims:
   quote: the other two in January 2015
   text: |-
     Two of the three Navy UAP videos released by the Department of Defense (DoD) were taken in 2015-01.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fca1c38c-0d3f-47d0-8a5b-67fc681a4b63
   type: administrative
   attestation: second_hand
@@ -172,6 +193,11 @@ domain_claims:
     which have been circulating in the public domain after unauthorized releases in 2007 and 2017
   text: |-
     The three Navy UAP videos had been circulating in the public domain after unauthorised releases before the Department of Defense (DoD) authorised their release on 2020-04-27.
+  entailment:
+    label: neutral
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e0b28f2d-ad98-4116-8cc5-bcbe06fcd63d
   type: administrative
   attestation: second_hand
@@ -188,6 +214,11 @@ domain_claims:
     name: Unauthorized release of Navy UAP video (2007)
   quote: after unauthorized releases in 2007 and 2017
   text: The unauthorised release of a Navy UAP video occurred in 2007.
+  entailment:
+    label: neutral
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ccd9192-0b72-4366-87c2-1b8389209d59
   type: administrative
   attestation: second_hand
@@ -204,6 +235,11 @@ domain_claims:
     name: Unauthorized releases of Navy UAP videos (2017)
   quote: after unauthorized releases in 2007 and 2017
   text: Unauthorised releases of Navy UAP videos occurred in 2017.
+  entailment:
+    label: entails
+    score: 0.585
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 681221a7-701a-4dfd-b4d5-e22ca9a0d3dc
   type: administrative
   attestation: second_hand
@@ -224,6 +260,11 @@ domain_claims:
     The U.S. Navy previously acknowledged that these videos circulating in the public domain were indeed Navy videos.
   text: |-
     The United States Navy previously acknowledged that the Navy UAP videos circulating in the public domain were indeed Navy videos.
+  entailment:
+    label: neutral
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a1f610b-fa63-4fc9-9742-9851250635ef
   type: administrative
   attestation: second_hand
@@ -244,6 +285,11 @@ domain_claims:
     After a thorough review, the department has determined that the authorized release of these unclassified videos does not reveal any sensitive capabilities or systems
   text: |-
     The Department of Defense (DoD) determined after a thorough review that the authorised release of the three unclassified Navy UAP videos does not reveal any sensitive capabilities or systems.
+  entailment:
+    label: neutral
+    score: 0.954
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1b648dc6-f6fe-4364-bce5-ba2aaee49192
   type: administrative
   attestation: second_hand
@@ -266,6 +312,11 @@ domain_claims:
     and does not impinge on any subsequent investigations of military air space incursions by unidentified aerial phenomena
   text: |-
     The Department of Defense (DoD) determined that the authorised release of the three unclassified Navy UAP videos does not impinge on any subsequent investigations of military air space incursions by unidentified aerial phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cb5d4960-5b12-4bfb-b5c1-be8315eb67b2
   type: administrative
   attestation: second_hand
@@ -286,6 +337,11 @@ domain_claims:
     DOD is releasing the videos in order to clear up any misconceptions by the public on whether or not the footage that has been circulating was real
   text: |-
     The Department of Defense (DoD) released the three Navy UAP videos in order to clear up public misconceptions about whether the footage that had been circulating was real.
+  entailment:
+    label: neutral
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a1197b6-72b5-4ba5-86a6-2b25a94a2662
   type: administrative
   attestation: second_hand
@@ -305,6 +361,11 @@ domain_claims:
   quote: or whether or not there is more to the videos
   text: |-
     The Department of Defense (DoD) released the three Navy UAP videos in order to clear up public misconceptions about whether or not there is more to the videos.
+  entailment:
+    label: neutral
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e9dc1310-8dc4-40ff-8e23-644ae9778cc9
   type: administrative
   attestation: second_hand
@@ -325,6 +386,11 @@ domain_claims:
     The aerial phenomena observed in the videos remain characterized as "unidentified."
   text: |-
     The Department of Defense (DoD) continues to characterise the aerial phenomena observed in the three released Navy UAP videos as "unidentified".
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: b683b960-cfe4-4da7-b973-849dacfe9b34
   type: administrative
@@ -350,3 +416,8 @@ infrastructure_claims:
     The released videos can be found at the Naval Air Systems Command FOIA Reading Room: https://www.navair.navy.mil/foia/documents
   text: |-
     The Department of Defense (DoD) statement of 2020-04-27 directs the public to the Naval Air Systems Command (NAVAIR) Freedom of Information Act (FOIA) Reading Room for the released Navy UAP videos.
+  entailment:
+    label: entails
+    score: 0.545
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

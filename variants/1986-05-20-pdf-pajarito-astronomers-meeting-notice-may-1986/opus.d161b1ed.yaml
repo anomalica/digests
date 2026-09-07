@@ -10,6 +10,12 @@ ai_usage:
     output: 4160
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -100,6 +106,11 @@ domain_claims:
   quote: P.O. Box 1092, Los Alamos NM, 87544
   text: |-
     The Pajarito Astronomers have a postal address of P.O. Box 1092, Los Alamos, New Mexico 87544.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: db041d29-b8fd-40d9-b519-f8cceb8bc06c
   type: administrative
   provenance_chain:
@@ -116,6 +127,11 @@ domain_claims:
   quote: 'President {{redacted: ~2 words}} MS K553'
   text: |-
     The president of the Pajarito Astronomers had a Los Alamos mail stop (MS) of K553 as of 1986-05-20.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9cb10a8c-67ec-42b2-8689-751726ab22a0
   type: administrative
   provenance_chain:
@@ -132,6 +148,11 @@ domain_claims:
   quote: 'Vice President {{redacted: ~2 words}} MS E531'
   text: |-
     The vice president of the Pajarito Astronomers had a Los Alamos mail stop (MS) of E531 as of 1986-05-20.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 03dd0649-b8b1-4cd0-a763-685c00e07d2a
   type: administrative
   provenance_chain:
@@ -148,6 +169,11 @@ domain_claims:
   quote: 'Treasurer {{redacted: ~2 words}} MS F665'
   text: |-
     The treasurer of the Pajarito Astronomers had a Los Alamos mail stop (MS) of F665 as of 1986-05-20.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4bba6b65-88da-4bee-9c06-eeae6d6aac7f
   type: administrative
   provenance_chain:
@@ -163,6 +189,11 @@ domain_claims:
     name: Club 1663
   quote: Sponsored by Club 1663
   text: The Pajarito Astronomers were sponsored by Club 1663.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c4a38ea4-2e43-4082-a887-85d74f9ab0cc
   type: administrative
   provenance_chain:
@@ -179,6 +210,11 @@ domain_claims:
   quote: |-
     Our next meeting will be **Thursday, May 29, 1986**, in the **Ranch Room at Fuller Lodge**, at **7:30 p.m.**
   text: The next Pajarito Astronomers meeting was scheduled for 1986-05-29 at 19:30.
+  entailment:
+    label: contradicts
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3d2cb1dc-a49e-42fc-8cf5-4bfe6c5dbbce
   type: administrative
   provenance_chain:
@@ -197,6 +233,11 @@ domain_claims:
   quote: in the **Ranch Room at Fuller Lodge**
   text: |-
     The Pajarito Astronomers meeting of 1986-05-29 was to be held in the Ranch Room at Fuller Lodge, Los Alamos, New Mexico.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 131f47de-8892-4b51-ad9e-0ec204072a28
   type: administrative
   provenance_chain:
@@ -215,6 +256,11 @@ domain_claims:
   quote: Guest speaker will be **Dr. John Warren** of AT-6
   text: |-
     John Warren was the guest speaker at the Pajarito Astronomers meeting of 1986-05-29.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ebef3427-9dcf-41cf-bed3-aceefa35f68c
   type: administrative
   provenance_chain:
@@ -228,6 +274,11 @@ domain_claims:
     name: Warren, John
   quote: '**Dr. John Warren**'
   text: John Warren held the title of Doctor.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 39616432-7e44-48a1-97c0-8c174a5d4f86
   type: administrative
   provenance_chain:
@@ -244,6 +295,11 @@ domain_claims:
   quote: Dr. John Warren of AT-6
   text: |-
     John Warren was affiliated with the organisational group designated AT-6 at Los Alamos.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d51f6370-2878-463e-85d2-92d154de884c
   type: administrative
   provenance_chain:
@@ -264,6 +320,11 @@ domain_claims:
   quote: whose topic will be "**Why Should a Scientist be Concerned about UFO's?**"
   text: |-
     John Warren's talk at the Pajarito Astronomers meeting of 1986-05-29 was titled "Why Should a Scientist be Concerned about UFO's?", concerning Unidentified Flying Objects (UFOs).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed109da7-6c61-4ab2-90b4-0bfaa437013a
   type: administrative
   provenance_chain:
@@ -279,6 +340,11 @@ domain_claims:
     To find the Ranch Room, go around (outside) to the south end of the Lodge (facing Central Ave.), and go upstairs.
   text: |-
     The Ranch Room at Fuller Lodge is reached by going around outside to the south end of the Lodge, facing Central Avenue, and going upstairs.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 3beba4ca-30fe-4198-bab4-41696125f820
   type: administrative
@@ -296,3 +362,8 @@ infrastructure_claims:
     name: Pajarito Astronomers
   quote: Tuesday, May 20, 1986
   text: The Pajarito Astronomers Meeting Notice was dated 1986-05-20.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

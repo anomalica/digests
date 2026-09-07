@@ -10,6 +10,12 @@ ai_usage:
     output: 9420
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.8
 prompts:
 - pass: nodes
   id: nodes
@@ -98,6 +104,11 @@ domain_claims:
     And also I have the little white objects that seem to come from the capsule itself and drift off.
   text: |-
     Walter M. Schirra Jr. observed small white objects that appeared to come from Sigma 7 (Mercury spacecraft) and drift off during the Mercury-Atlas 8 mission (Sigma 7).
+  entailment:
+    label: neutral
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 13feddc5-69b3-462b-8971-e0dfa500492f
   type: observation
   attestation: first_hand
@@ -118,6 +129,11 @@ domain_claims:
   quote: So I have two stars that are standing quite still.
   text: |-
     Walter M. Schirra Jr. observed two stars that appeared to be standing quite still during the Mercury-Atlas 8 mission (Sigma 7).
+  entailment:
+    label: neutral
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d6eb5d34-d18d-4178-a17f-5b7e3c5b8784
   type: observation
   attestation: first_hand
@@ -138,6 +154,11 @@ domain_claims:
   quote: The white object actually looked like it came toward me. But it wasn't.
   text: |-
     Walter M. Schirra Jr. observed that a white object appeared to move toward him but did not actually do so, during the Mercury-Atlas 8 mission (Sigma 7).
+  entailment:
+    label: entails
+    score: 0.533
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 63f2ee44-8181-4767-b645-20105de21023
   type: observation
   attestation: first_hand
@@ -159,6 +180,11 @@ domain_claims:
     As a result, I notice that these particles keep tending after me, relative to me, at any time.
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), Walter M. Schirra Jr. noticed particles that kept trailing after him relative to his position at any time.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e36a89fc-49c8-4d82-8852-47550aa2696b
   type: measurement
   attestation: first_hand
@@ -182,6 +208,11 @@ domain_claims:
     my rates are now just about zero in all three axes I still have light in the periscope of course I'm looking straight up
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), the rates of Sigma 7 (Mercury spacecraft) were near zero in all three axes while Walter M. Schirra Jr. was still receiving light in the periscope and looking straight up.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c71bf7bb-4229-42a1-b214-30565e9a2a79
   type: observation
   attestation: first_hand
@@ -202,6 +233,11 @@ domain_claims:
   quote: Yeah, I'm just about inverted at this point. And my nose is above the horizon.
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), Walter M. Schirra Jr. was almost inverted at that point in the flight, with his nose above the horizon.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2f716739-1e57-4542-9854-e586bc33651a
   type: observation
   attestation: first_hand
@@ -224,6 +260,11 @@ domain_claims:
   quote: The periscope is blocking out rather rapidly at sunset.
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), the periscope of Sigma 7 (Mercury spacecraft) was blocking out rather rapidly at sunset.
+  entailment:
+    label: neutral
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7fa34f15-430e-4e6a-b11d-95951f8f45f7
   type: observation
   attestation: first_hand
@@ -246,6 +287,11 @@ domain_claims:
   quote: It's almost blocked out completely at this point and is really not usable.
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), the periscope of Sigma 7 (Mercury spacecraft) became almost completely blocked out and was not usable at that point.
+  entailment:
+    label: neutral
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0eaed444-01c6-4e39-9c5c-789bf63d9791
   type: observation
   attestation: first_hand
@@ -266,6 +312,11 @@ domain_claims:
   quote: Getting a real burst of light in the window and I really don't know what it is.
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), Walter M. Schirra Jr. observed a burst of light in the window and did not know what it was.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 913fa300-0118-4d32-9c38-1e3cd211a2e2
   type: observation
   attestation: first_hand
@@ -288,6 +339,11 @@ domain_claims:
   quote: At this point I should be coming up on a sunset. Five hours and fifteen minutes.
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), Sigma 7 (Mercury spacecraft) was approaching a sunset at five hours and fifteen minutes into the flight.
+  entailment:
+    label: entails
+    score: 0.663
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 65f4976c-ab6c-4a20-b66b-7bf7e3cedc62
   type: observation
   attestation: first_hand
@@ -310,6 +366,11 @@ domain_claims:
   quote: The periscope is dark.
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), the periscope of Sigma 7 (Mercury spacecraft) went dark.
+  entailment:
+    label: neutral
+    score: 0.756
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c428b14e-f553-4085-bd48-9bbb0756fe33
   type: observation
   attestation: first_hand
@@ -330,6 +391,11 @@ domain_claims:
   quote: I must be just getting a last look at the horizon, yet I'm not down on it.
   text: |-
     During the Mercury-Atlas 8 mission (Sigma 7), Walter M. Schirra Jr. believed he must be getting a last look at the horizon, though he was not down on it.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: c110a1f2-6f07-48c2-b767-775b13daae16
   type: testimony
@@ -352,3 +418,8 @@ infrastructure_claims:
   quote: as John described it as a lathe shaving
   text: |-
     John Glenn described particles observed near a Mercury spacecraft in orbit as looking like a lathe shaving.
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

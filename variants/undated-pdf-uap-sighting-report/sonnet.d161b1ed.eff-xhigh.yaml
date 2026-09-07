@@ -10,6 +10,12 @@ ai_usage:
     output: 11292
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.5
 prompts:
 - pass: nodes
   id: nodes
@@ -74,6 +80,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     At 16:53 Zulu time (UTC), two Unidentified Aerial Phenomena (UAP) were observed moving dynamically south, in the vicinity of (IVO) grid reference 35SQT3423692957.
+  entailment:
+    label: entails
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4397be75-ec27-471a-8aca-7aee7be2af29
   type: observation
   attestation: second_hand
@@ -90,6 +101,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     The two Unidentified Aerial Phenomena (UAP) observed at 16:53 Zulu time south of grid reference 35SQT3423692957 were round in shape and white in colour.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8b1c9a12-72fe-4e22-aaa0-627ac4cdb58d
   type: observation
   attestation: second_hand
@@ -106,6 +122,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     The two Unidentified Aerial Phenomena (UAP) observed at 16:53 Zulu time south of grid reference 35SQT3423692957 displayed a hot thermal signature.
+  entailment:
+    label: entails
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4568cf16-7c3b-4394-946b-b2bb3e74508d
   type: measurement
   attestation: second_hand
@@ -122,6 +143,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     The two Unidentified Aerial Phenomena (UAP) observed at 16:53 Zulu time south of grid reference 35SQT3423692957 were moving at approximately 445 kilometres per hour.
+  entailment:
+    label: contradicts
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 558ea9d3-7feb-429f-8ef5-0b2d8d2ff49c
   type: administrative
   attestation: second_hand
@@ -140,3 +166,8 @@ domain_claims:
   quote: '{{classification: "SECRET//REL TO USA, FIN, SWE, FVEY, NATO"}}'
   text: |-
     The report describing this Unidentified Aerial Phenomena (UAP) sighting is classified SECRET and marked releasable to the United States, Finland, Sweden, Five Eyes (FVEY), and the North Atlantic Treaty Organization (NATO).
+  entailment:
+    label: entails
+    score: 0.468
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 1
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 6.3
 prompts:
 - pass: nodes
   id: nodes
@@ -112,6 +118,11 @@ domain_claims:
     In late 2025, during early evening daylight hours, I – a senior U.S. intelligence officer – along with a colleague and two pilots, departed our Joint Operations Center (JOC) in a helicopter. Our mission was to investigate loud thuds heard in the mountains on the test range
   text: |-
     In late 2025, a senior U.S. intelligence officer, a colleague, and two pilots departed the Joint Operations Center (JOC) in a helicopter to investigate loud thuds heard in the mountains on the US test range.
+  entailment:
+    label: entails
+    score: 0.917
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 67f74fa1-a0ca-4d86-9996-eab11348f653
   type: testimony
   attestation: first_hand
@@ -135,6 +146,11 @@ domain_claims:
     which coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights
   text: |-
     The loud thuds on the test range coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b97ccb4a-2f87-45c7-91ae-84017215a039
   type: testimony
   attestation: first_hand
@@ -158,6 +174,11 @@ domain_claims:
     We aimed to search remote mountain areas for possible debris or objects that might explain the orb-like sightings.
   text: |-
     The 2025 US test range UAP encounter mission aimed to search remote mountain areas for possible debris or objects that might explain the orb-like UAP sightings.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4b0b042c-0877-4041-a4a6-5385c6944249
   type: testimony
   attestation: first_hand
@@ -179,6 +200,11 @@ domain_claims:
     After leaving the JOC, we flew a low-altitude "nap-of-the-earth" ... route through the mountain range for several hours.
   text: |-
     During the 2025 US test range UAP encounter, the helicopter flew a low-altitude nap-of-the-earth route through the mountain range for several hours.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0475270e-75a2-4348-93a0-f4e68c889af0
   type: observation
   attestation: first_hand
@@ -200,6 +226,11 @@ domain_claims:
     Multiple times, we spotted debris on the ground and descended for closer inspection.
   text: |-
     During the 2025 US test range UAP encounter, the helicopter crew spotted debris on the ground multiple times and descended for inspection.
+  entailment:
+    label: entails
+    score: 0.532
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a6745306-e440-4508-8311-0ddecb1b3440
   type: observation
   attestation: first_hand
@@ -221,6 +252,11 @@ domain_claims:
     Each time, we determined it was remnants from rockets and other projectiles that had crashed during years of weapons testing on the range.
   text: |-
     Each piece of debris inspected during the 2025 US test range UAP encounter was determined to be remnants from rockets and other projectiles that had crashed during years of weapons testing on the range.
+  entailment:
+    label: entails
+    score: 0.445
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8abe7570-0945-4537-9e0f-dd806154a8c1
   type: observation
   attestation: first_hand
@@ -242,6 +278,11 @@ domain_claims:
     As we continued searching near areas of reported orb activity, we discovered a large cave entrance with no visible end in sight.
   text: |-
     During the 2025 US test range UAP encounter, the crew discovered a large cave entrance with no visible end in sight near areas of reported orb activity.
+  entailment:
+    label: contradicts
+    score: 0.904
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ffa9d3cb-3768-4244-a2cd-591b2219be54
   type: observation
   attestation: first_hand
@@ -262,6 +303,11 @@ domain_claims:
   quote: The terrain around the entrance offered no safe landing spot
   text: |-
     The terrain around the cave entrance discovered during the 2025 US test range UAP encounter offered no safe landing spot.
+  entailment:
+    label: entails
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd04d33a-6af0-4145-ab8f-80cf45112843
   type: testimony
   attestation: first_hand
@@ -283,6 +329,11 @@ domain_claims:
     so I instructed the pilot to orbit it several times for observation. We noted the location and then pressed on.
   text: |-
     During the 2025 US test range UAP encounter, the senior U.S. intelligence officer instructed the pilot to orbit the cave entrance several times for observation.
+  entailment:
+    label: contradicts
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1bf16cbe-b676-4a78-b420-8c32150796ce
   type: testimony
   attestation: first_hand
@@ -304,6 +355,11 @@ domain_claims:
     Running low on fuel, we headed to a prearranged rendezvous point to meet a ground team and let my colleague disembark.
   text: |-
     Running low on fuel during the 2025 US test range UAP encounter, the crew headed to a prearranged rendezvous point to meet a ground team and let the colleague disembark.
+  entailment:
+    label: neutral
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a794a317-48ee-404c-9901-994afb8194e0
   type: testimony
   attestation: first_hand
@@ -325,6 +381,11 @@ domain_claims:
     The two pilots and I then proceeded to a prepositioned tanker on the range for refueling.
   text: |-
     After the colleague disembarked during the 2025 US test range UAP encounter, the two pilots and the senior U.S. intelligence officer proceeded to a prepositioned tanker on the range for refuelling.
+  entailment:
+    label: contradicts
+    score: 0.76
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f8d6bfec-8352-43a7-b76a-db235504150e
   type: testimony
   attestation: second_hand
@@ -350,6 +411,11 @@ domain_claims:
     the JOC radioed with a request to search a nearby mountain for debris spotted by one of the ground teams.
   text: |-
     After refuelling during the 2025 US test range UAP encounter, the Joint Operations Center (JOC) radioed with a request to search a nearby mountain for debris spotted by one of the ground teams.
+  entailment:
+    label: contradicts
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: de838978-d1d2-41fd-8184-caf6593538fd
   type: testimony
   attestation: first_hand
@@ -371,6 +437,11 @@ domain_claims:
     By this time, the sun had set, and the pilots switched to Forward Looking Infrared (FLIR) and Night Vision Goggles (NVG)
   text: |-
     By the time the crew was redirected to search the nearby mountain during the 2025 US test range UAP encounter, the sun had set and the pilots switched to Forward Looking Infrared (FLIR) and Night Vision Goggles (NVG).
+  entailment:
+    label: entails
+    score: 0.558
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dba5aefb-79e7-44f8-b5d0-6ea163c992e5
   type: testimony
   attestation: first_hand
@@ -391,6 +462,11 @@ domain_claims:
   quote: while I continued using the unaided naked eye.
   text: |-
     During the 2025 US test range UAP encounter, the senior U.S. intelligence officer continued using the unaided naked eye while the pilots used FLIR and NVG.
+  entailment:
+    label: neutral
+    score: 0.757
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1ab32b3a-1746-458e-bd99-849ef6c88495
   type: observation
   attestation: first_hand
@@ -411,6 +487,11 @@ domain_claims:
   quote: After a brief search of the mountain yielded no findings
   text: |-
     A brief search of the mountain during the 2025 US test range UAP encounter yielded no findings.
+  entailment:
+    label: contradicts
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9ff334e9-2638-40ad-ac8d-05635bcd17e8
   type: testimony
   attestation: first_hand
@@ -433,6 +514,11 @@ domain_claims:
   quote: the pilots began navigating back to the JOC to end the mission.
   text: |-
     After the brief mountain search, the pilots began navigating back to the Joint Operations Center (JOC) to end the mission during the 2025 US test range UAP encounter.
+  entailment:
+    label: neutral
+    score: 0.796
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b21cc45-fd58-48a8-ab97-bed0dfa5ce65
   type: testimony
   attestation: second_hand
@@ -460,6 +546,11 @@ domain_claims:
     I then received a message from the JOC: radar had detected hits several miles up range from our position – the same area where UAP activity had been observed on prior nights.
   text: |-
     During the 2025 US test range UAP encounter, the senior U.S. intelligence officer received a message from the Joint Operations Center (JOC) that radar had detected hits several miles up range from their position, in the same area where Unidentified Aerial Phenomena (UAP) activity had been observed on prior nights.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2d9d000-a69d-4265-8e40-b0b508b690c5
   type: testimony
   attestation: first_hand
@@ -482,6 +573,11 @@ domain_claims:
   quote: What followed was a series of close UAP encounters lasting over an hour.
   text: |-
     The 2025 US test range UAP encounter involved a series of close UAP encounters lasting over an hour.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 822f3cb6-d3f9-4882-a94d-ae6176cc86eb
   type: testimony
   attestation: second_hand
@@ -507,6 +603,11 @@ domain_claims:
     ground teams reported spotting a UAP on FLIR, describing it as "super-hot," low to the ground, and moving east then south at high speed.
   text: |-
     During the 2025 US test range UAP encounter, ground teams reported spotting a UAP on Forward Looking Infrared (FLIR), describing it as "super-hot," low to the ground, and moving east then south at high speed.
+  entailment:
+    label: neutral
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 13e813ef-f098-4868-bb81-4e6da1620914
   type: testimony
   attestation: second_hand
@@ -531,6 +632,11 @@ domain_claims:
   quote: The object then split into two and changed direction.
   text: |-
     During the 2025 US test range UAP encounter, the UAP spotted by ground teams then split into two and changed direction.
+  entailment:
+    label: entails
+    score: 0.516
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: df50f5bf-50f5-47f8-82b3-6b993ca7f6f8
   type: testimony
   attestation: first_hand
@@ -551,6 +657,11 @@ domain_claims:
   quote: Upon arrival, we scanned the area using NVG, FLIR, and the naked eye.
   text: |-
     Upon arrival at the area during the 2025 US test range UAP encounter, the crew scanned the area using Night Vision Goggles (NVG), Forward Looking Infrared (FLIR), and the naked eye.
+  entailment:
+    label: neutral
+    score: 0.481
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: acaf3cc3-b261-44d2-85a7-f20aadb77a19
   type: testimony
   attestation: second_hand
@@ -576,6 +687,11 @@ domain_claims:
     The ground team suddenly radioed that the object had risen from the ground, approached within ten feet of the helicopter, dropped below us, and then sped away.
   text: |-
     During the 2025 US test range UAP encounter, the ground team radioed that the UAP had risen from the ground, approached within ten feet (approximately three metres) of the helicopter, dropped below it, and then sped away.
+  entailment:
+    label: entails
+    score: 0.507
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8e308b73-b8db-48c7-a7e3-26219444b4c6
   type: testimony
   attestation: second_hand
@@ -601,6 +717,11 @@ domain_claims:
     The pilots observed it through NVGs and saw it split into two as a smaller object emerged before it accelerated out of sight.
   text: |-
     During the 2025 US test range UAP encounter, the pilots observed the UAP through Night Vision Goggles (NVG) and saw it split into two as a smaller object emerged before it accelerated out of sight.
+  entailment:
+    label: neutral
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ed1ff59-a076-4ac1-b813-dd0e188c3662
   type: testimony
   attestation: first_hand
@@ -623,6 +744,11 @@ domain_claims:
   quote: We briefly pursued but broke off, unable to match its speed.
   text: |-
     During the 2025 US test range UAP encounter, the crew briefly pursued the UAP but broke off as they were unable to match its speed.
+  entailment:
+    label: neutral
+    score: 0.695
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a8582098-31ac-4fc8-b3e4-b45e3fb08c7d
   type: testimony
   attestation: second_hand
@@ -650,6 +776,11 @@ domain_claims:
     the JOC informed us that several fighter jets had launched on a training mission in our operating area and requested their assistance in identifying the UAP.
   text: |-
     During the 2025 US test range UAP encounter, the Joint Operations Center (JOC) informed the crew that several fighter jets had launched on a training mission in their operating area and requested their assistance in identifying the Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: neutral
+    score: 0.85
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40fcb1fe-f4dc-4e70-9d05-031655964705
   type: testimony
   attestation: first_hand
@@ -673,6 +804,11 @@ domain_claims:
     the JOC directed us to nearby radar detections. We took up a hovering position at approximately 700 feet above ground level (AGL).
   text: |-
     During the 2025 US test range UAP encounter, the Joint Operations Center (JOC) directed the crew to nearby radar detections where the crew took up a hovering position at approximately 210 metres Above Ground Level (AGL).
+  entailment:
+    label: contradicts
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3650e46e-527c-465a-9a6f-fb037fa39c8e
   type: observation
   attestation: first_hand
@@ -696,6 +832,11 @@ domain_claims:
     In the distance, we saw countless orange orbs swarming in all directions against the backdrop of the mountain.
   text: |-
     During the 2025 US test range UAP encounter, the crew observed countless orange orbs swarming in all directions against the backdrop of the mountain in the distance.
+  entailment:
+    label: neutral
+    score: 0.884
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33cd1c41-4b39-43d8-8c55-0163a32ec5fb
   type: observation
   attestation: first_hand
@@ -718,6 +859,11 @@ domain_claims:
   quote: The display lasted several minutes before fading.
   text: |-
     The display of countless orange orbs during the 2025 US test range UAP encounter lasted several minutes before fading.
+  entailment:
+    label: contradicts
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4e083676-7a77-4e50-b6cd-013dd842b5d0
   type: testimony
   attestation: second_hand
@@ -742,6 +888,11 @@ domain_claims:
   quote: The JOC then redirected us to our previous position based on fresh radar hits.
   text: |-
     After the orange orb display faded during the 2025 US test range UAP encounter, the Joint Operations Center (JOC) redirected the crew to their previous position based on fresh radar hits.
+  entailment:
+    label: entails
+    score: 0.897
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 770efef5-263e-4a9f-b9fa-1873f11c299a
   type: testimony
   attestation: first_hand
@@ -763,6 +914,11 @@ domain_claims:
     I provided coordinates to the pilots, and we moved to intercept, hovering again at 700 feet AGL.
   text: |-
     During the 2025 US test range UAP encounter, the senior U.S. intelligence officer provided coordinates to the pilots and the helicopter moved to intercept, hovering again at approximately 210 metres Above Ground Level (AGL).
+  entailment:
+    label: contradicts
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7f65339e-0f05-4b28-b0bc-21ed79f4df9e
   type: observation
   attestation: first_hand
@@ -786,6 +942,11 @@ domain_claims:
     Through NVGx, the pilots and I (using the naked eye) observed two large orbs flare up side-by-side, close to the helicopter – stationary and just above the rotor disk to our right.
   text: |-
     During the 2025 US test range UAP encounter, through Night Vision Goggles (NVG), the pilots and the senior U.S. intelligence officer (using the naked eye) observed two large orbs flare up side-by-side, close to the helicopter, stationary and just above the rotor disk to their right.
+  entailment:
+    label: neutral
+    score: 0.705
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c1cefe2b-8d04-4df5-ac9e-457391b77eb4
   type: observation
   attestation: first_hand
@@ -809,6 +970,11 @@ domain_claims:
     They were oval-shaped, orange with a white or yellow center, and emitted light in all directions.
   text: |-
     The two large orbs observed during the 2025 US test range UAP encounter were oval-shaped, orange with a white or yellow centre, and emitted light in all directions.
+  entailment:
+    label: neutral
+    score: 0.922
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c03ae57-8228-4b33-88d6-926cfdc182aa
   type: observation
   attestation: first_hand
@@ -832,6 +998,11 @@ domain_claims:
     After a few seconds, a third orb flared up below the pair, followed by a fourth below that, forming a total of four or five in a "T" formation under the original two.
   text: |-
     During the 2025 US test range UAP encounter, a third orb flared up below the pair of orbs, followed by a fourth below that, forming a total of four or five orbs in a "T" formation under the original two.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33fb0340-168d-4eb0-94bb-866561216a6f
   type: observation
   attestation: first_hand
@@ -855,6 +1026,11 @@ domain_claims:
     Moments later, they dimmed in reverse order, remaining stationary until they vanished from view.
   text: |-
     During the 2025 US test range UAP encounter, the orbs dimmed in reverse order, remaining stationary until they vanished from view.
+  entailment:
+    label: neutral
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: db9eb49d-5d19-431f-b269-d32e66003331
   type: measurement
   attestation: first_hand
@@ -877,6 +1053,11 @@ domain_claims:
   quote: The entire event lasted 10-15 seconds.
   text: |-
     The entire "T" formation orb event during the 2025 US test range UAP encounter lasted 10 to 15 seconds.
+  entailment:
+    label: entails
+    score: 0.412
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 672fe70d-65a5-428c-8cdc-451703bd237e
   type: testimony
   attestation: first_hand
@@ -900,6 +1081,11 @@ domain_claims:
     I didn't take photos, as I was focused on assessing what it was and whether it posed a threat.
   text: |-
     During the 2025 US test range UAP encounter, the senior U.S. intelligence officer did not take photos, as he was focused on assessing what the orbs were and whether they posed a threat.
+  entailment:
+    label: neutral
+    score: 0.872
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ac5a0561-6d25-4c55-9d61-ee2154040c67
   type: testimony
   attestation: first_hand
@@ -923,6 +1109,11 @@ domain_claims:
     After this encounter, the pilots briefly considered landing due to the objects' proximity but opted to remain hovering at 700 feet AGL for further observation.
   text: |-
     After the "T" formation orb encounter during the 2025 US test range UAP encounter, the pilots briefly considered landing due to the objects' proximity but opted to remain hovering at approximately 210 metres Above Ground Level (AGL) for further observation.
+  entailment:
+    label: neutral
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5f10e81-bb0b-4fa5-95a1-671a55802bb7
   type: observation
   attestation: first_hand
@@ -944,6 +1135,11 @@ domain_claims:
     We then spotted the fighter jets entering visual range at about 23,00 feet AGL, identifiable by their blinking navigation lights.
   text: |-
     During the 2025 US test range UAP encounter, the crew spotted fighter jets entering visual range at about 23,000 feet (approximately 7,000 metres) Above Ground Level (AGL), identifiable by their blinking navigation lights.
+  entailment:
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 89231edf-2113-449c-9b4d-9723a715d0b9
   type: observation
   attestation: first_hand
@@ -967,6 +1163,11 @@ domain_claims:
     the same type of orbs appeared directly above the fighters. They flared up one at a time in a horizontal formation, matching the jets' speed and flight path.
   text: |-
     During the 2025 US test range UAP encounter, the same type of orbs appeared directly above the fighter jets and flared up one at a time in a horizontal formation, matching the jets' speed and flight path.
+  entailment:
+    label: entails
+    score: 0.398
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6d3004be-46da-4ffd-a1f7-bc2011558cff
   type: observation
   attestation: first_hand
@@ -989,6 +1190,11 @@ domain_claims:
   quote: After 10-15 seconds, they dimmed sequentially and disappeared.
   text: |-
     During the 2025 US test range UAP encounter, the orbs above the fighter jets dimmed sequentially and disappeared after 10 to 15 seconds.
+  entailment:
+    label: entails
+    score: 0.418
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4ff0132a-4391-42d1-89cd-aab98e0330d7
   type: observation
   attestation: first_hand
@@ -1012,6 +1218,11 @@ domain_claims:
     This repeated several times as the jets transited the airspace and eventually landed.
   text: |-
     The appearance of orbs above the fighter jets during the 2025 US test range UAP encounter repeated several times as the jets transited the airspace and eventually landed.
+  entailment:
+    label: entails
+    score: 0.393
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cecfd7cf-cbe1-495b-a615-b6823798acc3
   type: testimony
   attestation: first_hand
@@ -1035,6 +1246,11 @@ domain_claims:
     I remarked to the pilots that it seemed the same orbs we had encountered were now "chasing" the fighters.
   text: |-
     During the 2025 US test range UAP encounter, the senior U.S. intelligence officer remarked to the pilots that it seemed the same orbs encountered earlier were now "chasing" the fighters.
+  entailment:
+    label: neutral
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 418f67a2-da89-4940-9b8a-f7501c504ef6
   type: observation
   attestation: first_hand
@@ -1058,6 +1274,11 @@ domain_claims:
     We also observed orange orbs flaring up and down around us for several minutes, forming a distinct triangle before vanishing.
   text: |-
     During the 2025 US test range UAP encounter, the crew also observed orange orbs flaring up and down around the helicopter for several minutes, forming a distinct triangle before vanishing.
+  entailment:
+    label: neutral
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5e7f6f8e-3995-4748-a259-b253cad53c81
   type: testimony
   attestation: first_hand
@@ -1080,6 +1301,11 @@ domain_claims:
   quote: Low on fuel, the pilots decided to return to the JOC.
   text: |-
     Running low on fuel during the 2025 US test range UAP encounter, the pilots decided to return to the Joint Operations Center (JOC).
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 09cc04c5-7c45-4293-9a0c-048145a77055
   type: testimony
   attestation: first_hand
@@ -1102,6 +1328,11 @@ domain_claims:
   quote: After landing, I briefly spoke with them – mostly to express thanks.
   text: |-
     After landing at the Joint Operations Center (JOC) following the 2025 US test range UAP encounter, the senior U.S. intelligence officer briefly spoke with the pilots, mostly to express thanks.
+  entailment:
+    label: neutral
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4dee9b1e-6724-4381-9293-927022436dcc
   type: testimony
   attestation: first_hand
@@ -1122,6 +1353,11 @@ domain_claims:
   quote: We were virtually speechless after these observations.
   text: |-
     After the 2025 US test range UAP encounter, the crew was virtually speechless after the observations.
+  entailment:
+    label: neutral
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fccfb278-e7eb-404f-8386-12d5fae05548
   type: testimony
   attestation: first_hand
@@ -1144,6 +1380,11 @@ domain_claims:
   quote: I then entered the JOC for a quick debrief before driving home.
   text: |-
     After the 2025 US test range UAP encounter, the senior U.S. intelligence officer entered the Joint Operations Center (JOC) for a quick debrief before driving home.
+  entailment:
+    label: neutral
+    score: 0.821
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: fb6c5eeb-96dd-44f4-884a-0df9a05ec57a
   type: administrative
@@ -1167,6 +1408,11 @@ infrastructure_claims:
     The document originally posted to the PURSUE collection of UAP-related records on May 22, 2026, under the name "ODNI-UAP-D001, USPER Narrative, Senior USIC Official," contained a typographic error in the second paragraph, describing a helicopter flight profile as "map-of-the-earth." The correct military aviation term for this profile is "nap-of-the-earth."
   text: |-
     The document ODNI-UAP-D001, USPER Narrative, Senior USIC Official was originally posted to the PURSUE collection on 2026-05-22 and contained a typographic error describing the helicopter flight profile as "map-of-the-earth" instead of the correct military aviation term "nap-of-the-earth."
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f9bd4a0a-c63d-430f-b282-bece0e37d72b
   type: administrative
   attestation: second_hand
@@ -1183,3 +1429,8 @@ infrastructure_claims:
     May 26, 2026, correction: ... This document has been updated to reflect this correction.
   text: |-
     The corrected document ODNI-UAP-D001, USPER Narrative, Senior USIC Official was updated on 2026-05-26.
+  entailment:
+    label: entails
+    score: 0.893
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

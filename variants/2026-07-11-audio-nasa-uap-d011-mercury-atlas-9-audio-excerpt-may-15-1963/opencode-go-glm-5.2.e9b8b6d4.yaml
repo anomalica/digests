@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 1
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.3
 prompts:
 - pass: nodes
   id: nodes
@@ -106,6 +112,11 @@ domain_claims:
     And I'm beginning to get the brilliant blue of sun rising in the east. Bright blue band underneath all this haze layer. I can see the haze layer.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. observed a brilliant blue band underneath a haze layer as sunrise approached.
+  entailment:
+    label: entails
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fcc515e6-e16b-475f-9fea-9c6b78c9b32e
   type: observation
   attestation: first_hand
@@ -127,6 +138,11 @@ domain_claims:
     These small luminescent particles drift away from you. Small in forward. In this light they appear brilliant white without seeing it all in them. They appear to move on out.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. reported seeing luminescent particles drifting away, appearing brilliant white and moving outward.
+  entailment:
+    label: entails
+    score: 0.837
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 509cf627-9922-4eb3-9122-a92e8ede8b79
   type: observation
   attestation: first_hand
@@ -148,6 +164,11 @@ domain_claims:
     Ground Control: Roger, you haven't seen the beacon at this time? L. Gordon Cooper Jr.: Negative, I still haven't seen the beacon.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. had not yet seen the beacon when asked by Ground Control.
+  entailment:
+    label: entails
+    score: 0.948
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6cff7ff1-b20c-4585-8153-0b56d61d4c97
   type: observation
   attestation: first_hand
@@ -169,6 +190,11 @@ domain_claims:
     There was considerable noise as the little doors sounded like the little doors blowing open, so I assume the beacon has departed.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. heard considerable noise sounding like small doors blowing open and assumed the beacon had departed.
+  entailment:
+    label: entails
+    score: 0.642
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5a7b9ab-2ecd-4bfa-9d4e-32dcf67ba2a0
   type: testimony
   attestation: first_hand
@@ -190,6 +216,11 @@ domain_claims:
     Ground Control: Okay, you confirm TV control switch to off. L. Gordon Cooper Jr.: Roger. TV control is off.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. confirmed the TV control switch was set to off.
+  entailment:
+    label: neutral
+    score: 0.906
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 67f80a19-669b-4fc3-ba45-9ec75a64a478
   type: measurement
   attestation: first_hand
@@ -210,6 +241,11 @@ domain_claims:
   quote: DC current. Roger. Main bus is 24. Isolated 28 and a half.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. reported main bus direct current at 24 and isolated bus at 28.5.
+  entailment:
+    label: entails
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3fe09072-39ff-43c2-92e2-603724c1b937
   type: testimony
   attestation: first_hand
@@ -231,6 +267,11 @@ domain_claims:
     Wally: Gordon, this is Wally. Did you have anything to eat? L. Gordon Cooper Jr.: Negative, not yet. I'm planning to shortly here, though.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. had not yet eaten but planned to do so shortly.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 60308d01-6a01-4a3f-9f4a-c5963535a726
   type: measurement
   attestation: first_hand
@@ -254,6 +295,11 @@ domain_claims:
     systems last computations on fuel at Hawaii gave you 88 auto 98 manual, which is somewhat better than you're indicating on board.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, Wally relayed that systems computations at Hawaii gave fuel readings of 88 percent automatic and 98 percent manual.
+  entailment:
+    label: entails
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 61fa0fa5-f295-46d0-a800-36769841c5b8
   type: measurement
   attestation: first_hand
@@ -274,6 +320,11 @@ domain_claims:
   quote: On board, I'm indicating 9-6 and 1-0-2.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. reported onboard fuel indications of 96 percent and 102 percent.
+  entailment:
+    label: contradicts
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6cfba20f-0fb9-45e2-b59a-cbae4c706fc3
   type: observation
   attestation: first_hand
@@ -297,6 +348,11 @@ domain_claims:
     boy, what a beautiful shot of Florida. The whole state is clear. I can see I'm just about off. There's been a beautiful view coming over Florida.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. described a beautiful view of Florida with the entire state clear.
+  entailment:
+    label: entails
+    score: 0.699
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b8f48852-766d-4a31-88f5-b8e905877341
   type: testimony
   attestation: first_hand
@@ -317,6 +373,11 @@ domain_claims:
   quote: Now on 180 yaw. I got here on manual proportional control.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. was at a 180 degree yaw and had reached that attitude using manual proportional control.
+  entailment:
+    label: entails
+    score: 0.67
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7663eb65-8d4d-4ef6-85ec-376c6986049e
   type: observation
   attestation: first_hand
@@ -340,6 +401,11 @@ domain_claims:
     It's light in sight. It is below me. It's quite a brownish, reddish-brown. and considerable altitude above the ground.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. observed a flashing light below him at considerable altitude, brownish and reddish-brown in colour, while flying the small-end-forward attitude.
+  entailment:
+    label: entails
+    score: 0.43
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9e1be565-93dd-4694-97c2-20215b3a4e4b
   type: observation
   attestation: first_hand
@@ -360,6 +426,11 @@ domain_claims:
   quote: On my fiery pitch-down thruster, I get a shower of these little fireflies.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. observed a shower of small luminescent particles from the fiery pitch-down thruster.
+  entailment:
+    label: entails
+    score: 0.891
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7be536bb-119e-47e7-b4a3-353e4b1c4010
   type: observation
   attestation: first_hand
@@ -383,6 +454,11 @@ domain_claims:
     It is flashing now. It is the light. It's quite bright, quite discernible. One, two, three, four, five, six, seven, right.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. observed the flashing light was quite bright and discernible, counting about seven flashes.
+  entailment:
+    label: entails
+    score: 0.904
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0cc0aff3-b147-4f0e-8b0b-6f2899fcf11c
   type: measurement
   attestation: first_hand
@@ -406,6 +482,11 @@ domain_claims:
     Must be about 10 to 12 miles away. I'm keeping it directly in the window. At the order of a second magnitude star now.
   text: |-
     During the Mercury Atlas 9 Audio Excerpt, May 15, 1963, L. Gordon Cooper Jr. estimated the flashing light was approximately 16 to 19 kilometres away and at the brightness of a second magnitude star.
+  entailment:
+    label: contradicts
+    score: 0.514
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: c5f4866c-b379-409d-b1b9-041f5937d776
   type: administrative
@@ -426,3 +507,8 @@ infrastructure_claims:
   quote: 'speaker: L. Gordon Cooper Jr. (Astronaut)'
   text: |-
     The Mercury Atlas 9 Audio Excerpt, May 15, 1963 is a recording associated with the Mercury Atlas 9 mission flown on 1963-05-15 by L. Gordon Cooper Jr.
+  entailment:
+    label: neutral
+    score: 0.809
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

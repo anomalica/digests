@@ -10,6 +10,12 @@ ai_usage:
     output: 5392
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.5
 prompts:
 - pass: nodes
   id: nodes
@@ -133,6 +139,11 @@ domain_claims:
     Roger. When you look out the AOT in the dark quadrant? You can see these lights - particles of light, flashes of light just seem to come from - in this case, I'm looking in quadrant 1 which is the left one. It's coming from behind me, the left, and they're just sailing off in space.
   text: |-
     During the Apollo 12 Air-to-Ground Voice Transcription, Alan Bean, looking out the Alignment Optical Telescope (AOT) in the dark quadrant of Intrepid, observed particles of light and flashes of light appearing to come from behind him in quadrant 1 and sailing off into space.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5995804b-121c-4691-bf22-c396d9429f3c
   type: opinion
   attestation: first_hand
@@ -153,6 +164,11 @@ domain_claims:
     I was thinking they're dropping from my water boiler, but it looks like some of those things are escaping the Moon. They really haul out of here and just press off at the stars.
   text: |-
     Alan Bean initially thought the light particles seen from Intrepid were dropping from his water boiler, but considered it possible some of them were escaping the Moon.
+  entailment:
+    label: entails
+    score: 0.561
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 69e6feed-49ec-4b1f-8b24-148d0c0712cd
   type: administrative
   provenance_chain:
@@ -168,6 +184,11 @@ domain_claims:
   quote: Intrepid, Houston. Your lift-off time is 142:03:47.
   text: |-
     During the Apollo 12 Air-to-Ground Voice Transcription, Mission Control gave Intrepid a lift-off time of ground elapsed time (GET) 142 hours, 3 minutes and 47 seconds.
+  entailment:
+    label: entails
+    score: 0.67
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8dda085d-6857-4b2c-a036-c09447f1d28a
   type: observation
   attestation: first_hand
@@ -188,6 +209,11 @@ domain_claims:
     Got sort of an interesting thing going on AGS right now. I didn't notice earlier, but it may just be because the lights are brighter now. I'm getting an all 8's flash on both the address and the information registers at about one-fifth the brilliance of the normal numbers. And a - It's pulsing every second.
   text: |-
     Alan Bean observed an interesting phenomenon on the Abort Guidance System (AGS) aboard Intrepid: an all-8's flash on both the address and information registers at about one-fifth the brilliance of the normal numbers, pulsing every second.
+  entailment:
+    label: entails
+    score: 0.826
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9e980e60-4b03-4d55-a472-6f78c78165cc
   type: observation
   attestation: first_hand
@@ -207,6 +233,11 @@ domain_claims:
   quote: If I turn down the illumination level just a little bit, it's not noticeable.
   text: |-
     Alan Bean found that turning down the illumination level slightly made the AGS all-8's flash phenomenon on Intrepid not noticeable.
+  entailment:
+    label: entails
+    score: 0.844
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f6d7c320-dbe1-4533-880c-0aab32a75076
   type: observation
   provenance_chain:
@@ -221,6 +252,11 @@ domain_claims:
     Roger, Al. Fredo is here. He and I have both seen that phenomena on your DEDA during testing of most all the spacecrafts up at Bethpage, and it's probably an EMI.
   text: |-
     Mission Control (a Capsule Communicator identified in the transcript as "Fredo") reported that he and the Capcom speaking had both seen the same Data Entry and Display Assembly (DEDA) flashing phenomenon during ground testing of most Apollo spacecraft at Bethpage, New York, and considered it probably caused by electromagnetic interference (EMI).
+  entailment:
+    label: entails
+    score: 0.491
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2b4ca115-acb5-412d-bbdb-2dff43b0d6c2
   type: administrative
   provenance_chain:
@@ -234,6 +270,11 @@ domain_claims:
   quote: 'Roger. I think TRW''s got a {{illegible: workup}} on this problem.'
   text: |-
     During the Apollo 12 Air-to-Ground Voice Transcription, Mission Control said that TRW Inc. had a workup on the Data Entry and Display Assembly (DEDA) flashing phenomenon problem.
+  entailment:
+    label: entails
+    score: 0.731
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 94dfd3da-ce31-4796-a462-383b80bb5849
   type: observation
   attestation: first_hand
@@ -256,6 +297,11 @@ domain_claims:
     But I don't have you in the sextant. That's okay. Your blinking light's just not blinking, that's all.
   text: |-
     During a rendezvous procedure, Richard Gordon aboard Yankee Clipper was unable to find Intrepid's tracking light in his sextant because the tracking light appeared to have burned out.
+  entailment:
+    label: entails
+    score: 0.723
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ebdffb06-fab2-4a7a-9fe4-4be6133b89e1
   type: observation
   attestation: first_hand
@@ -276,6 +322,11 @@ domain_claims:
     Hey, Houston. It looks like our tracking light's burned out. Dick hasn't been able to find us in his sextant. And on the first nightside pass we had little bits and pieces floating along with us and we could tell that the tracking light was flashing on them. And we still have, I've presumed to think, bits and pieces floating along and nothing's flashing on them, so I'm pretty sure it burned out.
   text: |-
     Charles "Pete" Conrad, aboard Intrepid, reported that on the first nightside pass small bits and pieces of debris floated along with the spacecraft and the tracking light had been seen flashing on them, but that during a subsequent pass the tracking light was no longer flashing on similar floating debris, leading him to conclude the tracking light had burned out.
+  entailment:
+    label: entails
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b47ec999-4a0c-4688-9ba0-22c0d8378d5c
   type: administrative
   attestation: second_hand
@@ -300,6 +351,11 @@ domain_claims:
     also, Yankee Clipper informs me he has the television all set up. When we come around the {{illegible: horn}}, we'll come around with the television on in VOX.
   text: |-
     Richard Gordon aboard Yankee Clipper had set up the television camera and told Charles "Pete" Conrad it was ready.
+  entailment:
+    label: neutral
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b908092d-6e2d-4946-af0f-1935ca4f1abc
   type: observation
   provenance_chain:
@@ -314,3 +370,8 @@ domain_claims:
     Roger, Pete. Our electrical watchers say that the current indicates that your tracking light is on.
   text: |-
     Mission Control's electrical monitoring indicated to flight controllers that Intrepid's tracking light was on, contradicting Charles "Pete" Conrad's report that the crew had turned it off.
+  entailment:
+    label: entails
+    score: 0.494
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

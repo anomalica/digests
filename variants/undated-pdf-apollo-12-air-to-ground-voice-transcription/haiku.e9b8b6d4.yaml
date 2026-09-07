@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 4.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.3
 prompts:
 - pass: nodes
   id: nodes
@@ -137,6 +143,11 @@ domain_claims:
   quote: That's affirmative. We're ready for the E-MOD.
   text: |-
     On 1969-11-19, Mission Control Center, Houston was ready to proceed with Entry Module (E-MOD) operations for Apollo 12.
+  entailment:
+    label: entails
+    score: 0.493
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c3f1461c-afdc-4152-a1dc-4dc34a13f7ce
   type: administrative
   attestation: first_hand
@@ -161,6 +172,11 @@ domain_claims:
   quote: You have P00 and ACCEPT.
   text: |-
     Pete Conrad confirmed that the Lunar Module Intrepid had P00 programme and ACCEPT readiness for a Command and Service Module (CSM) state vector and range/range rate update (RLS) from Mission Control Center, Houston.
+  entailment:
+    label: entails
+    score: 0.843
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bf6473f9-d649-4f6c-8211-73b05fc9df06
   type: administrative
   attestation: first_hand
@@ -183,6 +199,11 @@ domain_claims:
   quote: Hello, Houston; Yankee Clipper. / Yankee Clipper, Houston. Loud and clear.
   text: |-
     Dick Gordon, on the Command and Service Module Yankee Clipper, established communication with Mission Control Center, Houston and reported clear reception at 05:19:20:09.
+  entailment:
+    label: entails
+    score: 0.807
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4908e60-1e31-4f1d-99ab-593f43ae699a
   type: observation
   attestation: first_hand
@@ -205,6 +226,11 @@ domain_claims:
   quote: Well, pretty good. I hope you would like to have some company for a change.
   text: |-
     Dick Gordon reported that the Lunar Module Intrepid was performing rendezvous preparation activities aboard the Command and Service Module Yankee Clipper.
+  entailment:
+    label: contradicts
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2cddf881-0769-43f7-9392-209fcd74312d
   type: observation
   attestation: first_hand
@@ -228,6 +254,11 @@ domain_claims:
     As a matter of fact, I just finished that. I sure do; got everything in order; ready to go towards the LM and bring back ... That's quite a chore; keeping this thing clean.
   text: |-
     Dick Gordon reported having completed cleaning and preparation procedures aboard the Command and Service Module Yankee Clipper before rendezvous with the Lunar Module Intrepid.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b748afcd-c06c-4c9d-ac80-17b9c2b8b86f
   type: administrative
   provenance_chain:
@@ -244,6 +275,11 @@ domain_claims:
   quote: Intrepid, Houston. The computer is yours.
   text: |-
     Mission Control Center, Houston transferred computer control to the Lunar Module Intrepid at 05:19:21:10.
+  entailment:
+    label: entails
+    score: 0.548
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: caf3071d-bf96-4f39-9c9d-1974818dfd3c
   type: administrative
   provenance_chain:
@@ -262,6 +298,11 @@ domain_claims:
   quote: Intrepid, Houston. Your lift-off time is 142:03:47.
   text: |-
     Pete Conrad received lift-off time from the Lunar Module Intrepid as 142:03:47 Mission Elapsed Time (MET).
+  entailment:
+    label: entails
+    score: 0.453
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dee27387-4d83-4679-aa57-5ec219289373
   type: administrative
   attestation: first_hand
@@ -282,6 +323,11 @@ domain_claims:
   quote: I copy 142:03:47.00.
   text: |-
     Pete Conrad acknowledged receipt of the lunar module lift-off time of 142:03:47 Mission Elapsed Time.
+  entailment:
+    label: entails
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: def0b706-4de2-4190-97b7-8bb217e015b6
   type: administrative
   provenance_chain:
@@ -298,6 +344,11 @@ domain_claims:
   quote: Clipper, Houston. Computer's yours.
   text: |-
     Mission Control Center, Houston transferred computer control to the Command and Service Module Yankee Clipper at 05:19:24:05.
+  entailment:
+    label: entails
+    score: 0.783
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b524a270-2ad0-4c7f-883b-7e022aa7c899
   type: administrative
   provenance_chain:
@@ -315,6 +366,11 @@ domain_claims:
     Yankee Clipper, Houston. Why don't you figure on terminating the battery charge at LOS?
   text: |-
     Mission Control Center, Houston recommended terminating battery charge on the Command and Service Module Yankee Clipper at Loss of Signal (LOS) during the lunar orbit pass.
+  entailment:
+    label: entails
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0cbde6c6-dfe9-4e92-ab7a-9144a0214cd7
   type: administrative
   provenance_chain:
@@ -332,6 +388,11 @@ domain_claims:
     Clipper, Houston. We prefer that you terminate at LOS on this pass. / Roger. That would be one less thing for us to keep track of prior to lift-off.
   text: |-
     Mission Control Center, Houston preferred terminating battery charge at Loss of Signal (LOS) on the current pass to reduce pre-lift-off tracking requirements.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d6a61405-4b96-4d55-bd49-e16fbab1e44a
   type: observation
   attestation: first_hand
@@ -355,6 +416,11 @@ domain_claims:
     When you look out the AOT in the dark quadrant? You can see these lights - particles of light, flashes of light just seem to come from - in this case, I'm looking in quadrant 1 which is the left one. It's coming from behind me, the left, and they're just sailing off in space. I was thinking they're dropping from my water boiler, but it looks like some of those things are escaping the Moon. They really haul out of here and just press off at the stars.
   text: |-
     Alan Bean reported observing particles of light and flashes of light through the Alignment Optical Telescope (AOT) in the dark quadrant of the Lunar Module Intrepid, originating from behind and to the left, appearing to escape from the Moon towards space.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 45b217b1-1222-40e9-989c-4e76724572c8
   type: observation
   attestation: first_hand
@@ -378,6 +444,11 @@ domain_claims:
     I was thinking they're dropping from my water boiler, but it looks like some of those things are escaping the Moon.
   text: |-
     Alan Bean considered that the lights observed through the Alignment Optical Telescope (AOT) could possibly derive from the water boiler vent but appeared to be escaping the lunar surface.
+  entailment:
+    label: entails
+    score: 0.926
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 582f5b99-463f-48fa-a273-dc6a8b4bf718
   type: administrative
   provenance_chain:
@@ -395,6 +466,11 @@ domain_claims:
     Clipper, Houston. We'll give that data a good evaluation before we do anything with it.
   text: |-
     Mission Control Center, Houston advised that data being received would be evaluated before any action was taken.
+  entailment:
+    label: entails
+    score: 0.817
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b0ed5415-b9f0-4efe-ad50-37a293a69bf7
   type: observation
   attestation: first_hand
@@ -418,6 +494,11 @@ domain_claims:
     Got sort of an interesting thing going on AGS right now. I didn't notice earlier, but it may just be because the lights are brighter now. I'm getting an all 8's flash on both the address and the information registers at about one-fifth the brilliance of the normal numbers. And a - It's pulsing every second.
   text: |-
     Alan Bean reported an anomalous display on the Abort Guidance System (AGS) Data Entry and Display Assembly (DEDA) showing all 8's flashing on both address and information registers at approximately one-fifth the brightness of normal numbers, pulsing every second.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a3b12f4-3717-4fbc-bb11-efdb1b22c6de
   type: observation
   attestation: first_hand
@@ -438,6 +519,11 @@ domain_claims:
   quote: If I turn down the illumination level just a little bit, it's not noticeable.
   text: |-
     Alan Bean reported that the anomalous Abort Guidance System (AGS) display became unnoticeable when he reduced the illumination level.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d5ac94b8-f11c-4c91-bc56-1cf4a7ba5075
   type: observation
   attestation: first_hand
@@ -458,6 +544,11 @@ domain_claims:
   quote: Hello, Houston; Intrepid. You ready for my RCS hot fire?
   text: |-
     Alan Bean reported being ready to conduct a Reaction Control System (RCS) hot fire test.
+  entailment:
+    label: entails
+    score: 0.919
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 00947faa-1957-4492-82aa-aa19a8a3690e
   type: administrative
   provenance_chain:
@@ -474,6 +565,11 @@ domain_claims:
   quote: Intrepid, Houston. Roger. Fire away.
   text: |-
     Mission Control Center, Houston authorised Alan Bean to proceed with the Reaction Control System (RCS) hot fire test.
+  entailment:
+    label: neutral
+    score: 0.363
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9f9f65ce-f3c8-4145-8904-72486cadefea
   type: testimony
   provenance_chain:
@@ -499,6 +595,11 @@ domain_claims:
     Roger, Al. Fredo is here. He and I have both seen that phenomena on your DEDA during testing of most all the spacecrafts up at Bethpage, and it's probably an EMI.
   text: |-
     A technician from Mission Control Center, Houston reported that the Data Entry and Display Assembly (DEDA) anomaly observed on the Lunar Module Intrepid had been witnessed during testing of most spacecraft at Grumman Aircraft Engineering Corporation in Bethpage, New York, and was likely caused by electromagnetic interference (EMI).
+  entailment:
+    label: entails
+    score: 0.58
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a06a8861-9cbe-46f7-8c54-560d550bcd28
   type: testimony
   provenance_chain:
@@ -517,6 +618,11 @@ domain_claims:
   quote: 'I think TRW''s got a {{illegible: workup}} on this problem.'
   text: |-
     TRW Inc. had undertaken work related to the electromagnetic interference (EMI) issue affecting the Abort Guidance System (AGS) display.
+  entailment:
+    label: entails
+    score: 0.436
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 619ea77b-df75-4447-866d-f17c7e9827e6
   type: observation
   attestation: first_hand
@@ -542,6 +648,11 @@ domain_claims:
     Hey, Houston. It looks like our tracking light's burned out. Dick hasn't been able to find us in his sextant.
   text: |-
     Pete Conrad reported that the Lunar Module Intrepid tracking light had burnt out, preventing location identification from the Command and Service Module Yankee Clipper sextant.
+  entailment:
+    label: entails
+    score: 0.916
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: de30bc4d-2168-40c4-9e46-3636b04283ad
   type: observation
   attestation: first_hand
@@ -565,6 +676,11 @@ domain_claims:
     On the first nightside pass we had little bits and pieces floating along with us and we could tell that the tracking light was flashing on them. And we still have, I've presumed to think, bits and pieces floating along and nothing's flashing on them, so I'm pretty sure it burned out.
   text: |-
     Pete Conrad observed that during the first lunar nightside pass, the tracking light on the Lunar Module Intrepid was flashing on debris particles floating alongside, indicating it was functioning; in the current pass, similar debris was observed without flashing light, confirming the tracking light had burnt out.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 69266f64-fa10-4c0e-83f7-23a511e435bd
   type: observation
   attestation: first_hand
@@ -585,6 +701,11 @@ domain_claims:
   quote: It's getting much cleaner in here running this way.
   text: |-
     Pete Conrad reported that the Lunar Module Intrepid cabin had become cleaner during the lunar orbit pass.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 887ab5e6-daf7-45a8-830e-2f014106c6fd
   type: observation
   attestation: second_hand
@@ -608,6 +729,11 @@ domain_claims:
     also, Yankee Clipper informs me he has the television all set up. When we come around the {{illegible: horn}}, we'll come around with the television on in VOX.
   text: |-
     Dick Gordon reported that he had the television equipment set up aboard the Command and Service Module Yankee Clipper and ready for transmission via Voice Operated Transmit (VOX) during the lunar horizon pass.
+  entailment:
+    label: contradicts
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f731cbcd-8ec4-4d49-811a-49299dc45dbe
   type: testimony
   provenance_chain:
@@ -625,6 +751,11 @@ domain_claims:
     Our electrical watchers say that the current indicates that your tracking light is on.
   text: |-
     Mission Control Center, Houston electrical telemetry analysis indicated that the Lunar Module Intrepid tracking light current remained positive, suggesting the light remained active.
+  entailment:
+    label: entails
+    score: 0.645
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 84824a80-9df2-4c64-988d-3725a38802e9
   type: observation
   attestation: first_hand
@@ -645,6 +776,11 @@ domain_claims:
   quote: Okay. Now we just turned it off.
   text: |-
     Pete Conrad turned off the tracking light on the Lunar Module Intrepid in response to Mission Control Center, Houston's assessment of electrical current data.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9312554b-bbcd-4b47-8cac-65384f11dd7c
   type: observation
   attestation: first_hand
@@ -667,6 +803,11 @@ domain_claims:
   quote: You're flying through the air backwards, then, Pete, because I don't see it.
   text: |-
     Dick Gordon reported from the Command and Service Module Yankee Clipper that he could not see the tracking light on the Lunar Module Intrepid despite Mission Control Center, Houston's telemetry indication that it was active.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 85bf235b-fd16-4a98-9f6c-226690963582
   type: observation
   attestation: first_hand
@@ -689,3 +830,8 @@ domain_claims:
   quote: Well, my ball tells me I'm pointed at you, Dick, and so does my radar.
   text: |-
     Pete Conrad reported that his attitude indicator ball confirmed correct orientation towards Dick Gordon's position, and radar confirmation supported this assessment.
+  entailment:
+    label: entails
+    score: 0.923
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

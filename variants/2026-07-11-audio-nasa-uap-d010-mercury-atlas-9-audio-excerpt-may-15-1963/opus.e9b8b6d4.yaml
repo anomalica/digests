@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -122,6 +128,11 @@ domain_claims:
     And now at one hour at this time, I now have one hour and 21 minutes, and I am observing John's fireflies drifting away from me.
   text: |-
     During the Mercury-Atlas 9 flight, at one hour and 21 minutes elapsed time, Gordon Cooper observed the Glenn Fireflies drifting away from his spacecraft.
+  entailment:
+    label: contradicts
+    score: 0.702
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c92c0dec-268a-4bdd-b001-4f287f4cbd08
   type: observation
   attestation: first_hand
@@ -146,6 +157,11 @@ domain_claims:
   quote: I can observe them departing from the spacecraft. and drifting out to the rear.
   text: |-
     During the Mercury-Atlas 9 flight, Gordon Cooper observed the Glenn Fireflies departing from the spacecraft and drifting out to the rear.
+  entailment:
+    label: contradicts
+    score: 0.558
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 44d11bb1-5c78-4b6e-9715-15baa98ec012
   type: observation
   attestation: first_hand
@@ -170,6 +186,11 @@ domain_claims:
   quote: I can see some of them. A considerable distance out to the rear.
   text: |-
     During the Mercury-Atlas 9 flight, Gordon Cooper could see some of the Glenn Fireflies at a considerable distance out to the rear of the spacecraft.
+  entailment:
+    label: neutral
+    score: 0.537
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b1760356-0196-4d6d-b20c-af0fdaf4a5ac
   type: observation
   attestation: first_hand
@@ -190,6 +211,11 @@ domain_claims:
   quote: The sun is coming up behind me.
   text: |-
     During the Mercury-Atlas 9 flight, the Sun was coming up behind Gordon Cooper's spacecraft.
+  entailment:
+    label: entails
+    score: 0.758
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 46348cd0-2e55-47f7-a9ac-f6150db37d7a
   type: observation
   attestation: first_hand
@@ -210,6 +236,11 @@ domain_claims:
   quote: I'm beginning to get the glow on the clouds.
   text: |-
     During the Mercury-Atlas 9 flight, Gordon Cooper began to see the glow of sunlight on the clouds below.
+  entailment:
+    label: neutral
+    score: 0.857
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2583a80a-3caa-47ac-aac3-b4606cb78d23
   type: observation
   attestation: first_hand
@@ -235,6 +266,11 @@ domain_claims:
     Fireflies appear to be white, very whitish, with almost a green like rail fireflies.
   text: |-
     The Glenn Fireflies observed by Gordon Cooper during the Mercury-Atlas 9 flight appeared white, very whitish, with an almost green quality resembling terrestrial fireflies.
+  entailment:
+    label: entails
+    score: 0.768
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a88b4f0c-e191-456c-97fb-24bb1649abde
   type: observation
   attestation: first_hand
@@ -255,6 +291,11 @@ domain_claims:
   quote: Clouds on the Earth below are changing color, are getting quite light.
   text: |-
     During the Mercury-Atlas 9 flight, Gordon Cooper observed the clouds on the Earth below changing colour and becoming quite light.
+  entailment:
+    label: neutral
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 99bdac4f-b82e-42f6-939f-de7d1868122e
   type: observation
   attestation: first_hand
@@ -275,6 +316,11 @@ domain_claims:
   quote: I am now on the day side.
   text: |-
     During the Mercury-Atlas 9 flight, Gordon Cooper's spacecraft had passed onto the day side of the Earth.
+  entailment:
+    label: neutral
+    score: 0.717
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef2029ae-65dc-4d12-a115-6c719a5107a0
   type: observation
   attestation: first_hand
@@ -295,6 +341,11 @@ domain_claims:
   quote: The sun is not yet quite up, and I am observing stars.
   text: |-
     During the Mercury-Atlas 9 flight, the Sun had not yet fully risen while Gordon Cooper was observing stars.
+  entailment:
+    label: entails
+    score: 0.971
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 38b11fce-89a9-44e3-9ab4-8dce7c424f36
   type: observation
   attestation: first_hand
@@ -315,6 +366,11 @@ domain_claims:
   quote: The Earth is light below me. The sun is still behind me.
   text: |-
     During the Mercury-Atlas 9 flight, Gordon Cooper observed the Earth as light below the spacecraft while the Sun remained behind him.
+  entailment:
+    label: neutral
+    score: 0.849
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d8c333b-f12e-4d67-bc68-bbcead299118
   type: observation
   attestation: first_hand
@@ -335,6 +391,11 @@ domain_claims:
   quote: The sky looks dark above me, and I can see stars very distinctly.
   text: |-
     During the Mercury-Atlas 9 flight, Gordon Cooper observed the sky above the spacecraft as dark, with stars visible very distinctly.
+  entailment:
+    label: neutral
+    score: 0.671
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: afb9743b-4862-4a95-b781-5015224c0c57
   type: administrative
   provenance_chain:
@@ -347,3 +408,8 @@ domain_claims:
     name: Gordon Cooper
   quote: '<!-- speaker: Gordon Cooper (Astronaut) -->'
   text: Gordon Cooper was an astronaut.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

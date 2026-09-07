@@ -9,6 +9,12 @@ ai_usage:
     output: 22452
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.1
 prompts:
 - pass: nodes
   id: nodes
@@ -93,6 +99,11 @@ domain_claims:
     In late 2025, during early evening daylight hours, I – a senior U.S. intelligence officer – along with a colleague and two pilots, departed our Joint Operations Center (JOC) in a helicopter.
   text: |-
     In late 2025, during early evening daylight hours, the Senior U.S. Intelligence Officer, along with a colleague and two pilots, departed their Joint Operations Center (JOC) in a helicopter.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 807b028d-a971-4d7c-a41b-601af71636c9
   type: testimony
   attestation: first_hand
@@ -116,6 +127,11 @@ domain_claims:
     Our mission was to investigate loud thuds heard in the mountains on the test range, which coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights.
   text: |-
     The helicopter mission was to investigate loud thuds heard in the mountains on the test range, which coincided with Unidentified Aerial Phenomena (UAP) sightings reported over the previous several nights.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cf512509-16aa-4f2a-8988-19777417ff6c
   type: testimony
   attestation: first_hand
@@ -137,6 +153,11 @@ domain_claims:
     We aimed to search remote mountain areas for possible debris or objects that might explain the orb-like sightings.
   text: |-
     The mission aimed to search remote mountain areas for possible debris or objects that might explain the orb-like UAP sightings on the test range.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 37dce320-698d-4033-9854-da11ac40cabe
   type: testimony
   attestation: first_hand
@@ -158,6 +179,11 @@ domain_claims:
     After leaving the JOC, we flew a low-altitude "nap-of-the-earth" ... route through the mountain range for several hours.
   text: |-
     After leaving the JOC, the team flew a low-altitude "nap-of-the-earth" route through the mountain range for several hours.
+  entailment:
+    label: entails
+    score: 0.944
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1287f514-19dd-4ad4-b8e7-ea69792efd18
   type: testimony
   attestation: first_hand
@@ -179,6 +205,11 @@ domain_claims:
     Multiple times, we spotted debris on the ground and descended for closer inspection. Each time, we determined it was remnants from rockets and other projectiles that had crashed during years of weapons testing on the range.
   text: |-
     During the mountain search, the team multiple times spotted debris on the ground and descended for closer inspection, each time determining it was remnants from rockets and other projectiles that had crashed during years of weapons testing on the range.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9661c4a5-b1ac-4dfd-a739-94ac305032a9
   type: testimony
   attestation: first_hand
@@ -200,6 +231,11 @@ domain_claims:
     we discovered a large cave entrance with no visible end in sight. The terrain around the entrance offered no safe landing spot, so I instructed the pilot to orbit it several times for observation. We noted the location and then pressed on.
   text: |-
     While searching near areas of reported orb activity, the team discovered a large cave entrance with no visible end in sight, whose surrounding terrain offered no safe landing spot, so the officer instructed the pilot to orbit it several times for observation before noting the location and pressing on.
+  entailment:
+    label: entails
+    score: 0.944
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 64b76e85-f269-4e25-b061-346be00e101e
   type: testimony
   attestation: first_hand
@@ -221,6 +257,11 @@ domain_claims:
     Running low on fuel, we headed to a prearranged rendezvous point to meet a ground team and let my colleague disembark.
   text: |-
     Running low on fuel, the team headed to a prearranged rendezvous point to meet a ground team and let the officer's colleague disembark.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b0456ec9-a63a-46b2-a74d-1bc5106515b9
   type: testimony
   attestation: first_hand
@@ -242,6 +283,11 @@ domain_claims:
     The two pilots and I then proceeded to a prepositioned tanker on the range for refueling.
   text: |-
     The two pilots and the officer proceeded to a prepositioned tanker on the range for refuelling.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 19bc4e6e-0dd2-42e0-a4cc-3457ba82f987
   type: testimony
   attestation: first_hand
@@ -263,6 +309,11 @@ domain_claims:
     the JOC radioed with a request to search a nearby mountain for debris spotted by one of the ground teams.
   text: |-
     The JOC radioed with a request to search a nearby mountain for debris spotted by one of the ground teams.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f3e4d841-c4d6-467c-88b9-807e7b3f633c
   type: testimony
   attestation: first_hand
@@ -284,6 +335,11 @@ domain_claims:
     By this time, the sun had set, and the pilots switched to Forward Looking Infrared (FLIR) and Night Vision Goggles (NVG), while I continued using the unaided naked eye.
   text: |-
     By this time the sun had set, and the pilots switched to Forward Looking Infrared (FLIR) and Night Vision Goggles (NVG), while the officer continued using the unaided naked eye.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a127663b-6ee1-401d-b052-8aca9390136a
   type: testimony
   attestation: first_hand
@@ -304,6 +360,11 @@ domain_claims:
   quote: |-
     After a brief search of the mountain yielded no findings, the pilots began navigating back to the JOC to end the mission.
   text: A brief search of the nearby mountain yielded no findings.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f3c1fe88-7c6c-4695-80dd-9fbddfef5d8f
   type: testimony
   attestation: first_hand
@@ -327,6 +388,11 @@ domain_claims:
     I then received a message from the JOC: radar had detected hits several miles up range from our position – the same area where UAP activity had been observed on prior nights.
   text: |-
     The JOC messaged the officer that radar had detected hits several miles up range from the helicopter's position, in the same area where UAP activity had been observed on prior nights.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 69be11c0-c6ab-4205-a1b8-c93ddaacb2a2
   type: testimony
   attestation: first_hand
@@ -350,6 +416,11 @@ domain_claims:
     I relayed this to the pilots, and we altered course to intercept. What followed was a series of close UAP encounters lasting over an hour.
   text: |-
     After the officer relayed the radar hits to the pilots, they altered course to intercept, and what followed was a series of close UAP encounters lasting over an hour.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fed5d4b8-509c-4439-97ec-8c15a3b54312
   type: hearsay
   attestation: second_hand
@@ -376,6 +447,11 @@ domain_claims:
     En route, ground teams reported spotting a UAP on FLIR, describing it as "super-hot," low to the ground, and moving east then south at high speed. The object then split into two and changed direction.
   text: |-
     En route, ground teams reported spotting a UAP on Forward Looking Infrared (FLIR), describing it as "super-hot," low to the ground, and moving east then south at high speed, before it split into two and changed direction.
+  entailment:
+    label: entails
+    score: 0.778
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6b88b59b-a08d-4afb-aa22-987832b5f8f9
   type: testimony
   attestation: first_hand
@@ -396,6 +472,11 @@ domain_claims:
   quote: Upon arrival, we scanned the area using NVG, FLIR, and the naked eye.
   text: |-
     Upon arrival at the area, the team scanned it using Night Vision Goggles (NVG), Forward Looking Infrared (FLIR), and the naked eye.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4d69756d-8a9b-4624-a71b-19136d0cd7b3
   type: hearsay
   attestation: second_hand
@@ -422,6 +503,11 @@ domain_claims:
     The ground team suddenly radioed that the object had risen from the ground, approached within ten feet of the helicopter, dropped below us, and then sped away.
   text: |-
     A ground team radioed that the UAP had risen from the ground, approached within approximately three metres of the helicopter, dropped below it, and then sped away.
+  entailment:
+    label: entails
+    score: 0.709
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c293958b-fd2f-4693-b469-a0df0ef9056b
   type: observation
   attestation: second_hand
@@ -446,6 +532,11 @@ domain_claims:
     The pilots observed it through NVGs and saw it split into two as a smaller object emerged before it accelerated out of sight.
   text: |-
     The pilots observed the UAP through Night Vision Goggles (NVG) and saw it split into two as a smaller object emerged before it accelerated out of sight.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 615ecd56-f563-4ae9-af3a-91b60cd9fe6b
   type: testimony
   attestation: first_hand
@@ -467,6 +558,11 @@ domain_claims:
     name: Unidentified Aerial Phenomena (UAP)
   quote: We briefly pursued but broke off, unable to match its speed.
   text: The team briefly pursued the UAP but broke off, unable to match its speed.
+  entailment:
+    label: entails
+    score: 0.481
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9bf19b51-d17f-40bd-8b8d-eff45692e0e6
   type: testimony
   attestation: first_hand
@@ -490,6 +586,11 @@ domain_claims:
     the JOC informed us that several fighter jets had launched on a training mission in our operating area and requested their assistance in identifying the UAP.
   text: |-
     The JOC informed the team that several fighter jets had launched on a training mission in their operating area and requested their assistance in identifying the UAP.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1164a6f0-8460-465e-afc5-7c432c6ce68b
   type: measurement
   attestation: first_hand
@@ -511,6 +612,11 @@ domain_claims:
     the JOC directed us to nearby radar detections. We took up a hovering position at approximately 700 feet above ground level (AGL).
   text: |-
     The JOC directed the team to nearby radar detections, and they took up a hovering position at approximately 210 metres above ground level (AGL).
+  entailment:
+    label: contradicts
+    score: 0.957
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f2339f39-77fc-4648-a03b-7cabc9669ffb
   type: observation
   attestation: first_hand
@@ -534,6 +640,11 @@ domain_claims:
     In the distance, we saw countless orange orbs swarming in all directions against the backdrop of the mountain. The display lasted several minutes before fading.
   text: |-
     In the distance, against the backdrop of the mountain, the team saw countless orange orbs swarming in all directions, a display that lasted several minutes before fading.
+  entailment:
+    label: entails
+    score: 0.779
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 11c66ab0-94ff-4077-a77c-a63ce5a5a90b
   type: testimony
   attestation: first_hand
@@ -555,6 +666,11 @@ domain_claims:
     The JOC then redirected us to our previous position based on fresh radar hits. I provided coordinates to the pilots, and we moved to intercept, hovering again at 700 feet AGL.
   text: |-
     After the JOC redirected the team based on fresh radar hits, they moved to intercept and hovered again at approximately 210 metres above ground level (AGL).
+  entailment:
+    label: entails
+    score: 0.937
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fd3bb173-f492-49cf-86dc-8bda1ba1935f
   type: observation
   attestation: first_hand
@@ -578,6 +694,11 @@ domain_claims:
     Through NVGx, the pilots and I (using the naked eye) observed two large orbs flare up side-by-side, close to the helicopter – stationary and just above the rotor disk to our right.
   text: |-
     Through Night Vision Goggles and with the naked eye, the pilots and the officer observed two large orbs flare up side-by-side, close to the helicopter, stationary and just above the rotor disk to their right.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1c8e0aa2-4e76-4ff7-975c-e353039ced1d
   type: observation
   attestation: first_hand
@@ -601,6 +722,11 @@ domain_claims:
     They were oval-shaped, orange with a white or yellow center, and emitted light in all directions.
   text: |-
     The two large orbs were oval-shaped, orange with a white or yellow centre, and emitted light in all directions.
+  entailment:
+    label: neutral
+    score: 0.857
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47a32730-f18a-499f-83c6-ddcc78ea3b4f
   type: observation
   attestation: first_hand
@@ -624,6 +750,11 @@ domain_claims:
     After a few seconds, a third orb flared up below the pair, followed by a fourth below that, forming a total of four or five in a "T" formation under the original two. Moments later, they dimmed in reverse order, remaining stationary until they vanished from view. The entire event lasted 10-15 seconds.
   text: |-
     After a few seconds, a third orb flared up below the pair, followed by a fourth below that, forming a total of four or five orbs in a "T" formation under the original two, which then dimmed in reverse order and remained stationary until they vanished, with the entire event lasting 10 to 15 seconds.
+  entailment:
+    label: entails
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ae265c86-587d-4f8b-9710-de357edaad6e
   type: testimony
   attestation: first_hand
@@ -645,6 +776,11 @@ domain_claims:
     I didn't take photos, as I was focused on assessing what it was and whether it posed a threat.
   text: |-
     The officer did not take photos of the orbs, being focused on assessing what they were and whether they posed a threat.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c370a94-704e-425d-8789-883fd1db3724
   type: testimony
   attestation: first_hand
@@ -666,6 +802,11 @@ domain_claims:
     After this encounter, the pilots briefly considered landing due to the objects' proximity but opted to remain hovering at 700 feet AGL for further observation.
   text: |-
     After the encounter, the pilots briefly considered landing due to the objects' proximity but opted to remain hovering at approximately 210 metres above ground level (AGL) for further observation.
+  entailment:
+    label: entails
+    score: 0.919
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8f2880b5-334d-4958-8d00-49f2ed5b5186
   type: observation
   attestation: first_hand
@@ -687,6 +828,11 @@ domain_claims:
     We then spotted the fighter jets entering visual range at about 23,00 feet AGL, identifiable by their blinking navigation lights.
   text: |-
     The team spotted the fighter jets entering visual range at approximately 7,000 metres above ground level (AGL), identifiable by their blinking navigation lights.
+  entailment:
+    label: entails
+    score: 0.905
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2f90c376-a424-440d-87e2-f621ed703a06
   type: observation
   attestation: first_hand
@@ -710,6 +856,11 @@ domain_claims:
     the same type of orbs appeared directly above the fighters. They flared up one at a time in a horizontal formation, matching the jets' speed and flight path. After 10-15 seconds, they dimmed sequentially and disappeared. This repeated several times as the jets transited the airspace and eventually landed.
   text: |-
     The same type of orbs appeared directly above the fighter jets, flaring up one at a time in a horizontal formation, matching the jets' speed and flight path, then dimming sequentially and disappearing after 10 to 15 seconds, repeating several times as the jets transited the airspace and eventually landed.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dda56eb3-7c61-473b-90a9-60571c4ee969
   type: opinion
   attestation: first_hand
@@ -733,6 +884,11 @@ domain_claims:
     I remarked to the pilots that it seemed the same orbs we had encountered were now "chasing" the fighters.
   text: |-
     The Senior U.S. Intelligence Officer considered that the same orbs the team had encountered appeared to be "chasing" the fighter jets.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e5ffdc6f-c92a-4cb2-9165-c8eaa685f7c8
   type: observation
   attestation: first_hand
@@ -756,6 +912,11 @@ domain_claims:
     We also observed orange orbs flaring up and down around us for several minutes, forming a distinct triangle before vanishing.
   text: |-
     The team observed orange orbs flaring up and down around them for several minutes, forming a distinct triangle before vanishing.
+  entailment:
+    label: entails
+    score: 0.879
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a144c2d0-ae02-4fea-8fd8-4d8d7cd88161
   type: testimony
   attestation: first_hand
@@ -777,6 +938,11 @@ domain_claims:
     Low on fuel, the pilots decided to return to the JOC. After landing, I briefly spoke with them – mostly to express thanks. We were virtually speechless after these observations. I then entered the JOC for a quick debrief before driving home.
   text: |-
     Low on fuel, the pilots decided to return to the JOC, after which the officer briefly spoke with them to express thanks, entered the JOC for a quick debrief, and drove home.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: 100b3963-c19f-4fff-9faa-deb38cb3a911
   type: administrative
@@ -796,6 +962,11 @@ infrastructure_claims:
     The document originally posted to the PURSUE collection of UAP-related records on May 22, 2026, under the name "ODNI-UAP-D001, USPER Narrative, Senior USIC Official,"
   text: |-
     The document "ODNI-UAP-D001, USPER Narrative, Senior USIC Official" was originally posted to the PURSUE collection of UAP-related records on 2026-05-22.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: da2ad8ea-1114-434b-ad12-723f44d829f9
   type: administrative
   attestation: second_hand
@@ -812,3 +983,8 @@ infrastructure_claims:
     contained a typographic error in the second paragraph, describing a helicopter flight profile as "map-of-the-earth." The correct military aviation term for this profile is "nap-of-the-earth." This document has been updated to reflect this correction.
   text: |-
     The originally posted version of "ODNI-UAP-D001, USPER Narrative, Senior USIC Official" contained a typographic error in the second paragraph describing a helicopter flight profile as "map-of-the-earth," which was corrected on 2026-05-26 to the correct military aviation term "nap-of-the-earth."
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -9,6 +9,12 @@ ai_usage:
     output: 130092
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 12.7
 prompts:
 - pass: nodes
   id: nodes
@@ -456,6 +462,11 @@ domain_claims:
   quote: |-
     J. Allen Hynek, another great example of somebody who was uh totally skeptical pretty straight and narrow scientist
   text: J. Allen Hynek was a totally skeptical, straight and narrow scientist.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 430a5dd8-56a1-43b9-9d4d-1a6fdd5e357b
   type: testimony
   attestation: first_hand
@@ -479,6 +490,11 @@ domain_claims:
   quote: you and i both spoke with his uh son paul
   text: |-
     Michael Phillip and Chris Ramsay both spoke with Paul Hynek, the son of J. Allen Hynek.
+  entailment:
+    label: neutral
+    score: 0.913
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d85bb5f-8458-4f98-a233-f01f99270360
   type: testimony
   attestation: first_hand
@@ -497,6 +513,11 @@ domain_claims:
     name: Vallée, Jacques
   quote: it's pretty widely known that he became friends with Jacques Vallée
   text: J. Allen Hynek became friends with Jacques Vallée.
+  entailment:
+    label: entails
+    score: 0.68
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 13a80cd4-e125-4015-af23-984418cb7b5f
   type: testimony
   attestation: first_hand
@@ -515,6 +536,11 @@ domain_claims:
     name: Rosicrucianism
   quote: then became a rosicrucian
   text: J. Allen Hynek became a Rosicrucian.
+  entailment:
+    label: contradicts
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e69c2e10-96ca-45ca-8371-a785b726e477
   type: hearsay
   attestation: second_hand
@@ -539,6 +565,11 @@ domain_claims:
     paul even said that he followed the rosicrucian uh sort of burial rituals um when he died
   text: |-
     Paul Hynek said that J. Allen Hynek followed Rosicrucian burial rituals when he died.
+  entailment:
+    label: entails
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4198a1bc-f16b-4c29-bc83-1b438f86865d
   type: testimony
   attestation: second_hand
@@ -559,6 +590,11 @@ domain_claims:
     In Operation Trojan Horse, he says, I was an avowed atheist. I didn't believe in anything.
   text: |-
     In Operation Trojan Horse, John Keel writes that he was an avowed atheist who didn't believe in anything.
+  entailment:
+    label: contradicts
+    score: 0.86
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: aed8b1ea-5363-49fc-aa2f-3f9a08405b30
   type: observation
   attestation: first_hand
@@ -577,6 +613,11 @@ domain_claims:
     through dealing with the high strangeness of the phenomenon over the course of many, many years, he became highly philosophical and spiritual while also still rejecting a lot of the mainstream religious dogma
   text: |-
     John Keel became highly philosophical and spiritual through dealing with the high strangeness of the UFO phenomenon over many years, while still rejecting mainstream religious dogma.
+  entailment:
+    label: entails
+    score: 0.625
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 07bbfd55-2c1e-4d2a-b4aa-381035780697
   type: observation
   attestation: first_hand
@@ -595,6 +636,11 @@ domain_claims:
     name: collective unconscious
   quote: you have to remember with Jung, he believed in a collective unconscious as well
   text: Carl Jung believed in a collective unconscious.
+  entailment:
+    label: entails
+    score: 0.655
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8a40d312-3356-4bdf-b3d7-713a45efa98d
   type: opinion
   attestation: first_hand
@@ -615,6 +661,11 @@ domain_claims:
     he also, I think, wrote one of the most interesting and to this day important books on the UFO phenomenon
   text: |-
     Carl Jung wrote one of the most interesting and important books on the UFO phenomenon.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a925582-a724-42db-b8ff-ce9d8a0f458d
   type: opinion
   attestation: first_hand
@@ -635,6 +686,11 @@ domain_claims:
     yes, I do totally think it's possible that there are physical beings that are manifesting here or are literally from somewhere else... But what I think is more possible is that it's some kind of strange alchemy between the personal psyche and whatever the true phenomena is.
   text: |-
     Michael Phillip considers it possible that the UFO/UAP phenomenon involves physical beings that are manifesting here or are literally from somewhere else, but considers it more likely to be a strange alchemy between the personal psyche and the true phenomena.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 93ac95b1-9bc2-4b0e-9c7a-c1662f725f69
   type: administrative
   attestation: first_hand
@@ -653,6 +709,11 @@ domain_claims:
     name: Neoplatonism
   quote: Iamblichus, who's this Neoplatonist
   text: Iamblichus was a Neoplatonist.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2102902c-ec35-4f23-b0c3-54c91c0e16aa
   type: opinion
   attestation: second_hand
@@ -675,6 +736,11 @@ domain_claims:
     he's talking about how the truth of these beings is that they're essentially these undefinable ungrokable by the human mind light beings from a higher reality but because of the way we're shaped and the way our mind um constructs reality we see these things as embodied
   text: |-
     In On the Mysteries, Iamblichus argues that the truth of daimones, angels and gods is that they are essentially undefinable, ungraspable light beings from a higher reality, but the human mind portrays them as embodied because of how it constructs reality.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 242e3fb0-da6a-434a-82cd-c8fcb414139f
   type: opinion
   attestation: second_hand
@@ -694,6 +760,11 @@ domain_claims:
   quote: |-
     the snake in, according to Carl Jung, was the sort of psychological archetype of fear, right?
   text: According to Carl Jung, the snake was the psychological archetype of fear.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 94f6259a-0e46-482e-b55e-bdad6eca88e6
   type: opinion
   attestation: first_hand
@@ -712,6 +783,11 @@ domain_claims:
     in the Egyptian mythos or spiritual system, you had both positive and negative serpents, like serpents who were aligned with chaos and destruction, and then serpents that were servants of Ra and creation
   text: |-
     In the ancient Egyptian mythos, there were both positive and negative serpents, including serpents aligned with chaos and destruction, and serpents that were servants of Ra and creation.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3100aa7b-65ab-4fd4-9b67-96eca6cc0f05
   type: opinion
   attestation: first_hand
@@ -732,6 +808,11 @@ domain_claims:
     I think that one of the patron deities of Alexandria in the Greco-Roman tradition was this thing called Agatha Daimon. And if you look him up, he's like a serpent with a crown, and he's this very benevolent patron god or daimon
   text: |-
     Michael Phillip considers Agathodaimon to have been one of the patron deities of Alexandria in the Greco-Roman tradition, depicted as a serpent with a crown and regarded as a benevolent patron god or daimon of the city.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ee6e8641-e081-4996-8f04-9848e5216824
   type: administrative
   attestation: first_hand
@@ -748,6 +829,11 @@ domain_claims:
     name: Herman, Bill
   quote: Bill Herman in the late 70s had a few abduction cases.
   text: Bill Herman had a few abduction cases in the late 1970s.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e72730fd-e509-4e2c-a1fa-62ec71d3ac06
   type: opinion
   attestation: first_hand
@@ -764,6 +850,11 @@ domain_claims:
     name: Herman, Bill
   quote: He was the one who took some of the clearest photos of UFOs ever taken.
   text: Bill Herman took some of the clearest photos of UFOs ever taken.
+  entailment:
+    label: entails
+    score: 0.472
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 12b59c51-0278-4a00-b158-b7b9741cb486
   type: testimony
   attestation: second_hand
@@ -784,6 +875,11 @@ domain_claims:
     he gets taken aboard in these small beings with these sponge-like, this spongy sort of skin, pale skin, large heads... uh, almond colored eyes and sort of rust colored track suits with this emblem
   text: |-
     Bill Herman described being taken aboard by small beings with sponge-like, pale skin, large heads, almond-coloured eyes, and rust-coloured tracksuits bearing an emblem.
+  entailment:
+    label: entails
+    score: 0.547
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e3f3b210-4a58-4807-a957-cae8a07fbbfd
   type: testimony
   attestation: second_hand
@@ -804,6 +900,11 @@ domain_claims:
     those exact beings are described to the T by Travis Walton, who in his encounter did have humanoids as well
   text: |-
     Travis Walton described beings matching Bill Herman's description, and Travis Walton's encounter also involved humanoids.
+  entailment:
+    label: entails
+    score: 0.895
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d09f51bc-8464-4b68-b082-6199610705c2
   type: testimony
   attestation: second_hand
@@ -826,6 +927,11 @@ domain_claims:
     I asked Travis as well, I was like, do you remember seeing an insignia? He's like, no, I, you know, wasn't looking for that. It was busy. trying to get the fuck out of Dodge, you know, being kidnapped and trying to like fend off a bunch of aliens with a clear tube.
   text: |-
     Chris Ramsay asked Travis Walton if he remembered seeing an insignia on the beings, and Travis Walton said he was not looking for that because he was busy trying to escape and fend off the beings with a clear tube.
+  entailment:
+    label: entails
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 17a3df66-be7a-4bb6-b1ce-403b7b969349
   type: hearsay
   attestation: second_hand
@@ -847,6 +953,11 @@ domain_claims:
     it comes up also in the West, on the West Coast, there's another case of this Hispanic gentleman who was taken by these beings who had like slit-like eyes. And they wore like a one-piece gray suit with like some type of ear box with an antenna. And they as well had the winged serpent as a logo.
   text: |-
     On the West Coast of the United States, a Hispanic man was reportedly taken by beings with slit-like eyes who wore one-piece grey suits with an ear box and antenna, and who bore a winged serpent logo, similar to the case involving Bill Herman.
+  entailment:
+    label: entails
+    score: 0.919
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4ea6d557-1b9f-48b9-bb01-9fad26721375
   type: hearsay
   attestation: first_hand
@@ -867,6 +978,11 @@ domain_claims:
     Was it the it might have been Kingman or Rendlesham or both that may have had Greek or like literal Greek
   text: |-
     There may have been apparent Greek writing at the sites of the Kingman and/or Rendlesham UFO incidents.
+  entailment:
+    label: entails
+    score: 0.858
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 233f4703-5eae-4b14-8dff-36baf3c36326
   type: hearsay
   attestation: first_hand
@@ -887,6 +1003,11 @@ domain_claims:
     The stuff at Rendlesham and the stuff, I think, at Kecksburg... Well, it looked like Greek. But Greek symbolism looks like alien writing as well.
   text: |-
     Writing resembling Greek symbolism was reported at the 1980 Rendlesham Forest incident and the 1965 Kecksburg UFO incident.
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cb7eba0a-f808-4906-8f82-9955428cf61d
   type: testimony
   attestation: second_hand
@@ -911,6 +1032,11 @@ domain_claims:
     Because I know Sheehan drew it out for you. He drew it out for me too, where it sort of looked almost like kana or something.
   text: |-
     Sheehan drew a symbol for both Chris Ramsay and Michael Phillip that looked almost like Japanese kana.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f5ff85ad-9392-4dba-a149-b9020b4ea90c
   type: testimony
   attestation: second_hand
@@ -931,6 +1057,11 @@ domain_claims:
     That's how Bob describes it, Bob Lazar... Because there was like circles and lines and Korean features that as well.
   text: |-
     Bob Lazar described the writing as resembling Korean, with circles, lines and Korean-like features.
+  entailment:
+    label: entails
+    score: 0.798
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7ccc591f-0f49-4a69-9366-572830cdd45d
   type: administrative
   attestation: first_hand
@@ -950,6 +1081,11 @@ domain_claims:
   quote: |-
     General McCasland, this general who worked at Wright-Patt, who is apparently tied up with the whole UFO stuff, went missing.
   text: General McCasland worked at Wright-Patterson Air Force Base.
+  entailment:
+    label: entails
+    score: 0.86
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a3308b73-660d-4e71-8894-40da7f1c3a85
   type: observation
   attestation: first_hand
@@ -970,6 +1106,11 @@ domain_claims:
   quote: He's been missing now for probably a month or at least several weeks.
   text: |-
     General McCasland went missing, having been missing for probably a month or at least several weeks at the time of the conversation.
+  entailment:
+    label: entails
+    score: 0.56
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a872d3ad-4efc-4121-813f-2984f0458ab5
   type: observation
   attestation: first_hand
@@ -989,6 +1130,11 @@ domain_claims:
   quote: |-
     And a lot has sort of transpired in terms of conspiracy around his disappearance.
   text: General McCasland's disappearance has generated a lot of conspiracy theorising.
+  entailment:
+    label: entails
+    score: 0.944
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 00dc5671-b43c-4f8b-be37-7666ff688143
   type: testimony
   attestation: second_hand
@@ -1011,6 +1157,11 @@ domain_claims:
     one thing that he said, and one thing that we touched on, I think on your podcast, was him relaying the information that if you wanted to understand the phenomenon, you would need to look into Greek mythology.
   text: |-
     General McCasland said that to understand the UAP phenomenon, one needs to look into Greek mythology.
+  entailment:
+    label: entails
+    score: 0.618
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f75c26db-78e5-4268-b663-3cf9b0f0ec74
   type: testimony
   attestation: third_hand
@@ -1035,6 +1186,11 @@ domain_claims:
   quote: Yeah, well, and he puts specific emphasis on the Prometheus myth structure
   text: |-
     General McCasland placed specific emphasis on the structure of the Prometheus myth as relevant to understanding the UAP phenomenon.
+  entailment:
+    label: entails
+    score: 0.615
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a4d28a32-3257-4876-8135-cba47efb62ff
   type: opinion
   speaker:
@@ -1050,6 +1206,11 @@ domain_claims:
   quote: |-
     which is essentially you have this deity who's who's part of I believe he's actually not an Olympian, but he's a Titan, I believe.
   text: In Greek mythology, Prometheus is a Titan, not an Olympian.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f47da7bd-3a58-439c-93c6-92d72a3cbb20
   type: observation
   speaker:
@@ -1064,6 +1225,11 @@ domain_claims:
     name: Prometheus myth
   quote: And he's actually, he has a brother named Epimetheus.
   text: In Greek mythology, Prometheus has a brother named Epimetheus.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f9bbbe13-e401-4a6b-9106-8e64d02c75ee
   type: observation
   speaker:
@@ -1080,6 +1246,11 @@ domain_claims:
     So Prometheus means something like forethought and Epimetheus means something like afterthought
   text: |-
     The name Prometheus means something like 'forethought' and the name Epimetheus means something like 'afterthought'.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9efd3965-b9f2-46c5-84dd-7996e9f652b4
   type: observation
   speaker:
@@ -1094,6 +1265,11 @@ domain_claims:
     name: Prometheus myth
   quote: So what he does is he takes fire, he brings it to the humans
   text: In the Prometheus myth, Prometheus takes fire and brings it to humans.
+  entailment:
+    label: entails
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c56c4cc7-6f8a-46a2-a332-8ef6e3c4b70d
   type: observation
   speaker:
@@ -1110,6 +1286,11 @@ domain_claims:
     and then he gets punished basically eternally for taking a divine power and bringing it down to humanity without permission.
   text: |-
     In the Prometheus myth, Prometheus is punished eternally for taking a divine power and bringing it to humanity without permission.
+  entailment:
+    label: entails
+    score: 0.711
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4dffdcfe-fd85-4f40-9ce5-49b65fa6ccdd
   type: observation
   speaker:
@@ -1126,6 +1307,11 @@ domain_claims:
     And the punishment is he gets put on this island, I don't remember the name of the island, but then this eagle comes and eats his liver every single day and it regenerates and he's chained up there for eternity
   text: |-
     In the Prometheus myth, Prometheus is chained to an island where an eagle eats his liver every day, which regenerates, as an eternal punishment.
+  entailment:
+    label: entails
+    score: 0.937
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 379d3872-3fee-46cc-88af-d4bc24bf9f03
   type: opinion
   attestation: first_hand
@@ -1144,6 +1330,11 @@ domain_claims:
     Higher power that at some point came here and either gave us something or did something or seeded something. And that had huge repercussions on what we are.
   text: |-
     Michael Phillip believes the Prometheus myth reflects that some entity or higher power came to Earth at some point and either gave humanity something, did something, or seeded something, with huge repercussions on what humans are.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ffdd7e52-17af-47af-9396-2f2ad0f78aa1
   type: opinion
   attestation: first_hand
@@ -1164,6 +1355,11 @@ domain_claims:
     And then that ties in again to like, without getting too far off topic, but like the Elohim and like the Nephilim and all the derivatives of that sort of ancient biblical lore as well.
   text: |-
     The Elohim, the Nephilim, and related derivatives of ancient biblical lore tie into the same narrative pattern as the Prometheus myth.
+  entailment:
+    label: entails
+    score: 0.426
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: add8f78f-9f88-4a5b-8261-e0ae6fb0c517
   type: opinion
   attestation: first_hand
@@ -1184,6 +1380,11 @@ domain_claims:
     Well, yeah, well, I do kind of want to bring up the first book of Enoch now where that is a great example of this.
   text: |-
     The Book of Enoch is a good example of the same mythological pattern as the Prometheus myth, of higher beings giving something to humanity.
+  entailment:
+    label: entails
+    score: 0.664
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d0fbdbe-0720-4f31-9398-75ddca01dbd1
   type: testimony
   attestation: second_hand
@@ -1204,6 +1405,11 @@ domain_claims:
     And I think Tom publicly said that and didn't name names, but then the names came out of that it was McCasland.
   text: |-
     Tom DeLonge publicly referenced these conversations without naming names, but the names later came out, revealing General McCasland as a participant.
+  entailment:
+    label: entails
+    score: 0.875
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5d1bb925-e00a-464d-a473-30ff823380e2
   type: opinion
   attestation: first_hand
@@ -1222,6 +1428,11 @@ domain_claims:
     And then for me, that skyrockets my conviction because it shows he really was having conversations at a very high level.
   text: |-
     Michael Phillip's conviction in the story grew because it demonstrated Tom DeLonge really was having conversations with high-level military people, as DeLonge had claimed.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 925507af-ef63-4503-bec2-c674cb87bdb3
   type: administrative
   attestation: first_hand
@@ -1240,6 +1451,11 @@ domain_claims:
     name: Neoplatonism
   quote: Like Semivan talks about Neoplatonism.
   text: Jim Semivan discusses Neoplatonism.
+  entailment:
+    label: entails
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 394e2eda-5266-494f-bd5c-d2952e2ce856
   type: administrative
   attestation: first_hand
@@ -1256,6 +1472,11 @@ domain_claims:
     name: Nell, Karl
   quote: Colonel Nell talks about all of this esoteric and spiritual stuff.
   text: Karl Nell discusses esoteric and spiritual subjects.
+  entailment:
+    label: entails
+    score: 0.879
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d04e7b40-de54-4208-81c9-ceda78f46d69
   type: opinion
   attestation: first_hand
@@ -1274,6 +1495,11 @@ domain_claims:
     There does seem to be an interest, just like we were saying before, among not just people like Hynek who are going down these rabbit holes and they become very esoteric and spiritual, but people from within the military industrial complex who presumably have knowledge that we don't have end up going this direction.
   text: |-
     Michael Phillip observes that there is an interest in mythological and esoteric/spiritual topics not only among researchers like J. Allen Hynek but also among people within the military industrial complex who presumably have knowledge others don't have.
+  entailment:
+    label: entails
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0dcb7ccb-c230-441c-85ad-47be28d55431
   type: opinion
   attestation: first_hand
@@ -1289,6 +1515,11 @@ domain_claims:
     For me, it takes it out of that sort of religious connotation, that sort of cult-like mind state and brings it into more of like a philosophical when you talk about the Greeks rather than what happened in the Bible.
   text: |-
     Chris Ramsay considers Greek mythology to appeal to him more than biblical angels-and-demons framing because it takes the subject out of religious connotation and cult-like mind states and into a more philosophical space.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4dbf717c-1445-4ca8-9810-a74bb1ab37cb
   type: opinion
   attestation: first_hand
@@ -1304,6 +1535,11 @@ domain_claims:
     And plus we know that that kind of binary narrative can lead to all kinds of manipulation and othering.
   text: |-
     Chris Ramsay considers binary religious narratives capable of leading to manipulation and othering.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 381180d4-c8d2-41a2-8547-45befd7b0268
   type: opinion
   attestation: first_hand
@@ -1322,6 +1558,11 @@ domain_claims:
     and on this topic i think one of the most sophisticated commenters in the space on it is Lavenda for sure
   text: |-
     Peter Levenda is one of the most sophisticated commentators on the topic of ancient mythology and the phenomenon.
+  entailment:
+    label: entails
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f74430b4-9398-41d9-b849-6032093ee959
   type: opinion
   attestation: second_hand
@@ -1342,6 +1583,11 @@ domain_claims:
     broadly, what he's trying to draw attention to is say, hey, when we look at these ancient stories that we say are mythological and can't be true... We got to not be that dismissive and we really need to ask questions about what kinds of experiences were these predicated off of?
   text: |-
     Peter Levenda argues that ancient stories dismissed as mythological should not be treated dismissively, and that questions should be asked about what kinds of experiences these stories were predicated on.
+  entailment:
+    label: entails
+    score: 0.895
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7cd26ce0-86eb-4a1c-a6d9-52d52cbe3239
   type: opinion
   attestation: second_hand
@@ -1362,6 +1608,11 @@ domain_claims:
     And what I love is he does not have a clean answer. When you talk to him, he's very epistemically humble. He'll bring up everything from, you know, esoteric magick with a K and cosmic ascent... he's like i don't know like i really don't know but i know it's not simple
   text: |-
     Peter Levenda does not offer a clean answer on the nature of the phenomenon and is very epistemically humble, drawing on esoteric magick, cosmic ascent, and ancient alien hypotheses, while concluding it is not simple and cannot be reduced to mythology or to nuts and bolts.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5663e2b7-6a3c-419d-9f90-72f84ff00d55
   type: opinion
   attestation: second_hand
@@ -1382,6 +1633,11 @@ domain_claims:
     he doesn't even think disclosure on the part of the kinds of people we're talking about is possible because it is so complex and multifaceted can't be reduced to nuts and bolts can't be reduced to mythology
   text: |-
     Peter Levenda does not think disclosure by the entities involved with the phenomenon is possible, because it is too complex and multifaceted to be reduced to nuts and bolts or mythology.
+  entailment:
+    label: entails
+    score: 0.937
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: be213b36-eff3-4cab-b43f-b71c5224def8
   type: opinion
   attestation: first_hand
@@ -1397,6 +1653,11 @@ domain_claims:
     Now let's just, for sake of easy argument, say that there's a literal alien race that's 10 times more advanced than us... It would be completely different understanding of reality, probably 10 times deeper understanding of physics than what we have.
   text: |-
     Michael Phillip believes that if there were a literal alien race ten times more advanced than humanity, its understanding of reality and physics would be so different from ours that it would be incomprehensible, not simply like magic.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0f975473-d595-49dc-9474-62fb4bb61d48
   type: opinion
   attestation: first_hand
@@ -1415,6 +1676,11 @@ domain_claims:
     we can look back at our own way of understanding and look at what our you know you had newton right and uh after newton we went to relativity and then after relativity we went to quantum
   text: |-
     Michael Phillip suggests that physics has progressed historically from Isaac Newton's framework, to relativity, to quantum physics.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d7d11e7e-8869-4c35-aaad-8d88e5bc1000
   type: opinion
   attestation: first_hand
@@ -1432,6 +1698,11 @@ domain_claims:
   quote: I think we're talking about something that's probably not even physical.
   text: |-
     Michael Phillip thinks the phenomenon being discussed is probably not even physical.
+  entailment:
+    label: entails
+    score: 0.842
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f8f3c975-db2e-46d0-9a67-c1942199b6f6
   type: opinion
   attestation: first_hand
@@ -1448,6 +1719,11 @@ domain_claims:
     I think about the end of the 30 year war in 1648, this was like when the Roman Catholics were at war for basically, it was the separation of church and state. It was taking religion out of politics and that created these sovereign sort of states in Europe
   text: |-
     The Thirty Years' War, involving the Roman Catholics, ended in 1648 and led to the separation of church and state, creating sovereign states in Europe.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 926d610f-04fa-4369-98aa-89359c63346f
   type: opinion
   attestation: first_hand
@@ -1463,6 +1739,11 @@ domain_claims:
     Without the possibility of being sort of reprimanded for thinking that way, which began sort of the invisible college and had everybody sort of, you know, uh, once we separated church and state, they started separating science and church as well.
   text: |-
     After the separation of church and state, an 'invisible college' began, where ideas could be freely exchanged without fear of reprimand, leading to a separation of science and church as well.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ba6af39c-6632-4aa8-a122-7485648196ae
   type: opinion
   attestation: first_hand
@@ -1481,6 +1762,11 @@ domain_claims:
     we're at a standstill with physics, with a lot of things. And it seems like, like the snake eating its own tail, like we've had to come back to at least acknowledging that consciousness could be a fundamental part of the universe.
   text: |-
     Chris Ramsay considers that humanity is now at a standstill with physics and has had to come back to acknowledging that consciousness could be a fundamental part of the universe.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9a8b2a95-8c6f-4609-8bda-aaff78a84117
   type: opinion
   attestation: first_hand
@@ -1499,6 +1785,11 @@ domain_claims:
     And there has been an explosion in idealist philosophy. So again, the idea that consciousness is somehow fundamental.
   text: |-
     There has been an explosion in idealist philosophy, the idea that consciousness is somehow fundamental.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: be823827-8546-4f5e-82bd-9915d8fcc620
   type: opinion
   attestation: first_hand
@@ -1523,6 +1814,11 @@ domain_claims:
     So the biggest probably names you're gonna find in this kind of milieu are Dr. Donald Hoffman, Dr. Bernardo Kastrup, and like Federico Fagin.
   text: |-
     The biggest names in the idealist philosophy milieu are Donald Hoffman, Bernardo Kastrup, and Federico Faggin.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c85c833e-f3c0-460c-94be-c2fc68bfbbd6
   type: opinion
   attestation: first_hand
@@ -1545,6 +1841,11 @@ domain_claims:
     they're all largely on the same page in terms of the bigger picture. It's that this reality that we perceive with our physical senses is either not reality at all up to an almost simulation level.
   text: |-
     Donald Hoffman, Bernardo Kastrup, and Federico Faggin each have their own perspectives but broadly agree that perceived physical reality is either not real at all, up to a simulation-like level.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c97d4ea1-7275-47ed-815d-bb0779e4e055
   type: opinion
   attestation: second_hand
@@ -1563,6 +1864,11 @@ domain_claims:
     name: Hoffman, Donald
   quote: Like Don actually goes beyond simulation, which I love about him.
   text: Donald Hoffman's view of reality goes beyond a simulation model.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: efec992f-0327-4dd9-bc91-0a2421453773
   type: opinion
   attestation: second_hand
@@ -1583,6 +1889,11 @@ domain_claims:
     it is a very poor representation of whatever the higher reality is like it's a very tiny pixel of what the truth is and we have to be in this kind of a state for uh evolutionary fitness purposes right... We need to perceive what we need to perceive to survive, to reproduce, to do the things human beings need to do.
   text: |-
     Donald Hoffman argues that humans do not need to perceive true reality, only what is needed for survival and reproduction, for evolutionary fitness purposes.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1bf90685-2c2a-4cc7-8288-2d28ccd9601a
   type: opinion
   attestation: second_hand
@@ -1603,6 +1914,11 @@ domain_claims:
     He argues that based on his work that he did in cognitive science over the course of his whole career, that he actually proved through evolutionary game theory that if you create a population that perceives even 1% of the true reality, they die. They all die off. But if you tune them just for fitness pay off... they'll thrive and they'll grow
   text: |-
     Donald Hoffman used evolutionary game theory in his cognitive science career to argue that a population perceiving even 1% of true reality would die off, while a population tuned purely for fitness payoff would thrive.
+  entailment:
+    label: entails
+    score: 0.971
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b07902e9-2fa2-4fba-ab68-3987be665281
   type: opinion
   attestation: second_hand
@@ -1625,6 +1941,11 @@ domain_claims:
     So he truly believes that we perceive 0% of reality and that whatever is outside of Plato's cave or outside of the simulation is the true reality. And that is a realm comprised of consciousness.
   text: |-
     Donald Hoffman believes that humans perceive 0% of reality and that true reality lies outside Plato's cave, or outside the simulation, comprised of consciousness.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e6a5711e-5a81-4f68-8e3b-c18166dd35b2
   type: opinion
   attestation: second_hand
@@ -1647,6 +1968,11 @@ domain_claims:
     And he has this whole crazy theory of what he calls conscious agents that exist behind the veil of this physical world, basically.
   text: |-
     Donald Hoffman has a theory of 'conscious agents' that exist behind the veil of the physical world.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 641523d2-a709-436d-84b6-3e304bcb9376
   type: opinion
   attestation: second_hand
@@ -1669,6 +1995,11 @@ domain_claims:
     I'm talking about something mathematically specific and I can represent a conscious agent using what's called a Markov chain and basically like this mathematical concept. that allows you to have this entity that can make certain levels of decisions and have agency
   text: |-
     Donald Hoffman represents a conscious agent mathematically using a Markov chain, a mathematical concept allowing an entity to make decisions and have agency.
+  entailment:
+    label: entails
+    score: 0.412
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ac5356e7-814f-45e2-947f-38ec347385ef
   type: opinion
   attestation: second_hand
@@ -1689,6 +2020,11 @@ domain_claims:
     He's not a physicist, but he works with physicists and mathematicians where he's trying to merge cutting edge physics with what we're talking about.
   text: |-
     Donald Hoffman is not a physicist but works with physicists and mathematicians in trying to merge cutting-edge physics with consciousness theory.
+  entailment:
+    label: entails
+    score: 0.874
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 15892e46-8d60-4967-b906-b7fc93a01986
   type: opinion
   attestation: second_hand
@@ -1711,6 +2047,11 @@ domain_claims:
     And he thinks his theory is gonna fail, but he thinks in the failing, we're gonna be failing forward and we're going to make huge leaps in discovery and technology because he thinks we really can basically unveil this realm of conscious agents.
   text: |-
     Donald Hoffman believes his conscious agents theory is likely to fail, but that in failing, it will lead to huge leaps in discovery and technology as humanity works toward unveiling the realm of conscious agents.
+  entailment:
+    label: entails
+    score: 0.549
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d326cc7b-eab1-45ad-a552-b1fcedb899e8
   type: opinion
   attestation: second_hand
@@ -1731,6 +2072,11 @@ domain_claims:
     if this is a simulacra or a simulation or the terminology Don likes to use as a headset, that this is like a headset, basically an evolutionarily convenient headset.
   text: |-
     Donald Hoffman uses the term 'headset' to describe the evolutionarily convenient interface through which humans perceive an underlying simulation or simulacra.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f1c3b64d-8c20-4d3e-9a86-cb63a399974b
   type: opinion
   attestation: first_hand
@@ -1751,6 +2097,11 @@ domain_claims:
     Isaac Newton and Leibniz both basically in parallel solved calculus at the same time, like came up with it and solved calculus.
   text: |-
     Isaac Newton and Gottfried Leibniz both independently developed calculus at approximately the same time.
+  entailment:
+    label: contradicts
+    score: 0.89
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 54492371-9ebe-456f-b539-dc43eeee39af
   type: opinion
   attestation: first_hand
@@ -1771,6 +2122,11 @@ domain_claims:
     And Newton always gets the credit for it, but Leibniz also did it at the same time, apparently.
   text: |-
     Isaac Newton is generally credited with inventing calculus, but Gottfried Leibniz reportedly also developed it independently at the same time.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 656a3e1f-fbf3-4a8b-ae93-98973794e403
   type: hearsay
   attestation: second_hand
@@ -1789,6 +2145,11 @@ domain_claims:
     nikola tesla i have no doubt that that guy had to have been tapped into higher consciousness or NHI or whatever you want to call it because he literally talks about hearing voices or communicating with voices from the time he was very young
   text: |-
     Nikola Tesla reportedly talked about hearing voices or communicating with voices from a very young age.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 29056ba1-e276-44b0-beee-5d7d7ae2907e
   type: opinion
   attestation: first_hand
@@ -1807,6 +2168,11 @@ domain_claims:
     i have no doubt that that guy had to have been tapped into higher consciousness or NHI or whatever you want to call it
   text: |-
     Michael Phillip considers it likely that Nikola Tesla was tapped into higher consciousness or non-human intelligence (NHI).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 49918351-1b72-4708-8428-fde238d3ea39
   type: hearsay
   attestation: second_hand
@@ -1827,6 +2193,11 @@ domain_claims:
     dude he had these luminous manifestation-like experiences that sound like something that a Platonic or Gnostic mystic would talk about, where he would find himself in these realms of fire, what felt like sentient fire with tongues of fire all around him and what he felt like was higher intelligence all around him.
   text: |-
     According to the book New Science of Heaven, Nikola Tesla had luminous manifestation-like experiences in which he found himself in realms of what felt like sentient fire, with tongues of fire around him and a sense of higher intelligence present.
+  entailment:
+    label: entails
+    score: 0.738
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 76f8158d-1d37-4274-aa1b-b4cc3a58bd45
   type: opinion
   attestation: first_hand
@@ -1847,6 +2218,11 @@ domain_claims:
     luminous manifestation-like experiences that sound like something that a Platonic or Gnostic mystic would talk about
   text: |-
     Michael Phillip considers Nikola Tesla's fire-related luminous experiences comparable to experiences described by Platonic or Gnostic mystics.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b6659462-5a6f-4f0f-9d88-6b2efa8d6240
   type: hearsay
   attestation: first_hand
@@ -1863,6 +2239,11 @@ domain_claims:
     name: Tesla, Nikola
   quote: he also caused an earthquake in New York once, I believe.
   text: Nikola Tesla reportedly caused an earthquake in New York on one occasion.
+  entailment:
+    label: entails
+    score: 0.8
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2b65f1af-3f8a-4a81-bb06-8176980cfd7e
   type: hearsay
   speaker:
@@ -1879,6 +2260,11 @@ domain_claims:
     didn't he also say that he would create a force field dome, uh, that he could do that as well, um, for the governments?
   text: |-
     Nikola Tesla reportedly claimed he could create a force field dome for governments.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 661f4ce9-e3f4-450a-b4a8-02b48dd28d71
   type: opinion
   attestation: first_hand
@@ -1896,6 +2282,11 @@ domain_claims:
   quote: |-
     the guy invented so many things. Like we don't realize how many things are patented by Tesla as well. There's like a, he's got a whole list of patents that he invented.
   text: Nikola Tesla holds a large number of patents for his inventions.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4f290a9d-31fa-418a-975c-c0ba33a518da
   type: hearsay
   speaker:
@@ -1912,6 +2303,11 @@ domain_claims:
     he said, Hey, I'm gonna have free energy for the world, which was a huge threat for people back then for, you know, the people in power.
   text: |-
     Nikola Tesla stated he would provide free energy for the world, which was perceived as a threat by people in power at the time.
+  entailment:
+    label: entails
+    score: 0.776
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8a203d9a-fb8e-4a6c-bd76-a7b176bbe0ef
   type: opinion
   attestation: first_hand
@@ -1930,6 +2326,11 @@ domain_claims:
     He's the most enigmatic character of our time. More so than anyone else, I think.
   text: |-
     Chris Ramsay considers Nikola Tesla the most enigmatic figure of modern times, more so than anyone else.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3c075a3d-557d-4046-91a1-71f4144ba1f6
   type: opinion
   attestation: first_hand
@@ -1950,6 +2351,11 @@ domain_claims:
     We today reference Einstein so readily, but dismiss Nikola Tesla when he in fact... is the progenitor of so many breakthrough, um, ways of thinking about energy and, and high voltage especially.
   text: |-
     Chris Ramsay considers Nikola Tesla the progenitor of many breakthrough ways of thinking about energy and high voltage, despite being dismissed while Albert Einstein is more readily referenced today.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 61ee8aad-2abe-414c-85cd-e514bdc11ac7
   type: hearsay
   speaker:
@@ -1963,6 +2369,11 @@ domain_claims:
     if you just take like the stealth bomber, for example, you know, there were rumors, the stealth bomber 30 years prior to it coming out.
   text: |-
     There were rumours of the stealth bomber circulating approximately 30 years before it was publicly revealed.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f1596aaa-7fa7-4780-8d05-5834982b0489
   type: opinion
   attestation: first_hand
@@ -1981,6 +2392,11 @@ domain_claims:
     I really try not to gravitate toward malevolent versions of the conversation when it comes to the phenomenon because it's so disempowering. And it's you know, if you truly take this some version of the Gnostic, evil demiurgic alien... you've really robbed yourself of basically any agency
   text: |-
     Michael Phillip tries not to gravitate toward malevolent interpretations of the phenomenon, such as a Gnostic evil demiurgic alien framing, because he considers such interpretations disempowering.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7bfe3d16-a038-4acf-b40e-02e9a358b0f2
   type: administrative
   attestation: first_hand
@@ -1999,6 +2415,11 @@ domain_claims:
     name: Baker, Ike
   quote: And my friend, Ike Baker, he's a brilliant esotericist author guy.
   text: Michael Phillip's friend Ike Baker is an esotericist author.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 473e0aed-1ace-4501-adec-8536a3563b39
   type: observation
   attestation: second_hand
@@ -2025,6 +2446,11 @@ domain_claims:
     in probably the most difficult platonic dialogue which is different than all the rest of them it's called Timaeus um this guy named Timaeus who's supposed to be a Pythagorean sage comes and gives a lecture to socrates and all the students and he gives the whole story of you know God's try to bless me, I'm gonna try to tell you how we believe reality was constructed.
   text: |-
     In the Platonic dialogue Timaeus, a character named Timaeus, described as a Pythagorean sage, gives a lecture to Socrates and the students recounting how reality was constructed.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7c94763f-be79-4a83-9a4e-d24bf9ec979e
   type: opinion
   attestation: second_hand
@@ -2045,6 +2471,11 @@ domain_claims:
     the demiurge is using these divine transcendent nonphysical principles to create a work of art, more or less, using those principles.
   text: |-
     In the Timaeus, the demiurge uses divine, transcendent, nonphysical principles to create reality, functioning like a work of art.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd3eb9c5-287e-4af2-81cb-8aec124a92e8
   type: opinion
   attestation: first_hand
@@ -2064,6 +2495,11 @@ domain_claims:
   quote: So like Abaris the Hyperborean is one.
   text: |-
     Abaris the Hyperborean was one of the ancient Greek 'supermen sages' said to have come from Hyperborea, in the far north.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fac1e649-a566-4539-bc3e-927f0329a449
   type: opinion
   attestation: first_hand
@@ -2082,6 +2518,11 @@ domain_claims:
     name: Hyperborea
   quote: But Pythagoras is also said to be in this lineage.
   text: Pythagoras is said to belong to the lineage of sages descended from Hyperborea.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9fb83ef4-e196-46ed-8371-2c14fa4d7b2d
   type: opinion
   attestation: first_hand
@@ -2104,6 +2545,11 @@ domain_claims:
     And like Plato is right downstream of this lineage because he's also said to be a Pythagorean initiate as well.
   text: |-
     Plato is considered downstream of the Hyperborean lineage because he is said to have been a Pythagorean initiate.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b4b3ca48-fa8f-4f8c-845c-f1fbdb2b0983
   type: opinion
   attestation: first_hand
@@ -2122,6 +2568,11 @@ domain_claims:
     name: Hyperborean lore
   quote: you know who else was obsessed with the Hyperboreans was the ancient Greeks.
   text: The ancient Greeks were fascinated by the Hyperboreans.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cba7186e-63b3-4854-971e-034bef8d3411
   type: opinion
   attestation: first_hand
@@ -2142,6 +2593,11 @@ domain_claims:
     Like they could be said to, you know, transform into ravens. They could bilocate. They could basically do what sounds exactly like remote viewing.
   text: |-
     According to ancient Greek tales, the supermen sages from Hyperborea could transform into ravens, bilocate, and perform feats resembling remote viewing.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0b55430c-9f2a-4338-912c-4f18902aa868
   type: opinion
   attestation: first_hand
@@ -2162,6 +2618,11 @@ domain_claims:
     This is one of my favorite explanations for the phenomenon that there could be some breakaway civilization group here. who are basically indistinguishable from these really advanced esoteric initiates.
   text: |-
     Michael Phillip considers the idea that an advanced polar or far-northern race exists to be one of his favourite explanations for the UAP phenomenon, potentially a breakaway civilisation of esoteric initiates.
+  entailment:
+    label: neutral
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 02f56831-ab41-4504-8355-55bf78ae5feb
   type: opinion
   attestation: first_hand
@@ -2177,6 +2638,11 @@ domain_claims:
     And they might have a whole different branch of technology that looks more like what you saw in ancient Egyptian temple craft and, you know, like megalithic, where we look at those civilizations and we're like, they had some crazy technology.
   text: |-
     Michael Phillip suggests that a breakaway civilisation could possess technology resembling that seen in ancient Egyptian temple craft and megalithic construction.
+  entailment:
+    label: entails
+    score: 0.732
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0de6d254-6993-4bd1-a4d9-4f64266b7f40
   type: opinion
   attestation: first_hand
@@ -2195,6 +2661,11 @@ domain_claims:
     maybe they've uh you know infiltrated Valiant Thor style and they're sorted they look just like us and they're just hanging out
   text: |-
     Michael Phillip suggests that members of a possible advanced breakaway group could have infiltrated human society in disguise, in a manner resembling Valiant Thor.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f89484e1-2358-4cd5-9edd-9d2812e32290
   type: opinion
   attestation: first_hand
@@ -2210,6 +2681,11 @@ domain_claims:
     my suspicion is that there might be some sort of bridge group. And whether this is like a, from like deep within the military industrial complex, or it is like a almost theos, theosophical, you know, invisible college of esotericists who are in touch with them or whatever
   text: |-
     Michael Phillip suspects there might be a 'bridge group' connecting to non-human intelligences, possibly originating from within the military industrial complex or a theosophical invisible college of esotericists in contact with higher forces.
+  entailment:
+    label: entails
+    score: 0.886
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e5a03145-da07-4050-bcee-80c7d6807768
   type: opinion
   attestation: first_hand
@@ -2225,6 +2701,11 @@ domain_claims:
     I also really want it to be true that there are like these high esoteric adepts that are in touch with the higher forces and working on behalf of the good. It's my favorite pro-noiac conspiracy.
   text: |-
     Michael Phillip's favourite pronoiac conspiracy theory is that there exist high esoteric adepts in touch with higher forces who work on behalf of the good.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dc51bed5-5178-43e5-b635-4dea7cefd2c2
   type: testimony
   attestation: second_hand
@@ -2247,6 +2728,11 @@ domain_claims:
     a lady, she was in a store and she sees two people, man and woman. They're gorgeous by all physical standards. And they're wearing what she describes as strange clothes that's made of material that she couldn't readily identify... And then she hears in her mind, the female go, she can see us. And then the man go, don't be silly.
   text: |-
     Chris Ramsay has received a story from a woman about seeing two gorgeous people, a man and a woman, in a store wearing strange clothes made of an unidentifiable material; she heard the woman say telepathically 'she can see us' and the man reply 'don't be silly.'
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a238a71-ac28-45ec-b579-c6a0bb513798
   type: hearsay
   attestation: second_hand
@@ -2270,6 +2756,11 @@ domain_claims:
     he's in the hardware store and he's picking up a eight foot copper rod for some grounding issues... And all of a sudden he's in North Carolina, it's middle of summer. So it's like blaring 95 degrees, humid heat. And these two six foot nine gorgeous women with long red hair who are dressed identically, who look identical... they're walking in lockstep with these giant strides towards him.
   text: |-
     An anonymous man told Chris Ramsay that while picking up a copper rod for a grounding project at a hardware store in North Carolina during a hot summer day of approximately 35 degrees Celsius, he saw two identically dressed women approximately 2 metres tall with long red hair, dressed identically, walking in lockstep towards him with giant strides.
+  entailment:
+    label: entails
+    score: 0.496
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2e10a9ec-e9bf-4a1f-beb3-5302c02b4238
   type: hearsay
   attestation: second_hand
@@ -2291,6 +2782,11 @@ domain_claims:
     your first thought, and this is what he said, he's like, you're looking for the cameras. You're like, where are the cameras?... And the second thing that goes through his mind is, why isn't anyone else looking at these two?
   text: |-
     According to the man's account relayed by Chris Ramsay, upon seeing the two tall women he wondered whether hidden cameras were filming a prank show, and then wondered why no one else in the store seemed to notice them.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d85a402-673c-4cfd-8345-a6d25b98ae44
   type: hearsay
   attestation: second_hand
@@ -2312,6 +2808,11 @@ domain_claims:
     her and the other one just kind of blankly staring forward. They have nothing in their hands and they're waiting at the checkout.
   text: |-
     A witness experienced an anomalous encounter at a checkout in a store involving two entities who stood staring blankly forward while waiting to check out.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3f986b58-c1ad-4b13-b7b9-36236a2e22ec
   type: hearsay
   attestation: second_hand
@@ -2333,6 +2834,11 @@ domain_claims:
     The transaction lasts three seconds. One, two, three. And then they start walking out the door. No bags, no receipt, no credit card was used, no money, nothing.
   text: |-
     During the anomalous checkout encounter, the transaction lasted three seconds and the two entities left with no bags, no receipt, and no money or credit card used.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 60e80e38-510d-4d03-a86c-1998a918db31
   type: hearsay
   attestation: second_hand
@@ -2354,6 +2860,11 @@ domain_claims:
     And in his words, she was fucking pissed and looks at him and starts lunging towards him, clears about half the 30 feet in three strides. And at which point he's frozen in terror. He doesn't know what's happening. And he hears in his head, this screaming female voice goes, stop.
   text: |-
     In an account relayed by Chris Ramsay, after the witness said the transaction was weird, one of the two entities, about 30 feet away, turned, looked furious, and lunged toward him, covering half the distance in three strides before the witness heard a screaming female voice in his head telling him to stop.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1bfe867a-d8ba-48d7-bed4-e363ebf2f714
   type: hearsay
   attestation: second_hand
@@ -2375,6 +2886,11 @@ domain_claims:
     And she stops. What he perceived is that was the other one. And she turns around, walks up to the other one and in lockstep, they walk out of the store.
   text: |-
     In the account relayed by Chris Ramsay, after being told to stop, one entity turned around, walked up to the other entity, and the two walked out of the store in lockstep.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a126f227-de5c-443c-93f5-accd0d933537
   type: hearsay
   attestation: second_hand
@@ -2396,6 +2912,11 @@ domain_claims:
     He goes, I shoplifted that day. I've never stolen anything in my life. And no one stopped me.
   text: |-
     In the account relayed by Chris Ramsay, the witness said he shoplifted a flashlight that day despite never having stolen anything before, and no one stopped him.
+  entailment:
+    label: entails
+    score: 0.692
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6dbe247f-f90f-49fa-8ae2-34b29a598f97
   type: hearsay
   attestation: second_hand
@@ -2416,6 +2937,11 @@ domain_claims:
   quote: Now, since then I've thought, did it have something to do with the copper rod?
   text: |-
     In the account relayed by Chris Ramsay, the witness later wondered whether the incident had something to do with a copper rod.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 39ab5c8d-6ecd-4e84-a8c5-27903f935bf1
   type: hearsay
   attestation: second_hand
@@ -2436,6 +2962,11 @@ domain_claims:
     And these three guys who look like Greek sages walked into his, I don't remember where it was, if it was his house or where they were. But these guys who were dressed in beautiful flowing Greek robes sat down in front of him and had a conversation with him.
   text: |-
     According to a story attributed to Fazio Cardano, three men dressed in flowing Greek robes, resembling Greek sages, visited him and had a conversation with him during the Renaissance era.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 18425c00-cf5e-4630-a447-3247d2e178df
   type: hearsay
   attestation: second_hand
@@ -2456,6 +2987,11 @@ domain_claims:
     Yeah, they were, I think they said that they were adepts of a certain school and they all had their own schools.
   text: |-
     In the story about Fazio Cardano's encounter, the three visitors said they were adepts of a certain school and that they each had their own schools.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7cc50d4c-d0b8-41d6-afc2-50c387a1d8a5
   type: hearsay
   attestation: second_hand
@@ -2476,6 +3012,11 @@ domain_claims:
     They were asking him about it, about their, his belief in God. And they were all very interested in that. ... and then when they were asked about god they're like we can't talk about that or something
   text: |-
     In the story about Fazio Cardano's encounter, the visitors asked him about his belief in God and were very interested in the topic, but when asked directly about God, they said they could not discuss it.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 22c8c4da-e26f-4319-b446-680d9543f3b1
   type: administrative
   speaker:
@@ -2491,6 +3032,11 @@ domain_claims:
   quote: |-
     15th century Italian physician and lawyer, Fazio Cardano, was a friend of Leonardo da Vinci and a noted occultist.
   text: Fazio Cardano was a 15th-century Italian physician and lawyer.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5bb0f769-154b-42bc-946a-b6acbb971fb4
   type: administrative
   speaker:
@@ -2508,6 +3054,11 @@ domain_claims:
   quote: |-
     15th century Italian physician and lawyer, Fazio Cardano, was a friend of Leonardo da Vinci and a noted occultist.
   text: Fazio Cardano was a friend of Leonardo da Vinci.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b40fd153-44db-4bb0-bddf-1031269437ab
   type: administrative
   speaker:
@@ -2523,6 +3074,11 @@ domain_claims:
   quote: |-
     15th century Italian physician and lawyer, Fazio Cardano, was a friend of Leonardo da Vinci and a noted occultist.
   text: Fazio Cardano was a noted occultist.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1444f064-74d8-4d6c-add4-82c58e4099b0
   type: hearsay
   speaker:
@@ -2539,6 +3095,11 @@ domain_claims:
     Rumors spread that he was in communication with a demon. A story Cardano spread himself.
   text: |-
     Rumours spread that Fazio Cardano was in communication with a demon, a story that Cardano spread himself.
+  entailment:
+    label: entails
+    score: 0.9
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2b649a19-7015-4c41-849a-4fcf18e39182
   type: opinion
   attestation: first_hand
@@ -2559,6 +3120,11 @@ domain_claims:
     because I think it's supposed to be like his daimon. I think it's supposed to be like he was in touch with his daimon.
   text: |-
     Michael Phillip believes the story of Fazio Cardano being in communication with a demon was actually a story about him being in touch with his personal daimon rather than a demon.
+  entailment:
+    label: entails
+    score: 0.847
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 19043fb1-dab1-4854-912b-fc623557b921
   type: opinion
   attestation: first_hand
@@ -2579,6 +3145,11 @@ domain_claims:
     there is an Egyptian version of this idea as well. It's either sometimes called the divine double, like there's a book called the divine double or our divine double, which is written about this topic.
   text: |-
     The concept of the daimon, a personal spirit counterpart to every human soul, existed across the ancient Mediterranean world and also had an Egyptian version, sometimes described in the book The Divine Double.
+  entailment:
+    label: entails
+    score: 0.539
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e71bb044-a4dd-47ab-94b4-95b892602521
   type: opinion
   attestation: first_hand
@@ -2597,6 +3168,11 @@ domain_claims:
     the basic idea is that every human soul has a counterpart sort of spirit called the personal called the daimon basically and it's not demon in the common you know understanding now it's daimon meaning like a spiritual being essentially
   text: |-
     The daimon is not a demon in the common understanding of the word, but rather refers to a spiritual being that is a personal counterpart to the human soul.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: eab9a81d-7c5e-441e-8724-d513d4e37c67
   type: opinion
   attestation: second_hand
@@ -2615,6 +3191,11 @@ domain_claims:
     Ur is this warrior who is about to be burned on the funeral pyre because he just appears to be a dead body. And then he wakes up fully alive, has full memories of the afterlife and how you basically reincarnate and you go through all these various steps.
   text: |-
     In the Myth of Er, Er is a warrior who is about to be burned on a funeral pyre because he appears dead, then wakes up fully alive with full memories of the afterlife and the process of reincarnation.
+  entailment:
+    label: contradicts
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a85ebcc6-bb22-49f9-8ac8-b869ce5fcfd4
   type: opinion
   attestation: second_hand
@@ -2633,6 +3214,11 @@ domain_claims:
     you go in front of the three fates. And the three fates are these women who are always portrayed as knitting. And they're essentially knitting together the tapestry of fate. And what they do is they don't let you pick whatever you want for your next life. They present you with a list of lots.
   text: |-
     In the Myth of Er, souls about to incarnate stand before the three fates, women portrayed as knitting together the tapestry of fate, who present a list of lots from which the soul chooses its next life rather than letting the soul choose freely.
+  entailment:
+    label: entails
+    score: 0.854
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 38ca2f53-6311-4f6e-9eda-87072d8082c5
   type: opinion
   attestation: second_hand
@@ -2653,6 +3239,11 @@ domain_claims:
     You choose that and it locks you into this fate, basically. And then as you're reincarnating, you completely get your memory wiped as you're coming back down to Earth. proceeding through the celestial spheres you go through these various bands uh one of them is called leafy leafy wipes your mind so you don't remember whatever you chose and this is by design but you have the daimon with you who does know what you chose
   text: |-
     In the Myth of Er, the soul's chosen lot locks it into its fate, and as it reincarnates it passes through celestial spheres and has its memory wiped by a band called Lethe so that it forgets the choice, though the daimon retains the knowledge of what was chosen.
+  entailment:
+    label: entails
+    score: 0.553
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6e1e2087-91b4-4678-b84a-8e94918939dd
   type: opinion
   attestation: first_hand
@@ -2675,6 +3266,11 @@ domain_claims:
     James Hillman comes up with his own archetypal psychology, but it's still very Jungian in a lot of ways with some important differences.
   text: |-
     James Hillman developed his own archetypal psychology that remains strongly Jungian in many ways, with some important differences.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 95a4553a-c07d-4b9d-8fba-3a13a771decc
   type: opinion
   attestation: second_hand
@@ -2695,6 +3291,11 @@ domain_claims:
     his most famous book is called Soul's Code, and it's all about how important this idea of the personal daimon is from a personal kind of sense making. sort of POV and he gives all these biographical examples of people who just struggled their whole life in school
   text: |-
     James Hillman's book Soul's Code argues that the personal daimon is central to personal sense-making, and provides biographical examples of people who struggled throughout life when forced into social roles conflicting with their true nature.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed733a34-3b33-42da-a4fa-bbf872567404
   type: opinion
   attestation: first_hand
@@ -2713,6 +3314,11 @@ domain_claims:
     It's very much like the muse. Yeah, it's very much like the muse in that the muse inspires, but the daimon is sort of the ... guide. ... Yeah, like the taskmaster or the one that's trying to keep you on track, but it's very subtle.
   text: |-
     Michael Phillip considers the muse and the daimon similar concepts, where the muse inspires while the daimon acts more as a guide or taskmaster keeping a person on their track subtly.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 59da247e-1cc8-4795-b084-16e90396ed3f
   type: opinion
   attestation: first_hand
@@ -2735,6 +3341,11 @@ domain_claims:
     in a lot of these, it's bringing it back to Cardano. If you look into a lot of these Western esoteric traditions, one of the main things they're trying to get you to do is get an open dialogue going with your Daimon.
   text: |-
     Michael Phillip considers a key aim of many Western esoteric traditions, drawing on the story of Fazio Cardano, to be establishing an open dialogue with one's daimon.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2d70ce58-5348-448d-9a97-eabbdab58622
   type: opinion
   attestation: first_hand
@@ -2753,6 +3364,11 @@ domain_claims:
     if you can actually get the diamond to like manifest in front of you that is considered to be like a major major moment and you are elevated very highly on your path after that point
   text: |-
     Michael Phillip considers it a major moment on one's spiritual path if a person's daimon actually manifests visibly in front of them.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6e6415d3-a1c4-48ec-8db7-1f836756e05c
   type: testimony
   attestation: first_hand
@@ -2773,6 +3389,11 @@ domain_claims:
     Yeah, like my one experience where I'm like, I think that was really an entity. I think I really encountered an entity- ... This is your ayahuasca trip? ... Yeah, yeah. That could have been the diamond.
   text: |-
     Michael Phillip experienced an ayahuasca trip during which he believes he encountered an entity that could have been his daimon.
+  entailment:
+    label: entails
+    score: 0.627
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f1af10cf-a784-4fbd-a824-76ea27e862e2
   type: testimony
   attestation: first_hand
@@ -2791,6 +3412,11 @@ domain_claims:
     In my case, in this particular- scenario, yes. I had gone through a lot of things that were not playful to get to that point.
   text: |-
     Michael Phillip experienced going through many non-playful, difficult experiences before reaching the point in his ayahuasca trip where he encountered the entity he believes could have been his daimon.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cb573a35-58f4-4192-ada1-3329948c3156
   type: testimony
   attestation: first_hand
@@ -2809,6 +3435,11 @@ domain_claims:
     It felt incredibly demonic, man, for a lot. ... Like not daimonic, but demonic. The whole, I would say 80% of the experience was just, um deep dysphoric dis-ease what am i doing i've like opened myself up spiritually to all of these terrible lower astral forces and i like it was a tormenting experience.
   text: |-
     Michael Phillip's ayahuasca experience felt incredibly demonic for about 80% of the time, involving a deep dysphoric dis-ease and a sense of having opened himself up spiritually to terrible lower astral forces.
+  entailment:
+    label: entails
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 85bb3fb7-e48d-47a3-87ec-b39f100ab4e8
   type: testimony
   attestation: first_hand
@@ -2829,6 +3460,11 @@ domain_claims:
     You're surrounded by screaming people. ... Yes, and people, yeah, people who are working through trauma
   text: |-
     During his ayahuasca trip, Michael Phillip was surrounded by other participants who were screaming and working through severe trauma.
+  entailment:
+    label: entails
+    score: 0.62
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 12cbf9db-abad-4dd5-8c93-d4b6ecf653c7
   type: testimony
   attestation: first_hand
@@ -2847,6 +3483,11 @@ domain_claims:
     But yeah, it took me three full nights of drinking to break through to that. What just felt like this unbelievably placid, beautiful, astral kind of POV where there was this entity there that was just this perfect embodiment of the wise man like you instantly know like this is a super highly highly elevated intelligence that I'm dealing with
   text: |-
     It took Michael Phillip three full nights of drinking ayahuasca before he broke through to a placid, beautiful astral experience in which he encountered an entity he perceived as a highly elevated intelligence embodying wisdom.
+  entailment:
+    label: neutral
+    score: 0.735
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8093fabe-9228-4a84-b22f-6d117835fa97
   type: testimony
   attestation: first_hand
@@ -2867,6 +3508,11 @@ domain_claims:
     it really felt like a deep, deep anamnesis moment or noesis or gnosis kind of moment when-
   text: |-
     Michael Phillip described the advice-like communication he received from the entity during his ayahuasca experience as feeling like a deep anamnesis, noesis, or gnosis moment.
+  entailment:
+    label: entails
+    score: 0.668
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 09eaa6b5-c344-4e59-85e6-833cd48e8539
   type: opinion
   attestation: first_hand
@@ -2885,6 +3531,11 @@ domain_claims:
     I would say that is one of the experiences I hold in the highest regard in my life ... And I've never had an experience like that since then.
   text: |-
     Michael Phillip has never had an experience like his ayahuasca encounter with the entity since then, and considers it one of the experiences he holds in the highest regard in his life.
+  entailment:
+    label: entails
+    score: 0.501
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a1816d90-8928-4186-a579-ed34225236f4
   type: opinion
   attestation: first_hand
@@ -2905,6 +3556,11 @@ domain_claims:
     whatever that was, I have pretty high conviction that that was another being, that was not me, that was something else. And I don't know what name to put on it, if it's a daimon, if it's an angel, like a guide, I don't know, I don't know.
   text: |-
     Michael Phillip has high conviction that the being he encountered during his ayahuasca experience was another being, not himself, and he does not know whether to call it a daimon or an angel.
+  entailment:
+    label: entails
+    score: 0.557
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 978bd7ee-e2f3-4d3b-bef5-8646900e733f
   type: opinion
   attestation: first_hand
@@ -2923,6 +3579,11 @@ domain_claims:
     So that's kind of the Greek or the words the Romans would use for the same concept is the genius.
   text: |-
     Michael Phillip considers the Roman word 'genius' to be the equivalent term the Romans used for the same concept as the Greek daimon.
+  entailment:
+    label: entails
+    score: 0.851
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c54a9c1e-2ab1-4885-8330-837931b94415
   type: opinion
   attestation: first_hand
@@ -2941,6 +3602,11 @@ domain_claims:
     from the perspective of non-human intelligence, that would be the closest non-human intelligence to you would be this kind of attendant spirit. And it survives in the idea of the guardian angel.
   text: |-
     Michael Phillip considers the guardian angel concept to be a surviving form of the ancient idea of the attendant daimon spirit, which he views as the non-human intelligence closest to a human being.
+  entailment:
+    label: entails
+    score: 0.925
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7eb0d5e0-0bde-4480-9220-739f0dd90117
   type: opinion
   attestation: first_hand
@@ -2959,6 +3625,11 @@ domain_claims:
     this whole class of beings called daimons or daimones, they're not good or bad by and large. They're usually neutral and they have a job. Like they're preserving something in nature or they're doing something or they're messengers or they're whatever.
   text: |-
     Michael Phillip considers daimons to be by and large neutral beings, neither good nor bad, who have specific jobs such as preserving something in nature or acting as messengers.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0c0f1a5b-ac44-40db-9968-727a043594aa
   type: opinion
   attestation: first_hand
@@ -2979,6 +3650,11 @@ domain_claims:
     we were talking about Rosicrucians before, he's become so personally, it seems like aligned with that whole school of thought, which again, is an emanation of exactly what I'm talking about here, this kind of Western esoteric
   text: |-
     Michael Phillip considers Jacques Vallée to have become personally aligned with Rosicrucianism, which he views as an emanation of Western esoteric thought about the daimon.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6df4faff-d486-46c5-b8f9-4e693e2ba8c0
   type: opinion
   attestation: first_hand
@@ -2997,6 +3673,11 @@ domain_claims:
     the very nature of it though is metaphorical. Like everything that you've said can be applied to something, you know, and I think that's what the allure is there with comparing Greek mythology to ufology.
   text: |-
     Chris Ramsay considers the comparison between Greek mythology and ufology alluring because the nature of Greek mythology is metaphorical and can be applied to many things.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9a83956c-dd52-4270-b35e-6e8bb74fb4ad
   type: opinion
   attestation: second_hand
@@ -3015,6 +3696,11 @@ domain_claims:
     it's minds that are existing on another plane of reality basically that can instantiate here physically um but they're subtle before they're gross but things so so a ufo would be some kind of a subtle energetic thing, and then it would solidify into some kind of form.
   text: |-
     According to the ultraterrestrial theory, non-human minds exist on another plane of reality that is subtle before becoming gross, meaning a UFO could begin as a subtle energetic thing before solidifying into a physical form.
+  entailment:
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 54972b5b-0699-4bb0-8cdb-b4adbaefa638
   type: hearsay
   attestation: second_hand
@@ -3038,6 +3724,11 @@ domain_claims:
     I've heard multiple people surmise, including one of the psionic asset dudes from Skywatcher, say that he thinks those things are manifesting. Like, he thinks those things are almost like apporting from, you know-
   text: |-
     An unnamed psionic asset associated with Skywatcher told Michael Phillip that he believes the metallic 'eggs' found in the desert are manifesting or apporting into physical existence rather than crashing.
+  entailment:
+    label: entails
+    score: 0.917
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed73ea38-5bd6-4ed0-b4bf-546f55aea7c4
   type: opinion
   attestation: first_hand
@@ -3056,6 +3747,11 @@ domain_claims:
     They seem to be laid like an egg. ... From the sky and dropping into the sand without any fire, any sort of burn from the atmosphere or anything, just kind of like being plopped in the sand.
   text: |-
     Chris Ramsay noted that the metallic eggs found in the desert appear to be laid or dropped rather than crashed, falling from the sky into the sand without any fire or atmospheric burn marks.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6bc42691-c3f9-4395-9f66-90ae790f2a5c
   type: opinion
   attestation: first_hand
@@ -3074,6 +3770,11 @@ domain_claims:
     when i hear so many stories like that in in a collective i've got to just be like okay i don't need that one guy's story to be true or that one guy's story to be true i just have to assume that there's enough going on here
   text: |-
     Michael Phillip considers that when many similar stories of physical entity encounters are heard collectively, he does not need any single individual's account to be true, but assumes there is enough going on collectively to warrant taking the phenomenon seriously.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b6119d5f-58ad-4b32-af68-2ac46ac44c50
   type: opinion
   attestation: second_hand
@@ -3094,6 +3795,11 @@ domain_claims:
     Again, Anthony Peake, that's his go-to explanation for UFOs. He thinks a lot of it is egregores and it's just people's minds basically forcing something to appear somehow, even if it's unconscious and they don't know that they're doing it.
   text: |-
     Anthony Peake's go-to explanation for UFOs is that egregores, formed by people's minds unconsciously forcing something to appear, account for a lot of UFO phenomena.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6ef844d4-a6a3-4f17-afe9-d772cb7eb194
   type: opinion
   attestation: first_hand
@@ -3114,6 +3820,11 @@ domain_claims:
     In the Tibetan tradition, they have a very similar idea called a tulpa, where apparently through super intense focus, you can make something appear.
   text: |-
     In the Tibetan tradition there is a concept similar to the Western egregore called a tulpa, in which through intense focus a person can make something appear.
+  entailment:
+    label: entails
+    score: 0.517
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 82e517c1-6f57-4dd1-a949-156edf1ab482
   type: opinion
   attestation: first_hand
@@ -3132,6 +3843,11 @@ domain_claims:
     there's literally this shared intention that becomes a field of like psychical exhaust and intention that is just solidifying into this thing. And this is what's called an egregore in the Western esoteric tradition... So it's not metaphorical, it's very literal.
   text: |-
     Michael Phillip considers the concept of the egregore, in the Western esoteric tradition, to describe a shared intention among a group of people solidifying into a psychical field or entity, and holds that this is meant literally rather than metaphorically.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6e14211e-f97a-4797-bd7d-ad7119a4ea50
   type: opinion
   attestation: first_hand
@@ -3150,6 +3866,11 @@ domain_claims:
     have you ever looked at any of these like the like lesser key of solomon or these books where you are like literally summoning angels or demons... that's what you find in Lesser Key of Solomon is like, you're commanding these demons to like manifest in front of you.
   text: |-
     Michael Phillip has read the Lesser Key of Solomon, describing it as a grimoire in which a practitioner claims divine authority to compel angels or demons to manifest.
+  entailment:
+    label: entails
+    score: 0.566
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 599c16aa-1f03-4c4b-87d6-e6695eae9d86
   type: testimony
   attestation: first_hand
@@ -3167,6 +3888,11 @@ domain_claims:
   quote: No, I think the only thing that I've really looked into was Aleister Crowley's.
   text: |-
     Chris Ramsay has read material by Aleister Crowley relating to summoning and incantation practices.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 208adfde-cd7a-49a2-ac21-d5f334ab29ed
   type: opinion
   attestation: first_hand
@@ -3187,6 +3913,11 @@ domain_claims:
     It's from the same kind of chain of lineage. There's very important differences. I don't want to be like, they're all the same, but they're all predicated on kind of similar ideas.
   text: |-
     Michael Phillip considers the practices of the Lesser Key of Solomon and Aleister Crowley's work to derive from the same chain of esoteric lineage, while noting there are important differences between them.
+  entailment:
+    label: entails
+    score: 0.796
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b24ccc1d-9779-4e43-a26c-fa838ffced92
   type: opinion
   attestation: first_hand
@@ -3202,6 +3933,11 @@ domain_claims:
     inviting orbs it looks a lot like summoning... we're all trying to make this thing appear that's kind of like a summoning ritual
   text: |-
     Chris Ramsay considers that when a group of people invite orbs to appear, the collective act resembles a summoning ritual.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7f5d3125-9a9b-4612-bd07-bfcd662233c8
   type: opinion
   attestation: first_hand
@@ -3222,6 +3958,11 @@ domain_claims:
     you think of um uh fatima you know and 60 000 people what kind of a thought form could 60 000 people create if they all believed in the same thing you know and that might be what they witnessed
   text: |-
     Chris Ramsay considers that approximately 60,000 people believing in the same thing at Fátima could have created a thought form powerful enough to produce what witnesses reported seeing.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dfe01897-03bf-4b13-9431-ed675279c194
   type: opinion
   attestation: first_hand
@@ -3242,6 +3983,11 @@ domain_claims:
     if you have a community of people, like I said this to you, I think on another podcast we did, theoretically, there'd be an Area 52 egregore. There would be a Third Eye Drops egregore.
   text: |-
     Michael Phillip suggests that theoretically a community of people, such as those working on Skywatcher, could produce a corresponding shared egregore.
+  entailment:
+    label: entails
+    score: 0.592
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5fe2dc90-9054-49c1-bac7-49575a702e88
   type: opinion
   attestation: first_hand
@@ -3257,6 +4003,11 @@ domain_claims:
     the ancient understanding was, is if you made yourself a pure enough vessel for divinity to come through, that's actually what makes the magical stuff happen. It's not your own mind... you made yourself a sort of conduit to the higher realm, basically.
   text: |-
     Michael Phillip holds that the ancient understanding was that making oneself a sufficiently pure vessel or conduit for a higher consciousness or divinity is what produces magical or miraculous effects, rather than one's own personal power.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2fd0b55d-bf7d-4850-ab90-1a2ea417e1da
   type: testimony
   attestation: first_hand
@@ -3275,6 +4026,11 @@ domain_claims:
     name: Out-of-Body Experience (OBE)
   quote: You know, I've had an OBE.
   text: Michael Phillip has had a personal out-of-body experience (OBE).
+  entailment:
+    label: entails
+    score: 0.893
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 912de2c6-fd30-46f0-b0a7-38ee606e981a
   type: testimony
   attestation: first_hand
@@ -3292,6 +4048,11 @@ domain_claims:
   quote: You know, I've had this entity encounter I pointed to.
   text: |-
     Michael Phillip has personally had an entity encounter, which he references as a prior experience.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cf580cdc-2080-4224-a9ac-97244f61d67a
   type: testimony
   attestation: first_hand
@@ -3309,6 +4070,11 @@ domain_claims:
   quote: I've had some other mind-blowing experiences.
   text: |-
     Michael Phillip has had several other experiences that he describes as mind-blowing.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1a0b9274-3396-4344-8f5a-6227eed092bd
   type: observation
   attestation: first_hand
@@ -3329,6 +4095,11 @@ domain_claims:
     anytime that I had an out-of-body experience, even when I wasn't seeking it, I was in a state that was very suggestible... when you're in this sort of hypnagogic or hypnopompic state, you are heavily suggestible.
   text: |-
     Chris Ramsay observed that during his own out-of-body experiences, even unsought ones, he was in a highly suggestible hypnagogic or hypnopompic state.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1eb0f361-e45b-45cf-a605-0b3c8cde4d67
   type: opinion
   attestation: first_hand
@@ -3344,6 +4115,11 @@ domain_claims:
     I don't think that the whole hitchhiker thing has any power unless you give it power. I really think that that, again, is another self... Fulfilling prophecy.
   text: |-
     Chris Ramsay considers that the idea of a supernatural 'hitchhiker' phenomenon has no power unless a person gives it power, functioning as a self-fulfilling prophecy.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4a8d3838-a7c6-4c1a-865f-cfe411836890
   type: opinion
   attestation: first_hand
@@ -3362,6 +4138,11 @@ domain_claims:
     People tell me, no, but there was an ancient Indian burial ground at Skinwalker. You dig deep enough anywhere, you'll find a dead body. That's how long people have been around, right? There's bodies everywhere.
   text: |-
     Chris Ramsay considers that reports of an ancient Native American burial ground at Skinwalker Ranch are not evidentially meaningful, since digging deep enough almost anywhere will reveal human remains given how long people have lived on Earth.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 40016782-0514-4368-8c66-170ae35b967a
   type: opinion
   attestation: first_hand
@@ -3377,6 +4158,11 @@ domain_claims:
     So like you created those spirits now because you all believe so strongly that they exist... and now you're highly suggestible and you create this, and now guess what? People are starting to see shit.
   text: |-
     Chris Ramsay considers that strong belief in the reality of spirits associated with a location, combined with high suggestibility from associated lore, leads people to begin perceiving anomalous phenomena there.
+  entailment:
+    label: entails
+    score: 0.746
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 93a3163d-5a64-45da-b632-bd5f063b3cc1
   type: opinion
   attestation: first_hand
@@ -3392,6 +4178,11 @@ domain_claims:
     Well, we know for sure suggestibility is obviously a thing. Like if you just create a psychic atmosphere where people expect something, their minds will put it there, even if it's not there, right?
   text: |-
     Michael Phillip considers that suggestibility is a real phenomenon, such that creating a psychic atmosphere of expectation can cause people's minds to perceive something even when it is not actually there.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: eb8b2df7-a2ce-4ea8-aecf-7339fcdd63ec
   type: opinion
   attestation: first_hand
@@ -3407,6 +4198,11 @@ domain_claims:
     I don't think it has to do with the geography of the place. I don't think it has to do with the history of the place. I think it has to do completely with the energy that you're putting into the place based on the lore that was given to you.
   text: |-
     Chris Ramsay considers that the energy a person invests in a place, based on the lore attached to it, rather than the place's geography or history, determines whether anomalous phenomena manifest there.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b5031aa-e534-413d-8554-f43ecec9195c
   type: opinion
   attestation: first_hand
@@ -3422,6 +4218,11 @@ domain_claims:
     there's an ancient science that we are now illiterate to. And it's some kind of sacred science that has both a spiritual component and a practical technical component. And that practical technical component is knowing when are these energies active? When can we harness this?
   text: |-
     Michael Phillip considers it possible that the ancients possessed a now-lost sacred science combining a spiritual component with a practical/technical component involving knowledge of when certain unseen energies are active and can be harnessed.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5b1f40a1-2ea0-4d5e-863f-3b8e6cc8fd82
   type: opinion
   attestation: second_hand
@@ -3444,6 +4245,11 @@ domain_claims:
     And Kiel would talk about this too, that you can see in the UFO manifestation evidence that there are these weird cycles there are window areas where these things happen over and over and over again and things appear more often at certain parts of the planetary cycle or certain days of the week or certain whatever
   text: |-
     John Keel discussed the idea that UFO manifestation evidence shows weird cycles and window areas, where such phenomena occur more often at certain parts of a planetary cycle or on certain days of the week.
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 49966b13-081b-47c0-8e73-a637d730936c
   type: opinion
   attestation: first_hand
@@ -3459,6 +4265,11 @@ domain_claims:
     we have to come up with rituals in order to cement this process. Otherwise, it won't just work randomly. You have to give it a ritual for it to work.
   text: |-
     Michael Phillip considers that once a group establishes a ritual and repeatedly gives energy or belief to a specific practice, that energy becomes necessary for the practice to work, and it will not work randomly without a ritual.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9edf5a68-6b79-464c-87eb-1db38a852072
   type: opinion
   attestation: first_hand
@@ -3479,6 +4290,11 @@ domain_claims:
     if you look at something like ancient mystery temples or something like that, where you've gotta follow all these protocols and you've gotta, like the temple of Eleusis, you have to follow these protocols, you have to do it. It only happens this one time of year.
   text: |-
     Michael Phillip considers the Temple of Eleusis rituals to have followed strict protocols that could only be performed once per year.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: add03e27-a272-4492-989b-a4cbf91050ab
   type: opinion
   attestation: first_hand
@@ -3503,6 +4319,11 @@ domain_claims:
     everybody was writing about this and they all held it in the highest possible regard, whether it's like Plato or Herodotus or blah, blah, blah, blah, blah.
   text: |-
     Ancient writers including Plato and Herodotus wrote about the Temple of Eleusis rites with the highest regard.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7cbcbc06-d812-4e88-9a7d-2b6892223027
   type: opinion
   attestation: first_hand
@@ -3525,6 +4346,11 @@ domain_claims:
     I suspect that there's probably this larger field of consciousness, but I think that that field of consciousness has like archetypal, qualities or segments to it.
   text: |-
     Michael Phillip believes that a larger field of consciousness has archetypal qualities or segments.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5cd88cde-0f7e-4ca4-8de9-d689f63713f4
   type: opinion
   attestation: second_hand
@@ -3547,6 +4373,11 @@ domain_claims:
     so if you go um back into the like corpus hermeticum stuff where hermes he's like this you know sage type figure he's wandering in the desert again a serpent kind of experience he has a vision of like this cosmic logos dragon this cosmic logos dragon gives him the download of here's what humans are here's what the world is here's how everything was created here's the whole lineage of how humans got to where they are here's how you re-ascend back to the one
   text: |-
     In the Corpus Hermeticum, the figure Hermes Trismegistus wanders in the desert and encounters a serpent, then receives a vision of a cosmic logos dragon that gives him knowledge of the creation of humans and the world and of how to re-ascend to the One.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4b596a04-c884-4d45-93b6-75f740041738
   type: opinion
   attestation: first_hand
@@ -3565,6 +4396,11 @@ domain_claims:
     we do this in all of our myths, right? There's a guardian at the gate and you have to either befriend or trick or defeat the guardian to initiate and go on.
   text: |-
     Michael Phillip believes myths across cultures share a common motif of a guardian at a gate who must be befriended, tricked, or defeated in order to proceed.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 82b2ec65-25e4-40b5-b5fc-c0abd07c8ec1
   type: opinion
   attestation: first_hand
@@ -3583,6 +4419,11 @@ domain_claims:
     in the hermetic ascent ritual, it's a relinquishment. So, you know, like each planet is emblematic of a certain, uh, quality or vice, right?
   text: |-
     Michael Phillip describes a hermetic ascent ritual in which each planet is emblematic of a certain quality or vice that the practitioner must relinquish.
+  entailment:
+    label: entails
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2659569f-36e6-421b-9466-e9023e94919e
   type: opinion
   attestation: first_hand
@@ -3601,6 +4442,11 @@ domain_claims:
     So the vice version of Mercury would be scheming and cleverness and all of these things where you're trying to use your intellect to trick someone. And what you do is you try to remove that from yourself and then ascend beyond it. And you do that at each planetary sphere so that you can basically defrock yourself of all of these human kinds of vices, and then you actually are able to be reabsorbed back into the oneness of God or whatever.
   text: |-
     Michael Phillip describes the vice associated with Mercury in the hermetic ascent ritual as scheming and cleverness, used to intellectually trick others, which the practitioner must remove from themselves and ascend beyond at each planetary sphere before being reabsorbed into the oneness of God.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2e24895e-b784-48e6-b309-cb411270f762
   type: opinion
   attestation: first_hand
@@ -3621,6 +4467,11 @@ domain_claims:
     This goes back to that Platonic myth of Ur, where you're passing through these thresholds, and as you get weighed down by each one, it's like-
   text: |-
     Michael Phillip connects the concept of accretions taken on by becoming human to the Platonic Myth of Er, in which souls pass through thresholds and become weighed down by each one.
+  entailment:
+    label: entails
+    score: 0.569
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9736dba9-67f7-4a31-96de-8e63bebcb0a4
   type: opinion
   attestation: first_hand
@@ -3641,6 +4492,11 @@ domain_claims:
     name: Gnosticism
   quote: In the, oh, that's a different thing, but the archons are the Gnostic thing.
   text: Michael Phillip identifies the archons as a Gnostic concept.
+  entailment:
+    label: entails
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3b17113f-7224-4186-8088-1d1d20c5ceed
   type: administrative
   attestation: second_hand
@@ -3663,6 +4519,11 @@ domain_claims:
     name: Neoplatonism
   quote: One of the Neoplatonists, Plotinus, talks about it as what he calls soul fall.
   text: The Neoplatonist philosopher Plotinus described a concept he called soul fall.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: df688503-87e4-4e29-89b6-ca40f981ecce
   type: opinion
   attestation: second_hand
@@ -3687,6 +4548,11 @@ domain_claims:
     what he's saying is you have this undescended higher self that's actually in the higher realm already and that would probably presumably be why psi things and other things are possible, because you actually are already in that realm.
   text: |-
     Michael Phillip describes Plotinus's soul fall concept as holding that a person has an undescended higher self already existing in a higher realm, which may explain why psychic and other paranormal phenomena are possible.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2f1ea925-f013-41a4-be03-e28ee14411b0
   type: opinion
   attestation: first_hand
@@ -3707,6 +4573,11 @@ domain_claims:
     the daimon is like your connection to the connections... It's like the local connection to the higher.
   text: |-
     Michael Phillip describes the daimon as the local connection to a person's higher self.
+  entailment:
+    label: entails
+    score: 0.534
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2abef37a-74dd-4a01-8135-4ddf2e96cf98
   type: testimony
   attestation: second_hand
@@ -3729,6 +4600,11 @@ domain_claims:
     Plotinus would do these cosmic ascent meditations, basically, where he would figure out how to re-emerge with the higher self, and then he'd come back to his body and he writes about this in the Enneids, and he basically says, I'm confused because I've figured out the path back there, and I know that that's who I truly am, but for now, part of me is stuck here, basically.
   text: |-
     Plotinus practised cosmic ascent meditations in which he sought to re-emerge with his higher self before returning to his body, writing about this experience in the Enneads.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c0becb2b-a5d0-4940-9d8c-6c0115dd448e
   type: opinion
   attestation: first_hand
@@ -3747,6 +4623,11 @@ domain_claims:
     when you're dealing with probabilities, being able to skew them using your mind is a very interesting prospect. And then when you see the results of that, you have to be convinced that, okay, there is some formulaic thing happening here, but that formula isn't dependent on me having a deck of cards. It has more to do with the energy I put behind saying it has to do with a deck of cards.
   text: |-
     Chris Ramsay states that being able to skew probabilities using one's mind, observed through his work performing magic and dealing with probabilities daily, suggests a formulaic phenomenon that does not depend on the physical tool used, such as a deck of cards, but on the energy behind the intention.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4b487d30-1f05-4436-bf08-b28add909975
   type: opinion
   attestation: first_hand
@@ -3767,6 +4648,11 @@ domain_claims:
     If you skip a few days, you start feeling the stress and the weight of life come back to you.
   text: |-
     Chris Ramsay believes his meditation-derived clarity fades after a few days, causing stress and the weight of life to return.
+  entailment:
+    label: entails
+    score: 0.899
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1f9794b2-013a-4862-8b34-df616b02076f
   type: opinion
   attestation: first_hand
@@ -3787,6 +4673,11 @@ domain_claims:
     Although objectively different from a lucid dream. This I will, I'll fight anybody on, I'll die on that hill.
   text: |-
     Chris Ramsay considers his experiences objectively different from a lucid dream and states he will firmly defend that position.
+  entailment:
+    label: entails
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 74a245ad-a0f3-44e7-9f59-70c436502bdf
   type: testimony
   attestation: first_hand
@@ -3807,6 +4698,11 @@ domain_claims:
     Yeah, I've had plenty of lucid dreams. I had one last night. ... Every single time, instantly recognizable as not a dream.
   text: |-
     Chris Ramsay has had many lucid dreams, including one the night before this conversation, which he says are instantly recognisable as different from his out-of-body-type experiences.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4d3d786e-41e2-4677-9bea-daaaf3ef427b
   type: opinion
   attestation: first_hand
@@ -3825,6 +4721,11 @@ domain_claims:
     At the very most, it is my soul leaving my body. ... And that obviously is a game changer, but I'm not convinced of it, but I would love to be.
   text: |-
     Chris Ramsay considers it possible that his most intense experiences were his soul leaving his body, though he is not fully convinced.
+  entailment:
+    label: entails
+    score: 0.834
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3d2dc194-9d5a-464e-ba56-e3302c6a43e3
   type: opinion
   attestation: first_hand
@@ -3849,6 +4750,11 @@ domain_claims:
     Yeah, I would love to have a Locale 2 type experience that Monroe talks about in Journeys Out of the Body.
   text: |-
     Michael Phillip would like to have a Locale 2 type experience, a concept described by Robert Monroe in Journeys Out of the Body.
+  entailment:
+    label: entails
+    score: 0.603
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a1d29dd6-cd20-4bce-a723-1bc93c4e49ed
   type: testimony
   attestation: first_hand
@@ -3868,6 +4774,11 @@ domain_claims:
   quote: That's what I was in, Locale 2.
   text: |-
     Chris Ramsay identifies the realm he experienced during his out-of-body experiences as Locale 2, as described by Robert Monroe.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f1f2204c-6153-4084-866f-4da8fe1d7644
   type: opinion
   attestation: first_hand
@@ -3890,6 +4801,11 @@ domain_claims:
     That's the translation you'll see in a lot of the Greco-Roman stuff is you have this pneumatic vehicle. It's like the word pneuma, pneuma, which is like your vital essence. There's a pneumatic vehicle for the soul. And I think that's what's coming out when you're having an OBE.
   text: |-
     Michael Phillip describes the ancient Greco-Roman concept of a soul vehicle, translated as a pneumatic vehicle, related to the word pneuma meaning vital essence, as the thing that emerges during an out-of-body experience (OBE).
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4d692fe1-fcf1-4f27-a54d-0beaa8befdaa
   type: testimony
   attestation: first_hand
@@ -3910,6 +4826,11 @@ domain_claims:
     I didn't get control of the thing, but I definitely had an experience of separating from my body and had the full-blown Robert Monroe, this is insane, this is terrifying, I don't know how to control this, oh my God. And then basically just asking for help until I remerge with my body
   text: |-
     Michael Phillip experienced separating from his body, describing it as insane and terrifying, and did not have control of the process, ultimately asking for help until he returned to his body.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f68718ea-802c-4ddb-bae1-9631a0ece3b2
   type: testimony
   attestation: first_hand
@@ -3930,6 +4851,11 @@ domain_claims:
     and then being in disbelief for the next 24 hours. Like, oh my God, it's real, man. That's not a metaphor, that's not a dream, that's not a, that's real.
   text: |-
     Michael Phillip felt disbelief for 24 hours after his out-of-body experience, describing the experience as real rather than a metaphor or a dream.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 13ddb8f5-9e66-4536-ad85-6351d3afb2c0
   type: testimony
   attestation: first_hand
@@ -3950,6 +4876,11 @@ domain_claims:
     Well, that's the environment that I was in every time I got out of body. It was like an 80% match. And the best thing I could sort of reference is the upside down.
   text: |-
     Chris Ramsay experienced an environment during each of his out-of-body experiences that was approximately an 80 percent match to his real surroundings, comparable to the fictional 'Upside Down'.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 95fe61d8-bd39-44ec-a826-a727c9de5704
   type: administrative
   attestation: first_hand
@@ -3968,6 +4899,11 @@ domain_claims:
     Andrew Gallimore, who's become the big, you know, DMT neuroscientist guy, he understands this well
   text: |-
     Andrew Gallimore is described as having become a prominent neuroscientist specialising in DMT research.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: efd0e643-83cc-4b21-ad34-cc7bd31cc4fe
   type: opinion
   attestation: first_hand
@@ -3986,6 +4922,11 @@ domain_claims:
     your brain is constructing reality. It learns how to construct reality and forecast reality and blah, blah, blah. So it makes sense that you would have that imprinted in your mind ... So maybe you're dealing with the ghost of the memory of the place or something.
   text: |-
     Michael Phillip considers that the human brain constructs and forecasts a model of reality, and that this could explain why an out-of-body environment resembles a remembered version of a real place.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 704260e3-ef47-43d2-b5b2-9c90c22d1424
   type: opinion
   attestation: first_hand
@@ -4004,6 +4945,11 @@ domain_claims:
     And any symbology derived from that is probably you know, subconscious projections of, of your own psyche.
   text: |-
     Chris Ramsay considers that any symbolism derived from his out-of-body experiences is probably a subconscious projection of his own psyche.
+  entailment:
+    label: entails
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4bf73029-5ed5-48d7-aef5-d25cc7c7913b
   type: testimony
   attestation: first_hand
@@ -4024,6 +4970,11 @@ domain_claims:
     one thing, uh, this is something I didn't share readily, uh, during, you know, the documentary that I sort of pieced together about my OBE experiences, but to go out of body through lucid dreaming, that happens to me.
   text: |-
     Chris Ramsay can go out of body through lucid dreaming, a fact he did not readily share during the documentary he made about his out-of-body experiences.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bed656f1-822f-442c-9858-61e2cc51fcfc
   type: testimony
   attestation: first_hand
@@ -4044,6 +4995,11 @@ domain_claims:
     And so for me, that is triggered by a sex dream every single time. ... um the dream turns lucid because it turns into like an erotic
   text: |-
     Chris Ramsay's trigger to leave his body during a lucid dream is every time the dream becomes an erotic or sex dream.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 65e9aa4d-1897-46fc-b7ca-4731775201ae
   type: testimony
   attestation: first_hand
@@ -4064,6 +5020,11 @@ domain_claims:
     that's been my trigger to get out of body and that's helped me get out of body like four times
   text: |-
     Chris Ramsay states this erotic-dream trigger has helped him get out of body approximately four times.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e66be9b7-8d91-4e0e-9e0c-9eb1311e8293
   type: testimony
   attestation: first_hand
@@ -4081,6 +5042,11 @@ domain_claims:
   quote: And so recently in the last like week, I've had like six of these dreams.
   text: |-
     Chris Ramsay had approximately six of these lucid dreams in the week preceding this conversation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0f8b4c99-f001-4383-bda0-34e0d68716b8
   type: opinion
   attestation: first_hand
@@ -4101,6 +5067,11 @@ domain_claims:
     that is a crazy story and it is one that left a huge uh impression on me and I think in some way could be true
   text: |-
     Michael Phillip considers the story from Journeys Out of the Body about the 'God' entity mining the planet could in some way be true and says it left a huge impression on him.
+  entailment:
+    label: entails
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b0cbb4fc-412a-4eac-b2d0-44270b23cd3d
   type: opinion
   attestation: first_hand
@@ -4119,6 +5090,11 @@ domain_claims:
     I just can't conceive of anything being more intelligent and more malevolent at the same time.
   text: |-
     Chris Ramsay finds it hard to conceive of a species being more intelligent while also being more malevolent at the same time.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a79b6807-4e71-49f6-acb3-8bad9846d468
   type: opinion
   attestation: first_hand
@@ -4137,6 +5113,11 @@ domain_claims:
     i think any civilization that is intelligent and visiting if that's a thing that they're probably peaceful
   text: |-
     Chris Ramsay believes that any intelligent, space-faring civilization visiting Earth is probably peaceful, reasoning that cooperation rather than war likely propelled them into space.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 73a22ed3-bf36-4c39-a7f8-7000cfd9f055
   type: opinion
   attestation: first_hand
@@ -4155,6 +5136,11 @@ domain_claims:
     I'm a believer that there are kinds of wisdom that it's almost impossible for them to die out because there are core truths about reality
   text: |-
     Michael Phillip believes there are core truths of wisdom about reality that are almost impossible to die out.
+  entailment:
+    label: entails
+    score: 0.937
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 789a1e16-1149-4377-bd67-357d6751e7ab
   type: opinion
   attestation: first_hand
@@ -4173,6 +5159,11 @@ domain_claims:
     I do think we used to be more in touch with higher realities. And I do think that there are methods that we used to know that
   text: |-
     Michael Phillip considers it possible that humans used to be more in touch with higher realities, and that certain methods for accessing them may have existed before.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1330eb40-88ae-4d8e-9985-d6cdd664814b
   type: opinion
   attestation: first_hand
@@ -4193,6 +5184,11 @@ domain_claims:
     I do think that it's quite possible that those methods may have been robbed from us purposefully by the people in power, because there was an absolute purposeful destruction of things like mystery temples and stuff like that on the part of the emperor of Rome.
   text: |-
     Michael Phillip considers it possible that ancient methods for accessing higher realities were purposefully destroyed by people in power, citing the purposeful destruction of mystery temples on the part of the emperor of Rome.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 641099fb-7774-4338-902c-b3d85cea3f4d
   type: observation
   attestation: first_hand
@@ -4211,6 +5207,11 @@ domain_claims:
     I mean, even in Iraq a few years ago, you saw us where the soldiers were- Destroying historic statues and temples and whatnot.
   text: |-
     Chris Ramsay observes that in Iraq a few years ago, soldiers were seen destroying historic statues and temples.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e2f536f5-e691-4445-99da-4e410e0db3f2
   type: opinion
   attestation: first_hand
@@ -4231,6 +5232,11 @@ domain_claims:
     there's that uh Maitreya Buddha prophecy which is basically like as soon as all knowledge of the previous Buddha is gone the new Buddha will be born the Maitreya Buddha will be born
   text: |-
     Michael Phillip describes the Maitreya Buddha prophecy as holding that once all knowledge of the previous Buddha is gone, the new Buddha, the Maitreya Buddha, will be born.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bdf697c9-2641-4b2f-a4be-a4d7b16caebf
   type: hearsay
   speaker:
@@ -4248,6 +5254,11 @@ domain_claims:
     Basically, all the sacred knowledge will slowly leak out and men will believe, mankind will believe that it's all nonsense. Like, they don't even exist. There is no higher truth. There is no sacred science. And then when that happens, like, the truth will be... re-revealed
   text: |-
     The hermetic prophecy referenced by Michael Phillip holds that all sacred knowledge will slowly leak out and mankind will come to believe that it is all nonsense, that there is no higher truth or sacred science, before the truth is eventually re-revealed.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a444d415-1fbc-4151-b4b3-f0f096ee22b9
   type: opinion
   attestation: first_hand
@@ -4265,6 +5276,11 @@ domain_claims:
   quote: |-
     these are prophecies i like because i think they're they're just archetypally true
   text: Michael Phillip considers these prophecies archetypally true.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 847ada41-423b-44a2-83fb-5ddcc330d39f
   type: opinion
   attestation: first_hand
@@ -4285,6 +5301,11 @@ domain_claims:
     there's other places we could go with this too, like the idea that there are yuga cycles, right? So there's, or this concept of ages, right? Where you, over these really, really long periods of time, you shift into darker-
   text: |-
     Michael Phillip mentions the concept of yuga cycles, or ages, in which humanity shifts into darker periods over very long spans of time.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 13cc21b6-f50b-415b-9ed8-723c1b2d046f
   type: testimony
   attestation: first_hand
@@ -4305,6 +5326,11 @@ domain_claims:
     having gone to do ayahuasca and other things like that they put a lot of stress on the what they call the dieta which is basically you got to purify yourself
   text: |-
     Ayahuasca ceremonies place strong emphasis on the dieta, a dietary purification practice undertaken before the ceremony.
+  entailment:
+    label: entails
+    score: 0.956
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7c7a704e-549f-46d8-b1ca-7bed637bd918
   type: testimony
   attestation: first_hand
@@ -4325,6 +5351,11 @@ domain_claims:
     usually what that means is you know stop eating certain kinds of food like pork is definitely always seems to be... they're telling you don't eat pork, you know, don't eat too much salt, don't have sex.
   text: |-
     The dieta typically requires abstaining from certain foods such as pork, limiting salt intake, and abstaining from sex.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 94cb1e61-806e-451f-b7ea-68289b8543b2
   type: opinion
   attestation: first_hand
@@ -4342,6 +5373,11 @@ domain_claims:
   quote: It's interesting how pork, it seems to be forbidden across like every culture.
   text: |-
     Michael Phillip considers it interesting that pork appears to be a forbidden food across many cultures.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0c79bb81-8eff-4b57-ab16-ee774b2f7dfd
   type: testimony
   attestation: first_hand
@@ -4360,6 +5396,11 @@ domain_claims:
     And again, reading from all these philosophers, they really stress purification before you try to approach deeper realities.
   text: |-
     Ancient philosophers stressed the importance of purification before attempting to approach deeper spiritual realities.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 322b0d21-ecb8-4e82-b122-f9b96ec08d68
   type: testimony
   attestation: first_hand
@@ -4382,6 +5423,11 @@ domain_claims:
     But they're like, no, just do whatever you want. Like, let us know what your dietary preferences are.
   text: |-
     At the Monroe Institute's gateway experience programme, staff tell participants their own dietary preferences are what matters rather than imposing strict purification rules.
+  entailment:
+    label: neutral
+    score: 0.591
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6ab46a13-89ad-4bc9-b3fd-79e4d61c66ba
   type: testimony
   attestation: first_hand
@@ -4404,6 +5450,11 @@ domain_claims:
     they're like, don't stop smoking or drinking on account of this. Obviously you can't bring drugs in, but... the last thing they want you to do is be in like a sort of withdrawal state, you know, while you're trying to do these things.
   text: |-
     At the Monroe Institute's gateway experience programme, participants are not asked to stop smoking or drinking coffee, because staff do not want participants in a state of withdrawal during the programme.
+  entailment:
+    label: entails
+    score: 0.547
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 85bc6904-cbe4-498c-a249-df191979b82b
   type: opinion
   attestation: first_hand
@@ -4422,6 +5473,11 @@ domain_claims:
     name: Lazar, Bob
   quote: Bob was a pretty notorious smoker, I think too.
   text: Bob Lazar was a notorious smoker.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d0e37f2-71c8-4028-87fb-09426299e0d9
   type: testimony
   attestation: first_hand
@@ -4444,6 +5500,11 @@ domain_claims:
     one of the advices they give you is don't make any life-changing decisions for three weeks after.
   text: |-
     One piece of advice given around the Monroe Institute's gateway experience is not to make life-changing decisions for three weeks after completing the programme.
+  entailment:
+    label: entails
+    score: 0.579
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9553f1a0-1daf-4a17-bc6e-ddbf230db7f9
   type: opinion
   attestation: first_hand
@@ -4466,6 +5527,11 @@ domain_claims:
     because you're going to be living on a weird little cloud and you're going to feel fuzzy all day and make these... decisions based on the woo, which not, which might not, you know, uh, be so smart in here, down here in the physical realm.
   text: |-
     Chris Ramsay considers people to feel fuzzy and make decisions based on intuitive feelings rather than practical judgement for a period after attending the Monroe Institute's gateway experience programme.
+  entailment:
+    label: entails
+    score: 0.536
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a7797d51-cb08-4681-a905-1d99515ddffb
   type: opinion
   attestation: first_hand
@@ -4485,6 +5551,11 @@ domain_claims:
   quote: |-
     we know for a fact actually that he was an experiencer because like I mentioned before, he had been to the Temple of Eleusis. He had been initiated into the mysteries there.
   text: Plato underwent initiation into the mysteries at the Temple of Eleusis.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a155439e-481f-46f7-b626-b1044028e091
   type: opinion
   attestation: first_hand
@@ -4507,6 +5578,11 @@ domain_claims:
     And that does entail encountering the goddess. And he spoke very highly of that experience and held it in the highest sacred regard.
   text: |-
     Michael Phillip believes Plato's initiation at the Temple of Eleusis involved encountering a goddess, an experience Plato held in the highest sacred regard.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60f88d08-0a1e-4d92-b62a-549616ccc75c
   type: opinion
   attestation: first_hand
@@ -4529,6 +5605,11 @@ domain_claims:
     we don't know for a fact that he was a Pythagorean, which again is initiatory and esoteric, but it's highly implied throughout all of his writings.
   text: |-
     Michael Phillip believes it is highly implied throughout Plato's writings that Plato was a Pythagorean, though this is not known for certain.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ebf54b9e-7633-4e1f-9502-b8e1e2a9bb04
   type: opinion
   attestation: first_hand
@@ -4553,6 +5634,11 @@ domain_claims:
     He's actually hiding things like the Pythagorean music scale within Plato's Republic. So the whole book, like the whole hundred thousand plus word book is actually secretly organized like a musical scale.
   text: |-
     Michael Phillip believes Plato secretly organised the entirety of the Republic according to the structure of the Pythagorean music scale.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3934f53d-450c-489a-8fe1-22935c3b0bc1
   type: opinion
   attestation: first_hand
@@ -4575,6 +5661,11 @@ domain_claims:
     at the point in the scale, that's the golden ratio, he gives the divided line allegory, which is also a golden section.
   text: |-
     Michael Phillip believes that at the point in the Republic's structure corresponding to the golden ratio, Plato presents the divided line allegory, which is itself also structured as a golden section.
+  entailment:
+    label: entails
+    score: 0.777
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 764a7aca-566f-4daa-93ed-490cf818dd97
   type: opinion
   attestation: first_hand
@@ -4595,6 +5686,11 @@ domain_claims:
     Like, the texts in and of themselves are initiatory. So you knew that he understood things on that level, that there's always an opportunity to see a deeper truth and a deeper truth. And he was trying to hide that in his text.
   text: |-
     Michael Phillip believes Plato's dialogues are initiatory texts that deliberately conceal deeper layers of truth beyond a surface reading.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c59c426-e706-43ec-81b5-eab93d48270d
   type: opinion
   attestation: first_hand
@@ -4615,6 +5711,11 @@ domain_claims:
     So I have no doubt in my mind that he was a kind of experiencer, like he had come into contact. with higher states of consciousness, with other entities probably.
   text: |-
     Michael Phillip believes Plato had personal contact with higher states of consciousness and likely with other entities.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95cfa0af-2b32-4b60-b6d0-957282ba5e12
   type: opinion
   attestation: first_hand
@@ -4635,6 +5736,11 @@ domain_claims:
     you really, really see it in the successive holders of the Platonic tradition, the Neoplatonists and everybody else. They're all super spiritual, pious, philosopher, sage type dudes. Like some of them literally are priests of Apollo.
   text: |-
     Michael Phillip observes that successive figures in the Neoplatonist tradition following Plato were highly spiritual, pious philosopher-sage types, some of whom served as priests of Apollo.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 32848ea3-cdcb-405f-aa09-fce2b214ee36
   type: opinion
   attestation: first_hand
@@ -4655,6 +5761,11 @@ domain_claims:
     Some of them are practicing theurgy, which is literally very, very phenomena adjacent because they're doing like magical rituals to come into contact with divine presences and stuff like that.
   text: |-
     Some figures within the Neoplatonist tradition practised theurgy, performing magical rituals intended to bring them into contact with divine presences.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c21ee835-dde8-4d3c-8a51-f4ba28abee0b
   type: opinion
   attestation: first_hand
@@ -4675,6 +5786,11 @@ domain_claims:
     I think that his theories were definitely informed from sort of higher epiphanies.
   text: |-
     Michael Phillip believes Plato's philosophical theories were informed by higher epiphanies rather than purely intellectual reasoning.
+  entailment:
+    label: entails
+    score: 0.947
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9d491b9e-3426-4ebb-ae90-8a5b7175dc58
   type: testimony
   attestation: first_hand
@@ -4693,6 +5809,11 @@ domain_claims:
     So he gives the Plato's cave story. You know, there's people, they're trapped in the cave. They're spending their whole lives chained up looking at the wall. They only see shadows. They think the shadows are real. Somebody escapes the cave, they see the outside world, they see the sun, they have this crazy epiphany, and they go back in, they try to free the people. The people don't wanna be freed. They kill the person who's trying to free them.
   text: |-
     In Plato's cave allegory, people are trapped chained in a cave seeing only shadows on a wall, which they believe to be real, until one person escapes, sees the outside world and the sun, and returns to try to free the others, who instead kill him.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 98a2836a-add7-4a77-9c90-88f03d4a5061
   type: testimony
   attestation: first_hand
@@ -4715,6 +5836,11 @@ domain_claims:
     he basically, alongside that, gives this divided line and says, the divided line is also the cave story.
   text: |-
     Michael Phillip states that Plato links the divided line allegory to the cave story, presenting the divided line as another version of the same allegory.
+  entailment:
+    label: entails
+    score: 0.757
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 96434a1f-56f2-4745-8f26-beda15d2b484
   type: testimony
   attestation: first_hand
@@ -4735,6 +5861,11 @@ domain_claims:
     what he's saying in the divided line is there's a kind of knowing that's above all of the intellectual kinds of knowing. It's a pure experiencing sort of knowing, and this is noesis, and it's very difficult to try to encapsulate this concept of noesis, but it's knowing and being at the same time.
   text: |-
     In Plato's divided line allegory, the highest form of knowing described is noesis, a form of pure experiential knowing that is simultaneously knowing and being, difficult to fully define in concepts.
+  entailment:
+    label: entails
+    score: 0.566
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 41f8138b-849b-4968-afac-f5089fcb8a7b
   type: opinion
   attestation: first_hand
@@ -4753,6 +5884,11 @@ domain_claims:
     the only thing we have that's actually written from his POV is a series of letters and many of them are disputed... so whether or not they're real
   text: |-
     The only writings we have that are directly from Plato's own point of view are a series of letters, many of which are of disputed authenticity.
+  entailment:
+    label: entails
+    score: 0.823
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b0efc7be-a45f-4f1e-af07-77e443ca8ffe
   type: opinion
   attestation: first_hand
@@ -4769,6 +5905,11 @@ domain_claims:
     name: Plato
   quote: he's never the one talking he's never a character in any of his own dialogues
   text: Plato never appears as a speaking character in any of his own dialogues.
+  entailment:
+    label: entails
+    score: 0.637
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: 37e35cef-b02c-478a-9915-9a33d74ff4c9
   type: administrative
@@ -4788,6 +5929,11 @@ infrastructure_claims:
     name: Third Eye Drops
   quote: This is the host of the Third Eye Drops podcast is Michael Phillip.
   text: Michael Phillip is the host of the Third Eye Drops podcast.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 94527802-1585-46d5-81dc-3379077f1e50
   type: administrative
   attestation: first_hand
@@ -4808,6 +5954,11 @@ infrastructure_claims:
   quote: |-
     read On the Mysteries by Iamblichus, who's this Neoplatonist, and he's talking about interacting with daimones and angels and gods and all these other beings in late 200s AD
   text: Iamblichus wrote On the Mysteries in the late 200s AD.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ac60db15-7e75-4ea5-a881-84093955741b
   type: administrative
   attestation: second_hand
@@ -4828,6 +5979,11 @@ infrastructure_claims:
     he's talking about interacting with daimones and angels and gods and all these other beings
   text: |-
     In On the Mysteries, Iamblichus discusses interacting with daimones, angels, and gods.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 85a16418-8ee6-4eda-aa6d-6d8facd5a089
   type: administrative
   attestation: second_hand
@@ -4852,6 +6008,11 @@ infrastructure_claims:
     I'm sort of regurgitating this from talking to Lavenda because Lavenda and DeLong wrote secret machines together.
   text: |-
     Michael Phillip's account of what General McCasland said about Greek mythology is derived from conversations with Peter Levenda, since Levenda and Tom DeLonge wrote Sekret Machines together.
+  entailment:
+    label: entails
+    score: 0.58
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 459ba38e-6787-4f03-acac-a05c46cdebec
   type: administrative
   attestation: first_hand
@@ -4872,6 +6033,11 @@ infrastructure_claims:
     name: Sekret Machines
   quote: Lavenda and DeLong wrote secret machines together.
   text: Peter Levenda and Tom DeLonge co-authored the book Sekret Machines.
+  entailment:
+    label: entails
+    score: 0.432
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fde3846c-aaa4-4224-ab6a-c5c5190c2723
   type: administrative
   attestation: second_hand
@@ -4891,6 +6057,11 @@ infrastructure_claims:
   quote: Where this comes from is WikiLeaks.
   text: |-
     The information about General McCasland's comments on Greek mythology originated from emails released by WikiLeaks.
+  entailment:
+    label: entails
+    score: 0.71
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1ea84597-ceae-4042-8d07-319cfa142645
   type: administrative
   attestation: second_hand
@@ -4917,6 +6088,11 @@ infrastructure_claims:
     The conversations between Podesta and McCasland and DeLong and then by way of DeLong Lavenda are happening through these emails.
   text: |-
     Emails released via WikiLeaks show conversations between John Podesta, General McCasland, and Tom DeLonge, and by way of DeLonge, Peter Levenda.
+  entailment:
+    label: entails
+    score: 0.428
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 390157dc-d95a-4f29-ac13-09bceed29844
   type: administrative
   attestation: first_hand
@@ -4937,6 +6113,11 @@ infrastructure_claims:
     Jim Ryder, who was the VP of something at Lockheed, gave that whole talk. Have you seen that? It's on YouTube.
   text: |-
     Jim Ryder was a vice president at Lockheed Martin and gave a talk covering esoteric and mythological subjects, available on YouTube.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 51f50793-304c-4813-a11d-265c3b50e237
   type: administrative
   attestation: first_hand
@@ -4957,6 +6138,11 @@ infrastructure_claims:
     i just finished reading that new science of heaven book and he comes up in that book
   text: |-
     Michael Phillip recently finished reading the book New Science of Heaven, in which Nikola Tesla is discussed.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 943990e8-1696-45e0-9949-9e8f2e15cc2d
   type: hearsay
   attestation: second_hand
@@ -4977,6 +6163,11 @@ infrastructure_claims:
     my friend MJ Dorian put a clip of this up on his YouTube channel of him telling this story about how he was causing an earthquake because of some, I think it was some electromagnetic thing that he was doing. And the police actually showed up and he's like, don't worry, gentlemen, I'll have it shut down in no time.
   text: |-
     MJ Dorian posted a clip on his YouTube channel of Nikola Tesla telling the story of how he caused an earthquake, reportedly through some electromagnetic device, after which police showed up and Tesla told them he would have it shut down in no time.
+  entailment:
+    label: entails
+    score: 0.796
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f6f292b2-5079-4492-b494-b54b28fb2459
   type: opinion
   attestation: first_hand
@@ -4996,6 +6187,11 @@ infrastructure_claims:
   quote: This is just like that Ingo Swann story.
   text: |-
     Michael Phillip compared a story Chris Ramsay told about a woman witnessing two strangely dressed beautiful people in a store to the Ingo Swann story.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 28271e55-ed51-40e7-b3ac-79a517771a0c
   type: hearsay
   attestation: second_hand
@@ -5020,6 +6216,11 @@ infrastructure_claims:
     This is exactly like the Ingo Swann story. It's exactly like the story that, um, Richard Dolan told me about the girl at church. It's the story of the guy that, uh, told me when he was in the hardware store, getting the copper rod with the two tall six foot nine women twins looking at him.
   text: |-
     Chris Ramsay states that the story of the woman in the store seeing two strange beings is similar to the Ingo Swann story, a story Richard Dolan told him about a girl at a church, and a story a man told him about seeing two tall six-foot-nine women twins in a hardware store while buying a copper rod.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7d573e03-0ab2-4111-a8e2-fbc087a3391e
   type: testimony
   attestation: second_hand
@@ -5040,6 +6241,11 @@ infrastructure_claims:
     Another similar story to that effect is, I believe I also heard from Dolan for the first time. I don't, I think it might be in the Alien Agendas book, but it's a, it's, um, might be Fazio Cardano.
   text: |-
     Michael Phillip believes he first heard a story about three men resembling Greek sages visiting a historical figure from either Richard Dolan or the book Alien Agendas.
+  entailment:
+    label: entails
+    score: 0.742
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8fb17975-f682-4798-8737-a43d094bfaba
   type: administrative
   speaker:
@@ -5056,6 +6262,11 @@ infrastructure_claims:
     name: daimon (personal spirit)
   quote: Anthony Peake is a big fan of the daimon too.
   text: Anthony Peake is a proponent of the daimon concept.
+  entailment:
+    label: entails
+    score: 0.88
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a0f58a6-e5b7-475c-b3e9-ee6aeee3cba7
   type: administrative
   attestation: first_hand
@@ -5076,6 +6287,11 @@ infrastructure_claims:
     this one of the most famous places this stems from is a story at the end of Plato's Republic called The Myth of Ur.
   text: |-
     One of the most famous sources of the daimon concept is a story at the end of Plato's Republic called the Myth of Er.
+  entailment:
+    label: contradicts
+    score: 0.475
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 93722f6d-6a66-4b90-a1fb-9e9561811c59
   type: opinion
   attestation: first_hand
@@ -5095,6 +6311,11 @@ infrastructure_claims:
   quote: i mean journey of souls kind of yeah falls exactly ... in this same path
   text: |-
     Chris Ramsay considers the account in Journey of Souls to fall along the same path as the Myth of Er reincarnation narrative.
+  entailment:
+    label: entails
+    score: 0.591
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fd72ea5c-6eca-45fe-bd88-6e5dc3682b9c
   type: administrative
   attestation: first_hand
@@ -5117,6 +6338,11 @@ infrastructure_claims:
     One of my favorite books also to continue this rabbit hole is called Soul's Code is written by another psychologist who's very young influence named James Hillman.
   text: |-
     Soul's Code, one of Michael Phillip's favourite books on the daimon topic, was written by psychologist James Hillman.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 157d3af6-9fcd-4b17-a80d-81f274bdc799
   type: administrative
   attestation: second_hand
@@ -5139,6 +6365,11 @@ infrastructure_claims:
     if you read a certain translation of Plotinus or something, there's a chapter called On the Tutelary Spirit, but the Greek is on the daimon, like on the allotted daimon.
   text: |-
     Michael Phillip notes that in certain translations of Plotinus, a chapter titled 'On the Tutelary Spirit' in the original Greek is actually titled on the daimon, or on the allotted daimon.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 45107f73-4c5b-495c-a99d-7e7c238163e8
   type: opinion
   attestation: first_hand
@@ -5161,6 +6392,11 @@ infrastructure_claims:
     I think it seems to me like people like Vallée are going much more in this kind of a direction with how they interpret things.
   text: |-
     Michael Phillip considers Jacques Vallée to be interpreting the UAP phenomenon increasingly in terms of the daimon concept.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: be6ba3af-3f9d-45b1-a79a-36df93d5c96d
   type: opinion
   attestation: second_hand
@@ -5181,6 +6417,11 @@ infrastructure_claims:
     he eventually develops this theory called the ultraterrestrial theory, which is essentially that whatever these beings are, they're from an extended layer of reality that we don't know how to sense yet. It's somewhere deeper in the electromagnetic spectrum.
   text: |-
     John Keel developed the ultraterrestrial theory, proposing that non-human beings encountered in UAP phenomena originate from an extended layer of reality not yet sensable by known means, existing somewhere deeper in the electromagnetic spectrum.
+  entailment:
+    label: entails
+    score: 0.619
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26a73a2d-3c5b-445e-9d9f-16d87ecbf889
   type: opinion
   attestation: second_hand
@@ -5203,6 +6444,11 @@ infrastructure_claims:
     there are there are this is where we get into the Lavenda cosmic ascent stuff too because there's versions of this where there's guardians of different planes basically and you either have to do something or give a kind of password or you have to be initiated into something to get through each threshold guardian.
   text: |-
     Michael Phillip describes a cosmic ascent framework, associated with Peter Levenda's work, in which souls must pass guardians of different planes and either perform an action, give a password, or be initiated to pass each threshold guardian.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9fd54ece-7a84-4329-8ab4-3a0ea61255b1
   type: opinion
   attestation: second_hand
@@ -5225,6 +6471,11 @@ infrastructure_claims:
     kind of resonate with the idea that we might have wound up here as humans by accident in a sort of like almost, in a more contemporary way, in a kind of Robert Monroe kind of way, where we sort of got do, we made the decision in some way, but kind of didn't realize what we were doing by committing to life on Earth.
   text: |-
     Michael Phillip believes humans may have wound up on Earth by accident, having made a decision without realising what they were committing to, in a manner similar to a concept from Robert Monroe's work.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dc1cf129-8bdc-4010-9688-528802761ae5
   type: opinion
   attestation: second_hand
@@ -5249,6 +6500,11 @@ infrastructure_claims:
     he talks about there's a realm that he calls Locale 2, which I think in more readily accessible speak would be like the astral realm. and what this realm is like is a realm where you have a non-physical form that is still somewhat body-like, and it has sort of like energetic sensations.
   text: |-
     In Journeys Out of the Body, Robert Monroe describes a realm he calls Locale 2, which Michael Phillip characterises as comparable to the astral realm, where one has a non-physical, body-like form with energetic sensations.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 89be64b5-76ce-45a6-bf7a-ef259f6e1f11
   type: hearsay
   attestation: second_hand
@@ -5271,6 +6527,11 @@ infrastructure_claims:
     these little boys just appeared and like he knew they weren't human, but they were naked and they were like riding his back.
   text: |-
     In Journeys Out of the Body, Robert Monroe describes an incident in which naked little boys, which he knew were not human, appeared and rode on his back.
+  entailment:
+    label: contradicts
+    score: 0.73
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f71057c1-1ba5-4584-9c56-bcbbf5e2f249
   type: hearsay
   attestation: second_hand
@@ -5293,6 +6554,11 @@ infrastructure_claims:
     the leeches that he was fighting off leeches at one point too ... he was like they were like alien leeches like trying to like leech onto him and he was like fighting them all off
   text: |-
     In Journeys Out of the Body, Robert Monroe describes fighting off leeches he perceived as alien during an out-of-body experience.
+  entailment:
+    label: entails
+    score: 0.911
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: aaadfe4a-f17e-4b88-ac05-1a56b59b7124
   type: hearsay
   attestation: second_hand
@@ -5315,6 +6581,11 @@ infrastructure_claims:
     he talks too about, I have this memory of him getting out into the astral or space-like environment. ... And things looking the same but different.
   text: |-
     In Journeys Out of the Body, Robert Monroe describes getting out into an astral or space-like environment where things looked the same but different.
+  entailment:
+    label: entails
+    score: 0.724
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6af940b4-2b23-4d95-b422-1976fb917da7
   type: hearsay
   attestation: second_hand
@@ -5337,6 +6608,11 @@ infrastructure_claims:
     the chapter that landed on my psyche with the most force was chapter 20 of that book ... he has a vision of what he immediately knows this is what people think is God, and it's not really what people think it is. And it's basically these much, much higher beings
   text: |-
     Michael Phillip recounts that in chapter 20 of Journeys Out of the Body, Robert Monroe describes a vision of higher beings that people mistake for God, who are much more spiritually and technologically powerful than humans.
+  entailment:
+    label: entails
+    score: 0.529
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 18d8c4ad-8fd4-44b4-a08c-a57e95be8103
   type: hearsay
   attestation: second_hand
@@ -5359,6 +6635,11 @@ infrastructure_claims:
     then he has that vision of the pumping station ... he comes to realize that he thinks this planet is essentially being mined for some kind of resource by these beings that we conceive of as God and they're somehow coming and extracting this
   text: |-
     In chapter 20 of Journeys Out of the Body, Robert Monroe describes a vision of a 'pumping station' where he comes to believe the planet is being mined for some kind of resource by these beings conceived of as God.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d3d69c58-21d9-40d1-b62f-fab4091301b6
   type: hearsay
   attestation: second_hand
@@ -5381,6 +6662,11 @@ infrastructure_claims:
     the chapter ends in the most like doomer way where he was like, and then I knew the God of my childhood was dead forever or something like that. And he was like in tears.
   text: |-
     Michael Phillip recounts that chapter 20 of Journeys Out of the Body ends with Robert Monroe in tears, declaring that the God of his childhood was dead forever.
+  entailment:
+    label: neutral
+    score: 0.6
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a29c557a-8b4c-4ef4-8f17-fbf099d9fd3c
   type: opinion
   attestation: first_hand
@@ -5401,6 +6687,11 @@ infrastructure_claims:
     he is not negative overall and he eventually kind of ... he goes in a much more positive direction toward the end with all of his metaphysics
   text: |-
     Michael Phillip states that Robert Monroe is not negative overall, and moves toward a more positive metaphysical outlook later in his writings.
+  entailment:
+    label: entails
+    score: 0.824
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1d1b2ff9-13e3-4435-9e2f-871caf9e3bd7
   type: administrative
   attestation: first_hand
@@ -5419,6 +6710,11 @@ infrastructure_claims:
     It is interesting, you know, and speak to guys like David Icke ... Who, you know, is a big proponent of that theory as well.
   text: |-
     David Icke is described as a big proponent of the theory that higher beings extract some resource, such as information, consciousness, or experience, from humanity.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4a3bf48f-fa70-42db-88f9-9d2e5f3f5625
   type: administrative
   attestation: first_hand
@@ -5439,6 +6735,11 @@ infrastructure_claims:
     There's actually a video of Graham Hancock reading this prophecy on YouTube that has a lot of views where he's talking about knowledge of the gods, it's gonna go away.
   text: |-
     Michael Phillip notes that there is a video of Graham Hancock reading a hermetic prophecy on YouTube, in which knowledge of the gods is said to eventually go away.
+  entailment:
+    label: entails
+    score: 0.521
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 56d3ceb5-b1a4-4b3a-9175-6dc555a2963a
   type: administrative
   attestation: first_hand
@@ -5457,6 +6758,11 @@ infrastructure_claims:
     name: Third Eye Drops
   quote: go check Michael out at Third Eye Drops.
   text: Michael Phillip can be found via his project Third Eye Drops.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e09057fd-6bfb-4537-8e1c-6b75bd406714
   type: administrative
   attestation: first_hand
@@ -5476,3 +6782,8 @@ infrastructure_claims:
   quote: |-
     if you're in town for contact in the desert, you'll be there... He's doing a live podcast there as well.
   text: Michael Phillip will be doing a live podcast at Contact in the Desert.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

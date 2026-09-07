@@ -9,6 +9,12 @@ ai_usage:
     input: 13232
     output: 632
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -77,6 +83,11 @@ domain_claims:
   quote: Its about uh three quarters of a mile out
   text: |-
     An unnamed member of the recovery team, recorded in an audio log during Mercury-Redstone 4, observed an object approximately 1.2 kilometres away.
+  entailment:
+    label: contradicts
+    score: 0.403
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 23206e86-3ddc-475c-9730-e1d3ecbab2e6
   type: opinion
   attestation: second_hand
@@ -94,3 +105,8 @@ domain_claims:
   quote: Thought maybe a capsule uh after the liftoff
   text: |-
     An unnamed member of the recovery team, recorded in an audio log during Mercury-Redstone 4, speculated that the observed object might have been the Mercury capsule after the liftoff.
+  entailment:
+    label: neutral
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

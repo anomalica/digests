@@ -10,6 +10,12 @@ ai_usage:
     output: 3185
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.7
 prompts:
 - pass: nodes
   id: nodes
@@ -74,6 +80,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     At 1653Z, an observer detected two round white hot Unidentified Aerial Phenomena (UAP) moving dynamically south.
+  entailment:
+    label: entails
+    score: 0.952
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a9decf0e-affb-4c94-b49f-06524e602342
   type: measurement
   attestation: second_hand
@@ -89,6 +100,11 @@ domain_claims:
   quote: OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR
   text: |-
     Two round white hot Unidentified Aerial Phenomena (UAP) were observed travelling at approximately 440 kilometres per hour.
+  entailment:
+    label: contradicts
+    score: 0.767
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 290cdda7-5235-47f1-94a7-e6d451fcf62b
   type: observation
   attestation: second_hand
@@ -104,6 +120,11 @@ domain_claims:
   quote: IVO 35SQT3423692957
   text: |-
     Two round white hot Unidentified Aerial Phenomena (UAP) were observed in the vicinity of grid coordinates 35SQT3423692957.
+  entailment:
+    label: entails
+    score: 0.525
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 913d205c-fac8-423f-bd2e-b39fa05e4f59
   type: administrative
@@ -123,3 +144,8 @@ infrastructure_claims:
   quote: '{{classification: "SECRET//REL TO USA, FIN, SWE, FVEY, NATO"}}'
   text: |-
     The Unidentified Aerial Phenomena (UAP) event report describing the sighting is classified SECRET, releasable to the United States, Finland, Sweden, Five Eyes (FVEY), and the North Atlantic Treaty Organization (NATO).
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -9,6 +9,12 @@ ai_usage:
     input: 9325
     output: 757
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 4.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.1
 prompts:
 - pass: nodes
   id: nodes
@@ -93,6 +99,11 @@ domain_claims:
     {{classification: "SECRET//REL TO USA, FIN, SWE, FVEY, NATO"}} AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     A redacted observer observed 2 round white-hot Unidentified Aerial Phenomena (UAP) moving south at approximately 444 kilometres per hour in the vicinity of MGRS 35SQT3423692957 at 16:53 Zulu (UTC).
+  entailment:
+    label: entails
+    score: 0.448
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31a2bc8f-5de0-4753-9bc0-c453bd3fa446
   type: observation
   attestation: second_hand
@@ -112,6 +123,11 @@ domain_claims:
     {{classification: "SECRET//REL TO USA, FIN, SWE, FVEY, NATO"}} AT 1653Z, {{redacted: ~3 words}} OBS 2X UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     A redacted observer observed 2 Unidentified Aerial Phenomena (UAP) moving south at approximately 444 kilometres per hour in the vicinity of MGRS 35SQT3423692957 at 16:53 Zulu (UTC).
+  entailment:
+    label: entails
+    score: 0.446
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 86287b14-7f7e-4c71-8f9e-d09ed8ff3c45
   type: administrative
   attestation: second_hand
@@ -130,3 +146,8 @@ domain_claims:
   quote: '{{classification: "SECRET//REL TO USA, FIN, SWE, FVEY, NATO"}}'
   text: |-
     The 2x UAP Sighting at 1653Z, MGRS 35SQT3423692957 is classified SECRET and is releasable to the United States (USA), Finland (FIN), Sweden (SWE), Five Eyes (FVEY), and the North Atlantic Treaty Organization (NATO).
+  entailment:
+    label: entails
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

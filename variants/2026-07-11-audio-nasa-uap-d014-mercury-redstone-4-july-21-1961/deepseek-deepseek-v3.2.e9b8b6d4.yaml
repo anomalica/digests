@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -79,6 +85,11 @@ domain_claims:
     name: Mercury-Redstone 4
   quote: Its about uh three quarters of a mile out
   text: The recovery team member estimated a distance of approximately 1.2 kilometres.
+  entailment:
+    label: entails
+    score: 0.827
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1d2f3db2-2ae9-4271-8a17-73bfe5c05871
   type: testimony
   attestation: first_hand
@@ -95,3 +106,8 @@ domain_claims:
   quote: Thought maybe a capsule uh after the liftoff
   text: |-
     During Mercury-Redstone 4, a recovery team member speculated that a sighting might be the capsule after liftoff.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

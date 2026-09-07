@@ -13,6 +13,12 @@ ai_usage:
     cache_write: 0
     calls: 4
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.1
 prompts:
 - pass: nodes
   id: nodes
@@ -143,6 +149,11 @@ domain_claims:
     I've been down here in Australia interviewing witnesses to find out for myself, in direct, face-to-face, or in some cases, phone interviewing, exactly what happened in individual cases and what the credibility of the witness is
   text: |-
     James E. McDonald visited Australia to conduct face-to-face and phone interviews with witnesses of Unidentified Aerial Phenomena (UAP) to assess the credibility of their reports.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c074bf06-f793-434b-b99a-0670053f8774
   type: testimony
   attestation: second_hand
@@ -166,6 +177,11 @@ domain_claims:
     Mrs. Smith: I saw a cigar-shaped object, approximately 1949 this would be. Barry Jones: Mm-hmm. Mrs. Smith: And I think thousands of others saw it too, actually. It was about 9 to 9:30 p.m. in the evening. ... perfectly stationary. ... Hawthorne. We were living in Hawthorne at the time.
   text: |-
     In 1949, a witness in Hawthorne, Victoria, observed a stationary, cigar-shaped object at approximately 21:00 to 21:30.
+  entailment:
+    label: contradicts
+    score: 0.837
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c8004461-7590-47fe-835d-aad874ed1086
   type: testimony
   attestation: second_hand
@@ -186,6 +202,11 @@ domain_claims:
     had a dull light inside and then as though it had an electric light globe going up and down from, you know, top to bottom continuously.
   text: |-
     The witness in Hawthorne observed a dull light inside the cigar-shaped object, which appeared to move continuously from top to bottom.
+  entailment:
+    label: entails
+    score: 0.796
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6302bf6a-aa33-4483-9c7d-785075cc369e
   type: hearsay
   attestation: second_hand
@@ -211,6 +232,11 @@ domain_claims:
     I rang The Sun and the chap on the switchboard said that he had also seen it and he was inundated with calls.
   text: |-
     A switchboard operator at The Sun newspaper reported observing the same UAP sighting as Mrs. Smith and claimed to be inundated with calls about it.
+  entailment:
+    label: entails
+    score: 0.926
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 27e6f526-ca44-4a18-8b08-a0313944502c
   type: testimony
   attestation: second_hand
@@ -229,6 +255,11 @@ domain_claims:
     Speaker 6: Well, just before Christmas last December, I saw... It was a clear night. I saw what I thought at first was a shooting star... But instead of sort of going down, it went straight across the sky in a straight line. ... it stopped for a little while, for a few minutes, and then it sort of went, started moving towards the horizon again after that.
   text: |-
     In December of the previous year, a witness observed a UAP moving in a straight line across the sky before stopping for a few minutes and then proceeding toward the horizon.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9b4c62cb-a1ec-444f-ab0e-51f802268e47
   type: testimony
   attestation: second_hand
@@ -247,6 +278,11 @@ domain_claims:
     Speaker 6: And also, in February, now my husband was with me in December, in February, I saw, with my mother-in-law and sister-in-law, we saw two of them. And the first one sort of stopped. It sort of seemed to be hovering. And then we saw another one, and that came up towards the first one, and they appeared to be having some sort of rendezvous. And then the second one moved off into the horizon, and the first one just stayed there stationary.
   text: |-
     In February, a witness observed two UAP, one of which was hovering while the other approached it for a rendezvous before departing toward the horizon.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6f2c87da-3a5a-4f82-8fa9-be4d05bcfaf1
   type: testimony
   attestation: second_hand
@@ -264,6 +300,11 @@ domain_claims:
     Speaker 7: I was driving a cab about five years ago. ... around about nine o'clock in the morning ... I saw this object ... up over the ... eastern hill ... there was a a definite object there hovering in the sky ... cylindrical in in ... shape and ... silvery color
   text: |-
     Approximately five years prior to the interview, a taxi driver observed a stationary, silvery, cylindrical object hovering over Eastern Hill while driving a passenger toward the city at 09:00.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 27c9646e-d366-49e8-9425-019c50a46112
   type: testimony
   attestation: second_hand
@@ -283,6 +324,11 @@ domain_claims:
     Speaker 7: I brought it to the attention of the Fair. And she saw it also. And I thought that much of it. I went to the Herald Office to report it. And uh fellas at the Herald Office. thought I was a bloomin' nut, I think.
   text: |-
     The taxi driver reported the UAP sighting to the Herald Office, where the staff expressed skepticism and ridiculed him.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e04e88e0-9242-4e35-bf19-27898712943d
   type: testimony
   attestation: second_hand
@@ -306,6 +352,11 @@ domain_claims:
     James E. MacDonald: ... a farmer named Brew, who was milking 0700 on February of 1963. All of a sudden, coming out of the overcast was a large disc-like object which hovered over a tree 100 yards away. ... The cattle, he was most impressed by the way in which the cattle jumped and stampeded, the dogs started barking, horses broke loose and so on.
   text: |-
     In February 1963, a farmer named Brew observed a large disc-like object emerging from an overcast sky and hovering over a tree, causing panic among his livestock.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7dac58d9-c0b4-4af6-b5d2-69c485d2c3ac
   type: administrative
   attestation: first_hand
@@ -331,6 +382,11 @@ domain_claims:
     On the 7th of June, I was at the United Nations speaking to the Outer Space Affairs Group about the UFO problem, submitted some formal statements to them, urging UN action on the UFO problem.
   text: |-
     On 1967-06-07, James E. McDonald addressed the Outer Space Affairs Group at the United Nations regarding the UAP problem.
+  entailment:
+    label: neutral
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c12e6a7d-59bf-476e-b765-bd3c4e76de21
   type: hearsay
   attestation: third_hand
@@ -356,6 +412,11 @@ domain_claims:
     James E. MacDonald: ... U Thant made a statement now about four or five days ago, I guess six days ago, that the UFO problem is probably the most important international problem, with the present exception of the Vietnam War.
   text: |-
     U Thant stated that the UAP problem is likely the most significant international issue, excluding the Vietnam War.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 140de51f-092d-4a88-aaed-d7c0cf84fa3d
   type: administrative
   attestation: first_hand

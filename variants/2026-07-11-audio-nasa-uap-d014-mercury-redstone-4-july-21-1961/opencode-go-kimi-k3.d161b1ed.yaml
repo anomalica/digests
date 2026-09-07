@@ -9,6 +9,12 @@ ai_usage:
     input: 12890
     output: 675
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.7
 prompts:
 - pass: nodes
   id: nodes
@@ -76,6 +82,11 @@ domain_claims:
   quote: Its about uh three quarters of a mile out
   text: |-
     During Mercury-Redstone 4 on 1961-07-21, a recovery team member observed an object approximately 1.2 kilometres out.
+  entailment:
+    label: neutral
+    score: 0.904
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6539562a-0e55-46f7-8984-8d3535dcc42f
   type: opinion
   attestation: first_hand
@@ -93,3 +104,8 @@ domain_claims:
   quote: Thought maybe a capsule uh after the liftoff, but [inaudible]
   text: |-
     During Mercury-Redstone 4 on 1961-07-21, the recovery team member who observed an object approximately 1.2 kilometres out initially considered that it might be a capsule after the liftoff.
+  entailment:
+    label: neutral
+    score: 0.864
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -10,6 +10,12 @@ ai_usage:
     output: 4986
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.2
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.8
 prompts:
 - pass: nodes
   id: nodes
@@ -73,6 +79,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     At 1653Z, two round, white, hot Unidentified Aerial Phenomena (UAP) were observed in the vicinity of grid coordinates 35SQT3423692957.
+  entailment:
+    label: entails
+    score: 0.872
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a2367776-24b1-4c8f-9ae7-cc01787c6d8a
   type: observation
   attestation: second_hand
@@ -88,6 +99,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     The two Unidentified Aerial Phenomena (UAP) observed at 1653Z in the vicinity of grid coordinates 35SQT3423692957 were moving dynamically south.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1566fdec-dee3-405a-84f9-e277a41c975c
   type: measurement
   attestation: second_hand
@@ -103,6 +119,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     The two Unidentified Aerial Phenomena (UAP) observed at 1653Z in the vicinity of grid coordinates 35SQT3423692957 were moving at approximately 445 kilometres per hour.
+  entailment:
+    label: entails
+    score: 0.388
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bbaf721f-f927-488e-9356-a206a24a8140
   type: administrative
   attestation: second_hand
@@ -122,3 +143,8 @@ domain_claims:
     {{classification: "SECRET//REL TO USA, FIN, SWE, FVEY, NATO"}} AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     The message reporting the 1653Z sighting of two Unidentified Aerial Phenomena (UAP) in the vicinity of grid coordinates 35SQT3423692957 was classified SECRET and marked releasable to the United States, Finland, Sweden, Five Eyes (FVEY), and North Atlantic Treaty Organization (NATO).
+  entailment:
+    label: entails
+    score: 0.925
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

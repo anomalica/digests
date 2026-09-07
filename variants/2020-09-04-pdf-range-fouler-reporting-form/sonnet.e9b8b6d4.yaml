@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.3
 prompts:
 - pass: nodes
   id: nodes
@@ -115,6 +121,11 @@ domain_claims:
     Squadron 172 ATKS
   text: |-
     An aircrew member of the 172nd Attack Squadron (172 ATKS) held the rank of O-3 at the time of the report.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 577d243d-54dc-4c82-a92b-a73e885bfe58
   type: administrative
   attestation: second_hand
@@ -132,6 +143,11 @@ domain_claims:
   quote: Crew Position Other
   text: |-
     The 2020-09-04 Gulf of Aden IR sensor contact involved an aircrew member whose crew position was listed as "Other".
+  entailment:
+    label: entails
+    score: 0.471
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c1232f2-3cd5-4c77-9948-10c82b11ba57
   type: administrative
   attestation: second_hand
@@ -146,6 +162,11 @@ domain_claims:
   quote: SPEAR sanitizes all reports of identifying information.
   text: |-
     SPEAR sanitizes all Range Fouler reports of identifying information before analysis.
+  entailment:
+    label: entails
+    score: 0.739
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cc1fa4bb-2501-426e-975c-93d8695ee20c
   type: administrative
   attestation: second_hand
@@ -161,6 +182,11 @@ domain_claims:
     Absolutely no identifying information for aircrew or squadron will be recorded for analysis.
   text: |-
     No identifying information for aircrew or squadron is recorded for analysis on the Range Fouler Reporting Form.
+  entailment:
+    label: entails
+    score: 0.483
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5ebf3412-936c-4ca2-9fdd-7615e1d7c822
   type: administrative
   attestation: second_hand
@@ -178,6 +204,11 @@ domain_claims:
     Time of detection (hh:mm:ss Z) 21:09:00
   text: |-
     The 2020-09-04 Gulf of Aden IR sensor contact occurred on 2020-09-04, with detection time recorded as 21:09:00 Zulu.
+  entailment:
+    label: entails
+    score: 0.735
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f0ce221d-e0bd-4583-aa80-4b15d089e04a
   type: observation
   attestation: second_hand
@@ -192,6 +223,11 @@ domain_claims:
     name: 2020-09-04 Gulf of Aden IR sensor contact
   quote: Day / Night Night
   text: The 2020-09-04 Gulf of Aden IR sensor contact occurred at night.
+  entailment:
+    label: entails
+    score: 0.433
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 45b03c17-0d7b-4ff8-a536-df4dc9acf6db
   type: administrative
   attestation: second_hand
@@ -207,6 +243,11 @@ domain_claims:
   quote: Mission Description (CAS, BFM, etc) ISR
   text: |-
     The mission during the 2020-09-04 Gulf of Aden IR sensor contact was an Intelligence, Surveillance and Reconnaissance (ISR) mission.
+  entailment:
+    label: entails
+    score: 0.467
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c57e1fc5-6d4e-44b4-b2a6-3922261ae91b
   type: measurement
   attestation: second_hand
@@ -222,6 +263,11 @@ domain_claims:
   quote: 'Contact Altitude (Ex: 22000) 23819'
   text: |-
     The recorded altitude at contact during the 2020-09-04 Gulf of Aden IR sensor contact was approximately 7,260 metres.
+  entailment:
+    label: entails
+    score: 0.445
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83d83168-986d-4adb-900a-68ba2d0e190b
   type: administrative
   attestation: second_hand
@@ -239,6 +285,11 @@ domain_claims:
     We recommend using JMPS to reference the sensor-derived bearing and range relative to the bullseye you had in use.
   text: |-
     The Range Fouler Reporting Form recommends using the Joint Mission Planning System (JMPS) to reference the sensor-derived bearing and range relative to the bullseye in use, in order to determine a latitude/longitude for a contact at initial detection.
+  entailment:
+    label: entails
+    score: 0.444
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 576717a2-1f84-44f3-b904-db2b6a9b24e0
   type: observation
   attestation: second_hand
@@ -254,6 +305,11 @@ domain_claims:
   quote: Was the contact moving? Yes
   text: |-
     During the 2020-09-04 Gulf of Aden IR sensor contact, the contact was determined to be moving.
+  entailment:
+    label: entails
+    score: 0.475
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d0b7c8f9-2fdf-42a1-a775-24381e63d834
   type: measurement
   attestation: second_hand
@@ -269,6 +325,11 @@ domain_claims:
   quote: Direction/Speed (Ex. 090/15) 168/277
   text: |-
     During the 2020-09-04 Gulf of Aden IR sensor contact, the object was tracked moving on a bearing of 168 degrees at approximately 446 kilometres per hour.
+  entailment:
+    label: entails
+    score: 0.458
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 340556e2-e5ef-4d7b-bede-157415902c6f
   type: observation
   attestation: second_hand
@@ -289,6 +350,11 @@ domain_claims:
     Round: ☑ Moving Parts: ☐
   text: |-
     During the 2020-09-04 Gulf of Aden IR sensor contact, the trackfile of the object was characterised as round.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a6d1d9c2-f9e9-47f6-a838-cf72b2fcecdb
   type: administrative
   attestation: second_hand
@@ -304,6 +370,11 @@ domain_claims:
   quote: '# of Contacts in "Group": 1'
   text: |-
     The number of contacts in the "group" for the 2020-09-04 Gulf of Aden IR sensor contact was recorded as 1.
+  entailment:
+    label: entails
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c5ddec0a-cd65-439b-8f16-38eb1e001fe2
   type: observation
   attestation: second_hand
@@ -319,6 +390,11 @@ domain_claims:
   quote: Contact at 21:09z to 21:17z 04SEP2020.
   text: |-
     The 2020-09-04 Gulf of Aden IR sensor contact was detected and tracked from 21:09 Zulu to 21:17 Zulu on 2020-09-04.
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6d6af9c4-5692-462f-aaa1-c44069137196
   type: administrative
   attestation: second_hand
@@ -335,6 +411,11 @@ domain_claims:
     MGRS location 38P LT {{redacted: (b)(1)1.4a}} (estimated lat/long {{redacted: (b)(1)1.4a}}).
   text: |-
     The 2020-09-04 Gulf of Aden IR sensor contact was located at Military Grid Reference System (MGRS) grid 38P LT, with the specific coordinates redacted.
+  entailment:
+    label: entails
+    score: 0.522
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2091ad5e-a262-4845-981b-52835f2d0ef3
   type: observation
   provenance_chain:
@@ -352,6 +433,11 @@ domain_claims:
     While at 23,819 HAT over the Gulf of Aden we tracked a round, cold object in IR traveling 168 degrees at 277 mph.
   text: |-
     During the 2020-09-04 Gulf of Aden IR sensor contact, the aircrew tracked a round, cold object in infrared while at approximately 7,260 metres Height Above Terrain (HAT) over the Gulf of Aden.
+  entailment:
+    label: entails
+    score: 0.721
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a9c109ce-c4e2-4e21-b205-a9a05a84e2d5
   type: observation
   provenance_chain:
@@ -366,6 +452,11 @@ domain_claims:
   quote: It made a few abrupt directional changes during the 8 minute contact.
   text: |-
     During the 2020-09-04 Gulf of Aden IR sensor contact, the object made a few abrupt directional changes during the 8-minute contact.
+  entailment:
+    label: entails
+    score: 0.579
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 02ae3f66-d72d-4f87-858a-8f7a58fddaf8
   type: measurement
   provenance_chain:
@@ -381,6 +472,11 @@ domain_claims:
     Our sensor was aimed -39 degrees below our altitude with a slant range of 6.17NM and ground range of 8.81KM.
   text: |-
     During the 2020-09-04 Gulf of Aden IR sensor contact, the aircrew's sensor was aimed 39 degrees below their altitude.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 77acec77-6c50-4d87-9625-0b3ebcaaeb99
   type: measurement
   provenance_chain:
@@ -395,6 +491,11 @@ domain_claims:
   quote: with a slant range of 6.17NM and ground range of 8.81KM.
   text: |-
     During the 2020-09-04 Gulf of Aden IR sensor contact, the slant range to the object was approximately 11.4 kilometres.
+  entailment:
+    label: contradicts
+    score: 0.695
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ed739109-a62f-4379-8608-b818a5bd8112
   type: measurement
   provenance_chain:
@@ -409,6 +510,11 @@ domain_claims:
   quote: with a slant range of 6.17NM and ground range of 8.81KM.
   text: |-
     During the 2020-09-04 Gulf of Aden IR sensor contact, the ground range to the object was approximately 8.81 kilometres.
+  entailment:
+    label: entails
+    score: 0.601
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aac8f655-eeb8-4954-90a6-c36eb8171aad
   type: observation
   provenance_chain:
@@ -424,6 +530,11 @@ domain_claims:
     The IR sensor was set to black hot and the object in question was a bright white.
   text: |-
     During the 2020-09-04 Gulf of Aden IR sensor contact, the infrared sensor was set to black hot and the object appeared as bright white.
+  entailment:
+    label: entails
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 55721250-b355-42cf-a4f9-76e9ee6cf403
   type: administrative
   attestation: second_hand
@@ -439,3 +550,8 @@ domain_claims:
     Please ensure all display tapes are ripped for the entire time of interaction and saved as a .wmv (Example: 4 May VFA-106 HUD.wmv). Squadron intel personnel shall upload those files to the repository located at this link.
   text: |-
     The Range Fouler Reporting Form instructs squadron intel personnel to upload display-tape recordings of the entire interaction, ripped and saved as .wmv files, to a designated repository.
+  entailment:
+    label: entails
+    score: 0.69
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

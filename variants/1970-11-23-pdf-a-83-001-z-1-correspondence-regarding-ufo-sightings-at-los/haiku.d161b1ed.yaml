@@ -10,6 +10,12 @@ ai_usage:
     output: 12100
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.4
 prompts:
 - pass: nodes
   id: nodes
@@ -117,6 +123,11 @@ domain_claims:
     during the years 1948 through 1951 several sightings of green lights were made at Los Alamos
   text: |-
     During the years 1948 through 1951, several sightings of green lights were made at Los Alamos.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1ac49279-1951-4fb5-8806-3549cb587bfb
   type: observation
   attestation: second_hand
@@ -136,6 +147,11 @@ domain_claims:
   quote: These usually occurred during the early part of the night, nine to eleven
   text: |-
     Green light sightings at Los Alamos usually occurred during the early part of the night, between 21:00 and 23:00.
+  entailment:
+    label: contradicts
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fa498ea8-a4f5-4849-ba4b-894d344683ea
   type: observation
   attestation: second_hand
@@ -154,6 +170,11 @@ domain_claims:
     name: USA, New Mexico, Jemez Mountains
   quote: and were usually in the Jemez Mountains
   text: Green light sightings at Los Alamos usually occurred in the Jemez Mountains.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a400c99b-683a-4885-b0ec-c0fb22282334
   type: observation
   attestation: second_hand
@@ -174,6 +195,11 @@ domain_claims:
     I can recall several instances of green lights weaving in and out of Mountain peaks
   text: |-
     An anonymous source claiming to have personal knowledge of Los Alamos during 1948-1951 observed several instances of green lights weaving in and out of mountain peaks in the Jemez Mountains.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2290761a-7b23-4f52-902b-c5731fb2a0a9
   type: testimony
   attestation: second_hand
@@ -194,6 +220,11 @@ domain_claims:
     This was all reported to the Protective Force Headquarters and should be a matter of record on their logs
   text: |-
     Sightings of green lights at Los Alamos were reported to the Los Alamos Protective Force Headquarters and recorded in their logs.
+  entailment:
+    label: entails
+    score: 0.865
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3698f51f-c218-4ec2-b811-07a188e12aac
   type: observation
   attestation: second_hand
@@ -214,6 +245,11 @@ domain_claims:
     I also recall one instance of five objects flying over Los Alamos in the afternoon. They were flying from southeast to northwest and appeared to be flying in formation
   text: |-
     An anonymous source claiming to have personal knowledge of Los Alamos during 1948-1951 observed five objects flying over Los Alamos in the afternoon in a formation pattern, flying from southeast to northwest.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 936cf0d2-4102-4418-bb4e-c456120a6ae4
   type: observation
   attestation: second_hand
@@ -234,6 +270,11 @@ domain_claims:
     I believe [redacted] of the Protective Force was one of the five or six people that sighted these objects
   text: |-
     Members of the Los Alamos Protective Force were present at sightings of unidentified objects at Los Alamos during the early 1950s.
+  entailment:
+    label: entails
+    score: 0.878
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 172dad56-3a10-408c-89a9-2a6b6242d427
   type: administrative
   attestation: first_hand
@@ -255,6 +296,11 @@ domain_claims:
     As agreed in our telephone conversation of today's date, I would like to have the recipe that was used for the simulated atomic bomb demonstrations
   text: |-
     James L. Tuck requested a recipe that was used for simulated atomic bomb demonstrations from the United States Army Engineering School.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 39a5a6cb-19ea-427b-980a-ea71598787ef
   type: opinion
   attestation: first_hand
@@ -278,6 +324,11 @@ domain_claims:
     We are interested in the large atmospheric vortices which are produced as reported in the book "Scientific Study of Unidentified Flying Objects" by Dr. Edward U. Condon
   text: |-
     James L. Tuck was interested in large atmospheric vortices produced in simulated atomic bomb demonstrations, as reported in the book Scientific Study of Unidentified Flying Objects by Edward U. Condon.
+  entailment:
+    label: entails
+    score: 0.629
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 38876f3e-2506-4bf0-8be8-83e7db03cd64
   type: opinion
   attestation: second_hand
@@ -296,6 +347,11 @@ domain_claims:
     His chapter FLIGHT AND PROPULSION strengthens my conviction that Einstein, while seemingly straying from the main current of physical research in his later years, was on scent like a bloodhound when he persisted in trying to lock in on a unified field theory
   text: |-
     An anonymous correspondent believes that Einstein's later work on unified field theory was relevant to understanding ball lightning phenomena as discussed in James M. McCampbell's UFOLOGY.
+  entailment:
+    label: entails
+    score: 0.87
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: d5af2774-6296-40a7-9395-462a0b4040ee
   type: administrative
@@ -320,6 +376,11 @@ infrastructure_claims:
     16 December 1970 [address to] U.S. Army Engineering School Fort Belvoir, Virginia 22060
   text: |-
     James L. Tuck sent correspondence to the United States Army Engineering School at Fort Belvoir, Virginia on 1970-12-16.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 163a293a-ff45-40f0-91d5-2fe785c43687
   type: administrative
   attestation: second_hand
@@ -338,6 +399,11 @@ infrastructure_claims:
     James M. McCampbell, in his UFOLOGY, 1976, appearing on the new non-fiction shelf at the Mesa Library, call number 629.1338 M125u
   text: |-
     James M. McCampbell published a book titled UFOLOGY in 1976, containing comments on ball lightning phenomena.
+  entailment:
+    label: entails
+    score: 0.774
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a51762b4-e1a1-4557-ab53-28c5e2b07a14
   type: administrative
   attestation: second_hand
@@ -355,6 +421,11 @@ infrastructure_claims:
     appearing on the new non-fiction shelf at the Mesa Library, call number 629.1338 M125u
   text: |-
     The book UFOLOGY by James M. McCampbell was shelved in the Mesa Library's new non-fiction section under call number 629.1338 M125u.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3d8dd050-bc55-47ce-89e3-108cec3e543d
   type: administrative
   attestation: second_hand
@@ -377,3 +448,8 @@ infrastructure_claims:
     Mindful of your interesting report on ball lightning, I am enclosing comments on same by a UFO believer, James M. McCampbell, in his UFOLOGY, 1976 [...] His chapter FLIGHT AND PROPULSION strengthens my conviction that Einstein, while seemingly straying from the main current of physical research in his later years, was on scent like a bloodhound when he persisted in trying to lock in on a unified field theory
   text: |-
     An anonymous correspondent sent James L. Tuck comments on ball lightning from James M. McCampbell's UFOLOGY chapter on flight and propulsion, referencing Einstein's pursuit of unified field theory.
+  entailment:
+    label: entails
+    score: 0.799
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

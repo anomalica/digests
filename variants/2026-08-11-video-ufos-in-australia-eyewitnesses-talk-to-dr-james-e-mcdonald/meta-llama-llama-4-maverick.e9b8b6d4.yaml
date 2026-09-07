@@ -13,6 +13,12 @@ ai_usage:
     cache_write: 0
     calls: 4
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.6
 prompts:
 - pass: nodes
   id: nodes
@@ -203,6 +209,11 @@ domain_claims:
   quote: |-
     Professor James MacDonald, the University of Arizona, talking about unidentified flying objects.
   text: James E. McDonald is a scientist at the University of Arizona.
+  entailment:
+    label: entails
+    score: 0.657
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0aa6d90e-ff73-474d-b6a6-2fda0c38475f
   type: testimony
   attestation: first_hand
@@ -220,6 +231,11 @@ domain_claims:
     name: Unidentified Flying Object (UFO)
   quote: I saw a cigar-shaped object, approximately 1949 this would be.
   text: Mrs. Smith observed a cigar-shaped object in the sky in 1949.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f5639be0-e706-47b6-a05c-3fcd763be141
   type: testimony
   attestation: first_hand
@@ -238,6 +254,11 @@ domain_claims:
   quote: |-
     It was perfectly stationary. Had a dull light inside and then as though it had an electric light globe going up and down from, you know, top to bottom continuously.
   text: The object observed by Mrs. Smith was stationary and had a dull light inside.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f3090ec3-d2f2-4bbb-a345-fbaa86726baf
   type: testimony
   attestation: first_hand
@@ -259,6 +280,11 @@ domain_claims:
     It was about 9 to 9:30 p.m. in the evening. Yes, in Hawthorne. We were living in Hawthorne at the time.
   text: |-
     Mrs. Smith observed the object at 9 to 9:30 p.m. in Hawthorne, Australia, Victoria.
+  entailment:
+    label: neutral
+    score: 0.896
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1eb43953-ee7b-4ac7-acd3-1592609d32f3
   type: testimony
   attestation: first_hand
@@ -273,6 +299,11 @@ domain_claims:
   date: '1949'
   quote: It was clear and almost cloudless.
   text: The weather during Mrs. Smith's observation was clear and almost cloudless.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1eceff26-7178-4adb-9f72-36eb1aa99e45
   type: testimony
   attestation: first_hand
@@ -292,6 +323,11 @@ domain_claims:
     I went in then to ring The Sun. And the chappy on the switchboard said that he had also seen it and he was inundated with calls.
   text: |-
     After observing the object, Mrs. Smith rang The Sun newspaper, and the switchboard operator confirmed he had also seen it and was inundated with calls.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ba03cb4f-4dca-4172-9d86-e8903624ef67
   type: testimony
   attestation: first_hand
@@ -308,6 +344,11 @@ domain_claims:
     But I noticed there was nothing much in the paper the next morning about it. Just a tiny little paragraph.
   text: |-
     The next morning after Mrs. Smith's observation, there was only a tiny paragraph in the paper about the object.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cd808f34-d3a9-406c-996a-394171eecaab
   type: testimony
   attestation: first_hand
@@ -327,6 +368,11 @@ domain_claims:
     But the funny thing was, when I came out from the phone, I suppose it would be a period of 10 minutes, there was a black cloud there. And I waited till the cloud went by and the object had gone.
   text: |-
     After Mrs. Smith called The Sun, a black cloud appeared where the object was, and then the object disappeared.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 447af770-1b9c-4433-9a81-3840344c8ba5
   type: opinion
   attestation: first_hand
@@ -345,6 +391,11 @@ domain_claims:
     You're talking about a clear sky, a non-thundery situation. ... That type of situation, clear sky, there were no thunderstorms anywhere in the area.
   text: |-
     James E. McDonald considers Mrs. Smith's observation interesting because it was in clear sky conditions with no thunderstorms.
+  entailment:
+    label: entails
+    score: 0.812
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c85d274d-e5cf-4154-b10b-7c74176ee759
   type: opinion
   attestation: first_hand
@@ -363,6 +414,11 @@ domain_claims:
     That rules out plasmoids of the ball lightning type. The possibility that it's a meteoric fireball is ruled out.
   text: |-
     James E. McDonald rules out the possibility that Mrs. Smith's observation was a meteoric fireball or ball lightning.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cb93dca8-66a9-4f04-8ec8-856c7e296691
   type: testimony
   attestation: first_hand
@@ -382,6 +438,11 @@ domain_claims:
     I saw what I thought at first was a shooting star... But instead of sort of going down, it went straight across the sky in a straight line. ... It stopped for a little while, for a few minutes, and then it sort of went, started moving towards the horizon again after that.
   text: |-
     Speaker 6 observed a light in the sky that moved across, stopped, and then moved towards the horizon in December.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6ea704fe-11ca-4708-b769-fddae5d30a7e
   type: testimony
   attestation: first_hand
@@ -401,6 +462,11 @@ domain_claims:
     I saw, with my mother-in-law and sister-in-law, we saw two of them. And the first one sort of stopped. It sort of seemed to be hovering. And then we saw another one, and that came up towards the first one, and they appeared to be having some sort of rendezvous.
   text: |-
     Speaker 6, along with his mother-in-law and sister-in-law, observed two objects in the sky in February, which appeared to be having a rendezvous.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a12b8fe6-fc1d-46f9-951a-d6361b1823a5
   type: opinion
   attestation: first_hand
@@ -419,6 +485,11 @@ domain_claims:
     This general category of observation in which it is simply a light in the sky is an extremely dangerous category with respect to misinterpretation. ... The stopping that you described is not at all uncommon. The fact that another one came up is scarcely meteoric behavior, and I don't know of any hovering meteors in all history of mankind.
   text: |-
     James E. McDonald cautions that observations of lights in the sky can be misinterpreted, but notes that the stopping and hovering described by Speaker 6 is not typical of meteors.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6f553a1e-6807-473b-9000-bb5f6cc6b9ed
   type: testimony
   attestation: first_hand
@@ -440,6 +511,11 @@ domain_claims:
     I was driving in with this fare... in a westerly direction that began towards the city... around about nine o'clock in the morning... I saw this object... hovering in the sky... cylindrical in shape and silvery color.
   text: |-
     Speaker 7 observed a cylindrical, silvery object hovering in the sky while driving a cab in East Melbourne in the morning, around 9 o'clock, five years prior to the interview.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8afee165-0ff6-4f60-bbea-82921d954f58
   type: testimony
   attestation: first_hand
@@ -458,6 +534,11 @@ domain_claims:
   quote: |-
     It was stationary. And then all of a sudden, it just took off in a... just flashed off and that was the end of it.
   text: The object observed by Speaker 7 was stationary and then suddenly took off.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 33cf45b4-5463-464e-9781-58b1b01c2fe0
   type: testimony
   attestation: first_hand
@@ -474,6 +555,11 @@ domain_claims:
     It was a clear, sunny morning. There was no haze or any description. And to me, it was as clear as the nose on your face.
   text: |-
     The weather during Speaker 7's observation was clear and sunny with no haze or fog.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f0082743-7876-4d6f-83d8-e61acc7cacb0
   type: testimony
   attestation: first_hand
@@ -498,6 +584,11 @@ domain_claims:
     We were down with the Melbourne UFO group, the Victorian Flying Saucer Society, very helpfully have been taking me around the countryside to some of the key witnesses. We were down in Mowi, in the Gippsland area, talking to a farmer named Brew.
   text: |-
     James E. McDonald visited the Victorian Flying Saucer Society and interviewed witnesses in Australia, including a farmer named Brew in Mowi, Gippsland.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cba22f83-1a79-45c4-bc34-48ad5f3d0cc9
   type: testimony
   attestation: second_hand
@@ -523,6 +614,11 @@ domain_claims:
     All of a sudden, coming out of the overcast was a large disc-like object which hovered over a tree 100 yards away. The cattle, he was most impressed by the way in which the cattle jumped and stampeded, the dogs started barking, horses broke loose and so on.
   text: |-
     Brew observed a large disc-like object hovering over a tree while milking cows in February 1963, causing the cattle to jump and stampede.
+  entailment:
+    label: entails
+    score: 0.886
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 39ec4f7f-bfef-436e-bcde-d4db44e9c2f9
   type: testimony
   attestation: first_hand
@@ -544,6 +640,11 @@ domain_claims:
     On the 7th of June, I was at the United Nations speaking to the Outer Space Affairs Group about the UFO problem, submitted some formal statements to them, urging UN action on the UFO problem. I had a date to see U Thant, but the Mideast crisis interfered.
   text: |-
     James E. McDonald spoke to the Outer Space Affairs Group at the United Nations on June 7 about the UFO problem and had a scheduled meeting with U Thant that was interrupted by the Mideast crisis.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0249f8bb-7206-4809-83ad-77fe14182d2f
   type: hearsay
   attestation: third_hand
@@ -567,6 +668,11 @@ domain_claims:
     U Thant made a statement now about four or five days ago, I guess six days ago, that the UFO problem is probably the most important international problem, with the present exception of the Vietnam War.
   text: |-
     U Thant made a statement that the UFO problem is probably the most important international problem, with the exception of the Vietnam War.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e1ff571a-ca05-4b90-94fb-56059c06598b
   type: opinion
   attestation: first_hand
@@ -587,6 +693,11 @@ domain_claims:
     I cabled U Thant a reply, endorsing the statement, but disagreeing to the extent of saying that, in my opinion, the UFO problem is probably even greater in international importance than the Vietnamese situation.
   text: |-
     James E. McDonald endorsed U Thant's statement but considered the UFO problem to be of even greater international importance than the Vietnamese situation.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4c1af023-982f-46bc-99f2-8895ace1cb57
   type: administrative
   attestation: first_hand
@@ -890,6 +1001,11 @@ domain_claims:
     these are sightings that are being investigated include a lot of quite unconventional phenomena that are not any product of our technology or Australia or Russian or English technology. They are not plasma phenomena they are not Sun dogs and pelicans and all the rest of the things that one hears about. They are beyond the present pale of science
   text: |-
     Some Unidentified Flying Objects (UFOs) are beyond the present understanding of science.
+  entailment:
+    label: entails
+    score: 0.793
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 59d9efe4-db30-47c1-947b-7b4840d9006b
   type: opinion
   attestation: first_hand
@@ -908,6 +1024,11 @@ domain_claims:
     You find yourself ending up with the seemingly absurd, seemingly improbable hypothesis These things may be coming from somewhere else.
   text: |-
     The hypothesis that Unidentified Flying Objects (UFOs) may be coming from somewhere else is seemingly absurd but possible.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5805419f-4f87-4fb0-9e06-974881a16ac2
   type: opinion
   attestation: first_hand
@@ -923,6 +1044,11 @@ domain_claims:
     it's almost probable that elsewhere in the galaxy are advanced civilizations uh in fact this is this is very it becomes very respectable to It's generally granted by astronomers that far from here, in the reaches of the galaxy, there must be other societies that are essentially sentient beings whose technologies are swept far beyond ours.
   text: |-
     It is probable that there are advanced civilizations elsewhere in the galaxy with technologies far beyond humanity's.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8cf95563-9132-4c5b-8a22-cc30bdf22861
   type: hearsay
   attestation: second_hand
@@ -949,6 +1075,11 @@ domain_claims:
     Only A Very Short Time Ago, A Very Interesting Statement Was Made By U Thant To Drew Pearson That The Problem Of The UFOs. Now this is the Secretary General of the United Nations speaking, saying that the problem of the UFOs is the greatest international problem second only to the present one of the Vietnam War.
   text: |-
     U Thant, the Secretary-General of the United Nations (UN), told Drew Pearson that the problem of Unidentified Flying Objects (UFOs) is the greatest international problem second only to the Vietnam War.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c10a5b67-eb95-4b25-b98c-9cae5520d305
   type: administrative
   attestation: first_hand
@@ -969,6 +1100,11 @@ domain_claims:
     I spoke along these lines only a short time ago this summer in the United Nations at the outer space affairs group presented a statement to the outer space affairs group urging immediate UN action on the problem
   text: |-
     James E. McDonald presented a statement to the United Nations (UN) outer space affairs group this summer, urging immediate UN action on the Unidentified Flying Object (UFO) problem.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dd3b45a7-307a-4a86-ba68-db240c80cc13
   type: administrative
   attestation: first_hand
@@ -987,6 +1123,11 @@ domain_claims:
     I also sent copies of that statement to about 60 embassies in Washington, 60 foreign embassies, care of their scientific attachés, hoping to stimulate more interest in any and all parts of the world.
   text: |-
     James E. McDonald sent copies of his statement to about 60 foreign embassies in Washington.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4c4ec76a-5ae1-4322-8a86-693c47e1ceb9
   type: opinion
   attestation: first_hand
@@ -1005,6 +1146,11 @@ domain_claims:
     In my opinion, the UFO problem is the greatest scientific problem, the greatest international problem that stands before us.
   text: |-
     The Unidentified Flying Object (UFO) problem is the greatest scientific problem facing humanity.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 95b7b63d-f090-4d18-a87e-8b75ba59c447
   type: administrative
   attestation: first_hand
@@ -1022,4 +1168,9 @@ domain_claims:
     name: University of Arizona
   quote: American physicist Professor James E. MacDonald of the University of Arizona.
   text: James E. McDonald is affiliated with the University of Arizona.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 run_kind: comparison

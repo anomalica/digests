@@ -10,6 +10,12 @@ ai_usage:
     output: 2060
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -81,6 +87,11 @@ domain_claims:
   quote: |-
     There's a monolith there, a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours.
   text: There is a monolith, an unusual structure, on Phobos.
+  entailment:
+    label: neutral
+    score: 0.83
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad6bf459-f00a-4a75-80eb-7ca2c485eaef
   type: observation
   attestation: first_hand
@@ -100,6 +111,11 @@ domain_claims:
     name: USA, [N/A], Phobos
   quote: this little potato-shaped object
   text: Phobos is potato-shaped.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a8ba95c5-889a-467e-9ed0-22bb1f015fd8
   type: measurement
   attestation: first_hand
@@ -121,6 +137,11 @@ domain_claims:
     name: USA, [N/A], Mars
   quote: that goes around Mars once in seven hours
   text: Phobos orbits Mars once every seven hours.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56915f07-8b63-421e-bd7b-517a60f753c1
   type: opinion
   attestation: first_hand
@@ -140,6 +161,11 @@ domain_claims:
     name: Monolith on Phobos
   quote: Well, the universe put it there.
   text: Buzz Aldrin considers the universe a possible origin of the monolith on Phobos.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a85f276-ce2d-456b-8e32-2a9b82b7912a
   type: opinion
   attestation: first_hand
@@ -159,3 +185,8 @@ domain_claims:
     name: Monolith on Phobos
   quote: If you choose, God put it there.
   text: Buzz Aldrin considers God a possible origin of the monolith on Phobos.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

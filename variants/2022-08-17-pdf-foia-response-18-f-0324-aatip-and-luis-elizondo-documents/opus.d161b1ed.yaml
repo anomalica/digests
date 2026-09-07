@@ -9,6 +9,12 @@ ai_usage:
     output: 26643
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 6.0
 prompts:
 - pass: nodes
   id: nodes
@@ -218,6 +224,11 @@ domain_claims:
     Castaic, CA 91384
   text: |-
     John Greenewald is associated with The Black Vault and located at 27305 W. Live Oak Rd., Suite #1203, Castaic, California.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b1bb2c8e-43b5-4866-bf2b-cb37e3afa7cc
   type: administrative
   attestation: first_hand
@@ -238,6 +249,11 @@ domain_claims:
     FROM: Garry Reid, Director for Defense Intelligence, Office of the Under Secretary of Defense for Intelligence
   text: |-
     Garry Reid was the Director for Defense Intelligence in the Office of the Under Secretary of Defense for Intelligence.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 49f23e29-1ea9-4c5d-b1f4-297929ad6beb
   type: opinion
   attestation: first_hand
@@ -260,6 +276,11 @@ domain_claims:
     This memorandum summarizes recent media interest in the AATIP, which has been accentuated by the public statements of former DoD employee Luis Elizondo, who has aggrandized his role in the program.
   text: |-
     Media interest in the Advanced Aerospace Threat Identification Program (AATIP) was accentuated by the public statements of former DoD employee Luis Elizondo, who, in Garry Reid's assessment, aggrandized his role in the program.
+  entailment:
+    label: entails
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 11b50990-cd53-498b-8ca6-253f512cd8ed
   type: administrative
   attestation: first_hand
@@ -286,6 +307,11 @@ domain_claims:
     reviewing the program's history with DIA, Navy, and Air Force, and pursuing options to investigate Mr. Elizondo's possible mishandling of sensitive information.
   text: |-
     The Office of the Under Secretary of Defense for Intelligence reviewed the history of the Advanced Aerospace Threat Identification Program (AATIP) with the Defense Intelligence Agency, the Navy, and the Air Force.
+  entailment:
+    label: entails
+    score: 0.556
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7f92b96b-41d8-4f28-b2af-446783ecb83e
   type: administrative
   attestation: first_hand
@@ -306,6 +332,11 @@ domain_claims:
   quote: Mr. Elizondo was assigned to OUSDI from September 28, 2008 to October 4, 2017.
   text: |-
     Luis Elizondo was assigned to the Office of the Under Secretary of Defense for Intelligence from 2008-09-28 to 2017-10-04.
+  entailment:
+    label: contradicts
+    score: 0.582
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c2fd2661-2023-4b73-ba98-6994267e6034
   type: administrative
   attestation: first_hand
@@ -326,6 +357,11 @@ domain_claims:
     He served as an action officer in Partner Engagement, and subsequently as a branch chief managing classified information to support the Office of Military Commissions.
   text: |-
     Luis Elizondo served as an action officer in Partner Engagement and subsequently as a branch chief managing classified information to support the Office of Military Commissions.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc90c885-1703-4adc-bfc8-a6ec01368ffb
   type: testimony
   attestation: first_hand
@@ -346,6 +382,11 @@ domain_claims:
     To the best of my knowledge, he had no job responsibilities related to the AATIP.
   text: |-
     To the best of Garry Reid's knowledge, Luis Elizondo had no job responsibilities related to the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4cea47f4-17c6-465f-b34c-06f5a61d6b25
   type: administrative
   attestation: first_hand
@@ -364,6 +405,11 @@ domain_claims:
   quote: The AATIP was terminated in 2012.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) was terminated in 2012.
+  entailment:
+    label: entails
+    score: 0.923
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 422c389e-5d0f-4a19-95fb-f704e31172ec
   type: administrative
   attestation: first_hand
@@ -387,6 +433,11 @@ domain_claims:
     On October 3, 2017, Mr. Elizondo submitted a resignation letter (Tab B) requesting immediate termination of his employment. He was cleared out of USDI the next day. He provided no reason for the sudden departure.
   text: |-
     On 2017-10-03, Luis Elizondo submitted a resignation letter requesting immediate termination of his employment, and was cleared out of the Under Secretary of Defense for Intelligence the next day, providing no reason for the sudden departure.
+  entailment:
+    label: entails
+    score: 0.793
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fc997eb0-2160-4875-a025-bff72c5e7d4a
   type: administrative
   attestation: first_hand
@@ -411,6 +462,11 @@ domain_claims:
     On or about October 4, after Mr. Elizondo had departed the organization, a second resignation letter (Tab C) was delivered to the USDI Chief of Staff office. In this letter, which is formatted as a "Memorandum for Record" but uses the salutation "Mr. Secretary," Mr. Elizondo cites concerns over anomalous aerospace threats as the basis for his resignation.
   text: |-
     On or about 2017-10-04, after Luis Elizondo had departed, a second resignation letter formatted as a Memorandum for Record but using the salutation "Mr. Secretary" was delivered to the USDI Chief of Staff office, citing concerns over anomalous aerospace threats as the basis for his resignation.
+  entailment:
+    label: entails
+    score: 0.444
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 81440762-8a18-4fd6-83b3-a7d571de7817
   type: administrative
   attestation: first_hand
@@ -432,6 +488,11 @@ domain_claims:
     Given the uncertain provenance of the second letter, OUSDI retained a copy but did not provide it to the SecDef office.
   text: |-
     Because of the uncertain provenance of Luis Elizondo's second resignation letter, the Office of the Under Secretary of Defense for Intelligence retained a copy but did not provide it to the Secretary of Defense office.
+  entailment:
+    label: entails
+    score: 0.482
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 713842c6-fcd2-4b02-8c9f-6779ecf2b0db
   type: testimony
   attestation: second_hand
@@ -459,6 +520,11 @@ domain_claims:
     In a phone call on October 5, when asked about the second letter, Mr. {{redacted}} told me that for many years he had been secretly tasked by the Secretary of Defense as the program manager for investigating UFOs and other aerial threats. He said nobody in USDI was cleared for this program and would not discuss it further.
   text: |-
     In a phone call on 2017-10-05, Luis Elizondo told Garry Reid that for many years he had been secretly tasked by the Secretary of Defense as the program manager for investigating UFOs and other aerial threats, and that nobody in the Under Secretary of Defense for Intelligence was cleared for the program.
+  entailment:
+    label: entails
+    score: 0.825
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef75a90e-8bc4-4c9a-999c-d0dbb2bff174
   type: testimony
   attestation: first_hand
@@ -479,6 +545,11 @@ domain_claims:
     I discussed his claims with senior officials who would likely have known of such an arrangement, but was unable to substantiate them.
   text: |-
     Garry Reid discussed Luis Elizondo's claim of a secret Secretary of Defense tasking with senior officials who would likely have known of such an arrangement, but was unable to substantiate it.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc02f8ca-d406-4cae-91f2-927e4c6ff5e6
   type: administrative
   attestation: first_hand
@@ -504,6 +575,11 @@ domain_claims:
     On October 12, I learned of a video featuring Mr. Elizondo that was posted on YouTube by the "To the Stars Academy for Arts and Sciences," which appears to be his current employer.
   text: |-
     On 2017-10-12, Garry Reid learned of a video featuring Luis Elizondo posted on YouTube by the To the Stars Academy of Arts and Sciences, which appeared to be Elizondo's current employer.
+  entailment:
+    label: entails
+    score: 0.5
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a93e468-1286-486e-ab08-8789658d9adb
   type: testimony
   attestation: second_hand
@@ -528,6 +604,11 @@ domain_claims:
     He asserts "for nearly the last decade I ran a sensitive Aerospace Threat Identification Program focusing on unidentified aerial technologies,"
   text: |-
     In the To the Stars Academy YouTube video, Luis Elizondo said that for nearly the last decade he ran a sensitive aerospace threat identification program focusing on unidentified aerial technologies.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a98c45c9-472e-4b0f-9375-4851bb1f9013
   type: testimony
   attestation: second_hand
@@ -552,6 +633,11 @@ domain_claims:
     and later says "we are (also) planning to provide never before released footage from real US government systems."
   text: |-
     In the To the Stars Academy YouTube video, Luis Elizondo said the organisation was planning to provide never-before-released footage from real US government systems.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f68102c7-834b-4b78-bf5f-b6e27e5b3ae4
   type: administrative
   attestation: first_hand
@@ -574,6 +660,11 @@ domain_claims:
     Following discovery of the YouTube video, I requested an informal review of Mr. Elizondo's conduct by the Air Force Office of Special Investigations (AFOSI)
   text: |-
     Following discovery of the YouTube video, Garry Reid requested an informal review of Luis Elizondo's conduct by the Air Force Office of Special Investigations (AFOSI).
+  entailment:
+    label: entails
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 77d03009-db69-40cc-8c17-42de25dc8038
   type: administrative
   attestation: first_hand
@@ -594,6 +685,11 @@ domain_claims:
     the Air Force Office of Special Investigations (AFOSI), which is responsible for providing investigative support to the Office of the Secretary of Defense (OSD), including investigation of assigned personnel.
   text: |-
     The Air Force Office of Special Investigations (AFOSI) is responsible for providing investigative support to the Office of the Secretary of Defense, including investigation of assigned personnel.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8f8b9af9-9b43-40e5-b067-afcf3230e355
   type: administrative
   attestation: second_hand
@@ -617,6 +713,11 @@ domain_claims:
     In late November AFOSI advised that absent more tangible indicators of possible misconduct they did not have enough information to open a case on Mr. Elizondo.
   text: |-
     In late November 2017, the Air Force Office of Special Investigations (AFOSI) advised that, absent more tangible indicators of possible misconduct, it did not have enough information to open a case on Luis Elizondo.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b389297f-3bbb-4d74-b7e5-ef5b3c0dab9f
   type: administrative
   attestation: first_hand
@@ -642,6 +743,11 @@ domain_claims:
     On December 7, DoD was contacted by the New York Times (NYT) seeking {{redacted}} information regarding the AATIP and noting that Mr. Elizondo's recent resignation was submitted "to protest what he characterized as internal opposition and lack of resources for continued research."
   text: |-
     On 2017-12-07, the Department of Defense was contacted by The New York Times seeking information regarding the Advanced Aerospace Threat Identification Program (AATIP), noting that Luis Elizondo's resignation was submitted to protest what he characterised as internal opposition and lack of resources for continued research.
+  entailment:
+    label: entails
+    score: 0.453
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 75648601-2744-49ff-a92d-1d4475554953
   type: administrative
   attestation: first_hand
@@ -665,6 +771,11 @@ domain_claims:
     On December 15, based on information contained in the NYT inquiry, I notified the OUSDI Security Officer that Mr. Elizondo may have misused government systems and may intend to release USG footage or information that he obtained during his employment with OUSD (I).
   text: |-
     On 2017-12-15, Garry Reid notified the OUSDI Security Officer that Luis Elizondo may have misused government systems and may intend to release US government footage or information obtained during his employment.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2502fcd3-5f50-4f7b-af5a-892e1e17323d
   type: administrative
   attestation: first_hand
@@ -688,6 +799,11 @@ domain_claims:
     On December 17, Mr. Elizondo appeared on national news programs providing commentary on a video that appears to be camera footage taken by a US military aircraft showing what he claims is an unidentified flying object... Mr. Elizondo affirms his alleged role in leading the AATIP program and says "we are not alone..."
   text: |-
     On 2017-12-17, Luis Elizondo appeared on national news programmes providing commentary on a video that appears to be camera footage taken by a US military aircraft showing what he claims is a UFO, affirming his alleged role leading the Advanced Aerospace Threat Identification Program (AATIP) and saying "we are not alone."
+  entailment:
+    label: entails
+    score: 0.476
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 61b227c8-6b9c-4888-a022-da00f138369a
   type: administrative
   attestation: first_hand
@@ -711,6 +827,11 @@ domain_claims:
     On December 18, OUSDI located a classified email generated by Mr. Elizondo in August 2017, in which he requested assistance from a Navy civilian employee to declassify one or more videos. The video attached to the email is the same footage broadcast on national news on December 17.
   text: |-
     On 2017-12-18, the Office of the Under Secretary of Defense for Intelligence located a classified email generated by Luis Elizondo in August 2017 in which he requested assistance from a Navy civilian employee to declassify one or more videos, the attached video being the same footage broadcast on national news on 2017-12-17.
+  entailment:
+    label: entails
+    score: 0.511
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e6d5e50c-f357-4bc5-ae43-de6ce7c7e5e8
   type: administrative
   attestation: first_hand
@@ -734,6 +855,11 @@ domain_claims:
     On December 21, I met with AFOSI agents to initiate a formal inquiry into Mr. Elizondo's possible mishandling of classified materials.
   text: |-
     On 2017-12-21, Garry Reid met with Air Force Office of Special Investigations (AFOSI) agents to initiate a formal inquiry into Luis Elizondo's possible mishandling of classified materials.
+  entailment:
+    label: entails
+    score: 0.6
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a3927347-1e9f-403a-ae81-6d17f2ed0b74
   type: administrative
   attestation: first_hand
@@ -759,6 +885,11 @@ domain_claims:
     Effective 4 October 2017, I humbly submit my resignation as Director, National Programs Special Management Staff, Office of the Under Secretary of Defense for Intelligence... I respectfully request I receive a "deferred retirement".
   text: |-
     Effective 2017-10-04, Luis Elizondo submitted his resignation as Director, National Programs Special Management Staff, Office of the Under Secretary of Defense for Intelligence, and requested a deferred retirement.
+  entailment:
+    label: entails
+    score: 0.932
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bd787c68-643f-4f8b-8e3f-db179f151677
   type: testimony
   attestation: first_hand
@@ -776,6 +907,11 @@ domain_claims:
   quote: |-
     For over 22 years, I have been blessed to learn from, and work with world-class leadership
   text: Luis Elizondo served in the military and government for over 22 years.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 65fb8014-34b8-41c1-88aa-4f800e6d7f0b
   type: opinion
   attestation: first_hand
@@ -798,6 +934,11 @@ domain_claims:
     bureaucratic challenges and inflexible mindsets continue to plague the Department at all levels. This is particularly true regarding the controversial topic of anomalous aerospace threats.
   text: |-
     Luis Elizondo considered that bureaucratic challenges and inflexible mindsets continued to plague the Department of Defense at all levels, particularly regarding the controversial topic of anomalous aerospace threats.
+  entailment:
+    label: entails
+    score: 0.904
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 75d371aa-18ce-4f97-b478-15736471e262
   type: opinion
   attestation: first_hand
@@ -820,6 +961,11 @@ domain_claims:
     Despite overwhelming evidence at both the unclassified and classified levels, certain individuals in the Department remain staunchly opposed to further research on what could be a tactical threat to our pilots, sailors, and soldiers, and perhaps even an existential threat to our national security.
   text: |-
     Luis Elizondo asserted that, despite overwhelming evidence at both the unclassified and classified levels, certain individuals in the Department of Defense remained staunchly opposed to further research on anomalous aerospace threats that could be a tactical threat to pilots, sailors, and soldiers, and perhaps an existential threat to national security.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2aff0d4-725d-4a63-a593-10a17bf8c53d
   type: opinion
   attestation: first_hand
@@ -840,6 +986,11 @@ domain_claims:
     In many instances, there seems to be a direct correlation the phenomena exhibits with respect to our nuclear and military capabilities.
   text: |-
     Luis Elizondo asserted that in many instances the anomalous aerospace phenomena exhibit a direct correlation with respect to US nuclear and military capabilities.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14e46a7b-c359-4de6-b55a-b961461e436a
   type: opinion
   attestation: first_hand
@@ -862,6 +1013,11 @@ domain_claims:
     The Department must take serious the many accounts by the Navy and other Services of unusual aerial systems interfering with military weapon platforms and displaying beyond next generation capabilities.
   text: |-
     Luis Elizondo asserted that the Navy and other Services had many accounts of unusual aerial systems interfering with military weapon platforms and displaying beyond-next-generation capabilities.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 901cb48d-98da-4537-b413-90d8ba4f7d59
   type: administrative
   attestation: first_hand
@@ -890,6 +1046,11 @@ domain_claims:
     OUSD(I)
   text: |-
     Luis Elizondo signed the second resignation letter as Director, National Programs Special Management Staff, Office of the Under Secretary of Defense for Intelligence.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4f07b4ac-23ee-4795-9fe5-af2ca8961df7
   type: administrative
   attestation: first_hand
@@ -915,6 +1076,11 @@ domain_claims:
     This memorandum provides responds to your six questions regarding the actions of former DoD employee Luis Elizondo. Responses to your questions on the AATIP are in the classified enclosure.
   text: |-
     Garry Reid's memorandum to the Secretary of Defense responded to six questions regarding the actions of former DoD employee Luis Elizondo, with responses on the Advanced Aerospace Threat Identification Program (AATIP) in a classified enclosure.
+  entailment:
+    label: entails
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b877c48b-316d-4a66-8d25-a41c9f2f4b84
   type: administrative
   attestation: first_hand
@@ -935,6 +1101,11 @@ domain_claims:
     The U.S. Air Force Office of Special Investigations (AFOSI) is conducting an inquiry to determine if Mr. Elizondo mishandled classified information.
   text: |-
     The US Air Force Office of Special Investigations (AFOSI) was conducting an inquiry to determine whether Luis Elizondo mishandled classified information.
+  entailment:
+    label: entails
+    score: 0.644
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ea64dc66-eac9-4b30-b8a4-6a885f6b8969
   type: testimony
   attestation: first_hand
@@ -952,6 +1123,11 @@ domain_claims:
   quote: |-
     Mr. Elizondo has provided three different explanations for his sudden resignation.
   text: Luis Elizondo provided three different explanations for his sudden resignation.
+  entailment:
+    label: entails
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7010a030-3c31-4b1f-9176-210132db7a65
   type: testimony
   attestation: second_hand
@@ -973,6 +1149,11 @@ domain_claims:
     On October 3rd he told his direct supervisor he was resigning because he had a fleeting job opportunity that required his immediate availability.
   text: |-
     On 2017-10-03, Luis Elizondo told his direct supervisor he was resigning because he had a fleeting job opportunity that required his immediate availability.
+  entailment:
+    label: entails
+    score: 0.774
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 584a62bd-f4b3-4690-a1a4-2e5db090181a
   type: testimony
   attestation: first_hand
@@ -997,6 +1178,11 @@ domain_claims:
     In a memorandum dated October 4th he cited his concerns over inaction within the Department over "anomalous aerospace threats" as the reason for his resignation.
   text: |-
     In a memorandum dated 2017-10-04, Luis Elizondo cited his concerns over inaction within the Department of Defense over anomalous aerospace threats as the reason for his resignation.
+  entailment:
+    label: entails
+    score: 0.896
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7e45f133-7093-4742-8499-ccda196441db
   type: testimony
   attestation: second_hand
@@ -1020,6 +1206,11 @@ domain_claims:
     On October 6th, via a phone call, he told me he resigned because his job was too stressful on his family.
   text: |-
     On 2017-10-06, in a phone call, Luis Elizondo told Garry Reid he resigned because his job was too stressful on his family.
+  entailment:
+    label: entails
+    score: 0.904
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: df533b05-8800-4be2-b89c-cec9c861a494
   type: administrative
   attestation: first_hand
@@ -1040,6 +1231,11 @@ domain_claims:
     We referred the timing and circumstances of Mr. Elizondo's resignation to the AFOSI. Their informal assessment did not find any wrongdoing by Mr. Elizondo, and absent any indicators of misconduct, they were unable to open a formal investigation.
   text: |-
     The timing and circumstances of Luis Elizondo's resignation were referred to the Air Force Office of Special Investigations (AFOSI), whose informal assessment did not find any wrongdoing and which was unable to open a formal investigation absent indicators of misconduct.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 329f11ca-eda7-4ebb-91a0-c7ecfa12edb2
   type: administrative
   attestation: first_hand
@@ -1058,6 +1254,11 @@ domain_claims:
     Mr. Elizondo completed all administrative and security related out-processing, including formal debriefs for all SAPs, SCI,
   text: |-
     Between his 2017-10-03 resignation notification and his departure 24 hours later, Luis Elizondo completed all administrative and security-related out-processing, including formal debriefs for all Special Access Programs and Sensitive Compartmented Information.
+  entailment:
+    label: entails
+    score: 0.457
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2feb6223-7052-4355-b7c5-34e1a86bd0bd
   type: testimony
   attestation: first_hand
@@ -1081,6 +1282,11 @@ domain_claims:
     The letter was hand delivered to the USDI Chief of Staff office by someone other than Mr. Elizondo.
   text: |-
     Luis Elizondo's second resignation letter / Memorandum for Record was hand delivered to the Under Secretary of Defense for Intelligence Chief of Staff office by someone other than Luis Elizondo.
+  entailment:
+    label: entails
+    score: 0.801
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c09425d-e18a-4d9f-b993-77141e8aa09b
   type: opinion
   attestation: first_hand
@@ -1104,6 +1310,11 @@ domain_claims:
     The letter is not consistent with the first resignation letter Mr. Elizondo personally handed his supervisor.
   text: |-
     Luis Elizondo's second resignation letter / Memorandum for Record is not consistent with the first resignation letter that Luis Elizondo personally handed to his supervisor.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 57d3797d-de79-4a2c-b27e-266233584373
   type: testimony
   attestation: second_hand
@@ -1128,6 +1339,11 @@ domain_claims:
     After my phone call with Mr. Elizondo, in which he said he had been secretly working for the Secretary
   text: |-
     In a phone call with Garry Reid, Luis Elizondo said he had been secretly working for the Secretary.
+  entailment:
+    label: entails
+    score: 0.955
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 123ee5d2-7421-492b-bd63-1bdb2af49fd5
   type: testimony
   attestation: first_hand
@@ -1147,6 +1363,11 @@ domain_claims:
   quote: I checked with two senior officials that have knowledge of special programs
   text: |-
     Garry Reid checked with two senior officials who have knowledge of special programs regarding Luis Elizondo's claims.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cec64863-d028-471a-ae3f-2d018f5efe38
   type: opinion
   attestation: first_hand
@@ -1172,6 +1393,11 @@ domain_claims:
     our collective assessment was that Mr. Elizondo's claims were not credible, and the letter was not worthy of the Secretary's personal attention.
   text: |-
     The collective assessment of Garry Reid and two senior officials with knowledge of special programs was that Luis Elizondo's claims were not credible, and that his second resignation letter was not worthy of the Secretary's personal attention.
+  entailment:
+    label: entails
+    score: 0.774
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 461fbc55-6d31-4007-b6ef-e964906cb34a
   type: testimony
   attestation: first_hand
@@ -1194,6 +1420,11 @@ domain_claims:
     Yes. USDI staff contacted him upon discovery of the SIPRnet email sent to him by Mr. Elizondo.
   text: |-
     The Navy civilian was interviewed about the declassification; Office of the Under Secretary of Defense for Intelligence staff contacted him upon discovery of the Secret Internet Protocol Router Network (SIPRnet) email sent to him by Luis Elizondo.
+  entailment:
+    label: entails
+    score: 0.91
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 96542b0b-1640-4109-a088-1116d9da8f69
   type: testimony
   attestation: third_hand
@@ -1217,6 +1448,11 @@ domain_claims:
     He informed us that he told Mr. Elizondo that he was not the declassification release authority, and took no further action.
   text: |-
     The Navy civilian told Luis Elizondo that he was not the declassification release authority, and took no further action.
+  entailment:
+    label: entails
+    score: 0.616
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cd4dbeaa-9a3b-487c-9ddc-23d56ccd1fd1
   type: administrative
   speaker:
@@ -1231,6 +1467,11 @@ domain_claims:
     "Deferred Retirement" refers to delayed payment of benefits until certain criteria are met.
   text: |-
     "Deferred Retirement" refers to delayed payment of benefits until certain criteria are met.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a9a423f4-427d-4736-b9ec-a440bc44347e
   type: administrative
   speaker:
@@ -1245,6 +1486,11 @@ domain_claims:
     Deferred retirement applies to those with at least five years of Federal service who depart before reaching their Minimum Retirement Age (MRA)
   text: |-
     Deferred retirement applies to those with at least five years of Federal service who depart before reaching their Minimum Retirement Age (MRA).
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1d742b33-db88-483c-985c-f1cfbe3ae5af
   type: administrative
   speaker:
@@ -1258,6 +1504,11 @@ domain_claims:
   quote: which is between ages 55-57, depending on year of birth.
   text: |-
     The Minimum Retirement Age (MRA) is between ages 55 and 57, depending on year of birth.
+  entailment:
+    label: entails
+    score: 0.475
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b008d2ac-786e-40e4-81cc-551c441edf13
   type: administrative
   speaker:
@@ -1271,6 +1522,11 @@ domain_claims:
   quote: Those with 5 years can opt to collect retirement benefits as early as age 62
   text: |-
     Those with 5 years of Federal service can opt to collect retirement benefits as early as age 62.
+  entailment:
+    label: entails
+    score: 0.663
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 082455fd-16bc-4995-aed3-a8efe063e415
   type: administrative
   speaker:
@@ -1285,6 +1541,11 @@ domain_claims:
     those with 10 years can collect at their MRA but will sacrifice 5% for each year they are under 62.
   text: |-
     Those with 10 years of Federal service can collect retirement benefits at their Minimum Retirement Age (MRA) but sacrifice 5% for each year they are under 62.
+  entailment:
+    label: entails
+    score: 0.943
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 58038b02-84b9-47e5-bce8-ed926f119c4a
   type: administrative
@@ -1313,6 +1574,11 @@ infrastructure_claims:
     This is a final response to your December 17, 2017 Freedom of Information Act (FOIA) request... we assigned it FOIA case number 18-F-0324.
   text: |-
     The Department of Defense issued a final response, dated 2022-08-17, to John Greenewald's Freedom of Information Act (FOIA) request concerning the Advanced Aerospace Threat Identification Program (AATIP) and Luis Elizondo, assigned FOIA case number 18-F-0324.
+  entailment:
+    label: contradicts
+    score: 0.925
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9621e332-9a13-4c28-ae2b-95061ca26f6e
   type: administrative
   attestation: first_hand
@@ -1334,6 +1600,11 @@ infrastructure_claims:
     your December 17, 2017 Freedom of Information Act (FOIA) request... We received your request on December 18, 2017
   text: |-
     John Greenewald's FOIA request that became case 18-F-0324 was dated 2017-12-17 and received by the Department of Defense on 2017-12-18.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f20a930a-3f2b-4d44-a9c1-f88ab9737dba
   type: administrative
   attestation: first_hand
@@ -1356,6 +1627,11 @@ infrastructure_claims:
     The Under Secretary of Defense for Intelligence & Security, a component of the Office of the Secretary of Defense, conducted a search of their records systems and located eight pages determined to be responsive to parts one and two of your request.
   text: |-
     The Under Secretary of Defense for Intelligence & Security, a component of the Office of the Secretary of Defense, searched its records systems and located eight pages responsive to parts one and two of John Greenewald's FOIA request.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33ee80cb-4509-4ad3-b19d-7e2a171da77a
   type: administrative
   attestation: first_hand
@@ -1374,6 +1650,11 @@ infrastructure_claims:
     Mr. Brian C. Kreitlow, Chief, Assessment, Capabilities, & Integration Division, in his capacity as an Initial Denial Authority, has determined that portions of the eight responsive pages are exempt from release pursuant to 5 U.S.C. § 552 (b)(6)
   text: |-
     Brian C. Kreitlow, Chief of the Assessment, Capabilities, & Integration Division, acting as an Initial Denial Authority, determined that portions of the eight responsive pages were exempt from release under 5 U.S.C. § 552 (b)(6) as an unwarranted invasion of personal privacy.
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5282c497-d7fa-4cce-aa10-48c217a4e540
   type: administrative
   attestation: first_hand
@@ -1394,6 +1675,11 @@ infrastructure_claims:
     please do not hesitate to contact the Action Officer assigned to your request, Daniel Mullin, at 571-372-0465
   text: |-
     Daniel Mullin was the Action Officer assigned to John Greenewald's FOIA request 18-F-0324.
+  entailment:
+    label: neutral
+    score: 0.804
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f722bf2b-8ba3-42a5-b89c-2b6408cd96f3
   type: administrative
   attestation: first_hand
@@ -1412,6 +1698,11 @@ infrastructure_claims:
     name: Office of the Secretary of Defense (OSD)
   quote: you may contact the OSD/JS FOIA Public Liaison, Toni Fuentes, at 571-372-0462
   text: Toni Fuentes was the OSD/JS FOIA Public Liaison for mediation service inquiries.
+  entailment:
+    label: entails
+    score: 0.798
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c60f6b7-48d8-4f92-bee4-d71d17162f51
   type: administrative
   attestation: first_hand
@@ -1437,6 +1728,11 @@ infrastructure_claims:
     College Park, MD 20740
   text: |-
     The Office of Government Information Services (OGIS) is located at the National Archives and Records Administration, 8601 Adelphi Road, College Park, Maryland.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3995bc94-dbc4-450e-9b68-c61b73478f18
   type: administrative
   attestation: first_hand
@@ -1459,6 +1755,11 @@ infrastructure_claims:
     You have the right to appeal to the appellate authority, Ms. Joo Chung, Assistant to the Secretary of Defense for Privacy Civil Liberties, and Transparency (PCLT), Office of the Secretary of Defense, at the following address: 4800 Mark Center Drive... Alexandria, VA 22350-1700.
   text: |-
     Joo Chung, Assistant to the Secretary of Defense for Privacy, Civil Liberties, and Transparency in the Office of the Secretary of Defense, was the appellate authority for the FOIA request, based in Alexandria, Virginia.
+  entailment:
+    label: entails
+    score: 0.459
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 132852fb-3ffa-4f28-a7a0-94c0186fee20
   type: administrative
   attestation: first_hand
@@ -1484,6 +1785,11 @@ infrastructure_claims:
     Chief
   text: |-
     Stephanie L. Carr, Chief of the Department of Defense Freedom of Information Division, signed the FOIA response 18-F-0324.
+  entailment:
+    label: entails
+    score: 0.467
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0e6c29f9-3ee6-4c1d-9696-9aa24164a0e6
   type: administrative
   attestation: second_hand
@@ -1501,3 +1807,8 @@ infrastructure_claims:
     Text describes The Black Vault as the largest online FOIA document clearinghouse in the world, crediting John Greenewald, Jr.
   text: |-
     The Black Vault, credited to John Greenewald Jr., describes itself as the largest online FOIA document clearinghouse in the world.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

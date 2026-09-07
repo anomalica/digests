@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.5
 prompts:
 - pass: nodes
   id: nodes
@@ -109,6 +115,11 @@ domain_claims:
   quote: I have some more of the white particles in view below the capsule.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter observed more white particles below the Aurora 7 spacecraft.
+  entailment:
+    label: neutral
+    score: 0.598
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 17ad5181-489f-4215-94ca-a4676900216d
   type: observation
   attestation: first_hand
@@ -133,6 +144,11 @@ domain_claims:
   quote: They appear to be traveling exactly my speed.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter observed that the white particles outside the Aurora 7 spacecraft appeared to be travelling at exactly the same speed as the spacecraft.
+  entailment:
+    label: neutral
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6583ef04-1564-4a47-b57e-a30696672c07
   type: observation
   attestation: first_hand
@@ -157,6 +173,11 @@ domain_claims:
   quote: There is one drifting off.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter observed one of the white particles drifting off away from the Aurora 7 spacecraft.
+  entailment:
+    label: neutral
+    score: 0.865
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9ecc90f7-9369-4081-8a47-ff2a33a5640e
   type: observation
   attestation: first_hand
@@ -181,6 +202,11 @@ domain_claims:
   quote: It's going faster than I am, as a matter of fact.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter observed that one of the white particles was travelling faster than the Aurora 7 spacecraft.
+  entailment:
+    label: entails
+    score: 0.782
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 735b2e12-8e2f-4be7-aef2-495540701535
   type: observation
   attestation: first_hand
@@ -204,6 +230,11 @@ domain_claims:
     I haven't seen the great numbers of these particles, but I've seen a few of them.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter had not seen the great numbers of the white particles, but had seen a few of them.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 05315c66-1913-464c-9915-7fcc088a6c92
   type: observation
   attestation: first_hand
@@ -226,6 +257,11 @@ domain_claims:
   quote: Their motion is random.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter observed that the motion of the white particles outside the Aurora 7 spacecraft was random.
+  entailment:
+    label: contradicts
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 46077c9f-fbd0-45cf-907c-2b84e4e39932
   type: observation
   attestation: first_hand
@@ -248,6 +284,11 @@ domain_claims:
   quote: They look exactly like snowflakes to me.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter considered that the white particles outside the Aurora 7 spacecraft looked exactly like snowflakes, the phenomenon known as the Glenn Effect space fireflies.
+  entailment:
+    label: neutral
+    score: 0.924
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b02628a5-f0d6-4665-a6f7-7c2391b81606
   type: testimony
   attestation: first_hand
@@ -273,6 +314,11 @@ domain_claims:
     Ground Control: Have you tried a return? Scott Carpenter: Negative. Let me get within scanner limits first.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter had not attempted a return when asked by NASA ground control, needing first to adjust the attitude of the Aurora 7 spacecraft to within scanner limits.
+  entailment:
+    label: neutral
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b4e6ad48-eab3-4631-91ce-6a21a3c73f85
   type: testimony
   attestation: first_hand
@@ -295,6 +341,11 @@ domain_claims:
   quote: I must adjust my attitude to within scanner limits first.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter had to adjust the attitude of the Aurora 7 spacecraft to within scanner limits.
+  entailment:
+    label: neutral
+    score: 0.892
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27eadfa3-4cd7-4f3b-878c-c17a9d6a7be5
   type: observation
   attestation: first_hand
@@ -319,6 +370,11 @@ domain_claims:
   quote: There were some more of those little particles.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter observed further small particles outside the Aurora 7 spacecraft on a later occasion.
+  entailment:
+    label: entails
+    score: 0.559
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 100755eb-0042-4839-a663-f81ace538fa2
   type: observation
   attestation: first_hand
@@ -341,6 +397,11 @@ domain_claims:
   quote: They definitely looked like snowflakes this time.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, Scott Carpenter considered that on a later sighting the small particles outside the Aurora 7 spacecraft definitely looked like snowflakes.
+  entailment:
+    label: entails
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 438bae54-2976-4247-a7a5-97dd6df9cc21
   type: testimony
   attestation: second_hand
@@ -362,3 +423,8 @@ domain_claims:
   quote: Uh Roger. I understand your particles look like definite snowflakes.
   text: |-
     During the Mercury-Atlas 7 (MA-7) mission, NASA ground control acknowledged its understanding that the particles reported by Scott Carpenter looked like definite snowflakes.
+  entailment:
+    label: entails
+    score: 0.854
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

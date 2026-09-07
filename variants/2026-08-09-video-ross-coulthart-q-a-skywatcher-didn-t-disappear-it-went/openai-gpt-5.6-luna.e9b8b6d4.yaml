@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 3
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 6.5
 prompts:
 - pass: nodes
   id: nodes
@@ -315,6 +321,11 @@ domain_claims:
     what happened to Skywatcher, the UAP investigation group founded, co-founded by Jake Barber, James Fowler and financier Alex Clocus?
   text: |-
     Skywatcher is a UAP investigation group co-founded by Jake Barber, James Fowler and Alex Klokus.
+  entailment:
+    label: contradicts
+    score: 0.823
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b43344d6-7be7-485d-82ee-c6db0a6480d7
   type: administrative
   attestation: first_hand
@@ -332,6 +343,11 @@ domain_claims:
     name: Skywatcher
   quote: The last time Skywatcher posted on Twitter X was Christmas Day last year
   text: Skywatcher last posted on Twitter X on 2025-12-25.
+  entailment:
+    label: contradicts
+    score: 0.693
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0df989af-d5bb-4686-b202-611c1b8de994
   type: administrative
   attestation: first_hand
@@ -352,6 +368,11 @@ domain_claims:
     where it reaffirmed its commitment to applying disciplined science, advanced sensing and rigorous analysis to the UAP subject.
   text: |-
     Skywatcher reaffirmed its commitment to applying disciplined science, advanced sensing and rigorous analysis to UAP research in its last Twitter X post.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e1c40640-ae33-474f-8cde-3fefa69b2c7c
   type: administrative
   attestation: first_hand
@@ -373,6 +394,11 @@ domain_claims:
     James Fowler left in mid-August last year to follow what he described as a new opportunity in aerial intelligence.
   text: |-
     James Fowler left Skywatcher in 2025-08 to pursue what he described as a new opportunity in aerial intelligence.
+  entailment:
+    label: contradicts
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b76abe4c-267a-4c4e-ab7b-7287430a0784
   type: administrative
   attestation: first_hand
@@ -395,6 +421,11 @@ domain_claims:
     Skywatcher promised that it would seek to validate the existence of UAPs by using what it calls electromechanical signaling, aka the dog whistle.
   text: |-
     Skywatcher sought to validate the existence of Unidentified Aerial Phenomena (UAP) through electromechanical signalling.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f04bccf-2e3d-4a98-835c-7ed48fe84cc0
   type: administrative
   attestation: first_hand
@@ -417,6 +448,11 @@ domain_claims:
     and neuro-meditative interaction, better known as psionic summoning or inviting of UAPs.
   text: |-
     Skywatcher used neuro-meditative interaction, also known as psionic summoning or inviting, in its UAP research.
+  entailment:
+    label: entails
+    score: 0.529
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1df8be83-7704-4890-ad65-1fe02f69f1c6
   type: observation
   attestation: second_hand
@@ -441,6 +477,11 @@ domain_claims:
     based on observations from a base here in Sierra Blanca, southeast of El Paso, Texas, the Skywatcher team reported they'd identified nine separate classes of UAP with their sensors and video cameras.
   text: |-
     During observations from a base in USA, Texas, Sierra Blanca, Skywatcher reported identifying nine separate classes of UAP with sensors and video cameras.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2718d032-eee8-49e6-8f3b-858cd151d172
   type: administrative
   attestation: second_hand
@@ -479,6 +520,11 @@ domain_claims:
     the Tetra, the Tic Tac, the Blob, the Beam, the Manta Ray, the Bright Star, the Jellyfish, the Hornet, and the Egg.
   text: |-
     Skywatcher identified the nine UAP classes as Tetra, Unidentified Aerial Phenomena (UAP) corresponding to Tic Tac, Blob, Beam, Manta Ray, Bright Star, Jellyfish, Hornet and Egg.
+  entailment:
+    label: contradicts
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 576b4a49-022d-4086-9203-1e575d0a9a77
   type: administrative
   attestation: first_hand
@@ -497,6 +543,11 @@ domain_claims:
     So what's really going on? This is quite a story. ... but it's a year on and there's been nothing new posted about what they've been up to.
   text: |-
     Skywatcher has not posted new information about its activities for approximately one year.
+  entailment:
+    label: entails
+    score: 0.805
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9ff300b1-63c6-4f48-9ee5-ead3d7f75e95
   type: hearsay
   attestation: second_hand
@@ -517,6 +568,11 @@ domain_claims:
     name: Skywatcher
   quote: I understand there's been no Skywatcher field operations since July last year
   text: Skywatcher has had no field operations since 2025-07.
+  entailment:
+    label: contradicts
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1e382318-0eaf-498e-a943-5afcbc7680a6
   type: hearsay
   attestation: second_hand
@@ -545,6 +601,11 @@ domain_claims:
     Multiple insiders have told me by the time of that last July field operation, Skywatcher was actually working with and reporting to a number of government agencies, including NASA, the Department of Defence and several intelligence agencies, including the CIA, the Central Intelligence Agency.
   text: |-
     By the 2025-07 Skywatcher field operation, Skywatcher was working with and reporting to NASA, the United States Department of Defense (DoD), the Central Intelligence Agency (CIA) and other government agencies.
+  entailment:
+    label: entails
+    score: 0.663
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a30e121f-53e0-420c-9cf6-4ed695573cf7
   type: opinion
   attestation: first_hand
@@ -567,6 +628,11 @@ domain_claims:
     There is no doubt that what Skywatcher has discovered and recorded was and is of huge interest to the intelligence community and the Defence Department.
   text: |-
     Ross Coulthart considers Skywatcher's discoveries and recordings to be of major interest to the intelligence community and the United States Department of Defense (DoD).
+  entailment:
+    label: entails
+    score: 0.643
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e35cf6a5-a34f-4f9f-8689-daacc6487e81
   type: administrative
   attestation: first_hand
@@ -590,6 +656,11 @@ domain_claims:
     the UAP Disclosure Initiative launched by President Trump in May to declassify military and historical records on UAPs.
   text: |-
     The UAP Disclosure Initiative was launched by Donald Trump in 2026-05 to declassify military and historical records on UAP.
+  entailment:
+    label: contradicts
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f4237b07-4a59-4efe-902c-0cc79001f5f5
   type: opinion
   attestation: first_hand
@@ -610,6 +681,11 @@ domain_claims:
     After four fairly dull tranches of heavily redacted, often very blurry and frankly often very underwhelming UAP videos
   text: |-
     Ross Coulthart considers the public UAP videos released through the PURSUE releases to be heavily redacted, often blurry and underwhelming.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c4ab7de-984a-4314-9af4-d26132c4fea2
   type: observation
   attestation: first_hand
@@ -635,6 +711,11 @@ domain_claims:
     Six months ago, February this year, an object or objects of some kind were detected over El Paso Airport in Southern Texas near the Mexican border. At 11.30pm or thereabouts on the 10th of February, the Federal Aviation Administration dramatically closed the airspace over El Paso
   text: |-
     On 2026-02-10, the Federal Aviation Administration (FAA) closed the airspace over USA, Texas, El Paso International Airport after an object or objects were detected over the airport.
+  entailment:
+    label: entails
+    score: 0.801
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 86588dbb-2efd-4843-a75e-3d7105e379ae
   type: hearsay
   speaker:
@@ -656,6 +737,11 @@ domain_claims:
     The public was initially told Mexican organized crime cartel drones were breaching the airspace
   text: |-
     The public was initially told that Mexican organised-crime cartel drones had breached the airspace over USA, Texas, El Paso.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 08f34848-4dfc-438e-a889-8a9f107243bb
   type: administrative
   attestation: second_hand
@@ -680,6 +766,11 @@ domain_claims:
     the FAA shut a massive area over El Paso for what they said would be a 10 day shutdown.
   text: |-
     The Federal Aviation Administration (FAA) initially announced a 10-day closure of a large area of airspace over USA, Texas, El Paso.
+  entailment:
+    label: entails
+    score: 0.912
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 65a986cd-b840-4337-8e1f-abe4c26507e0
   type: administrative
   attestation: second_hand
@@ -702,6 +793,11 @@ domain_claims:
     Transportation Secretary Sean Duffy tweeted, quote, the threat has been neutralized.
   text: |-
     Sean Duffy publicly announced that the threat associated with the USA, Texas, El Paso airspace closure had been neutralised.
+  entailment:
+    label: contradicts
+    score: 0.612
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4206f114-fbd4-48cd-ac4d-a7c9e2f8b061
   type: hearsay
   attestation: second_hand
@@ -724,6 +820,11 @@ domain_claims:
     As my NewsNation border correspondent colleague Ali Bradley has detailed many times, the Mexican cartels frequently fly their drones over the US border and airspace is rarely, if ever, shut down because of these frequent incursions.
   text: |-
     Ali Bradley has repeatedly detailed Mexican cartel drone flights over the United States border, while airspace is rarely shut down because of those incursions.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0d0429c3-1e5f-48b0-8dd0-489107e99690
   type: administrative
   attestation: first_hand
@@ -747,6 +848,11 @@ domain_claims:
     Then just seven hours after the FAA imposed its El Paso shutdown, the restriction was lifted early the next morning around 7am.
   text: |-
     The Federal Aviation Administration (FAA) lifted the USA, Texas, El Paso airspace restriction approximately seven hours after imposing it, at around 07:00 on 2026-02-11.
+  entailment:
+    label: entails
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bcf361d4-7814-4834-bc8a-7f666b3ff058
   type: administrative
   attestation: first_hand
@@ -771,6 +877,11 @@ domain_claims:
     Republican Texas Senator Ted Cruz, the chairman of the Senate Commerce Committee that oversees the FAA, demanded a classified briefing on what really happened.
   text: |-
     Ted Cruz demanded a classified briefing about the USA, Texas, El Paso airspace shutdown.
+  entailment:
+    label: entails
+    score: 0.785
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c05a0d8-9630-4721-ba41-97d7fef4159c
   type: opinion
   attestation: second_hand
@@ -795,6 +906,11 @@ domain_claims:
     Senator Jack Reid of Rhode Island, the top Democrat on the Armed Services Committee, rejected the administration's explanation.
   text: |-
     Jack Reed rejected the administration's explanation of the USA, Texas, El Paso airspace shutdown.
+  entailment:
+    label: entails
+    score: 0.856
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8b94fcc9-262c-4485-9c9f-33e4bd3c1d92
   type: administrative
   attestation: second_hand
@@ -822,6 +938,11 @@ domain_claims:
     This is a NOTAM, a safety advisory to aviators, posted by the Federal Aviation Administration on 8th November last year. closing a massive area of airspace southeast of El Paso right through to the 7th November this year.
   text: |-
     A Federal Aviation Administration Notice to Air Missions (NOTAM) dated 2025-11-08 closed a large area of airspace southeast of USA, Texas, El Paso until 2025-11-07.
+  entailment:
+    label: contradicts
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b516db6a-e384-4ca3-8456-2cc51f4df0e8
   type: administrative
   attestation: second_hand
@@ -846,6 +967,11 @@ domain_claims:
   quote: It deemed this area as national defence airspace
   text: |-
     The 2025 Sierra Blanca temporary flight restriction designated the affected area as national defence airspace.
+  entailment:
+    label: contradicts
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d4e23bcf-c4ec-40b8-aeb8-5b5fdc99af8a
   type: administrative
   attestation: second_hand
@@ -871,6 +997,11 @@ domain_claims:
     warning pilots that any breach of the airspace would allow them to be intercepted, detained and interviewed.
   text: |-
     The 2025 Sierra Blanca temporary flight restriction warned that aircraft breaching the airspace could be intercepted, detained and interviewed.
+  entailment:
+    label: neutral
+    score: 0.436
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 48f5c3dc-83ae-488d-ad06-94dff261a1e3
   type: administrative
   attestation: second_hand
@@ -896,6 +1027,11 @@ domain_claims:
     It authorized the US government to use deadly force if the aircraft posed an imminent threat to security.
   text: |-
     The 2025 Sierra Blanca temporary flight restriction authorised the United States government to use deadly force if an aircraft posed an imminent threat to security.
+  entailment:
+    label: neutral
+    score: 0.395
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d17a30a0-84fa-4884-928a-4ef6884f0235
   type: administrative
   attestation: first_hand
@@ -919,6 +1055,11 @@ domain_claims:
     this area known as Sierra Blanca is exactly where Skywatcher was doing its operations until July last year.
   text: |-
     USA, Texas, Sierra Blanca was the location of Skywatcher's operations until 2025-07.
+  entailment:
+    label: contradicts
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2a4ba798-ab80-4eb6-b24b-59b8aef16db1
   type: administrative
   attestation: second_hand
@@ -941,6 +1082,11 @@ domain_claims:
   quote: this TFR was cancelled six days later on the 14th of November, 2025.
   text: |-
     The 2025 Sierra Blanca temporary flight restriction was cancelled on 2025-11-14, six days after it was issued.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4d6112ca-f54c-4fb2-a118-69413967edce
   type: hearsay
   attestation: second_hand
@@ -967,6 +1113,11 @@ domain_claims:
     I've also learned that the TFR, the shutdown, was initiated by the Defence Department's Joint Special Operations Command, liaison to the FAA, and that it was imposed to, quote, shoot down drones.
   text: |-
     The 2025 Sierra Blanca temporary flight restriction was initiated by the Joint Special Operations Command liaison to the Federal Aviation Administration (FAA) and imposed to shoot down drones.
+  entailment:
+    label: entails
+    score: 0.47
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8db5b508-e8a2-46fe-b12c-1df23026b143
   type: administrative
   attestation: first_hand
@@ -991,6 +1142,11 @@ domain_claims:
     El Paso this time was excluded from the airspace shutdown. Only the exact airspace over Skywatch's zone of operations was affected.
   text: |-
     The 2025 Sierra Blanca temporary flight restriction affected only the airspace over Skywatcher's operational zone and excluded USA, Texas, El Paso.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 43f82665-0221-4601-94db-0e281927aa1b
   type: opinion
   attestation: first_hand
@@ -1013,6 +1169,11 @@ domain_claims:
     There is no doubt that this one year long airspace closure effectively shut down any further Skywatcher operations over the Sierra Blanca range.
   text: |-
     The year-long 2025 Sierra Blanca temporary flight restriction effectively stopped further Skywatcher operations over the Sierra Blanca range.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 36406552-b3b1-456c-b88e-6ec2aa14c8ba
   type: hearsay
   attestation: second_hand
@@ -1041,6 +1202,11 @@ domain_claims:
     Defence sources tell me that their observers were watching on during Skywatch's Sierra Blanca operation
   text: |-
     During Skywatcher's 2025 Sierra Blanca operation, United States Department of Defense (DoD) observers were present.
+  entailment:
+    label: entails
+    score: 0.5
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 93043c8c-3525-48b6-8e7e-587caea0ac35
   type: hearsay
   attestation: second_hand
@@ -1071,6 +1237,11 @@ domain_claims:
     they made a major discovery during Skywatch's psionic summoning and dog whistle operations during 2025, including in that last July 2025 test.
   text: |-
     During Skywatcher's psionic summoning and electromechanical signalling operations in 2025, including the final 2025-07 test, United States Department of Defense (DoD) observers made what Ross Coulthart describes as a major discovery.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd3a0548-6937-4f59-b219-e926101d1947
   type: observation
   attestation: second_hand
@@ -1101,6 +1272,11 @@ domain_claims:
     At exactly the same time that Skywatcher was doing its operations at Sierra Blanca, 200 miles to the northwest, UAP swarms suddenly began appearing in great numbers over the White Sands missile range
   text: |-
     While Skywatcher was operating at USA, Texas, Sierra Blanca, UAP swarms began appearing in large numbers over USA, New Mexico, White Sands Missile Range.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 814b9192-ea1c-438d-b78c-8f24bbf0295f
   type: administrative
   speaker:
@@ -1119,6 +1295,11 @@ domain_claims:
   quote: |-
     The U.S. Defense Department's white sand missile range in New Mexico, known as Wisma, is north of El Paso
   text: USA, New Mexico, White Sands Missile Range is north of USA, Texas, El Paso.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 345c35d8-6f43-4556-8096-f0eb4c827396
   type: administrative
   speaker:
@@ -1139,6 +1320,11 @@ domain_claims:
     81 years ago, the first atomic bomb north of El Code named Trinity was test detonated at Wisma.
   text: |-
     The Trinity nuclear test took place at USA, New Mexico, White Sands Missile Range in 1945.
+  entailment:
+    label: contradicts
+    score: 0.905
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 08ab04e4-0bb4-4f8e-80a4-f4cd7f8909f4
   type: administrative
   speaker:
@@ -1161,6 +1347,11 @@ domain_claims:
     At the end of World War II is where the US tested 100 captured German V2 rockets.
   text: |-
     The United States tested 100 captured German V-2 rockets at USA, New Mexico, White Sands Missile Range after the Second World War.
+  entailment:
+    label: entails
+    score: 0.918
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9bcc914d-aa5d-4bc7-9458-3352d8d9ce8a
   type: administrative
   speaker:
@@ -1180,6 +1371,11 @@ domain_claims:
     Holloman Air Force Base, also long speculated to be the scene of anomalous craft sightings, borders Wismar to the east.
   text: |-
     USA, New Mexico, Holloman Air Force Base borders USA, New Mexico, White Sands Missile Range to the east.
+  entailment:
+    label: contradicts
+    score: 0.751
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8274e32a-f615-483b-ade7-e1798e20ba08
   type: administrative
   speaker:
@@ -1197,6 +1393,11 @@ domain_claims:
     White Sands is the premier military test range in America, the birthplace of the US missile and space technology.
   text: |-
     USA, New Mexico, White Sands Missile Range is a major United States military test range and a birthplace of United States missile and space technology.
+  entailment:
+    label: entails
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cc391bb5-50ef-4877-ab3a-6238aa5edfec
   type: administrative
   attestation: first_hand
@@ -1214,6 +1415,11 @@ domain_claims:
   quote: |-
     While it appears that Skywatcher is indeed defunct, it's been dissolved as a business entity
   text: Skywatcher has apparently been dissolved as a business entity.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 20ce6647-6f56-41f7-b7b2-6e599fc1b742
   type: opinion
   attestation: first_hand
@@ -1238,6 +1444,11 @@ domain_claims:
     I suspect key individuals from the Skywatcher team are now working with the Defence War Department at the White Sands range.
   text: |-
     Ross Coulthart suspects that key Skywatcher personnel are now working with the United States Department of Defense (DoD) at USA, New Mexico, White Sands Missile Range.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f5e26337-2f10-4aa2-a4ec-c8e3b92b698d
   type: hearsay
   attestation: second_hand
@@ -1264,6 +1475,11 @@ domain_claims:
     I'm told that from November last year until now The United States government in a joint operation with multiple intelligence and defense agencies has been using these airspace shutdowns, these TFRs to do its own UAP intercept operations.
   text: |-
     From 2025-11 onward, the United States government has allegedly used temporary flight restrictions in a joint operation involving multiple intelligence and defence agencies to conduct UAP interception operations.
+  entailment:
+    label: contradicts
+    score: 0.657
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b1ae2a22-d24d-4013-8501-ae3e0cca8091
   type: hearsay
   attestation: second_hand
@@ -1285,6 +1501,11 @@ domain_claims:
     Yes, they have been summoning, detecting and yes, shooting down what we some call drones, others UAPs.
   text: |-
     According to anonymous sources relayed by Ross Coulthart, the United States government has summoned, detected and shot down objects referred to as drones or Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.791
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a99fc450-12f7-4ddc-9156-08b0b3107503
   type: hearsay
   attestation: second_hand
@@ -1314,6 +1535,11 @@ domain_claims:
     I'm told the Defense Department is using the same so-called dog whistle (electromechanical signalling) and psionic summoners (neuromedative interraction) as Skywatch's team was doing at Sierra Blanca.
   text: |-
     According to anonymous sources relayed by Ross Coulthart, the United States Department of Defense (DoD) is using Skywatcher's electromechanical signalling and psionic summoning methods.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7483f10b-3934-41a3-bb6e-91051071a4e0
   type: hearsay
   attestation: second_hand
@@ -1335,6 +1561,11 @@ domain_claims:
     And I'm told they have recently downed objects, craft, both in the US and across the border near Juarez in Mexico.
   text: |-
     According to anonymous sources relayed by Ross Coulthart, objects or craft have recently been downed in the United States and near Mexico, Chihuahua, Ciudad Juárez.
+  entailment:
+    label: neutral
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 427cff27-ccf2-400a-8c34-f0bc594f9df4
   type: hearsay
   attestation: second_hand
@@ -1356,6 +1587,11 @@ domain_claims:
     I am also told by White House sources that President Trump has personally authorized this operation.
   text: |-
     According to White House sources, Donald Trump personally authorised the operation to intercept the objects.
+  entailment:
+    label: entails
+    score: 0.591
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c7b94505-3c4e-40d6-bc76-adc1950e42ce
   type: hearsay
   attestation: second_hand
@@ -1379,6 +1615,11 @@ domain_claims:
     There is a full-on effort underway by the administration to recover suspected non-human intelligence exotic technology in a program totally separate from the so-called legacy program.
   text: |-
     The Executive Office of the President of the United States is allegedly conducting an effort to recover suspected Non-Human Intelligence (NHI) exotic technology in a programme separate from the legacy programme.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b2f29794-88f0-476d-b0cf-e32b8c7c0f7b
   type: hearsay
   attestation: second_hand
@@ -1399,6 +1640,11 @@ domain_claims:
   quote: The Office of the Director of National Intelligence, ODNI, is also involved.
   text: |-
     The Office of the Director of National Intelligence (ODNI) is allegedly involved in the White House operation to investigate and capture the objects.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc512237-46be-44d1-9bcb-039e713c277c
   type: hearsay
   attestation: second_hand
@@ -1422,6 +1668,11 @@ domain_claims:
     President Trump has tasked the Secretary of War, Pete Hegseth, to find out what these objects are and to capture them.
   text: |-
     Donald Trump tasked Pete Hegseth with determining what the objects are and capturing them.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0323a42d-106d-413a-90d9-73e32c94236a
   type: testimony
   attestation: second_hand
@@ -1446,6 +1697,11 @@ domain_claims:
     one of the directed energy weapons systems used at White Sands in an attempt to shoot down these mystery craft is what's called high pulse microwave. It shuts down an aircraft by emitting an intense burst of electromagnetic energy that travels at the speed of light, penetrates the aircraft and fries its electronic systems.
   text: |-
     According to anonymous sources relayed by Ross Coulthart, a high-pulse microwave weapon used at USA, New Mexico, White Sands Missile Range emits an intense burst of electromagnetic energy that travels at the speed of light, penetrates an aircraft and disables its electronic systems.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e22d1b10-2ce3-4261-b6da-c1952f012cad
   type: observation
   attestation: second_hand
@@ -1471,6 +1727,11 @@ domain_claims:
     they definitely show anomalous properties conforming to the five observables that define UAPs. There's no visible means of propulsion, no jets, no turbines, no propellers, no rocket motors. They have instantaneous maneuvers, hypersonic velocities, stealth mode.
   text: |-
     According to anonymous sources relayed by Ross Coulthart, UAP targeted over USA, New Mexico, White Sands Missile Range display the Five Observables: no visible propulsion, instantaneous manoeuvres, hypersonic velocities and stealth mode.
+  entailment:
+    label: entails
+    score: 0.592
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8fdc4278-5b8e-456c-93c5-fa8076418640
   type: opinion
   attestation: first_hand
@@ -1491,6 +1752,11 @@ domain_claims:
     It's being considered as a possibility, I'm told, that some of these objects may be Chinese or other foreign adversary drones doing intelligence or surveillance on what is one of America's most sensitive military test ranges.
   text: |-
     Ross Coulthart considers it possible that some objects detected over USA, New Mexico, White Sands Missile Range are Chinese or other foreign-adversary drones conducting intelligence or surveillance.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a180959e-08e7-4516-956a-3b368031f002
   type: opinion
   attestation: first_hand
@@ -1511,6 +1777,11 @@ domain_claims:
     But what is being detected is without doubt far beyond any known conventional human technology.
   text: |-
     Ross Coulthart considers the detected objects to be beyond known conventional human technology.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 06c2c6e5-16f2-49f0-b05f-8d20459fd44e
   type: opinion
   attestation: second_hand
@@ -1532,6 +1803,11 @@ domain_claims:
     which I'm told is possibly the case for one or two of the objects, particularly the jellyfish, but not for all of the objects.
   text: |-
     Ross Coulthart considers it possible that one or two objects, particularly Jellyfish, are highly advanced Chinese drones, but not all of the objects.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 940a4926-f33e-48ad-ac48-181907cadf45
   type: testimony
   attestation: first_hand
@@ -1551,6 +1827,11 @@ domain_claims:
   quote: |-
     He has given evidence, by the way, to the Congress. I took him there. We actually took him to the Congress and he sat down with a committee and gave his evidence.
   text: Jake Barber has given evidence to the United States Congress.
+  entailment:
+    label: entails
+    score: 0.755
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c9c5b10-c3da-4dab-baac-18bafb481d19
   type: testimony
   attestation: first_hand
@@ -1573,6 +1854,11 @@ domain_claims:
     I took him there. We actually took him to the Congress and he sat down with a committee and gave his evidence.
   text: |-
     Ross Coulthart personally accompanied Jake Barber to a United States Congress committee where Jake Barber gave evidence.
+  entailment:
+    label: entails
+    score: 0.75
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 655e00b2-5665-4af9-a039-dc42d693a4d0
   type: opinion
   attestation: first_hand
@@ -1594,6 +1880,11 @@ domain_claims:
   quote: So the Congress has Jake's evidence. They know what he knows.
   text: |-
     Ross Coulthart considers the United States Congress to possess Jake Barber's evidence and to know what Jake Barber knows.
+  entailment:
+    label: entails
+    score: 0.61
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ae011c71-abb0-44f4-86e5-bfed18567b99
   type: testimony
   attestation: first_hand
@@ -1615,6 +1906,11 @@ domain_claims:
     I'm not privy to any of what's happened once they've been taken away by the retrieval teams.
   text: |-
     Ross Coulthart has no information about what happens to retrieved Anomalous Aerial Vehicles (AAVs) after retrieval teams take them away.
+  entailment:
+    label: entails
+    score: 0.95
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f5e852de-1daa-48c3-a39c-ba0c08ea5db8
   type: administrative
   attestation: first_hand
@@ -1633,6 +1929,11 @@ domain_claims:
     And I've been very careful because I want to respect national security constraints.
   text: |-
     Ross Coulthart has deliberately withheld some material to respect national-security constraints.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 192ac3a6-b8e4-4738-915f-d20eade2ddf7
   type: testimony
   attestation: first_hand
@@ -1652,6 +1953,11 @@ domain_claims:
     individuals and specific orders.
   text: |-
     Ross Coulthart is aware of units, individuals and specific orders connected with the subject.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 70044127-ba01-4c44-a688-0e04d0e778f6
   type: opinion
   attestation: first_hand
@@ -1676,6 +1982,11 @@ domain_claims:
     And I really do think that it's time for the Defence Department, the Department of War, the President, the entire administration to realise that there are people who are genuinely concerned that the President is not being told the full story about what's going on on his behalf at the White Sands Missile Range.
   text: |-
     Ross Coulthart believes some people are genuinely concerned that Donald Trump is not being told the full story about activities conducted on his behalf at White Sands Missile Range.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95469a55-9718-48dc-ae7f-a3df028e13a2
   type: hearsay
   attestation: first_hand
@@ -1696,6 +2007,11 @@ domain_claims:
     And God help us, the mere fact that a civilian aircraft has been caused to crash by operations at White Sands Missile Range
   text: |-
     Ross Coulthart considers operations at White Sands Missile Range to have caused a civilian aircraft to crash.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6bf7a53d-9337-47cc-8458-0b1f09bb9d5e
   type: opinion
   attestation: first_hand
@@ -1717,6 +2033,11 @@ domain_claims:
   quote: which are not necessarily part of this operation, but part of an exercise
   text: |-
     Ross Coulthart distinguishes the White Sands Missile Range operations associated with the civilian-aircraft crash from the Skywatcher operation and associates them with an exercise.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60866102-eef4-4b9f-9a22-e2fc83d46016
   type: opinion
   attestation: first_hand
@@ -1735,6 +2056,11 @@ domain_claims:
     name: USA, New Mexico, White Sands Missile Range
   quote: illustrates just how dangerous this can be.
   text: Ross Coulthart considers the activities at White Sands Missile Range dangerous.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a12746d-7a36-40cc-bc7c-c8df6985a6f9
   type: opinion
   attestation: first_hand
@@ -1757,6 +2083,11 @@ domain_claims:
     And frankly, it needs to be put on a secure footing with accountability to Congress and full public transparency.
   text: |-
     Ross Coulthart believes activities at White Sands Missile Range should be placed on a secure footing with accountability to the United States Congress and full public transparency.
+  entailment:
+    label: entails
+    score: 0.928
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 00d5f700-fc1b-4771-8a54-d82340276357
   type: opinion
   attestation: first_hand
@@ -1776,6 +2107,11 @@ domain_claims:
   quote: Frankly, I think if we are targeting NHI technology
   text: |-
     Ross Coulthart raises the possibility that Non-Human Intelligence (NHI) technology is being targeted.
+  entailment:
+    label: entails
+    score: 0.619
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0bba4120-1fa5-464d-a124-0aeb5cebfeb8
   type: opinion
   attestation: first_hand
@@ -1795,6 +2131,11 @@ domain_claims:
   quote: if there's a possibility that there is a biological entity on board those craft
   text: |-
     Ross Coulthart raises the possibility that an Anomalous Aerial Vehicle (AAV) could contain a biological entity.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 185ad2ec-a8f6-412b-b3de-2a2d3221ed79
   type: opinion
   attestation: first_hand
@@ -1817,6 +2158,11 @@ domain_claims:
     a living, intelligent, advanced being, what does it say about our potential first contact with a non-human intelligence that we're acting offensively against them?
   text: |-
     Ross Coulthart considers the possibility of a living, intelligent and advanced being aboard an Anomalous Aerial Vehicle (AAV) relevant to the moral implications of first contact with Non-Human Intelligence (NHI).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 849a9ca6-dac0-4bb7-8c0c-dc830a9a5959
   type: hearsay
   attestation: second_hand
@@ -1839,6 +2185,11 @@ domain_claims:
     about this was that if you ran through the security area of a secure airport with something in your hands, the first thing that security guards would be obliged to do is to shoot at you.
   text: |-
     An anonymous person whom Ross Coulthart consulted used the example that security guards would be obliged to shoot at someone running through a secure airport area while carrying something in their hands.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 41f0388f-c9d6-485c-9f4e-b4b2c6a437c6
   type: opinion
   attestation: first_hand
@@ -1858,6 +2209,11 @@ domain_claims:
   quote: The problem is we've invited these entities, we've summoned them into this area
   text: |-
     Ross Coulthart believes the entities involved were invited and summoned into the operational area.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a31eb448-6106-4797-98df-f3e0c1a760f6
   type: hearsay
   attestation: first_hand
@@ -1877,6 +2233,11 @@ domain_claims:
   quote: we've summoned them into this area and we're now shooting them down.
   text: |-
     Ross Coulthart believes the entities summoned into the operational area are now being shot down.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0b51c4b9-8b95-47d0-886c-d4692072cfff
   type: opinion
   attestation: first_hand
@@ -1897,6 +2258,11 @@ domain_claims:
     There are really big moral and ethical issues here that I think need to be debated publicly.
   text: |-
     Ross Coulthart considers the shooting down of the summoned entities to raise major moral and ethical issues that should be debated publicly.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f9eac08e-5f6f-406f-b3cc-f5296cb7f9ba
   type: hearsay
   attestation: first_hand
@@ -1916,6 +2282,11 @@ domain_claims:
     amongst even the personnel on these rangers about what's being done on the United States behalf.
   text: |-
     Ross Coulthart believes there is squeamishness and concern among personnel at the operational ranges about what is being done on behalf of the United States.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3766c575-1f48-4198-b71f-67fd28af3aa9
   type: testimony
   attestation: first_hand
@@ -1935,6 +2306,11 @@ domain_claims:
     We can't prove this.
   text: |-
     Ross Coulthart acknowledges that his account relies on confidential sources and cannot be proved by the evidence he has publicly presented.
+  entailment:
+    label: entails
+    score: 0.832
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d9d0e3da-52a9-4d8a-abed-a04ffc2a1bcc
   type: testimony
   attestation: first_hand
@@ -1954,6 +2330,11 @@ domain_claims:
   quote: The simple fact is this is happening.
   text: |-
     Ross Coulthart asserts that the reported White Sands Missile Range activities are happening.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 53247ef4-3b32-4b09-9dfb-7a0efa6ea1d6
   type: opinion
   attestation: first_hand
@@ -1981,6 +2362,11 @@ domain_claims:
     The TFR was imposed over the Skywatcher operation for a very specific national security reason.
   text: |-
     Ross Coulthart considers the 2025 Sierra Blanca temporary flight restriction to have been imposed over the 2025 Skywatcher Sierra Blanca field operation for a specific national-security reason.
+  entailment:
+    label: entails
+    score: 0.955
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3cf6bd18-69bc-4a1f-b8b0-fcf7d0982c54
   type: opinion
   attestation: first_hand
@@ -2009,6 +2395,11 @@ domain_claims:
   quote: They wanted it shut down because it was disrupting operations at White Sands.
   text: |-
     Ross Coulthart considers the 2025 Sierra Blanca temporary flight restriction to have been intended to shut down the 2025 Skywatcher Sierra Blanca field operation because it was disrupting operations at White Sands Missile Range.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c7461944-acf8-499a-9466-80419505e4f0
   type: opinion
   attestation: first_hand
@@ -2031,6 +2422,11 @@ domain_claims:
     And what has transpired since is something that I think should be brought to the attention of the American public and made fully accountable to the US Congress.
   text: |-
     Ross Coulthart believes the developments following the 2025 Sierra Blanca temporary flight restriction should be brought to the attention of the American public and made fully accountable to the United States Congress.
+  entailment:
+    label: neutral
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 73601e19-65d8-4f85-bbde-017242f0e140
   type: administrative
   attestation: first_hand
@@ -2047,6 +2443,11 @@ domain_claims:
     name: Ross Coulthart
   quote: I'm off on holiday.
   text: Ross Coulthart is going on holiday.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: 813f0091-bb42-410f-8e0d-f14869efcdbc
   type: administrative
@@ -2068,6 +2469,11 @@ infrastructure_claims:
     G'day and welcome to Reality Check Q&A, that time of the week where you get to ask me the hard questions.
   text: |-
     Reality Check with Ross Coulthart is a question-and-answer programme hosted by Ross Coulthart.
+  entailment:
+    label: entails
+    score: 0.946
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 30739d2b-4774-4166-8e94-fc7acb948faf
   type: administrative
   attestation: first_hand
@@ -2088,6 +2494,11 @@ infrastructure_claims:
     name: Reality Check with Ross Coulthart
   quote: Here to help me through it, Meagan Medic.
   text: Meagan Medick helps Ross Coulthart present Reality Check Q&A.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1b30c7a6-cfbf-4e61-ad18-0188a219298a
   type: hearsay
   attestation: second_hand
@@ -2112,6 +2523,11 @@ infrastructure_claims:
     As the New York Times reported, top administration officials quickly claimed that the closure was in response to a sudden incursion of drones from Mexican drug cartels, requiring a military response.
   text: |-
     The New York Times reported that senior administration officials attributed the USA, Texas, El Paso airspace closure to a sudden incursion of Mexican drug-cartel drones requiring a military response.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d67bbe6-0c64-49a6-96c9-c4331dfa2374
   type: hearsay
   attestation: second_hand
@@ -2140,6 +2556,11 @@ infrastructure_claims:
     The New York Times claimed the real reason why the FAA shut down the El Paso airspace was because immigration officials had used an anti-drone weapon shared by the Pentagon without coordinating with the FAA.
   text: |-
     The New York Times reported that the Federal Aviation Administration (FAA) closed the USA, Texas, El Paso airspace because immigration officials had used a Pentagon-shared anti-drone weapon without coordinating with the FAA.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f3f2959-2fa4-497e-b234-41588a165f78
   type: hearsay
   attestation: second_hand
@@ -2164,6 +2585,11 @@ infrastructure_claims:
     The Times quoted sources saying Customs Border Protection officials thought they were firing on a cartel drone, but it turned out to be a party balloon.
   text: |-
     The New York Times reported that Customs and Border Protection officials believed they were firing at a cartel drone but actually fired at a party balloon.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 18be1856-e9f7-42bc-8f3f-09d142235063
   type: administrative
   attestation: second_hand
@@ -2187,6 +2613,11 @@ infrastructure_claims:
   quote: It acknowledged Defence Department officials were present during the incident.
   text: |-
     United States Department of Defense (DoD) officials were present during the incident described in the New York Times report.
+  entailment:
+    label: entails
+    score: 0.544
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cd15b544-dd1d-4521-9eb7-60c5ee8cc70f
   type: administrative
   attestation: first_hand
@@ -2213,6 +2644,11 @@ infrastructure_claims:
     You've said multiple times on Reality Check that Jake Barber should be called into Congress to testify under oath ... Do you think that some of this plays a part into why he's not being called
   text: |-
     Meagan Medick asked Ross Coulthart whether Skywatcher's relationship with government entities contributed to Jake Barber not being called to testify before Congress.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cb370447-47c4-4597-9948-e1cfb10a5dd8
   type: opinion
   attestation: first_hand
@@ -2233,6 +2669,11 @@ infrastructure_claims:
     All right Ross, thank you for that awesome report.
     Really good reporting there.
   text: Meagan Medick considers Ross Coulthart's report good reporting.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5f6a6762-6bfd-479e-90eb-fad092be27d8
   type: administrative
   attestation: first_hand
@@ -2251,6 +2692,11 @@ infrastructure_claims:
     What I can say, Meagan, is I'm privy to a lot of material that I haven't put here.
   text: |-
     Ross Coulthart possesses material about the subject that he has not included in the report.
+  entailment:
+    label: entails
+    score: 0.688
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ca50ad15-e5b5-4c57-a021-fe28908364e7
   type: opinion
   attestation: first_hand
@@ -2273,3 +2719,8 @@ infrastructure_claims:
     You've earned it.
   text: |-
     Meagan Medick hopes that Ross Coulthart has a good trip and considers him to have earned it.
+  entailment:
+    label: entails
+    score: 0.929
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

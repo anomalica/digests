@@ -10,6 +10,12 @@ ai_usage:
     output: 1770
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.1
 prompts:
 - pass: nodes
   id: nodes
@@ -90,6 +96,11 @@ domain_claims:
     a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours
   text: |-
     Phobos, the moon of Mars, is potato-shaped and completes one orbit around Mars every seven hours.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d0064b6-69de-4697-b3e8-2ec751ed1395
   type: observation
   attestation: first_hand
@@ -112,3 +123,8 @@ domain_claims:
   quote: |-
     There's a monolith there, a very unusual structure on this little potato-shaped object that goes around Mars once in seven hours.
   text: A monolith exists on Phobos.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

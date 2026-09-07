@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 1
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.8
 prompts:
 - pass: nodes
   id: nodes
@@ -108,6 +114,11 @@ domain_claims:
   quote: It has some pretty stars in sight.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. observed stars in sight from the Mercury capsule.
+  entailment:
+    label: entails
+    score: 0.832
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 37a15a6a-baa3-42d5-b916-4aef1f0c775a
   type: observation
   attestation: first_hand
@@ -133,6 +144,11 @@ domain_claims:
     And also I have the little white objects that seem to come from the capsule itself and drift off.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. observed small white objects that appeared to come from the Mercury capsule itself and drift off.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3b44b71d-acd0-4a67-8892-10bd3e5876e5
   type: opinion
   attestation: first_hand
@@ -153,6 +169,11 @@ domain_claims:
   quote: I suspect that the star I see is obturous.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. suspected that a star he saw was obtrusive.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5617845b-d231-4ba3-89ae-0626da0ea38c
   type: observation
   attestation: first_hand
@@ -175,6 +196,11 @@ domain_claims:
   quote: It is neither. It is one of the white objects.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. determined that what he was observing was one of the white objects rather than a star.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 313d5ee9-4bcc-4a95-93d7-9cd7b8ea66fa
   type: observation
   attestation: first_hand
@@ -195,6 +221,11 @@ domain_claims:
   quote: So I have two stars that are standing quite still.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. observed two stars that appeared to be standing quite still.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 290565d6-b53a-4994-8663-8b57359f8c0b
   type: observation
   attestation: first_hand
@@ -217,6 +248,11 @@ domain_claims:
   quote: The white object actually looked like it came toward me. But it wasn't.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. observed that a white object appeared to come toward him, but determined it was not actually approaching.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 023f886c-a69a-49b5-8fad-8c557a5e5a58
   type: observation
   attestation: first_hand
@@ -240,6 +276,11 @@ domain_claims:
     You can actually see the particle there, playing off, as John described it as a lathe shaving.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. observed particles that could be seen playing off from the Mercury capsule.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9abbb34b-0092-4a84-ad9b-bf0e4ef7bd60
   type: testimony
   attestation: second_hand
@@ -263,6 +304,11 @@ domain_claims:
     You can actually see the particle there, playing off, as John described it as a lathe shaving.
   text: |-
     John Glenn described the particles observed during Project Mercury as resembling a lathe shaving.
+  entailment:
+    label: entails
+    score: 0.515
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4b8a35e-4eb5-4c33-bc4b-9c459d8ca7dd
   type: opinion
   attestation: first_hand
@@ -283,6 +329,11 @@ domain_claims:
   quote: It's a very good description of it.
   text: |-
     Walter M. Schirra Jr. considers John Glenn's description of the particles as a lathe shaving to be a very good description.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f92340b-58d2-4ac6-8ddb-ea6acf2cde2f
   type: measurement
   attestation: first_hand
@@ -305,6 +356,11 @@ domain_claims:
   quote: my rates are now just about zero in all three axes
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. reported that his attitude rates were just about zero in all three axes.
+  entailment:
+    label: neutral
+    score: 0.699
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2d94d498-d0c7-4c5e-b62e-135a2774dcbf
   type: observation
   attestation: first_hand
@@ -327,6 +383,11 @@ domain_claims:
   quote: I still have light in the periscope of course I'm looking straight up
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. reported that he still had light in the periscope while looking straight up.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: acf92bdd-ebc5-4948-846b-09f87d253919
   type: observation
   attestation: first_hand
@@ -347,6 +408,11 @@ domain_claims:
   quote: When I get to the couch here, I really can't pick it too well.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. reported that he could not pick out observations well from the couch.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f13e13c-ae2f-479b-ab18-1289d5bc197e
   type: observation
   attestation: first_hand
@@ -369,6 +435,11 @@ domain_claims:
   quote: Yeah, I'm just about inverted at this point.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. reported that the Mercury capsule was just about inverted at that point in the mission.
+  entailment:
+    label: entails
+    score: 0.954
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47d1bc2f-6c6f-482e-89d6-91b63a9019ae
   type: observation
   attestation: first_hand
@@ -391,6 +462,11 @@ domain_claims:
   quote: And my nose is above the horizon.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. reported that the Mercury capsule's nose was above the horizon.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6592ae70-05de-464e-8ad9-708e6155d510
   type: observation
   attestation: first_hand
@@ -414,6 +490,11 @@ domain_claims:
     As a result, I notice that these particles keep tending after me, relative to me, at any time.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. noticed that the particles kept tending after him relative to him at any time.
+  entailment:
+    label: neutral
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0a7df66f-3950-4144-bd8d-156a8b6a7f8c
   type: observation
   attestation: first_hand
@@ -436,6 +517,11 @@ domain_claims:
   quote: The periscope is blocking out rather rapidly at sunset.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. reported that the Mercury capsule's periscope was blocking out rather rapidly at sunset.
+  entailment:
+    label: entails
+    score: 0.632
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 65e3c548-3328-4301-897e-705a98fb8886
   type: observation
   attestation: first_hand
@@ -458,6 +544,11 @@ domain_claims:
   quote: It's almost blocked out completely at this point and is really not usable.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. reported that the periscope was almost completely blocked out and not usable.
+  entailment:
+    label: entails
+    score: 0.626
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4f4e0838-3d7f-4f81-b0eb-160d36da2651
   type: observation
   attestation: first_hand
@@ -482,6 +573,11 @@ domain_claims:
   quote: Getting a real burst of light in the window and I really don't know what it is.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. experienced a burst of light in the window and could not identify what it was.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c90edf8e-af8c-4a9b-bb11-4cef46079f39
   type: observation
   attestation: first_hand
@@ -502,6 +598,11 @@ domain_claims:
   quote: At this point I should be coming up on a sunset.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. estimated that he should be coming up on a sunset.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9f360c0a-d847-46b9-b454-d8b0facdbf76
   type: measurement
   attestation: first_hand
@@ -522,6 +623,11 @@ domain_claims:
   quote: Five hours and fifteen minutes.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, the mission elapsed time was five hours and fifteen minutes at the point Walter M. Schirra Jr. reported it.
+  entailment:
+    label: neutral
+    score: 0.872
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 679e5ba6-401b-40a1-b0bf-14be67abd2af
   type: observation
   attestation: first_hand
@@ -544,6 +650,11 @@ domain_claims:
   quote: The periscope is dark.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. reported that the periscope was dark.
+  entailment:
+    label: neutral
+    score: 0.957
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d1385169-94a0-4a75-881f-84b91c78726a
   type: observation
   attestation: first_hand
@@ -564,3 +675,8 @@ domain_claims:
   quote: I must be just getting a last look at the horizon, yet I'm not down on it.
   text: |-
     During the Mercury Atlas 8 mission on 1962-10-03, Walter M. Schirra Jr. estimated that he was getting a last look at the horizon but was not down on it.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: medium
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 10.0
 prompts:
 - pass: nodes
   id: nodes
@@ -183,6 +189,11 @@ domain_claims:
     AT 301639ZJUL22, TF CHOSIN TASKED {{redacted: ~14 chars, 1.4a}} WITH IMINT VIA 7 LINE.
   text: |-
     On 2022-07-30 at 1639Z, Task Force Chosin tasked an 89th Attack Squadron (89 ATKS) aircraft with Imagery Intelligence (IMINT) via a 7-line request.
+  entailment:
+    label: contradicts
+    score: 0.672
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47bf5d95-8ae9-457e-9c88-aaa24a0507d5
   type: observation
   attestation: second_hand
@@ -200,6 +211,11 @@ domain_claims:
   quote: 'AT 301822ZJUL22, {{redacted: ~2 chars, 1.4a}} DEPARTED MUWAFFAQ SALTI AB (OJMS).'
   text: |-
     On 2022-07-30 at 1822Z, an 89th Attack Squadron (89 ATKS) aircraft departed Muwaffaq Salti Air Base, Jordan (ICAO code OJMS).
+  entailment:
+    label: neutral
+    score: 0.503
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e652e47b-9cd1-4a53-910c-779da4a48e06
   type: administrative
   attestation: second_hand
@@ -215,6 +231,11 @@ domain_claims:
   quote: 'AT 301829ZJUL22, {{redacted: ~2 chars, 1.4a}} HANDED OVER FROM THE LRE.'
   text: |-
     On 2022-07-30 at 1829Z, the mission aircraft was handed over from the Launch and Recovery Element (LRE).
+  entailment:
+    label: neutral
+    score: 0.507
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d1a306cc-f1c7-471e-abf5-066232d97b43
   type: observation
   attestation: second_hand
@@ -230,6 +251,11 @@ domain_claims:
   quote: 'AT 301925ZJUL22, {{redacted: ~2 chars, 1.4a}} BEGAN SIGINT COLLECT.'
   text: |-
     On 2022-07-30 at 1925Z, the mission aircraft began Signals Intelligence (SIGINT) collection.
+  entailment:
+    label: contradicts
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 293cf798-b0dd-481e-b58a-ac2e550548a4
   type: observation
   attestation: second_hand
@@ -248,6 +274,11 @@ domain_claims:
     AT 302028ZJUL22, {{redacted: ~2 chars, 1.4a}} ARRIVED ON STATION AND CHECKED IN WITH TF CHOSIN STA TO PERFORM IMINT IVO 37SFU38{{redacted: ~2 chars, 1.4a}}81{{redacted: ~2 chars, 1.4a}} (SEE ISR 1).
   text: |-
     On 2022-07-30 at 2028Z, the mission aircraft arrived on station and checked in with Task Force Chosin's Sensor Tasking Authority (STA) to perform Imagery Intelligence (IMINT).
+  entailment:
+    label: entails
+    score: 0.552
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 24a4b824-c7cb-4b5f-ad5e-9da0da5ecb9f
   type: observation
   attestation: second_hand
@@ -268,6 +299,11 @@ domain_claims:
     AT 310239ZJUL22, {{redacted: ~2 chars, 1.4a}} OBSERVED AN UNIDENTIFIED AERIAL PHENOMENON IVO 37SFU27{{redacted: ~2 chars, 1.4a}}74{{redacted: ~2 chars, 1.4a}} (SEE UAP 1).
   text: |-
     On 2022-07-31 at 0239Z, the mission aircraft observed an Unidentified Aerial Phenomenon (UAP) near Dayr az Zawr, Syria.
+  entailment:
+    label: neutral
+    score: 0.747
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 43f5dba9-c1b4-4df3-a8fb-510c35bc0903
   type: observation
   attestation: second_hand
@@ -282,6 +318,11 @@ domain_claims:
     name: 89th Attack Squadron (89 ATKS)
   quote: 'AT 311343ZJUL22, {{redacted: ~2 chars, 1.4a}} RETURNED TO BASE.'
   text: On 2022-07-31 at 1343Z, the mission aircraft returned to base.
+  entailment:
+    label: neutral
+    score: 0.889
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4dad2ff5-3ccf-4775-b094-78cc5acbf95e
   type: observation
   attestation: second_hand
@@ -297,6 +338,11 @@ domain_claims:
   quote: 'AT 311409ZJUL22, {{redacted: ~2 chars, 1.4a}} TERMINATED SIGINT COLLECT.'
   text: |-
     On 2022-07-31 at 1409Z, the mission aircraft terminated Signals Intelligence (SIGINT) collection.
+  entailment:
+    label: contradicts
+    score: 0.351
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 02914c58-d385-43cd-b01b-48aa991ac050
   type: administrative
   attestation: second_hand
@@ -312,6 +358,11 @@ domain_claims:
   quote: 'AT 311458ZJUL22, {{redacted: ~2 chars, 1.4a}} HANDED BACK TO THE LRE.'
   text: |-
     On 2022-07-31 at 1458Z, the mission aircraft was handed back to the Launch and Recovery Element (LRE).
+  entailment:
+    label: neutral
+    score: 0.643
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cc584ac5-af5b-4b6b-a3b1-b44920df3f5e
   type: observation
   attestation: second_hand
@@ -329,6 +380,11 @@ domain_claims:
   quote: 'AT 311519ZJUL22, {{redacted: ~2 chars, 1.4a}} LANDED AT OJMS.'
   text: |-
     On 2022-07-31 at 1519Z, the mission aircraft landed at Muwaffaq Salti Air Base, Jordan (ICAO code OJMS).
+  entailment:
+    label: neutral
+    score: 0.568
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a3682c2-05b9-43f0-8b03-7d067c72adf9
   type: administrative
   attestation: second_hand
@@ -346,6 +402,11 @@ domain_claims:
   quote: FULL MOTION VIDEO WAS EXPLOITED BY DGS1.
   text: |-
     Full motion video (FMV) from the 31 July 2022 mission was exploited by Distributed Ground Station 1 (DGS-1).
+  entailment:
+    label: entails
+    score: 0.42
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9a21de09-6cb2-4c65-9635-fb44fa946e1e
   type: measurement
   attestation: second_hand
@@ -361,6 +422,11 @@ domain_claims:
   quote: 20.9 MISSION HOURS
   text: |-
     The 31 July 2022 mission by the 89th Attack Squadron (89 ATKS) totalled 20.9 mission hours.
+  entailment:
+    label: neutral
+    score: 0.572
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d6db1aa2-4ce4-43e6-aef6-53dac930c57f
   type: measurement
   attestation: second_hand
@@ -376,6 +442,11 @@ domain_claims:
   quote: 17.2 IMINT HOURS
   text: |-
     The 31 July 2022 mission by the 89th Attack Squadron (89 ATKS) included 17.2 Imagery Intelligence (IMINT) hours.
+  entailment:
+    label: entails
+    score: 0.441
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cc75f7c3-d1ba-4e04-8d3c-56833e684937
   type: administrative
   attestation: second_hand
@@ -391,6 +462,11 @@ domain_claims:
   quote: 1 IMINT TASKINGS PROSECUTED
   text: |-
     During the 31 July 2022 mission, the 89th Attack Squadron (89 ATKS) prosecuted 1 Imagery Intelligence (IMINT) tasking.
+  entailment:
+    label: neutral
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5fb9b5d7-4b96-44cd-a021-a21ce898ee02
   type: measurement
   attestation: second_hand
@@ -406,6 +482,11 @@ domain_claims:
   quote: 18.7 SIGINT HOURS
   text: |-
     The 31 July 2022 mission by the 89th Attack Squadron (89 ATKS) included 18.7 Signals Intelligence (SIGINT) hours.
+  entailment:
+    label: entails
+    score: 0.476
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26b5e851-7503-4b0f-80a0-1199ce8a1e08
   type: administrative
   attestation: second_hand
@@ -421,6 +502,11 @@ domain_claims:
   quote: 1 SIGINT TASKINGS PROSECUTED
   text: |-
     During the 31 July 2022 mission, the 89th Attack Squadron (89 ATKS) prosecuted 1 Signals Intelligence (SIGINT) tasking.
+  entailment:
+    label: entails
+    score: 0.44
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40363859-25bb-4442-bd29-db4e2d4f48d4
   type: administrative
   attestation: second_hand
@@ -436,6 +522,11 @@ domain_claims:
   quote: 2 TOTAL TASKINGS PROSECUTED
   text: |-
     During the 31 July 2022 mission, the 89th Attack Squadron (89 ATKS) prosecuted 2 total taskings.
+  entailment:
+    label: entails
+    score: 0.374
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c681c2d9-2df6-4c82-a645-4f6d771a6775
   type: administrative
   attestation: second_hand
@@ -451,6 +542,11 @@ domain_claims:
   quote: '**Declassification Date (YYYYMMDD):** 20470731'
   text: |-
     The 89th Attack Squadron Mission Report, 31 July 2022 (Misrep-7816710) has a declassification date of 2047-07-31.
+  entailment:
+    label: entails
+    score: 0.508
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fe2c6679-88f1-4eaa-94ab-e472c4160c55
   type: administrative
   attestation: second_hand
@@ -468,6 +564,11 @@ domain_claims:
   quote: '**Operation:** INHERENT RESOLVE'
   text: |-
     The 31 July 2022 mission reported in Misrep-7816710 was conducted under Operation Inherent Resolve.
+  entailment:
+    label: entails
+    score: 0.43
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9341a1cc-5555-4296-8aeb-3e84b4e5ffe6
   type: administrative
   attestation: second_hand
@@ -485,6 +586,11 @@ domain_claims:
   quote: '**Operations Center:** 609th'
   text: |-
     The 31 July 2022 mission reported in Misrep-7816710 was overseen by the 609th Air Operations Center (609 AOC).
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d2d3994a-679d-4d2d-8c12-0d3cafdeeb19
   type: administrative
   attestation: second_hand
@@ -502,6 +608,11 @@ domain_claims:
   quote: '**Major Command (MAJCOM):** AFCENT'
   text: |-
     The 31 July 2022 mission reported in Misrep-7816710 fell under the Major Command (MAJCOM) of Air Forces Central Command (AFCENT).
+  entailment:
+    label: entails
+    score: 0.437
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56f9b013-bdb1-477d-ab03-1f08a4e7a29f
   type: administrative
   attestation: second_hand
@@ -519,6 +630,11 @@ domain_claims:
   quote: '**Combatant Command (COCOM):** USCENTCOM'
   text: |-
     The 31 July 2022 mission reported in Misrep-7816710 fell under the Combatant Command (COCOM) of United States Central Command (USCENTCOM).
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7024a994-f5a4-425c-be1d-ee6e937b6333
   type: administrative
   attestation: second_hand
@@ -535,6 +651,11 @@ domain_claims:
     name: 89th Attack Squadron (89 ATKS)
   quote: '**Originator (Unit or Squadron):** 89 ATKS'
   text: Misrep-7816710 was originated by the 89th Attack Squadron (89 ATKS).
+  entailment:
+    label: entails
+    score: 0.508
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6195080e-952b-4d93-9a8b-ea9fb5d8da38
   type: administrative
   attestation: second_hand
@@ -550,6 +671,11 @@ domain_claims:
   quote: '**Tasking Order (ATO):** DI'
   text: |-
     The 31 July 2022 mission reported in Misrep-7816710 was flown under Air Tasking Order (ATO) "DI".
+  entailment:
+    label: contradicts
+    score: 0.506
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 15af0a71-1782-44f5-8c89-a358ab8f756e
   type: administrative
   attestation: second_hand
@@ -565,6 +691,11 @@ domain_claims:
   quote: '**Mission Type:** ARMED RECCE'
   text: |-
     The 31 July 2022 mission reported in Misrep-7816710 was classified as an Armed Reconnaissance mission.
+  entailment:
+    label: entails
+    score: 0.47
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3922f077-1d40-4cfe-bfe6-dbb8c4a1d17c
   type: administrative
   attestation: second_hand
@@ -580,6 +711,11 @@ domain_claims:
   quote: '**Service Tasked:** A - AIR FORCE'
   text: |-
     On the mission reported in Misrep-7816710, the tasked service was the US Air Force.
+  entailment:
+    label: entails
+    score: 0.872
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e918fcd0-35de-4df3-8eac-55f4eda8d149
   type: measurement
   attestation: second_hand
@@ -595,6 +731,11 @@ domain_claims:
   quote: '**Total Time On Station:** 18 hours 44 minutes'
   text: |-
     On the mission reported in Misrep-7816710, the total time on station was 18 hours 44 minutes.
+  entailment:
+    label: entails
+    score: 0.435
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9f1e467-d02f-4504-86c5-38668053726c
   type: observation
   attestation: second_hand
@@ -612,6 +753,11 @@ domain_claims:
   quote: '**Last Engine Shutdown Time:** 311529:00ZJUL22'
   text: |-
     On 2022-07-31 at 1529Z, the mission aircraft's engine was shut down after landing at Muwaffaq Salti Air Base, Jordan.
+  entailment:
+    label: contradicts
+    score: 0.546
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 62e2f59e-9e41-48ba-903f-c04b4bacbe17
   type: measurement
   attestation: second_hand
@@ -627,6 +773,11 @@ domain_claims:
   quote: '**Total Mission Time:** 20 hours 57 minutes'
   text: |-
     The total mission time for the 31 July 2022 mission reported in Misrep-7816710 was 20 hours 57 minutes.
+  entailment:
+    label: entails
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 122bb471-cde5-4495-9080-06b36275e0b7
   type: administrative
   attestation: second_hand
@@ -642,6 +793,11 @@ domain_claims:
   quote: COORDINATED WITH TF CHOSIN 103 MINUTES PRIOR TO TAKE OFF.
   text: |-
     On the mission reported in Misrep-7816710, coordination with Task Force Chosin occurred 103 minutes prior to takeoff.
+  entailment:
+    label: entails
+    score: 0.735
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6b419510-be81-4e61-be72-e32e7f7eecf9
   type: opinion
   attestation: second_hand
@@ -659,6 +815,11 @@ domain_claims:
   quote: COORDINATION WAS SATISFACTORY DUE TO QUALITY OF PRODUCTS.
   text: |-
     The pre-mission coordination between the 89th Attack Squadron (89 ATKS) and Task Force Chosin ahead of the 31 July 2022 mission was assessed as satisfactory due to the quality of products.
+  entailment:
+    label: entails
+    score: 0.511
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 400bf8f8-ec0f-478b-9443-7cdac131cfe1
   type: observation
   attestation: second_hand
@@ -679,6 +840,11 @@ domain_claims:
     AT 2028Z, {{redacted: ~2 chars, 1.4a}} ARRIVED ON OP SPECTRE DAGGER, FORCE PRO ISO TF CHOSIN
   text: |-
     On 2022-07-30 at 2028Z, the mission aircraft arrived to provide force protection in support of (ISO) Task Force Chosin as part of Operation Spectre Dagger.
+  entailment:
+    label: entails
+    score: 0.541
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3c19c7d6-d455-4e28-9eb2-427c819587b0
   type: administrative
   attestation: second_hand
@@ -697,6 +863,11 @@ domain_claims:
     TF CHOSIN SENSOR TASKING AUTHORITY (STA) DIRECTED {{redacted: ~2 chars, 1.4a}} TO PROVIDE IMINT IVO 37SFU38{{redacted: ~2 chars, 1.4a}}81{{redacted: ~2 chars, 1.4a}}.
   text: |-
     Task Force Chosin's Sensor Tasking Authority (STA) directed the mission aircraft to provide Imagery Intelligence (IMINT) at a location identified by military grid reference during the 31 July 2022 mission.
+  entailment:
+    label: contradicts
+    score: 0.498
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f4204d07-982d-4561-8357-2b232853fa79
   type: observation
   attestation: second_hand
@@ -713,6 +884,11 @@ domain_claims:
     AT 2029Z, {{redacted: ~2 chars, 1.4a}} OBSERVED 1X ADM SITTING ON TOP OF CARGO TRUCK PARKED BEHIND TREE IVO 37SFU38{{redacted: ~2 chars, 1.4a}}81{{redacted: ~2 chars, 1.4a}}.
   text: |-
     On 2022-07-30 at 2029Z, the mission aircraft observed one adult male sitting on top of a cargo truck parked behind a tree at a location identified by military grid reference.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 02d8f15d-6732-4f85-932c-dc5254f48eea
   type: observation
   attestation: second_hand
@@ -729,6 +905,11 @@ domain_claims:
     AT 2210Z 1X POSS TECHINCAL OBS IVO 37SFU28{{redacted: ~2 chars, 1.4a}}73{{redacted: ~2 chars, 1.4a}}.
   text: |-
     On 2022-07-30 between 2210Z and 0037Z, one possible "technical" (armed pickup truck) was observed at a location identified by military grid reference, near a location the mission aircraft was scanning designated COI 1.
+  entailment:
+    label: entails
+    score: 0.471
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2aedf22a-c69f-4789-b40e-5845f8366a84
   type: observation
   attestation: second_hand
@@ -745,6 +926,11 @@ domain_claims:
     AT 0023Z, {{redacted: ~2 chars, 1.4a}} OBS 1X ADM ON A MOTO AND CONDUCTED A FOLLOW.
   text: |-
     On 2022-07-31 at 0023Z, the mission aircraft observed one adult male on a motorcycle and conducted a follow.
+  entailment:
+    label: entails
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 55f1697a-3d27-4b12-8c81-388f6250f93b
   type: observation
   attestation: second_hand
@@ -761,6 +947,11 @@ domain_claims:
     AT 0245Z, {{redacted: ~2 chars, 1.4a}} OBSERVED 1X ADM IVO 37SFU27{{redacted: ~2 chars, 1.4a}}74{{redacted: ~2 chars, 1.4a}}.
   text: |-
     On 2022-07-31 at 0245Z, the mission aircraft observed one adult male at a location identified by military grid reference near Dayr az Zawr, Syria.
+  entailment:
+    label: entails
+    score: 0.398
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e8868c90-be00-4b07-ba21-39bfadcd6018
   type: observation
   attestation: second_hand
@@ -777,6 +968,11 @@ domain_claims:
     AT 0256Z, {{redacted: ~2 chars, 1.4a}} OBSERVED 1X REINFORCED STRUCTURE IVO 37SFU34{{redacted: ~2 chars, 1.4a}}66{{redacted: ~2 chars, 1.4a}}.
   text: |-
     On 2022-07-31 at 0256Z, the mission aircraft observed one reinforced structure at a location identified by military grid reference.
+  entailment:
+    label: entails
+    score: 0.401
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5df9f622-e3ef-471d-91cb-2626dfbd84bc
   type: observation
   attestation: second_hand
@@ -793,6 +989,11 @@ domain_claims:
     AT 0521Z, {{redacted: ~2 chars, 1.4a}} OBSERVED 1X WHITE PUT, 1X BLACK PUT, AND 2X WHITE BONGOS CARRYING APPROX 30 ADMS, WHICH THEN {{redacted: ~2 chars, 1.4a}} CONDUCTED A FOLLOW.
   text: |-
     On 2022-07-31 at 0521Z, the mission aircraft observed one white pickup truck, one black pickup truck, and two white Bongo trucks carrying approximately 30 adult males, and then conducted a follow of the vehicles.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 36597539-97ca-4d4e-b6ce-e05e3d5428bc
   type: observation
   attestation: second_hand
@@ -809,6 +1010,11 @@ domain_claims:
     AT 0528Z, THE CONVOY STOPPED N OF AN OVERHANG AND ALL ADMS EXITED THE VEHICLES, WALKING UNDER THE OVERHAND. 1X ADM SLUNG A RILE OVER HIS RIGHT SHOULDER.
   text: |-
     On 2022-07-31 at 0528Z, a convoy under surveillance by the mission aircraft stopped north of an overhang and all adult males exited the vehicles, walking under the overhang; one adult male slung a rifle over his right shoulder.
+  entailment:
+    label: entails
+    score: 0.429
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 225b428d-f3f6-4f3b-98fa-5abdabb578c5
   type: opinion
   attestation: second_hand
@@ -824,6 +1030,11 @@ domain_claims:
   quote: AREA ASSESSED TO BE A POSS SHOOTING RANGE.
   text: |-
     The area where the convoy stopped and adult males walked under an overhang on 2022-07-31 was assessed by the mission aircraft's crew to possibly be a shooting range.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a10429e2-9766-4d95-9f19-fae3dbadfe6d
   type: observation
   attestation: second_hand
@@ -840,6 +1051,11 @@ domain_claims:
     AT 0710Z, THE CONVOY STOPPED IVO 37SFU40{{redacted: ~2 chars, 1.4a}}70{{redacted: ~2 chars, 1.4a}} AND THE ADMS DISMOUNTED AND LOITERED AND 1X TECHNICAL WAS OBSERVED.
   text: |-
     On 2022-07-31 at 0710Z, a convoy under surveillance by the mission aircraft stopped at a location identified by military grid reference, adult males dismounted and loitered, and one "technical" (armed pickup truck) was observed.
+  entailment:
+    label: entails
+    score: 0.441
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 741c94cc-237c-43ad-b1ac-4b908b5ec7c4
   type: observation
   attestation: second_hand
@@ -856,6 +1072,11 @@ domain_claims:
     AT 0753Z, 1X WHITE PUT WITH UI OBJECT, POSS ARTILLERY SYSTEM, IN THE BED AND 1X ADM WERE OBSERVED.
   text: |-
     On 2022-07-31 at 0753Z, the mission aircraft observed one white pickup truck carrying an unidentified object, possibly an artillery system, in its bed, along with one adult male.
+  entailment:
+    label: entails
+    score: 0.427
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 73a88df3-481a-426f-a25e-75c05e7e8770
   type: observation
   attestation: second_hand
@@ -872,6 +1093,11 @@ domain_claims:
     AT 0832Z, A SECOND TRUCK WITH POSS MOUNTED AAA WAS OBSERVED IVO 37SFU26{{redacted: ~2 chars, 1.4a}}73{{redacted: ~2 chars, 1.4a}}.
   text: |-
     On 2022-07-31 at 0832Z, the mission aircraft observed a second truck with a possible mounted anti-aircraft artillery (AAA) system at a location identified by military grid reference.
+  entailment:
+    label: entails
+    score: 0.43
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6da10d73-fe0d-436b-ba22-2596200e2de1
   type: observation
   attestation: second_hand
@@ -890,6 +1116,11 @@ domain_claims:
     FROM 1122Z TO 1137Z, {{redacted: ~2 chars, 1.4a}} SCANNED IVO DAYR AZ ZAR PARKING AFLD (37SFV07{{redacted: ~2 chars, 1.4a}}05{{redacted: ~2 chars, 1.4a}}) FOR EEI RELATED ACTIVITY.
   text: |-
     On 2022-07-31 between 1122Z and 1137Z, the mission aircraft scanned near Dayr az Zawr Parking Airfield, Syria, for essential elements of information (EEI)-related activity.
+  entailment:
+    label: contradicts
+    score: 0.425
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 782c0c56-79dd-4ec1-a557-b83697128f6c
   type: observation
   attestation: second_hand
@@ -907,6 +1138,11 @@ domain_claims:
   quote: AT 1134Z, 2X TELARS WITH 3 ROCKETS LOADED WERE INACTIVE.
   text: |-
     On 2022-07-31 at 1134Z, two Transporter Erector Launcher and Radar (TELAR) systems with three rockets loaded were observed inactive near Dayr az Zawr Parking Airfield, Syria.
+  entailment:
+    label: entails
+    score: 0.44
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: adb0da99-8535-480c-bad2-f5b1195d2b49
   type: administrative
   attestation: second_hand
@@ -925,6 +1161,11 @@ domain_claims:
     AT 1243Z, TF CHOSIN STA CLEARED {{redacted: ~2 chars, 1.4a}} OFF TASKING AND {{redacted: ~2 chars, 1.4a}} RETURNED TO BASE
   text: |-
     On 2022-07-31 at 1243Z, Task Force Chosin's Sensor Tasking Authority (STA) cleared the mission aircraft off its tasking, and the aircraft returned to base.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4e28a797-82e2-4e1b-a2eb-95a082a2f38e
   type: administrative
   attestation: second_hand
@@ -940,6 +1181,11 @@ domain_claims:
   quote: '**Supported Unit:** TF CHOSIN'
   text: |-
     On the 31 July 2022 mission reported in Misrep-7816710, the supported unit for the Intelligence, Surveillance, and Reconnaissance (ISR) tasking was Task Force Chosin.
+  entailment:
+    label: entails
+    score: 0.668
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 551f2258-ed47-4f36-a23e-db4fd5f467f5
   type: administrative
   attestation: second_hand
@@ -957,6 +1203,11 @@ domain_claims:
     - **Precoord Effectiveness:** SATISFACTORY
   text: |-
     On the mission reported in Misrep-7816710, pre-coordination time with Task Force Chosin was 103 minutes and its effectiveness was rated satisfactory.
+  entailment:
+    label: entails
+    score: 0.518
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6deb3ea7-c407-4724-9641-2121b78b1904
   type: observation
   attestation: second_hand
@@ -972,6 +1223,11 @@ domain_claims:
   quote: WEATHER WAS NOT A FACTOR
   text: |-
     Weather was not a factor during the 31 July 2022 mission reported in Misrep-7816710.
+  entailment:
+    label: entails
+    score: 0.416
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6d4f2e5f-096c-4dc2-a8f5-dd180a436cc8
   type: measurement
   attestation: second_hand
@@ -989,6 +1245,11 @@ domain_claims:
   quote: '**Friendly Aircraft Altitude/Depth:** 19,359 FT'
   text: |-
     During the 31 July 2022 UAP sighting near Dayr az Zawr, Syria, the friendly aircraft's altitude was approximately 5,900 metres.
+  entailment:
+    label: contradicts
+    score: 0.935
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7869fb74-3b91-4a6b-b20c-88159570c2a2
   type: measurement
   attestation: second_hand
@@ -1006,6 +1267,11 @@ domain_claims:
   quote: '**Friendly Aircraft Speed:** 116 KTS'
   text: |-
     During the 31 July 2022 UAP sighting near Dayr az Zawr, Syria, the friendly aircraft's speed was approximately 215 kilometres per hour.
+  entailment:
+    label: contradicts
+    score: 0.487
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10bd4aa1-de65-4b5e-95bf-1b33cb2905a1
   type: observation
   attestation: second_hand
@@ -1023,6 +1289,11 @@ domain_claims:
   quote: '**UAP Signatures:** No'
   text: |-
     No UAP signatures (sensor return signatures) were recorded during the 31 July 2022 UAP sighting near Dayr az Zawr, Syria.
+  entailment:
+    label: neutral
+    score: 0.473
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 11e9b20e-960a-4c67-93f7-31f8c85d5a31
   type: observation
   attestation: second_hand
@@ -1043,6 +1314,11 @@ domain_claims:
     AT 310239Z, {{redacted: ~14 chars, 1.4a}} OBSERVED AN UAP EVENT IVO 37SFU27{{redacted: ~2 chars, 1.4a}}74{{redacted: ~2 chars, 1.4a}} IN KP 9.
   text: |-
     On 2022-07-31 at 0239Z, the mission aircraft observed a UAP event near Dayr az Zawr, Syria, within a kill box designated KP 9.
+  entailment:
+    label: neutral
+    score: 0.53
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 216ec558-eb42-4b6b-9c7b-5af140719b49
   type: observation
   attestation: second_hand
@@ -1060,6 +1336,11 @@ domain_claims:
   quote: THE UAP OCCURED IN LESS THAN A MINUTE
   text: |-
     The UAP observed near Dayr az Zawr, Syria on 2022-07-31 was visible for less than a minute.
+  entailment:
+    label: contradicts
+    score: 0.784
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 51245efa-cfa0-4623-94ff-499125b2638b
   type: observation
   attestation: second_hand
@@ -1077,3 +1358,8 @@ domain_claims:
   quote: WITH THE UAP MOVING FROM N TO S.
   text: |-
     The UAP observed near Dayr az Zawr, Syria on 2022-07-31 moved from north to south.
+  entailment:
+    label: contradicts
+    score: 0.932
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.1
 prompts:
 - pass: nodes
   id: nodes
@@ -68,6 +74,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     At 1653 Zulu time, two round white hot Unidentified Aerial Phenomena (UAP) were observed moving dynamically south at approximately 444 kilometres per hour in the vicinity of grid reference 35SQT3423692957.
+  entailment:
+    label: neutral
+    score: 0.397
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3bed98c8-db81-456b-a687-95c76a104ed1
   type: observation
   attestation: second_hand
@@ -82,6 +93,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     At 1653 Zulu time, two Unidentified Aerial Phenomena (UAP) were observed moving dynamically south at approximately 444 kilometres per hour in the vicinity of grid reference 35SQT3423692957.
+  entailment:
+    label: contradicts
+    score: 0.578
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 5c5dfaca-6705-427c-bc69-8e3876a331b3
   type: administrative
@@ -98,3 +114,8 @@ infrastructure_claims:
   quote: SECRET//REL TO USA, FIN, SWE, FVEY, NATO
   text: |-
     The UAP description and event description in the UAP sighting report are classified SECRET and releasable to the United States, Finland, Sweden, the Five Eyes (FVEY), and the North Atlantic Treaty Organization (NATO).
+  entailment:
+    label: entails
+    score: 0.507
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

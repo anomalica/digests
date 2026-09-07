@@ -9,6 +9,12 @@ ai_usage:
     input: 13829
     output: 2624
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 4.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.4
 prompts:
 - pass: nodes
   id: nodes
@@ -94,6 +100,11 @@ domain_claims:
     The Department of Defense has authorized the release of three unclassified Navy videos
   text: |-
     On 2020-04-27, the Department of Defense authorised the release of three unclassified Navy videos.
+  entailment:
+    label: neutral
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 99260a4f-3ded-4fff-aae6-415ade7b2ccc
   type: administrative
   attestation: second_hand
@@ -110,6 +121,11 @@ domain_claims:
     name: United States Navy
   quote: one taken in November 2004
   text: One of the three released Navy videos was taken in November 2004.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: db22c00f-2f8d-4a7a-81d7-daad88888966
   type: administrative
   attestation: second_hand
@@ -126,6 +142,11 @@ domain_claims:
     name: United States Navy
   quote: the other two in January 2015
   text: Two of the three released Navy videos were taken in January 2015.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 400df683-1446-4b07-bf6e-d57aed68a413
   type: administrative
   attestation: second_hand
@@ -143,6 +164,11 @@ domain_claims:
     which have been circulating in the public domain after unauthorized releases in 2007 and 2017
   text: |-
     The three Navy videos had been circulating in the public domain after unauthorised releases in 2007 and 2017.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc9a8282-ef7c-41ef-83e1-4427ee1d35a2
   type: administrative
   attestation: second_hand
@@ -163,6 +189,11 @@ domain_claims:
     The U.S. Navy previously acknowledged that these videos circulating in the public domain were indeed Navy videos.
   text: |-
     The United States Navy previously acknowledged that the three videos circulating in the public domain were Navy videos.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a99ef46a-0d70-4fee-b1ff-338398d5a638
   type: administrative
   attestation: second_hand
@@ -181,6 +212,11 @@ domain_claims:
     After a thorough review, the department has determined that the authorized release of these unclassified videos does not reveal any sensitive capabilities or systems
   text: |-
     After a thorough review, the Department of Defense determined that the authorised release of the three unclassified Navy videos does not reveal any sensitive capabilities or systems.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c7ad3686-9dbe-42a4-aa6e-987432da2aba
   type: administrative
   attestation: second_hand
@@ -201,6 +237,11 @@ domain_claims:
     does not impinge on any subsequent investigations of military air space incursions by unidentified aerial phenomena
   text: |-
     The Department of Defense determined that the authorised release of the three unclassified Navy videos does not impinge on any subsequent investigations of military air space incursions by Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 331199a4-6ce3-425d-b651-3bfb63560a3a
   type: administrative
   attestation: second_hand
@@ -219,6 +260,11 @@ domain_claims:
     DOD is releasing the videos in order to clear up any misconceptions by the public on whether or not the footage that has been circulating was real
   text: |-
     The Department of Defense released the three Navy videos in order to clear up public misconceptions about whether the circulating footage was real.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d509a387-e112-455e-8616-d75479a7b2de
   type: administrative
   attestation: second_hand
@@ -236,6 +282,11 @@ domain_claims:
   quote: or whether or not there is more to the videos
   text: |-
     The Department of Defense released the three Navy videos in order to clear up public misconceptions about whether there is more to the videos.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8b624761-d3aa-46b4-b887-1fd386837ddb
   type: administrative
   attestation: second_hand
@@ -254,6 +305,11 @@ domain_claims:
     The aerial phenomena observed in the videos remain characterized as "unidentified."
   text: |-
     The aerial phenomena observed in the three released Navy videos remain characterised as unidentified.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 4294f989-4173-4e46-82e2-139a42c88240
   type: administrative
@@ -273,3 +329,8 @@ infrastructure_claims:
     The released videos can be found at the Naval Air Systems Command FOIA Reading Room: https://www.navair.navy.mil/foia/documents
   text: |-
     The three released Navy videos can be found at the Naval Air Systems Command (NAVAIR) Freedom of Information Act (FOIA) Reading Room.
+  entailment:
+    label: contradicts
+    score: 0.633
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

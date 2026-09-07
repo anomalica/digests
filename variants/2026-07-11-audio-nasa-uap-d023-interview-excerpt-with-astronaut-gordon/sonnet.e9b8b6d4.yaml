@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.1
 prompts:
 - pass: nodes
   id: nodes
@@ -90,6 +96,11 @@ domain_claims:
     Well, I feel that there have been a large number of fairly well qualified, or exceptionally well qualified I should say, people who have seen objects that have not had any really logical explanation other than this
   text: |-
     Gordon Cooper believes a large number of qualified, or exceptionally well-qualified, people have seen unidentified flying objects (UFOs) with no logical explanation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4afcb85a-e0ed-4381-8a40-33ad76fdba8e
   type: opinion
   attestation: first_hand
@@ -109,6 +120,11 @@ domain_claims:
   quote: I think that maybe in fact each and every one of them does have an explanation.
   text: |-
     Gordon Cooper considers it possible that each unidentified flying object (UFO) sighting does in fact have an explanation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3849bca5-8c46-4200-a114-a0145905e157
   type: opinion
   attestation: first_hand
@@ -127,6 +143,11 @@ domain_claims:
     But I think that there are so many possibilities, so many thousands of possibilities of other planets out somewhere in the universe that would have a livable atmosphere that I would hate to rule out the possibility that maybe there are people or some type of human life on some of these.
   text: |-
     Gordon Cooper believes there are so many possibilities of other planets in the universe with a livable atmosphere that he would hate to rule out the possibility that some of them host people or some type of human life.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bd1a054c-0169-42b9-b4b4-9f1591ab6cfc
   type: opinion
   attestation: first_hand
@@ -147,6 +168,11 @@ domain_claims:
     And if this is the case, then it's not too unfeasible to think that perhaps some of these objects might have been something of this type.
   text: |-
     Gordon Cooper considers it not unfeasible that some unidentified flying object (UFO) sightings might involve human life from other planets, if such planets exist.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2728c1fb-22c8-4a2c-b703-204c6aab8478
   type: opinion
   attestation: first_hand
@@ -169,6 +195,11 @@ domain_claims:
     You don't think that the comparatively short step out into space that the Mercury flight will take you on is far enough out to make any observations in this area? / No, I think we're still at a fairly low order of getting out into space when you regard, when you speak of space and being millions of miles involved, and we're only getting out a hundred miles or so.
   text: |-
     Gordon Cooper considers Project Mercury flights to reach only a low order of distance into space, on the order of a hundred miles, not far enough to make observations relevant to unidentified flying objects (UFOs).
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 72cef6b1-c823-4c6d-b12c-ef31bb6b9b4c
   type: measurement
   attestation: first_hand
@@ -188,6 +219,11 @@ domain_claims:
   quote: we're only getting out a hundred miles or so
   text: |-
     Project Mercury spaceflights reach approximately 160 kilometres out into space, as distinct from distances of millions of kilometres.
+  entailment:
+    label: entails
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e38623b0-28a5-4f40-8e44-599bc6d0bbad
   type: opinion
   attestation: second_hand
@@ -207,6 +243,11 @@ domain_claims:
     You know, the snowflakes, the fireflies, now both Schirra and Carpenter seem to feel that it's frost of some nature off of the capsule
   text: |-
     Wally Schirra and Scott Carpenter feel the Glenn effect, involving reported snowflakes and fireflies observed during spaceflight, is frost of some nature coming off the spacecraft capsule.
+  entailment:
+    label: entails
+    score: 0.497
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 818f1f82-65f4-4a26-8cf4-4e6613dd777c
   type: opinion
   attestation: second_hand
@@ -223,3 +264,8 @@ domain_claims:
   quote: but apparently Glenn still sort of cast doubt on that theory
   text: |-
     John Glenn casts doubt on the theory that the Glenn effect, involving reported snowflakes and fireflies observed during spaceflight, is caused by frost coming off the spacecraft capsule.
+  entailment:
+    label: entails
+    score: 0.622
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

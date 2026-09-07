@@ -15,6 +15,12 @@ ai_usage:
     calls: 3
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 5.9
 prompts:
 - pass: nodes
   id: nodes
@@ -271,6 +277,11 @@ domain_claims:
   quote: |-
     We can now show you an exclusive image of that unidentified object shot down over Yukon last year.
   text: An unidentified object was shot down over Canada, Yukon in 2023.
+  entailment:
+    label: contradicts
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 32f2525c-c8a1-4373-9d3d-42d17437615e
   type: observation
   provenance_chain:
@@ -288,6 +299,11 @@ domain_claims:
     The object was about the size of a small car, so not similar in size or shape to the high altitude surveillance balloon that was taken down off the coast of South Carolina on February 4.
   text: |-
     The object shot down in the 2023 Yukon UAP shootdown was about the size of a small car and was not similar in size or shape to the high-altitude surveillance balloon taken down off the coast of USA, South Carolina on 2023-02-04.
+  entailment:
+    label: entails
+    score: 0.835
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 09fbcc22-967a-4b6f-9328-b449259d1698
   type: administrative
   attestation: first_hand
@@ -309,6 +325,11 @@ domain_claims:
     there was a streak of these quote unquote spy balloons that were taken down starting on January 4th in South Carolina.
   text: |-
     A streak of unidentified aerial phenomena were taken down by US and Canadian authorities starting on 2023-01-04 in USA, South Carolina.
+  entailment:
+    label: entails
+    score: 0.928
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9667939a-b960-4493-ad38-4e10bf9d2cc1
   type: administrative
   attestation: first_hand
@@ -330,6 +351,11 @@ domain_claims:
     This, folks, is the image released by a Freedom of Information request or the equivalent to a Freedom of Information request. submitted to the Canadian Armed Forces.
   text: |-
     The image of the craft downed in the 2023 Yukon UAP shootdown was released via a Freedom of Information request, or its Canadian equivalent, submitted to the Canadian Armed Forces.
+  entailment:
+    label: neutral
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5fd130f2-23e2-4c8e-84c6-92216626fab6
   type: administrative
   attestation: first_hand
@@ -351,6 +377,11 @@ domain_claims:
     Now, there were multiple crafts that were downed during this time period, so it's important to know which one is which. The one over Alaska that was downed that was as small as a car, that was a different one than this one.
   text: |-
     Multiple craft were downed by North American authorities during the same period in early 2023 as the 2023 Yukon UAP shootdown, and the object downed over USA, Alaska was a separate object from the one downed in Canada, Yukon.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed3a26c7-1b81-4441-adad-728ce8ce2d98
   type: measurement
   attestation: first_hand
@@ -372,6 +403,11 @@ domain_claims:
     That one was spotted at 40,000 feet and was tracked for about 24 hours going over some sensitive airspace in Alaska before it was taken down by an F-22.
   text: |-
     The object downed over USA, Alaska in early 2023 was spotted at approximately 12,000 metres altitude and was tracked for about 24 hours over sensitive airspace in Alaska before being taken down by an F-22.
+  entailment:
+    label: contradicts
+    score: 0.797
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b080fb79-56f5-47b7-a9cb-cb990fa2d940
   type: administrative
   attestation: first_hand
@@ -395,6 +431,11 @@ domain_claims:
     This is one that went over Canadian skies... It was swiftly taken down. as well with the help of NORAD.
   text: |-
     The craft in the 2023 Yukon UAP shootdown passed over Canadian skies and was swiftly taken down with the help of North American Aerospace Defense Command (NORAD).
+  entailment:
+    label: entails
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 20bf75b6-6ad0-4005-9e8b-e39915c18edf
   type: administrative
   speaker:
@@ -413,6 +454,11 @@ domain_claims:
     This and the others apparently have not been recovered. The terrain was allegedly too rugged.
   text: |-
     The craft from the 2023 Yukon UAP shootdown and other craft taken down during the same period have apparently not been recovered, allegedly because the terrain was too rugged.
+  entailment:
+    label: entails
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc44d793-1894-4853-9b7c-ba08553e7136
   type: administrative
   speaker:
@@ -433,6 +479,11 @@ domain_claims:
     this went back and forth internally in the Canadian government, and it was poised to be released, to be tweeted, actually, maybe a few days after it was taken. However, someone stepped in and said, no, we cannot release this. This might be a breach of national security. It might be against protocol.
   text: |-
     An internal Canadian government email exchange regarding the 2023 Yukon UAP shootdown was poised to be released publicly, possibly via a tweet, a few days after the object was taken down, but someone in the government stepped in and blocked its release, citing a possible breach of national security or protocol.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef29450b-4cd0-4e9e-8a5d-269c3942d7a0
   type: administrative
   provenance_chain:
@@ -448,6 +499,11 @@ domain_claims:
     So this image was actually cleared to be made public shortly after the object was shot down, but then it was held back.
   text: |-
     The image of the craft from the 2023 Yukon UAP shootdown was cleared to be made public shortly after the object was shot down, but its release was then held back.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 59c779bb-6a0f-43aa-9a45-8ade77ffb0cf
   type: administrative
   attestation: second_hand
@@ -465,6 +521,11 @@ domain_claims:
   quote: The Department of National Defense thought it may cause more confusion.
   text: |-
     The Department of National Defence (Canada) thought that releasing the image of the craft from the 2023 Yukon UAP shootdown may cause more confusion.
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 81edb63a-6a86-475d-8271-d1842c7b0f90
   type: administrative
   attestation: first_hand
@@ -483,6 +544,11 @@ domain_claims:
   quote: |-
     Now, it's also important to note that the object taken down in Alaska was not a balloon.
   text: The object taken down over USA, Alaska in early 2023 was not a balloon.
+  entailment:
+    label: neutral
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c3bcc777-a172-44cb-84bd-22737be1c3eb
   type: testimony
   attestation: first_hand
@@ -506,6 +572,11 @@ domain_claims:
     Actually, the Brigadier General Ryder himself in a press conference at the Pentagon revealed that, and I quote, The object was about the size of a small car, so not similar in size or shape to the high altitude surveillance balloon that was taken down off the coast of South Carolina on February 4.
   text: |-
     At a press conference at the Pentagon, Ryder said the object taken down over USA, Alaska in early 2023 was about the size of a small car, and was not similar in size or shape to the high-altitude surveillance balloon taken down off the coast of USA, South Carolina on 2023-02-04.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40a17e5a-6c96-449b-a3b3-5f8dd09363b0
   type: testimony
   attestation: second_hand
@@ -524,6 +595,11 @@ domain_claims:
     we're calling it an object for a reason. It's not a balloon. We don't know how it's staying aloft, yet it is. That... is from the norad general
   text: |-
     A North American Aerospace Defense Command (NORAD) general said that the object taken down over USA, Alaska in early 2023 was being called an object rather than a balloon, that it was not a balloon, and that its manner of staying aloft was unknown despite the fact that it was doing so.
+  entailment:
+    label: entails
+    score: 0.421
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b897aa93-707c-4009-ac21-0d32990d8938
   type: testimony
   attestation: second_hand
@@ -544,6 +620,11 @@ domain_claims:
     the reporter asked are these extraterrestrial general and the answer was i'm not ruling anything out
   text: |-
     When a reporter asked a North American Aerospace Defense Command (NORAD) general whether the object taken down over USA, Alaska in early 2023 was extraterrestrial, the general answered that he was not ruling anything out.
+  entailment:
+    label: neutral
+    score: 0.769
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 920c6d43-76af-444f-965c-5d5601df1f59
   type: administrative
   attestation: first_hand
@@ -565,6 +646,11 @@ domain_claims:
     The engagement took place and the object was downed at 341 Eastern Time over Yukon, which is a Canadian territory.
   text: |-
     The 2023 Yukon UAP shootdown engagement took place and the object was downed at 3:41pm Eastern Time over Canada, Yukon.
+  entailment:
+    label: neutral
+    score: 0.593
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2ccf9c44-bcbc-4b14-b253-91b8289a5c58
   type: administrative
   speaker:
@@ -587,6 +673,11 @@ domain_claims:
     Canadian Armed Forces members and assets at the request and under the lead of public safety RCMP are now en route to proceed with the recovery.
   text: |-
     Canadian Armed Forces members and assets were sent en route to attempt recovery of the craft from the 2023 Yukon UAP shootdown, under the lead of the Royal Canadian Mounted Police (RCMP) at the request of public safety authorities.
+  entailment:
+    label: contradicts
+    score: 0.494
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd644e7e-7a4a-44dd-93f6-95d7243c2c2a
   type: administrative
   attestation: first_hand
@@ -606,6 +697,11 @@ domain_claims:
     So there was a recovery attempt made. Did they find anything? Apparently not. They called it off a little bit later.
   text: |-
     A recovery attempt was made for the craft from the 2023 Yukon UAP shootdown, but nothing was apparently found, and the attempt was called off.
+  entailment:
+    label: neutral
+    score: 0.915
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 81164f91-28b0-4344-bf29-55cb060eba79
   type: observation
   speaker:
@@ -624,6 +720,11 @@ domain_claims:
     The best description that we have is visual, a cylindrical object. Top quarter is metallic. Remainder is white.
   text: |-
     The best available description of UAP-23 is that it was a visually observed cylindrical object with a metallic top quarter and a white remainder.
+  entailment:
+    label: neutral
+    score: 0.669
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 884408dc-ae92-4679-8d99-f3124242b8cf
   type: measurement
   speaker:
@@ -641,6 +742,11 @@ domain_claims:
   quote: 20 foot wire hanging below with a package of some sort suspended from it.
   text: |-
     UAP-23 had a wire approximately 6 metres long hanging below it, with a package of some sort suspended from the wire.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad43ab69-6ea0-4576-b229-f41c0e6fe451
   type: administrative
   speaker:
@@ -661,6 +767,11 @@ domain_claims:
     They even call it UAP-23 because this is the 23rd sighting in that short amount of time that they've had of a UAP. So this is UAP-23. That is the official name of this craft, by the way.
   text: |-
     The craft downed in the 2023 Yukon UAP shootdown was officially named UAP-23 because it was the 23rd sighting of a UAP in that short period of time.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d9c18663-dc02-4308-bee7-b435b7f93a03
   type: observation
   speaker:
@@ -681,6 +792,11 @@ domain_claims:
     The second piece of evidence that I present to you folks is this video here. This was uploaded in 2012, flown over Busan, South Korea.
   text: |-
     A video purporting to show a fast-moving craft resembling UAP-23 was uploaded in 2012 and was filmed over South Korea, Busan.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a971661-10b4-47ae-916c-906ee8ade654
   type: testimony
   attestation: first_hand
@@ -704,6 +820,11 @@ domain_claims:
     in Roswell, New Mexico, 2007, not 1947, Patricia Carroll reported seeing a triangular or possibly horseshoe shaped dimly lit object that looked ghostly or smoky and seemed to be dimming and brightening in and out of visibility.
   text: |-
     During the 2007 Roswell horseshoe-object sighting, Patricia Carroll reported seeing a triangular or possibly horseshoe-shaped, dimly lit object that looked ghostly or smoky and seemed to be dimming and brightening in and out of visibility.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a56e84c1-f131-4139-afad-6f1e602b0e6e
   type: testimony
   attestation: second_hand
@@ -722,6 +843,11 @@ domain_claims:
     also near Boston, Massachusetts in June 2005, the passenger and his daughter were flying in an AA 757 to Europe. The witness states that 20 minutes after takeoff, a horseshoe crab-shaped silver object was quickly overtaken by our aircraft at 8.14 PM, but it was definitely not a plane.
   text: |-
     During the 2005 Boston horseshoe-object sighting, a passenger and his daughter were flying near USA, Massachusetts, Boston in an American Airlines 757 to Europe when the witness reported that, 20 minutes after takeoff, a horseshoe crab-shaped silver object was quickly overtaken by their aircraft at 8:14pm, and that it was definitely not a plane.
+  entailment:
+    label: entails
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4c60c6ff-f1b4-422f-84d3-ecdcc6208473
   type: testimony
   attestation: second_hand
@@ -740,6 +866,11 @@ domain_claims:
     my attention soon changed to our moon that was visible at this point during the day to the right of the moon sat a silver horseshoe shaped object it looked like the moon in silver form in three dimensions
   text: |-
     During the 1998 Boston horseshoe-object sighting, a witness reported that their attention shifted to the moon, which was visible during the day, and that to the right of the moon sat a silver horseshoe-shaped object that looked like the moon in silver form in three dimensions.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 871d3537-bd5b-471e-90b7-54d7f3221ef4
   type: administrative
   attestation: second_hand
@@ -767,6 +898,11 @@ domain_claims:
     this was discovered in june of 2011 by a group of treasure hunters known as the ocean x team while searching for shipwrecks
   text: |-
     The Baltic Sea anomaly was discovered in June 2011 by the Ocean X Team, a group of treasure hunters, while they were searching for shipwrecks in the Baltic Sea.
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d0fd5811-ea83-46e0-a492-860719cf4951
   type: measurement
   attestation: second_hand
@@ -789,6 +925,11 @@ domain_claims:
     they found a strange circular formation about 60 meters in diameter at a depth of around 90 meters
   text: |-
     The Ocean X Team found a strange circular formation about 60 metres in diameter at a depth of around 90 metres in the Baltic Sea.
+  entailment:
+    label: entails
+    score: 0.905
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b9240516-418c-41f4-9632-841b59693bf6
   type: observation
   attestation: second_hand
@@ -807,6 +948,11 @@ domain_claims:
     the sonar scans revealed a large disc-shaped object with a tail-like structure leading away from it, almost as if this object crashed and left a trail.
   text: |-
     Sonar scans of the Baltic Sea anomaly revealed a large disc-shaped object with a tail-like structure leading away from it, as if the object had crashed and left a trail.
+  entailment:
+    label: entails
+    score: 0.848
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5550525-5b11-4658-aa44-039a51c0badc
   type: opinion
   attestation: second_hand
@@ -826,6 +972,11 @@ domain_claims:
     It does seem to also have unnatural geometric patterns, which some have interpreted that as being evidence of it being an artificial structure.
   text: |-
     The Baltic Sea anomaly has unnatural geometric patterns, which some have interpreted as evidence that it is an artificial structure.
+  entailment:
+    label: entails
+    score: 0.519
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 72a2f51d-0d72-4bd7-a413-511977a4ddca
   type: observation
   attestation: second_hand
@@ -846,6 +997,11 @@ domain_claims:
     But in 2012, they did send a team down there. A few things happened, one being that electrical equipment would malfunction when they got close to this thing
   text: |-
     In 2012, the Ocean X Team sent a team down to the Baltic Sea anomaly, during which electrical equipment reportedly malfunctioned when the team got close to the object.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 427d36d4-a683-43d2-8ea0-26c1416f0ab0
   type: measurement
   attestation: second_hand
@@ -865,6 +1021,11 @@ domain_claims:
   quote: a lot of the samples that they took back turned out to be volcanic rock.
   text: |-
     Samples taken from the Baltic Sea anomaly by the Ocean X Team turned out to be volcanic rock.
+  entailment:
+    label: entails
+    score: 0.811
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 09cafe5b-2688-4171-a51a-d12add81d81c
   type: administrative
   attestation: first_hand
@@ -890,6 +1051,11 @@ domain_claims:
     There are divisions of the government that are dedicated to finding out what these UAP are, whether that's through NASA or through Arrow, the All Domain Anomaly Resolution Office. or even through the former ATIP program.
   text: |-
     There are divisions of the United States government dedicated to finding out what unidentified aerial phenomena are, including the National Aeronautics and Space Administration (NASA), the All-Domain Anomaly Resolution Office (AARO), and the former Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: df625775-a083-460a-8980-e7871c45a40d
   type: administrative
   attestation: first_hand
@@ -913,6 +1079,11 @@ domain_claims:
     It's the story of this crash retrieval that happened in Virginia, Brazil, involving the entire town, dozens, if not hundreds of witnesses.
   text: |-
     Moment of Contact tells the story of the Varginha UFO incident, a crash retrieval that involved the entire town of Brazil, Varginha, with dozens if not hundreds of witnesses.
+  entailment:
+    label: contradicts
+    score: 0.859
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 17cccf5e-79c2-42d9-ba83-1656322e338b
   type: administrative
   attestation: first_hand
@@ -933,6 +1104,11 @@ domain_claims:
   quote: The US military was involved, the Brazilian military.
   text: |-
     Both the United States military and the Brazilian military were involved in the Varginha UFO incident.
+  entailment:
+    label: neutral
+    score: 0.742
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f375717b-c4bf-4ac7-9e37-5a2b64fd2f40
   type: administrative
   attestation: first_hand
@@ -952,6 +1128,11 @@ domain_claims:
     There was cover ups. There was payoffs. There was bodies. There was doctors studying these bodies, an incredible documentary.
   text: |-
     There were cover-ups, payoffs, and bodies involved in the Varginha UFO incident, with doctors studying the bodies.
+  entailment:
+    label: neutral
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed3655e8-3359-45d6-840a-2333bcd2e474
   type: administrative
   attestation: first_hand
@@ -975,6 +1156,11 @@ domain_claims:
     We also found out recently that the UAP Disclosure Act had been pushed back yet again, this time by Senator Mitch McConnell.
   text: |-
     The UAP Disclosure Act was pushed back again, this time by Senator Mitch McConnell.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cbbc563e-ca4d-48b6-a994-2c0377490b73
   type: administrative
   attestation: first_hand
@@ -996,6 +1182,11 @@ domain_claims:
     this disclosure act if passed would mean that we can look into past uap events and disclose them to the public much like they would with the jfk assassination
   text: |-
     If passed, the UAP Disclosure Act would allow investigation and disclosure of past UAP events to the public, similar to the release of the JFK assassination records.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: b0779aeb-8b93-4fdd-a8f8-e9e3c154d6d3
   type: administrative
@@ -1018,6 +1209,11 @@ infrastructure_claims:
     CTV actually obtained the email exchange, which happened back in February 2023, preceding the takedown of this craft.
   text: |-
     CTV obtained an internal Canadian government email exchange dated February 2023 that preceded the takedown of the craft in the 2023 Yukon UAP shootdown.
+  entailment:
+    label: neutral
+    score: 0.883
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4177ff08-f241-4aba-acf8-4e96726c1fb8
   type: administrative
   attestation: first_hand
@@ -1041,6 +1237,11 @@ infrastructure_claims:
     it really is interesting that this video only resurfaced due to the photo that was released by CTV.
   text: |-
     The 2012 video filmed over South Korea, Busan of a fast-moving craft resurfaced only after the photo of UAP-23 was released by CTV.
+  entailment:
+    label: entails
+    score: 0.654
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c4606814-ded1-49f2-8563-a1b1b05b535d
   type: administrative
   attestation: second_hand
@@ -1066,6 +1267,11 @@ infrastructure_claims:
     UAP Juan on Twitter posted recently three cases that my guess is probably from like some MUFON archives of sightings that revolved around UFOs.
   text: |-
     UAP Juan posted on Twitter three cases of horseshoe-shaped unidentified flying objects sourced from archives of prior sightings.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 67d48dcb-cbc7-47fb-b86e-6b2725c396a7
   type: administrative
   attestation: second_hand
@@ -1091,6 +1297,11 @@ infrastructure_claims:
     about eight years ago, Secure Team 10 reported on this, their YouTube channel, they cover a lot of this UAP stuff, but there is this seemingly horseshoe shaped UFO that appears on an ISS feed from NASA shortly after apparently the feed was cut.
   text: |-
     Secure Team 10 reported on their YouTube channel, approximately eight years before 2024, on a seemingly horseshoe-shaped unidentified flying object that appeared on an International Space Station feed from the National Aeronautics and Space Administration (NASA) shortly after the feed was apparently cut.
+  entailment:
+    label: entails
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a5f56d72-2bf3-4102-bcf6-88b1abfcdf67
   type: administrative
   attestation: first_hand
@@ -1114,6 +1325,11 @@ infrastructure_claims:
     Something I want to put on your radar as well is October 23rd, James Fox, the filmmaker and director who made Moment of Contact, will be releasing a new film entitled The Program.
   text: |-
     James Fox, the filmmaker and director who made Moment of Contact, will release a new film entitled The Program on 2024-10-23.
+  entailment:
+    label: contradicts
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5f732c34-1fc8-477a-976b-4ddb8a7b5ed1
   type: administrative
   attestation: first_hand
@@ -1137,6 +1353,11 @@ infrastructure_claims:
     James Fox is known for his multiple documentaries regarding UAP, including Moment of Contact, which was one of my favorite documentaries regarding UAP.
   text: |-
     James Fox is known for multiple documentaries regarding unidentified aerial phenomena, including Moment of Contact.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 486dfc9e-42b2-4f0f-b11b-71bd840829c2
   type: administrative
   attestation: first_hand
@@ -1160,6 +1381,11 @@ infrastructure_claims:
     including a conversation I had with Luigi Vendatelli, highly anticipated documentary project about S4 and Bob Lazar. This is three years in the making... I got to sit down with Luigi, but also go to his studio and talk shop. about project gravator
   text: |-
     Chris Ramsey conducted a conversation with Luigi Vendatelli for a highly anticipated documentary project about S4 and Bob Lazar, three years in the making, during which Ramsey visited Vendatelli's studio and discussed Project Gravator.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 30069607-199c-432d-bc20-7c0484ed79b5
   type: administrative
   attestation: first_hand
@@ -1181,3 +1407,8 @@ infrastructure_claims:
     some of Bob Lazar's old footage with a behavioral analyst, Spidey, and we put that on the Patreon last week.
   text: |-
     Some of Bob Lazar's old footage was reviewed with behavioural analyst Spidey and posted on Chris Ramsey's Patreon the week before this episode.
+  entailment:
+    label: entails
+    score: 0.724
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

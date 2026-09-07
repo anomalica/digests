@@ -15,6 +15,12 @@ ai_usage:
     calls: 3
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 9.0
 prompts:
 - pass: nodes
   id: nodes
@@ -135,6 +141,11 @@ domain_claims:
     jesse's also from quebec and he likes to go out there and film sort of like wildlife with his drone or with his cameras and take a lot of photos
   text: |-
     Jesse DeLuca is from Quebec, Canada, and films wildlife with a drone and cameras.
+  entailment:
+    label: entails
+    score: 0.746
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 41a2467d-5d36-450b-894f-fd760d614f9a
   type: administrative
   attestation: first_hand
@@ -155,6 +166,11 @@ domain_claims:
     my youtube channel is all about uh capturing wildlife in the wild with trail cameras
   text: |-
     Jesse DeLuca's YouTube channel focuses on capturing wildlife in the wild using trail cameras.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c37c494b-11e6-4985-9252-d1d00059c972
   type: observation
   attestation: first_hand
@@ -173,6 +189,11 @@ domain_claims:
     these cameras are used for for hunting purposes usually but biologists do use them for research in tracking different types of wildlife
   text: |-
     Trail cameras are usually used for hunting purposes, but are also used by biologists for research and tracking different types of wildlife.
+  entailment:
+    label: entails
+    score: 0.894
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6856478c-ebb3-46fa-8dc1-bd41d5d3a8fd
   type: observation
   attestation: first_hand
@@ -191,6 +212,11 @@ domain_claims:
     I think the most I've had recently was maybe 450 videos... All one minute long... The nighttime videos on that camera are only maximum 20 seconds.
   text: |-
     Jesse DeLuca recently reviewed as many as 450 trail camera videos from one camera, each up to one minute long, except nighttime videos which are a maximum of 20 seconds.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c10ae62e-9f51-4286-a101-cb03f368ee26
   type: observation
   attestation: first_hand
@@ -209,6 +235,11 @@ domain_claims:
     there's always the stories about cougars existing in the province of Quebec, and the government does completely deny it. They say they do not exist here.
   text: |-
     The government of the province of Quebec, Canada, denies that cougars exist in Quebec.
+  entailment:
+    label: entails
+    score: 0.835
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 12c7ff55-5d33-4659-add7-9868660b7115
   type: hearsay
   attestation: second_hand
@@ -228,6 +259,11 @@ domain_claims:
   quote: A biologist recently told me, our snow's too deep.
   text: |-
     A biologist told Jesse DeLuca that the snow in the area is too deep for cougars to live there.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 279ee541-811e-494b-9de2-895e427b2ef6
   type: administrative
   attestation: first_hand
@@ -249,6 +285,11 @@ domain_claims:
   quote: what kind of what model uh drone is this by the way it's a dji mini 3 pro
   text: |-
     Jesse DeLuca filmed his May 2024 Quebec drone UAP encounter using a DJI Mini 3 Pro drone.
+  entailment:
+    label: contradicts
+    score: 0.93
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40690d56-f3d8-440d-ad0e-5e3511036d8f
   type: measurement
   attestation: first_hand
@@ -268,6 +309,11 @@ domain_claims:
   quote: oh great so this is 4k 4k 30 frames per second
   text: |-
     The DJI Mini 3 Pro footage of the May 2024 Quebec drone UAP encounter was recorded in 4K resolution at 30 frames per second.
+  entailment:
+    label: contradicts
+    score: 0.827
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d7994d23-b6dc-4ba7-935a-c8c000b8ac9c
   type: observation
   attestation: first_hand
@@ -288,6 +334,11 @@ domain_claims:
   quote: Just after 8 PM on May 19th.
   text: |-
     Jesse DeLuca filmed the May 2024 Quebec drone UAP encounter just after 8 PM on 2024-05-19.
+  entailment:
+    label: neutral
+    score: 0.913
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd1e763b-dabe-4e7f-95e4-0dbf072d98c9
   type: observation
   attestation: first_hand
@@ -308,6 +359,11 @@ domain_claims:
     So it was a couple months until I actually got a chance to go and review this footage. And I had no idea that I recorded this.
   text: |-
     Jesse DeLuca did not realise he had recorded the object in the May 2024 Quebec drone UAP encounter until he reviewed the footage a couple of months later.
+  entailment:
+    label: neutral
+    score: 0.5
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bdcce635-b7ce-4033-88aa-783705e77453
   type: administrative
   attestation: first_hand
@@ -324,6 +380,11 @@ domain_claims:
     name: Jesse DeLuca
   quote: I got a four-year-old boy and he likes to bug dad a lot.
   text: Jesse DeLuca has a four-year-old son.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5e809ec9-478a-45bc-aec6-8c4b91cf45d5
   type: observation
   attestation: first_hand
@@ -342,6 +403,11 @@ domain_claims:
     It comes down from the sky. So it's not coming out of the forest. So that's one thing I noticed right away.
   text: |-
     In the May 2024 Quebec drone UAP encounter, the object comes down from the sky rather than emerging from the forest.
+  entailment:
+    label: entails
+    score: 0.901
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9922a1ff-fe84-4230-aba5-0cae79e1c52f
   type: observation
   attestation: first_hand
@@ -362,6 +428,11 @@ domain_claims:
     So that was a field created by, um, my late, uh, father-in-law that, uh, they had cattle there. So they had cut down some areas of the forest to have the cattle to graze.
   text: |-
     In the May 2024 Quebec drone UAP encounter, the object swoops down into a field on Jesse DeLuca's family property that was created by his late father-in-law for cattle grazing.
+  entailment:
+    label: entails
+    score: 0.706
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 23a03515-3535-4a79-ba7c-656fb26cbc62
   type: observation
   attestation: first_hand
@@ -379,6 +450,11 @@ domain_claims:
   quote: So this thing comes down close to the ground, zips around like a bug.
   text: |-
     In the May 2024 Quebec drone UAP encounter, the object comes down close to the ground and moves around erratically, like a bug.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e142612d-20f3-45cc-bf66-0512d68347c8
   type: administrative
   attestation: first_hand
@@ -395,6 +471,11 @@ domain_claims:
     name: Jesse DeLuca
   quote: if it was a bird, I'm a bird photographer. And I've seen birds with the drone.
   text: Jesse DeLuca is a bird photographer and has seen birds while flying his drone.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3779b669-b44e-4c6c-b433-0386233e23b3
   type: opinion
   attestation: first_hand
@@ -415,6 +496,11 @@ domain_claims:
     You would see flapping wings and everything. And just the way it moves and just...
   text: |-
     Jesse DeLuca considers the object in the May 2024 Quebec drone UAP encounter unlikely to be a bird, because birds would show flapping wings and this object did not move like a bird.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c6d644e-fd81-4b79-8a6b-2e9e5c341a80
   type: testimony
   attestation: first_hand
@@ -435,6 +521,11 @@ domain_claims:
     So I've tried to reproduce this just the other day with my own drone to see if I can actually kind of do like a swoop. No, I can't.
   text: |-
     Jesse DeLuca tried to reproduce the swooping manoeuvre seen in the May 2024 Quebec drone UAP encounter using his own drone and was unable to do so.
+  entailment:
+    label: entails
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3c5a2ba9-0235-4abc-99c0-40e41387fcd6
   type: opinion
   attestation: first_hand
@@ -455,6 +546,11 @@ domain_claims:
     Like the camera drones, you literally are like descending slowly and it's very, I guess, robotic, I guess I would call it. And this is very natural, the way it seems to move.
   text: |-
     Jesse DeLuca considers ordinary camera drones to descend slowly in a robotic manner, unlike the natural-seeming movement of the object in the May 2024 Quebec drone UAP encounter.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e94d739a-e5f6-4559-aee5-505d673380dc
   type: observation
   attestation: first_hand
@@ -476,6 +572,11 @@ domain_claims:
     that if you think of biology wise the dragonflies are out now that's the biggest flying bug around and may 19th they're not out right at all so in terms of large insects flying
   text: |-
     Dragonflies, the biggest flying insects in the area of the May 2024 Quebec drone UAP encounter, are not active by 2024-05-19.
+  entailment:
+    label: entails
+    score: 0.715
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 75d534e0-d851-41df-90d2-bd839974adfd
   type: measurement
   attestation: first_hand
@@ -495,6 +596,11 @@ domain_claims:
   quote: So yeah, I would say it's about 400 to 500 meters from the drone.
   text: |-
     In the May 2024 Quebec drone UAP encounter, the object was approximately 400 to 500 metres from the drone.
+  entailment:
+    label: neutral
+    score: 0.884
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a0d78652-a19c-4605-938b-5a232a3f4508
   type: measurement
   attestation: first_hand
@@ -515,6 +621,11 @@ domain_claims:
     Because I know that usually my range of distance I can get with the drone at my max allowed altitude is roughly 900 meters or so.
   text: |-
     Jesse DeLuca's DJI Mini 3 Pro drone can typically operate at a range of roughly 900 metres at his maximum allowed flight altitude.
+  entailment:
+    label: neutral
+    score: 0.505
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 85b524ff-2c5f-41a3-ab47-071de700edef
   type: observation
   attestation: first_hand
@@ -533,6 +644,11 @@ domain_claims:
     you can see birds flying out when it's down there so it's they're very very tiny but you can see faintly things that fly out of the trees in the forest and they're considerably smaller than it
   text: |-
     In the footage of the May 2024 Quebec drone UAP encounter, small birds can be seen faintly flying out of the trees, and they are considerably smaller than the unidentified object.
+  entailment:
+    label: neutral
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1755a0da-5106-42b5-8f06-4591a55d1de0
   type: opinion
   attestation: first_hand
@@ -553,6 +669,11 @@ domain_claims:
     there is a point where it looks like it's kind of grazing or it's kind of like hanging out down there we don't really know what it's doing... To me, it is moving around like an insect would.
   text: |-
     Chris considers the movement of the object in the May 2024 Quebec drone UAP encounter, once down near the ground, to resemble an insect grazing or hanging out rather than a bird's natural flight trajectory.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 23f5066d-72b5-4613-b90f-50a97837561a
   type: opinion
   attestation: first_hand
@@ -573,6 +694,11 @@ domain_claims:
     And a drone, like if I was trying to do that with my drone, no, I can't. I literally would be like turning, go this way, turn, go that way. So the way it radically moves, I wouldn't be able to recreate it.
   text: |-
     Jesse DeLuca considers that he would not be able to recreate the radical movements of the object in the May 2024 Quebec drone UAP encounter with his own drone.
+  entailment:
+    label: neutral
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d8e1926-8a48-42de-bcaf-2d6be5df6846
   type: observation
   attestation: first_hand
@@ -593,6 +719,11 @@ domain_claims:
     But this is you were you're a quarter mile away. And within two seconds, It is right beside the drone.
   text: |-
     In the May 2024 Quebec drone UAP encounter, the object travelled from about 400 to 500 metres away to right beside the drone within about two seconds.
+  entailment:
+    label: neutral
+    score: 0.947
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dd8e9f71-cefb-4de4-baf2-4a81438782c1
   type: opinion
   attestation: first_hand
@@ -613,6 +744,11 @@ domain_claims:
     How fast is that? It's extremely fast. ... Yeah, it's pretty fast. I mean, I'm pretty sure it's quite fast.
   text: |-
     Jesse DeLuca considers the speed of the object in the May 2024 Quebec drone UAP encounter to be extremely fast.
+  entailment:
+    label: neutral
+    score: 0.955
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: edebd5ab-af71-47d4-810f-666f8386b724
   type: observation
   attestation: first_hand
@@ -633,6 +769,11 @@ domain_claims:
     This is half speed right now. ... Half speed, you just saw it in the field. And at half speed, it's about four seconds. ... It goes up and then just shoots in a straight line.
   text: |-
     At half playback speed, the object in the May 2024 Quebec drone UAP encounter covers the field and shoots away in about four seconds.
+  entailment:
+    label: entails
+    score: 0.492
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5d9b5840-2dcf-4193-8b18-9853f7fb9fdb
   type: administrative
   attestation: first_hand
@@ -653,6 +794,11 @@ domain_claims:
     I'm using my phone with the controller. I don't have the actual, the two controller.
   text: |-
     Jesse DeLuca flew the drone that captured the May 2024 Quebec drone UAP encounter using his phone with the controller, not the standard two-part controller.
+  entailment:
+    label: neutral
+    score: 0.524
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33828453-d7a0-4f39-90c3-30e2c3bf9b61
   type: opinion
   attestation: first_hand
@@ -675,6 +821,11 @@ domain_claims:
     ffpv drone I don't have any experience with them. I've seen videos online... That would be the only thing I would think could like move like that and move at that speed and erratically like that.
   text: |-
     Jesse DeLuca considers a First Person View (FPV) drone the only thing he can think of that could move and manoeuvre the way the object in the May 2024 Quebec drone UAP encounter did, though he has no personal experience with FPV drones.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c986b731-64c8-49ab-8640-56c8900d72c4
   type: administrative
   attestation: first_hand
@@ -694,6 +845,11 @@ domain_claims:
   quote: |-
     no i mean the drone doesn't record sound right of course so no there's no there's no audio unfortunately
   text: The DJI Mini 3 Pro drone does not record audio.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 76478494-6ee9-4ba1-81cf-b40f73eb35ae
   type: testimony
   attestation: first_hand
@@ -714,6 +870,11 @@ domain_claims:
     there aren't a lot of people actually flying drones out here like have you ever encountered other people flying drones no
   text: |-
     Jesse DeLuca has never encountered other people flying drones in the area where he filmed the May 2024 Quebec drone UAP encounter.
+  entailment:
+    label: neutral
+    score: 0.801
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4fb00ecc-14b6-4d81-b004-58f45e372d67
   type: testimony
   attestation: first_hand
@@ -734,6 +895,11 @@ domain_claims:
     I filmed this last week while on vacation there. I had my folks up. Okay guys, so right here is where that UAP was flying. And this is my father.
   text: |-
     Jesse DeLuca filmed a second video, with audio, of the field where the May 2024 Quebec drone UAP encounter occurred, while on vacation there with his father.
+  entailment:
+    label: entails
+    score: 0.877
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f13f1de1-8ce2-4e29-81df-2cc656dfca41
   type: measurement
   attestation: first_hand
@@ -750,6 +916,11 @@ domain_claims:
     name: Jesse DeLuca
   quote: And this is my father. He's 5'10 or so.
   text: Jesse DeLuca's father is approximately 1.78 metres tall.
+  entailment:
+    label: contradicts
+    score: 0.71
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 97e5850d-d5f0-4991-8566-f635a81a0c4d
   type: measurement
   attestation: first_hand
@@ -768,6 +939,11 @@ domain_claims:
     Yeah, some of them are close to 10 feet tall... They're like seven, eight foot tall trees. Maybe even one of them is almost nine foot tall.
   text: |-
     Some of the trees near where the object was seen flying in the May 2024 Quebec drone UAP encounter are close to 3 metres tall, and one is almost 2.7 metres tall.
+  entailment:
+    label: contradicts
+    score: 0.64
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e41ab422-61b2-46ee-9281-28cd6edd79e4
   type: administrative
   attestation: first_hand
@@ -788,6 +964,11 @@ domain_claims:
     We're letting that field rewild and letting the trees grow back because we don't farm cattle.
   text: |-
     Jesse DeLuca lets the field where the May 2024 Quebec drone UAP encounter occurred grow wild because he no longer farms cattle there.
+  entailment:
+    label: neutral
+    score: 0.433
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 851dba31-e488-4a1d-a343-6b3ac4f2aa1b
   type: opinion
   attestation: first_hand
@@ -808,6 +989,11 @@ domain_claims:
     I guess to me, maybe like, like, uh, like a beach ball, like a, you know, one of the big, bigger beach balls, something like that.
   text: |-
     Jesse DeLuca estimates the object in the May 2024 Quebec drone UAP encounter to be about the size of a large beach ball.
+  entailment:
+    label: neutral
+    score: 0.902
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d11b7548-ca14-4d78-83c8-c5b6bca2b6e3
   type: testimony
   attestation: first_hand
@@ -830,6 +1016,11 @@ domain_claims:
     sometime between 2005 2010 uh i my whole life i've been camping in the um the papi nola belle wildlife reserve in quebec... i see something that turns on to us like someone taking a flashlight and turning it on to you... it's up in the sky it's round super bright shining in our faces
   text: |-
     Between 2005 and 2010, Jesse DeLuca was camping at the Papineau-Labelle Wildlife Reserve in Quebec, Canada, when he saw a round, bright object in the sky that turned toward him and his friends like a flashlight being pointed at them.
+  entailment:
+    label: entails
+    score: 0.862
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e86a08ec-6179-4b6e-a1de-b6ea1c97cf61
   type: observation
   attestation: first_hand
@@ -850,6 +1041,11 @@ domain_claims:
     then just moves slowly off to the right and then just disappears almost like it fades away
   text: |-
     In the Papineau-Labelle Wildlife Reserve UAP sighting, the object moved slowly off to the right and disappeared, seeming to fade away.
+  entailment:
+    label: entails
+    score: 0.64
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 58cc6523-bda6-45cb-904f-6eedef2f8077
   type: observation
   attestation: first_hand
@@ -870,6 +1066,11 @@ domain_claims:
     then we see this blue flash come over the hillside with this like almost like a bang sound like it's something exploded in the distance
   text: |-
     After the object disappeared during the Papineau-Labelle Wildlife Reserve UAP sighting, Jesse DeLuca and his friends saw a blue flash come over the hillside accompanied by a bang-like sound, as if something had exploded in the distance.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7bd6d0f2-c090-46c5-a01c-5186e61e06da
   type: testimony
   attestation: first_hand
@@ -890,6 +1091,11 @@ domain_claims:
     we all looked at each other and all confirmed that we all saw it and said, we're freaked out and let's go back to the campsite.
   text: |-
     Jesse DeLuca and his friends all confirmed to each other that they had seen the object during the Papineau-Labelle Wildlife Reserve UAP sighting and were frightened, so they returned to their campsite.
+  entailment:
+    label: neutral
+    score: 0.624
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a546b8fa-8b0c-4bac-8ee8-b5f59e7a360d
   type: observation
   attestation: first_hand
@@ -907,6 +1113,11 @@ domain_claims:
   quote: That was a clear sky.
   text: |-
     The sky was clear on the night of the Papineau-Labelle Wildlife Reserve UAP sighting.
+  entailment:
+    label: neutral
+    score: 0.736
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6e2e0925-cd46-4fae-af41-5f8b8873cb1d
   type: administrative
   attestation: first_hand
@@ -926,6 +1137,11 @@ domain_claims:
   quote: |-
     i talked to one of my close friends uh my buddy sean and he's he works in aerospace industry
   text: Sean works in the aerospace industry.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f5f97209-fc49-45d2-9533-7ef20485b319
   type: opinion
   attestation: second_hand
@@ -950,6 +1166,11 @@ domain_claims:
     my buddy sean and he's he works in aerospace industry and he said it's he said he thinks it's an iridium flare
   text: |-
     Sean considers an iridium flare a possible explanation for the light Jesse DeLuca saw during his May 2024 Quebec drone UAP encounter.
+  entailment:
+    label: neutral
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1e38b971-7662-4ddd-902f-0aa1398e4201
   type: observation
   attestation: first_hand
@@ -970,6 +1191,11 @@ domain_claims:
     the way the way we saw something turn on us like as if you know you're you're down an alleyway and a police officer turns a flashlight on you hey who's there like that's how it felt
   text: |-
     During his May 2024 Quebec drone UAP encounter, Jesse DeLuca and the people with him felt they were suddenly being observed, as if a light had been deliberately turned on them.
+  entailment:
+    label: entails
+    score: 0.792
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ff964361-2212-4d37-a293-3af9fe720834
   type: administrative
   attestation: first_hand
@@ -992,6 +1218,11 @@ domain_claims:
   quote: i spoke to one last week jim
   text: |-
     Jesse DeLuca spoke with Jim about the Unidentified Aerial Phenomena (UAP) subject the week before this conversation.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 625b2a06-a9c5-4af4-926f-4d4a2c374570
   type: opinion
   attestation: second_hand
@@ -1013,6 +1244,11 @@ domain_claims:
   quote: you guys believe it's it's something and not not just a bug
   text: |-
     Jim believes the object filmed during Jesse DeLuca's May 2024 Quebec drone UAP encounter is something rather than a bug.
+  entailment:
+    label: entails
+    score: 0.419
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 589e5f1b-a718-44ec-9f33-01a506ea7667
   type: opinion
   attestation: first_hand
@@ -1030,6 +1266,11 @@ domain_claims:
   quote: |-
     there's no doubt we're not alone in this universe it's impossible it's impossible
   text: Jesse DeLuca considers it impossible that humanity is alone in the universe.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a7a2ce07-93f8-49ca-bfd5-c16f2a6fda20
   type: observation
   attestation: first_hand
@@ -1052,6 +1293,11 @@ domain_claims:
     i watched one uh the utah one maybe it was that it was it was something similar to what i filmed but flew like towards it
   text: |-
     Jesse DeLuca watched a video of the Utah drone UAP encounter, in which the object flew similarly to what he filmed during his May 2024 Quebec drone UAP encounter but moved toward the drone.
+  entailment:
+    label: entails
+    score: 0.777
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ba8c39f0-9387-4f5c-9462-289d72bd2652
   type: opinion
   attestation: third_hand
@@ -1073,6 +1319,11 @@ domain_claims:
     i watched this whole thing where they went to see some uh video specialists and the guy said it would be incredibly difficult to replicate the blur of it flying by
   text: |-
     A video specialist who reviewed footage of the Utah drone UAP encounter said it would be incredibly difficult to replicate the blur of the object flying by.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8154c72d-abab-4b0f-9cb1-4576d3e84491
   type: opinion
   attestation: first_hand
@@ -1091,6 +1342,11 @@ domain_claims:
     if someone was to fake it, it would probably be a solid, perfect object going by and not have the the real blur that you would have when filming or taking a photo of something that's that's actually moving
   text: |-
     If someone were to fake the footage of an object flying by, the object would probably appear as a solid, perfectly clear object rather than showing the real motion blur seen when something is actually moving.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60901357-29c0-4fd9-834b-432afe3e6079
   type: administrative
   provenance_chain:
@@ -1102,6 +1358,11 @@ domain_claims:
     name: Utah drone UAP encounter
   quote: So this is footage from Utah, I believe. And it was 4K.
   text: The footage of the Utah drone UAP encounter was recorded in 4K resolution.
+  entailment:
+    label: entails
+    score: 0.638
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 571e3cfb-525f-421e-934f-5fd2203fa694
   type: administrative
   provenance_chain:
@@ -1115,6 +1376,11 @@ domain_claims:
     name: First Person View (FPV) drone
   quote: It was a drone as well.
   text: The footage of the Utah drone UAP encounter was captured using a drone.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f72270ff-18b2-427b-9272-a8cde0e8dba7
   type: hearsay
   attestation: second_hand
@@ -1130,6 +1396,11 @@ domain_claims:
     when all of a sudden he gets this flyby, you know, which they speculated to be thousands of miles an hour
   text: |-
     The object seen in the Utah drone UAP encounter footage was speculated to be travelling at thousands of kilometres per hour during its flyby past the camera.
+  entailment:
+    label: entails
+    score: 0.734
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 684f7898-525f-426f-a718-1214b2604dfd
   type: opinion
   attestation: first_hand
@@ -1149,6 +1420,11 @@ domain_claims:
   quote: Because I didn't expect to record that. I really didn't.
   text: |-
     Jesse DeLuca did not expect to record the footage from his May 2024 Quebec drone UAP encounter.
+  entailment:
+    label: neutral
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b197ef60-b26f-49a1-9283-4f347c6e3bea
   type: administrative
   provenance_chain:
@@ -1161,6 +1437,11 @@ domain_claims:
   quote: |-
     I'm a magician as well by trade, and I know how things work, and I know how easy it is to trick the human mind.
   text: The host of Debriefed is a magician by trade.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 90b525e1-f319-43a1-b102-32b99370e786
   type: opinion
   attestation: first_hand
@@ -1181,6 +1462,11 @@ domain_claims:
     my channel is all about showing you what is real that's right what is actually happening out out there yeah and not to show you something fake
   text: |-
     Jesse DeLuca's channel is intended to show viewers what is real and not to show fake content.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: ef92e6f9-63a6-47d3-a0b4-c7c30ce7c0ef
   type: administrative
@@ -1200,6 +1486,11 @@ infrastructure_claims:
     name: Chris
   quote: Ladies and gentlemen, welcome back to another episode of Debriefed.
   text: Debriefed is hosted by Chris.
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4211049e-723a-4233-99a8-062d99df3fb0
   type: administrative
   attestation: first_hand
@@ -1220,6 +1511,11 @@ infrastructure_claims:
     if you guys want to subscribe to our Patreon where you have extra episodes, uncut interviews access to the top secret forum on our discord which has q a's movie nights and so much more check it out patreon.com area 52 investigations
   text: |-
     Debriefed has a Patreon at patreon.com/area52investigations offering extra episodes, uncut interviews, and access to a Discord forum run by Area 52 Investigations.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4abc9c7e-0edc-4904-b550-d621f7c53a11
   type: administrative
   attestation: first_hand
@@ -1238,6 +1534,11 @@ infrastructure_claims:
     name: Jesse DeLuca Wild Canada
   quote: I am joined today by Jesse DeLuca from Jesse DeLuca Wildlife Canada.
   text: Jesse DeLuca runs the YouTube channel Jesse DeLuca Wild Canada.
+  entailment:
+    label: entails
+    score: 0.667
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 78a42658-6173-455d-8055-aec0745dcecc
   type: administrative
   attestation: first_hand
@@ -1260,6 +1561,11 @@ infrastructure_claims:
     But when I saw this, I saw this on the, was it UAP files? ... UAP files podcast. ... You had an interview there.
   text: |-
     Jesse DeLuca was interviewed on the UAP Files podcast about his May 2024 Quebec drone UAP encounter.
+  entailment:
+    label: neutral
+    score: 0.682
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2532eb7c-24a6-479e-ac84-38ee81eacc77
   type: administrative
   provenance_chain:
@@ -1273,3 +1579,8 @@ infrastructure_claims:
     name: Jesse DeLuca Wild Canada
   quote: it's jesse de luca wild canada
   text: Jesse DeLuca's video channel is called Jesse DeLuca Wild Canada.
+  entailment:
+    label: entails
+    score: 0.913
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -15,6 +15,12 @@ ai_usage:
     calls: 3
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 7.1
 prompts:
 - pass: nodes
   id: nodes
@@ -219,6 +225,11 @@ domain_claims:
     As many as 71% of the adults in America say they believe that we're not alone in the universe.
   text: |-
     As many as 71% of adults in America say they believe humanity is not alone in the universe.
+  entailment:
+    label: entails
+    score: 0.757
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6914b312-cf50-44f9-987e-9ab47c38644f
   type: administrative
   attestation: first_hand
@@ -238,6 +249,11 @@ domain_claims:
   quote: |-
     I serve on the Presidential Commission for Religious Liberty, and that involves the Department of Justice and other departments that have to do with constitutional rights.
   text: Phil McGraw serves on the Presidential Commission for Religious Liberty.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2b6785c6-f934-413c-bde2-08cbafde5c26
   type: administrative
   attestation: first_hand
@@ -258,6 +274,11 @@ domain_claims:
     I serve on the Presidential Commission for Religious Liberty, and that involves the Department of Justice and other departments that have to do with constitutional rights.
   text: |-
     The Presidential Commission for Religious Liberty involves the United States Department of Justice.
+  entailment:
+    label: entails
+    score: 0.871
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d32623af-bef2-434b-a08f-ed8f6705fae1
   type: administrative
   attestation: first_hand
@@ -275,6 +296,11 @@ domain_claims:
   quote: |-
     I've been on the air here 25 years talking about things that matter to people who care.
   text: Phil McGraw has been broadcasting his television programme for 25 years.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 98ee8fd3-84aa-4e99-aacf-771eb89cc49f
   type: testimony
   attestation: first_hand
@@ -292,6 +318,11 @@ domain_claims:
   quote: |-
     In fact, they were being threatened with prison time, with substantial fines, even with the Espionage Act.
   text: Witnesses reporting UFO sightings were sometimes threatened with prison time.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 73171fb7-4491-491a-82b4-3028e82a0da1
   type: testimony
   attestation: first_hand
@@ -310,6 +341,11 @@ domain_claims:
     In fact, they were being threatened with prison time, with substantial fines, even with the Espionage Act.
   text: |-
     Witnesses reporting UFO sightings were sometimes threatened with substantial fines.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bc9e5bc7-b770-4e12-807c-7c2d26bddc51
   type: testimony
   attestation: first_hand
@@ -330,6 +366,11 @@ domain_claims:
     In fact, they were being threatened with prison time, with substantial fines, even with the Espionage Act.
   text: |-
     Witnesses reporting UFO sightings were sometimes threatened with prosecution under the Espionage Act.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2f56d684-e8b8-4063-874e-1473fce23c99
   type: testimony
   attestation: first_hand
@@ -348,6 +389,11 @@ domain_claims:
     We had credible people, military pilots, commercial pilots, people with trained instrumentation that were making observations that were being suppressed.
   text: |-
     Credible people, including military pilots, commercial pilots, and people with trained instrumentation, made observations of UFOs that were being suppressed.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83c1bcc4-2c33-4587-acd7-e3097a9edef2
   type: testimony
   attestation: first_hand
@@ -366,6 +412,11 @@ domain_claims:
     they certainly know that all of that is contained in the documents that are going to be released and the gun cameras, the radar tracks that are going to be released.
   text: |-
     Documents due to be released contain gun camera footage relevant to UFO sightings.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0aa874f1-e8d3-4187-b50d-dbf95db27a4c
   type: testimony
   attestation: first_hand
@@ -383,6 +434,11 @@ domain_claims:
   quote: |-
     they certainly know that all of that is contained in the documents that are going to be released and the gun cameras, the radar tracks that are going to be released.
   text: Documents due to be released contain radar tracks relevant to UFO sightings.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0ef893ff-11bb-4c84-b2a6-61cfd6991325
   type: opinion
   attestation: first_hand
@@ -403,6 +459,11 @@ domain_claims:
     It's like a psyop that we've seen previously in war efforts when the entire media machine was co-opted into convincing people to get behind the war effort by mimicking war atrocities that were completely made up just to get people behind the war effort, that the same thing was going on concerning UAPs and UFOs.
   text: |-
     Phil McGraw considers the historical suppression of UFO reports comparable to a psyop like those seen in past war efforts where the media machine was co-opted to fabricate atrocities to gain public support.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 31e03982-fda7-473a-aa86-ae441cea2282
   type: opinion
   attestation: first_hand
@@ -423,6 +484,11 @@ domain_claims:
     there's something that's going on here that there's a fragmentation of this information within the United States government.
   text: |-
     Phil McGraw considers there to be a fragmentation of UFO-related information within the United States government.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f306f25a-ca43-4d25-96c3-484414dab022
   type: opinion
   attestation: first_hand
@@ -443,6 +509,11 @@ domain_claims:
     I think some of the people that are in control of this information kind of treat the president of the United States as though he's a temp employee... I'm not sure how candid some of the people in control of this information are with the boss, with the president of the United States
   text: |-
     Phil McGraw considers that some people controlling UFO-related information treat the President of the United States as though he were a temporary employee not given full candour.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2ede72f4-086e-41fc-b564-ca9252cc3ecb
   type: hearsay
   attestation: second_hand
@@ -466,6 +537,11 @@ domain_claims:
     I mean, I think there has been times where people I've spoken to inside this cover up have told me the president is regarded as a temporary employee.
   text: |-
     People inside the government's UFO cover-up have told Ross Coulthart the President of the United States is regarded as a temporary employee by those controlling the information.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1cbcd809-d1c5-4716-9f0d-17acdee3b36b
   type: opinion
   attestation: first_hand
@@ -482,6 +558,11 @@ domain_claims:
     name: Donald Trump
   quote: I think he has decided it's time for transparency.
   text: Donald Trump has decided it is time for transparency regarding UFO disclosure.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e68d2a8f-fb60-4834-8612-79a5c21ecc5e
   type: administrative
   attestation: first_hand
@@ -500,6 +581,11 @@ domain_claims:
     his executive order about this was very clear to declassify this information and disclose it to the American public.
   text: |-
     Donald Trump signed an executive order to declassify and disclose UFO-related information to the American public.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1760ef96-cd9a-4400-869a-58f84aac5d92
   type: administrative
   attestation: first_hand
@@ -516,6 +602,11 @@ domain_claims:
     name: Fourth tranche of UFO files (2026)
   quote: We've got the fourth tranche of information out there right now.
   text: A fourth tranche of UFO files has been released.
+  entailment:
+    label: entails
+    score: 0.529
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2c758af2-c69a-4106-ab64-7d1d41080884
   type: administrative
   attestation: first_hand
@@ -535,6 +626,11 @@ domain_claims:
   quote: |-
     certainly in the one that we had the opportunity to dig into before it became public
   text: Phil McGraw reviewed the fourth tranche of UFO files before it became public.
+  entailment:
+    label: neutral
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: abc8af2a-8e77-42a4-b960-0a36f39f27ce
   type: opinion
   attestation: first_hand
@@ -552,6 +648,11 @@ domain_claims:
   quote: Number one, there has been a massive cover-up.
   text: |-
     Phil McGraw concludes from his review of the UFO files that there has been a massive cover-up.
+  entailment:
+    label: neutral
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33773c86-2867-47eb-8409-2557eff0d055
   type: opinion
   attestation: first_hand
@@ -572,6 +673,11 @@ domain_claims:
     there's no question there are unexplained phenomenon happening in our atmosphere here.
   text: |-
     Phil McGraw concludes there is no question there are unexplained phenomena occurring in the Earth's atmosphere.
+  entailment:
+    label: entails
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5dd00e4b-7340-4241-b171-af99dbfccf40
   type: testimony
   attestation: second_hand
@@ -592,6 +698,11 @@ domain_claims:
     we got into their documents and we read their words where they say, we know this is addictive.
   text: |-
     Meta documented internally that it knew its social media platform was addictive to teenage users.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 81475e7c-eecd-44ea-b073-95f1c65a2325
   type: testimony
   attestation: second_hand
@@ -612,6 +723,11 @@ domain_claims:
     We know this is contributing to poor mental health of our preteens and teens, but we're doing it anyway.
   text: |-
     Meta documented internally that it knew its platform was contributing to poor mental health among preteens and teens.
+  entailment:
+    label: neutral
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 770f3c59-13d2-48be-a8cc-e507a8a2faf6
   type: testimony
   attestation: second_hand
@@ -637,6 +753,11 @@ domain_claims:
     In 1947, Lieutenant General Nathan Twining told the Army Air Forces the phenomenon was, quote, something real and not visionary or fictitious was going on.
   text: |-
     In 1947, Lieutenant General Nathan Twining told the United States Army Air Forces that the phenomenon under investigation was 'something real and not visionary or fictitious'.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: de814c2e-12f9-458d-b92f-819d4aac1bc6
   type: testimony
   attestation: first_hand
@@ -656,6 +777,11 @@ domain_claims:
   quote: Well, the Air Force denied for decades that any such assessment even existed.
   text: |-
     The United States Air Force denied for decades that Nathan Twining's 1947 assessment even existed.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec36506f-4715-4398-ac9b-00f3dba02351
   type: administrative
   attestation: first_hand
@@ -680,6 +806,11 @@ domain_claims:
     Then in 1949, a classified conference was convened at Los Alamos, home of the Manhattan Project, to address a wave of unexplained sightings over America's nuclear weapon sites.
   text: |-
     In 1949, a classified conference was convened at Los Alamos, New Mexico, home of the Manhattan Project, to address a wave of unexplained sightings over America's nuclear weapon sites.
+  entailment:
+    label: entails
+    score: 0.572
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 557c0935-d59b-429b-ae5e-d126db7d1084
   type: testimony
   attestation: first_hand
@@ -700,6 +831,11 @@ domain_claims:
     This has continued as recently as just the last few years we've had sightings over Pantex up in Amarillo, a nuclear site.
   text: |-
     There have been sightings of anomalous phenomena over the Pantex Plant nuclear site in Amarillo, Texas, in recent years.
+  entailment:
+    label: entails
+    score: 0.838
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 38ee9e58-9c8f-4384-a506-2c6430f2d061
   type: testimony
   attestation: first_hand
@@ -718,6 +854,11 @@ domain_claims:
     We've got five cities with nuclear concentrations and they've had a high incidence of verified sightings over our nuclear installations.
   text: |-
     Five cities with nuclear concentrations have had a high incidence of verified UFO sightings over nuclear installations.
+  entailment:
+    label: entails
+    score: 0.562
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cb7d4b21-18e8-439d-99c7-b2bd71c62ab9
   type: administrative
   attestation: first_hand
@@ -741,6 +882,11 @@ domain_claims:
     So 1953, the CIA's Robertson panel of scientists convened and recommended a public education campaign built on one strategy, publicize the cases that have already been debunked and say nothing about the ones that haven't.
   text: |-
     In 1953, the Central Intelligence Agency's Robertson Panel of scientists convened and recommended a public education campaign built on publicising already-debunked UFO cases while saying nothing about unexplained ones.
+  entailment:
+    label: entails
+    score: 0.779
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 436abef4-1dfa-4d42-af6a-55052a818f04
   type: administrative
   attestation: first_hand
@@ -761,6 +907,11 @@ domain_claims:
     what's called JNAP 146, where it essentially criminalised military and civilian pilots in the US and unbelievably also in Canada from even talking about UFO sightings.
   text: |-
     JNAP 146 criminalised military and civilian pilots in the United States and Canada from talking about UFO sightings.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bc03950c-07aa-4311-b11f-ca3b9dc83a58
   type: administrative
   attestation: first_hand
@@ -781,6 +932,11 @@ domain_claims:
     So they quickly did JNAP 146E, which did two things. It covered the retired and it imposed the Espionage Act, which upped all of the stakes across the board.
   text: |-
     After realising that retired pilots fell outside their jurisdiction under JNAP 146, authorities issued JNAP 146E, which extended restrictions to retired pilots.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fcd86ba8-d286-476a-a47f-5a0d29a06981
   type: administrative
   attestation: first_hand
@@ -801,6 +957,11 @@ domain_claims:
     So they quickly did JNAP 146E, which did two things. It covered the retired and it imposed the Espionage Act, which upped all of the stakes across the board.
   text: |-
     JNAP 146E imposed the Espionage Act on the pilots it covered, increasing the legal stakes for disclosure.
+  entailment:
+    label: entails
+    score: 0.813
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5cc1aed6-9af9-4251-907c-1b3db968ffc5
   type: opinion
   attestation: first_hand
@@ -819,6 +980,11 @@ domain_claims:
     I believe that the redactions and the cherry picking of what's being put out right now, I think it's still a tug of war to get to the absolute truth of what they know.
   text: |-
     Phil McGraw believes the redactions and cherry-picking of currently released UFO disclosures indicate an ongoing tug-of-war to get to the full truth of what the government knows.
+  entailment:
+    label: entails
+    score: 0.836
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5e92ffe6-af92-4e4b-8cd5-fcc4d5e44bd3
   type: administrative
   attestation: first_hand
@@ -839,6 +1005,11 @@ domain_claims:
     David Grusch is a whistleblower who goes much further. He's come from inside the Defense Department, the intelligence community
   text: |-
     David Grusch is a whistleblower who came from inside the United States Department of Defense and the intelligence community.
+  entailment:
+    label: entails
+    score: 0.685
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 48a9b1f7-427c-4644-bfef-9482e2dced6d
   type: testimony
   attestation: second_hand
@@ -861,6 +1032,11 @@ domain_claims:
     he revealed the existence of a legacy UFO non-human technology retrieval and reverse engineering program.
   text: |-
     David Grusch revealed the existence of a legacy UFO non-human technology retrieval and reverse engineering programme.
+  entailment:
+    label: contradicts
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d68c95c1-5a1f-4ec0-9556-768c7fbca7b1
   type: testimony
   attestation: second_hand
@@ -881,6 +1057,11 @@ domain_claims:
     The idea being that the United States has recovered alien technology, non-human technology.
   text: |-
     The idea behind the alleged programme is that the United States has recovered alien, non-human technology.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f806e866-8378-4237-a62f-fa9b36f39f24
   type: measurement
   attestation: first_hand
@@ -899,6 +1080,11 @@ domain_claims:
     to travel to the nearest galaxy, Andromeda, it would take two and a half million years traveling at the speed of light.
   text: |-
     Travelling to the Andromeda Galaxy at the speed of light would take approximately two and a half million years.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 96001f4f-50bc-464a-88a5-67338a6682dc
   type: measurement
   attestation: first_hand
@@ -912,6 +1098,11 @@ domain_claims:
   location: 00:19:14.9-00:19:18.1
   quote: And that's 186,282 miles an hour.
   text: The speed of light is approximately 300,000 kilometres per second.
+  entailment:
+    label: contradicts
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: edc95677-34ff-4a93-890d-103ff05f1141
   type: opinion
   attestation: first_hand
@@ -932,6 +1123,11 @@ domain_claims:
     I know there's the time dilation theory where there's a theory under which you could actually get there and two and a half decades or whatever but two and a half million years would have passed on earth if you did so
   text: |-
     There is a time dilation theory under which a traveller could reach the Andromeda Galaxy in approximately two and a half decades of subjective travel time, while roughly two and a half million years would pass on Earth.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e148a5de-ff0d-4c86-82ab-72b01859ba35
   type: opinion
   attestation: first_hand
@@ -950,6 +1146,11 @@ domain_claims:
     It that suggests that if someone has traveled here from outside our galaxy, you have to conclude that they're technologically superior to us or they packed a hell of a lunch because it takes a long time to get here. And that's technology we don't have. So that means they are technologically superior.
   text: |-
     Phil McGraw concludes that if a non-human entity has travelled here from outside our galaxy, it must be technologically superior to humanity given the travel time involved.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f5a13b04-4f2c-48db-9bed-67a704ecd8da
   type: opinion
   attestation: first_hand
@@ -970,6 +1171,11 @@ domain_claims:
     you can't and this is already happening just with what's been given so far is it's being provided without context
   text: |-
     Phil McGraw considers the UFO information disclosed so far to have been provided without adequate context.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 166bdcf9-ed1f-46d2-942a-518d976f2f25
   type: administrative
   attestation: first_hand
@@ -986,6 +1192,11 @@ domain_claims:
     name: Phil McGraw
   quote: i've been a pilot since i was 16
   text: Phil McGraw has been a pilot since he was 16 years old.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 67cc27b1-7764-4117-9f04-b152b8e000c1
   type: opinion
   attestation: first_hand
@@ -1005,6 +1216,11 @@ domain_claims:
   quote: I look at these, and by the way, they're, I think, intentionally grainy.
   text: |-
     Phil McGraw considers the publicly released UFO videos to be intentionally grainy.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 65a65ce2-725e-41b6-be09-48ceccd73cae
   type: testimony
   attestation: first_hand
@@ -1023,6 +1239,11 @@ domain_claims:
     I know that there is existence of very high resolution gun camera video and radar tracks that can be provided.
   text: |-
     Phil McGraw knows that very high resolution gun camera video and radar tracks exist that could be released.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b425cd99-89b3-4aec-9311-aa3bc4f5e7b5
   type: measurement
   attestation: first_hand
@@ -1041,6 +1262,11 @@ domain_claims:
     We have things that within context appear to be moving close to 40,000 miles an hour and making a right turn. I mean a 90 degree right turn.
   text: |-
     Some UAP have been recorded on radar appearing to move at approximately 64,000 kilometres per hour and execute a 90-degree turn.
+  entailment:
+    label: contradicts
+    score: 0.399
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 40f317ed-338a-4ed5-b86c-335f1a40fc7f
   type: observation
   attestation: first_hand
@@ -1060,6 +1286,11 @@ domain_claims:
   quote: I've flown with the Blue Angels and we were pulling like 7.49 Gs at times.
   text: |-
     Phil McGraw has flown with the Blue Angels and experienced forces of approximately 7.49 G.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a1a1255-9d9e-40fe-b9b1-62ac3941291b
   type: measurement
   attestation: first_hand
@@ -1078,6 +1309,11 @@ domain_claims:
     the estimates are, depending on how things were configured, that the G-forces would be somewhere between 10,000 and a million.
   text: |-
     Estimates of the G-forces some UAP would experience, depending on configuration, range between 10,000 and one million G.
+  entailment:
+    label: entails
+    score: 0.932
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ee9bae0-2d42-4e9b-92c0-fcf3ff6ef0b0
   type: measurement
   attestation: first_hand
@@ -1093,6 +1329,11 @@ domain_claims:
     I think the most that's ever been tracked was on a sled at around 25 G's for a half of a second or something.
   text: |-
     The highest G-force ever tracked on a rocket sled was approximately 25 G for about half a second.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c7b0f36-cad5-4c25-9b28-25944b5df2a9
   type: opinion
   attestation: first_hand
@@ -1113,6 +1354,11 @@ domain_claims:
     I think you get anywhere near what they're talking about. we would liquefy inside that.
   text: |-
     Phil McGraw considers that a human being would liquefy internally under the G-forces attributed to some UAP.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c1136e41-f7ee-49d5-8416-c55179df3e05
   type: opinion
   attestation: first_hand
@@ -1133,6 +1379,11 @@ domain_claims:
     we also don't have the metallurgy to have any kind of aircraft that it would look like a yard sale if we turn.
   text: |-
     Phil McGraw considers that current human metallurgy could not withstand the manoeuvres attributed to some UAP.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2373da46-02de-4e3e-b8f3-cc62a0bc4174
   type: opinion
   attestation: first_hand
@@ -1151,6 +1402,11 @@ domain_claims:
     I happen to think that that's a very patronizing view and that Americans are ready.
   text: |-
     Phil McGraw considers it a patronising view that the American public is too fragile to be told about non-human intelligence.
+  entailment:
+    label: contradicts
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 71df0c61-8608-4bb6-b167-fc6d6b846d2a
   type: administrative
   attestation: first_hand
@@ -1167,6 +1423,11 @@ domain_claims:
     name: Phil McGraw
   quote: I've been doing this for close to 50 years.
   text: Phil McGraw has been practising as a psychologist for close to 50 years.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a116b3b8-5189-4897-a287-d5d2680d8915
   type: opinion
   attestation: first_hand
@@ -1185,6 +1446,11 @@ domain_claims:
     the highest stress within that category is sudden loss of a child. And then number one within that subset is violent and sudden loss of a child.
   text: |-
     Phil McGraw considers sudden, violent loss of a child to be the most severe stressor a person can experience.
+  entailment:
+    label: entails
+    score: 0.622
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0dc8393e-84ef-42b9-8dd1-fb6143ab579b
   type: opinion
   attestation: first_hand
@@ -1203,6 +1469,11 @@ domain_claims:
     One of the most fundamental principles of psychological science is that the best predictor of future behavior is relevant past behavior.
   text: |-
     Phil McGraw considers the best predictor of future behaviour to be relevant past behaviour, a fundamental principle of psychological science.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a4f50c62-4a54-4b56-96ff-45273ebc0c63
   type: opinion
   attestation: first_hand
@@ -1221,6 +1492,11 @@ domain_claims:
     So far as we know, they have perpetrated no horrible, evil acts of violence on us.
   text: |-
     Phil McGraw considers non-earth, non-earthly origin intelligence to have perpetrated no horrible or evil acts of violence against humanity so far as is known.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d1bbe41-80a7-46f7-b6f3-4be29151a4df
   type: opinion
   attestation: first_hand
@@ -1239,6 +1515,11 @@ domain_claims:
     So I think we have to rely on an inference of non-aggression from whatever this presence may be.
   text: |-
     Phil McGraw infers non-aggression from whatever non-human presence may be engaging with the earth, based on its past behaviour.
+  entailment:
+    label: entails
+    score: 0.866
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed425a88-7352-4f5c-94d2-9beab1741c52
   type: measurement
   attestation: first_hand
@@ -1259,6 +1540,11 @@ domain_claims:
     I was amused to see that searches for UAPs, I think it went up 400% when you started talking about it.
   text: |-
     Searches for Unidentified Aerial Phenomena (UAP) increased by approximately 400% after Phil McGraw began discussing the topic.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 80f1659f-ea2a-432f-9ba0-102f44a29758
   type: opinion
   attestation: first_hand
@@ -1276,6 +1562,11 @@ domain_claims:
   quote: But it's quite clear that there has been a cover up of the UAP issue.
   text: |-
     Phil McGraw considers that there has been a cover-up of the Unidentified Aerial Phenomena (UAP) issue by the government, which the government continues to deny.
+  entailment:
+    label: entails
+    score: 0.876
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 756ae442-7d44-40f6-8405-e6e98cc1f707
   type: opinion
   attestation: first_hand
@@ -1293,6 +1584,11 @@ domain_claims:
   quote: Well, I guess it goes back to follow the money and follow the power.
   text: |-
     Phil McGraw considers that some observed unidentified phenomena, if reverse engineered, could relate to the concealment of non-human intelligences engaging with the planet driven by money and power.
+  entailment:
+    label: entails
+    score: 0.759
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 953e05b9-5590-45d9-b3b6-fd3fdacb0007
   type: hearsay
   attestation: second_hand
@@ -1314,6 +1610,11 @@ domain_claims:
     I guess if you could, in fact, reverse engineer some of the things that we have observed, some of these things don't leave a heat signature.
   text: |-
     Unnamed experts told Phil McGraw that some of the observed unidentified phenomena do not leave a heat signature.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5ad1db6f-3b16-4799-ae46-80a56631b28f
   type: hearsay
   attestation: second_hand
@@ -1335,6 +1636,11 @@ domain_claims:
     Some of them don't exhibit... obvious or known methods of propulsion. And I'm just going on what the experts are telling me.
   text: |-
     Unnamed experts told Phil McGraw that some of the observed unidentified phenomena do not exhibit obvious or known methods of propulsion.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 92802c11-027f-4635-844b-16b5ac10e02f
   type: administrative
   attestation: first_hand
@@ -1353,6 +1659,11 @@ domain_claims:
     As I say, I'm not a quantitative scientist. I can't add two and two and get five every time. So that's not my area.
   text: |-
     Phil McGraw states that he is not a quantitative scientist and that quantitative analysis is not his area of expertise.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ef303487-d0f4-4843-aebc-0d8d46894cb7
   type: opinion
   attestation: first_hand
@@ -1371,6 +1682,11 @@ domain_claims:
     But I do know how to seek out and find people that know more about it than I do. And I'm a pretty good judge of horseflesh in determining whether they're legitimate and are telling the truth or not.
   text: |-
     Phil McGraw considers himself skilled at seeking out and finding people who know more about unidentified phenomena than he does, and at judging whether they are legitimate and telling the truth.
+  entailment:
+    label: entails
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f10d4927-fcce-403a-a341-69df0ecb5fbb
   type: hearsay
   attestation: second_hand
@@ -1394,6 +1710,11 @@ domain_claims:
     And credible people are telling me that we truly do have some unexplainable things going on.
   text: |-
     Credible people have told Phil McGraw that there are genuinely unexplainable things going on regarding Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 24fdb2eb-4ae7-48c4-b920-f810a0d71122
   type: opinion
   attestation: first_hand
@@ -1412,6 +1733,11 @@ domain_claims:
     Now think about if you could reverse engineer and then replicate these propulsion navigation systems, all of this ability to make these turns and not leave a heat signature and do all the things that they're doing, my God, that would wipe out the oil and gas industry.
   text: |-
     Phil McGraw considers that reverse engineering and replicating the propulsion and navigation systems of the observed phenomena could wipe out the oil and gas industry.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7defba88-0803-4367-8c10-8eedb1f46546
   type: opinion
   attestation: first_hand
@@ -1429,6 +1755,11 @@ domain_claims:
   quote: It could wipe out nuclear power energy.
   text: |-
     Phil McGraw considers that reverse engineering the observed phenomena's propulsion systems could wipe out nuclear power energy.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6a56d1ec-70ca-4dee-a010-c3c0979e716b
   type: opinion
   attestation: first_hand
@@ -1447,6 +1778,11 @@ domain_claims:
     It could replace everything and you could rule the world this is a this is a power play waiting to happen and so i suppose maybe there are people that are hoping that if they have captured if they have recovered a spaceship spacecraft of some sort and they can reverse engineer that
   text: |-
     Phil McGraw considers that someone hoping to reverse engineer a recovered spacecraft could use it as a power play to rule the world.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 19bacad6-81d9-4046-a769-a7e45dccbdde
   type: opinion
   attestation: first_hand
@@ -1467,6 +1803,11 @@ domain_claims:
     But I think they're hiding it, and I think maybe there's been some good motives for it.
   text: |-
     Phil McGraw considers that the government is hiding information about Unidentified Aerial Phenomena (UAP), possibly for some good motives.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2e1a2a00-0b39-4573-8c63-e434f2a64694
   type: opinion
   attestation: first_hand
@@ -1485,6 +1826,11 @@ domain_claims:
     Why are they concentrating around our nuclear sites? Maybe they're learning something. Maybe they're making sure we don't do something stupid.
   text: |-
     Phil McGraw speculates that unidentified phenomena concentrating around nuclear sites may be learning something or ensuring humanity does not do something stupid.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3dfd2dd8-e42c-4b15-8d5b-e099d3b9f6fe
   type: opinion
   attestation: first_hand
@@ -1503,6 +1849,11 @@ domain_claims:
     And if you, Ross, if you look back, it's usually the private sector that solves the problems. It's not the government. It's the private sector that solves the problem when the government gets the hell out of the way.
   text: |-
     Phil McGraw considers that it is usually the private sector, not the government, that solves problems when the government gets out of the way.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e85da0bf-ccbb-4ef8-a2a4-ec2c3fb806a2
   type: opinion
   attestation: first_hand
@@ -1523,6 +1874,11 @@ domain_claims:
     You're very likely, sir, to get an opportunity at some stage in the next few months to speak with President Trump.
   text: |-
     Ross Coulthart considers it likely that Phil McGraw will get an opportunity in the next few months to speak with President Donald Trump.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 376c8caa-6f94-451f-bd60-60eae39b4178
   type: testimony
   attestation: first_hand
@@ -1543,6 +1899,11 @@ domain_claims:
     I do know that there are people in the White House administration. I suspect we've spoken to the same people who are toying with the idea of giving the American public information about what the government knows.
   text: |-
     Ross Coulthart knows of people in the White House administration who are considering giving the American public information about what the government knows regarding Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: neutral
+    score: 0.831
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 34a14087-a641-451d-b8d3-5c7a07c9f153
   type: opinion
   attestation: first_hand
@@ -1563,6 +1924,11 @@ domain_claims:
     Well, I think what I'm doing right now, I think the reason they're giving me access to this is because they want me doing exactly what I'm doing.
   text: |-
     Phil McGraw believes he has been given access to Unidentified Aerial Phenomena (UAP) information because those granting access want him doing exactly what he is doing.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6131bfda-f2c1-4f85-8010-da79040ff2cf
   type: testimony
   attestation: first_hand
@@ -1583,6 +1949,11 @@ domain_claims:
     and i have maintained independence uh in what i'm doing they're not scripting me they're not telling me what to say or not say they're just trusting me to be authentic transparent and um and candid with the american people
   text: |-
     Phil McGraw has maintained independence in his coverage of Unidentified Aerial Phenomena (UAP), stating that those granting him access are not scripting him or telling him what to say, but trusting him to be authentic, transparent and candid with the American people.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 89cacfc3-5e76-4364-a2bf-84a34d2831ef
   type: opinion
   attestation: first_hand
@@ -1601,6 +1972,11 @@ domain_claims:
     at the risk of being indelicate, I don't want to create a Fauci moment. I'm not going to say one thing today and then be contradicted by something that is disclosed tomorrow, which is why I say I'm going to tell you guys what I've seen so far
   text: |-
     Phil McGraw states he does not want to create a 'Fauci moment' by saying one thing and being contradicted by a later disclosure.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 08dc7010-9875-4aa2-9ce9-2eecc48959f4
   type: opinion
   attestation: first_hand
@@ -1621,6 +1997,11 @@ domain_claims:
     And I'm not going to tell you that that's all there is to see or know. I'm telling you that I don't believe it's all there is to see or know.
   text: |-
     Phil McGraw states he does not believe that what he has been shown so far about Unidentified Aerial Phenomena (UAP) is all there is to see or know.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3b9de311-764d-4cc6-b6c6-f3db77651347
   type: opinion
   attestation: first_hand
@@ -1641,6 +2022,11 @@ domain_claims:
     That's why I've said the two things that I can say with confidence to the American people and to the rest of the world is there has been a huge cover up and there are things going on in our atmosphere that we cannot explain.
   text: |-
     Phil McGraw states he can say with confidence to the American people and the world that there has been a huge cover-up regarding Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: da78f1c6-b040-4d68-b735-cad3d05af75e
   type: opinion
   attestation: first_hand
@@ -1658,6 +2044,11 @@ domain_claims:
   quote: there are things going on in our atmosphere that we cannot explain.
   text: |-
     Phil McGraw states he can say with confidence that there are things going on in the atmosphere that cannot be explained.
+  entailment:
+    label: entails
+    score: 0.854
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 578fbdf0-00db-4f40-92f0-06fe3136a9c5
   type: opinion
   attestation: first_hand
@@ -1676,6 +2067,11 @@ domain_claims:
     And I don't think we have some secret technology that is starting to leak out. I don't believe that at all.
   text: |-
     Phil McGraw does not believe that the unexplained aerial phenomena are secret human-made technology starting to leak out.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c81adfcb-a05f-4d17-a089-c758ed7ca070
   type: opinion
   attestation: first_hand
@@ -1694,6 +2090,11 @@ domain_claims:
     I think there are things that we didn't create, we didn't make happen. So it came from somewhere, not here.
   text: |-
     Phil McGraw believes that the unexplained aerial phenomena were not created by humans and came from somewhere other than earth.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5c06213c-d739-4baa-9649-c4e65b7d2988
   type: opinion
   attestation: first_hand
@@ -1711,6 +2112,11 @@ domain_claims:
   quote: And I think that the American public is prepared to handle that.
   text: |-
     Phil McGraw considers the American public prepared to handle disclosure that non-human intelligences have been engaging with the planet, provided it is given context.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 434950fd-6793-41c2-93b7-bada6f86d6cf
   type: opinion
   attestation: first_hand
@@ -1729,6 +2135,11 @@ domain_claims:
     If we have those that are easily destabilized mentally and emotionally, we have those that maybe struggle with mental illness, whether it's paranoia, schizophrenia, a difficult time maintaining their balance in this world
   text: |-
     Phil McGraw considers that the government needs to be prepared to help those with mental illness, such as paranoia or schizophrenia, who may have difficulty coping with disclosure about non-human intelligences.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 168ad2e2-3429-4234-8329-db7187624540
   type: measurement
   attestation: first_hand
@@ -1744,6 +2155,11 @@ domain_claims:
     The teens and preteens are having the highest levels of anxiety, depression, and loneliness since we started keeping records.
   text: |-
     Teens and preteens in America are having the highest levels of anxiety, depression, and loneliness since records began.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 35c470f9-3893-4a8a-946f-b4791408579f
   type: opinion
   attestation: first_hand
@@ -1762,6 +2178,11 @@ domain_claims:
     Now, others might look at that and go, oh, my God, they're coming for us. And those people, we need to help. They may be right, by the way. I don't think so.
   text: |-
     Phil McGraw considers that some people might react to disclosure of non-human intelligence with fear, believing 'they're coming for us', and that those people may be right.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 22a03301-53de-4325-8b55-2d83c5291ced
   type: opinion
   attestation: first_hand
@@ -1781,6 +2202,11 @@ domain_claims:
   quote: And I think 40% of these phenomenon have not been explained.
   text: |-
     Phil McGraw considers approximately 40% of Unidentified Aerial Phenomena (UAP) sightings to remain unexplained.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 290174aa-9b7e-40bc-93a0-b9d987ebf110
   type: administrative
@@ -1805,6 +2231,11 @@ infrastructure_claims:
     I know you raised David Grusch, who's a guy we interviewed exclusively on News Nation in June 2023.
   text: |-
     Ross Coulthart and Phil McGraw interviewed David Grusch exclusively on News Nation in June 2023.
+  entailment:
+    label: entails
+    score: 0.702
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c7494f0-0a9b-4442-97c9-e72ec40afb24
   type: administrative
   attestation: first_hand
@@ -1827,6 +2258,11 @@ infrastructure_claims:
     I've spoken with some of those on the committee, Congressman Burchett, Congressman Luna. They have been very cooperative with me and are helping to get better images
   text: |-
     Phil McGraw has spoken with committee members including Congressman Tim Burchett and Congresswoman Maria Elvira Salazar, who have been cooperative in helping to get better UFO images released.
+  entailment:
+    label: neutral
+    score: 0.716
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31d8f3aa-dbdf-4a9e-a152-2f5324508e15
   type: administrative
   attestation: first_hand
@@ -1848,3 +2284,8 @@ infrastructure_claims:
   quote: Dr. Phil McGraw, thank you so much for joining Reality Check.
   text: |-
     Phil McGraw appeared as a guest on Reality Check, hosted by Ross Coulthart, to discuss Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.544
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

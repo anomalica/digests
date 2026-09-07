@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.7
 prompts:
 - pass: nodes
   id: nodes
@@ -146,6 +152,11 @@ domain_claims:
     Washington, D.C. – Congressman Eric Burlison (R-MO-07) is pleased to announce David Grusch, a decorated former U.S. Air Force officer and senior civilian intelligence official, as a Special Advisor.
   text: |-
     On 2025-03-27, in Washington, D.C., Eric Burlison announced the appointment of David Grusch as a Special Advisor.
+  entailment:
+    label: neutral
+    score: 0.934
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b18f4575-d638-48f7-ac9c-ed18beeb8a18
   type: administrative
   provenance_chain:
@@ -161,6 +172,11 @@ domain_claims:
   quote: Congressman Eric Burlison (R-MO-07)
   text: |-
     Eric Burlison is a United States Congressman representing Missouri's 7th congressional district as a Republican.
+  entailment:
+    label: entails
+    score: 0.809
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 461d3fa8-f3d3-4f71-8cd5-468a1b0b31e0
   type: administrative
   provenance_chain:
@@ -175,6 +191,11 @@ domain_claims:
     name: United States Air Force
   quote: David Grusch, a decorated former U.S. Air Force officer
   text: David Grusch is a decorated former United States Air Force officer.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f3442e5c-d0d8-4e4d-859f-cef50d5511da
   type: administrative
   provenance_chain:
@@ -188,6 +209,11 @@ domain_claims:
   quote: |-
     a decorated former U.S. Air Force officer and senior civilian intelligence official
   text: David Grusch is a former senior civilian intelligence official.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ecc5ccef-c611-47cb-bfb8-b3f891e884b6
   type: testimony
   provenance_chain:
@@ -206,6 +232,11 @@ domain_claims:
     Grusch, recognized for his previous sworn testimony before House Oversight & Accountability Committee about the federal government's Unidentified Anomalous Phenomena (UAP) activities
   text: |-
     David Grusch gave sworn testimony before the House Oversight & Accountability Committee about the federal government's Unidentified Anomalous Phenomena (UAP) activities.
+  entailment:
+    label: entails
+    score: 0.814
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ed6c59c6-7ab9-443b-8b20-8deac20299d1
   type: administrative
   provenance_chain:
@@ -226,6 +257,11 @@ domain_claims:
     will contribute his expertise to Rep. Burlison's efforts to promote transparency regarding UAP and other matters on the Task Force on the Declassification of Federal Secrets
   text: |-
     David Grusch will contribute his expertise to Eric Burlison's efforts to promote transparency regarding Unidentified Anomalous Phenomena (UAP) and other matters on the Task Force on the Declassification of Federal Secrets.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 01a6b175-b1b0-4d51-a8dc-439071ce702c
   type: opinion
   attestation: first_hand
@@ -245,6 +281,11 @@ domain_claims:
   quote: The American people deserve answers about UAPs
   text: |-
     Eric Burlison considers that the American people deserve answers about Unidentified Anomalous Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 140ea4da-8150-472b-8c3a-951917d3207a
   type: opinion
   attestation: first_hand
@@ -264,6 +305,11 @@ domain_claims:
   quote: David Grusch has risked his career to expose critical information.
   text: |-
     Eric Burlison considers that David Grusch has risked his career to expose critical information.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a70cf330-6bdd-47b9-a618-f0940d0af43a
   type: opinion
   attestation: first_hand
@@ -284,6 +330,11 @@ domain_claims:
     His expertise will be vital as we work to uncover the truth and hold the government accountable.
   text: |-
     Eric Burlison considers that David Grusch's expertise will be vital in uncovering the truth and holding the government accountable.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e840328b-6a14-4482-b949-0d900e9529b2
   type: administrative
   provenance_chain:
@@ -298,6 +349,11 @@ domain_claims:
     name: United States Air Force
   quote: Grusch served 14 years in the Air Force
   text: David Grusch served 14 years in the United States Air Force.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 283bfa2b-36a8-4b07-974c-98bc9ee3e460
   type: administrative
   provenance_chain:
@@ -312,6 +368,11 @@ domain_claims:
     name: United States Air Force
   quote: reaching the rank of Major
   text: David Grusch reached the rank of Major in the United States Air Force.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec030104-53f1-4f06-9776-b05b67960aad
   type: administrative
   provenance_chain:
@@ -326,6 +387,11 @@ domain_claims:
     name: Afghanistan
   quote: with a combat tour of duty in Afghanistan
   text: David Grusch served a combat tour of duty in Afghanistan.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5c26db0a-e364-408c-b383-53e6cfb1df90
   type: administrative
   provenance_chain:
@@ -346,6 +412,11 @@ domain_claims:
     supporting counter-illicit finance, drug, and arms-trafficking operations with Joint Special Operations Command (JSOC) and ISAF
   text: |-
     David Grusch supported counter-illicit finance, drug, and arms-trafficking operations with the Joint Special Operations Command (JSOC) and International Security Assistance Force (ISAF) in Afghanistan.
+  entailment:
+    label: entails
+    score: 0.915
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 81ca6555-507c-42f9-8ee9-ca1251bdb369
   type: administrative
   provenance_chain:
@@ -362,6 +433,11 @@ domain_claims:
     He later worked as a senior intelligence officer at the National Geospatial-Intelligence Agency (NGA)
   text: |-
     David Grusch worked as a senior intelligence officer at the National Geospatial-Intelligence Agency (NGA).
+  entailment:
+    label: entails
+    score: 0.836
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 324ab178-d853-4b89-91ac-881f5650ed2e
   type: administrative
   provenance_chain:
@@ -377,6 +453,11 @@ domain_claims:
   quote: and National Reconnaissance Office (NRO)
   text: |-
     David Grusch worked as a senior intelligence officer at the National Reconnaissance Office (NRO).
+  entailment:
+    label: entails
+    score: 0.556
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: da33d779-3201-4f7b-9d44-49b7748a17c9
   type: administrative
   provenance_chain:
@@ -395,6 +476,11 @@ domain_claims:
   quote: from 2019-2021 officially represented the NRO on the UAP Task Force
   text: |-
     From 2019 to 2021, David Grusch officially represented the National Reconnaissance Office (NRO) on the UAP Task Force.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e16180ee-8aee-4bdf-80e6-3b694161328a
   type: administrative
   attestation: second_hand
@@ -419,6 +505,11 @@ domain_claims:
     In 2022 while at NGA, Mr. Grusch filed a federal whistleblower complaint with the Intelligence Community Inspector General (ICIG)
   text: |-
     In 2022, while at the National Geospatial-Intelligence Agency (NGA), David Grusch filed a federal whistleblower complaint with the Intelligence Community Inspector General (ICIG).
+  entailment:
+    label: entails
+    score: 0.811
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: eca39857-c5a5-4ed3-b3a2-27b5a45ef336
   type: administrative
   attestation: second_hand
@@ -441,6 +532,11 @@ domain_claims:
     which was found "credible and urgent" for reporting to the Congressional intelligence committees
   text: |-
     The Intelligence Community Inspector General (ICIG) found David Grusch's whistleblower complaint credible and urgent for reporting to the Congressional intelligence committees.
+  entailment:
+    label: entails
+    score: 0.503
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 12c36dc9-606a-4cd6-9000-42d5389b045d
   type: testimony
   provenance_chain:
@@ -458,6 +554,11 @@ domain_claims:
     name: David Grusch congressional testimony (2023)
   quote: In 2023, he testified before Congress
   text: In 2023, David Grusch testified before the United States Congress.
+  entailment:
+    label: entails
+    score: 0.481
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 165ae356-3a7a-49c4-a842-852e5e21a09e
   type: testimony
   attestation: third_hand
@@ -481,6 +582,11 @@ domain_claims:
     alleging that elements of the U.S. government had thwarted Congressional oversight
   text: |-
     David Grusch alleged that elements of the United States government had thwarted Congressional oversight.
+  entailment:
+    label: entails
+    score: 0.488
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3ce2049b-1935-4879-a27c-613247ba6eb9
   type: testimony
   attestation: third_hand
@@ -503,6 +609,11 @@ domain_claims:
   quote: withheld information from proper Executive Branch officials
   text: |-
     David Grusch alleged that elements of the United States government had withheld information from proper Executive Branch officials.
+  entailment:
+    label: entails
+    score: 0.897
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3fa40935-5a0f-4861-af7f-d976daecf37c
   type: testimony
   attestation: third_hand
@@ -524,6 +635,11 @@ domain_claims:
     illegally concealed programs tied to the recovery and reverse engineering of craft of unknown, non-human origin
   text: |-
     David Grusch alleged that elements of the United States government had illegally concealed programmes tied to the recovery and reverse engineering of craft of unknown, non-human origin.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 20231f4e-0648-46cc-bedd-8b67ff08d9ac
   type: opinion
   attestation: first_hand
@@ -544,6 +660,11 @@ domain_claims:
     I'm both immensely humbled and deeply honored to join Congressman Burlison and his amazing team of professionals in pushing for government transparency
   text: |-
     David Grusch is humbled and honoured to join Eric Burlison's team to push for government transparency.
+  entailment:
+    label: entails
+    score: 0.727
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 02b63226-62cd-4174-a049-a46a3be38109
   type: opinion
   attestation: first_hand
@@ -561,6 +682,11 @@ domain_claims:
   quote: The public is rightfully demanding to know the truth
   text: |-
     David Grusch considers that the public is rightfully demanding to know the truth.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 65a45b94-1fab-4676-887b-8a8eb44d3660
   type: opinion
   attestation: first_hand
@@ -578,6 +704,11 @@ domain_claims:
   quote: it is my true privilege for me to serve the people of this country once again
   text: |-
     David Grusch considers it a privilege to serve the people of the United States once again.
+  entailment:
+    label: entails
+    score: 0.777
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d05ec29c-12a8-46c6-b529-d246f3021b7f
   type: testimony
   attestation: first_hand
@@ -596,6 +727,11 @@ domain_claims:
     name: Eric Burlison
   quote: I will use all my expertise to support Rep. Burlison
   text: David Grusch will use his expertise to support Eric Burlison.
+  entailment:
+    label: neutral
+    score: 0.616
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 29a0b7ec-3cda-49b7-982a-347d93ed24d4
   type: testimony
   attestation: first_hand
@@ -614,6 +750,11 @@ domain_claims:
     name: United States Congress
   quote: help the US Congress restore full oversight
   text: David Grusch will help the United States Congress restore full oversight.
+  entailment:
+    label: entails
+    score: 0.548
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 967cbef7-8ce0-4991-90bf-0bda516572f0
   type: testimony
   attestation: first_hand
@@ -640,6 +781,11 @@ domain_claims:
     enabling the Legislative Branch's ability to investigate and hold those accountable who have broken the law and lied not only to our Congress, but also to the Executive Office of the President, Director of National Intelligence, and Department of Justice
   text: |-
     David Grusch aims to enable the United States Congress's ability to investigate and hold accountable those who have broken the law and lied to the United States Congress, the Executive Office of the President, the Office of the Director of National Intelligence (ODNI), and the United States Department of Justice.
+  entailment:
+    label: entails
+    score: 0.898
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f139b75b-0a8f-4043-8e0c-b4c1b438d660
   type: administrative
   provenance_chain:
@@ -652,6 +798,11 @@ domain_claims:
     name: Eric Burlison
   quote: Rep. Burlison, a strong advocate for government transparency
   text: Eric Burlison is a strong advocate for government transparency.
+  entailment:
+    label: entails
+    score: 0.627
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: aae82d96-846c-4f78-ae89-19c76f1f2f6d
   type: administrative
   provenance_chain:
@@ -670,3 +821,8 @@ domain_claims:
     underscores his commitment to government accountability and transparency on the UAP topic with this appointment
   text: |-
     Eric Burlison's appointment of David Grusch underscores his commitment to government accountability and transparency on the Unidentified Anomalous Phenomena (UAP) topic.
+  entailment:
+    label: entails
+    score: 0.523
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

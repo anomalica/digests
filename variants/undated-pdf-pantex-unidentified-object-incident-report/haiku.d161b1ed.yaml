@@ -9,6 +9,12 @@ ai_usage:
     output: 12457
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.1
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 0.0
 prompts:
 - pass: nodes
   id: nodes
@@ -72,6 +78,11 @@ domain_claims:
     Ground surveillance radar tower image showing a wide, mostly featureless gray field. A red circle in the upper right area highlights a small dark dot representing the unidentified object.
   text: |-
     Ground surveillance radar at Pantex detected the unidentified object as a small dark dot in the upper right area of a mostly featureless radar field.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bad2d3f6-c651-4cc9-b1ef-f0afd623101b
   type: administrative
   attestation: second_hand
@@ -88,6 +99,11 @@ domain_claims:
   quote: |-
     Two enhanced images of the unidentified object, processed by Sandia National Labs.
   text: Sandia National Laboratories created enhanced images of the unidentified object.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2bfdde56-bd81-4b1f-adb8-b868fa238d26
   type: observation
   attestation: second_hand
@@ -102,6 +118,11 @@ domain_claims:
   quote: Both images show a blurry, dark object against a light background.
   text: |-
     The enhanced images of the unidentified object show a blurry, dark object against a light background.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5d37fcb2-0c59-4aed-bff4-0735a07b2bd1
   type: measurement
   attestation: second_hand
@@ -117,3 +138,8 @@ domain_claims:
     The upper image is larger and shows a shape resembling a rounded top with a narrower base, somewhat like a mushroom or goblet form. The lower image is smaller and shows a similar shape, slightly more compact, also with a rounded top and narrow base.
   text: |-
     Enhanced imagery of the unidentified object shows a shape resembling a rounded top with a narrower base, somewhat like a mushroom or goblet form.
+  entailment:
+    label: entails
+    score: 0.644
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

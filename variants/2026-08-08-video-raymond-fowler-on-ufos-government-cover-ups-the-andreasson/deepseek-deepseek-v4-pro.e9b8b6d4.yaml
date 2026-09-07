@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 5
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 11.3
 prompts:
 - pass: nodes
   id: nodes
@@ -462,6 +468,11 @@ domain_claims:
     name: Raymond Fowler
   quote: I have a BA, Liberal Arts, from Gordon College.
   text: Raymond Fowler holds a BA in Liberal Arts from Gordon College.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5a575bb1-fd35-4131-ae95-88731e9c38c6
   type: administrative
   attestation: first_hand
@@ -482,6 +493,11 @@ domain_claims:
     Prior to that I served with the United States Air Force Security Service where we We did espionage work, electronic eavesdropping, on our friends the Russians.
   text: |-
     Raymond Fowler served with the United States Air Force Security Service, performing electronic eavesdropping, specifically espionage work on the Soviet Union.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bf67a8b4-917d-4540-8e35-b87db6c05587
   type: administrative
   attestation: first_hand
@@ -501,6 +517,11 @@ domain_claims:
   quote: At that time, I held a top-secret clearance and a crypto clearance.
   text: |-
     During his service with the United States Air Force Security Service, Raymond Fowler held a top-secret clearance and a crypto clearance.
+  entailment:
+    label: entails
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3c249b6e-1c55-4a7d-973d-a9f8c6c68811
   type: administrative
   attestation: first_hand
@@ -527,6 +548,11 @@ domain_claims:
     From the Air Force and college days, I went to GTE Sylvania and worked for them for 25 years in the Strategic Systems Division and the Communication Systems Division on a number of weapon systems, usually on contract to the United States Air Force.
   text: |-
     Raymond Fowler worked for GTE Sylvania for 25 years in the Strategic Systems Division and the Communication Systems Division on various weapon systems, usually under contract to the United States Air Force.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e41209b9-c7f8-436a-aa4c-639a6bc53f07
   type: administrative
   attestation: first_hand
@@ -543,6 +569,11 @@ domain_claims:
     name: Raymond Fowler
   quote: I've written five books.
   text: Raymond Fowler has written five books.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b2a80411-ebec-4beb-b5f2-84050e4ecbce
   type: administrative
   attestation: first_hand
@@ -561,6 +592,11 @@ domain_claims:
     name: '"UFOs, Interplanetary Visitors"'
   quote: The first one was UFOs, Interplanetary Visitors.
   text: Raymond Fowler's first book was "UFOs, Interplanetary Visitors".
+  entailment:
+    label: entails
+    score: 0.708
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 487e0884-6517-4bd6-a02c-ee617d5cfdff
   type: administrative
   attestation: first_hand
@@ -579,6 +615,11 @@ domain_claims:
     name: '"The Andreasson Affair"'
   quote: The second one was The Andreasson Affair.
   text: Raymond Fowler's second book was "The Andreasson Affair".
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a9e4410-1da2-4bab-8708-7de8896a223f
   type: administrative
   attestation: first_hand
@@ -598,6 +639,11 @@ domain_claims:
   quote: Then there was The Andreasson Affair Phase II, which was a sequel.
   text: |-
     Raymond Fowler's third book was "The Andreasson Affair Phase II", a sequel to "The Andreasson Affair".
+  entailment:
+    label: neutral
+    score: 0.722
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 85f52701-b444-433d-b7aa-c60b40dcf957
   type: administrative
   attestation: first_hand
@@ -616,6 +662,11 @@ domain_claims:
     name: '"Casebook of a UFO Investigator"'
   quote: And then there was Casebook of a UFO Investigator.
   text: Raymond Fowler's fourth book was "Casebook of a UFO Investigator".
+  entailment:
+    label: neutral
+    score: 0.865
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 82ed3682-2d95-49c5-895b-40095f579590
   type: administrative
   attestation: first_hand
@@ -636,6 +687,11 @@ domain_claims:
     And then a novel called The Melchizedek Connection, which was sort of a fact and fancy type of book concerning UFOs.
   text: |-
     Raymond Fowler's fifth book was a novel titled "The Melchizedek Connection", described as mixing fact and fancy concerning UFOs.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 49e6c066-4a6c-4858-841b-aa26d8f20453
   type: administrative
   attestation: first_hand
@@ -654,6 +710,11 @@ domain_claims:
     I'm an amateur astronomer, yes. I've been interested in astronomy since probably my early teens, maybe 11 or 12 years old.
   text: |-
     Raymond Fowler is an amateur astronomer and has been interested in astronomy since his early teens.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 305c89b8-1cf9-4b7a-a3a7-79ed6f6dcf32
   type: administrative
   attestation: first_hand
@@ -675,6 +736,11 @@ domain_claims:
     The hobby sort of got under control in 1970 when I built my own observatory and planetarium on the back property here.
   text: |-
     In 1970, Raymond Fowler built his own observatory and planetarium at his home in Wenham, Massachusetts.
+  entailment:
+    label: neutral
+    score: 0.69
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 87321813-46d4-4eee-85a8-4a8fa1c5e934
   type: administrative
   attestation: first_hand
@@ -693,6 +759,11 @@ domain_claims:
     I teach astronomy for beginners to adults at the local community colleges and astronomy for kids, and I have astronomy courses right here at home.
   text: |-
     Raymond Fowler teaches astronomy for beginners at local community colleges and also runs astronomy courses from his home.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 32538290-d16b-4a1f-958f-2cee037d088e
   type: opinion
   attestation: first_hand
@@ -717,6 +788,11 @@ domain_claims:
     I would say that the first well-documented UFO wave of sightings took place in 1896 1897 if you examine the newspapers from that day in this country and abroad you see the typical flying saucer type of reports back then except they call them airships
   text: |-
     Raymond Fowler identifies the first well-documented UFO wave as the 1896–1897 mystery airship wave, when newspapers reported flying saucer-type objects called airships.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 82f1ea48-0755-4f1c-ab3f-2a168828106e
   type: observation
   attestation: first_hand
@@ -739,6 +815,11 @@ domain_claims:
     The next wave of strange objects took place in 1944-1945 period during World War II, and both the Allied and Axis services spotted what they dubbed Foo Fighters. And these were disc-shaped objects and globe-shaped objects which paced both Allied and Axis aircraft over bombing missions in Europe and in the Far East.
   text: |-
     During the 1944–1945 World War II period, both Allied and Axis services spotted disc-shaped and globe-shaped objects that they dubbed Foo Fighters, which paced their aircraft over bombing missions in Europe and the Far East.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 847beb77-5610-4f59-85ee-26a1bbb6a6ed
   type: observation
   attestation: first_hand
@@ -761,6 +842,11 @@ domain_claims:
     And then the next World Wide Wave took place in 1946, especially in Europe and specifically in Scandinavian countries. Britain, The United States and France were so sure that what the people were calling ghost rockets were Russian missiles overflying European territory
   text: |-
     A worldwide wave of sightings in 1946, especially in Scandinavia, involved objects called ghost rockets, which the US, Britain, and France suspected were Russian missiles.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8a1368e5-e06e-4bbe-8d5a-7b983bf4aac7
   type: observation
   attestation: first_hand
@@ -783,6 +869,11 @@ domain_claims:
     that they persuaded Russia to allow an on-site inspection. And we sent General Doolittle over there with other members of the armed forces along with Britain and France to actually go into Russia and examine their missile sites. And they came back empty-handed and realized whatever they were, they weren't Russian.
   text: |-
     The US, Britain, and France persuaded the Soviet Union to allow an on-site inspection of their missile sites, led by General Doolittle, to investigate if the ghost rockets were Russian; the team returned empty-handed.
+  entailment:
+    label: entails
+    score: 0.796
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a9e66bb-94ac-4c67-89e1-d365ae8c7ced
   type: opinion
   attestation: first_hand
@@ -805,6 +896,11 @@ domain_claims:
     So I would say that the first modern UFO wave probably took place during World War II. Very little was said about them then, though. It wasn't until 1947 that the press in this country picked up on them
   text: |-
     Raymond Fowler states that the first modern UFO wave probably took place during World War II, but the US press did not widely report on them until the 1947 UFO wave.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 92e79037-522f-480d-80d1-272e7862ef4c
   type: observation
   attestation: first_hand
@@ -830,6 +926,11 @@ domain_claims:
     and that's when a gentleman named Kenneth Arnold A respected mountain pilot sighted nine flat shiny disks over Mount Rainier, Washington, on June 24, 1947.
   text: |-
     On 1947-06-24, Kenneth Arnold, a respected mountain pilot, sighted nine flat shiny discs over Mount Rainier, Washington, an event that marked the start of widespread press coverage of flying saucers.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 256a5a89-29ba-4a32-a946-c7bd5de1411a
   type: observation
   attestation: first_hand
@@ -849,6 +950,11 @@ domain_claims:
   quote: The United States Navy had what they called a flying flapjack in the early 40s.
   text: |-
     The United States Navy had an early experimental circular aircraft called the Flying Flapjack in the early 1940s.
+  entailment:
+    label: entails
+    score: 0.664
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 56a6677b-c674-459f-99c7-cbd5c102d085
   type: observation
   attestation: first_hand
@@ -867,6 +973,11 @@ domain_claims:
     It's now in a museum. It was very unwieldy. and didn't do what they expected it to do.
   text: |-
     The Vought V-173 Flying Flapjack was very unwieldy and did not perform as expected; it is now in a museum.
+  entailment:
+    label: neutral
+    score: 0.582
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7a493cdd-bdcf-4626-b2bb-504a5a92363f
   type: observation
   attestation: first_hand
@@ -887,6 +998,11 @@ domain_claims:
     The Canadian government attempted to build a circular airfoil. It was being built by the Avro Company Limited The United States Air Force worked with them, and they produced what essentially became a hovercraft, which could move maybe three or four feet above the ground. It rode in a cushion of air, but it was very, very unstable, and that also was at an air museum.
   text: |-
     The Canadian government attempted to build a circular airfoil through the Avro Company; in collaboration with the United States Air Force, they produced the Avrocar (VZ-9), a hovercraft that could move only a few feet above the ground on a cushion of air and was very unstable.
+  entailment:
+    label: entails
+    score: 0.924
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 86a0a815-b18f-4a80-b592-4021d527d5b6
   type: opinion
   attestation: first_hand
@@ -905,6 +1021,11 @@ domain_claims:
     Trouble with a circular-type aircraft that's very unstable in an atmosphere, it hasn't got long wings to store fuel in, and they found that as far as a circular aircraft operating within the confines of the Earth's atmosphere. It was a very unstable vehicle.
   text: |-
     Raymond Fowler asserts that circular-type aircraft are very unstable in the atmosphere, lack long wings for fuel storage, and are very unstable vehicles for operating within the Earth's atmosphere.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e047bd0e-5d87-4557-bb87-04e6dc298113
   type: observation
   attestation: first_hand
@@ -925,6 +1046,11 @@ domain_claims:
     They don't really fly, Bill. They operate just like diving bells. They come in, they wobble almost as if they're weightless. They do their thing. They usually don't go from A to B over a long distance. They're very localized. When they're through doing what they're doing, they sort of tilt up, and they're drawn almost straight up like they're attached to a string or something. They just go right up. So they really don't fly.
   text: |-
     Raymond Fowler observed that UFOs do not fly in the conventional sense but operate like diving bells, wobbling as if weightless and being drawn straight up as if pulled by a string.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e0018d0d-7c7a-4afb-8bd9-75cee041147a
   type: observation
   attestation: first_hand
@@ -943,6 +1069,11 @@ domain_claims:
     And when they do move, they don't create a sonic boom. They're able to take right-angle turns. ... The 90-degree angle seems to be a 90-degree turn without a curve radius at all, which seems to be almost impossible.
   text: |-
     UFOs do not create a sonic boom and are able to make right-angle turns without a curve radius, which seems almost impossible.
+  entailment:
+    label: entails
+    score: 0.787
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8b0c0bfc-8a0f-4393-a20c-9653e411b79a
   type: opinion
   attestation: first_hand
@@ -963,6 +1094,11 @@ domain_claims:
     But it's almost as if they're being directed by something above them, by some kind of invisible energy. They seem to have infinite mass to throw away, but don't seem to have any mass themselves.
   text: |-
     Raymond Fowler suggests that UFOs appear to be directed by some kind of invisible energy from above, possessing infinite mass to throw away while seeming to have no mass themselves.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fa1bc537-85e0-4f19-bdf0-bbeeed25d0f0
   type: observation
   attestation: first_hand
@@ -981,6 +1117,11 @@ domain_claims:
     When they stop and hover, they sort of waft and wobble almost like a boat on an ocean of water, but they seem to be on an ocean of turbulent air. When they move, they go up and down like this, almost like a boat would in the water. So whatever they are, they seem to be able to almost become lighter than air
   text: |-
     When hovering, UFOs waft and wobble like a boat on turbulent air; when moving, they move up and down like a boat in water, seeming to become lighter than air.
+  entailment:
+    label: entails
+    score: 0.956
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e6fa7fc9-98b3-4747-baf0-bf246aa09aaa
   type: observation
   attestation: first_hand
@@ -1000,6 +1141,11 @@ domain_claims:
     We've talked to radar operators who've clocked UFOs along the East Coast here. We had an alert back in the 60s, I believe it was, tracked at 18,000 miles per hour.
   text: |-
     Radar operators have tracked UFOs along the US East Coast, with one alert in the 1960s recording a speed of approximately 29,000 kilometres per hour.
+  entailment:
+    label: entails
+    score: 0.705
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: aefe721a-87cf-4c18-a3ad-2b1729f70688
   type: observation
   attestation: first_hand
@@ -1018,6 +1164,11 @@ domain_claims:
     That's orbital speed, and that's within the near envelope of the Earth without burning up, without a sonic boom, and able to take right-angle turns at this speed.
   text: |-
     A UFO tracked at approximately 29,000 kilometres per hour was moving at orbital speed within the near envelope of the Earth without burning up, creating a sonic boom, and was able to make right-angle turns.
+  entailment:
+    label: entails
+    score: 0.471
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a7f57889-7aa1-476f-b470-48679e2240ae
   type: observation
   attestation: first_hand
@@ -1038,6 +1189,11 @@ domain_claims:
     William Heitz: Well, I can remember when I was in the service in the 728th Aircraft Control and Warning Squadron, and our radar tracked an unidentified object going across the sky at that speed. Raymond Fowler: At 18,000 miles per hour, yeah.
   text: |-
     During his service with the 728th Aircraft Control and Warning Squadron, William Heitz stated that his unit's radar tracked an unidentified object moving across the sky at approximately 29,000 kilometres per hour.
+  entailment:
+    label: entails
+    score: 0.819
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9647dbca-ce18-40bf-9d09-bedccb7b461a
   type: observation
   attestation: first_hand
@@ -1064,6 +1220,11 @@ domain_claims:
     In the 1950s, a Commander McLaughlin, a Navy commander who was in charge of V-2 experiments down in White Sands, New Mexico, they were using a theodolite, which essentially is a telescope that also gives you readings of altitude and azimuth. And they were tracking a V-2 and a WAC corporal, I think, attached to it when they saw something else.
   text: |-
     In the 1950s, Commander Robert B. McLaughlin was in charge of V-2 experiments at White Sands, New Mexico; using a theodolite to track a V-2 rocket and a WAC Corporal, the team sighted an additional object.
+  entailment:
+    label: neutral
+    score: 0.756
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 491257c1-ce47-4d5c-86da-b90708b8f784
   type: observation
   attestation: first_hand
@@ -1084,6 +1245,11 @@ domain_claims:
     And they managed to get the theodolites on this object, and it was about 56 miles up and going about 7 miles per second. ... It was egg-shaped, and they could actually see it through the theodolite as they tracked it.
   text: |-
     During the White Sands V-2 UFO observation, the team managed to track the additional object with theodolites; it was at approximately 90 kilometres altitude, travelling at about 11 kilometres per second, egg-shaped, and visible through the theodolite.
+  entailment:
+    label: contradicts
+    score: 0.912
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0699c4df-9c43-42a1-b300-1836b12cf47a
   type: observation
   attestation: first_hand
@@ -1102,6 +1268,11 @@ domain_claims:
     They actually got photographs of it which have never been released, but that was a terrific speed for that time.
   text: |-
     Photographs were taken of the egg-shaped object during the White Sands V-2 UFO observation, but these photographs have never been released.
+  entailment:
+    label: entails
+    score: 0.814
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 97caa075-b0b6-4f5d-b555-8e958fe125a5
   type: administrative
   attestation: first_hand
@@ -1127,6 +1298,11 @@ domain_claims:
     In 1968, they contracted the University of Colorado to perform a supplementary investigation of UFOs, and I served that particular project as early warning coordinator.
   text: |-
     In 1968, the United States Air Force contracted the University of Colorado to perform a supplementary investigation of UFOs, and Raymond Fowler served as early warning coordinator for that project.
+  entailment:
+    label: entails
+    score: 0.878
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f7c586d8-7be3-4c24-95e7-9b3f95e49613
   type: observation
   attestation: first_hand
@@ -1150,6 +1326,11 @@ domain_claims:
     And on September 23, 1947, General Nathan Twining provided their conclusion or their estimate of the situation at that time in a memo to the commander of the Army Air Force. And he said that the UFOs are real. They're not visionary. and he gave him a description in this particular memo which we were able to get through the Freedom of Information Act and urged that immediately a project should be set up to investigate what they were
   text: |-
     On 1947-09-23, General Nathan Twining sent a memo to the commander of the Army Air Force concluding that UFOs are real, not visionary, and urging the establishment of an investigation project.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9d6349a9-1064-4ac1-a342-50ce9be8d954
   type: observation
   attestation: first_hand
@@ -1171,6 +1352,11 @@ domain_claims:
     And in January of 1948, Project Sign was initiated. Sign concluded, after eliminating Russian and domestic origin, that they could be extraterrestrial.
   text: |-
     Project Sign was initiated in January 1948 and, after eliminating Russian and domestic origin, concluded that UFOs could be extraterrestrial.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7a1809aa-5730-4e90-8235-75b216c18d14
   type: observation
   attestation: first_hand
@@ -1191,6 +1377,11 @@ domain_claims:
     And they sent a top secret estimate of the situation to General Vandenberg, who was the commander of the Army Air Force at that particular time.
   text: |-
     Project Sign sent a top-secret estimate of the situation to General Hoyt Vandenberg, the commander of the Army Air Force.
+  entailment:
+    label: entails
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 32ea71e0-ad25-4150-8e61-9c20d629c09e
   type: observation
   attestation: first_hand
@@ -1211,6 +1402,11 @@ domain_claims:
     On the surface, General Vandenberg rejected the estimate of the situation. He said there was no proof. But concurrently, he replaced everybody on Project Sign that was on Project Sign
   text: |-
     General Hoyt Vandenberg publicly rejected Project Sign's estimate of the situation, stating there was no proof, but concurrently replaced the entire Project Sign staff.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 18cd52fa-912a-47c3-8205-48b204559152
   type: observation
   attestation: first_hand
@@ -1233,6 +1429,11 @@ domain_claims:
     and brought in new people and told them, as far as UFOs in the public went, that they were to provide explanations. The public was told that the project was closed, in fact. And meanwhile, Project Grudge continued covertly.
   text: |-
     General Vandenberg replaced the Project Sign staff and ordered the new team to provide explanations for UFOs to the public, while Project Grudge continued covertly.
+  entailment:
+    label: contradicts
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f6eec947-c93e-4bab-bf6d-d5b6016168df
   type: observation
   attestation: first_hand
@@ -1252,6 +1453,11 @@ domain_claims:
     This was until March of 1952, when we had so many sightings in this country, banner headlines, Congress pounding on the Pentagon's door asking for explanations, that they opened Project Blue Book, which you mentioned.
   text: |-
     Project Blue Book was opened in March 1952 in response to a massive wave of sightings, banner headlines, and congressional inquiries.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e29593c1-e40c-492b-aae2-1a6bfec764b8
   type: observation
   attestation: first_hand
@@ -1274,6 +1480,11 @@ domain_claims:
     And Project Blue Book again allowed public participation in the Air Force UFO program. And they had to do this in order to get data. They were anxious for data. They even made deals with Life Magazine to use Life Magazine's worldwide correspondence to get data that were so interested in data.
   text: |-
     Project Blue Book allowed public participation in the Air Force UFO program and the Air Force made deals with Life Magazine to use its global correspondence network to gather UFO data.
+  entailment:
+    label: entails
+    score: 0.645
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d218ccbd-1c7e-4470-9e11-dee6d5f011d7
   type: observation
   attestation: first_hand
@@ -1294,6 +1505,11 @@ domain_claims:
     Their regulations indicated that they couldn't tell the public that there were unknowns, that they were only to tell the public the ones that they had identified. And because of this, they had to give all types of explanations for UFOs, and it caused the Air Force to have a very bad name.
   text: |-
     Air Force regulations of the era instructed personnel not to disclose unknowns to the public, only identified cases, leading to a poor public image for the Air Force due to the numerous prosaic explanations given for UFOs.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0c4aeb1d-ba98-4879-abc0-3c043364e2d8
   type: observation
   attestation: first_hand
@@ -1314,6 +1530,11 @@ domain_claims:
     Not only that, the information concerning UFOs was highly classified, and having the public participation in the UFO program wasn't to the best of the Air Force interests.
   text: |-
     UFO information was highly classified, and public participation in the program was not in the best interests of the Air Force.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 48e6ad5c-9938-4bec-bf73-2f3818cf0870
   type: observation
   attestation: first_hand
@@ -1335,6 +1556,11 @@ domain_claims:
     So in December of 1969, December 17, 1969, the United States Air Force again told the public that it had terminated its UFO program
   text: |-
     On 1969-12-17, the United States Air Force publicly announced the termination of its UFO program, Project Blue Book.
+  entailment:
+    label: entails
+    score: 0.44
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9d10d684-ab0b-461a-bc54-7329ed6ca22f
   type: observation
   attestation: first_hand
@@ -1355,6 +1581,11 @@ domain_claims:
     and now covertly investigates the better civilian sightings and concentrates mostly on government source control cases and airline pilot cases under the order JANAP 146
   text: |-
     After the public termination of Project Blue Book, the United States Air Force continued to covertly investigate better civilian sightings and concentrated on government source control cases and airline pilot cases under JANAP 146.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 499d35c6-4c20-4645-a7b3-2c6bb18bd728
   type: observation
   attestation: first_hand
@@ -1373,6 +1604,11 @@ domain_claims:
     a Joint Army Air Force Navy order, which outlines what military civilian pilots are supposed to do when they see a UFO sighting. They submit what they call a surveys report, which contains information vital to the security of the United States.
   text: |-
     JANAP 146 is a Joint Army Navy Air Force publication that outlines the procedure for military and civilian pilots reporting UFO sightings, involving the submission of a report with information vital to the security of the United States.
+  entailment:
+    label: entails
+    score: 0.406
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c6b4c1e0-eae7-464f-85a7-fd8b4c728112
   type: observation
   attestation: first_hand
@@ -1391,6 +1627,11 @@ domain_claims:
     Once they make an official report, they're subjected to $10,000 fine and or 10 years in jail if they reveal the contents of this report.
   text: |-
     Under JANAP 146, a pilot making an official UFO report is subject to a $10,000 fine and/or 10 years in jail for revealing the contents of the report.
+  entailment:
+    label: entails
+    score: 0.477
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 706ee9ff-ee0c-41a0-b41f-4f523dace55b
   type: observation
   attestation: first_hand
@@ -1410,6 +1651,11 @@ domain_claims:
     Also, in 1973, after the last huge UFO wave, worldwide UFO wave, UFOs mysteriously disappeared from the national newspapers. The only way usually you're going to find out about UFO sightings, other than belonging to an organization who's investigating UFOs, would be to subscribe to a local news clip service. And you would see that UFO sightings are still happening in this country and abroad all over the place, but they aren't getting reported in the national press, which is very unusual.
   text: |-
     After the worldwide 1973 UFO wave, UFO sightings mysteriously disappeared from national newspapers, though local news clip services show they are still occurring worldwide.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b6f93df5-0762-4c21-9e78-a15091dbc655
   type: observation
   attestation: first_hand
@@ -1434,6 +1680,11 @@ domain_claims:
     this involved a huge UFO seen by a Japanese Airlines crew flying a cargo plane, a Boeing 747, into Anchorage, Alaska, and they were followed for hundreds of miles by this huge UFO
   text: |-
     During the Japan Airlines Flight 1628 UFO encounter, a Boeing 747 cargo jet crew sighted a huge UFO while flying into Anchorage, Alaska, and were followed for hundreds of miles.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c0869c1f-f64b-405a-98ea-7e1e21f9cde6
   type: observation
   attestation: first_hand
@@ -1452,6 +1703,11 @@ domain_claims:
     which was described as a bowl inverted upon a bowl with a rim around it. We call it the Saturn-type configuration.
   text: |-
     The UFO encountered on Japan Airlines Flight 1628 was in a Saturn-shaped configuration, described as a bowl inverted upon a bowl with a rim around it.
+  entailment:
+    label: neutral
+    score: 0.803
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d10b704c-c25a-41ca-a165-eea44168d37f
   type: observation
   attestation: first_hand
@@ -1470,6 +1726,11 @@ domain_claims:
     The pilot and the crew members described it as being as large as two aircraft carriers placed side by side.
   text: |-
     The pilot and crew of Japan Airlines Flight 1628 described the UFO as being as large as two aircraft carriers placed side by side.
+  entailment:
+    label: neutral
+    score: 0.771
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b24e6a1f-8f38-4a6d-ae12-2c71d4a5e7b2
   type: observation
   attestation: first_hand
@@ -1492,6 +1753,11 @@ domain_claims:
     They tracked it on their weather radar to make sure that they weren't seeing things. They were in contact with the FAA at Anchorage and also Elvendorf Air Force Base.
   text: |-
     The crew of Japan Airlines Flight 1628 tracked the UFO on their weather radar and were in contact with the FAA at Anchorage and Elvendorf Air Force Base.
+  entailment:
+    label: entails
+    score: 0.549
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8cb041dc-2da4-4b53-a79b-729cefd16625
   type: hearsay
   attestation: second_hand
@@ -1514,6 +1780,11 @@ domain_claims:
     They tracked it on their weather radar to make sure that they weren't seeing things. They were in contact with the FAA at Anchorage and also Elvendorf Air Force Base. And they have said and they've maintained their story that both locations also tracked it on radar.
   text: |-
     Raymond Fowler states that the Japanese crew maintained, and that FAA controllers and Air Force radar operators at Elmendorf Air Force Base also tracked the Japan Airlines Flight 1628 UFO on radar.
+  entailment:
+    label: entails
+    score: 0.9
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7c6342d5-fafb-4c7f-9479-e30d41f4c4fd
   type: observation
   attestation: first_hand
@@ -1532,6 +1803,11 @@ domain_claims:
     It was a month afterwards. It was kept out of the press for a month ... It broke in Japan around December 30th, December 31st, and got back into the press in this country after a month.
   text: |-
     News of the Japan Airlines Flight 1628 UFO encounter was kept out of the US press for a month before breaking in Japan and being reported back in the United States.
+  entailment:
+    label: contradicts
+    score: 0.566
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a5e6fba-9336-4e2e-b448-afd939d7d337
   type: observation
   attestation: first_hand
@@ -1552,6 +1828,11 @@ domain_claims:
     and immediately the FAA officials contradicted their own controllers. ... told the press that the radar was just a double image of the plane.
   text: |-
     FAA officials officially contradicted their own controllers about the Japan Airlines Flight 1628 radar tracks, telling the press the radar return was a double image of the plane.
+  entailment:
+    label: entails
+    score: 0.857
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 339601b9-7683-46ea-b34d-4ff0bfd498b9
   type: observation
   attestation: first_hand
@@ -1574,6 +1855,11 @@ domain_claims:
     The Air Force spokesmen also contradicted their own radar operators and told the press that ... Elmendorf Air Force Base officially said that they were just picking up ground clutter.
   text: |-
     An Air Force spokesperson officially stated that Elmendorf Air Force Base radar operators had only been picking up ground clutter during the Japan Airlines Flight 1628 UFO encounter.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b84a3c1-c7dd-488d-99a5-b82a132da3e1
   type: observation
   attestation: first_hand
@@ -1592,6 +1878,11 @@ domain_claims:
     The two smaller objects that which was seen with the big objects were described as being Mars and Jupiter. although they didn't look like Mars and Jupiter at all.
   text: |-
     The United States government officially described the two smaller objects seen during the Japan Airlines Flight 1628 UFO encounter as Mars and Jupiter, though the crew said they did not look like the planets.
+  entailment:
+    label: entails
+    score: 0.868
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c682044-9a31-420f-ba04-d85cfb705321
   type: observation
   attestation: first_hand
@@ -1614,6 +1905,11 @@ domain_claims:
     And the last I heard was that the FAA controllers were very upset about this, and the Japanese pilot and crew members are still sticking to their story, regardless of what our government says.
   text: |-
     The FAA controllers were very upset by their officials' contradictions, and the Japanese pilot and crew continued to stand by their account of the Japan Airlines Flight 1628 UFO encounter.
+  entailment:
+    label: entails
+    score: 0.895
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33cc2872-a6c6-4686-ae28-845c79f317b3
   type: hearsay
   attestation: second_hand
@@ -1632,6 +1928,11 @@ domain_claims:
     We've talked to people on Minuteman bases that have described almost objects described almost as big as that, coming down very, very suddenly and hovering over the bases and then going straight up again to a point source.
   text: |-
     Raymond Fowler has heard reports from Minuteman bases of objects almost as large as the Japan Airlines Flight 1628 UFO, descending rapidly to hover over bases and then ascending directly to a point source.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd83442f-4fd8-4755-96f1-2a3d824f5893
   type: opinion
   attestation: first_hand
@@ -1652,6 +1953,11 @@ domain_claims:
     Whatever they are, they seem to be carriers of some kind to be that large. They are not seen that often. The typical UFO is not that big.
   text: |-
     Raymond Fowler speculates that very large UFOs are carriers of some kind; the typical UFO is not that big.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ae5026c3-915d-460c-b16f-208fcfef789f
   type: observation
   attestation: first_hand
@@ -1670,6 +1976,11 @@ domain_claims:
     the so-called mothership is a cylindrical shaped object and consistently is being reported as coming up and standing almost on end and hovering and dropping the disc-shaped objects almost like a coin dispenser out of it
   text: |-
     The so-called mothership is consistently reported as a cylindrical-shaped object that hovers on end, dropping disc-shaped objects almost like a coin dispenser.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8b3bb4e0-30da-48e2-871c-fd26b66216c1
   type: observation
   attestation: first_hand
@@ -1690,6 +2001,11 @@ domain_claims:
     We had one over Ipswich in the 70s right off Crane's Beach that was maybe 2 or 3 o'clock in the morning that was seen doing the same thing.
   text: |-
     During the 1970s, a cigar-shaped object was sighted off Crane's Beach in Ipswich, Massachusetts, at approximately 2 or 3 o'clock in the morning, observed dropping smaller objects, which matches other reports of motherships.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7e2422c5-d38d-4c9c-a269-6da78b694aca
   type: hearsay
   attestation: second_hand
@@ -1710,6 +2026,11 @@ domain_claims:
     And he told me that the standard operating procedure for gun camera photographs, which interceptors readily were able to do on intercept missions concerning UFOs, would land, the canister would be taken, the pilots would be debriefed, told to keep quiet, and they wouldn't even see the film.
   text: |-
     J. Allen Hynek told Raymond Fowler that the standard operating procedure for interceptor gun camera photographs of UFOs involved the film canister being confiscated upon landing, the pilots being debriefed and ordered to remain silent, and the pilots never seeing the film.
+  entailment:
+    label: entails
+    score: 0.649
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8a0d6552-1b5c-4765-adf0-f751edba906c
   type: hearsay
   attestation: second_hand
@@ -1732,6 +2053,11 @@ domain_claims:
     I have a tape transcript of Gordon Cooper, prior to his becoming an astronaut, who was a test pilot. He was out at Edwards Air Force Base, which was called Muroc Air Force Base in those days. He stated they had a UFO landing there because they had camera crews set up for an experimental aircraft.
   text: |-
     Raymond Fowler possesses a tape transcript in which Gordon Cooper, a test pilot before becoming an astronaut, stated that a UFO landed at Edwards Air Force Base while camera crews were set up for an experimental aircraft test.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2b00765d-fd97-4524-be07-c07ffec1f971
   type: hearsay
   attestation: second_hand
@@ -1754,6 +2080,11 @@ domain_claims:
     They were able to move the camera crews there and took photographs before it took off. He said the canisters were taken. They weren't allowed to see the film. said it in his sort of Southern-like drawl, off to Washington, never to be seen again.
   text: |-
     According to the tape transcript of Gordon Cooper, photographs were taken of the UFO on the ground at Edwards Air Force Base, but the film canisters were confiscated and sent to Washington, and they were not allowed to see the film.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec1ea8ad-4d5e-46d2-907d-77be72f39c35
   type: opinion
   attestation: first_hand
@@ -1772,6 +2103,11 @@ domain_claims:
     Yeah, we've got thousands of pieces of paper through the Freedom of Information Act, memos, documents of all kinds. But unless you know what you're asking for, it's very, very hard to get anything.
   text: |-
     Through the Freedom of Information Act, UFO researchers have obtained thousands of pages of memos and documents, but it is very difficult to obtain information without knowing exactly what to request.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bcaff90a-07a1-403f-9fec-6ff2c23d8c43
   type: administrative
   attestation: first_hand
@@ -1792,6 +2128,11 @@ domain_claims:
     The National Security Agency has admitted after we brought them to court that they have hundreds of documents relating to UFOs.
   text: |-
     Raymond Fowler, along with other researchers, brought the National Security Agency (NSA) to court.
+  entailment:
+    label: entails
+    score: 0.79
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 022b7ac0-be30-4429-a53a-c0407d7d4ad8
   type: administrative
   attestation: first_hand
@@ -1812,6 +2153,11 @@ domain_claims:
     The National Security Agency has admitted after we brought them to court that they have hundreds of documents relating to UFOs.
   text: |-
     After being sued by Raymond Fowler and other researchers, the National Security Agency (NSA) admitted to holding hundreds of documents related to UFOs.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b7807d7-c193-41b3-966f-52d5ae4321da
   type: administrative
   attestation: first_hand
@@ -1830,6 +2176,11 @@ domain_claims:
     They were able to persuade the judge that the contents of those reports affected national security
   text: |-
     The National Security Agency (NSA) persuaded a judge that the contents of its UFO-related documents affected national security.
+  entailment:
+    label: entails
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d18bc50a-5b20-47a6-b2cb-12e6eb28e995
   type: administrative
   attestation: first_hand
@@ -1848,6 +2199,11 @@ domain_claims:
     and that the National Security Agency didn't come under the Freedom of Information Act.
   text: |-
     The National Security Agency (NSA) persuaded a judge that it is not subject to the Freedom of Information Act (FOIA).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7f51066d-3ef0-4f57-a76b-b8495f85f72c
   type: administrative
   attestation: first_hand
@@ -1867,6 +2223,11 @@ domain_claims:
   quote: So we haven't been able to get those particular reports.
   text: |-
     Raymond Fowler and his associates were unable to obtain those specific National Security Agency (NSA) UFO-related reports as a result of the court ruling.
+  entailment:
+    label: entails
+    score: 0.903
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a213794d-5814-4e3f-988d-b9dc5d4d67e8
   type: administrative
   attestation: first_hand
@@ -1889,6 +2250,11 @@ domain_claims:
     Now, two of the recent documents that we got concerned five UFO landings at Kirtland Air Force Base in the Manzano Weapons Storage Area, which is a hollowed-out mountain which contains probably more atomic weapons than any other storage area we have in the United States, highly restricted area.
   text: |-
     Two documents obtained by Raymond Fowler describe multiple UFO landings at the Manzano Weapons Storage Area, a hollowed-out mountain at Kirtland Air Force Base containing a large quantity of atomic weapons.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2b53a57c-ac41-4d76-bd21-b779903739dc
   type: administrative
   attestation: first_hand
@@ -1905,6 +2271,11 @@ domain_claims:
     name: USA, New Mexico, Kirtland Air Force Base, Manzano Weapons Storage Area
   quote: highly restricted area.
   text: The Manzano Weapons Storage Area is a highly restricted facility.
+  entailment:
+    label: contradicts
+    score: 0.731
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0e518ba7-3a0a-4c9e-8611-7e1bfecbd5b9
   type: observation
   attestation: first_hand
@@ -1922,6 +2293,11 @@ domain_claims:
   quote: And they describe these disc-shaped objects landing in the area.
   text: |-
     The documents described disc-shaped objects landing at the Manzano Weapons Storage Area.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 93c78320-2fc4-418a-9d30-c000bdd5b2b7
   type: observation
   attestation: first_hand
@@ -1940,6 +2316,11 @@ domain_claims:
     One report has one of the guards walking up to it with a loaded shotgun and watching it take off right in front of him.
   text: |-
     One report described a guard at the Manzano Weapons Storage Area approaching a landed disc-shaped object with a loaded shotgun and watching it take off directly in front of him.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0bf0f63d-6f7b-4c55-957f-186e8a25c3c9
   type: observation
   attestation: first_hand
@@ -1962,6 +2343,11 @@ domain_claims:
     One of the interesting ones took place on a joint United States Air Force, Royal Air Force base at RAF Woodbridge in England, near Ipswich, England on the coast. And they had a triangular-shaped object land at the back gate of the base.
   text: |-
     A document described an event at RAF Woodbridge, a joint United States Air Force (USAF) and Royal Air Force (RAF) base near Ipswich, England, where a triangular-shaped object landed at the base's back gate.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dd71cbfe-06fa-4cef-a8ae-2417cae0c0b7
   type: observation
   attestation: first_hand
@@ -1979,6 +2365,11 @@ domain_claims:
   quote: And the document relates how armed security police advanced toward it.
   text: |-
     Armed security police advanced toward the triangular-shaped object at RAF Woodbridge.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 12a47a3a-b9ae-4029-93bd-723b869257e4
   type: observation
   attestation: first_hand
@@ -1997,6 +2388,11 @@ domain_claims:
     It took off and went into the woods, lighting up the whole woods with its bank of blue lights underneath and sort of a red light on top.
   text: |-
     The triangular-shaped object at RAF Woodbridge then took off and moved into the woods, illuminating the woods with a bank of blue lights underneath and a red light on top.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 180b5f72-13dd-4683-9835-0e4ffae9b589
   type: observation
   attestation: first_hand
@@ -2015,6 +2411,11 @@ domain_claims:
     And animals, wild animals in the woods, rabbits and so forth, started running out of the woods.
   text: |-
     Wild animals, including rabbits, fled the woods after the object entered the forest at RAF Woodbridge.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 48c36b3f-ae80-407a-89ed-7c88b4b31d41
   type: measurement
   attestation: first_hand
@@ -2033,6 +2434,11 @@ domain_claims:
     They found depressions where the three landing gear had rested the object on the ground.
   text: |-
     Three depressions from landing gear were found on the ground at the RAF Woodbridge site.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6ea793ab-daf6-44c0-80de-02a91aa12e72
   type: measurement
   attestation: first_hand
@@ -2049,6 +2455,11 @@ domain_claims:
     name: UK, England, RAF Woodbridge
   quote: They found radiation.
   text: Radiation was detected at the RAF Woodbridge site after the incident.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 18002bea-d0df-4572-a317-e42a8bb6b0ce
   type: administrative
   attestation: first_hand
@@ -2067,6 +2478,11 @@ domain_claims:
     We've used the documents to investigate further. find people who were present during these sightings, some of them retired now, some of them still active, members of the military. and are actually able to get to these people and interview them as long as, you know, we do it sort of undercover so they won't get in trouble and we won't get in trouble.
   text: |-
     Raymond Fowler and his team have used these documents to locate and interview military personnel who witnessed the events, conducting interviews undercover to avoid repercussions for both the witnesses and the investigators.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0b3794c7-abb7-42c1-8911-8b0864703b7c
   type: opinion
   attestation: first_hand
@@ -2087,6 +2503,11 @@ domain_claims:
     So we have many, many documents that indicate that UFOs are real and that they're treated as a threat, a potential threat to national security.
   text: |-
     Raymond Fowler believes that the collected documents demonstrate that UFOs are real and that they are regarded as a potential threat to national security.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6dc94aa6-9f42-4413-b3e0-be5afe57fd82
   type: opinion
   attestation: first_hand
@@ -2107,6 +2528,11 @@ domain_claims:
     I think they're taking sort of the worst case position of what could happen. And unfortunately, their public information program is based on this worst case analysis of the problem.
   text: |-
     Raymond Fowler thinks the government's public information programme on UFOs is based on a worst-case scenario analysis.
+  entailment:
+    label: entails
+    score: 0.84
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ea4bb12a-8c8d-4f9c-8fab-52cb1a1d38ae
   type: administrative
   attestation: first_hand
@@ -2129,6 +2555,11 @@ domain_claims:
     One document that we had released which was sort of the initiation of the public information policy concerning UFOs is a a memo, a Central Intelligence Agency memo, which directs the Psychological Strategy Board of the Central Intelligence Agency to set up a public information program on UFOs that would minimize panic.
   text: |-
     A Central Intelligence Agency (CIA) memo exists that directed the CIA's Psychological Strategy Board to create a public information programme on UFOs with the goal of minimising panic.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fbdee924-67e0-4fc4-925a-2ff17f9bd627
   type: opinion
   attestation: first_hand
@@ -2149,6 +2580,11 @@ domain_claims:
     That was one of the indications that they felt that the public reaction could be adverse and they couldn't do much about it.
   text: |-
     The CIA memo indicated that the author(s) believed the public could react adversely to UFO information and that little could be done to mitigate that.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a02a135-d683-41c8-b98f-8d61ff50c679
   type: opinion
   attestation: first_hand
@@ -2169,6 +2605,11 @@ domain_claims:
     And the other thing was that there was no air defense against whatever they were, and therefore this whole thing had to be kept very, very quiet.
   text: |-
     The CIA memo also indicated that there was no air defence against UFOs, and therefore the subject needed to be kept very quiet.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 69c0dbe9-5eba-462e-8ad6-4a8da7f6dddd
   type: observation
   attestation: first_hand
@@ -2187,6 +2628,11 @@ domain_claims:
     But we've had people who have been burned by UFOs, people hurt. These are in the minority.
   text: |-
     Some individuals have suffered burns and injuries from UFO encounters, though such cases are relatively rare.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e53ecf40-153d-4d4a-a7bd-367900e8f7b8
   type: opinion
   attestation: first_hand
@@ -2205,6 +2651,11 @@ domain_claims:
     The government doesn't want to be held responsible for something they can't control.
   text: |-
     The U.S. government avoids assuming responsibility for UFO-related incidents because they cannot control the phenomenon.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6e907035-8c0c-4c85-9492-ce07d253689e
   type: observation
   attestation: first_hand
@@ -2223,6 +2674,11 @@ domain_claims:
     UFOs have consistently shown interest in atomic weapons storage areas, highly restricted military installations, Minuteman sites.
   text: |-
     UFOs have demonstrated a consistent pattern of interest in atomic weapons storage facilities, highly restricted military installations, and Minuteman missile sites.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 37ab5cbe-634a-4f98-9394-cdf0cdad6df2
   type: hearsay
   attestation: second_hand
@@ -2245,6 +2701,11 @@ domain_claims:
     I talked to someone who was debriefed or given a briefing on the UFO program just prior to his release from military service. And he told me that one of the things that they're very anxious to keep a secret is how much we know about UFOs from the Russians.
   text: |-
     An unnamed individual, upon release from military service, told Raymond Fowler that U.S. authorities are very anxious to keep secret the extent of American knowledge about UFOs obtained from Russian sources.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e3b312c6-e77b-4352-b1ba-9f7efb856b4b
   type: hearsay
   attestation: second_hand
@@ -2267,6 +2728,11 @@ domain_claims:
     He felt that hard information on UFOs could be used to enhance our own weapon systems
   text: |-
     The same anonymous individual told Raymond Fowler that hard information on UFOs could be used to enhance US weapon systems.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1ef0fbd4-cbb5-4385-8bd7-ba9699beebcc
   type: hearsay
   attestation: second_hand
@@ -2288,6 +2754,11 @@ domain_claims:
   quote: and any breach of security could compromise what we're trying to do at all.
   text: |-
     The same anonymous individual told Raymond Fowler that any security breach regarding UFO information could compromise US efforts.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c52def40-eb12-442f-98ef-07e71243185f
   type: opinion
   attestation: first_hand
@@ -2307,6 +2778,11 @@ domain_claims:
   quote: So public participation in the UFO program is a no-no.
   text: |-
     Raymond Fowler asserts that public participation in the official UFO programme is strictly forbidden.
+  entailment:
+    label: entails
+    score: 0.519
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0d3af66c-f480-4055-b4f3-b2943e60d30f
   type: opinion
   attestation: first_hand
@@ -2327,6 +2803,11 @@ domain_claims:
     And banner headlines on UFOs cause headaches for the United States Air Force and causes congressional people to stress the need for congressional hearings. This is the last thing they want would be congressional hearings on the subject, but it might blow the whole thing wide open.
   text: |-
     Media attention with banner headlines about UFOs creates problems for the United States Air Force (USAF) and prompts congressional interest in hearings, which the USAF wishes to avoid because it might reveal extensive secrets.
+  entailment:
+    label: entails
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4d4ece62-5837-4232-8eb3-f761167010ed
   type: administrative
   attestation: first_hand
@@ -2348,6 +2829,11 @@ domain_claims:
   quote: We tried to get the United Nations to bring this thing out into the open
   text: |-
     Raymond Fowler and others attempted to involve the United Nations (UN) in publicly addressing the UFO issue.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 37ee8d57-7dd0-409b-b5d5-9b75f745c109
   type: administrative
   attestation: first_hand
@@ -2372,6 +2858,11 @@ domain_claims:
     and a number of scientists and people formerly associated with the UFO program appeared several times before the Secretary of the United Nations, U Thant, and then Kurt Waldheim.
   text: |-
     Scientists and former participants in the UFO programme appeared multiple times before UN Secretaries-General U Thant and Kurt Waldheim.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1af4c783-2d91-41e6-a35f-2cfccfd32b83
   type: administrative
   attestation: first_hand
@@ -2394,6 +2885,11 @@ domain_claims:
     But the United States, Britain, and France objected strenuously, saying it would be a breach of their national security.
   text: |-
     The United States, the United Kingdom, and France objected strenuously to the UN involvement, arguing it would breach their national security.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c56ec4d1-6e31-468f-a63f-58aece9f3430
   type: testimony
   attestation: first_hand
@@ -2414,6 +2910,11 @@ domain_claims:
     name: Unidentified Flying Objects (UFO)
   quote: Gordon Cooper appeared and testified to some of the things that he knew
   text: Gordon Cooper testified before the United Nations about his knowledge of UFOs.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3425e1a0-ecaf-4598-8a19-4aeae105f8ab
   type: hearsay
   attestation: second_hand
@@ -2438,6 +2939,11 @@ domain_claims:
     and stated that if the United Nations would sponsor an open scientific study apart from the military studies being carried on by other countries, that he knew of other astronauts and other people in NASA that would be willing to testify if they could do so without penalty.
   text: |-
     Gordon Cooper stated that if the United Nations sponsored an open scientific study separate from military studies, other astronauts and NASA employees would be willing to testify without penalty.
+  entailment:
+    label: contradicts
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 891146c0-e55c-4256-959a-9dc39deaf159
   type: administrative
   attestation: first_hand
@@ -2456,6 +2962,11 @@ domain_claims:
     name: Unidentified Flying Objects (UFO)
   quote: But the whole thing was turned down, unfortunately.
   text: The United Nations effort to address UFOs was ultimately rejected.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 28827c3f-ac89-4f0d-b5d0-87fba596e374
   type: administrative
   attestation: first_hand
@@ -2476,6 +2987,11 @@ domain_claims:
     The regulations that prohibit pilots talking about UFOs, even civilian pilots, JANAP 146 is a regulation specifically designed to treat objects which are a threat to national security
   text: |-
     JANAP 146 is a regulation that prohibits pilots, including civilian pilots, from discussing UFO sightings, and is designed to handle objects considered threats to national security.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f3b282dd-344e-4e3a-bb97-a37998c49b42
   type: opinion
   attestation: first_hand
@@ -2496,6 +3012,11 @@ domain_claims:
     and yet the Air Force tells the public that UFOs are not a threat to national security. They're the product of hoaxes, hallucinations, and misinterpretations.
   text: |-
     The United States Air Force publicly declares that UFOs are not a threat to national security but result from hoaxes, hallucinations, and misinterpretations.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 04d09901-bd77-4fb2-8d08-43a979bcf683
   type: administrative
   attestation: first_hand
@@ -2519,6 +3040,11 @@ domain_claims:
     In 1953, again, when the debunking policy was established, the National Security Council at the White House asked H.P. Robertson, a very famous scientist at that time, to conduct what has come to known as the Robertson Panel.
   text: |-
     In 1953, the National Security Council requested Howard P. Robertson to lead a panel, later known as the Robertson Panel, to establish a debunking policy on UFOs.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3594f037-f3f6-4fce-bf94-fd805b1b58a6
   type: administrative
   attestation: first_hand
@@ -2535,6 +3061,11 @@ domain_claims:
     name: Robertson Panel
   quote: And it was classified top secret.
   text: The Robertson Panel was classified top secret.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2e8b26f1-dfef-4035-988b-2a9354318b3f
   type: administrative
   attestation: first_hand
@@ -2555,6 +3086,11 @@ domain_claims:
     And we, not too long ago, got a copy of a sanitized version of that. And in it, they outlined a complete debunking program.
   text: |-
     Raymond Fowler's group obtained a sanitised copy of the Robertson Panel report, which outlined a comprehensive debunking programme.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b57adde4-f5ec-45c6-8363-5ab929e82fab
   type: administrative
   attestation: first_hand
@@ -2573,6 +3109,11 @@ domain_claims:
     And one of the things that they stressed was using well-known personalities to get on TV and radio.
   text: |-
     The Robertson Panel recommended using well-known personalities on television and radio as part of the debunking effort.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dbce99db-a1fa-4e7e-802a-289e47255750
   type: administrative
   attestation: first_hand
@@ -2593,6 +3134,11 @@ domain_claims:
     Even Walt Disney, though, wanted to use Walt Disney productions to do exactly what you say, build up a case that looked like it was a real UFO, and then after everybody thought this was real, then they pull the rug out from under it.
   text: |-
     The Robertson Panel considered using Walt Disney productions to create seemingly real UFO stories and then later debunk them to discredit the subject.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aa3db7de-2563-45d8-aae9-00d468ab33a0
   type: opinion
   attestation: first_hand
@@ -2610,6 +3156,11 @@ domain_claims:
   quote: And this is the policy that they've been carrying out ever since.
   text: |-
     The debunking policy outlined by the Robertson Panel has been implemented by the U.S. government ever since.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd6a4f48-3126-441c-9a2c-4a57d594cd93
   type: opinion
   attestation: first_hand
@@ -2628,6 +3179,11 @@ domain_claims:
     It's just that people like myself and people who have actually been associated with the UFO program feel that the subject is much bigger than national security, and knowledge of what's going on could affect man's evolution really, his thought, his philosophy, his religion across all of society.
   text: |-
     Individuals involved in the UFO programme believe that the phenomenon's implications are larger than national security and could impact human evolution, thought, philosophy, and religion across society.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bfe82234-7d8e-44d2-af3d-7f3074d8096b
   type: opinion
   attestation: first_hand
@@ -2648,6 +3204,11 @@ domain_claims:
     why wait until something happens where all of a sudden something has to be told the public all at once? Why not over the years do it gradually?
   text: |-
     Raymond Fowler advocates for gradual public disclosure of UFO information over time rather than sudden revelation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e632c3ce-381a-4292-b618-47abf65c74d1
   type: opinion
   attestation: first_hand
@@ -2666,6 +3227,11 @@ domain_claims:
     Of course, our own space program, I think, has helped a lot to acclimatize people to the possibility that extraterrestrial life is out there because we're doing it.
   text: |-
     The U.S. space programme has helped acclimate the public to the concept of extraterrestrial life.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 04cad317-3350-481c-afcd-018cb1fc65ff
   type: observation
   attestation: first_hand
@@ -2681,6 +3247,11 @@ domain_claims:
     But our sun is an average-sized sun. It's a very young sun, and there are so many other suns out there, millions of suns out there that are perhaps a billion years older than our sun.
   text: |-
     Our sun is average-sized and relatively young; there are millions of other stars that could be up to a billion years older.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 547b0f39-544c-48af-acd2-9a0cc8f88a66
   type: opinion
   attestation: first_hand
@@ -2699,6 +3270,11 @@ domain_claims:
     Statistically speaking, if we are to come face to face with extraterrestrial life, it probably won't be a thousand years ahead or a million years ahead. It could be as much as a billion years ahead.
   text: |-
     Statistical reasoning suggests that any extraterrestrial life humanity encounters is likely to be up to a billion years more advanced.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 22fc4d55-9059-4ac6-bab8-8c7a601c08d7
   type: observation
   attestation: first_hand
@@ -2716,6 +3292,11 @@ domain_claims:
   quote: |-
     Not overtly hurting people on purpose, but people, pilots have disappeared chasing UFOs
   text: Pilots have disappeared while in pursuit of UFOs.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fab3fb00-46b3-437d-9292-787f828cb999
   type: administrative
   attestation: first_hand
@@ -2737,6 +3318,11 @@ domain_claims:
     One of the things that we got through the Freedom of Information Act was an Australian pilot's last words, complete transcript, after a lot of pressure was put on the government by the parents of the pilot and UFO researchers.
   text: |-
     Raymond Fowler's group obtained via the Freedom of Information Act (FOIA) a transcript of the last words of an Australian pilot who disappeared after reporting a UFO, following pressure from the pilot's parents and UFO researchers.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7f5ec536-e024-48f6-8620-41b44ff93474
   type: observation
   attestation: first_hand
@@ -2756,6 +3342,11 @@ domain_claims:
     And he describes this cigar-shaped object following him, and he tries to get away from it. His last words were, it's orbiting above me, and then there was silence and a scraping sound.
   text: |-
     The Australian pilot described a cigar-shaped object following him, and his last recorded words were 'it's orbiting above me', followed by silence and a scraping sound.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5edcf336-1ad6-42a6-b8ea-27af66f10505
   type: observation
   attestation: first_hand
@@ -2775,6 +3366,11 @@ domain_claims:
     and they haven't found the pilot, they haven't found the plane, and a vast, extensive air-sea ground search was made immediately after because he was in radio contact with Melbourne.
   text: |-
     The Australian pilot and his aircraft were never found despite an extensive air-sea-ground search.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fdade675-d7f6-48fc-802d-fdbdb37cd062
   type: observation
   attestation: first_hand
@@ -2793,6 +3389,11 @@ domain_claims:
     People have received very bad burns when being approached by UFO, symptoms of radiation sickness, hair falling out, fingernails blackening, sewers appearing, diarrhea, nausea.
   text: |-
     Individuals who have close encounters with UFOs have suffered severe burns and symptoms of radiation sickness, including hair loss, blackening fingernails, sores, diarrhoea, and nausea.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f3949566-0976-40e6-b4e0-3af5b62063b1
   type: administrative
   attestation: first_hand
@@ -2812,6 +3413,11 @@ domain_claims:
     And one case we know of down there, Dayton, Texas, December of 1980, a person had developed cancer.
   text: |-
     In December 1980, a person in Dayton, Texas developed cancer after a UFO incident.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3e590f93-9edb-493d-9ad0-577af70f385e
   type: administrative
   attestation: first_hand
@@ -2830,6 +3436,11 @@ domain_claims:
     And they were so upset that they sued the United States government. And then when they were rejected, they appealed to a higher court, and they were still rejected.
   text: |-
     The person who developed cancer after the Dayton, Texas UFO incident sued the U.S. government, lost the initial case, and also lost on appeal.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a35b598-26a2-4231-b362-450dfec2f845
   type: administrative
   attestation: first_hand
@@ -2848,6 +3459,11 @@ domain_claims:
     And we have all the records concerning investigation by the Army because the Army was chosen to investigate the case because Army helicopters, or helicopters used by the Army, were seen circling this object and pursuing it as it went off.
   text: |-
     The U.S. Army investigated the Cash-Landrum incident because Army helicopters were reported circling and pursuing the UFO.
+  entailment:
+    label: entails
+    score: 0.446
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b8a0009d-ad57-4228-bd78-928d48f809bb
   type: administrative
   attestation: first_hand
@@ -2865,6 +3481,11 @@ domain_claims:
   quote: And the Army officer verified the injuries to these people.
   text: |-
     An Army officer confirmed the injuries suffered by the victims of the Cash-Landrum incident.
+  entailment:
+    label: neutral
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 76517a21-48f6-47f7-9a28-8d9277793f7c
   type: administrative
   attestation: first_hand
@@ -2882,6 +3503,11 @@ domain_claims:
   quote: And he verified that the helicopters had been seen in the area.
   text: |-
     The Army officer confirmed that helicopters were observed in the area of the Cash-Landrum incident.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9cb0578c-53f7-4fd3-8b4b-41a88393e780
   type: administrative
   attestation: first_hand
@@ -2900,6 +3526,11 @@ domain_claims:
     but he also stated that no agency of this government would admit that the helicopters were theirs, that the object was theirs, and therefore the injuries sustained by the people had nothing to do with the case per se, therefore the government wasn't responsible because it wasn't the government's aircraft or whatever you want to call it.
   text: |-
     The Army officer stated that no government agency would admit ownership of the helicopters or the object seen in the Cash-Landrum incident, so the government denied responsibility for the injuries.
+  entailment:
+    label: neutral
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a2440f7c-5c4f-4ae5-88ce-ad6b5382e980
   type: administrative
   attestation: first_hand
@@ -2919,6 +3550,11 @@ domain_claims:
   quote: We interviewed a Navy pilot that was approached for quite a long time by UFOs.
   text: |-
     Raymond Fowler and his team interviewed a Navy pilot who had a prolonged UFO encounter.
+  entailment:
+    label: entails
+    score: 0.911
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 73a831da-1abb-45ad-bcb6-a7eee2558993
   type: administrative
   attestation: first_hand
@@ -2937,6 +3573,11 @@ domain_claims:
     And both he and his wife were sworn to secrecy, told that he may have symptoms of radiation sickness.
   text: |-
     The Navy pilot and his wife were sworn to secrecy and informed that he might experience symptoms of radiation sickness.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14186dc8-fc85-412c-aa69-643d2e0e9fc2
   type: administrative
   attestation: first_hand
@@ -2952,6 +3593,11 @@ domain_claims:
     were given the address of a military hospital and his wife was to bring him there immediately if he had some of these symptoms and they would pay all the expenses
   text: |-
     The Navy pilot and his wife were provided the address of a military hospital and instructed to bring him there immediately if symptoms appeared, with all expenses to be paid by the military.
+  entailment:
+    label: entails
+    score: 0.635
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8d1174bb-9bf6-4e2e-be18-702530b4c758
   type: opinion
   attestation: first_hand
@@ -2970,6 +3616,11 @@ domain_claims:
     so what happens to a military person they're only too anxious to take care of that person's maladies resulting from contact with whatever the ufo you know you know power source or whatever causes but when it comes to civilians they they don't want to admit that it happened they don't want to take any responsibility for it
   text: |-
     The military appears willing to care for its personnel for UFO-contact-related illnesses but denies responsibility for civilian cases.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0db2a6e7-ea32-407a-aea4-b8b300cc1c09
   type: administrative
   attestation: first_hand
@@ -2988,6 +3639,11 @@ domain_claims:
     They do, and yet this person took an oath, and years later he broke his oath. After the statute of limitations, he gave us the whole story.
   text: |-
     The Navy pilot later broke his oath of secrecy after the statute of limitations expired and provided Raymond Fowler the full account.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bc2d349d-7e91-4694-ad9b-c1c3e90b8af4
   type: observation
   attestation: first_hand
@@ -3006,6 +3662,11 @@ domain_claims:
     Other than very, very good photographs, and there are some very good photographs, the negatives have been analyzed by experts and proved genuine.
   text: |-
     Some UFO photographs have had their negatives analysed by experts and have been authenticated.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1477a1d0-f2c2-4f66-8aec-cc7494b64075
   type: observation
   attestation: first_hand
@@ -3024,6 +3685,11 @@ domain_claims:
     You have radar visual sightings, radar visual sightings by civilians and radar visual sightings by military. Some of the documents that we have received through the Freedom of Information Act give excellent examples of radar visual sightings where ground radar will pick up an unusual behaving object, an interceptor will try to intercept the object, pick it up on airborne radar. Ground personnel, the pilot and the radar observer will see the object, radar will see the object on the ground and from the airborne radar behaving exactly is what they're seeing visually.
   text: |-
     Radar-visual UFO sightings exist where the object is simultaneously tracked by ground radar, airborne radar, and visually by pilots and ground observers.
+  entailment:
+    label: entails
+    score: 0.534
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 70917f4d-34c9-435c-b54c-8921d96efc8a
   type: administrative
   attestation: first_hand
@@ -3044,6 +3710,11 @@ domain_claims:
     Some of the documents that we have received through the Freedom of Information Act give excellent examples of radar visual sightings
   text: |-
     Raymond Fowler's group received documents through the Freedom of Information Act (FOIA) containing detailed examples of radar-visual UFO encounters.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14793ffa-9d5e-489b-b405-44f323ba8a4e
   type: observation
   attestation: first_hand
@@ -3062,6 +3733,11 @@ domain_claims:
     You have physical trace cases. You have physical trace cases all over the country and all over the world where specific types of indentations, imprints, scorched areas are found. One in Idaho might look like one they found in France, the exact type of thing, exact type of object indicating that something has been there.
   text: |-
     There are global cases where physical traces such as indentations, imprints, and scorched areas are found at UFO landing sites, with similar patterns observed in different locations.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c3b67bde-ce63-4a4f-8f5b-59ddf8aba1bf
   type: administrative
   attestation: first_hand
@@ -3080,6 +3756,11 @@ domain_claims:
     The French government recently issued their first civilian report they initiated a multi-million dollar study maybe five or six years ago and some of the physical trace cases that they have investigated they they claim are completely unexplainable and that they seem to be attributed to a flying machine, which they don't know the origin of the flying machine or how it's sustained and so forth. It's an unidentified flying object that's caused these traces.
   text: |-
     The French government initiated a multi-million dollar civilian UFO study about five to six years before the interview, which concluded that some physical trace cases are completely unexplainable and appear to be caused by an unknown flying machine.
+  entailment:
+    label: entails
+    score: 0.901
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 78d55284-6bd0-4e42-8fbd-2251b001a0ec
   type: observation
   attestation: first_hand
@@ -3098,6 +3779,11 @@ domain_claims:
     You have the physical reaction to sightings, which I've just mentioned, the burns, the radiation left at the site.
   text: |-
     Physical reactions from UFO encounters include burns and residual radiation at the site.
+  entailment:
+    label: entails
+    score: 0.924
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 893da195-66ae-448f-92d2-8110da24cd9c
   type: observation
   attestation: first_hand
@@ -3116,6 +3802,11 @@ domain_claims:
     Then you have the overwhelming anecdotal data from people all over the world from all walks of life, trained observers who don't just see a distant light in the sky, but they see something as close as my car in the driveway, you know, pull up beside them, wingtip formation, and they're able to watch it for 15 to 20 minutes, more than one person, describing the same thing, the same flight characteristics as people are doing all over the world.
   text: |-
     There is a vast amount of anecdotal evidence from trained observers worldwide who have reported close-up UFO encounters lasting 15 to 20 minutes, with multiple witnesses independently describing similar flight characteristics.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7910b7ea-7f99-4428-b19b-3a60b98a8950
   type: opinion
   attestation: first_hand
@@ -3132,6 +3823,11 @@ domain_claims:
     name: Unidentified Flying Objects (UFO)
   quote: There are those who feel that the government has hardware.
   text: Some people believe that the U.S. government possesses physical UFO hardware.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c2af50a5-21c5-4ed3-ab71-b97b49ee8bc7
   type: hearsay
   attestation: second_hand
@@ -3154,6 +3850,11 @@ domain_claims:
     Gordon Cooper, again, indicated that he has heard some highly placed rumors concerning crashed UFOs, a retrieval, he says, not only of just the UFO, but remains of bodies.
   text: |-
     Gordon Cooper indicated that he had heard highly placed rumours about crashed UFO retrievals, including the recovery of alien bodies.
+  entailment:
+    label: neutral
+    score: 0.715
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dd4eecbe-46bd-477c-9e6c-4748112a3629
   type: hearsay
   attestation: second_hand
@@ -3179,6 +3880,11 @@ domain_claims:
     I came closest to a report like this, talking to an individual at GTE who holds a high managerial position, who has a top secret clearance. and who worked as a civilian for the Air Force back in 1953.
   text: |-
     An anonymous individual, a high managerial employee at GTE Sylvania with a top secret clearance, told Raymond Fowler that he worked as a civilian for the United States Air Force (USAF) in 1953.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ebdaf1d8-07b4-4993-ad90-ba37444a7c34
   type: hearsay
   attestation: second_hand
@@ -3199,6 +3905,11 @@ domain_claims:
     And his expertise was landing gear and also assessing the damage done to crashed aircraft.
   text: |-
     The anonymous GTE Sylvania employee claimed his expertise was in landing gear and assessing damage to crashed aircraft.
+  entailment:
+    label: entails
+    score: 0.605
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3115cdb1-e8c1-4e08-8c51-b362c9b1a6c0
   type: hearsay
   attestation: second_hand
@@ -3224,6 +3935,11 @@ domain_claims:
     And he was on loan to the Atomic Energy Commission out at Frenchman's Flats, Nevada at the time. and he was assessing damage done to bridges and different types of buildings that were subjected to atomic bomb tests from different heights.
   text: |-
     The anonymous individual claimed he was on loan to the United States Atomic Energy Commission (AEC) at Frenchman's Flats, Nevada, in 1953, where he assessed damage to bridges and buildings from atomic bomb tests.
+  entailment:
+    label: entails
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0cdd413d-49c1-40c0-b71d-fa070a7b83f9
   type: hearsay
   attestation: second_hand
@@ -3246,6 +3962,11 @@ domain_claims:
     And he claims that right in the middle of these tests that he was called away and told to report to a certain office that he was going to have to go on a two-day mission to a three-day mission for something that he couldn't write or talk about.
   text: |-
     The anonymous individual claimed that during the atomic bomb tests at Frenchman's Flats he was suddenly called away for a two-to-three-day mission on which he was forbidden to write or talk.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 73c93864-9482-4d35-b126-ac7b524f7d5b
   type: hearsay
   attestation: second_hand
@@ -3268,6 +3989,11 @@ domain_claims:
     He was flown from Indian Springs Air Force Base to a civilian airfield in Arizona. I think it was Tucson or Phoenix. I can't remember. I'd have to look at the report. But at the airfield, he was met by an air policeman who escorted him to a military bus that had all the windows blacked out.
   text: |-
     The anonymous individual claimed he was flown from Indian Springs Air Force Base to a civilian airfield in Arizona, where an air policeman escorted him to a military bus with all windows blacked out.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f9cd3358-9a6d-4588-8b7a-5114eb5e81df
   type: hearsay
   attestation: second_hand
@@ -3288,6 +4014,11 @@ domain_claims:
     He got on the bus, and he was told not to talk to anybody, to surrender all his valuables, which he did. And they put him in a cloth bag, put his name on it. A full colonel, after everybody was assembled, told them they were going to go for a long ride, that they went out to talk to each other, that they were going to investigate the crash of a super secret vehicle which they couldn't talk about and they had to take an oath.
   text: |-
     The anonymous individual claimed that after boarding the bus, he was told not to speak to anyone, surrendered his valuables, which were placed in a cloth bag, and a full colonel announced they were investigating the crash of a super-secret vehicle and administered an oath of secrecy.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7561063f-bec3-4f7b-ba13-c8a0a85fc955
   type: hearsay
   attestation: second_hand
@@ -3308,6 +4039,11 @@ domain_claims:
     And when they finally got there, he thought they drove around for two or three hours. He didn't know they took his watch away.
   text: |-
     The anonymous individual claimed the bus drove for two to three hours, and his watch was taken away, so he lost track of time.
+  entailment:
+    label: entails
+    score: 0.807
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8471ae7c-0a0b-48c7-89b6-83ca2e7ef1b5
   type: hearsay
   attestation: second_hand
@@ -3328,6 +4064,11 @@ domain_claims:
     When they got there, there was a bright light on the bus, blinding bright light. And when it was his turn to get out, he says he couldn't see anything. This light was just blazing.
   text: |-
     The anonymous individual claimed that upon arrival a blinding bright light was directed at the bus, and when he disembarked he could see nothing.
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 93e3e1d3-48ad-481e-a3c0-6f1a0d076943
   type: hearsay
   attestation: second_hand
@@ -3348,6 +4089,11 @@ domain_claims:
     And when they finally got behind the light, There was this 30 foot in diameter object shaped like a bowl, inverted upon a bowl with a slight rim around it with orifices.
   text: |-
     The anonymous individual claimed that behind the light there was an object approximately 9 metres in diameter shaped like two bowls placed rim to rim with orifices.
+  entailment:
+    label: contradicts
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d8ef76c4-938a-408b-9ed7-21d956324d3f
   type: hearsay
   attestation: second_hand
@@ -3368,6 +4114,11 @@ domain_claims:
     And he was told to determine the falling speed and forward speed at time of impact, and that was all. And he wasn't to ask any other questions about the object.
   text: |-
     The anonymous individual claimed he was instructed solely to determine the falling speed and forward speed of the object at the time of impact and was forbidden to ask any other questions.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bea7ea3d-2d2d-4687-88ed-a253ff063296
   type: hearsay
   attestation: second_hand
@@ -3388,6 +4139,11 @@ domain_claims:
     He said that there were generators there, there were power cables going into the object. There was an opening and there were people inside doing something.
   text: |-
     The anonymous individual claimed that there were generators and power cables going into the object, an opening, and people working inside.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 29b65677-2047-4229-b309-9b09ad10bb83
   type: hearsay
   attestation: second_hand
@@ -3407,6 +4163,11 @@ domain_claims:
   quote: There was a tent pitched beside the object with remains of small beings.
   text: |-
     The anonymous individual claimed that a tent pitched beside the object contained the remains of small beings.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bb043b30-35c6-4bc8-bf55-337f6b17935f
   type: hearsay
   attestation: second_hand
@@ -3427,6 +4188,11 @@ domain_claims:
     When he got back to the bus, they were all told, each person that went out and did their own thing, that they were going to go back and they were going to hand write a report of their findings. They were not to type it, they were to call a number, it would be reported, it would be picked up, and they were sworn to secrecy.
   text: |-
     The anonymous individual claimed that upon return to the bus, all participants were instructed to hand-write a report of their findings, were not to type it, to call a number, and were sworn to secrecy.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 37f9e695-7337-47a8-bcc2-c6bae58c402e
   type: administrative
   attestation: first_hand
@@ -3449,6 +4215,11 @@ domain_claims:
     conducted a character reference check, went all the way back from where he works at GTE now, all the way back to Wright-Patterson Air Force Base, which was Wright Field in those days, talked to people there, highly placed people who were still there, knew this individual. Everybody gave him a clean bill of health.
   text: |-
     Raymond Fowler conducted a background check on the anonymous GTE Sylvania employee, tracing his employment from GTE back to Wright-Patterson Air Force Base (formerly Wright Field), and interviewed people who knew him, all of whom vouched for his character.
+  entailment:
+    label: entails
+    score: 0.842
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3441e33f-33c7-4747-a230-55610a1cded8
   type: administrative
   attestation: first_hand
@@ -3465,6 +4236,11 @@ domain_claims:
     name: GTE Sylvania
   quote: He didn't seek any publicity.
   text: The anonymous individual did not seek any publicity about the incident.
+  entailment:
+    label: entails
+    score: 0.862
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5d1d99be-32e2-49a0-af31-15f2dd749e5d
   type: administrative
   attestation: first_hand
@@ -3485,6 +4261,11 @@ domain_claims:
     There was a movie called Hangar 18 that came out, put out by Sun Classics, and they called me because they knew of this particular sighting that I had investigated. They offered this fellow money through me to do a documentary. He returned it down. He didn't want to compromise the story at all in any way using his name because of his position at GTE and because what his peers would think of him because he had taken an oath.
   text: |-
     The producers of the film Hangar 18 contacted Raymond Fowler about the crash retrieval case and offered the anonymous individual money through Fowler to participate in a documentary, but the individual declined, citing concerns about his position and oath of secrecy.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bae49c9b-fe18-4428-9e78-bb3857720589
   type: opinion
   attestation: first_hand
@@ -3505,6 +4286,11 @@ domain_claims:
     So you have highly placed rumors that they actually have crash retrieval cases. Whether they're true or not, we only can wait and see, but they come from people with impeccable credentials.
   text: |-
     Raymond Fowler notes that crash retrieval stories are highly placed rumours from individuals with credible backgrounds.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7d24fd5c-d896-43c6-a6d2-8f99382c6de7
   type: hearsay
   attestation: second_hand
@@ -3527,6 +4313,11 @@ domain_claims:
     Oh, they wouldn't dispose of them. From what we gather talking to quite a few people over the years, they are being kept at certain places and that they autopsies have been performed and so forth and so on.
   text: |-
     According to Raymond Fowler's sources, crashed UFO debris and alien bodies are stored at certain undisclosed locations and autopsies have been performed.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4244d6b-b3c7-4ff0-98ec-4814284f32e8
   type: measurement
   attestation: second_hand
@@ -3550,6 +4341,11 @@ domain_claims:
     There was one sighting down in Socorro, New Mexico, we found out from Dr. William Powers, who was an Air Force astronomer who helped investigate that case, he said that they use a penetrometer on each one of those pad marks and there was a ton sitting on each one of those.
   text: |-
     A penetrometer applied to each landing pad mark at the Socorro UFO incident site registered a pressure of one ton on each.
+  entailment:
+    label: entails
+    score: 0.589
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 23bf2e7a-1d32-4821-b03c-7e75f95f0b9d
   type: observation
   attestation: second_hand
@@ -3573,6 +4369,11 @@ domain_claims:
     He said the center of gravity within the quadruped landing gear was right over burn number one.
   text: |-
     The centre of gravity within the landing gear of the quadruped craft at the Socorro UFO incident was directly over burn number one.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 500fbb1a-7663-4573-ad30-80bd5d89558e
   type: observation
   speaker:
@@ -3589,6 +4390,11 @@ domain_claims:
   quote: It was seen or heard by about 13 different people.
   text: |-
     The Socorro UFO incident object was seen or heard by approximately 13 different people.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 65db6e28-886d-4f11-ba81-079e601ec08c
   type: observation
   speaker:
@@ -3606,6 +4412,11 @@ domain_claims:
     One policeman actually got within 15 feet of it before it started to make noises, and sort of a blue plasma-like flame came out of the bottom.
   text: |-
     A policeman at the Socorro UFO incident approached to within 15 feet of the object before it began making noises and a blue plasma-like flame emerged from its bottom.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4f9390ed-983e-45f0-8692-cb2ac24b4a8f
   type: observation
   speaker:
@@ -3622,6 +4433,11 @@ domain_claims:
   quote: And he had to retreat about 50 feet and dove to the ground.
   text: |-
     The policeman at the Socorro UFO incident retreated 50 feet and dove to the ground.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c603ddd4-4b8b-4c42-aac4-6d7eb2475dba
   type: observation
   speaker:
@@ -3639,6 +4455,11 @@ domain_claims:
     But he watched it slowly take off. He watched the blue plasma just go up like that out of sight until it was just sitting there.
   text: |-
     The policeman at the Socorro UFO incident observed the blue plasma ascend until it disappeared, leaving the object sitting in place.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1cfdfef7-98da-49e6-9982-ad74bdb8fc11
   type: observation
   speaker:
@@ -3656,6 +4477,11 @@ domain_claims:
     And then it was a high-pitched whine, a low-pitched whine, and it just sat there, no noise at all.
   text: |-
     The Socorro UFO incident object produced a high-pitched whine, then a low-pitched whine, and then emitted no noise while stationary.
+  entailment:
+    label: entails
+    score: 0.88
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4dcfca0b-b9a1-48d6-81af-5175ac0177b4
   type: observation
   speaker:
@@ -3673,6 +4499,11 @@ domain_claims:
     and he went to try the radio for help and his radio wouldn't work until the object was out of sight.
   text: |-
     The policeman's radio at the Socorro UFO incident was non-functional until the object moved out of sight.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6236ffec-1756-4008-8fe7-c1a7c81bd198
   type: observation
   speaker:
@@ -3690,6 +4521,11 @@ domain_claims:
     But within minutes, state police were there and there were the indentations, there was the scorched areas, greasewood was still burning, coke bottle or some type of bottle, calcined, melted.
   text: |-
     Upon arriving minutes later, state police at the Socorro UFO incident found indentations, scorched areas, still-burning greasewood, and a calcined melted bottle.
+  entailment:
+    label: entails
+    score: 0.723
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f3758b8c-a5cd-4565-b295-137569c7da50
   type: observation
   attestation: first_hand
@@ -3711,6 +4547,11 @@ domain_claims:
     I saw a UFO, though, a flying disc, so-called, back in July 1947 from Danvers. I was working on a farm there, broad daylight.
   text: |-
     Raymond Fowler observed a flying disc in July 1947 from Danvers while working on a farm in broad daylight.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 05c0cc9e-7574-400a-a010-2f676d98db9f
   type: observation
   attestation: first_hand
@@ -3732,6 +4573,11 @@ domain_claims:
     And, of course, I didn't know anything about the typical characteristics of UFOs, but this thing was going to the sky and it was a falling leaf motion. It was sort of descending with a falling leaf motion. I thought it was a parachute. I looked for the shroud lines, no shroud lines, no person hanging there.
   text: |-
     The flying disc Raymond Fowler observed in July 1947 from Danvers exhibited a falling leaf motion, descending like a parachute with no shroud lines or person suspended from it.
+  entailment:
+    label: entails
+    score: 0.537
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cd984c61-69c9-4959-9a17-d6b4aff4bbe9
   type: administrative
   attestation: second_hand
@@ -3755,6 +4601,11 @@ domain_claims:
     And about two days later, the newspapers reported that UFOs had been seen in Beverly and Wenham, which, of course, border
   text: |-
     Approximately two days after Raymond Fowler's July 1947 flying disc sighting, newspapers reported UFO sightings in Beverly and Wenham, Massachusetts.
+  entailment:
+    label: entails
+    score: 0.67
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8bab65c3-7e49-46e5-a925-13bf983faf1c
   type: administrative
   attestation: first_hand
@@ -3775,6 +4626,11 @@ domain_claims:
     Yes, except I've moved to a different position for years. I held a state director's position, first for the National Investigations Committee on Aerial Phenomena
   text: |-
     Raymond Fowler previously served as a state director for the National Investigations Committee on Aerial Phenomena (NICAP).
+  entailment:
+    label: entails
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 71c4cb55-1af9-4b24-bf67-835c94e9ac88
   type: administrative
   attestation: first_hand
@@ -3795,6 +4651,11 @@ domain_claims:
     and more recently the Mutual UFO Network and International a group that supports Dr. Hynek's Center for UFO Studies by supplying investigating capability in documented reports.
   text: |-
     Raymond Fowler later served as a state director for the Mutual UFO Network (MUFON).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 51d1bc3b-c628-4f46-bc35-14a1259e9f49
   type: administrative
   attestation: first_hand
@@ -3815,6 +4676,11 @@ domain_claims:
     I've been now elevated to Director of Investigations on the Board of Directors for the Mutual UFO Network
   text: |-
     Raymond Fowler is the Director of Investigations on the Board of Directors for Mutual UFO Network (MUFON).
+  entailment:
+    label: entails
+    score: 0.789
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d2903888-7304-458f-887d-ac889bfdf4be
   type: administrative
   attestation: first_hand
@@ -3837,6 +4703,11 @@ domain_claims:
     keeping up to date a field investigators manual which is used by not only the mutual UFO network, but is used by a number of UFO organizations all over the world. And this is a training manual that trains UFO investigators in different types of forms used, procedures, different types of objects that can be misinterpreted as UFOs.
   text: |-
     Raymond Fowler maintains a field investigators manual used by multiple UFO organisations globally for training UFO investigators.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 500bb24b-7f2e-4a0e-9981-7dda84574910
   type: administrative
   attestation: first_hand
@@ -3859,6 +4730,11 @@ domain_claims:
     The Andreasson Affair is a close encounter of the third kind, Type G... The Andreasen Affair is a Type G, and this involves the witnesses allegedly interfacing with the occupants from a UFO.
   text: |-
     The Andreasson Affair is a close encounter of the third kind, Type G, which involves witnesses allegedly interfacing with occupants from a UFO.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e2755b43-40ae-4f6e-ae75-874d15f2149e
   type: testimony
   attestation: first_hand
@@ -3882,6 +4758,11 @@ domain_claims:
     The Andreasson Affair concerns an alleged abduction of a woman back on January 25, 1967, from her home at South Ashburnham, Massachusetts.
   text: |-
     The Betty Andreasson UFO abduction occurred on 1967-01-25 at her home in South Ashburnham, Massachusetts.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 13f37a23-57c2-43f7-8d75-64f92a22b1d6
   type: testimony
   attestation: second_hand
@@ -3905,6 +4786,11 @@ domain_claims:
     Betty Andreassen was in her kitchen. Her mother and father and seven children were out in the living room watching TV. The lights began to blink on and off, and a very, very bright red pulsating light shone through. the pantry window and then the lights went out.
   text: |-
     During the Betty Andreasson UFO abduction, the kitchen lights began to blink on and off and a bright red pulsating light shone through the pantry window before the house lights went out.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 94ae3f6e-054b-46cf-b700-a569c54aa4e6
   type: testimony
   attestation: second_hand
@@ -3928,6 +4814,11 @@ domain_claims:
     the father went out and looked out the pantry window to see where the light was coming from and he saw a number of very strange looking creatures about three and a half foot tall with big heads very similar to this sculpted head, shaped like an inverted pair with huge wrap around eyes, slit for a mouth, very little nose at all, just two holes and a hole here and a hole here for the ears.
   text: |-
     Betty Andreasson's father observed several strange-looking creatures approximately three-and-a-half feet tall with large heads, shaped like an inverted pear, with large wrap-around eyes and slits for mouths, outside the house.
+  entailment:
+    label: entails
+    score: 0.518
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 09e7f1e4-26dc-4f76-a152-61ec3992ac51
   type: testimony
   attestation: second_hand
@@ -3951,6 +4842,11 @@ domain_claims:
     He saw them not walking toward the house, but in the air, moving in a motion sort of like this. He described them as almost hopping like grasshoppers
   text: |-
     The creatures Betty Andreasson's father saw moved through the air in a sinusoidal, hopping motion resembling grasshoppers.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5cacb7c4-97da-4218-a903-92b21342ca0b
   type: testimony
   attestation: second_hand
@@ -3974,6 +4870,11 @@ domain_claims:
     They came right through the door of the kitchen. I mean they didn't open the door but they came right through the door and they were in line and they would disappear and appear, disappear and disappear. It was almost as if they could rearrange the molecules of their body somehow to get through the door.
   text: |-
     During the Betty Andreasson UFO abduction, the beings came through the kitchen door without opening it, appearing and disappearing as if they could rearrange their molecules.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 58308f10-5c20-4193-aa4b-2d5c21862a17
   type: testimony
   attestation: second_hand
@@ -3997,6 +4898,11 @@ domain_claims:
     The family was put into a state of what we might call suspended animation. Whatever they were doing, they just froze.
   text: |-
     Betty Andreasson's family was placed into a state of suspended animation during the abduction, freezing in whatever activity they were doing.
+  entailment:
+    label: entails
+    score: 0.639
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e9fb90ca-64d7-415a-91d2-2c612f0252b3
   type: testimony
   attestation: second_hand
@@ -4020,6 +4926,11 @@ domain_claims:
     And they persuaded Betty to follow them. One of them left behind to watch the family.
   text: |-
     During the Betty Andreasson UFO abduction, the beings persuaded Betty Andreasson to follow them, leaving one being behind to watch the family.
+  entailment:
+    label: entails
+    score: 0.863
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0d18f66a-76a9-4958-9d58-85e9b4e3d83b
   type: testimony
   attestation: second_hand
@@ -4043,6 +4954,11 @@ domain_claims:
     She was lifted off the ground, slid into the slot of this line of individuals, and out through the door they went.
   text: |-
     Betty Andreasson was lifted off the ground, slid into the line of beings, and taken out through the door.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26277bc2-3286-426a-8e4d-77ed2b812a40
   type: testimony
   attestation: second_hand
@@ -4066,6 +4982,11 @@ domain_claims:
     And during this physical examination, they took a long pliable needle and put it up her left nostril and pulled out a little BB-shaped object which was covered with like wire-like whiskies on it.
   text: |-
     Betty Andreasson underwent a physical examination where a long pliable needle was inserted into her left nostril and a BB-shaped object covered with wire-like whiskers was removed.
+  entailment:
+    label: entails
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bc5a4d58-3455-41e8-8e6e-fb6bad59f77c
   type: administrative
   attestation: first_hand
@@ -4088,6 +5009,11 @@ domain_claims:
     We wondered where that came from, and we tried to find out during our investigation, which used hypnosis, to find out. But under hypnosis, when we tried to find out where that came from, she would get so upset that the hypnotist was afraid to go further.
   text: |-
     Investigators used hypnosis to attempt to determine the origin of the object removed from Betty Andreasson's nostril, but she became too upset for the hypnotist to continue.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83e464e9-f0f9-4d76-8c8c-fe49590af1ea
   type: testimony
   attestation: second_hand
@@ -4112,6 +5038,11 @@ domain_claims:
     Later on, using another hypnotist, during a follow-on investigation, she relived an experience when she was 13 years old and was also allegedly abducted. and they actually had placed this uh... within her by removing her eye
   text: |-
     During a follow-up investigation using a different hypnotist, Betty Andreasson relived an alleged abduction at age 13, during which the BB-shaped object was implanted in her by removing her eye.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e36d1e34-bf51-443b-b05f-fe7bd5619aea
   type: administrative
   attestation: first_hand
@@ -4132,6 +5063,11 @@ domain_claims:
     There are several hundred of these now that we've investigated fairly thoroughly and by some usually investigated by people who have very good credentials, psychiatrists, psychologists.
   text: |-
     Several hundred close encounter of the third kind Type G cases have been thoroughly investigated, often by psychiatrists and psychologists.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: be748dc3-b6d8-4b2b-a90b-63017a201837
   type: administrative
   attestation: first_hand
@@ -4152,6 +5088,11 @@ domain_claims:
     And all you can say is that after investigating this type of case, they relive this experience. They pass lie detector tests. They passed a rigid character reference check. Things that they report are similar to other cases in this country and abroad.
   text: |-
     After investigating close encounter Type G cases, subjects pass lie detector tests and rigid character reference checks, and their reports are similar to other cases domestically and abroad.
+  entailment:
+    label: entails
+    score: 0.69
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e8d8817b-7b41-48c0-b62d-d5aad4efa11a
   type: opinion
   attestation: first_hand
@@ -4174,6 +5115,11 @@ domain_claims:
     So we feel that their stories are worthwhile being investigated and documented at this point of time. Whether they actually really happened, we don't know, but we know that they aren't hoaxes. We know that they really believe that they experienced something like this.
   text: |-
     Raymond Fowler considers that the Type G accounts being investigated are not hoaxes and that the witnesses truly believe they experienced the events they describe.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3525adbe-39ae-43bb-9d0b-64d8ee8ac646
   type: administrative
   attestation: first_hand
@@ -4190,6 +5136,11 @@ domain_claims:
     name: Betty Andreasson
   quote: She is still alive. I talked to her husband just four or five days ago.
   text: Betty Andreasson is still alive.
+  entailment:
+    label: entails
+    score: 0.734
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 69141c4d-b95c-4d7c-946e-bb26f34a5993
   type: testimony
   attestation: first_hand
@@ -4210,6 +5161,11 @@ domain_claims:
     but one thing that has happened to people who have had an experience like this is for a period of time afterwards strange things happened, which I guess for want of a better term you'd use the term psychic phenomena, apparitions, things moving in the house by themselves, strange lights being seen. This sometimes lasts for a few days after the sighting, sometimes it goes on for weeks, sometimes it stops and it starts again.
   text: |-
     People who experience close encounter Type G events often report subsequent psychic phenomena, including apparitions, objects moving in the house by themselves, and strange lights, sometimes lasting days, weeks, or recurring intermittently.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 66bd8eba-8451-45e9-b472-6815f862e594
   type: testimony
   attestation: first_hand
@@ -4230,6 +5186,11 @@ domain_claims:
     The Andreessen family continued to experience things like that for some time afterwards.
   text: |-
     The Andreasson family continued to experience psychic phenomena for some time after the 1967-01-25 abduction.
+  entailment:
+    label: neutral
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bb097afc-2f21-4486-aff6-625e85efbfd1
   type: testimony
   attestation: second_hand
@@ -4252,6 +5213,11 @@ domain_claims:
     Betty thought that this can't happen. I must be going crazy. She wanted a psychiatrist to examine her because we were very glad that she did because this helped us in our investigation. And she wasn't psychotic and neither was her daughter.
   text: |-
     Betty Andreasson requested a psychiatric examination because she feared she was going crazy after reliving her experience under hypnosis, and the examination found no psychosis in her or her daughter.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 390d4607-8774-4706-8596-9e238eef7020
   type: opinion
   attestation: first_hand
@@ -4274,6 +5240,11 @@ domain_claims:
     I think that we're going through a sort of process that has been instigated by whatever it is. The first sightings were just flyovers, and then you had the close encounters, and then you had the close encounters of the second kind, and then you had the close encounters of the third kind. It was almost a conditioning process... So it seems to be a conditioning thing that we see that we are gradually accepting the existence of whatever they are. I think it's been instigated probably by them
   text: |-
     Raymond Fowler believes a process of gradual conditioning occurs through the succession of closer UFO encounter types, instigated by the phenomenon itself, leading to gradual public acceptance of their existence.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 07e26125-1613-42ac-856e-28c964df9d85
   type: measurement
   attestation: second_hand
@@ -4296,6 +5267,11 @@ domain_claims:
     as you look at the Gallup Polls which we've collected over the years, you see that the awareness factor of just the term UFO is probably one of the highest awareness factors there is. I think like 92% now of people in the world, in this country rather, know what UFO stands for.
   text: |-
     Approximately 92% of people in the United States know what the acronym UFO stands for, according to Gallup polls collected over the years.
+  entailment:
+    label: entails
+    score: 0.922
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 96354227-39f9-4808-a4bd-83ddad0de2eb
   type: administrative
   attestation: first_hand
@@ -4314,6 +5290,11 @@ domain_claims:
     Yes, I have a planetarium and an observatory and it's open by appointment for small groups up to 20.
   text: |-
     Raymond Fowler owns a planetarium and an observatory at his home, open by appointment for small groups up to 20 people.
+  entailment:
+    label: entails
+    score: 0.766
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14d85953-fe19-419a-98d8-4f48602717d3
   type: opinion
   attestation: first_hand
@@ -4334,6 +5315,11 @@ domain_claims:
     Yeah, I think people who have experienced something that they can't explain and are afraid to talk about should talk it out with someone. And we keep names confidential if so desired.
   text: |-
     Raymond Fowler advises that people who have experienced something unexplained and are afraid to talk about it should seek counsel from someone knowledgeable, noting that his group keeps names confidential if desired.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: 31f8dd56-b749-4766-bcf2-cf68665b6fbe
   type: administrative
@@ -4357,6 +5343,11 @@ infrastructure_claims:
     Universal Studios bought the option twice and then bought the rights to The Andreasson Affair, and they are still reviewing it on an annual basis.
   text: |-
     Universal Studios bought the option on "The Andreasson Affair" twice and subsequently purchased the full rights.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 477fc430-0f16-4e58-908c-b62938a14b0c
   type: administrative
   attestation: first_hand
@@ -4379,6 +5370,11 @@ infrastructure_claims:
     Dr. Jalen Hynek, the late Dr. Jalen Hynek, who was the chief scientific consultant to the Air Force, has visited me here right in this house several times.
   text: |-
     Dr. J. Allen Hynek, the chief scientific consultant to the Air Force on UFOs, visited Raymond Fowler at his home several times.
+  entailment:
+    label: entails
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f6ba28b4-180a-4f06-87c9-b57657c732d4
   type: administrative
   attestation: first_hand
@@ -4397,6 +5393,11 @@ infrastructure_claims:
     Well, some of the interesting documents we've received haven't come through the Freedom of Information Act directly.
   text: |-
     Some UFO-related documents obtained by Raymond Fowler and his team were provided by sympathetic individuals inside the military, not directly through Freedom of Information Act (FOIA) requests.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c8583a9a-eed0-49e6-8c39-ab52de1ea573
   type: administrative
   attestation: first_hand
@@ -4415,6 +5416,11 @@ infrastructure_claims:
     What has happened is we've had sympathetic people on the inside of the military that have given us complaint reports concerning UFOs, which is a preliminary report describing the sightings, what happened, and so forth, which later gets classified.
   text: |-
     Sympathetic military insiders supplied Raymond Fowler's team with preliminary complaint reports describing UFO sightings that later become classified.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a5cce772-ddf3-4842-ae1d-070e5c12df47
   type: administrative
   attestation: first_hand
@@ -4433,6 +5439,11 @@ infrastructure_claims:
     And then having this document in our hand, we know exactly what we ask for, and they know that we have it. So they release it through the Freedom of Information Act.
   text: |-
     Once Raymond Fowler's team possesses a leaked document, they can request it officially through the Freedom of Information Act (FOIA) and the government releases it because they know Fowler already has a copy.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f2d4e79b-d3e0-4de2-9ef9-d580488e8c2b
   type: administrative
   attestation: first_hand
@@ -4451,6 +5462,11 @@ infrastructure_claims:
     But documents like this usually come to us under the table. And then when they know we have them, they know that they have to release them because they're official documents.
   text: |-
     Documents of this nature are often acquired by Raymond Fowler and his group through unofficial channels, after which the authorities release them officially because they are official records.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 78dbb853-2d9f-48b2-92da-544dc43e73e6
   type: administrative
   attestation: first_hand
@@ -4471,3 +5487,8 @@ infrastructure_claims:
     recently have put together several courses on UFOs for children and for adults, which I'm teaching at the local community colleges
   text: |-
     Raymond Fowler created and teaches several courses on UFOs for children and adults at local community colleges.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

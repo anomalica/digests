@@ -15,6 +15,12 @@ ai_usage:
     calls: 3
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 6.1
 prompts:
 - pass: nodes
   id: nodes
@@ -215,6 +221,11 @@ domain_claims:
     name: United States Navy
   quote: My name is David Fravor and I am a retired Commander in the U.S Navy.
   text: David Fravor is a retired Commander in the United States Navy.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ba574829-ed2e-4865-898f-d97f966cb6bf
   type: administrative
   attestation: first_hand
@@ -236,6 +247,11 @@ domain_claims:
     In Nov 2004, I was the Commanding Officer of Strike Fighter Squadron Forty-One, the World Famous Black Aces!
   text: |-
     In November 2004, David Fravor was the Commanding Officer of Strike Fighter Squadron 41 (VFA-41).
+  entailment:
+    label: contradicts
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 11272533-d51f-47e4-9154-a43dde585ddd
   type: administrative
   attestation: first_hand
@@ -256,6 +272,11 @@ domain_claims:
   quote: We were attached to Carrier Airwing Eleven
   text: |-
     Strike Fighter Squadron 41 (VFA-41) was attached to Carrier Air Wing Eleven (CVW-11) in November 2004.
+  entailment:
+    label: contradicts
+    score: 0.41
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 24539b6e-d1ae-4616-ac04-ae43be7b6ee6
   type: administrative
   attestation: first_hand
@@ -276,6 +297,11 @@ domain_claims:
   quote: stationed onboard the USS Nimitz (CVN-68)
   text: |-
     Strike Fighter Squadron 41 (VFA-41) was stationed onboard USS Nimitz (CVN-68) in November 2004.
+  entailment:
+    label: entails
+    score: 0.866
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b805ed1-988d-44a5-a304-15beef8ecee7
   type: administrative
   attestation: first_hand
@@ -297,6 +323,11 @@ domain_claims:
     We were at the beginning of our workup cycle that would prepare us for a combat deployment to the Persian Gulf for operations supporting the ground forces in Iraq.
   text: |-
     In November 2004, the workup cycle for Strike Fighter Squadron 41 (VFA-41) was scheduled to prepare personnel for a combat deployment to the Persian Gulf.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4bbda217-db36-4232-a434-312ec8ce5b31
   type: administrative
   attestation: first_hand
@@ -315,6 +346,11 @@ domain_claims:
   quote: The at-sea period was scheduled to go from Early November to Late December.
   text: |-
     The USS Nimitz at-sea period in November 2004 was scheduled to run from early November to late December.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a5ab9826-dcb0-4320-afb8-14e58312f1f6
   type: observation
   attestation: first_hand
@@ -336,6 +372,11 @@ domain_claims:
     We had been at sea for roughly 2 weeks, and I was scheduled to lead a 2 V 2 Air to Air training exercise.
   text: |-
     David Fravor had been at sea for roughly 2 weeks before the 2004 USS Nimitz Unidentified Aerial Phenomena encounter.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c0af2728-b2d3-4bb7-879b-9147077f82cc
   type: administrative
   attestation: first_hand
@@ -357,6 +398,11 @@ domain_claims:
     I was scheduled to lead a 2 V 2 Air to Air training exercise. My flight of 2 F/A-18Fs was the Blue Air, the good guys
   text: |-
     David Fravor led a 2 versus 2 air-to-air training exercise with F/A-18F Super Hornet aircraft.
+  entailment:
+    label: entails
+    score: 0.818
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a54ab66d-65b7-48ed-a3ae-5be1b7e6ed7d
   type: administrative
   attestation: first_hand
@@ -379,6 +425,11 @@ domain_claims:
   quote: we were being controlled by the USS Princeton, CG-59
   text: |-
     Strike Fighter Squadron 41 (VFA-41) F/A-18F aircraft were controlled by USS Princeton (CG-59) during the training exercise.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4c3b3f96-ded3-45db-a2e8-bdab77e7423c
   type: administrative
   attestation: first_hand
@@ -397,6 +448,11 @@ domain_claims:
     the F/A-18F's are 2 seat aircraft with the pilot in the front and the WSO (Weapons System Officer) in the back seat
   text: |-
     The F/A-18F Super Hornet is a two-seat aircraft with the pilot in front and the Weapons System Officer (WSO) in the back seat.
+  entailment:
+    label: entails
+    score: 0.902
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7cc31d14-c1f1-4828-807b-3a3a51b58500
   type: administrative
   attestation: first_hand
@@ -417,6 +473,11 @@ domain_claims:
   quote: The Red Air was being flown by our Marine F/A-18 squadron VMFA-232
   text: |-
     Marine Fighter Attack Squadron 232 (VMFA-232) provided the opposition aircraft for the training exercise.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0ff7fa89-adef-4796-8bfe-cd817a538091
   type: observation
   attestation: first_hand
@@ -440,6 +501,11 @@ domain_claims:
     The CAP point is where we would hold prior to commencing our training runs, roughly 40 miles South of the ship.
   text: |-
     The Combat Air Patrol (CAP) point during the 2004 USS Nimitz encounter was approximately 40 kilometres south of the USS Nimitz.
+  entailment:
+    label: entails
+    score: 0.477
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 660bc53d-188f-4bca-b044-b5ac75e400bb
   type: observation
   attestation: first_hand
@@ -461,6 +527,11 @@ domain_claims:
     As we proceeded to the west and as the air controller counted down the range, we had nothing on our radars and were unaware of what we were going to see when we arrived.
   text: |-
     During the initial approach to the unidentified object location, David Fravor and his wingman had nothing on their radars.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a81fc19-5fa8-4545-81f2-938f9b096450
   type: observation
   attestation: second_hand
@@ -486,6 +557,11 @@ domain_claims:
     The air controller on the ship also had no idea but had been observing these objects on their Aegis combat system for the previous 2 weeks.
   text: |-
     The air controller aboard USS Princeton (CG-59) had been observing unidentified objects on the ship's Aegis combat system for the 2 weeks before David Fravor's arrival at the encounter location.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 197739b0-c449-416d-8820-0f86ac85c537
   type: observation
   attestation: second_hand
@@ -509,6 +585,11 @@ domain_claims:
     They had been descending from above 80,000ft and coming rapidly down to 20,000ft would stay for hours and then go straight back up.
   text: |-
     The unidentified objects observed on USS Princeton (CG-59)'s Aegis combat system descended from above approximately 24,000 metres to approximately 6,000 metres, remained at that altitude for hours, then ascended back up.
+  entailment:
+    label: contradicts
+    score: 0.492
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b0f4f747-91e9-429e-854e-442138ee1afe
   type: administrative
   attestation: first_hand
@@ -532,6 +613,11 @@ domain_claims:
     I first want to thank you for the invitation to speak to this committee on the UAP topic that has been in the news for the past 6 years
   text: |-
     David Fravor was invited to speak to the House Oversight Committee on the Unidentified Aerial Phenomena topic.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 608c5f56-7987-40e1-8410-f3346052ff47
   type: administrative
   attestation: first_hand
@@ -549,6 +635,11 @@ domain_claims:
     name: Strike Fighter Squadron 41 (VFA-41)
   quote: Strike Fighter Squadron Forty-One, the World Famous Black Aces!
   text: Strike Fighter Squadron 41 (VFA-41) was known as the 'World Famous Black Aces'.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6ec7c26a-ad8f-4731-a34d-0fbd72fbccec
   type: administrative
   attestation: first_hand
@@ -572,6 +663,11 @@ domain_claims:
     a combat deployment to the Persian Gulf for operations supporting the ground forces in Iraq
   text: |-
     The at-sea period for Strike Fighter Squadron 41 (VFA-41) was designed to support ground forces in Iraq.
+  entailment:
+    label: entails
+    score: 0.79
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a9539c29-e32c-4f75-99ec-cb3afb8aa1de
   type: administrative
   attestation: first_hand
@@ -591,6 +687,11 @@ domain_claims:
     During this period, we train with the other units in the Battle Group while integrating and honing our skills
   text: |-
     During the at-sea period in November 2004, Strike Fighter Squadron 41 (VFA-41) trained with other Battle Group units whilst integrating and honing skills.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 45252a9b-a9b3-4e24-abb4-10eb3e28524b
   type: observation
   attestation: first_hand
@@ -614,6 +715,11 @@ domain_claims:
     As we launched off the USS Nimitz, we checked in with the air controller on the USS Princeton, we were told that training was going to be suspended for real world tasking
   text: |-
     During the training exercise launch from USS Nimitz (CVN-68), the air controller on USS Princeton (CG-59) informed David Fravor's flight that training would be suspended for real-world tasking.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5fe4f49e-4967-429c-8317-810d561852eb
   type: observation
   attestation: first_hand
@@ -633,6 +739,11 @@ domain_claims:
     My wingman joined up and we proceeded towards a contact to the west of our CAP (Combat Air Patrol) point
   text: |-
     David Fravor and his wingman proceeded towards a contact west of their Combat Air Patrol (CAP) point.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 66e33da2-d687-4daf-9097-1de493c82a70
   type: observation
   attestation: first_hand
@@ -653,6 +764,11 @@ domain_claims:
   quote: As we proceeded to the west and as the air controller counted down the range
   text: |-
     During the approach to the unidentified object location, the air controller on USS Princeton (CG-59) counted down the range to the contact.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 117cbec5-a03d-44aa-b32c-ffc59107d48d
   type: observation
   attestation: first_hand
@@ -672,6 +788,11 @@ domain_claims:
     When we arrived at the location at 20,000 ft, the controller called Merge Plot, which means that our radar blip was now in the same radar resolution cell as the contact
   text: |-
     When David Fravor's aircraft reached approximately 6,000 metres altitude at the location, the controller called 'Merge Plot', indicating the radar blip was in the same radar resolution cell as the contact.
+  entailment:
+    label: entails
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3dc3dbce-b076-4385-ae3b-20a13e2e96ae
   type: observation
   attestation: first_hand
@@ -693,6 +814,11 @@ domain_claims:
     The weather on the day of the incident was as close to a perfect day as you could ask, clear skies, light winds, calm seas (no whitecaps from the waves)
   text: |-
     On the day of the 2004 USS Nimitz encounter, the weather conditions included clear skies, light winds, and calm seas with no whitecaps.
+  entailment:
+    label: entails
+    score: 0.926
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 770aec44-55b4-465f-ab5d-7aaaf6a1f05d
   type: observation
   attestation: first_hand
@@ -711,6 +837,11 @@ domain_claims:
   quote: As we looked around, we noticed some white water off our right side
   text: |-
     David Fravor and his flight observed white water off their right side during the encounter.
+  entailment:
+    label: entails
+    score: 0.73
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c67f3f18-b627-4a82-b89b-22f5f4efe44e
   type: observation
   attestation: first_hand
@@ -731,6 +862,11 @@ domain_claims:
   quote: As all 4 looked down we saw a small white Tic Tac shaped object
   text: |-
     All four members of David Fravor's flight observed the Tic Tac Unidentified Aerial Phenomena object.
+  entailment:
+    label: entails
+    score: 0.717
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40bdfafe-3463-43ed-9e28-a8fea20f6ddb
   type: observation
   attestation: first_hand
@@ -750,6 +886,11 @@ domain_claims:
     name: Tic Tac UAP object
   quote: a small white Tic Tac shaped object
   text: The Tic Tac Unidentified Aerial Phenomena object was small and white in colour.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2124d97b-2a77-41d3-a937-032b24732abc
   type: observation
   attestation: first_hand
@@ -770,6 +911,11 @@ domain_claims:
   quote: with the longitudinal axis pointing N/S
   text: |-
     The Tic Tac Unidentified Aerial Phenomena object had its longitudinal axis pointing north-south.
+  entailment:
+    label: contradicts
+    score: 0.473
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 58bcb986-62ec-4fa3-82f0-076c0626a7db
   type: observation
   attestation: first_hand
@@ -790,6 +936,11 @@ domain_claims:
   quote: and moving very abruptly over the white water
   text: |-
     The Tic Tac Unidentified Aerial Phenomena object was moving very abruptly over the white water.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d229a496-d030-4443-8c3a-07ea86fc7396
   type: observation
   attestation: first_hand
@@ -810,6 +961,11 @@ domain_claims:
   quote: |-
     There were no Rotors, No Rotor wash, or any visible flight control surfaces like wings
   text: The Tic Tac Unidentified Aerial Phenomena object had no rotors.
+  entailment:
+    label: entails
+    score: 0.911
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8dbffcf9-2b65-4fd8-888c-27c914e0cd0a
   type: observation
   attestation: first_hand
@@ -829,6 +985,11 @@ domain_claims:
     name: Tic Tac UAP object
   quote: No Rotor wash, or any visible flight control surfaces like wings
   text: The Tic Tac Unidentified Aerial Phenomena object produced no rotor wash.
+  entailment:
+    label: entails
+    score: 0.858
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 18ce98f7-d0fb-4abb-b59d-c1a1c7ee9591
   type: observation
   attestation: first_hand
@@ -849,6 +1010,11 @@ domain_claims:
   quote: any visible flight control surfaces like wings
   text: |-
     The Tic Tac Unidentified Aerial Phenomena object had no visible flight control surfaces such as wings.
+  entailment:
+    label: contradicts
+    score: 0.892
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: df45e093-2030-413d-b35f-2be24e0fc0af
   type: observation
   attestation: first_hand
@@ -870,6 +1036,11 @@ domain_claims:
     My WSO and I decided to go down to get closer and the other Aircraft stayed in High cover to observe both us and the Tic Tac
   text: |-
     David Fravor and his Weapons System Officer (WSO) descended towards the Tic Tac Unidentified Aerial Phenomena object whilst the other aircraft remained in high cover.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0e807947-2618-4244-ac4f-98c00b9c6def
   type: observation
   attestation: first_hand
@@ -891,6 +1062,11 @@ domain_claims:
     We proceeded around the circle about 90 degrees from the start of our descent and the object suddenly shifted it longitudinal axis, aligned it with my aircraft and began to climb in a clockwise climbing turn
   text: |-
     During the descent around the Tic Tac object, approximately 90 degrees from the start, the object suddenly shifted its longitudinal axis, aligned it with David Fravor's aircraft, and began to climb in a clockwise climbing turn.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 55379ac0-b03e-4b21-904b-d611efd7d582
   type: observation
   attestation: first_hand
@@ -912,6 +1088,11 @@ domain_claims:
     We continued down for another 270 degrees when we made a nose low move to head to where the Tic Tac would be when we pulled nose onto the object
   text: |-
     David Fravor and his Weapons System Officer continued descending for approximately 270 degrees before making a nose-low move towards where the Tic Tac object would be.
+  entailment:
+    label: entails
+    score: 0.501
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cedf6bea-496c-4117-88b7-30e5f62e40f5
   type: observation
   attestation: first_hand
@@ -933,6 +1114,11 @@ domain_claims:
     Our altitude at this point was approximately 15,000ft with the Tic Tac at about 12,000ft. As we pulled nose onto the object at approximately 1/2 of a mile
   text: |-
     David Fravor's altitude was approximately 4,500 metres with the Tic Tac object at approximately 3,600 metres when they pulled nose onto the object at approximately 0.8 kilometres.
+  entailment:
+    label: contradicts
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b305aa4f-f919-44ca-bb79-49e99ccf7b08
   type: observation
   attestation: first_hand
@@ -954,6 +1140,11 @@ domain_claims:
     with the object just left of our nose, it rapidly accelerated and disappeared right in front of our aircraft
   text: |-
     The Tic Tac object was just left of David Fravor's nose when it was at approximately 0.8 kilometres distance.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14cb98c8-9c8e-4a79-8b79-980fb0fb4a8d
   type: observation
   attestation: first_hand
@@ -974,6 +1165,11 @@ domain_claims:
   quote: it rapidly accelerated and disappeared right in front of our aircraft
   text: |-
     The Tic Tac object rapidly accelerated and disappeared in front of David Fravor's aircraft.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 93e3f4b8-f2d6-479b-b1d5-d8e80f6c14f7
   type: observation
   attestation: first_hand
@@ -994,6 +1190,11 @@ domain_claims:
   quote: Our wingman, roughly 8,000ft above us, also lost visual
   text: |-
     David Fravor's wingman, located approximately 2,400 metres above David Fravor, also lost visual contact with the Tic Tac object.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: eb47dd78-dbd3-48cc-8142-c0e59d887525
   type: observation
   attestation: first_hand
@@ -1015,6 +1216,11 @@ domain_claims:
     We immediately turned to investigate the white water only to find that it was also gone
   text: |-
     After the Tic Tac object disappeared, David Fravor and his flight investigated the location of the white water, only to find it was also gone.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47dafa0c-692c-4fcb-a62e-18652e6aab9b
   type: observation
   attestation: first_hand
@@ -1038,6 +1244,11 @@ domain_claims:
     the air controller let us know that the object had reappeared on the Princeton's Aegis SPY 1 radar at our CAP point
   text: |-
     The Tic Tac object reappeared on USS Princeton (CG-59)'s Aegis SPY 1 radar at David Fravor's Combat Air Patrol point after disappearing from his aircraft.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d8355b9a-b153-4fe1-a24f-2026ec4f11b8
   type: measurement
   attestation: first_hand
@@ -1059,6 +1270,11 @@ domain_claims:
     This Tic Tac Object had just traveled 60 miles in a very short period of time (less than a minute)
   text: |-
     The Tic Tac object travelled approximately 96 kilometres from the encounter location to the Combat Air Patrol point in less than a minute.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f1af9fe0-ccd3-4e82-b18c-60542ba421a1
   type: observation
   attestation: first_hand
@@ -1081,6 +1297,11 @@ domain_claims:
   quote: was far superior in performance to my brand-new F/A-18F
   text: |-
     The Tic Tac object was far superior in performance to David Fravor's brand-new F/A-18F Super Hornet.
+  entailment:
+    label: contradicts
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c2e5b449-635f-42a1-91f7-1ebe04023911
   type: observation
   attestation: first_hand
@@ -1102,6 +1323,11 @@ domain_claims:
     did not operate with any of the known aerodynamic principles that we expect for objects that fly in our atmosphere
   text: |-
     The Tic Tac object did not operate with any of the known aerodynamic principles expected for objects that fly in the atmosphere.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a9c2a920-8aaf-43ba-8cf1-a7a3ca5259f6
   type: observation
   attestation: first_hand
@@ -1123,6 +1349,11 @@ domain_claims:
     We returned to Nimitz and mentioned what we had witnessed to one of my crews who were getting ready to launch
   text: |-
     After returning to USS Nimitz, David Fravor mentioned what he had witnessed to one of his crews who were preparing to launch.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0b4df8fb-2696-4d72-a576-e10034ea158c
   type: administrative
   attestation: first_hand
@@ -1144,6 +1375,11 @@ domain_claims:
     It was that crew that took the now famous approximately 90 second video that was released by the USG in 2017
   text: |-
     The crew that David Fravor mentioned the encounter to recorded the now-famous approximately 90-second video released by the United States Government in 2017.
+  entailment:
+    label: entails
+    score: 0.898
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 90dc5bbc-b963-4255-ad60-67eae0c65c10
   type: observation
   attestation: first_hand
@@ -1167,6 +1403,11 @@ domain_claims:
     What is not seen is the Radar tape that showed the jamming of the APG-73 radar in the aircraft, but we do see on the targeting pod video that the object does not emit any IR (infrared) plume from a normal propulsion system that we would expect
   text: |-
     The targeting pod video does not show jamming of the APG-73 radar in the aircraft, but does show the object does not emit an infrared (IR) plume from a normal propulsion system.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ba36a9a9-1a96-44bc-b9f0-a098f4190230
   type: observation
   attestation: first_hand
@@ -1187,6 +1428,11 @@ domain_claims:
   quote: the Radar tape that showed the jamming of the APG-73 radar in the aircraft
   text: |-
     The radar tape showed jamming of the APG-73 radar in David Fravor's aircraft during the Tic Tac encounter.
+  entailment:
+    label: entails
+    score: 0.613
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 38be5477-e723-4844-b0ca-c4e00cd9efad
   type: observation
   attestation: first_hand
@@ -1206,6 +1452,11 @@ domain_claims:
     name: 2004 USS Nimitz Unidentified Aerial Phenomena encounter
   quote: What is shocking is that the incident was never investigated
   text: The 2004 USS Nimitz encounter was never investigated officially.
+  entailment:
+    label: entails
+    score: 0.487
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d8937551-0a49-4fea-b482-bd42f0f35b75
   type: observation
   attestation: first_hand
@@ -1223,6 +1474,11 @@ domain_claims:
     name: David Fravor
   quote: none of my crew were ever questioned
   text: None of David Fravor's crew were questioned about the 2004 USS Nimitz encounter.
+  entailment:
+    label: contradicts
+    score: 0.504
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 626cece8-f592-4c3c-aa9f-d6aaa300fad1
   type: observation
   attestation: first_hand
@@ -1242,6 +1498,11 @@ domain_claims:
     name: 2004 USS Nimitz Unidentified Aerial Phenomena encounter
   quote: tapes were never taken
   text: Tapes from the 2004 USS Nimitz encounter were never taken for investigation.
+  entailment:
+    label: entails
+    score: 0.526
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3ea5353c-71b5-44ad-bd7f-096164221cd8
   type: observation
   attestation: first_hand
@@ -1262,6 +1523,11 @@ domain_claims:
   quote: after a couple of days, it turned into a great story to tell friends
   text: |-
     After a couple of days, the 2004 USS Nimitz encounter became a story David Fravor and his crews told to friends.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5ce315e2-1870-4a2e-b557-268faad03c64
   type: administrative
   attestation: first_hand
@@ -1282,6 +1548,11 @@ domain_claims:
   quote: Not until 2009 did Jay Stratton contact me to investigate what we observed
   text: |-
     Jay Stratton contacted David Fravor in 2009 to investigate what he and his crew had observed.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 90877d69-1594-4d59-a425-05cc61f45596
   type: administrative
   attestation: first_hand
@@ -1307,6 +1578,11 @@ domain_claims:
     Jay was part of the ATIP (Anomalous Threat Identification Program) program led by Lue Elizondo out of the DOD
   text: |-
     Jay Stratton was part of the Anomalous Threat Identification Program (ATIP) led by Luis Elizondo in the Department of Defense (DoD).
+  entailment:
+    label: entails
+    score: 0.794
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 055e97b2-0994-45e1-aaaf-0c5ce6a68aac
   type: administrative
   attestation: first_hand
@@ -1328,6 +1604,11 @@ domain_claims:
     I refer to the report as the Unofficial Official Report which is now available on the internet
   text: |-
     David Fravor refers to the Anomalous Threat Identification Program (ATIP) report on the 2004 USS Nimitz encounter as the 'Unofficial Official Report', which is available on the internet.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 847107b6-592e-4082-bb21-e6f9287a6d88
   type: administrative
   attestation: first_hand
@@ -1349,6 +1630,11 @@ domain_claims:
     Years later I was contacted by Alex Dietrich, the other pilot in my flight asking if I had ever been contacted about the incident after 2009
   text: |-
     David Fravor was contacted by Alex Dietrich, the other pilot in his flight, years after the 2004 encounter, asking if he had been contacted about the incident after 2009.
+  entailment:
+    label: contradicts
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b268df1-0937-4786-ae6c-691dbeef55ba
   type: administrative
   attestation: first_hand
@@ -1366,6 +1652,11 @@ domain_claims:
     name: David Fravor
   quote: I had since retired
   text: David Fravor had retired by the time Alex Dietrich contacted him.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ba8bd144-b063-4a9e-b181-b8a187cd6c73
   type: opinion
   attestation: first_hand
@@ -1384,6 +1675,11 @@ domain_claims:
   quote: I told her if folks wanted to talk, I was happy to meet with them
   text: |-
     David Fravor expressed willingness to meet with people interested in discussing the 2004 USS Nimitz encounter.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e7f73aa9-8b4a-45e7-9469-61158038646c
   type: administrative
   attestation: second_hand
@@ -1407,6 +1703,11 @@ domain_claims:
     Alex stated that she had been invited to the Pentagon multiple times to discuss the event and view other videos of UAPs
   text: |-
     Alex Dietrich had been invited to the Pentagon multiple times to discuss the 2004 USS Nimitz encounter and view other Unidentified Aerial Phenomena videos.
+  entailment:
+    label: entails
+    score: 0.409
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56f23503-2fb4-4f35-a53c-d11ece6b8b95
   type: administrative
   attestation: first_hand
@@ -1427,6 +1728,11 @@ domain_claims:
   quote: I was contacted by Mr Elizondo shortly after talking with Alex in 2016
   text: |-
     Luis Elizondo contacted David Fravor shortly after Fravor spoke with Alex Dietrich in 2016.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 714add28-b90e-4845-b12d-2d4b7a3b3e10
   type: administrative
   attestation: first_hand
@@ -1447,6 +1753,11 @@ domain_claims:
   quote: We briefly chatted and I was told that he would be in contact
   text: |-
     Luis Elizondo briefly spoke with David Fravor and told him he would be in contact.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6b97c00b-2f55-4128-8e35-28d71c063a24
   type: administrative
   attestation: first_hand
@@ -1472,6 +1783,11 @@ domain_claims:
     Lue had left the pentagon in protest and joined forces with Tom Delonge, Chris Mellon, Steve Justice and others
   text: |-
     Luis Elizondo left the Pentagon in protest and joined forces with Tom DeLonge, Chris Mellon, Steve Justice, and others.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f315904b-4366-4399-bdd8-79ea7b67f276
   type: administrative
   attestation: first_hand
@@ -1498,6 +1814,11 @@ domain_claims:
   quote: to form To The Stars Academy
   text: |-
     Luis Elizondo, Tom DeLonge, Chris Mellon, Steve Justice, and others formed To The Stars Academy.
+  entailment:
+    label: contradicts
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1b496479-0c74-4c31-9096-ecbe4dcce651
   type: administrative
   attestation: first_hand
@@ -1517,6 +1838,11 @@ domain_claims:
     It was this organization that pressed the issue with leading Industry experts and USG officials
   text: |-
     To The Stars Academy pressed the issue with leading industry experts and United States Government officials.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 49eb58b2-cc03-4330-9d03-aa70db55f412
   type: administrative
   attestation: first_hand
@@ -1538,6 +1864,11 @@ domain_claims:
     publish the articles in the NYT in Dec 2017 admitting the USG was looking at UAPs
   text: |-
     The New York Times (NYT) articles published in December 2017 disclosed that the United States Government was investigating Unidentified Aerial Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.458
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7a16f71c-3952-49a8-b8a9-c9708f1ac47c
   type: observation
   attestation: first_hand
@@ -1558,6 +1889,11 @@ domain_claims:
   quote: removed the Stigma of the UFO topic
   text: |-
     The New York Times (NYT) Unidentified Aerial Phenomena (UAP) disclosure articles removed social stigma from the Unidentified Flying Object (UFO) topic.
+  entailment:
+    label: entails
+    score: 0.774
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3141ffc4-c5f0-4e3f-a72f-5f343d5aee25
   type: observation
   attestation: first_hand
@@ -1579,6 +1915,11 @@ domain_claims:
     It has led to an Interest from our elected officials who are not focused on "Little Green men" but on figuring out what these craft are, where are they from, the technology they possess, and how do they operate
   text: |-
     The New York Times (NYT) Unidentified Aerial Phenomena (UAP) disclosure articles led to increased interest from elected officials focused on determining what the craft are, where they originate, what technology they possess, and how they operate.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 466dfdc2-3ab5-4933-95e5-8541b7882089
   type: administrative
   attestation: first_hand
@@ -1597,6 +1938,11 @@ domain_claims:
   quote: It has also led to the Whistleblower protection act in the recent NDAA
   text: |-
     The Pentagon Whistleblower Protection Act was included in a recent National Defence Authorisation Act (NDAA).
+  entailment:
+    label: entails
+    score: 0.66
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e0a4d90a-7f1d-48f6-9b26-b906ed02bc48
   type: observation
   attestation: first_hand
@@ -1616,6 +1962,11 @@ domain_claims:
     There are multiple witnesses coming forward that say that they have first-hand knowledge
   text: |-
     Multiple witnesses claim to have first-hand knowledge of Unidentified Aerial Phenomena (UAP) or related craft.
+  entailment:
+    label: entails
+    score: 0.684
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec43c0ba-61d4-4261-8098-7f74fa22a9a9
   type: opinion
   attestation: first_hand
@@ -1635,6 +1986,11 @@ domain_claims:
     What concerns me is that there is no "Oversight" from our elected officials on anything associated with our government possessing or working on craft that we believe are not from this world
   text: |-
     David Fravor is concerned that elected officials have no oversight over government activities involving the possession or development of craft believed to be non-terrestrial.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: deb5a08b-fb54-4ee5-a996-8d07925aa573
   type: opinion
   attestation: first_hand
@@ -1654,6 +2010,11 @@ domain_claims:
     This issue is not about full public disclosure that could undermine national security, but it is about ensuring that our system of checks and balances works across all work done in our government using taxpayer funds
   text: |-
     The issue of potential government programmes involving non-terrestrial craft should focus on ensuring checks and balances on government work using taxpayer funds, rather than full public disclosure which could compromise national security.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a3e8c94d-b405-4666-90a1-5c0213b54316
   type: observation
   attestation: first_hand
@@ -1675,6 +2036,11 @@ domain_claims:
     Relative to government Programs, even Unacknowledged Waived programs have some level of oversight by the appropriate committee members in the House and Senate
   text: |-
     Even unacknowledged waived government programmes are subject to some level of oversight by appropriate committee members in the United States House of Representatives and Senate.
+  entailment:
+    label: entails
+    score: 0.489
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b68ecd3c-672b-4e9f-a51d-e6d97f682a46
   type: hearsay
   attestation: second_hand
@@ -1698,6 +2064,11 @@ domain_claims:
     this work that is said to be occurring from Whistleblower testimonies should not be exempt
   text: |-
     According to whistleblower testimonies, work on potential non-terrestrial craft is said to be occurring without proper oversight.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cc90aa41-4d61-4b3e-a00c-7e2b4cd9d829
   type: opinion
   attestation: first_hand
@@ -1719,6 +2090,11 @@ domain_claims:
     the Tic Tac Object that we engaged in Nov 2004 was far superior to anything that we had at the time, have today, or are looking to develop in the next 10+ years
   text: |-
     David Fravor considers the Tic Tac object engaged in November 2004 to have been far superior to any technology the United States possessed at that time, possesses now, or is expected to develop in the next 10 or more years.
+  entailment:
+    label: entails
+    score: 0.634
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f6345fe5-2414-475d-ba14-0b74c18037c6
   type: opinion
   attestation: first_hand
@@ -1740,6 +2116,11 @@ domain_claims:
     If we in fact have programs that possess this technology, it needs to have oversight from those people that the citizens of this great country elected to office to represent what is best for the United States and in the best interest of its citizens
   text: |-
     If the United States government possesses programmes involving the Tic Tac technology, such programmes need to have oversight from elected officials representing citizens' interests.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: ac739706-299a-47c9-9c92-e76d9e2e2751
   type: administrative
@@ -1768,3 +2149,8 @@ infrastructure_claims:
     worked with Leslie Keane, Ralph Blumenthal and Helene Cooper to publish the articles in the NYT in Dec 2017
   text: |-
     To The Stars Academy worked with Leslie Keane, Ralph Blumenthal, and Helene Cooper to publish articles in the New York Times (NYT) in December 2017.
+  entailment:
+    label: entails
+    score: 0.686
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

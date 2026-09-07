@@ -9,6 +9,12 @@ ai_usage:
     input: 14324
     output: 2185
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.2
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.2
 prompts:
 - pass: nodes
   id: nodes
@@ -102,6 +108,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     At 1653 Zulu time (date redacted), an observer whose identity is redacted in the UAP Sighting Report observed two Unidentified Aerial Phenomena (UAP) in the vicinity of Military Grid Reference System (MGRS) grid 35SQT3423692957.
+  entailment:
+    label: entails
+    score: 0.529
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0f3813ab-298d-49b3-ba72-1729e8b197bb
   type: observation
   attestation: second_hand
@@ -124,6 +135,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     An observer whose identity is redacted in the UAP Sighting Report described the two UAP observed near Military Grid Reference System (MGRS) grid 35SQT3423692957 as round in shape.
+  entailment:
+    label: entails
+    score: 0.686
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 23c18695-b07e-42ef-b8bd-e7d241c43f69
   type: observation
   attestation: second_hand
@@ -146,6 +162,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     An observer whose identity is redacted in the UAP Sighting Report described the two UAP observed near Military Grid Reference System (MGRS) grid 35SQT3423692957 as white-hot in appearance.
+  entailment:
+    label: entails
+    score: 0.601
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e34cb0a3-127f-4bb1-9fa3-69df7c5c654a
   type: observation
   attestation: second_hand
@@ -168,6 +189,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     An observer whose identity is redacted in the UAP Sighting Report observed the two UAP near Military Grid Reference System (MGRS) grid 35SQT3423692957 moving dynamically toward the south.
+  entailment:
+    label: entails
+    score: 0.508
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 601aa77d-8867-4030-9766-30dd2833684b
   type: measurement
   attestation: second_hand
@@ -190,6 +216,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     An observer whose identity is redacted in the UAP Sighting Report observed the two UAP near Military Grid Reference System (MGRS) grid 35SQT3423692957 travelling at approximately 440 kilometres per hour.
+  entailment:
+    label: entails
+    score: 0.393
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: b9ce9605-93bd-486b-aa95-697fa7618be9
   type: administrative
@@ -211,3 +242,8 @@ infrastructure_claims:
   quote: '{{classification: "SECRET//REL TO USA, FIN, SWE, FVEY, NATO"}}'
   text: |-
     The UAP Sighting Report classifies its description of the UAP sighting at MGRS grid 35SQT3423692957 as SECRET, releasable to the USA, Finland, Sweden, Five Eyes (FVEY), and the North Atlantic Treaty Organization (NATO).
+  entailment:
+    label: entails
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

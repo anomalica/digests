@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.6
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.2
 prompts:
 - pass: nodes
   id: nodes
@@ -108,6 +114,11 @@ domain_claims:
   quote: 05/14/20 20:40:00 Night ISR
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the detection was logged at 2020-05-14T20:40:00Z during a Night intelligence, surveillance, and reconnaissance (ISR) mission.
+  entailment:
+    label: entails
+    score: 0.456
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 067b1519-230d-4587-9d35-aa8b575859a5
   type: administrative
   provenance_chain:
@@ -122,6 +133,11 @@ domain_claims:
   quote: LFE? ... Yes
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the mission was designated a low flying event (LFE).
+  entailment:
+    label: entails
+    score: 0.458
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a5e01a76-2de7-4673-a904-31f2e35fc426
   type: measurement
   provenance_chain:
@@ -136,6 +152,11 @@ domain_claims:
   quote: 'Contact Altitude (Ex: 22000) ... 20000'
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the recorded contact altitude was approximately 6,100 metres.
+  entailment:
+    label: contradicts
+    score: 0.923
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 60763339-00b7-4257-8d85-67b748da905d
   type: observation
   provenance_chain:
@@ -150,6 +171,11 @@ domain_claims:
   quote: Was the contact moving? Yes
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the sensor operator assessed that the contact was moving.
+  entailment:
+    label: entails
+    score: 0.927
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e43fba36-eaa1-43a5-a2f7-4bf1468967da
   type: observation
   provenance_chain:
@@ -164,6 +190,11 @@ domain_claims:
   quote: 'Stable Trackfile?: Intermittent'
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the trackfile on the contact was intermittent.
+  entailment:
+    label: neutral
+    score: 0.397
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 75f6993b-2b92-4162-8bc6-935dd1885e4f
   type: observation
   provenance_chain:
@@ -178,6 +209,11 @@ domain_claims:
   quote: '# of Contacts in "Group": 1'
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the crew recorded a single contact in the group.
+  entailment:
+    label: entails
+    score: 0.421
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7af3bbb8-42f4-4133-a260-3d21be961689
   type: observation
   provenance_chain:
@@ -194,6 +230,11 @@ domain_claims:
   quote: 'AIM-9x Self-Track: [ ]'
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the AIM-9X Sidewinder self-track function was not indicated as achieved on the contact.
+  entailment:
+    label: entails
+    score: 0.457
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b44b02ac-32aa-4091-af1f-4b7c827e0614
   type: observation
   provenance_chain:
@@ -210,6 +251,11 @@ domain_claims:
   quote: 'ATFLIR Autotrack: [ ]'
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the Advanced Targeting Forward-Looking Infrared (ATFLIR) autotrack function was not indicated as achieved on the contact.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a400a79-ea13-447d-9656-c72e8d7ebb2a
   type: observation
   provenance_chain:
@@ -224,6 +270,11 @@ domain_claims:
   quote: 'Round: [x]'
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the aircrew checked the contact's shape as round on the debrief form.
+  entailment:
+    label: neutral
+    score: 0.394
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1502766e-bd15-4f70-88ff-1df7c46e2af4
   type: observation
   provenance_chain:
@@ -241,6 +292,11 @@ domain_claims:
     While preforming an ISR tasking (ULTN/Black Hot/Lin), a solid white object flew through the FOV.
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the aircrew observed a solid white object fly through the sensor's field of view (FOV) while performing an ISR tasking.
+  entailment:
+    label: entails
+    score: 0.451
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fa85b2c4-68f3-496f-986b-c622b3a60c8c
   type: observation
   provenance_chain:
@@ -255,6 +311,11 @@ domain_claims:
   quote: There was a temporarily lose of the object but re-acquired shortly there after.
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the aircrew temporarily lost the object and then re-acquired it shortly afterward.
+  entailment:
+    label: entails
+    score: 0.421
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 30debf63-809e-47f3-8bb8-f254860150de
   type: observation
   provenance_chain:
@@ -270,6 +331,11 @@ domain_claims:
     The crew was able to follow the object as it appeared to make erratic moments above the water.
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the crew followed the object as it appeared to make erratic movements above the water.
+  entailment:
+    label: entails
+    score: 0.402
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fcc5b98f-0ca2-4ae6-ab4d-2329c472aa91
   type: observation
   provenance_chain:
@@ -285,6 +351,11 @@ domain_claims:
     During the follow, crew was able to obtain 4x zoom on the object but lost the object due to poor track placement.
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the crew obtained 4x zoom on the object before losing it due to poor track placement.
+  entailment:
+    label: entails
+    score: 0.448
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 878449fa-0bf5-41f7-af14-5788ff40b128
   type: observation
   provenance_chain:
@@ -300,6 +371,11 @@ domain_claims:
     While following, the sensor operator was continuously manipulating the sensor to maintain eyes on the object.
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the sensor operator continuously manipulated the sensor to maintain eyes on the object.
+  entailment:
+    label: entails
+    score: 0.418
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 51e6b23a-f190-406a-9ea9-92ec3e21476a
   type: observation
   provenance_chain:
@@ -315,6 +391,11 @@ domain_claims:
     This is apparent by the waves of the water in the background being visible and not being visible.
   text: |-
     During the 14 May 2020 night ISR anomalous aerial object sighting, the continuous sensor manipulation was apparent from waves in the water background alternately becoming visible and not visible.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b8aee01-5088-4a6c-9d98-07af18ecd1c8
   type: administrative
   attestation: second_hand
@@ -331,6 +412,11 @@ domain_claims:
     SPEAR sanitizes all reports of identifying information. Absolutely no identifying information for aircrew or squadron will be recorded for analysis.
   text: |-
     SPEAR sanitizes all range fouler reports of identifying information, and no identifying information for aircrew or squadron is recorded for analysis.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: d5f7a053-dd95-4c9f-8dd7-1289edfaa332
   type: administrative
@@ -347,6 +433,11 @@ infrastructure_claims:
   quote: You should receive a response within 5 business days.
   text: |-
     The Range Fouler Debrief Form instructs that submitted reports should receive a response within 5 business days.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4a3c247b-ee1f-4954-a703-2065094699ba
   type: administrative
   attestation: second_hand
@@ -365,3 +456,8 @@ infrastructure_claims:
     We recommend using JMPS to reference the sensor-derived bearing and range relative to the bullseye you had in use.
   text: |-
     The Range Fouler Debrief Form recommends using the Joint Mission Planning System (JMPS) to reference the sensor-derived bearing and range relative to the bullseye in use, in order to determine a latitude and longitude for a contact at initial detection.
+  entailment:
+    label: entails
+    score: 0.419
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

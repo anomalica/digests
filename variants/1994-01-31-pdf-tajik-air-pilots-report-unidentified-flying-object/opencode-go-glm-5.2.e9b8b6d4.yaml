@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 5.3
 prompts:
 - pass: nodes
   id: nodes
@@ -161,6 +167,11 @@ domain_claims:
     name: Tajik Air
   quote: TAJIK AIR CHIEF PILOT, AMCIT ED RHODES
   text: Ed Rhodes is the chief pilot of Tajik Air and an American citizen.
+  entailment:
+    label: entails
+    score: 0.901
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 314ec93a-b83c-4463-a07e-47d00cb1759c
   type: testimony
   attestation: second_hand
@@ -188,6 +199,11 @@ domain_claims:
     TAJIK AIR CHIEF PILOT, AMCIT ED RHODES, AND HIS TWO AMERICAN PILOT COLLEAGUES REPORTED JANUARY 29 THAT, ON JANUARY 27, THEY HAD ENCOUNTERED A UFO
   text: |-
     Ed Rhodes and two American pilot colleagues reported on 1994-01-29 that they had encountered an Unidentified Flying Object (UFO) on 1994-01-27.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 629e5a4c-6b2a-4f4a-a75c-e1a93d66867a
   type: measurement
   attestation: second_hand
@@ -210,6 +226,11 @@ domain_claims:
   quote: FLYING AT 41,000 FEET IN THEIR BOEING 747SP
   text: |-
     During the 1994 Tajik Air UFO sighting, the crew were flying at approximately 12,500 metres in a Boeing 747SP.
+  entailment:
+    label: entails
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ade79325-f2f4-4403-a031-14d6fc295322
   type: measurement
   attestation: second_hand
@@ -232,6 +253,11 @@ domain_claims:
   quote: AT LAT 45 NORTH AND LONG 55 EAST, OVER KAZAKHSTAN
   text: |-
     During the 1994 Tajik Air UFO sighting, the aircraft was at latitude 45 north and longitude 55 east, over Kazakhstan.
+  entailment:
+    label: entails
+    score: 0.758
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e2ba5886-c62f-49a3-b487-3752da7aeb46
   type: observation
   attestation: second_hand
@@ -255,6 +281,11 @@ domain_claims:
     THEY FIRST ENCOUNTERED THE OBJECT AS A BRIGHT LIGHT OF ENORMOUS INTENSITY, APPROACHING THEM FROM OVER THE HORIZON TO THE EAST AT A GREAT RATE OF SPEED AND AT A MUCH HIGHER ALTITUDE THAN THEIR OWN.
   text: |-
     During the 1994 Tajik Air UFO sighting, the crew first saw the object as a bright light of enormous intensity approaching from over the horizon to the east at a great rate of speed and at a much higher altitude than their own.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 58c7a84d-4918-4c49-9a1d-6353da0613e4
   type: observation
   attestation: second_hand
@@ -278,6 +309,11 @@ domain_claims:
     THEY WATCHED THE OBJECT FOR SOME FORTY MINUTES AS IT MANEUVERED IN CIRCLES, CORKSCREWS AND MADE 90-DEGREE TURNS AT RAPID RATES OF SPEED AND UNDER VERY HIGH G'S.
   text: |-
     During the 1994 Tajik Air UFO sighting, the crew watched the object for approximately forty minutes as it manoeuvred in circles, corkscrews and made 90-degree turns at rapid rates of speed and under very high G-forces.
+  entailment:
+    label: entails
+    score: 0.855
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bff08dfe-95e7-4da0-ac0a-b3b45c7c212a
   type: observation
   attestation: second_hand
@@ -302,6 +338,11 @@ domain_claims:
   quote: CAPTAIN RHODES TOOK SEVERAL PHOTOS WITH A POCKET OLYMPUS CAMERA
   text: |-
     During the 1994 Tajik Air UFO sighting, Ed Rhodes took several photographs with a pocket Olympus camera.
+  entailment:
+    label: neutral
+    score: 0.617
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e5dda2ff-13e0-44f8-b92c-d2650eda7dc6
   type: testimony
   attestation: second_hand
@@ -330,6 +371,11 @@ domain_claims:
     AND WILL SEND COPIES TO THE EMBASSY AND THE TAJIKISTAN DESK (LOWRY TAYLOR) IN THE DEPARTMENT, IF THEY COME OUT.
   text: |-
     Ed Rhodes stated he would send copies of the photographs to the Embassy of the United States, Dushanbe and to Lowry Taylor at the United States Department of State, if they came out.
+  entailment:
+    label: contradicts
+    score: 0.942
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a5fd01e5-9f34-4ea7-bc91-c4f446c0398d
   type: administrative
   attestation: second_hand
@@ -348,6 +394,11 @@ domain_claims:
   quote: THE TAJIKISTAN DESK (LOWRY TAYLOR) IN THE DEPARTMENT
   text: |-
     Lowry Taylor works on the Tajikistan desk at the United States Department of State.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f4f39b5-d459-4cd2-b856-b50c91f2b306
   type: observation
   attestation: second_hand
@@ -371,6 +422,11 @@ domain_claims:
     AFTER SOME TIME, THE OBJECT ADOPTED A HORIZONTAL HIGH-SPEED COURSE AND DISAPPEARED OVER THE HORIZON.
   text: |-
     During the 1994 Tajik Air UFO sighting, the object adopted a horizontal high-speed course and disappeared over the horizon after some time.
+  entailment:
+    label: entails
+    score: 0.475
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c6c65a7f-d123-478b-8f4a-2ab0db7fe75e
   type: observation
   attestation: second_hand
@@ -394,6 +450,11 @@ domain_claims:
     AS IT WAS DARK WHEN THE OBJECT WAS OBSERVED, THE CREW WERE UNABLE TO DISCERN ITS SHAPE.
   text: |-
     During the 1994 Tajik Air UFO sighting, it was dark when the object was observed, so the crew could not discern its shape.
+  entailment:
+    label: entails
+    score: 0.495
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cc093c0b-514f-4e06-9689-764bcf0cc36a
   type: observation
   attestation: second_hand
@@ -417,6 +478,11 @@ domain_claims:
     THEY DESCRIBED THE LIGHT IT EMITTED AS HAVING A "BOW WAVE" AND AS RESEMBLING A HIGH-SPEED PHOTO OF A BULLET IN FLIGHT, IN WHICH A VERY SMALL OBJECT GIVES OFF A MUCH LARGER TRAILING WAVE OF HEAT/LIGHT.
   text: |-
     During the 1994 Tajik Air UFO sighting, the crew described the light emitted by the object as having a 'bow wave' and as resembling a high-speed photograph of a bullet in flight, in which a very small object gives off a much larger trailing wave of heat/light.
+  entailment:
+    label: neutral
+    score: 0.473
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b8757620-ce66-4dae-855a-7b59e9103cde
   type: observation
   attestation: second_hand
@@ -442,6 +508,11 @@ domain_claims:
     SOME FORTY-FIVE MINUTES AFTER THE INITIAL SIGHTING, AS THE SUN WAS RISING, THE AIRCRAFT FLEW UNDER THE CONTRAILS WHICH THE OBJECT HAD LEFT BEHIND.
   text: |-
     During the 1994 Tajik Air UFO sighting, approximately forty-five minutes after the initial sighting, as the sun was rising, the aircraft flew under the contrails which the object had left behind.
+  entailment:
+    label: entails
+    score: 0.484
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9498deff-1e4f-483d-a45c-0d32df7b7aa0
   type: measurement
   attestation: second_hand
@@ -464,6 +535,11 @@ domain_claims:
   quote: THE PLANE WAS MAKING OVER 500 KNOTS.
   text: |-
     During the 1994 Tajik Air UFO sighting, the Boeing 747SP was making over 500 knots (approximately 930 kilometres per hour).
+  entailment:
+    label: entails
+    score: 0.445
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 38e5d5e1-ee02-4a08-bdde-02144f990a7b
   type: measurement
   attestation: second_hand
@@ -488,6 +564,11 @@ domain_claims:
   quote: RHODES ESTIMATED THE ALTITUDE OF THE CONTRAILS AT APPROXIMATELY 100,000 FEET
   text: |-
     During the 1994 Tajik Air UFO sighting, Ed Rhodes estimated the altitude of the contrails at approximately 30,500 metres.
+  entailment:
+    label: contradicts
+    score: 0.627
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 272e6c37-ffb4-4cc6-8f0f-1cbc8a560a68
   type: opinion
   attestation: second_hand
@@ -511,6 +592,11 @@ domain_claims:
     NOTING THAT THERE IS TOO LITTLE AIR/MOISTURE AT THAT EXTREME ALTITUDE TO ENABLE THE CREATION OF CONTRAILS BY THE PROPULSION MECHANISMS OF ORDINARY AIRCRAFT WHICH MIGHT BE ABLE TO REACH THAT HEIGHT.
   text: |-
     During the 1994 Tajik Air UFO sighting, Ed Rhodes noted that there is too little air or moisture at approximately 30,500 metres altitude to enable the creation of contrails by the propulsion mechanisms of ordinary aircraft which might be able to reach that height.
+  entailment:
+    label: entails
+    score: 0.487
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5f62fcca-cc66-4485-83cc-b62172d79fbe
   type: observation
   attestation: second_hand
@@ -534,6 +620,11 @@ domain_claims:
     THE PATHS OF THE CONTRAILS REFLECTED THE MANEUVERS OF THE OBJECT, I.E., CIRCLES, CORKSCREWS, ETC.
   text: |-
     During the 1994 Tajik Air UFO sighting, the paths of the contrails reflected the manoeuvres of the object, i.e., circles, corkscrews, etc.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 607a8dd2-95fa-4204-9c28-9331fa1f38ce
   type: testimony
   attestation: second_hand
@@ -556,6 +647,11 @@ domain_claims:
     THEY HAD SEEN THOUSANDS OF "FALLING STARS" AND OTHER SPACE JUNK ENTERING THE ATMOSPHERE IN THEIR YEARS OF FLYING PASSENGER AIRCRAFT FOR PANAM.
   text: |-
     Ed Rhodes and his crew had seen thousands of falling stars and other space junk entering the atmosphere in their years of flying passenger aircraft for Pan Am.
+  entailment:
+    label: contradicts
+    score: 0.783
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9d62c8db-3928-4e00-93cc-a8c5415cb615
   type: testimony
   attestation: second_hand
@@ -581,6 +677,11 @@ domain_claims:
     RHODES AND HIS CREW WERE ADAMANT THAT THEY HAD SEEN THOUSANDS OF "FALLING STARS" AND OTHER SPACE JUNK ENTERING THE ATMOSPHERE IN THEIR YEARS OF FLYING PASSENGER AIRCRAFT FOR PANAM. THIS, THEY INSISTED, WAS NOTHING LIKE A METEOR.
   text: |-
     Ed Rhodes and his crew were adamant that the object encountered during the 1994 Tajik Air UFO sighting was nothing like a meteor.
+  entailment:
+    label: entails
+    score: 0.516
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c9aeb86-3525-403b-bfe0-ecfaac36b496
   type: opinion
   attestation: second_hand
@@ -606,6 +707,11 @@ domain_claims:
     ON THE BASIS OF ITS SPEED AND MANEUVERABILITY, RHODES EXPRESSED THE OPINION, WHICH HIS CREW SEEMED TO SUPPORT, THAT THE OBJECT WAS EXTRATERRESTRIAL AND UNDER INTELLIGENT CONTROL.
   text: |-
     Ed Rhodes expressed the opinion, which his crew seemed to support, that the object encountered during the 1994 Tajik Air UFO sighting was extraterrestrial and under intelligent control, on the basis of its speed and manoeuvrability.
+  entailment:
+    label: neutral
+    score: 0.627
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1f88dcff-57b6-42ef-bf62-17de484b07ae
   type: opinion
   attestation: first_hand
@@ -626,6 +732,11 @@ domain_claims:
   quote: WE HAVE NO OPINION AND REPORT THE ABOVE FOR WHAT IT MAY BE WORTH.
   text: |-
     Escudero offered no opinion on the 1994 Tajik Air UFO sighting and reported the account for what it may be worth.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e2c6321c-3032-4e6c-92e8-1c381ce0a88d
   type: opinion
   attestation: first_hand
@@ -649,6 +760,11 @@ domain_claims:
     TO OUR SUGGESTION THAT THE OBJECT MIGHT HAVE BEEN A METEOR ENTERING AND SKIPPING OFF THE EARTH'S ATMOSPHERE
   text: |-
     Escudero suggested that the object encountered during the 1994 Tajik Air UFO sighting might have been a meteor entering and skipping off the Earth's atmosphere.
+  entailment:
+    label: entails
+    score: 0.539
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: e02deac1-ff4e-4e04-9b74-cbc077143ffa
   type: administrative
@@ -664,6 +780,11 @@ infrastructure_claims:
     name: Tajik Air Pilots Report Unidentified Flying Object (1994 Dushanbe cable)
   quote: 'MRN: 94 DUSHANBE 259'
   text: The 1994 Dushanbe cable has Message Reference Number 94 DUSHANBE 259.
+  entailment:
+    label: entails
+    score: 0.557
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ff611e9a-dbd5-4219-9e08-5557b09d1e0f
   type: administrative
   attestation: second_hand
@@ -678,6 +799,11 @@ infrastructure_claims:
     name: Tajik Air Pilots Report Unidentified Flying Object (1994 Dushanbe cable)
   quote: 'Date/DTG: Jan 31, 1994 / 310000Z Jan 94'
   text: The 1994 Dushanbe cable is dated 1994-01-31.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4136a57f-0312-40c8-8a79-460fd8335a7f
   type: administrative
   attestation: second_hand
@@ -694,6 +820,11 @@ infrastructure_claims:
   quote: FROM AMEMBASSY DUSHANBE
   text: |-
     The 1994 Dushanbe cable was sent from the Embassy of the United States, Dushanbe.
+  entailment:
+    label: entails
+    score: 0.591
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f499209c-db03-462a-a6ad-6f3a115fe012
   type: administrative
   attestation: second_hand
@@ -709,6 +840,11 @@ infrastructure_claims:
     name: United States Department of State
   quote: TO SECSTATE WASHDC 2150
   text: The 1994 Dushanbe cable was addressed to the United States Department of State.
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0203dc4a-887d-4c77-8514-fbac32f82098
   type: administrative
   attestation: second_hand
@@ -724,6 +860,11 @@ infrastructure_claims:
     name: Embassy of the United States, Moscow
   quote: INFO AMEMBASSY MOSCOW
   text: The 1994 Dushanbe cable was copied to the Embassy of the United States, Moscow.
+  entailment:
+    label: entails
+    score: 0.769
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f717ab3e-30f0-435d-82f2-652a02136ef6
   type: administrative
   attestation: second_hand
@@ -740,6 +881,11 @@ infrastructure_claims:
   quote: AMEMBASSY TASHKENT
   text: |-
     The 1994 Dushanbe cable was copied to the Embassy of the United States, Tashkent.
+  entailment:
+    label: neutral
+    score: 0.917
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: adbc1288-d4d5-42b5-859f-1be169e31ff9
   type: administrative
   attestation: second_hand
@@ -756,6 +902,11 @@ infrastructure_claims:
   quote: AMEMBASSY ASHGABAT
   text: |-
     The 1994 Dushanbe cable was copied to the Embassy of the United States, Ashgabat.
+  entailment:
+    label: neutral
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 80f5e25c-eb32-4657-bee1-e4cb726ec710
   type: administrative
   attestation: second_hand
@@ -771,6 +922,11 @@ infrastructure_claims:
     name: Embassy of the United States, Almaty
   quote: AMEMBASSY ALMATY
   text: The 1994 Dushanbe cable was copied to the Embassy of the United States, Almaty.
+  entailment:
+    label: neutral
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56e1dd06-646f-4502-91b7-ae1f016bbeef
   type: administrative
   attestation: second_hand
@@ -786,6 +942,11 @@ infrastructure_claims:
     name: Embassy of the United States, Beijing
   quote: AMEMBASSY BEIJING
   text: The 1994 Dushanbe cable was copied to the Embassy of the United States, Beijing.
+  entailment:
+    label: neutral
+    score: 0.938
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b7e9017b-2e7b-4183-b577-b58a2136e504
   type: administrative
   attestation: second_hand
@@ -801,6 +962,11 @@ infrastructure_claims:
     name: Embassy of the United States, Bishkek
   quote: AMEMBASSY BISHKEK
   text: The 1994 Dushanbe cable was copied to the Embassy of the United States, Bishkek.
+  entailment:
+    label: neutral
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6d9b13e0-6c9d-47c1-bb81-6fcd2df08fc6
   type: administrative
   attestation: second_hand
@@ -816,6 +982,11 @@ infrastructure_claims:
     name: Central Intelligence Agency (CIA)
   quote: CIA WASHDC 0224
   text: The 1994 Dushanbe cable was copied to the Central Intelligence Agency (CIA).
+  entailment:
+    label: neutral
+    score: 0.787
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5043ea98-138a-4266-9faa-193dac712899
   type: administrative
   attestation: second_hand
@@ -831,6 +1002,11 @@ infrastructure_claims:
     name: Defense Intelligence Agency (DIA)
   quote: DIA WASHDC 0232
   text: The 1994 Dushanbe cable was copied to the Defense Intelligence Agency (DIA).
+  entailment:
+    label: neutral
+    score: 0.872
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 371ea52c-944b-473b-8e1b-85000ce4b5f1
   type: administrative
   attestation: second_hand
@@ -844,6 +1020,11 @@ infrastructure_claims:
     name: Tajik Air Pilots Report Unidentified Flying Object (1994 Dushanbe cable)
   quote: UNCLAS DUSHANBE 00259
   text: The 1994 Dushanbe cable is classified UNCLAS (Unclassified).
+  entailment:
+    label: contradicts
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7111b18d-ae88-4dae-b924-b756a9fadd21
   type: administrative
   attestation: second_hand
@@ -859,6 +1040,11 @@ infrastructure_claims:
     name: Tajik Air Pilots Report Unidentified Flying Object (1994 Dushanbe cable)
   quote: ESCUDERO
   text: Escudero was the signing officer of the 1994 Dushanbe cable.
+  entailment:
+    label: entails
+    score: 0.4
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 92ab1fe6-feff-4e8e-86ef-538da654c5df
   type: administrative
   attestation: second_hand
@@ -879,6 +1065,11 @@ infrastructure_claims:
     Released in Full / John Powers, Acting-Director / US Department of State / 2/25/2026
   text: |-
     John Powers, acting as Acting-Director of the United States Department of State, released the 1994 Dushanbe cable in full on 2026-02-25.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a2abf7c0-44d0-449e-b8a9-096a95160aa3
   type: administrative
   attestation: second_hand
@@ -895,3 +1086,8 @@ infrastructure_claims:
   quote: DEPARTMENT FOR OES/S
   text: |-
     The 1994 Dushanbe cable was directed to the Office of Environmental and Scientific Affairs (OES/S) at the United States Department of State.
+  entailment:
+    label: entails
+    score: 0.436
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

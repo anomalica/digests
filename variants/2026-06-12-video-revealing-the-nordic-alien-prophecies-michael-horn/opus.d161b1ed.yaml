@@ -9,6 +9,12 @@ ai_usage:
     output: 142514
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 19.9
 prompts:
 - pass: nodes
   id: nodes
@@ -491,6 +497,11 @@ domain_claims:
     Bob Lazar pointed out, obviously, the sports model or the beam ship, as it's aptly named, that that was a one for one match. That was pretty identical. And Bob was kind of blown away.
   text: |-
     The Billy Meier sports model craft, aptly named the beam ship, shown in the Billy Meier photo book is a near-identical, one-for-one match to the craft Bob Lazar saw.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 998dc651-c1d1-4275-877d-a46a9dd429f3
   type: opinion
   attestation: first_hand
@@ -512,6 +523,11 @@ domain_claims:
   quote: Bob and myself both agree, like the later stuff is a little questionable.
   text: |-
     Chris Ramsay and Bob Lazar both consider the later Billy Meier material questionable.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c7610b7-072b-45d0-9ba8-0ae63cdde49d
   type: observation
   speaker:
@@ -533,6 +549,11 @@ domain_claims:
     that, you know, poster that appears in pretty much every X-Files episode, the I Want to Believe, the cropped version of a Billy Meier photo
   text: |-
     The X-Files 'I Want to Believe' poster is a cropped version of a Billy Meier photograph.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 19bbb61d-b132-4a8f-aca2-ecf337d11e24
   type: administrative
   speaker:
@@ -548,6 +569,11 @@ domain_claims:
     name: Meier, Billy
   quote: Billy Meier is a now 89-year-old man
   text: Billy Meier is an 89-year-old man.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b97491f4-54f8-4cc7-81b9-c7b0fcf38056
   type: testimony
   attestation: second_hand
@@ -568,6 +594,11 @@ domain_claims:
     a now 89-year-old man who claims that since the age of five he has been meeting with human beings from another star system, that they have tutored him from that age
   text: |-
     Billy Meier claims that since the age of five he has been meeting with human beings from another star system who have tutored him.
+  entailment:
+    label: contradicts
+    score: 0.957
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f12f28d9-a1b1-4027-aa68-11e199009bee
   type: testimony
   attestation: second_hand
@@ -588,6 +619,11 @@ domain_claims:
     that from the age of five he has gone on board with them and on his own to go designated places, especially in and around and on the Earth and off Earth, let's say, within our solar system and beyond
   text: |-
     Billy Meier claims that from the age of five he has gone on board craft to designated places in and around Earth, off Earth within the solar system, and beyond.
+  entailment:
+    label: contradicts
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 079b7891-ee24-49c7-ab10-266f937807ba
   type: testimony
   attestation: first_hand
@@ -609,6 +645,11 @@ domain_claims:
   quote: |-
     after about 22 trips that I've gone to Switzerland, taken to Switzerland, and met with him each time
   text: Michael Horn has made about 22 trips to Switzerland to meet with Billy Meier.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 498e7da5-ee80-47a1-bd0f-771d60260a0c
   type: testimony
   attestation: first_hand
@@ -628,6 +669,11 @@ domain_claims:
   quote: spent some time, sometimes it's a half hour, sometimes it's an hour and a half
   text: |-
     Michael Horn's meetings with Billy Meier lasted between about half an hour and an hour and a half each.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: db737270-b6e5-4b14-830b-8477821ba8e9
   type: testimony
   attestation: first_hand
@@ -648,6 +694,11 @@ domain_claims:
     to try to frankly and quite honestly try to trick him into revealing that he was hoaxing on four different occasions at least
   text: |-
     On at least four occasions Michael Horn attempted to trick Billy Meier into revealing that he was hoaxing.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9ec98eb-1286-49d0-9e69-293711d6c563
   type: testimony
   speaker:
@@ -664,6 +715,11 @@ domain_claims:
   quote: |-
     Some of that reason is threats and attempts on his life that have totaled 28 by now.
   text: Threats and attempts on Billy Meier's life have totalled 28.
+  entailment:
+    label: entails
+    score: 0.647
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40faab90-1e8c-4dbf-8502-0d8d73bf9b9a
   type: testimony
   speaker:
@@ -681,6 +737,11 @@ domain_claims:
     name: Billy Meier contact reports
   quote: massive amounts of information, tens of thousands of pages he's published so far
   text: Billy Meier has published tens of thousands of pages of information.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4739bc8-5215-4943-bcde-df54767a5f20
   type: testimony
   speaker:
@@ -699,6 +760,11 @@ domain_claims:
     the content dates back to 1946. when he was something like nine years old and was publishing information, disseminating it
   text: |-
     Billy Meier's published content dates back to 1946, when he was about nine years old.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a221d1be-68e9-49db-ac49-7ccb45059a63
   type: testimony
   speaker:
@@ -716,6 +782,11 @@ domain_claims:
     by the time he was 9 and 10... it is said that he had the thinking capacity of a 35-year-old adult
   text: |-
     By the ages of 9 and 10, Billy Meier is said to have had the thinking capacity of a 35-year-old adult.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f05fe05-b733-4bb9-9f1b-ac0d3771ab67
   type: testimony
   attestation: second_hand
@@ -737,6 +808,11 @@ domain_claims:
   quote: |-
     until he was about the age of 16, from 5 to 16, he claims to have been tutored by this man named Sfath, S-F-A-T-H
   text: Billy Meier claims to have been tutored from age 5 to 16 by a man named Sfath.
+  entailment:
+    label: entails
+    score: 0.733
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d13b20f8-87f3-4100-8fda-ef68cbfed1b9
   type: testimony
   attestation: second_hand
@@ -757,6 +833,11 @@ domain_claims:
     name: Meier, Billy
   quote: this man named Sfath... who was at that time supposedly around 900 years of age
   text: Sfath was supposedly around 900 years of age at the time he tutored Billy Meier.
+  entailment:
+    label: entails
+    score: 0.812
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b491cd32-ed15-47a5-a009-832b81f6d447
   type: observation
   speaker:
@@ -776,6 +857,11 @@ domain_claims:
     We have drawing illustrations of some of the people. You can see the representation. They look pretty much like we do
   text: |-
     Drawing illustrations of some of the extraterrestrials show that they look pretty much like humans.
+  entailment:
+    label: contradicts
+    score: 0.886
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6b8b7827-cf5f-4c61-92ab-afd8a68c1bab
   type: testimony
   speaker:
@@ -794,6 +880,11 @@ domain_claims:
   quote: people that he's been in contact with for 50-plus years
   text: |-
     Billy Meier has been in contact with his modern-day extraterrestrial contacts for over 50 years.
+  entailment:
+    label: entails
+    score: 0.864
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cfca0409-2ece-429f-bcde-57c2756d434a
   type: opinion
   attestation: second_hand
@@ -814,6 +905,11 @@ domain_claims:
     I think his name is Douglas Vakoch, and he was talking about when contact takes place, it will be in the language of mathematics
   text: |-
     Douglas Vakoch holds that when contact with extraterrestrials takes place it will be in the language of mathematics.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 01a035d1-0788-40c7-a196-f39ecad91d32
   type: observation
   speaker:
@@ -835,6 +931,11 @@ domain_claims:
   quote: |-
     this initial craft, the one in 1975, I believe, uh, that was taken in Switzerland
   text: The 1975 Billy Meier beam ship photograph was taken in Switzerland.
+  entailment:
+    label: neutral
+    score: 0.925
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f95c9fc8-c681-422c-be0e-3f9d7c54add0
   type: opinion
   attestation: first_hand
@@ -855,6 +956,11 @@ domain_claims:
     there's a forced perspective that simply doesn't work for me and that wasn't optimized when taking these photos
   text: |-
     Chris Ramsay found forced-perspective inconsistencies with reality in some of the wedding cake UFO photographs.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 06331c57-720f-4c60-8cf1-934200e1c070
   type: observation
   speaker:
@@ -872,6 +978,11 @@ domain_claims:
     online people like Zach King... he uses this type of principle pretty much in every video and ends up fooling the audience at home
   text: |-
     Zach King uses forced-perspective principles in nearly every video to fool his audience.
+  entailment:
+    label: entails
+    score: 0.93
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3d8a3ae6-e796-4c8f-9658-321c435e97cc
   type: testimony
   speaker:
@@ -891,6 +1002,11 @@ domain_claims:
     There's eight films remaining. Billy had taken more. They disappeared. Stolen is what we understand.
   text: |-
     Eight of Billy Meier's films remain; he had taken more which disappeared and are understood to have been stolen.
+  entailment:
+    label: entails
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0fe07624-22ee-44a2-9a31-cb7153ae1dda
   type: hearsay
   attestation: second_hand
@@ -912,6 +1028,11 @@ domain_claims:
     Skeptics have said, now they've used a model and painted it gold, and they photographed it against the black curtain.
   text: |-
     Skeptics claimed that the nighttime wedding cake UFO series was made using a model painted gold and photographed against a black curtain.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1532a4fe-f88c-4e90-9288-d0469ab807d4
   type: observation
   attestation: second_hand
@@ -936,6 +1057,11 @@ domain_claims:
     they took one of those photographs where it's pitch black behind the craft... they adjusted they played with contrast and brightness lo and behold This object... now appears to be a large object hovering over a graveled road. And on that road there is one of those, I think they're meter high white posts... And then there's a grassy hillside that curves up behind it.
   text: |-
     When Chris Locke and Francisco Velate adjusted the contrast and brightness of a black-background gold wedding cake photograph in Photoshop, the object appeared to be a large object hovering over a gravelled road with a metre-high white marker post and a grassy hillside curving up behind it.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dd1a9637-ef11-45ab-b4a6-8d475118109a
   type: observation
   speaker:
@@ -953,6 +1079,11 @@ domain_claims:
     two photographs, one that they did, and somebody else did a similar enlargement... And both of them got the same kind of background. And both of them also got kind of an energetic field that seemed to be present.
   text: |-
     Two independent enlargements of the wedding cake photograph produced the same background and an apparent energetic field around the object.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: adaa4e09-6e58-4ff9-9779-5456638154f1
   type: testimony
   attestation: first_hand
@@ -971,6 +1102,11 @@ domain_claims:
     name: Switzerland
   quote: I've been going to Switzerland for 20 years
   text: Michael Horn has been travelling to Switzerland for 20 years.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3fc2e8fb-1b81-4722-9d80-253276a466c5
   type: observation
   attestation: first_hand
@@ -991,6 +1127,11 @@ domain_claims:
     There's a difference in the configuration in the dimension here on this object... There's a burnished band here, and nobody's talked about this.
   text: |-
     About 10 years ago, Michael Horn noticed a difference in the configuration and dimension of the black-background gold wedding cake object, including a burnished band that nobody else had discussed.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fbdba92f-1c02-45fd-be54-87f1b5ce1f85
   type: testimony
   speaker:
@@ -1009,6 +1150,11 @@ domain_claims:
   quote: |-
     studied all of the contact cases and there are a lot of contact cases over a thousand oh the reports the reports right
   text: There are over a thousand Billy Meier contact reports.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 72d1e729-9cb2-4185-91e9-8545040ad9ce
   type: administrative
   attestation: first_hand
@@ -1026,6 +1172,11 @@ domain_claims:
   quote: |-
     I'm a seasoned magician. I have a skeptical nature about the way that I approach every subject
   text: Chris Ramsay is a seasoned magician.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 04ef5280-c2f6-4e38-886c-63785cfebd51
   type: testimony
   attestation: second_hand
@@ -1048,6 +1199,11 @@ domain_claims:
     So in one of the contact reports, Billy discusses that with one of the alleged extraterrestrials... it's like they have a room, you would say, like with the shower. It's more space up there. They raise that up.
   text: |-
     In one of the Billy Meier contact reports, Billy Meier discusses with an alleged extraterrestrial an elevated section of a craft, described as being like a room with a shower that provides extra space, created by raising it up.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4b5bbd07-f8f8-41f8-8abf-168f6d472da2
   type: observation
   attestation: first_hand
@@ -1065,6 +1221,11 @@ domain_claims:
   quote: |-
     different rooms in this center, which is a renovated farmhouse that Billy, quite literally single-handed since he has one hand, did a great deal of work on himself
   text: Billy Meier's centre is a renovated farmhouse.
+  entailment:
+    label: entails
+    score: 0.856
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4f5f1864-5c70-4b93-97ff-5ba278a4cecf
   type: observation
   attestation: first_hand
@@ -1083,6 +1244,11 @@ domain_claims:
     a renovated farmhouse that Billy, quite literally single-handed since he has one hand, did a great deal of work on himself before people came to gather around to study this material
   text: |-
     Billy Meier has only one hand and did a great deal of the renovation work on his farmhouse centre single-handed before people came to gather and study his material.
+  entailment:
+    label: entails
+    score: 0.791
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 838ff224-1b6a-4114-bacb-9f355dd9a525
   type: observation
   attestation: first_hand
@@ -1101,6 +1267,11 @@ domain_claims:
     I walked over to see what kind of nice fine Swiss watchmaking stuff Billy must have socked away... Well, there's a tractor, there's a bunch of shovels, there's a bunch of different kinds of gardening stuff... I never found anything... seeing any evidence of anything that was really fine machining kind of stuff.
   text: |-
     When Michael Horn inspected a shed on Billy Meier's property he found a tractor, shovels and gardening equipment, and never saw any evidence of fine machining or fine watchmaking tools.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 680c8136-08b0-4953-b5c1-14328915815a
   type: opinion
   attestation: first_hand
@@ -1119,6 +1290,11 @@ domain_claims:
     he's about the most knowledgeable person pertaining to the the environment that the plants the biology of things where to plant things
   text: |-
     Billy Meier is highly knowledgeable about the environment, plants and the biology of things, including where to plant things.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dfb56474-f49a-4cd7-9c4a-82e5c27fead1
   type: testimony
   attestation: second_hand
@@ -1141,6 +1317,11 @@ domain_claims:
     there are things describing one of the extraterrestrials using a device saying for this species of tree it will do better over here where these readings are
   text: |-
     The Billy Meier material describes one of the extraterrestrials using a device that gives readings advising that a particular species of tree will do better in a specific location.
+  entailment:
+    label: entails
+    score: 0.896
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 256af306-f83f-4651-abd5-f3699031def2
   type: observation
   attestation: first_hand
@@ -1161,6 +1342,11 @@ domain_claims:
     There's a very kind of curmudgeony guy there named Jacobus. When we made our first film over there, I started to refer to him as Diesel because this is a guy, all the tractor work
   text: |-
     A curmudgeonly man named Jacobus works with Billy Meier at his centre doing tractor work; Michael Horn nicknamed him 'Diesel' during the making of their first film there.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d6616c69-3670-4157-8ac5-15800ad91215
   type: observation
   attestation: first_hand
@@ -1179,6 +1365,11 @@ domain_claims:
     they have a meeting for the people around the world who want to come and participate. Late May is spring is coming and all you nice folks can meet each other and help us clear the land at the same time and learn about things.
   text: |-
     Billy Meier's centre holds a gathering in late spring, around late May, where people from around the world come to participate, meet each other and help clear the land while learning.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 22b00dd3-f00c-492c-a327-14d98cd378b6
   type: opinion
   attestation: first_hand
@@ -1199,6 +1390,11 @@ domain_claims:
     The people there are people of the land, of the earth. They drive tractors... There was none of this almost meeting with the Space Brothers kind of stuff that is ubiquitous in ufology.
   text: |-
     The people working with Billy Meier at his centre are people of the land who drive tractors, and there is none of the 'Space Brothers' atmosphere ubiquitous in ufology.
+  entailment:
+    label: entails
+    score: 0.515
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ece1fa46-fe78-45f6-b2d2-85d235067e5b
   type: observation
   attestation: first_hand
@@ -1217,6 +1413,11 @@ domain_claims:
     a lot of your photographic summaries or analysis happened for the ones that were at a distance, not so much the ones that were the nighttime close ones with the little car and the little shrub, like those weren't analyzed
   text: |-
     The photographic analyses of the Wedding Cake UFO photographs were done for the ones taken at a distance, not the nighttime close-up ones featuring the car and a shrub.
+  entailment:
+    label: entails
+    score: 0.917
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 97482792-8eac-4821-b680-e3e8d900ad19
   type: measurement
   attestation: first_hand
@@ -1236,6 +1437,11 @@ domain_claims:
   quote: if that craft was 40 feet large or 20 feet or whatever it is. 15 to 20, I think.
   text: |-
     The craft in the Wedding Cake UFO photographs is approximately 4.5 to 6 metres in size.
+  entailment:
+    label: entails
+    score: 0.628
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4080b3c2-6a40-4ec8-bd9d-336c859aedbc
   type: opinion
   attestation: first_hand
@@ -1254,6 +1460,11 @@ domain_claims:
     the idea here is that the craft was emanating that light, which I, you know, I don't see, and I do see a reflection, a lighter part.
   text: |-
     Chris Ramsay assesses that the emanation of light shown around the Wedding Cake UFO craft was depicted as being emitted by the craft rather than being a reflection from an external light source.
+  entailment:
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 703dc964-d79b-422f-8828-488295588713
   type: testimony
   attestation: first_hand
@@ -1270,6 +1481,11 @@ domain_claims:
     name: Meier, Billy
   quote: He's not a model maker.
   text: Billy Meier is not a model maker.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 678af66d-b208-4722-b62d-70907d4bc635
   type: testimony
   attestation: second_hand
@@ -1288,6 +1504,11 @@ domain_claims:
     name: Meier, Billy
   quote: he had said that he had tried to make a model.
   text: Billy Meier once said that he had tried to make a model.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4cd4a2ae-3aae-41a2-a8ca-ef34dc4e5a65
   type: testimony
   attestation: first_hand
@@ -1305,6 +1526,11 @@ domain_claims:
   quote: |-
     there was some younger people who made some models for him and, you know, that he put in his office.
   text: Some younger people made models for Billy Meier which he put in his office.
+  entailment:
+    label: entails
+    score: 0.671
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 458d07f8-524c-4f46-8345-c16c21513c8e
   type: observation
   speaker:
@@ -1320,6 +1546,11 @@ domain_claims:
     name: Meier, Billy
   quote: because he is one-handed he's one arm he has one arm
   text: Billy Meier has only one arm.
+  entailment:
+    label: entails
+    score: 0.581
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9f28e9ed-d9e3-4d14-920b-48a1c2713bbc
   type: observation
   attestation: first_hand
@@ -1338,6 +1569,11 @@ domain_claims:
     and he's very capable so it's not like he's not i've you know but i've never seen him do any what i would call fine work
   text: |-
     Michael Horn has never seen Billy Meier do any fine work despite Meier being very capable.
+  entailment:
+    label: entails
+    score: 0.597
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 06380b35-93e5-4399-b593-d7c019a8c7e7
   type: testimony
   attestation: first_hand
@@ -1356,6 +1592,11 @@ domain_claims:
     what was shown in the manipulated uh photoshop application to the photo was an emanation not of a light source illuminating the craft but around it uh some form of energy thing
   text: |-
     The energy emanation shown around the craft in the Wedding Cake UFO photographs was added by Photoshop manipulation and was not present as a light source illuminating the craft in the original photographs.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4eb69bff-4860-43a3-b170-1790109ed7cb
   type: testimony
   attestation: first_hand
@@ -1375,6 +1616,11 @@ domain_claims:
     there are photographs they use some kind of thermography and detected uh different heat signatures represented by different colors... that stuff was done in the 70s with earlier computers
   text: |-
     Early analyses of the original Wedding Cake UFO photographs used a form of thermography that detected different heat signatures represented by different colours, done in the 1970s with earlier computers.
+  entailment:
+    label: entails
+    score: 0.488
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e930703f-3de4-4ed7-8902-05cd31985127
   type: testimony
   attestation: first_hand
@@ -1397,6 +1643,11 @@ domain_claims:
     this is where when people have come forward to make models and they won't subject them to computer analysis uh Billy's were subjected. He just turned everything over. He turned over the metal samples, the sound recordings
   text: |-
     Billy Meier turned over all of his evidence for computer analysis, including the metal samples and the sound recordings, whereas others who came forward with models would not subject theirs to computer analysis.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5e510df2-b01e-4f0e-aa23-0293721f4f54
   type: testimony
   attestation: first_hand
@@ -1417,6 +1668,11 @@ domain_claims:
     the sound recordings he made out in a big field with, you know, 15, 20 eyewitnesses.
   text: |-
     Billy Meier made sound recordings out in a big field with around 15 to 20 eyewitnesses present.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 38c85907-e54d-42bb-9ad0-6758f6d0960f
   type: testimony
   attestation: first_hand
@@ -1437,6 +1693,11 @@ domain_claims:
     on one of those occasions, at least people came from four kilometres away because of the sounds that were emanating from above.
   text: |-
     On at least one occasion people came from four kilometres away because of the sounds emanating from above during Billy Meier's sound recording sessions.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7a876ba1-7d16-4b09-9eb5-b48214657d10
   type: observation
   attestation: first_hand
@@ -1457,6 +1718,11 @@ domain_claims:
     when you see the photographs and all, there's places, they're standing in a big empty field. There's no big speakers.
   text: |-
     The photographs of Billy Meier's sound recording sessions show people standing in a big empty field with no big speakers present.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d2930eea-c30c-4ab7-b15d-6738e58142a2
   type: opinion
   attestation: first_hand
@@ -1475,6 +1741,11 @@ domain_claims:
     the only way that that can be is if this object was very small. size of a toy car say and so that's where you know... i'm pretty convinced that that was not a genuine like this was this was hoax this photo particularly
   text: |-
     Chris Ramsay concludes that the close-up nighttime Wedding Cake UFO photograph featuring the car was a hoax, because forced-perspective and depth-of-field analysis indicates the craft was a very small object, roughly the size of a toy car, held close to the camera.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 692b76e5-4a7c-4c0a-bf27-c731ecbe39da
   type: opinion
   attestation: first_hand
@@ -1495,6 +1766,11 @@ domain_claims:
     does my conviction go down yes... it go down all the way down to zero no and that's where i come back because now we have this photo this other photo of the of the craft that can't be debunked
   text: |-
     Chris Ramsay's conviction in Billy Meier goes down as a result of concluding the car photograph was a hoax, but not all the way down to zero, because there is another photo of the craft that cannot be debunked.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9ce8bd89-a002-4f4d-b5e4-e66ff39303ea
   type: testimony
   attestation: first_hand
@@ -1513,6 +1789,11 @@ domain_claims:
     i was interrogated if you will uh for over a period of about i guess five six months whatever it was from january oh yes three months and then he the fellow returned in august five months later
   text: |-
     Michael Horn was interrogated by a skeptical investigator over a period of about three months, after which the investigator returned in August, five months later.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3ca12169-320f-492a-a09b-2414263faa43
   type: testimony
   attestation: first_hand
@@ -1535,6 +1816,11 @@ domain_claims:
     this was a retired United States Air Force Office of Special Investigation, Department of Defense case supervisor and investigator... I only knew his name was Joe at this point
   text: |-
     The investigator who examined the Billy Meier case with Michael Horn was a retired United States Air Force Office of Special Investigations (AFOSI) and Department of Defense case supervisor and investigator named Joe Tisk.
+  entailment:
+    label: entails
+    score: 0.747
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0d621059-147a-4ac1-96da-71e6635435b6
   type: testimony
   attestation: first_hand
@@ -1555,6 +1841,11 @@ domain_claims:
     first you have to look on your email and what do you see... I see a tabletop with a bunch of looks like citations he says can you read those i said i can see some of those air force... now please delete it
   text: |-
     To demonstrate his credentials, Joe Tisk sent Michael Horn an email showing a tabletop covered with citations, including Air Force material, which he then asked Horn to delete.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 57701b3b-3bc7-48d1-8008-75fd71f2b6d8
   type: opinion
   attestation: second_hand
@@ -1579,6 +1870,11 @@ domain_claims:
     He said, your Billy Meier case is 100% ironclad authentic, and I will take on any skeptics in your behalf.
   text: |-
     Joe Tisk concluded that the Billy Meier case is 100% ironclad authentic and offered to take on any skeptics on Michael Horn's behalf.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60e102ed-b2d9-4566-b93c-6f1f2ea4a46f
   type: testimony
   attestation: second_hand
@@ -1599,6 +1895,11 @@ domain_claims:
     after he'd taken on a couple skeptics in ufology and he said, sorry, retracting the offer, these people don't understand investigation. They literally have things backwards.
   text: |-
     After taking on a couple of skeptics in ufology, Joe Tisk retracted his offer, saying those skeptics did not understand investigation and had things backwards.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad17d293-5c2f-484f-8e5d-cadcd03dad32
   type: opinion
   attestation: second_hand
@@ -1625,6 +1926,11 @@ domain_claims:
     this man, knew, maybe still knows, when and where to go that he will have the opportunity to shoot at least a whole roll of 35mm photographs. He will be able to shoot 8mm films... there's situations where he'll shoot both and you'll have a video such as in the pendulum and the wedding cake
   text: |-
     Joe Tisk said that Billy Meier knew when and where to go to have the opportunity to shoot at least a whole roll of 35mm photographs and to shoot 8mm films, and in some situations both, yielding a video as in the pendulum and wedding cake cases.
+  entailment:
+    label: entails
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 464444d4-8813-4114-b848-d1b0d83e59a1
   type: testimony
   attestation: first_hand
@@ -1645,6 +1951,11 @@ domain_claims:
     if this man has indeed taken 1,200 or so UFO photos, eight films that remain, a video
   text: |-
     Billy Meier has taken approximately 1,200 UFO photographs, eight films that remain, and a video.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ce4904ca-ceef-4201-b4c7-540968f4749a
   type: testimony
   attestation: second_hand
@@ -1667,6 +1978,11 @@ domain_claims:
     They've been authenticated, but also visually by, you know, former, the late astronaut Gordon Cooper. The investigators came to my home with these. I know them. We looked at, it's real.
   text: |-
     The late astronaut Gordon Cooper visually authenticated Billy Meier's UFO evidence when the investigators brought it to his home.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2fa73bc1-b107-4ec8-856d-a47644da7e81
   type: testimony
   attestation: first_hand
@@ -1685,6 +2001,11 @@ domain_claims:
     there are people trying to kill you, and we know that is authentic, even trying to kill him in his home.
   text: |-
     People have tried to kill Billy Meier, including attempts in his own home, which Michael Horn regards as authentic.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 48b1539f-9cb1-45af-a40d-404615fe813a
   type: testimony
   attestation: first_hand
@@ -1703,6 +2024,11 @@ domain_claims:
     a lot of things, you have to go over here, it's 40 kilometers from your house. Yes, it's snowing, but just show up at this time. It's daytime, it's nighttime, whatever.
   text: |-
     Billy Meier had to travel to distant locations up to 40 kilometres from his house, at specified times and in conditions such as snow, day or night, to obtain his UFO evidence.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4be8f6b3-41f7-4b92-9ee2-954a427f2aa2
   type: testimony
   attestation: second_hand
@@ -1726,6 +2052,11 @@ domain_claims:
     they told Billy in about 1981 82 no more photo ops and he says well why is you know... you're entering the computer age... People are already going to call you a hoaxer and a liar and a deceiver
   text: |-
     In about 1981 to 1982 the Pleiaren told Billy Meier there would be no more photo opportunities of their craft because the computer age was beginning and people would call him a hoaxer, liar and deceiver, putting his life at risk.
+  entailment:
+    label: entails
+    score: 0.922
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2f79208d-b4a6-4f3f-94a3-919125a3b122
   type: testimony
   attestation: second_hand
@@ -1750,6 +2081,11 @@ domain_claims:
     the UFOs that are being seen around the world... this is not ours because ours are not UFOs. We know what the craft are and we know who's flying them.
   text: |-
     According to Billy Meier's writings, the UFOs seen around the world are not the Pleiaren craft, because the Pleiaren say their own craft are not UFOs and they know what the craft are and who is flying them.
+  entailment:
+    label: entails
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 40b7beae-6803-40d4-8a2e-dc43874ab348
   type: testimony
   attestation: first_hand
@@ -1773,6 +2109,11 @@ domain_claims:
     I started leaving the UFO out of it in a lot of things starting in 2004 because I had already seen certain information that told me, wait a minute, This is more important than UFOs.
   text: |-
     Michael Horn began leaving the UFO aspect out of his presentation of the Billy Meier case starting in 2004, having seen information indicating the case was more important than UFOs.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ab4de07-424b-4c46-97e9-d8818e7b008d
   type: testimony
   attestation: first_hand
@@ -1793,6 +2134,11 @@ domain_claims:
     Marcel Vogel, a scientist with IBM, was one of those genius types who... never to the best of my knowledge got some kind of degrees... he's the guy that i believe was creating the coding on floppy disks
   text: |-
     Marcel Vogel was a scientist with International Business Machines (IBM) who, to Michael Horn's knowledge, held no degrees but was credited by IBM with creating the coding on floppy disks.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9b2ec67c-550d-4343-94fc-13a0d4cfc539
   type: opinion
   attestation: second_hand
@@ -1815,6 +2161,11 @@ domain_claims:
     he does a video and he says basically with any technology available to me i cannot make this this is made in a cold cold fusion outer space something
   text: |-
     Marcel Vogel said in a video that with any technology available to him he could not make the Billy Meier metal sample, which he described as made in a cold-fusion outer-space process.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 76f0aa66-db73-4588-9c46-955aa9dab25c
   type: testimony
   attestation: first_hand
@@ -1834,6 +2185,11 @@ domain_claims:
   quote: Billy uh received allegedly samples of metals at different stages of manufacture
   text: |-
     Billy Meier allegedly received samples of metals at different stages of manufacture.
+  entailment:
+    label: contradicts
+    score: 0.901
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 923e33d8-b302-4b5c-a5eb-5571cde498e3
   type: testimony
   attestation: second_hand
@@ -1856,6 +2212,11 @@ domain_claims:
     when marcel vogel was blowing these things up hundreds of you know magnifications he could detect laser cuttings that were extremely... There are things within things. These are discrete relationships of these elements. They're not just blended in as if they were heated in an oven... this is a different composition we don't have this
   text: |-
     At hundreds of magnifications Marcel Vogel detected in the Billy Meier metal samples extremely fine laser cuttings, things within things, and discrete relationships of elements that were not simply blended as if heated in an oven, forming a different composition.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 418543cb-8821-4822-bb1e-8e44dcec2c84
   type: testimony
   attestation: first_hand
@@ -1874,6 +2235,11 @@ domain_claims:
     sound recordings at the time they couldn't duplicate them they said well maybe we could if we ran if we had a bank of synthesizers
   text: |-
     At the time of analysis the Billy Meier sound recordings could not be duplicated, and analysts said they might only be able to reproduce them with a bank of synthesizers.
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aaf93164-5acc-45ed-8311-9a45979d4e06
   type: observation
   attestation: first_hand
@@ -1892,6 +2258,11 @@ domain_claims:
     I'll make that sound recording available to you. It's downloadable... it's this weaving sound that travels through lots of different frequencies.
   text: |-
     The Billy Meier sound recording is a weaving sound that travels through many different frequencies and is available as a downloadable file.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 035ed6af-ebed-45e7-9138-140234000393
   type: hearsay
   attestation: second_hand
@@ -1913,6 +2284,11 @@ domain_claims:
     It's really just, if you take a string and string it across and vibrate it, you get the same thing. That's what some people say.
   text: |-
     Some people say the Billy Meier sound recording can be reproduced simply by stringing a string across and vibrating it.
+  entailment:
+    label: neutral
+    score: 0.595
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5f166e5f-8bf5-4a96-8108-57a6847a842b
   type: opinion
   attestation: first_hand
@@ -1931,6 +2307,11 @@ domain_claims:
     i can't do any audio analysis... i can't do any metal analysis... but when it comes to photos i'm pretty good and when it comes to depth perception and forced perspective i'm really good at that
   text: |-
     Chris Ramsay considers himself skilled at analysing photographs, depth perception and forced perspective, but does not do audio or metal analysis.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 41ad4f5b-057c-481c-a681-842c602cf831
   type: opinion
   attestation: first_hand
@@ -1951,6 +2332,11 @@ domain_claims:
     it doesn't take away from these photos here lining up with mr lazar's you know um depiction of the craft
   text: |-
     The earlier Billy Meier photographs line up with Bob Lazar's depiction of the craft.
+  entailment:
+    label: entails
+    score: 0.846
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 97151359-f767-4bff-b040-a9a10c178eba
   type: measurement
   speaker:
@@ -1966,6 +2352,11 @@ domain_claims:
     name: Meier, Billy
   quote: there are basically about 580 remaining photographs
   text: Approximately 580 of Billy Meier's photographs remain.
+  entailment:
+    label: neutral
+    score: 0.6
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6d67a962-d7d5-46cf-9359-4ddeee995b3a
   type: measurement
   speaker:
@@ -1981,6 +2372,11 @@ domain_claims:
     name: Wedding Cake UFO photographs
   quote: let's say the WC UFO, there's 63 photos and a video
   text: The Wedding Cake UFO photographs consist of 63 photographs and a video.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: daa948f9-dd64-4f54-9964-0d1965b2b0ea
   type: opinion
   attestation: second_hand
@@ -2003,6 +2399,11 @@ domain_claims:
     But Joe Tisk made it very clear. And he said, we have not only one authentic photo, we have roles of them. And as he said to me, your case is 100% authentic.
   text: |-
     Joe Tisk told Michael Horn that the Billy Meier case is 100% authentic and that there is not only one authentic photograph but rolls of them.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2fb15c68-581e-4a30-9c63-70960338701a
   type: opinion
   attestation: second_hand
@@ -2023,6 +2424,11 @@ domain_claims:
     one piece of verifiable evidence, you throw out those inconsistencies, if that's, if you can prove that.
   text: |-
     Joe Tisk holds that a single piece of verifiable evidence can outweigh apparent inconsistencies in a case if it can be proven.
+  entailment:
+    label: entails
+    score: 0.762
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 27011b6a-3e79-4bb2-abad-029afc24e3af
   type: testimony
   speaker:
@@ -2042,6 +2448,11 @@ domain_claims:
   quote: |-
     how does this vagabond in India in 1964, which Billy was, wandering around with a knapsack
   text: In 1964 Billy Meier was a vagabond wandering around India with a knapsack.
+  entailment:
+    label: entails
+    score: 0.697
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f70a24c0-07b7-4744-97e9-7fb28244fb33
   type: testimony
   speaker:
@@ -2062,6 +2473,11 @@ domain_claims:
     Because Billy was interviewed in a prominent newspaper in India, and the journalist who interviewed him is looking through an album with 80 UFO photos in 1964.
   text: |-
     In 1964 Billy Meier was interviewed by a prominent newspaper in India, and the journalist looked through an album containing 80 UFO photographs.
+  entailment:
+    label: entails
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a8d38853-2bfd-4d6d-9b5b-b0b8019bfafb
   type: opinion
   attestation: second_hand
@@ -2086,6 +2502,11 @@ domain_claims:
   quote: Joe Tisk asks, where did this vagabond get 80 UFO photos in 1964 in India?
   text: |-
     Joe Tisk questioned where a vagabond could have obtained 80 UFO photographs in India in 1964.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bcd0facb-c2b5-46bf-9adc-078d2159c8cf
   type: testimony
   speaker:
@@ -2105,6 +2526,11 @@ domain_claims:
     And you still have at least a dozen of those, which we do. And one of them is phenomenally interesting because it appears there's a hologram in the photo
   text: |-
     At least a dozen of Billy Meier's 1964 India UFO photographs still remain, one of which appears to contain a hologram.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 052090a7-cf18-453e-8316-2c17f34c9db8
   type: testimony
   speaker:
@@ -2123,6 +2549,11 @@ domain_claims:
     these are primitive, taken with an old Kodak... This is 40s technology. And Billy was taking his photographs at that time in 1964 with this early version of a Kodak.
   text: |-
     Billy Meier took his 1964 photographs with an early boxy Kodak camera representing 1940s technology.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f5b5da18-0d8d-41d0-8121-ed0b62d3b7cf
   type: testimony
   speaker:
@@ -2147,6 +2578,11 @@ domain_claims:
     the woman who was a young girl at the ashram in India in 1964 whose uncle was the head monk, she became the UN, I think, was it the ambassador to the UN or the representative... from Cambodia for a dozen years at the UN. Then she retired.
   text: |-
     A woman who was a young girl at an ashram in India in 1964, and whose uncle was the head monk, later served as Cambodia's ambassador or representative to the United Nations for about twelve years before retiring.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a1aa2adc-d2f2-4be6-9030-6f3643f3cce8
   type: testimony
   speaker:
@@ -2166,6 +2602,11 @@ domain_claims:
     She was an eyewitness at the time. Then she comes forward at a certain point in the 90s... they gave a press conference, and she explained where these photographs were taken
   text: |-
     Ms. Chang was an eyewitness to the Billy Meier case in India, and in the 1990s she came forward and, together with another woman who had been her tutor, gave a press conference explaining where the photographs were taken.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ede9ed36-ab8b-4062-add0-3dc46d284c44
   type: testimony
   speaker:
@@ -2183,6 +2624,11 @@ domain_claims:
     name: India
   quote: that there were a hundred eyewitnesses to them
   text: There were a hundred eyewitnesses to Billy Meier's India photographs.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fe767f44-221b-4f29-a8b5-a2419de322a4
   type: testimony
   speaker:
@@ -2200,6 +2646,11 @@ domain_claims:
     you see a woman in the photograph with eight, the lights in the sky quality UFOs, the rest of the photographs, they were all clear disks hovering over things
   text: |-
     In one of Billy Meier's India photographs a woman is visible together with eight lights-in-the-sky UFOs, while the remaining photographs show clear disks hovering over things.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4cf6ab53-573f-49db-ad38-af3da0b5c28c
   type: testimony
   attestation: second_hand
@@ -2224,6 +2675,11 @@ domain_claims:
     Yes, I remember I used to see Billy meeting with this woman, Asket. This was his second alleged contact person.
   text: |-
     Ms. Chang recalled seeing Billy Meier meeting with Asket, described as his second alleged contact person.
+  entailment:
+    label: contradicts
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 71eb8a98-2556-462e-9eb2-1bfc3236c245
   type: testimony
   attestation: second_hand
@@ -2246,6 +2702,11 @@ domain_claims:
     Asket would sometimes come into my room at night before I'm falling asleep, and she would hum or sing to me, stroke my hair, brush my hair... I always felt like I knew more when I woke up than when I went to sleep.
   text: |-
     Ms. Chang recalled that as a young girl Asket would sometimes come into her room at night, hum or sing to her and stroke or brush her hair, and that she would wake feeling she knew more than when she fell asleep.
+  entailment:
+    label: entails
+    score: 0.852
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 78ac1cc2-c6bb-42f8-a5ac-b7d3cce36488
   type: testimony
   attestation: first_hand
@@ -2266,6 +2727,11 @@ domain_claims:
     all of that has been documented, and I've talked to 14 eyewitnesses and seen bullet holes and lead investigative reports
   text: |-
     Michael Horn has spoken with 14 eyewitnesses in the Billy Meier case and has seen bullet holes and led investigative reports.
+  entailment:
+    label: neutral
+    score: 0.894
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aabf7879-33ef-4182-a78a-0f4228648fa2
   type: testimony
   speaker:
@@ -2282,6 +2748,11 @@ domain_claims:
   quote: the sightings of the people are generally accidental. They're not intended.
   text: |-
     Sightings of the alleged Pleiaren people are generally accidental and not intended.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 531c4862-0251-4c85-8baf-31b8390401b2
   type: testimony
   attestation: first_hand
@@ -2300,6 +2771,11 @@ domain_claims:
     name: Pleiaren
   quote: I've talked to people who've seen either the alleged Pleiaren people
   text: Michael Horn has spoken with people who have seen the alleged Pleiaren beings.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e647f0d8-e2b5-4eb4-89e8-12a8a3b7a1e7
   type: testimony
   speaker:
@@ -2321,6 +2797,11 @@ domain_claims:
     people called this word pleiadian that Billy and they invented there's no such thing as pleiadians you can flush that and they gave that up after a while because they predicted certain things and it came true about all these people that would come forward claiming to be contactees
   text: |-
     The term 'Pleiadian' was invented by Billy Meier and the Pleiaren and was later abandoned; the Pleiaren had predicted that many people would come forward falsely claiming to be contactees, which came true.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c620adba-ddb8-4355-9e77-bf245774256b
   type: testimony
   speaker:
@@ -2338,6 +2819,11 @@ domain_claims:
     His ex-wife, who they had very acrimonious relationship 30 years of marriage and then they got divorced
   text: |-
     Billy Meier and his ex-wife had an acrimonious relationship, were married for 30 years, and then divorced.
+  entailment:
+    label: entails
+    score: 0.937
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 70d8ba34-5744-4ab8-8e19-dce753b5e02e
   type: testimony
   speaker:
@@ -2355,6 +2841,11 @@ domain_claims:
     was one of 17 people that they did at using the technology of the time voice stress or whatever they did lie detector tests with the people who were around him who claimed to be eyewitnesses and they all passed as being authentic she was one of them
   text: |-
     Seventeen people around Billy Meier who claimed to be eyewitnesses, including his ex-wife, were given voice-stress lie detector tests and all passed as authentic.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 17f23ae1-ed21-4868-b727-0683cb7ba5d6
   type: testimony
   speaker:
@@ -2374,6 +2865,11 @@ domain_claims:
     name: Gilgamesha (Meier)
   quote: He has three adult children, Atlantis, Atlant, and Gilgamesha.
   text: Billy Meier has three adult children named Atlantis, Atlant and Gilgamesha.
+  entailment:
+    label: contradicts
+    score: 0.913
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8c6c61e7-8d0e-4bc9-9548-53f7f73768da
   type: testimony
   speaker:
@@ -2395,6 +2891,11 @@ domain_claims:
     Atlantis is his stepson... Atlantis is featured in one of our films... The Silent Revolution of Truth, one of Billy's two natural sons, and he spoke about the difficulty in his life because His father... he's a liar and a fabricator.
   text: |-
     Atlantis is Billy Meier's stepson and is featured in the film The Silent Revolution of Truth, where he spoke about the difficulty of growing up with his father being called a liar and fabricator.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7bc9dd3a-d35e-4201-89b4-94b385dd4ac0
   type: testimony
   speaker:
@@ -2413,6 +2914,11 @@ domain_claims:
     Starting in 1975, it's getting out in Europe before it's translated into English, and people are already interested or attacking him.
   text: |-
     Starting in 1975 Billy Meier's information was getting out in Europe before it was translated into English, and people were already either interested or attacking him.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2c70552c-601a-4791-8333-d88fff0c5677
   type: testimony
   speaker:
@@ -2430,6 +2936,11 @@ domain_claims:
     as children, they have seen these craft... his father's disappearing in the middle of the night and coming back and writing voluminous stuff and publishing information
   text: |-
     Billy Meier's children saw the craft as children and knew of their father's activities of disappearing in the middle of the night and returning to write and publish voluminous material before any investigators came.
+  entailment:
+    label: entails
+    score: 0.884
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33fcce2a-52a5-4af3-ab89-2cd26234f1b9
   type: testimony
   speaker:
@@ -2447,6 +2958,11 @@ domain_claims:
     He never sees, to the best of my knowledge, he doesn't see them. He sees the ships. He's painted or drawn them as a child.
   text: |-
     To the best of Michael Horn's knowledge, Billy Meier does not see the beings; he sees the ships and has painted or drawn them since childhood.
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e2a176c8-9fa1-4aeb-86e9-1880567403fc
   type: testimony
   speaker:
@@ -2462,6 +2978,11 @@ domain_claims:
     name: Meier, Billy
   quote: there's over a hundred eyewitnesses
   text: There are over a hundred eyewitnesses to the Billy Meier craft.
+  entailment:
+    label: entails
+    score: 0.648
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 74c8fac1-16ab-4644-8ce0-9d452ea84dc4
   type: testimony
   speaker:
@@ -2478,6 +2999,11 @@ domain_claims:
   quote: There were, I think, three or four.
   text: |-
     There were about three or four eyewitnesses to the alleged beings in the Billy Meier case.
+  entailment:
+    label: entails
+    score: 0.514
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 63302e25-24ad-43e1-ad8c-85f13519b01a
   type: testimony
   attestation: second_hand
@@ -2504,6 +3030,11 @@ domain_claims:
     her name was Bruni... maybe Brunhilde Koya... there is this... huge man reclining on the wall. Turns out, she says, it was this guy Danil... I think that he was like 15 feet tall. He wasn't one of the people in this Pleiaren group... he was there and then he disappeared.
   text: |-
     Brunhilde Koya, known as Bruni and either Swiss or German, described seeing a huge man reclining on a wall that Billy Meier had built, later learning he was named Danil and was about 4.6 metres tall and not one of the Pleiaren group; he startled her and then disappeared.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31b457a3-b572-40b5-9bf0-356a549f5ae9
   type: testimony
   speaker:
@@ -2523,6 +3054,11 @@ domain_claims:
     Meier's wife had walked in while they were still together into the room where the alleged leader of their race ptah... he's sitting on the couch and unexpectedly she walks in he's startled... She says he disappears.
   text: |-
     Billy Meier's wife once walked into a room where Ptaah, the alleged leader of the Pleiaren race, was sitting on the couch; startled, he disappeared.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b73b47c7-a51f-4dfd-8371-d6cf4e172e9c
   type: testimony
   speaker:
@@ -2542,6 +3078,11 @@ domain_claims:
     There was one experience that was a near fatal tragedy that occurred with one of the Pleiaren being there and somebody making themselves known unexpectedly.
   text: |-
     One near-fatal tragedy occurred in the Billy Meier case involving one of the Pleiaren beings when somebody made themselves known unexpectedly.
+  entailment:
+    label: entails
+    score: 0.861
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d3dd6df-cac8-4c81-8b21-1ef1a1f05ad7
   type: testimony
   speaker:
@@ -2561,6 +3102,11 @@ domain_claims:
     Then later on, she changes her story. Oh, no, Billy's making models. He's lying about everything... suddenly her bank account was increased by five figures in Swiss money, and there were some people that now she was affiliated with who were known skeptics and defamers of Billie.
   text: |-
     After divorcing Billy Meier, Brunhilde Koya changed her story to say that Billy was making models and lying; around that time her bank account increased by a five-figure sum in Swiss money and she became affiliated with known skeptics and defamers of Billy Meier.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 50e2da92-a390-49f4-a0d2-f76e3f317741
   type: testimony
   speaker:
@@ -2576,6 +3122,11 @@ domain_claims:
     name: Meier, Billy
   quote: She had thrown things at him like frying pans
   text: Billy Meier's wife threw things at him such as frying pans.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 763dbda3-6aa4-45bf-ba44-6440a3ec9f58
   type: testimony
   speaker:
@@ -2595,6 +3146,11 @@ domain_claims:
     he ran away from switzerland as a teenage boy because they wanted to put him into a juvenile detention center... this woman had grabbed a towel... started to beat him with it and he'd had enough... slapped her around with it well this didn't sit well with the legal system
   text: |-
     As a teenage boy Billy Meier ran away from Switzerland to avoid being placed in a juvenile detention centre, after a woman who hated him had beaten him with a towel and he had struck back at her.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9c2dc3bb-5b50-4efd-8c50-a3823bcffe79
   type: testimony
   speaker:
@@ -2614,6 +3170,11 @@ domain_claims:
     Billy decides that he thinks he'll take a trip to the french foreign legion and avoid some consequences which he did
   text: |-
     Billy Meier decided to join the French Foreign Legion to avoid legal consequences.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5edc7f9b-b770-4676-b796-b4b7d17dd366
   type: testimony
   speaker:
@@ -2635,6 +3196,11 @@ domain_claims:
     he was in the French Foreign Legion for a while, and he recognized that... he did not want to become a trained killer, and he would return to Switzerland and face the music, which he did.
   text: |-
     While in the French Foreign Legion Billy Meier recognised he did not want to become a trained killer and returned to Switzerland to face the consequences.
+  entailment:
+    label: entails
+    score: 0.912
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ec30cc3d-9844-4106-a326-24704695f2d2
   type: testimony
   speaker:
@@ -2654,6 +3220,11 @@ domain_claims:
     he trudged across the desert, one of the few people to ever walk out from wherever he was centered there, I don't know if it was Algiers or what... he had a canteen, and he would sip from it and pretend that it was still full of water when it had already been, and shake it in their faces
   text: |-
     Billy Meier trudged across the desert, possibly from Algiers, becoming one of the few people to walk out and survive it, while two men who saw him followed him and he used a canteen trick, sipping and shaking it as if it were still full of water, to keep them motivated.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fdfefbc8-2ce5-4878-a21c-05c6d54b9ca8
   type: testimony
   attestation: first_hand
@@ -2672,6 +3243,11 @@ domain_claims:
     name: Meier, Billy
   quote: as I've told you, I've had three sightings of craft
   text: Michael Horn has had three sightings of the craft in the Billy Meier case.
+  entailment:
+    label: entails
+    score: 0.42
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3c2f1fd3-009f-4181-9cb7-125683649ea2
   type: testimony
   speaker:
@@ -2691,6 +3267,11 @@ domain_claims:
     there are photos in the picture book that depict a whole slew of people just kind of standing on a hill and behind them in almost like a double exposure fashion. There's like sometimes one craft, sometimes two, where it was said that Smyazé was the inhabitant of this craft was like teleporting the craft
   text: |-
     In photographs in the Billy Meier picture book showing groups of people on a hill with one or two craft behind them in a double-exposure fashion, it was said that Semjase, the inhabitant of the craft, was teleporting the craft.
+  entailment:
+    label: neutral
+    score: 0.516
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5e6cd9f9-cc05-4b87-a2a1-70eb476a46fe
   type: testimony
   speaker:
@@ -2707,6 +3288,11 @@ domain_claims:
   quote: To the best of my knowledge, they didn't.
   text: |-
     To the best of Michael Horn's knowledge, the people in the Billy Meier hill photographs did not see the UFOs while they were there.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c7582539-5a77-4419-9fea-2887bb1e3ccf
   type: testimony
   speaker:
@@ -2724,6 +3310,11 @@ domain_claims:
     the photo books in German, but fortunately, as I tell people, the photographs are in English.
   text: |-
     The Billy Meier photo book is written in German, while the photographs themselves are captioned in English.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5c6a590-2665-409e-bc40-bdb90abe51d9
   type: testimony
   speaker:
@@ -2743,6 +3334,11 @@ domain_claims:
     i want to purchase and load the film into the camera before you take the photos and i want to take that out and be the one who brings it for development at bear photo Billy said that's fine... Billy took whatever, 30 or more photos... Billy stories had no possession of the film
   text: |-
     For one photography session, a man insisted on purchasing and loading the film into the camera and taking the film for development at Bear Photo himself; Billy Meier then took 30 or more photographs and had no possession of the film.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4e5c6ea8-0ce7-409f-a144-223ba60bd367
   type: testimony
   speaker:
@@ -2764,6 +3360,11 @@ domain_claims:
     the investigators wendell stevens and others were trying to also figure out if Billy was hoaxing these photos they wendell had a model made at the mgm studios in hollywood of one of the craft
   text: |-
     Investigator Wendelle Stevens had a model of one of the Billy Meier craft made at the MGM studios in Hollywood in an attempt to determine whether Billy Meier was hoaxing the photographs.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 231b119b-ac41-498f-a56e-d2a0e89d317e
   type: testimony
   speaker:
@@ -2783,6 +3384,11 @@ domain_claims:
     they would go to locations where Billy said, this is where I took this... we're gonna dangle the model... every photograph the computer would look at and... this is a model. There's no question. There's no energy fields around it
   text: |-
     Wendelle Stevens and others dangled the model at locations where Billy Meier said he had taken his photographs and took comparison photographs, and computer analysis of every such photograph identified it as a model with no energy fields around it.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b6e777b2-8e45-4835-8253-be0ce1faacc4
   type: testimony
   speaker:
@@ -2800,6 +3406,11 @@ domain_claims:
     something about haze effects at things at a distance... the thermographic effects around the ship or the ship itself having at the base of it, it was a hotter kind of an energy
   text: |-
     The photo analysis of the Billy Meier photographs described haze effects at distance and thermographic effects around the ship, with a hotter energy at the base of the craft.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cbe75200-298f-4b58-8335-2d65928af3c0
   type: testimony
   attestation: second_hand
@@ -2820,6 +3431,11 @@ domain_claims:
     name: Beam ship (Billy Meier sports model craft)
   quote: Five other photographers. That's something.
   text: Five other photographers besides Billy Meier photographed the beam ship object.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ee1d46d5-dd2a-4db6-a605-395c81c58284
   type: testimony
   attestation: second_hand
@@ -2840,6 +3456,11 @@ domain_claims:
     he was a skeptic who had also sent Billy some very nasty stuff. And he one day contacts Billy and says, listen, may I come and meet with you? I have some photographs here.
   text: |-
     A skeptic who went by the name Der Pilger had previously sent Billy Meier hostile material, then contacted him to apologise and to bring photographs he had taken of an object he saw in a field.
+  entailment:
+    label: entails
+    score: 0.922
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 679dc7ac-f81c-432c-8b08-b161ae7dcade
   type: testimony
   attestation: second_hand
@@ -2860,6 +3481,11 @@ domain_claims:
     There were people who were workers from Turkey who were working on the road. One man was quite skeptical and quite nasty towards him, and he couldn't handle what he saw. And he apparently actually committed suicide. This is in the documentation.
   text: |-
     Among the witnesses to the Billy Meier sightings were road workers from Turkey, one of whom was skeptical and hostile, could not handle what he saw, and apparently committed suicide.
+  entailment:
+    label: entails
+    score: 0.937
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 810e8e93-ab3c-463b-953f-ba6b0cf517cc
   type: opinion
   attestation: second_hand
@@ -2881,6 +3507,11 @@ domain_claims:
   quote: Because there's no life in the Pleiades. There's no conditions for habitation.
   text: |-
     The beings Billy Meier speaks of are not from the Pleiades visible in the night sky, because there is no life in the Pleiades and no conditions for habitation there.
+  entailment:
+    label: entails
+    score: 0.75
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5f2897e8-eca0-4176-a505-6911e25e2aed
   type: testimony
   attestation: second_hand
@@ -2903,6 +3534,11 @@ domain_claims:
     And it is about 500 light years beyond in what would they call the Pleiars. And it's an altered time-space configuration.
   text: |-
     The Pleiaren live about 500 light years beyond the Pleiades, in an altered time-space configuration.
+  entailment:
+    label: entails
+    score: 0.854
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a276934d-5243-4be7-87aa-84ac9927c586
   type: testimony
   attestation: second_hand
@@ -2931,6 +3567,11 @@ domain_claims:
     there was a race, there were beings, humans, based underneath the great pyramid at Giza... This is a splinter group that actually diverged from the source group that the Pleiaran people came from, which was originally in the constellation of Lyra... Lyrans
   text: |-
     Beneath the Great Pyramid of Giza there was a race of large humans; they were a splinter group that diverged from the source group the Pleiaren came from, originally in the constellation of Lyra, known as the Lyrans.
+  entailment:
+    label: entails
+    score: 0.889
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 17fb57f3-c8cc-4c8c-b198-af37e2b93661
   type: testimony
   attestation: second_hand
@@ -2951,6 +3592,11 @@ domain_claims:
     these original Lyrians were very large people, highly technologically developed... star wars on steroids warrior types... enslaving blowing things
   text: |-
     The original Lyrians were very large people, highly technologically developed, and warrior types who enslaved and destroyed.
+  entailment:
+    label: entails
+    score: 0.661
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 60609a74-42f7-4a89-bf43-e4c87259b979
   type: testimony
   attestation: second_hand
@@ -2973,6 +3619,11 @@ domain_claims:
     these people, referred to as the Giza intelligences or the Befath, which was a name that was apparently of their peoples
   text: |-
     The beings beneath the Great Pyramid of Giza are referred to as the Giza Intelligences or the Befath, a name of their people.
+  entailment:
+    label: entails
+    score: 0.771
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 701aecd5-d500-4142-b21e-d40da7b0966b
   type: testimony
   attestation: second_hand
@@ -2993,6 +3644,11 @@ domain_claims:
     They had very high technology, and they would like to participate in enslaving everybody on the planet. They weren't large enough in numbers... nothing that could overwhelm us.
   text: |-
     The Giza Intelligences had very high technology and wanted to enslave everyone on the planet, but were not large enough in numbers to overwhelm humanity.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 21066f65-0317-4dea-992b-6cae4861f957
   type: testimony
   attestation: second_hand
@@ -3011,6 +3667,11 @@ domain_claims:
     name: Giza Intelligences (Befath)
   quote: So what they were going to do is create a false second coming.
   text: The Giza Intelligences planned to create a false second coming.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d771afc0-c4bc-4074-ae28-d4a3a54ca7ca
   type: testimony
   attestation: second_hand
@@ -3033,6 +3694,11 @@ domain_claims:
     They had a technology whereby in a form of telepathy, it's called tele-nautic, they could beam through existing radio, TV, wire, telegraphs, telephones, they could beam frequencies and direct them towards certain persons.
   text: |-
     The Giza Intelligences had a technology of telepathy, called telenoidic control, by which they could beam frequencies through existing radio, television, wire, telegraph and telephone and direct them at particular persons.
+  entailment:
+    label: entails
+    score: 0.823
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f9467d2e-8ecd-466b-a7d8-332254664572
   type: testimony
   attestation: second_hand
@@ -3053,6 +3719,11 @@ domain_claims:
     they had 745 or so important political and religious leaders under various influence
   text: |-
     The Giza Intelligences had about 745 important political and religious leaders under their influence.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9c3a030d-f2e5-4a3c-b09d-c64fe2dab982
   type: testimony
   attestation: second_hand
@@ -3074,6 +3745,11 @@ domain_claims:
   quote: |-
     they were also people who could influence and did influence a group called the Thule Society
   text: The Giza Intelligences influenced a group called the Thule Society.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83fc47fd-a8ed-48f6-8753-a3627bccab33
   type: testimony
   attestation: second_hand
@@ -3098,6 +3774,11 @@ domain_claims:
     Billy Meier was someone on the planet that uh would be an obstacle to their agenda they knew that he was meeting with... the Pleiarian and uh they engineered some attacks on his life.
   text: |-
     The Giza Intelligences recognised Billy Meier as an obstacle to their agenda because he was meeting with the Pleiaren, and engineered attacks on his life.
+  entailment:
+    label: contradicts
+    score: 0.622
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c8f789e-29f9-43d6-a455-6d53f9fc201d
   type: testimony
   attestation: second_hand
@@ -3120,6 +3801,11 @@ domain_claims:
     There was one particular event where during a holiday season, I think it's in August in Switzerland, where there are cannons that are shot off... So the plan they had at this time was to eliminate him.
   text: |-
     During a holiday season around August in Switzerland, when cannons are shot off in the rural Zurich Highlands where Billy Meier lived, there was a plan to eliminate him.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: be30f069-3fe3-4ccb-b01a-8b8fcdd816dc
   type: testimony
   attestation: second_hand
@@ -3145,6 +3831,11 @@ domain_claims:
     1953 and it's it is interesting as you say it because There's a lot of information. He published that information.
   text: |-
     The account of the beings beneath the Great Pyramid of Giza was published by Billy Meier in 1953.
+  entailment:
+    label: entails
+    score: 0.544
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6d4a84d3-9d66-4d10-b178-07593425353d
   type: testimony
   attestation: second_hand
@@ -3169,6 +3860,11 @@ domain_claims:
     his second contact person, after 11 years of being tutored by Sfath, Sfath is going to pass out of life, and he says, you will meet your next teacher, she... and she will guide you for the next 11 years.
   text: |-
     Billy Meier was tutored by Sfath for 11 years; before passing out of life, Sfath told him his next teacher would be a female more advanced in certain knowledge who would guide him for the next 11 years.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e57efdc5-765c-4890-8a77-1ba3e000cfbd
   type: testimony
   attestation: second_hand
@@ -3200,6 +3896,11 @@ domain_claims:
     As early as 1953, She tells him about the assassination in America of two brothers who will be running for president... John Fitzgerald Kennedy will be killed in Dallas, Texas on this day... and then the assassination of his brother robert kennedy
   text: |-
     As early as 1953, Asket told Billy Meier that two American brothers running for president would be assassinated: John Fitzgerald Kennedy would be killed in Dallas, Texas on a stated date, followed by the assassination of his brother Robert Kennedy.
+  entailment:
+    label: entails
+    score: 0.794
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 48d6dcd7-164a-4f2a-9bd5-ec1ce224308f
   type: testimony
   attestation: second_hand
@@ -3225,6 +3926,11 @@ domain_claims:
     In 1987, Billy is given something called the Henoch prophecies. Henoch being, I guess, the German version of Enoch
   text: |-
     In 1987 Billy Meier was given the Henoch Prophecies, Henoch being the German form of Enoch.
+  entailment:
+    label: entails
+    score: 0.916
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 558ad95b-76ac-435c-8d99-7f6d74032f39
   type: administrative
   attestation: second_hand
@@ -3242,6 +3948,11 @@ domain_claims:
   quote: it's in German, supposedly in 87, but the first English is in 2002, I think.
   text: |-
     The Henoch Prophecies were first published in German in 1987 and first in English around 2002.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ef99f20-d4a0-41c7-ba0b-6cec2c793fd8
   type: testimony
   attestation: second_hand
@@ -3265,6 +3976,11 @@ domain_claims:
     it talks about the destruction of the World Trade Center, but that happened in 2001... The destruction of the WTC by terrorists in 2001 is in there.
   text: |-
     The Henoch Prophecies predict the destruction of the World Trade Center, which occurred in 2001, described as being carried out by terrorists.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 199d2b70-1c55-4050-a3df-f63f44431f0b
   type: testimony
   attestation: second_hand
@@ -3283,6 +3999,11 @@ domain_claims:
     name: Henoch Prophecies
   quote: It's like 300, I think, specific things.
   text: The Henoch Prophecies document contains roughly 300 specific predictions.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 59d3ff4d-8904-469e-946d-cd474f3bb7cf
   type: testimony
   attestation: second_hand
@@ -3308,6 +4029,11 @@ domain_claims:
     1989, he's also told again, terrorists will fly airplanes into these buildings. There's a conversation with Quetzal, one of the other ETs... he says, yes, there will be 3,000 people or so that will be killed.
   text: |-
     In 1989, Billy Meier was told by Quetzal that terrorists would fly airplanes into the World Trade Center buildings, and that about 3,000 people would be killed.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5c4b78e1-a87a-4873-9409-271402014a81
   type: testimony
   attestation: second_hand
@@ -3330,6 +4056,11 @@ domain_claims:
     there was something in there about the Russians moving their troops to Arkhangelsk in northern Russia-Siberia in preparation for their attacks against Scandinavia.
   text: |-
     The 1987 Henoch Prophecies document mentioned Russians moving troops to Arkhangelsk in northern Russia in preparation for attacks against Scandinavia.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7eb6033b-d37c-4375-ba69-76a4acf649a2
   type: testimony
   attestation: second_hand
@@ -3354,6 +4085,11 @@ domain_claims:
     this document actually was created Thousands of years ago by the prophet Enoch... Quetzal says, I'm giving you the names of things that are, what is referred to in this document, because there was no Russia by name.
   text: |-
     The Henoch Prophecies document was said to have been created thousands of years ago by the prophet Enoch, with Quetzal supplying modern names such as Russia because those names did not exist in the original document.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7eb9dea9-d894-471b-b9b9-34e24ddd7849
   type: observation
   speaker:
@@ -3370,6 +4106,11 @@ domain_claims:
   quote: Norway, Sweden, Finland, all joined NATO, inviting NATO to these borders
   text: |-
     Norway, Sweden and Finland all joined the North Atlantic Treaty Organization (NATO).
+  entailment:
+    label: entails
+    score: 0.693
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 76271acc-8cb2-47b6-9957-ce4dbedea5af
   type: observation
   speaker:
@@ -3387,6 +4128,11 @@ domain_claims:
   quote: |-
     in 2011, Russia moved and created bases in Arkhangelsk, military bases in Arkhangelsk.
   text: In 2011, Russia moved troops and created military bases in Arkhangelsk.
+  entailment:
+    label: entails
+    score: 0.805
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 960981e2-0bc6-4ddd-b2ca-ef46cd173284
   type: testimony
   attestation: first_hand
@@ -3408,6 +4154,11 @@ domain_claims:
     2011 was also a year in which I went and visited Billy and we were making a film where we have like 50 of these prophecies in the film.
   text: |-
     In 2011 Michael Horn visited Billy Meier and they made a film containing about 50 of the prophecies.
+  entailment:
+    label: entails
+    score: 0.908
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 17be0cab-c322-4418-9521-f35ba284ab98
   type: testimony
   attestation: second_hand
@@ -3427,6 +4178,11 @@ domain_claims:
     The vying for power and control at the Arctic, and eventually he says at the Antartic, but at the Arctic, Russia, Canada, the U.S., China, or Great Britain, or whatever, all these countries are going to be pushing for control of mineral rights.
   text: |-
     During the 2011 filming Billy Meier predicted that Russia, Canada, the United States, China and Great Britain would push for control of mineral rights at the Arctic, and eventually the Antarctic.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 155568b2-3884-49d4-9954-fb2bd92c8f03
   type: testimony
   attestation: first_hand
@@ -3446,6 +4202,11 @@ domain_claims:
     I had sent the information to a man I had known for 50 years, physicist, physician, retired, who did not believe this case... although he allowed himself to be interviewed for a film I put out in 2012, just generally speaking about extraterrestrial life in the universe.
   text: |-
     Michael Horn sent the Billy Meier Arctic information to a man he had known for 50 years, a retired physicist and physician who had not believed the case was real, and who was interviewed for a film Horn released in 2012 about extraterrestrial life in the universe.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cf56693f-18c5-4525-bc44-3567dfcb17db
   type: hearsay
   attestation: second_hand
@@ -3468,6 +4229,11 @@ domain_claims:
     I was in the American military, and I was stationed overseas, and we flew flights over this area, reconnaissance... what Billy is saying here is a strategy... this would make sense in terms of a staging area, not only for Scandinavia, but to come through Alaska bisect, come through Canada, come into the U.S.
   text: |-
     A person claiming to be a retired physicist and physician who had served in the American military overseas and flown reconnaissance flights over the Arctic said that Billy Meier's account described a plausible Russian staging area for attacks on Scandinavia and for approaching the United States through Alaska and Canada.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7fd069f8-e9d1-4435-b7d3-0214232f6c24
   type: opinion
   attestation: second_hand
@@ -3489,6 +4255,11 @@ domain_claims:
   quote: Billy Meier is not a schizophrenic. He's not a crazy lunatic.
   text: |-
     A person claiming to be a retired physicist and physician stated that Billy Meier is not a schizophrenic or a crazy lunatic.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 02cbf7e3-7479-45dc-bdcb-b14da0c668b3
   type: testimony
   attestation: second_hand
@@ -3515,6 +4286,11 @@ domain_claims:
     they go to egypt they leave the ship and They go to the pyramids and somehow she knows where this entrance is... they also had devices that would render them not visible, out of phase with our visual spectrum... they were communicating strictly telepathic
   text: |-
     Asket transported Billy Meier to Egypt, and after leaving the ship they entered the Great Pyramid of Giza through an entrance she knew, using devices that rendered them out of phase with the human visual spectrum and communicating only telepathically.
+  entailment:
+    label: entails
+    score: 0.942
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6b817e76-c8d2-4dc1-992b-5d5c3e0c8c50
   type: testimony
   attestation: second_hand
@@ -3537,6 +4313,11 @@ domain_claims:
     this is something that Billy supposedly was capable of doing since he was taught by Sfath as a child.
   text: |-
     Billy Meier had been capable of telepathic communication since being taught by Sfath as a child.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95037f5e-5dcd-4a1b-941f-8c8edc00f04a
   type: testimony
   attestation: second_hand
@@ -3561,6 +4342,11 @@ domain_claims:
     we had to silently pass by these... beings that were standing there armed... these are robotic uh guards and they would kill anything that could come down there... it it was one to two kilometers below the pyramid
   text: |-
     Descending through the corridors beneath the Great Pyramid of Giza, Billy Meier and Asket silently passed armed robotic guards that were programmed to kill anything coming down there, reaching a chamber one to two kilometres below the pyramid.
+  entailment:
+    label: entails
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 920067c9-e012-4a54-9bc9-66d7ca0a5f26
   type: testimony
   attestation: second_hand
@@ -3583,6 +4369,11 @@ domain_claims:
     we enter this huge room of space, very high and big room... there is a large craft. There's a large, what we would call UFO or spaceship... huge and smaller craft.
   text: |-
     In a huge chamber created underground beneath the Great Pyramid of Giza there was a large craft along with smaller craft.
+  entailment:
+    label: contradicts
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 720cc218-7b45-4b49-96a1-92e475d32687
   type: testimony
   attestation: second_hand
@@ -3609,6 +4400,11 @@ domain_claims:
     that's the cross of the crucifixion. And there's the spear of destiny, the crown of thorns, the bloody nails... She says, no, they are not. They were made by these people. But if your scientists on earth would test them, they would carbon date to that period of time.
   text: |-
     On a platform in the chamber beneath the Great Pyramid of Giza were artifacts resembling the cross of the crucifixion, the spear of destiny, the crown of thorns and the bloody nails; Asket said they were made by the Giza Intelligences but would carbon date to the period of the crucifixion.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 30050eee-57a8-406b-9baa-16272e023d3a
   type: testimony
   attestation: second_hand
@@ -3628,6 +4424,11 @@ domain_claims:
   quote: the cross of the crucifixion, which was not this. It's a Y-shaped cross.
   text: |-
     The actual cross of the crucifixion was a Y-shaped cross, not the shape of the artifact displayed beneath the pyramid.
+  entailment:
+    label: entails
+    score: 0.85
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 64921ed7-d5a2-4e5f-bfca-bc711be7e8e5
   type: testimony
   attestation: second_hand
@@ -3654,6 +4455,11 @@ domain_claims:
     a man named Reinhold Schmidt... a corn merchant from California, who has been under the telenoidic control of this Befath. He believes he's been on the board of craft, which he has never been, because they create what are called real visions.
   text: |-
     Reinhold Schmidt, described as a corn merchant from California, was under the telenoidic control of the Befath and believed he had been aboard a craft, which he never was, because the Befath create so-called real visions.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2c5a82e3-5ee6-40db-8c05-372adec36b57
   type: testimony
   attestation: second_hand
@@ -3673,6 +4479,11 @@ domain_claims:
   quote: |-
     And Billy, who's explained and demonstrated what real visions are, he's described this
   text: Billy Meier has explained and demonstrated what real visions are.
+  entailment:
+    label: entails
+    score: 0.747
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 35fd403f-2c58-40b8-acb8-599bc4ba487a
   type: hearsay
   attestation: second_hand
@@ -3697,6 +4508,11 @@ domain_claims:
     they would be sitting somewhere under a complete we could call a hypnotic it's telenoidic control ... He would have been implanted with information. ... He would fully believe this. He would be able to say things and present evidence and produce the artifacts from the second coming
   text: |-
     The Giza Intelligences (Befath) intended to place a man under a hypnotic telenoidic control and implant him with information so that he would fully believe he was the second coming, allowing him to present evidence and produce artefacts of the second coming.
+  entailment:
+    label: entails
+    score: 0.43
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f4de6ef8-38a7-4296-a39f-52d00b6589ed
   type: hearsay
   attestation: second_hand
@@ -3717,6 +4533,11 @@ domain_claims:
     the agenda here was to bring people, human beings of earth, together under one religion, world religion, control. So these people, the Befath, had that agenda.
   text: |-
     According to the Billy Meier material, the agenda of the Giza Intelligences (Befath) was to bring the human beings of Earth together under one controlling world religion.
+  entailment:
+    label: contradicts
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6f040bd9-e79a-4c2b-bfde-72428f4b5a1d
   type: hearsay
   attestation: second_hand
@@ -3738,6 +4559,11 @@ domain_claims:
   quote: And they wanted to get rid of Billy Meier.
   text: |-
     According to the Billy Meier material, the Giza Intelligences (Befath) wanted to kill Billy Meier.
+  entailment:
+    label: entails
+    score: 0.69
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d3a02ce-aac2-44b6-8dfa-f0eba835f424
   type: testimony
   attestation: second_hand
@@ -3759,6 +4585,11 @@ domain_claims:
     name: Billy Meier contact case
   quote: because Billy's learning all this stuff in 53
   text: Billy Meier began learning material from his extraterrestrial contacts in 1953.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f3ddd794-8840-48d0-b5df-d6d9e118e5ec
   type: hearsay
   attestation: second_hand
@@ -3783,6 +4614,11 @@ domain_claims:
     Now we're about 78 or 75, whatever it is, when they're having this event in Switzerland, the cannons are going off, and the Befath had put a ship in motion towards the center, the farmhouse at Billy renovated, where everybody lives and works from.
   text: |-
     Around 1975 to 1978, during an event in Switzerland when cannons were being fired in the valley, the Giza Intelligences (Befath) sent a robotically controlled craft toward Billy Meier's centre, the renovated farmhouse where his community lives and works.
+  entailment:
+    label: entails
+    score: 0.865
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b8c97b8e-4140-4f69-839b-3e2c6ee27ac1
   type: hearsay
   attestation: second_hand
@@ -3805,6 +4641,11 @@ domain_claims:
     because the Pleiaren knew this was coming, they have screened from visible or any form of detection one of their craft right above the center.
   text: |-
     The Pleiaren, foreseeing the attack, had positioned one of their craft directly above Billy Meier's centre, screened from visible detection.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5b4c4b0e-fb1b-4944-afea-f4d2dbf81673
   type: hearsay
   attestation: second_hand
@@ -3827,6 +4668,11 @@ domain_claims:
     they're synchronizing to when a cannon goes off in the valley, they're going to send a sonic attack beam down to hopefully detonate, blow up a water heater ... everybody in there, including, and especially Billy, would be killed.
   text: |-
     The Giza Intelligences (Befath) craft attempted to synchronise a sonic attack beam with the firing of a cannon in the valley in order to cause an explosion at Billy Meier's centre and kill everyone inside, especially Billy Meier.
+  entailment:
+    label: entails
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c8e8515-ebee-4a6f-838e-953b7f066db3
   type: hearsay
   attestation: second_hand
@@ -3849,6 +4695,11 @@ domain_claims:
     They send their ship, they get a hold of that ship, they eliminate it, it was robotically controlled, and they go, prepared for this, they remove this whole host of people from underneath, and they close in and basically leave no trace of their ... headquarters.
   text: |-
     The Pleiaren, being non-aggressive but defending themselves when attacked, captured and eliminated the robotically controlled Giza Intelligences (Befath) craft and removed its host of people, leaving no trace of their headquarters.
+  entailment:
+    label: entails
+    score: 0.891
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fd853294-69c4-4f29-8322-e77a6dfd632a
   type: hearsay
   attestation: second_hand
@@ -3869,6 +4720,11 @@ domain_claims:
     name: Mars
   quote: The Pleiarian and, uh, another group did this on Mars
   text: The Pleiaren and another group carried out a similar action on Mars.
+  entailment:
+    label: entails
+    score: 0.729
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bc9ca32a-0d7a-487c-9bec-2a8ed44ada38
   type: hearsay
   attestation: third_hand
@@ -3892,6 +4748,11 @@ domain_claims:
     in our first film silent revolution he shows a metal uh plate that he had put in a an agenda book ... because he had dreamt the night before he would get shot ... and the person did appear and shot and disappeared and later contacted him
   text: |-
     In the film The Silent Revolution of Truth, Billy Meier shows a metal plate that he had secured inside an agenda book behind his jacket after dreaming the night before that he would be shot at a certain point in the road, and the person did appear, shot, and disappeared, later contacting him to apologise.
+  entailment:
+    label: entails
+    score: 0.431
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5c7d304e-b315-43aa-a33a-fe35b456f1c2
   type: hearsay
   attestation: second_hand
@@ -3910,6 +4771,11 @@ domain_claims:
     name: Meier, Billy
   quote: there was someone in the bushes with a long gun who shot at him and missed.
   text: Someone hidden in the bushes with a long gun shot at Billy Meier and missed.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fdc99be0-7295-4d25-b5c0-f276ec2d7bfb
   type: testimony
   attestation: second_hand
@@ -3930,6 +4796,11 @@ domain_claims:
     And Billy says, no, and this is my bulldog revolver, and this is my Kalashnikov. ... we show his weapon cabinet is pretty impressive.
   text: |-
     Billy Meier keeps an impressive weapon cabinet including a bulldog revolver and a Kalashnikov.
+  entailment:
+    label: entails
+    score: 0.841
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4e0b9d88-f744-4d12-b27d-5c69e248efb9
   type: hearsay
   attestation: second_hand
@@ -3950,6 +4821,11 @@ domain_claims:
     when you see his image from being the phantom in the Middle East, and he's got the Arab headdress, he's got the Swiss jacket, and he's packing a .357 Magnum and a knife, and this is the guy who was bringing in serial killers and mass murderers without harming them.
   text: |-
     In his time as 'the phantom' in the Middle East, Billy Meier wore an Arab headdress and a Swiss jacket and carried a .357 Magnum and a knife while bringing in serial killers and mass murderers without harming them.
+  entailment:
+    label: entails
+    score: 0.932
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 187bd684-95ab-4a92-a9cf-3dc87f674f91
   type: testimony
   attestation: second_hand
@@ -3970,6 +4846,11 @@ domain_claims:
     He said to me one day, it was actually cute, I never killed anybody. If they shot at me, I wound them so the authorities could come and take them.
   text: |-
     Billy Meier said he never killed anybody, and that when people shot at him he wounded them so the authorities could come and take them.
+  entailment:
+    label: entails
+    score: 0.735
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e6eddb58-5743-45cb-9e6d-f64bc8be48eb
   type: hearsay
   attestation: second_hand
@@ -3989,6 +4870,11 @@ domain_claims:
   quote: |-
     And indeed, somebody had managed to put a slug through what was his left arm early on.
   text: Early on, someone managed to put a bullet through Billy Meier's left arm.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 88ffe18a-3a78-493d-a3c1-fe0583a0ed1b
   type: hearsay
   attestation: second_hand
@@ -4010,6 +4896,11 @@ domain_claims:
     there are people who have witnessed and attested to things like well Billy was uh bringing the tractor we were going to move the cast iron stove ... and he sat in it and then the stove came up in the air and came over and it settled
   text: |-
     Witnesses have attested that Billy Meier used telekinesis, on one occasion lifting a delivered cast-iron stove into the air and moving it into place while seated on his tractor.
+  entailment:
+    label: entails
+    score: 0.739
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: baedbec1-bf75-41e8-95aa-74694847745c
   type: opinion
   attestation: first_hand
@@ -4028,6 +4919,11 @@ domain_claims:
     That he had telekinetic ability? ... yes ... he had a lot of abilities ... he earned his ability
   text: |-
     Billy Meier possessed telekinetic ability and many other abilities, which he earned rather than was simply given.
+  entailment:
+    label: entails
+    score: 0.81
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ecce55e3-c85d-4068-8781-b4fe05f3c95c
   type: hearsay
   attestation: second_hand
@@ -4049,6 +4945,11 @@ domain_claims:
     there was a woman who said ... she went out and walked out back and he was sitting there and he had not passed her and he did some of this some little tricks for people occasionally early on
   text: |-
     A woman reported that Billy Meier appeared sitting outside behind the house without having passed her, one of several small demonstrations he gave people early on.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ffc5201a-79ef-4d19-ae21-438f53853fcf
   type: hearsay
   attestation: second_hand
@@ -4069,6 +4970,11 @@ domain_claims:
     one of the more recent assassinations he steps out and he sees somebody and he stands there and a bullet comes and he had put a water bottle in a shirt pocket and he stood there apparently and the bullet hits them
   text: |-
     In one of the more recent assassination attempts, Billy Meier stood facing an assailant with a water bottle placed in his shirt pocket, and the bullet struck the bottle.
+  entailment:
+    label: contradicts
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 537b251a-c12d-4168-9e09-58362c81dd2a
   type: hearsay
   attestation: second_hand
@@ -4089,6 +4995,11 @@ domain_claims:
     you have your arm ripped off your body and all of your teeth smashed at the same time, and you're delirious for 30 days because they amputate what remains of your arm without anesthetic.
   text: |-
     Billy Meier had his arm ripped off his body and all of his teeth smashed at the same time, and was delirious for 30 days after the remainder of his arm was amputated without anaesthetic.
+  entailment:
+    label: entails
+    score: 0.586
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fa008af1-c702-4361-afd4-24f0e55f6ee3
   type: hearsay
   attestation: second_hand
@@ -4111,6 +5022,11 @@ domain_claims:
     you've been able to, as a child, be taken and shown things and allowed to be in a craft on your own to go places
   text: |-
     As a child, Billy Meier was taken and shown things and allowed to be in a craft on his own to travel to places.
+  entailment:
+    label: entails
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10f4f8aa-3bfa-4c58-aea7-7b364866e8c6
   type: testimony
   attestation: first_hand
@@ -4131,6 +5047,11 @@ domain_claims:
     With, at the current counting, 928 public. Contact reports. ... Many others, it's just private information between him and them.
   text: |-
     At the current count there are 928 public Billy Meier contact reports, with additional contacts kept as private information between Billy Meier and the extraterrestrials.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 18f29a3b-9d1b-4e48-a475-67b76ed7fd83
   type: testimony
   attestation: first_hand
@@ -4149,6 +5070,11 @@ domain_claims:
     they not only number each of these contact reports ... they number every sentence that the extraterrestrials speak ... so that you can go and verify it
   text: |-
     In the Billy Meier contact reports, each official meeting is numbered and every sentence spoken by the extraterrestrials is also numbered so that statements can be verified and referenced.
+  entailment:
+    label: neutral
+    score: 0.682
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 19753891-4bfd-4766-a2bb-5b2054f0a81e
   type: testimony
   attestation: first_hand
@@ -4167,6 +5093,11 @@ domain_claims:
     they published starting in german then it gets to english and italian and other languages
   text: |-
     The Billy Meier contact reports were published first in German and later in English, Italian and other languages.
+  entailment:
+    label: entails
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b15fcabc-ea92-47c4-9d30-bb96d8646e63
   type: hearsay
   attestation: second_hand
@@ -4188,6 +5119,11 @@ domain_claims:
   quote: what about the information about Russia moving its troops to Arkhangelsk.
   text: |-
     The Henoch Prophecies contain a prophecy of Russia moving its troops to Arkhangelsk.
+  entailment:
+    label: entails
+    score: 0.909
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: efdcbe29-5711-46bb-a316-73e3c0cf24f4
   type: hearsay
   attestation: second_hand
@@ -4214,6 +5150,11 @@ domain_claims:
     Switzerland, the land of peace and neutrality, is going to make a big mistake. They will abandon their true neutrality and align themselves and work with the UN and or NATO, which will open them to being ultimately attacked and invaded by the powers from the East ... and Russia
   text: |-
     The Henoch Prophecies foretell that Switzerland will make a mistake by abandoning its true neutrality and aligning and working with the United Nations and/or the North Atlantic Treaty Organization (NATO), which will open it to eventually being attacked and invaded by powers from the East, namely China and Russia.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 384c9d2d-a702-4568-a732-c262652106fb
   type: testimony
   attestation: first_hand
@@ -4231,6 +5172,11 @@ domain_claims:
     name: Henoch Prophecies
   quote: And they published that book, I think, in 2004.
   text: The book containing the Henoch Prophecies was published in about 2004.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d47243d0-8c8d-43f6-950f-62c869e1cd3b
   type: testimony
   attestation: first_hand
@@ -4249,6 +5195,11 @@ domain_claims:
     the 1,800 pages that had been given to me by a guy actually... who created a false career pretending he was an Andromedan contactee.
   text: |-
     Michael Horn received an 1,800-page UFO book from a man who created a false career pretending to be an Andromedan contactee.
+  entailment:
+    label: entails
+    score: 0.593
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad666008-2331-4d4d-a8eb-3c93c556932a
   type: testimony
   attestation: first_hand
@@ -4270,6 +5221,11 @@ domain_claims:
     in 1982, Billy gives a radio interview with an English-speaking man on a Swiss radio station network or something ... This is before he had also an accident where he had a brain injury.
   text: |-
     In 1982 Billy Meier gave a radio interview in English with an English-speaking man on a Swiss radio station network, before Billy Meier suffered an accident that caused a brain injury.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 72298e9c-463c-470e-a242-8cc4f14e485f
   type: hearsay
   attestation: second_hand
@@ -4297,6 +5253,11 @@ domain_claims:
     about a third word rolling bill, he says, yes, that is going to happen. It cannot be avoided. It's certainty. ... it's going to be the big attacks, the conflict between the UK and Russia. And other countries involved will be. Iran, Israel, Iraq, and the Falklands
   text: |-
     In the 1982 radio interview, Billy Meier said a third world war is going to happen and cannot be avoided, describing it as a certainty involving major attacks and conflict between the United Kingdom and Russia, with other countries involved being Iran, Israel, Iraq and the Falklands.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 29ec566d-5dc8-4b95-9b71-065c6751f4b0
   type: testimony
   attestation: second_hand
@@ -4321,6 +5282,11 @@ domain_claims:
     within about the last week to 10 days, There was an article that passed something in the American news about Trump. ... He's got an issue with NATO, and there's something about the Falklands has come up again.
   text: |-
     Within the last week to ten days before this interview, an article in the American news reported that Donald Trump has an issue with the North Atlantic Treaty Organization (NATO) and that the Falklands has come up again.
+  entailment:
+    label: entails
+    score: 0.908
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8ffac8a9-4ab4-46f6-a940-dcca2effa16f
   type: opinion
   attestation: first_hand
@@ -4340,6 +5306,11 @@ domain_claims:
   quote: I think we're over 250 to 300 specific error-free examples.
   text: |-
     Researchers of the Billy Meier material have gathered over 250 to 300 specific error-free examples of accurate predictions.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8d97fc84-d8fc-4973-bb28-4616cb948d1b
   type: testimony
   attestation: second_hand
@@ -4363,6 +5334,11 @@ domain_claims:
     In 2006, I'm in Switzerland, standing and talking with Billy, and I said to him ... Billy, fundamentally, was the Iraq war about oil? ... Fundamentally, no. It's about your dollar. And if things go a certain way, you may as well roll cigarettes with your paper money.
   text: |-
     In 2006 in Switzerland, when Michael Horn asked Billy Meier whether the Iraq war was fundamentally about oil, Billy Meier answered that fundamentally it was not, but was about the dollar, and that money could become worthless.
+  entailment:
+    label: entails
+    score: 0.685
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4615e69f-61b1-439f-ad0a-69d8eab8d26f
   type: hearsay
   attestation: third_hand
@@ -4387,6 +5363,11 @@ domain_claims:
     as early as 46, 48. His teacher, and he's written this all down and there's numbers, is talking about how a megalomaniacal Hitler-like dictator will arise in the U.S. who will be just full of himself, an incompetent leader who will cause great trouble in the world.
   text: |-
     As early as 1946 and 1948, Billy Meier's teacher wrote that a megalomaniacal Hitler-like dictator, an incompetent and self-absorbed leader, would arise in the United States and cause great trouble in the world.
+  entailment:
+    label: entails
+    score: 0.862
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6b76e15b-2c92-410c-a8e2-425be9a5c619
   type: hearsay
   attestation: third_hand
@@ -4411,6 +5392,11 @@ domain_claims:
     he mentions Persia, China, Russia, and other countries. He will threaten them. He will create problems in the seas and barricades and tariffs, foolish illogical tariffs to punish people.
   text: |-
     In the 1946 and 1948 writings, Billy Meier's teacher predicted that this US dictator, in his delusions of grandeur, would threaten Persia, China, Russia and other countries, and would create problems in the seas, barricades and illogical tariffs to punish people.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c4631295-3a8d-4f6d-b4f5-21e6d1bb6fbe
   type: hearsay
   attestation: third_hand
@@ -4436,6 +5422,11 @@ domain_claims:
     In the 70s, for instance, they would tell him ... the names of kings ... this man will be assassinated and they will think it's from this but it will ... be the israeli mossad they said ... their secret service which like many times has been and will be behind troubles in your world
   text: |-
     In the 1970s the Pleiaren gave Billy Meier the names of kings and men who would be assassinated, saying it would be the Israeli Mossad, their secret service, behind such troubles.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d1348aee-1b30-43d4-88a4-af7074a57083
   type: hearsay
   attestation: third_hand
@@ -4463,6 +5454,11 @@ domain_claims:
     in retaliation for the terrorism of the Israelis, there will be terrorism from the Hamas and Hezbollah.
   text: |-
     The Pleiaren told Billy Meier that in retaliation for the terrorism of the Israelis there would be terrorism from Hamas and Hezbollah.
+  entailment:
+    label: contradicts
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 29614e44-9d45-40a0-99fb-924cc00a0db5
   type: hearsay
   attestation: second_hand
@@ -4487,6 +5483,11 @@ domain_claims:
     But they've also described the origin of the Israelis, and they've gone to Israelites to say they never were a people. They were peoples who came together under the influence of an extraterrestrial whose name was known then as Jehovah.
   text: |-
     According to the Billy Meier material, the Israelites never were a people, but were peoples who came together under the influence of an extraterrestrial then known as Jehovah.
+  entailment:
+    label: neutral
+    score: 0.539
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 223d365f-7270-4cb2-9afe-ce3d7b0d9686
   type: hearsay
   attestation: second_hand
@@ -4511,6 +5512,11 @@ domain_claims:
     And they had information on a lineage of extraterrestrials, Aros. one in Aris II and Jehovah and other names, and many of these were connected. these intelligences.
   text: |-
     According to the Billy Meier material, there was a lineage of connected extraterrestrial intelligences including Jehovah and figures named Aros and Aris II.
+  entailment:
+    label: entails
+    score: 0.417
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 33845e71-54ea-462c-8dba-732151393315
   type: opinion
   attestation: second_hand
@@ -4533,6 +5539,11 @@ domain_claims:
     when they start talking about things like America is behind most of the problems of the world and the terrorism that has emanated from their seeking— Hegemony, worldwide control as it's been since the inception of that country.
   text: |-
     According to the Billy Meier material, the United States is behind most of the problems of the world and the terrorism that has emanated from its seeking of worldwide hegemony and control since the country's inception.
+  entailment:
+    label: contradicts
+    score: 0.472
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 31fcf48c-a153-42b0-978a-36862fb92a1f
   type: hearsay
   attestation: second_hand
@@ -4558,6 +5569,11 @@ domain_claims:
     the manipulation when Billy in 1958 speaks about first America and then the EU, which didn't exist yet in 58, will biochip every man, woman, and child on the face of the planet to control them so well that their every movement to the meter, to the inch, can be determined and controlled.
   text: |-
     In 1958, Billy Meier spoke about first the United States and then the European Union, which did not yet exist in 1958, biochipping every man, woman, and child on the planet to control them so that their every movement could be determined and controlled to the centimetre.
+  entailment:
+    label: contradicts
+    score: 0.912
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: afc68b5a-3d1a-4e20-8f5f-84224f1124b3
   type: hearsay
   attestation: second_hand
@@ -4583,6 +5599,11 @@ domain_claims:
     when he in 1958 also says that the people, that things will develop so that the people will lose their ability to determine the truth. Their eyes will no longer be able to know if what they're looking at is real. It will be so effective, the deceptions.
   text: |-
     In 1958, Billy Meier said that things would develop so that people would lose their ability to determine the truth, and their eyes would no longer be able to know whether what they are looking at is real, because the deceptions would be so effective.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 51de0000-73dd-4fb4-b972-d4160d0069a3
   type: opinion
   attestation: first_hand
@@ -4605,6 +5626,11 @@ domain_claims:
     we had George Orwell as well, you know, speak of similar things and, uh, Isaac, Isaac Asimov and like, we had like a lot of literary sort of giants talk about these concepts.
   text: |-
     George Orwell and Isaac Asimov spoke of concepts similar to the manipulation and control foretold in the Billy Meier material.
+  entailment:
+    label: entails
+    score: 0.894
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 320661b3-48cd-48c2-8b29-df4330079088
   type: opinion
   attestation: second_hand
@@ -4627,6 +5653,11 @@ domain_claims:
     name: Horn, Michael
   quote: And Billy had said Edgar Cayce was a genuine seer.
   text: Billy Meier said Edgar Cayce was a genuine seer.
+  entailment:
+    label: entails
+    score: 0.853
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 21b11462-4c96-498a-a0b2-ad20412c9f14
   type: opinion
   attestation: first_hand
@@ -4647,6 +5678,11 @@ domain_claims:
     It was an interesting form of a kind of a schizophrenia whereby only in this state, when he'd go to sleep or whatever, he could see. And his specialty, I think was mainly medical things, mainly.
   text: |-
     Edgar Cayce could only see in a sleep-like state, in what Michael Horn described as an interesting form of schizophrenia, and his specialty was mainly medical matters.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bba7e80c-1c50-4939-82ac-0029c19f9280
   type: hearsay
   attestation: second_hand
@@ -4671,6 +5707,11 @@ domain_claims:
     He even said that with Nostradamus, he says, people don't interpret correctly. Some of the things that they think either have happened or are happening are still futural with Nostradamus' prophecies.
   text: |-
     Billy Meier said that Nostradamus's prophecies are not interpreted correctly, and that some things people think have happened or are happening are still in the future.
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3f233d87-fe93-4ec2-bce2-2b7cb60fb3cc
   type: hearsay
   attestation: second_hand
@@ -4691,6 +5732,11 @@ domain_claims:
     name: Horn, Michael
   quote: Seventh and final person.
   text: Billy Meier is the seventh and final person in a lineage of prophets.
+  entailment:
+    label: contradicts
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: efdbb762-973f-4e56-9a02-629e70318f98
   type: hearsay
   attestation: second_hand
@@ -4725,6 +5771,11 @@ domain_claims:
     Well, you've got Enoch or Henoch, Elijah, Isaiah, Jeremiah, Emmanuel. We'll get back there. Muhammad and Billy.
   text: |-
     According to the Billy Meier material, the lineage of prophets preceding Billy Meier consists of Enoch (Henoch), Elijah, Isaiah, Jeremiah, Immanuel, and Muhammad.
+  entailment:
+    label: entails
+    score: 0.816
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a6bf9995-5317-48f1-ac57-cb9fbdebc630
   type: hearsay
   attestation: second_hand
@@ -4751,6 +5802,11 @@ domain_claims:
     Emmanuel, was crucified, that's the name of the man according to the Meier material, the real man who was falsely named Jesus Christ.
   text: |-
     According to the Billy Meier material, the man who was crucified and falsely named Jesus Christ was really named Immanuel.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9ebccc3a-0d1e-4c4d-9b5e-e276309422ad
   type: testimony
   attestation: second_hand
@@ -4773,6 +5829,11 @@ domain_claims:
     name: Immanuel (Meier)
   quote: So we go, 714 Isaiah, and his name shall be called Emmanuel, not Jesus.
   text: Isaiah 7:14 states that his name shall be called Immanuel, not Jesus.
+  entailment:
+    label: entails
+    score: 0.566
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 13664ee5-2bed-4c25-bb65-dc69cbe7511a
   type: testimony
   attestation: second_hand
@@ -4794,6 +5855,11 @@ domain_claims:
   quote: |-
     Well, what about the New Testament? Matthew 1.23, and his name shall be called Emmanuel.
   text: Matthew 1:23 states that his name shall be called Immanuel.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a39a59b8-a0f6-4a6e-900a-9bbae63840eb
   type: hearsay
   attestation: second_hand
@@ -4823,6 +5889,11 @@ domain_claims:
     Well, Billy Meier, along with a Greek Orthodox priest, I think it's about 63, 64, right in there, telepathically, our lid story goes, the outskirts of Jerusalem, there's a hillside, a burn or a hillside, and at the base of it, there's a hole in there.
   text: |-
     Around 1963 to 1964, Billy Meier, together with a Greek Orthodox priest, dug into a hole at the base of a hillside on the outskirts of Jerusalem, which turned out to be an ancient tomb.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d4742d69-dd67-43d8-a505-c7dbfcff245b
   type: hearsay
   attestation: second_hand
@@ -4847,6 +5918,11 @@ domain_claims:
     The man that he is with is named or called Isa Rashid. He speaks some Middle Eastern languages. He also can read and write Aramaic and German.
   text: |-
     The Greek Orthodox priest who accompanied Billy Meier to the Jerusalem tomb was named Isa Rashid, who spoke some Middle Eastern languages and could read and write Aramaic and German.
+  entailment:
+    label: contradicts
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 64d91810-8249-424f-ac3f-508f0a879ce1
   type: hearsay
   attestation: second_hand
@@ -4875,6 +5951,11 @@ domain_claims:
     They find resin-encrusted, animal-wrapped, animal skin wrapped scrolls. written in Aramaic.
   text: |-
     In the Jerusalem tomb, Billy Meier and Isa Rashid unearthed resin-encrusted, animal-skin-wrapped scrolls written in Aramaic.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: adf2aa20-aef7-4171-96e5-9e9bee9012bf
   type: hearsay
   attestation: second_hand
@@ -4899,6 +5980,11 @@ domain_claims:
     Billy does not read and write Aramaic. He knows what Isa is here for, and he says, okay, you will take this and translate, please, and send me the translation.
   text: |-
     Billy Meier could not read or write Aramaic, so he asked Isa Rashid to translate the scrolls and send him the translation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 308f5f99-2c04-417b-9f1e-bb46baa3075d
   type: hearsay
   attestation: second_hand
@@ -4925,6 +6011,11 @@ domain_claims:
     And within about five or six years, something like that, he gets the first third or so of this overall document.
   text: |-
     Within about five or six years of the discovery, Billy Meier received the first third or so of the translated document from Isa Rashid.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 74f34971-0fa2-4381-babf-fa9c236f06e6
   type: hearsay
   attestation: second_hand
@@ -4953,6 +6044,11 @@ domain_claims:
     They travel, they get into Lebanon, into a village in Lebanon... They sequester the scrolls in a wall there for safety. Within one week, The Israelis pick of all the refugee villages, that one to breeze to the ground, burn, destroy, everywhere... The scrolls are gone.
   text: |-
     Isa Rashid fled with his family and the scrolls to a refugee village in Lebanon and hid the scrolls in a wall, and within one week the Israelis razed and burned that village, and the scrolls were lost.
+  entailment:
+    label: entails
+    score: 0.845
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 035f8e71-587f-41e7-9972-014fbd85e474
   type: hearsay
   attestation: second_hand
@@ -4980,6 +6076,11 @@ domain_claims:
     a few years later, I think it's around 1974, he learns that Issa Rashid and his family have been machine gunned to death in Baghdad, ostensibly by the Mossad.
   text: |-
     Around 1974, Isa Rashid and his family were machine-gunned to death in Baghdad, ostensibly by the Mossad.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 26728024-ba0a-426e-b482-0c96e93c89a1
   type: hearsay
   attestation: second_hand
@@ -5006,6 +6107,11 @@ domain_claims:
     But Billy has received all of this stuff in German... he discovers later more that Isa Rashid had changed certain things based on his own religiosity. There were certain things in here that didn't fit with his beliefs.
   text: |-
     Billy Meier received the Talmud Jmmanuel material in German and later discovered that Isa Rashid had changed certain things in the translation based on his own religiosity, because there were things that did not fit with his beliefs.
+  entailment:
+    label: entails
+    score: 0.625
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: baf24dd5-3f45-4303-8794-df3196d49888
   type: administrative
   attestation: first_hand
@@ -5026,6 +6132,11 @@ domain_claims:
     this attracts the attention of a man named James Dierdorf, professor of comparative religions, Oregon State University, and also I think it's meteorology.
   text: |-
     James Deardorff was a professor of comparative religions and meteorology at Oregon State University.
+  entailment:
+    label: entails
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9d4b0b5a-b9c4-48e8-9c00-a2be5b1f93f1
   type: hearsay
   attestation: second_hand
@@ -5054,6 +6165,11 @@ domain_claims:
     this Talmud manual is what it gets called. resolves over 350 inconsistencies in the book of Matthew, 150 of which were not even under discussion at the time this was published.
   text: |-
     According to James Deardorff's book Celestial Teachings, the Talmud Jmmanuel resolves over 350 inconsistencies in the Gospel of Matthew, 150 of which were not even under discussion at the time the book was published.
+  entailment:
+    label: contradicts
+    score: 0.698
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 41478cb8-245d-4550-ad9d-8d4c473fd58f
   type: hearsay
   attestation: second_hand
@@ -5078,6 +6194,11 @@ domain_claims:
     this is where in the prophecy section, chapter 25, as I recall... He is excoriating the scribes and Pharisees... you have deceived and murdered your friends so that you could acquire their belongings
   text: |-
     According to the Talmud Jmmanuel, in the prophecy section around chapter 25, Immanuel excoriates the scribes and Pharisees, telling them they had deceived and murdered their friends in order to acquire their belongings.
+  entailment:
+    label: entails
+    score: 0.899
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6391aeca-c1e6-4986-a014-406cb618b3c9
   type: hearsay
   attestation: second_hand
@@ -5104,6 +6225,11 @@ domain_claims:
     he says in 500 years comes another true prophet who like me will carry the same teaching at this time... whose name will be Muhammad, can come to a just and conciliatory peace with each other, it will be a bloody time and few will survive.
   text: |-
     According to the Talmud Jmmanuel, Immanuel prophesied that in 500 years another true prophet named Muhammad would come carrying the same teaching, and that unless the distant descendants of both prophets came to a just and conciliatory peace it would be a bloody time and few would survive.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47efcb31-b8a3-4d70-83a5-cdf5636dab6d
   type: hearsay
   attestation: second_hand
@@ -5130,6 +6256,11 @@ domain_claims:
     And there will be also a false and evil cult who will gather around this prophet and falsify his true teaching.
   text: |-
     According to the Talmud Jmmanuel, Immanuel prophesied that a false and evil cult would gather around the prophet Muhammad and falsify his true teaching.
+  entailment:
+    label: entails
+    score: 0.935
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a29117c3-d904-4f13-951c-841f4f206a03
   type: hearsay
   attestation: third_hand
@@ -5155,6 +6286,11 @@ domain_claims:
     It's also contained in a book called The Goblet of the Truth, along with the true teaching of the previous prophets.
   text: |-
     The real teaching of Muhammad, along with the true teaching of the previous prophets, is contained in a book called The Goblet of the Truth.
+  entailment:
+    label: entails
+    score: 0.858
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 968fd64d-520b-4891-8c16-269920ae44c7
   type: hearsay
   attestation: second_hand
@@ -5179,6 +6315,11 @@ domain_claims:
     And Muhammad didn't marry nine-year-old girls. He was a champion for the rights of women and a protector of women.
   text: |-
     According to the information in the Billy Meier case, Muhammad did not marry nine-year-old girls but was a champion for the rights of women and a protector of women.
+  entailment:
+    label: entails
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9cf8db56-07c6-4be5-bfc5-13480ad43f4d
   type: hearsay
   attestation: second_hand
@@ -5203,6 +6344,11 @@ domain_claims:
     He did not believe in a jihad where you go and start slaughtering your enemies, according to this information in the Meier case.
   text: |-
     According to the information in the Billy Meier case, Muhammad did not believe in a jihad of going out and slaughtering enemies.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 78735ed4-41b1-4a79-b9c2-5b8366b9db2d
   type: hearsay
   attestation: second_hand
@@ -5229,6 +6375,11 @@ domain_claims:
     and that his mission actually was to stem the rise and power of the Catholic Church, which otherwise would have fully enslaved the world.
   text: |-
     According to the Billy Meier material, Muhammad's actual mission was to stem the rise and power of the Catholic Church, which otherwise would have fully enslaved the world.
+  entailment:
+    label: contradicts
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: eebc3ba8-bcae-4e55-a529-c1dabaff9700
   type: hearsay
   attestation: second_hand
@@ -5253,6 +6404,11 @@ domain_claims:
     It is what was formerly called the spiritual teaching. And then Billy finally, after decades says, this is an incorrect word. Spirit Geist... This is the creation energy.
   text: |-
     Billy Meier eventually concluded, after decades, that the term 'spiritual teaching' (from the German Geist, meaning spirit or ghost) was an incorrect word, and that what it refers to is properly the creation energy.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f0f043c9-558e-4f79-8209-c2b8d6a52372
   type: hearsay
   attestation: second_hand
@@ -5279,6 +6435,11 @@ domain_claims:
     when Billy starts talking about the teaching, which he didn't create, and which is a teaching the Pleiaren have access to and levels of it that we don't
   text: |-
     According to Billy Meier, the creation energy teaching is one he did not create, and the Pleiaren have access to it and to levels of it beyond what humans can access.
+  entailment:
+    label: entails
+    score: 0.948
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 36308e5d-3fc8-4d5d-a30c-465fec18dd12
   type: opinion
   attestation: second_hand
@@ -5301,6 +6462,11 @@ domain_claims:
     name: Horn, Michael
   quote: and Billy has said, the meaning of life is the evolution of consciousness
   text: Billy Meier said that the meaning of life is the evolution of consciousness.
+  entailment:
+    label: entails
+    score: 0.755
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b4639477-58f9-4ec6-804c-02822db64b32
   type: hearsay
   attestation: second_hand
@@ -5325,6 +6491,11 @@ domain_claims:
     as the people connected to the Giza intelligences and the other gods did oftentimes because they could and they played with the primitive humans
   text: |-
     According to the Billy Meier material, the people connected to the Giza Intelligences and other gods often lorded over and played with the primitive humans because they could.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a8c30c04-f335-4f04-9130-4563565d7c40
   type: opinion
   attestation: second_hand
@@ -5346,6 +6517,11 @@ domain_claims:
   quote: Thoughts precede feelings. Most thinking is done below the conscious level
   text: |-
     According to Billy Meier's teaching, thoughts precede feelings, and most thinking is done below the conscious level.
+  entailment:
+    label: contradicts
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9395a842-ff49-46d3-9a83-fe2dedd29ac9
   type: administrative
   speaker:
@@ -5362,6 +6538,11 @@ domain_claims:
     name: Dames, Ed
   quote: a guy named Ed Dames, who used to be—
   text: Ed Dames passed away recently as of 2026.
+  entailment:
+    label: contradicts
+    score: 0.697
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d647e4aa-1aad-43d6-9eab-67f8d6159e22
   type: testimony
   attestation: first_hand
@@ -5383,6 +6564,11 @@ domain_claims:
   quote: I helped create his first technical remote viewing home study course.
   text: |-
     Michael Horn helped create Ed Dames's first technical remote viewing home study course.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dcf096bb-26db-49de-ae28-f405835e5783
   type: testimony
   attestation: first_hand
@@ -5401,6 +6587,11 @@ domain_claims:
     name: Dames, Ed
   quote: I worked with him over a period of a bit more than a year.
   text: Michael Horn worked with Ed Dames over a period of a bit more than a year.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9506157-691c-41fd-bf04-39753b3f5bbf
   type: testimony
   attestation: first_hand
@@ -5422,6 +6613,11 @@ domain_claims:
   quote: he taught me and two other people involved in the production team how to do it.
   text: |-
     Ed Dames taught Michael Horn and two other people on the production team how to do remote viewing.
+  entailment:
+    label: entails
+    score: 0.847
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0b949ae6-f116-4ff0-bf93-f8f5c8040d28
   type: testimony
   attestation: first_hand
@@ -5442,6 +6638,11 @@ domain_claims:
     I was called by the producer as the expert witness because I then, while this was in process, I went through every transcript of every prediction that Ed made.
   text: |-
     Michael Horn was called as an expert witness in a lawsuit involving Ed Dames, and for it went through every transcript of every prediction Ed Dames made.
+  entailment:
+    label: entails
+    score: 0.872
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 66df5e0f-95c7-4e9b-8c71-dc5072602d24
   type: administrative
   speaker:
@@ -5457,6 +6658,11 @@ domain_claims:
     name: Dames, Ed
   quote: he was in the army and that's kind of
   text: Ed Dames served in the army.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1ff599c7-49b2-474b-892d-a159b4d2076c
   type: opinion
   attestation: first_hand
@@ -5477,6 +6683,11 @@ domain_claims:
     I don't think Ed was a great remote viewer. No, he wasn't. But I think he was really good at teaching it.
   text: |-
     Chris Ramsay considers Ed Dames not to have been a great remote viewer, but very good at teaching remote viewing.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f77bb2e8-1cf5-4234-9978-d1b00424dfd7
   type: testimony
   attestation: first_hand
@@ -5499,6 +6710,11 @@ domain_claims:
     There had been an incident where one or two U.S. Air Force jets had been lost... He was absolutely positive where it crashed and all this stuff. They found it in a different state. It had nothing to do with what came up here.
   text: |-
     During roughly a year around Ed Dames, following an incident in which one or two US Air Force jets were lost, Ed Dames was certain where the crash was, but the jets were found in a different state, unconnected to his remote viewing.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 24eb4f23-198f-4bd1-afbc-4c7f04ad1691
   type: opinion
   attestation: second_hand
@@ -5523,6 +6739,11 @@ domain_claims:
     They said that this company, SciTech, they named it, was basically more about making a lot of money
   text: |-
     The Billy Meier contact reports name Ed Dames's company, SciTech, as being more about making a lot of money than authentic remote viewing.
+  entailment:
+    label: entails
+    score: 0.883
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5dd5b7c0-6a2d-4b73-ad8c-e3ca885a3dcd
   type: hearsay
   attestation: second_hand
@@ -5551,6 +6772,11 @@ domain_claims:
     he regaled me with all these stories of when he was out there with the uh it was the prince of lichtenstein and like all sorts and... the Hal Puthoff and And they went out to see UFOs and... they would remote view where the UFO would be.
   text: |-
     Chris Ramsay recounts that Ed Dames told him he had gone out to see UFOs with the Prince of Liechtenstein and Hal Puthoff, remote viewing where a UFO would be.
+  entailment:
+    label: entails
+    score: 0.56
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 38cb1a6f-421d-4e92-848b-bf4f7b40221b
   type: hearsay
   attestation: second_hand
@@ -5573,6 +6799,11 @@ domain_claims:
     he was convinced that i was going to be the one to film first contact with him that he was being led to first contact
   text: |-
     Chris Ramsay recounts that Ed Dames was convinced Chris Ramsay would be the one to film Ed Dames's first contact with extraterrestrials.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bf7bd1b6-266a-42e7-9d74-6f3ef20c0863
   type: testimony
   attestation: second_hand
@@ -5596,6 +6827,11 @@ domain_claims:
     the contacts began in terms of the modern day, the stuff for public consumption and all in the 70s, 75.
   text: |-
     Billy Meier's modern-day contacts intended for public consumption began in the 1970s, in 1975.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4d41ccc8-3fdc-49a8-ae4d-8280d443ad55
   type: opinion
   attestation: second_hand
@@ -5620,6 +6856,11 @@ domain_claims:
     their creation energy form, their essence, may have already had two million incarnations as different people.
   text: |-
     According to the Billy Meier case, a person alive today may have had as many as two million past incarnations as different people through the reincarnation of their creation energy form.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 24ddcd9f-d6cb-4ba8-8c79-0b04878ddd77
   type: opinion
   attestation: second_hand
@@ -5644,6 +6885,11 @@ domain_claims:
     One of the laws is that a spirit form that dies on a given planet reincarnates, reanimates a new personality on the planet on which they die.
   text: |-
     According to the Billy Meier teaching, one of the creational laws is that a spirit form that dies on a given planet reincarnates into a new personality on the planet on which it died.
+  entailment:
+    label: contradicts
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 64ad7628-563c-475e-9913-e6d625c6e18b
   type: opinion
   attestation: second_hand
@@ -5666,6 +6912,11 @@ domain_claims:
     The spirit forms will be attracted through creation law to an inhabited planet, none of which are in our solar system, where there is evolving human life at a level that is commensurate overall
   text: |-
     According to the Billy Meier teaching, a spirit form dying where there is no life is attracted through creational law to an inhabited planet with evolving human life at a commensurate level, none of which are in Earth's solar system.
+  entailment:
+    label: contradicts
+    score: 0.6
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b210fe09-2615-420d-a28b-336f753be0fd
   type: opinion
   attestation: second_hand
@@ -5690,6 +6941,11 @@ domain_claims:
     even Billy has said, even the Pleiaron, I asked him, said, do the Pleiaron know the answer to it? No, the human brain can only go so far.
   text: |-
     Michael Horn asked Billy Meier whether the Pleiaren know the answer to what came before the beginning of existence, and was told they do not, because the human brain can only go so far.
+  entailment:
+    label: entails
+    score: 0.542
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7436ba29-35f9-4502-8b2d-f3ab7bfe79f0
   type: testimony
   attestation: second_hand
@@ -5710,6 +6966,11 @@ domain_claims:
     name: Pleiaren
   quote: Billy is an earth man now, and he said that to the Pleiarian.
   text: Billy Meier considers himself an earth man and expressed this to the Pleiaren.
+  entailment:
+    label: entails
+    score: 0.918
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fc03134d-99d1-4c9f-9653-12d5c8b20e97
   type: testimony
   attestation: second_hand
@@ -5731,6 +6992,11 @@ domain_claims:
   quote: Because they offered to give him a fake arm. No, thank you. I'm an earth person.
   text: |-
     The Pleiaren offered Billy Meier a prosthetic replacement for his missing arm, and he declined, saying he was an earth person.
+  entailment:
+    label: entails
+    score: 0.537
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 196f5a8f-eb7a-41c9-a67d-30fb994573ed
   type: testimony
   attestation: second_hand
@@ -5753,6 +7019,11 @@ domain_claims:
     if suddenly I appear with a left arm, how long is it going to take for some military to kidnap my butt and start taking me apart? I don't want that.
   text: |-
     Billy Meier declined a Pleiaren offer of a replacement arm out of concern that suddenly having a left arm would lead a military to kidnap and examine him.
+  entailment:
+    label: entails
+    score: 0.923
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4d89f6a4-b230-4553-875a-7b4c25e5bf72
   type: hearsay
   speaker:
@@ -5775,6 +7046,11 @@ domain_claims:
     a couple years ago, I think it was in August perhaps of 2023, where it was reported in Peru that seven-foot-tall giants were abducting and maybe even harming people, women from the village or whatever.
   text: |-
     In approximately August 2023 it was reported in Peru that seven-foot-tall giants were abducting and harming people, including women, from villages.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 74f55a2a-a647-4b27-ac10-74d661adf3c0
   type: testimony
   attestation: second_hand
@@ -5800,6 +7076,11 @@ domain_claims:
     1976 it's in books and everything else and it's from one of the higher you know creation energy levels... they spoke about the time that will come in Peru when the seven-foot-tall giants will emerge from their centuries-long hiding places underground to molest the people there.
   text: |-
     A 1976 teaching received by Billy Meier from a higher creation energy level, the petali level, foretold a time in Peru when seven-foot-tall giants would emerge from their centuries-long underground hiding places to molest the people there.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c33f16a-daa7-44d1-a0ae-889a44aa2d02
   type: testimony
   attestation: second_hand
@@ -5822,6 +7103,11 @@ domain_claims:
     from one of the higher you know creation energy levels that feeds in that Billy cannot talk to or he can receive and he gets the teaching... there is a level that he can go back and forth not that level okay so this is the petali level
   text: |-
     Billy Meier can receive teachings from the higher creation energy levels but cannot dialogue with them, unlike another level with which he can communicate back and forth.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6a6c59dc-7d9b-40e9-a1b8-671903b99fa3
   type: testimony
   attestation: second_hand
@@ -5846,6 +7132,11 @@ domain_claims:
     And there's something tied into a quake in Udine, which I think is, or Udine, in Italy.
   text: |-
     The 1976 Billy Meier prophecy about the Peru giants is tied to an earthquake in Udine, Italy.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4de3d0da-8c8b-4d35-8c11-8a4b160ac785
   type: opinion
   attestation: first_hand
@@ -5868,6 +7159,11 @@ domain_claims:
     that verifiably 47 years or whatever it is after that was published, that event occurred right down to where and the size of the people.
   text: |-
     The Peru giants event occurred approximately 47 years after the 1976 Billy Meier prophecy was published, matching the predicted location and the size of the people.
+  entailment:
+    label: entails
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4c5cb13-3326-4f2d-89be-3981d6801fd8
   type: hearsay
   speaker:
@@ -5888,6 +7184,11 @@ domain_claims:
   quote: I think they also said they were redheaded or red tinged or something.
   text: |-
     The seven-foot-tall giants in the Peru reports were described as redheaded or red-tinged.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: edd37328-cfb0-4d50-bc9e-733bc16d7200
   type: opinion
   attestation: first_hand
@@ -5910,6 +7211,11 @@ domain_claims:
     i've been asked if i believe in Billy Meier believe in ufos and i've said no When you know something, you don't have to believe in it... rather than belief, I have the evidence in my experience
   text: |-
     Michael Horn, rather than believing in Billy Meier or UFOs, regards himself as knowing, based on evidence in his own experience.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: 51b0dfbe-77af-4f6b-a5ac-e88d140a738a
   type: administrative
@@ -5934,6 +7240,11 @@ infrastructure_claims:
     Francisco Velate and Chris Locke, who have written extensively about, well, the wedding cake craft, plus the so-called Pendulum UFO
   text: |-
     Francisco Velate and Chris Locke have written extensively about the wedding cake craft and the so-called Pendulum UFO.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 455eefd9-94d4-45b2-9f43-e06f37613e9c
   type: administrative
   speaker:
@@ -5952,6 +7263,11 @@ infrastructure_claims:
   quote: |-
     what you're alluding to, when you say this other material that Bob Lazar has looked at and all
   text: Bob Lazar has examined some of the Billy Meier photographic material.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 03b7eaaa-7996-48c2-b69c-c79651dbd814
   type: administrative
   attestation: second_hand
@@ -5980,6 +7296,11 @@ infrastructure_claims:
     a man named Clayton Morris in the U.S., who has a show, Redacted, who had interviewed me a couple times on Billy Meiers' Evidence... Clayton says, well, Billy Meier wrote about that in 1953.
   text: |-
     Clayton Morris, who hosts a show called Redacted in the United States and had interviewed Michael Horn a couple of times about Billy Meier's evidence, put out a clip stating that Billy Meier wrote in 1953 about the large spaces found underneath the pyramid.
+  entailment:
+    label: entails
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3936fc99-3cef-4807-be0e-3c74c7c87334
   type: testimony
   attestation: first_hand
@@ -6000,6 +7321,11 @@ infrastructure_claims:
   quote: But I put the video up. It's up there from 2007. I posted it.
   text: |-
     Michael Horn posted the video of Billy Meier's remarks about the Iraq war and the dollar online in 2007.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e55ae281-1771-4147-b083-40cdc7f72c4f
   type: administrative
   attestation: first_hand
@@ -6021,6 +7347,11 @@ infrastructure_claims:
   quote: comes out with a publication, his own book called Celestial Teachings.
   text: |-
     James Deardorff investigated the Talmud Jmmanuel and published his own book about it called Celestial Teachings.
+  entailment:
+    label: contradicts
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 582247f4-0bff-449f-993d-ac4fb5d2229d
   type: administrative
   attestation: first_hand
@@ -6041,6 +7372,11 @@ infrastructure_claims:
     Billy has written a phenomenal book called the might of the thoughts and how the mind works how thinking works
   text: |-
     Billy Meier wrote a book called The Might of the Thoughts, about how the mind works and how thinking works.
+  entailment:
+    label: entails
+    score: 0.506
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 753ea57c-6459-4035-bd73-163e2e17f53a
   type: administrative
   attestation: first_hand
@@ -6058,6 +7394,11 @@ infrastructure_claims:
   quote: he's written over 60 books, and only maybe a dozen are translated into English
   text: |-
     Billy Meier has written over 60 books, of which only around a dozen are translated into English.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 885705f8-2d44-4340-9b15-5399745a71a4
   type: administrative
   attestation: first_hand
@@ -6078,6 +7419,11 @@ infrastructure_claims:
     He's written about reincarnation, rebirth, death, and dying. fluidal forces, swinging waves.
   text: |-
     Billy Meier has written about reincarnation, rebirth, death and dying, fluidal forces and swinging waves.
+  entailment:
+    label: entails
+    score: 0.864
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 41d55a5b-cc45-4ee0-889f-815b0786c348
   type: testimony
   attestation: first_hand
@@ -6099,6 +7445,11 @@ infrastructure_claims:
   quote: I'd listened to all of his appearances in Art Bell
   text: |-
     Michael Horn had listened to all of Ed Dames's appearances on Art Bell's programme.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: abaf62d8-5536-4e01-8d13-14c6268fe9d2
   type: testimony
   attestation: first_hand
@@ -6117,6 +7468,11 @@ infrastructure_claims:
     name: Dames, Ed
   quote: I knew. I met Ed. I interviewed him.
   text: Chris Ramsay met and interviewed Ed Dames.
+  entailment:
+    label: entails
+    score: 0.611
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 49a659ac-b1bf-4398-ae81-36b9e6b947c7
   type: administrative
   attestation: first_hand
@@ -6136,3 +7492,8 @@ infrastructure_claims:
   quote: There's the Arahat Atharzata. Billy's got a whole book on there.
   text: |-
     Billy Meier has written a book, the Arahat Athersata, addressing the evolution of the human spirit.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

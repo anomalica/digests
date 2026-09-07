@@ -10,6 +10,12 @@ ai_usage:
     output: 12101
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.4
 prompts:
 - pass: nodes
   id: nodes
@@ -122,6 +128,11 @@ domain_claims:
     I can however, tell you that during the years 1948 through 1951 several sightings of green lights were made at Los Alamos.
   text: |-
     An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said that between 1948 and 1951 several sightings of green lights were made at Los Alamos, USA, New Mexico.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8052789c-0ade-4e38-92be-9d214f6eccb2
   type: hearsay
   attestation: second_hand
@@ -142,6 +153,11 @@ domain_claims:
     These usually occurred during the early part of the night, nine to eleven, and were usually in the Jemez Mountains.
   text: |-
     An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the 1948-1951 Los Alamos green light sightings usually occurred during the early part of the night, between 21:00 and 23:00.
+  entailment:
+    label: contradicts
+    score: 0.831
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 46e8f053-1bc9-44f7-98b6-a30ac82b13df
   type: hearsay
   attestation: second_hand
@@ -164,6 +180,11 @@ domain_claims:
     These usually occurred during the early part of the night, nine to eleven, and were usually in the Jemez Mountains.
   text: |-
     An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the 1948-1951 Los Alamos green light sightings usually occurred in the Jemez Mountains.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 273c2a2b-8cd2-42fb-980c-1ad288a5e695
   type: hearsay
   attestation: second_hand
@@ -184,6 +205,11 @@ domain_claims:
     I can recall several instances of green lights weaving in and out of Mountain peaks.
   text: |-
     An anonymous correspondent, writing to James L. Tuck on 1970-11-23, recalled several instances of green lights weaving in and out of mountain peaks during the 1948-1951 Los Alamos green light sightings.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c7e26b7-0c28-489b-a2e3-36229bc259c1
   type: hearsay
   attestation: second_hand
@@ -206,6 +232,11 @@ domain_claims:
     This was all reported to the Protective Force Headquarters and should be a matter of record on their logs.
   text: |-
     An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the green light sightings at Los Alamos were reported to the Protective Force Headquarters, Los Alamos and should be a matter of record on their logs.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47828b07-ea37-4470-96ca-75255619955f
   type: hearsay
   attestation: second_hand
@@ -225,6 +256,11 @@ domain_claims:
     I also recall one instance of five objects flying over Los Alamos in the afternoon.
   text: |-
     An anonymous correspondent, writing to James L. Tuck on 1970-11-23, recalled one instance of five objects flying over Los Alamos, USA, New Mexico in the afternoon.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27643c78-c103-42d5-84b0-e5f510817552
   type: hearsay
   attestation: second_hand
@@ -244,6 +280,11 @@ domain_claims:
     They were flying from southeast to northwest and appeared to be flying in formation.
   text: |-
     An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said the five objects observed flying over Los Alamos were flying from southeast to northwest and appeared to be flying in formation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ab6df278-9916-449b-975b-4823a8d86ff4
   type: hearsay
   attestation: second_hand
@@ -268,6 +309,11 @@ domain_claims:
     Any of the Protective Force members that was on the "Hill" during the early '50 should recall all the reported sightings during this time.
   text: |-
     An anonymous correspondent, writing to James L. Tuck on 1970-11-23, said that members of the Protective Force Headquarters, Los Alamos who were on the Hill (Los Alamos) during the early 1950s should recall the reported green light sightings from that period.
+  entailment:
+    label: entails
+    score: 0.389
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8a4a4a02-011d-42bb-978f-b7c7306e08d5
   type: administrative
   attestation: first_hand
@@ -293,6 +339,11 @@ domain_claims:
     As agreed in our telephone conversation of today's date, I would like to have the recipe that was used for the simulated atomic bomb demonstrations.
   text: |-
     On 1970-12-16, James L. Tuck wrote to the U.S. Army Engineering School, Department of Mechanical and Technical Equipment, U.S. Army Engineering School at Fort Belvoir, Virginia, requesting the recipe used for simulated atomic bomb demonstrations, as agreed in a prior telephone conversation.
+  entailment:
+    label: entails
+    score: 0.885
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ca74f9da-92ad-4ae8-a519-797fc3ebe9cb
   type: administrative
   attestation: second_hand
@@ -311,6 +362,11 @@ domain_claims:
   quote: |-
     Mindful of your interesting report on ball lightning, I am enclosing comments on same by a UFO believer, James M. McCampbell, in his UFOLOGY, 1976
   text: James L. Tuck wrote a report on ball lightning.
+  entailment:
+    label: contradicts
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2d5ae697-3d53-41d8-af9d-33d42578a2b9
   type: administrative
   attestation: second_hand
@@ -332,6 +388,11 @@ domain_claims:
     appearing on the new non-fiction shelf at the Mesa Library, call number 629.1338 M125u
   text: |-
     A copy of James M. McCampbell's book UFOLOGY (1976, McCampbell) was on the new non-fiction shelf at Mesa Public Library, with call number 629.1338 M125u.
+  entailment:
+    label: entails
+    score: 0.861
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 220089a0-5e01-4aad-81e6-97f287ffeae4
   type: opinion
   attestation: second_hand
@@ -350,6 +411,11 @@ domain_claims:
   quote: I am enclosing comments on same by a UFO believer, James M. McCampbell
   text: |-
     An anonymous correspondent of James L. Tuck described James M. McCampbell as a UFO (Unidentified Flying Object) believer.
+  entailment:
+    label: entails
+    score: 0.761
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2da96f0f-d395-47a6-ac02-06bfe959c462
   type: opinion
   attestation: second_hand
@@ -373,6 +439,11 @@ domain_claims:
     His chapter FLIGHT AND PROPULSION strengthens my conviction that Einstein, while seemingly straying from the main current of physical research in his later years, was on scent like a bloodhound when he persisted in trying to lock in on a unified field theory.
   text: |-
     An anonymous correspondent of James L. Tuck considers that James M. McCampbell's chapter "Flight and Propulsion" in UFOLOGY (1976, McCampbell) strengthened their conviction that Albert Einstein, while seemingly straying from the main current of physical research in his later years, was on the scent of a unified field theory.
+  entailment:
+    label: entails
+    score: 0.907
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 775ebd84-3218-4677-8897-ea16bf91da9b
   type: administrative
@@ -397,6 +468,11 @@ infrastructure_claims:
     We are interested in the large atmospheric vortices which are produced as reported in the book "Scientific Study of Unidentified Flying Objects" by Dr. Edward U. Condon.
   text: |-
     James L. Tuck was interested in the large atmospheric vortices produced by simulated atomic bomb demonstrations, as reported in the book "Scientific Study of Unidentified Flying Objects" by Edward U. Condon.
+  entailment:
+    label: entails
+    score: 0.64
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 03232307-aaf4-4fe6-8dfd-ab550886c96f
   type: administrative
   attestation: second_hand
@@ -420,3 +496,8 @@ infrastructure_claims:
     I am enclosing comments on same by a UFO believer, James M. McCampbell, in his UFOLOGY, 1976, appearing on the new non-fiction shelf at the Mesa Library, call number 629.1338 M125u.
   text: |-
     An anonymous correspondent of James L. Tuck, writing on 1970-11-28, enclosed comments on Tuck's report on ball lightning written by James M. McCampbell in McCampbell's book UFOLOGY (1976, McCampbell).
+  entailment:
+    label: contradicts
+    score: 0.844
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

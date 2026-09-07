@@ -10,6 +10,12 @@ ai_usage:
     output: 896
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 0.0
 prompts:
 - pass: nodes
   id: nodes
@@ -76,3 +82,8 @@ domain_claims:
     Its about uh three quarters of a mile out Thought maybe a capsule uh after the liftoff, but [inaudible]
   text: |-
     During Mercury-Redstone 4, a recovery team member observed something approximately 1.2 kilometres out, initially thought it might be the capsule after liftoff, but the remainder of the statement was inaudible.
+  entailment:
+    label: entails
+    score: 0.579
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.6
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.2
 prompts:
 - pass: nodes
   id: nodes
@@ -82,6 +88,11 @@ domain_claims:
     It felt like my consciousness was like flapping behind me like a cape in the wind.
   text: |-
     A participant in an out-of-body experience (OOBE) described their consciousness as feeling like it was flapping behind them like a cape in the wind.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b9f64b58-0d18-42e7-9c38-87cb430ee922
   type: testimony
   attestation: second_hand
@@ -97,6 +108,11 @@ domain_claims:
   quote: The experience seemed like it lasted thousands of years.
   text: |-
     A participant described an out-of-body experience (OOBE) as seeming to last thousands of years.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ca08d284-e601-4201-8f5c-373a8e3b3483
   type: testimony
   attestation: second_hand
@@ -113,6 +129,11 @@ domain_claims:
     And I'm standing like this, and suddenly I realize that I'm standing behind myself.
   text: |-
     A participant described realising they were standing behind themselves during an out-of-body experience (OOBE).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a9b6aee-56d8-4a76-bcfa-71a0f653efae
   type: testimony
   attestation: second_hand
@@ -129,6 +150,11 @@ domain_claims:
     I'm looking at my hand and thinking, can I stick my hand through the glass? And sure enough, I could.
   text: |-
     A participant found they could put their hand through a glass window during an out-of-body experience (OOBE).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fb27906a-0633-4a5e-b735-11970116e6af
   type: testimony
   attestation: second_hand
@@ -145,6 +171,11 @@ domain_claims:
     And I felt my body lighter than before, and I felt like I could lift out of my body.
   text: |-
     A participant felt their body become lighter and felt able to lift out of their body during an out-of-body experience (OOBE).
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 68003092-9578-40fc-936a-9bef9c5bc1b2
   type: testimony
   attestation: second_hand
@@ -161,6 +192,11 @@ domain_claims:
     I felt something bumping against my shoulder. What I was bumping against was the ceiling of my bedroom.
   text: |-
     A participant felt something bumping against their shoulder during an out-of-body experience (OOBE), which turned out to be the ceiling of their bedroom.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7203f9d6-4a96-4249-89af-7a16f20a478e
   type: opinion
   attestation: second_hand
@@ -178,6 +214,11 @@ domain_claims:
   quote: Now, obviously, this caught the attention of the CIA.
   text: |-
     Out-of-body experiences (OOBEs) attracted the attention of the Central Intelligence Agency (CIA).
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 01943459-5099-4a93-b5b9-974ad910b9b2
   type: testimony
   attestation: second_hand
@@ -193,6 +234,11 @@ domain_claims:
   quote: My soul came out of the mold of my body.
   text: |-
     A participant described their soul as coming out of the mould of their body during an out-of-body experience (OOBE).
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c339bb0f-a1d4-461a-a571-050d0e2b3dc0
   type: testimony
   attestation: second_hand
@@ -207,6 +253,11 @@ domain_claims:
     name: out-of-body experience (OOBE)
   quote: 3.09 a.m. This was the first time I left my body.
   text: A participant's first out-of-body experience (OOBE) occurred at 3:09 a.m.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 72bf0013-c6da-4004-9bee-f6905dd9fe3e
   type: opinion
   attestation: second_hand
@@ -223,3 +274,8 @@ domain_claims:
     The one main thing I got from the out-of-body experience is the absolute knowledge that I would transcend physical mortality.
   text: |-
     A participant considers the absolute knowledge that they would transcend physical mortality to be the main thing they gained from their out-of-body experience (OOBE).
+  entailment:
+    label: entails
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

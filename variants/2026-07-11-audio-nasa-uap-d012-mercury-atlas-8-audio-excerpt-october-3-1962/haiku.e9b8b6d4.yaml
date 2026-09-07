@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -102,6 +108,11 @@ domain_claims:
     I have the little white objects that seem to come from the capsule itself and drift off.
   text: |-
     Walter M. Schirra Jr. observed white objects that appeared to originate from the Mercury capsule and drift away during the Mercury Atlas 8 mission.
+  entailment:
+    label: neutral
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a343d2b-0ae2-45d2-b150-769c51e1498e
   type: observation
   attestation: first_hand
@@ -121,6 +132,11 @@ domain_claims:
     name: Mercury Atlas 8 (MA-8)
   quote: It has some pretty stars in sight.
   text: During the Mercury Atlas 8 mission, stars were visible from the spacecraft.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1be7178e-8a0d-4697-b3c6-4a3b7dcc4c33
   type: testimony
   attestation: second_hand
@@ -148,6 +164,11 @@ domain_claims:
     You can actually see the particle there, playing off, as John described it as a lathe shaving. It's a very good description of it.
   text: |-
     John Glenn described particles observed in the Mercury capsule as resembling lathe shavings during the Mercury Atlas 8 mission.
+  entailment:
+    label: neutral
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 16347cab-6ef9-4df3-90e2-4b6555e6f7db
   type: observation
   attestation: first_hand
@@ -171,6 +192,11 @@ domain_claims:
     my rates are now just about zero in all three axes I still have light in the periscope of course I'm looking straight up
   text: |-
     During the Mercury Atlas 8 mission, Walter M. Schirra Jr. observed that his spacecraft had near-zero rates of rotation on all three axes.
+  entailment:
+    label: entails
+    score: 0.734
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b1e7198e-d041-40d7-958e-e743bc875941
   type: observation
   attestation: first_hand
@@ -193,6 +219,11 @@ domain_claims:
   quote: Yeah, I'm just about inverted at this point. And my nose is above the horizon.
   text: |-
     During the Mercury Atlas 8 mission, Walter M. Schirra Jr. observed that his spacecraft was nearly inverted and his nose was above the horizon.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 766ecb13-bc7c-43e1-bdd6-c0e2f83c00fe
   type: observation
   attestation: first_hand
@@ -215,6 +246,11 @@ domain_claims:
   quote: these particles keep tending after me, relative to me, at any time.
   text: |-
     During the Mercury Atlas 8 mission, Walter M. Schirra Jr. observed that particles appeared to move towards him relative to his spacecraft.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1954e92e-939f-44fc-9b7f-a89244f0bd60
   type: observation
   attestation: first_hand
@@ -238,3 +274,8 @@ domain_claims:
     The periscope is blocking out rather rapidly at sunset. It's almost blocked out completely at this point and is really not usable. Getting a real burst of light in the window and I really don't know what it is. At this point I should be coming up on a sunset. Five hours and fifteen minutes. The periscope is dark.
   text: |-
     During the Mercury Atlas 8 mission, at approximately five hours and fifteen minutes mission elapsed time, the periscope became increasingly darkened and was approaching unusability.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

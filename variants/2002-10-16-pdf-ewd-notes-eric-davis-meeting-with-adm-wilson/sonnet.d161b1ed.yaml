@@ -11,6 +11,12 @@ ai_usage:
     output: 101943
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 12.7
 prompts:
 - pass: nodes
   id: nodes
@@ -305,6 +311,11 @@ domain_claims:
     Rich says to go to EG&G Special Projects building at Grier and Paradise. "Meet at 10 A.M. - don't be late!!"
   text: |-
     Rich told Eric W. Davis to go to the EG&G Special Projects building at Grier and Paradise, and to meet at 10 A.M.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1746e369-1f5c-4540-8be9-bdccb11ac3cc
   type: observation
   attestation: first_hand
@@ -332,6 +343,11 @@ domain_claims:
     In uniform: 1 (full) Lt.; 1 Cmdr.; a petty officer drives car.
   text: |-
     Admiral Thomas Wilson arrived ten minutes late to the meeting with Eric W. Davis at the EG&G building, accompanied by two Navy officers in uniform (one full lieutenant and one commander) while he himself wore civilian clothing.
+  entailment:
+    label: entails
+    score: 0.525
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 360f5b6b-fece-4d09-be3e-b887c0c03451
   type: observation
   attestation: first_hand
@@ -357,6 +373,11 @@ domain_claims:
     We sit in his car in back of EG&G building. Talk until 11:20 A.M. Others departed for building, to attend meeting inside (at 10:10).
   text: |-
     Eric W. Davis and Admiral Thomas Wilson sat and talked in Wilson's car behind the EG&G building until 11:20 A.M. while others attended a meeting inside.
+  entailment:
+    label: entails
+    score: 0.549
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 656b7358-b21e-4828-8d49-702f76ad4c38
   type: testimony
   attestation: first_hand
@@ -382,6 +403,11 @@ domain_claims:
     TW: Hello! The minute I saw your (EWD) resume, US Uniformed Services ID copy, AF orders and physics paper Rich gave, I knew who you were. Put two and two together, figured you out! Figured who you were!!
   text: |-
     During the meeting on 2002-10-16, Thomas Wilson said that upon seeing Eric W. Davis's resume, US Uniformed Services ID copy, Air Force orders and physics paper, which Rich had provided, he figured out who Davis was.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dc1fa588-ec14-4d0c-9dc4-4578f9d56e79
   type: testimony
   attestation: first_hand
@@ -404,6 +430,11 @@ domain_claims:
   quote: |-
     TW: I recalled phone call with Oke Shannon in Fall (Aug.?) '99. Big Oke Shannon fan! Go back years in Navy before Oke left for LANL.
   text: Thomas Wilson recalled a phone call with Oke Shannon in the fall of 1999.
+  entailment:
+    label: entails
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4e02e319-a5b1-45e3-b0f6-85168df762f9
   type: testimony
   attestation: first_hand
@@ -425,6 +456,11 @@ domain_claims:
   quote: Go back years in Navy before Oke left for LANL.
   text: |-
     Thomas Wilson and Oke Shannon have known each other for years going back to when Shannon was in the Navy before he left for Los Alamos National Laboratory (LANL).
+  entailment:
+    label: entails
+    score: 0.512
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3ddc8db7-a6dd-42ba-8547-313e76df4702
   type: testimony
   attestation: second_hand
@@ -451,6 +487,11 @@ domain_claims:
     TW: Oke talked 2 hours, wanted to convince to talk to me (EWD) about what he told Will Miller ca. June '97 and April '97.
   text: |-
     Oke Shannon spoke to Thomas Wilson for two hours in an attempt to convince him to talk to Eric W. Davis about what Shannon had told Will Miller around June 1997 and April 1997.
+  entailment:
+    label: entails
+    score: 0.804
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d71e5a62-174f-413b-9eb7-ae31f6fb11b6
   type: hearsay
   attestation: second_hand
@@ -483,6 +524,11 @@ domain_claims:
     Re: Boston Globe Story - L. Kean. Yep, UFO topic - crashed/retrieved UFO craft/bodies, etc. MJ-12 like UFO organization (or cabal).
   text: |-
     The subject discussed between Oke Shannon and Will Miller related to a Boston Globe story by Leslie Kean, the UFO topic, crashed and retrieved UFO craft and bodies, and a Majestic 12 (MJ-12) -like UFO organisation or cabal.
+  entailment:
+    label: contradicts
+    score: 0.903
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3df64293-e6b6-484f-aa25-a4d074b69359
   type: testimony
   attestation: first_hand
@@ -516,6 +562,11 @@ domain_claims:
     TW: Confirmed Greer/Miller/Mitchell gave talk in Pentagon Conference room. Adm. Mike Crawford, Gen. Pat Hughes (Hughes his boss) were present (others too.) Date April '97.
   text: |-
     Steven Greer, Will Miller and Edgar D. Mitchell gave a talk in a Pentagon conference room, with Admiral Mike Crawford and General Patrick Hughes present, in April 1997.
+  entailment:
+    label: entails
+    score: 0.821
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2d6febb4-5676-4b2b-a2f1-85138b3c300d
   type: administrative
   attestation: first_hand
@@ -534,6 +585,11 @@ domain_claims:
     name: Wilson, Thomas
   quote: Adm. Mike Crawford, Gen. Pat Hughes (Hughes his boss) were present
   text: Patrick Hughes was Thomas Wilson's boss.
+  entailment:
+    label: entails
+    score: 0.952
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 16fe715b-27a8-4bbe-a406-41b8ae589af1
   type: testimony
   attestation: second_hand
@@ -556,6 +612,11 @@ domain_claims:
   quote: (Ed Mitchell said 4/9/97.)
   text: |-
     Edgar D. Mitchell said the April 1997 Pentagon briefing by Steven Greer, Will Miller and Edgar D. Mitchell took place on 1997-04-09.
+  entailment:
+    label: entails
+    score: 0.952
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc4bd834-e0b6-4596-b0df-d2d4f30718d7
   type: testimony
   attestation: first_hand
@@ -583,6 +644,11 @@ domain_claims:
     After group broke up, Miller/Wilson talked (privately) 2 hours on UFOs, MJ-12, Roswell, crashed UFOs/alien bodies, etc.
   text: |-
     After the April 1997 Pentagon briefing group broke up, Will Miller and Thomas Wilson talked privately for two hours about UFOs, Majestic 12 (MJ-12), the 1947 Roswell UFO incident, and crashed UFOs and alien bodies.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d7ef1af-968e-4f7d-8e41-0ec3ab05e161
   type: testimony
   attestation: first_hand
@@ -603,6 +669,11 @@ domain_claims:
     TW intrigued - knew about intelligence on US mil/intell UFO close encounters - and foreign gov't encounters. Seen records. Told Miller.
   text: |-
     Thomas Wilson said he was intrigued and knew about intelligence on US military and intelligence UFO close encounters and foreign government encounters, having seen records, and told this to Will Miller.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7e453fb5-de9c-4569-8caf-e3413a2627ce
   type: testimony
   attestation: first_hand
@@ -626,6 +697,11 @@ domain_claims:
     Confirmed he called Miller ca. late June '97 and told that he/Miller was right - there is such an organization in existence.
   text: |-
     Thomas Wilson confirmed he called Will Miller around late June 1997 and told him that Miller was right that a Majestic 12 (MJ-12)-like UFO organisation exists.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0e52a0d4-f650-43cb-a474-13ef7fe6d17f
   type: testimony
   attestation: first_hand
@@ -646,6 +722,11 @@ domain_claims:
     TW: I found it, where I looked, who I talked to but did not name every one - that's it.
   text: |-
     Thomas Wilson said he found information and talked to people during his investigation, but did not name everyone he spoke to, when asked what he told Will Miller.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26012c8b-7fa8-4112-986a-28a99b86c8ff
   type: administrative
   attestation: first_hand
@@ -668,6 +749,11 @@ domain_claims:
   quote: 'EWD: I show Miller letter (to me, EWD) dated 4/25/02 - please evaluate.'
   text: |-
     Eric W. Davis showed Thomas Wilson a letter from Will Miller to Davis dated 2002-04-25 for evaluation.
+  entailment:
+    label: contradicts
+    score: 0.549
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f5293487-4dbd-43e8-8235-846c7ef7b0fc
   type: testimony
   attestation: first_hand
@@ -690,6 +776,11 @@ domain_claims:
     TW: (laughs) Didn't tell Miller EVERYTHING! Miller knows what I did in Pentagon Records Group search but no more.
   text: |-
     Thomas Wilson said he did not tell Will Miller everything, and that Miller knows what Wilson did in the Pentagon records group search but no more.
+  entailment:
+    label: entails
+    score: 0.92
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d90895bd-bcbf-4c42-bebe-789f0e649e52
   type: opinion
   attestation: first_hand
@@ -709,6 +800,11 @@ domain_claims:
   quote: Miller can make good educated guess on who (contractors) has alien hardware.
   text: |-
     Thomas Wilson considers that Will Miller can make a good educated guess about which contractors have alien hardware.
+  entailment:
+    label: entails
+    score: 0.899
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 31a45f1a-bf83-4167-a163-1d732dc94892
   type: opinion
   attestation: first_hand
@@ -731,6 +827,11 @@ domain_claims:
     Do not pay Miller - sounds hard up to pay for nice Florida home and private beach privilege - (laughs)!
   text: |-
     Thomas Wilson said he does not pay Will Miller, and remarked that Miller sounds hard up given he pays for a nice Florida home and private beach privilege.
+  entailment:
+    label: entails
+    score: 0.662
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4951fe0e-6978-42d2-b3f5-d8e42ad8c091
   type: opinion
   attestation: first_hand
@@ -751,6 +852,11 @@ domain_claims:
     TW: Miller can give good advice on which defense companies to look at - that's all he knows.
   text: |-
     Thomas Wilson said Will Miller can give good advice on which defence companies to look at, and that is all Miller knows.
+  entailment:
+    label: entails
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 10be65f9-cf40-4dc0-81b5-121a028ac1e3
   type: opinion
   attestation: second_hand
@@ -772,6 +878,11 @@ domain_claims:
   quote: '- Oke told all about JA (doesn''t trust JA, a liar!)'
   text: |-
     Oke Shannon told Thomas Wilson about "JA" and said he does not trust JA, calling JA a liar.
+  entailment:
+    label: entails
+    score: 0.631
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5981743c-b777-4a21-bae8-9fce384d185d
   type: administrative
   speaker:
@@ -786,6 +897,11 @@ domain_claims:
     name: Wilson, Thomas
   quote: AP-10 group meetings at BDM.
   text: AP-10 group meetings were held at BDM.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4eee19fb-cf07-456e-9d5d-986277de4bf0
   type: testimony
   attestation: second_hand
@@ -809,6 +925,11 @@ domain_claims:
     - Oke briefed me on whole BDM thing
   text: |-
     Oke Shannon briefed Thomas Wilson about the whole BDM matter, including his own role there, and who attended, referencing a book by Blum.
+  entailment:
+    label: entails
+    score: 0.584
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d545eca9-3443-4a17-b773-0ba11e766ca9
   type: testimony
   attestation: second_hand
@@ -833,6 +954,11 @@ domain_claims:
     Oke briefed me on whole BDM thing - talked about RV program for 10 min. I know something of this RV.
   text: |-
     Oke Shannon talked to Thomas Wilson about the Remote Viewing (RV) programme for ten minutes, and Wilson said he knows something of this Remote Viewing programme.
+  entailment:
+    label: entails
+    score: 0.844
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 529f68de-d459-4070-b2aa-47cf5d0bbacc
   type: opinion
   attestation: second_hand
@@ -857,6 +983,11 @@ domain_claims:
     Oke said I (EWD) was team player, would keep mouth shut, no media connections - obey all restrictions - not in government/no clearances, but pedigree excellent - professional/personal references very excellent.
   text: |-
     Oke Shannon told Thomas Wilson that Eric W. Davis was a team player who would keep his mouth shut, had no media connections, would obey all restrictions, was not in government and held no clearances, but had an excellent pedigree and very excellent professional and personal references.
+  entailment:
+    label: entails
+    score: 0.888
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 80f1e65a-c6ac-41c3-b481-7fb8fe69e182
   type: administrative
   attestation: second_hand
@@ -881,6 +1012,11 @@ domain_claims:
     I must apologize to you and Hal for not getting back with you sooner. The "fog of war", current business activity, and losing your new e-mail address all contributed to the delay, which I regret.
   text: |-
     Will Miller apologised to Eric W. Davis and Hal Puthoff for not responding sooner, citing the "fog of war", current business activity, and losing Davis's new e-mail address as contributing causes.
+  entailment:
+    label: entails
+    score: 0.549
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d71bc675-739d-47e5-bb39-c7805b500f39
   type: administrative
   attestation: second_hand
@@ -907,6 +1043,11 @@ domain_claims:
     First, I must ask if you and/or Hal would be interested in meeting Mr. Bob Beckwith in Tallahassee, FL the evening of May 30th.
   text: |-
     Will Miller asked whether Eric W. Davis and/or Hal Puthoff would be interested in meeting Bob Beckwith in Tallahassee, Florida on the evening of 30 May.
+  entailment:
+    label: entails
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2033b5cb-15de-4ade-96c5-55abec84aa08
   type: administrative
   attestation: second_hand
@@ -929,6 +1070,11 @@ domain_claims:
     Bob has been invited to meet with the head of the Florida Academy of Sciences and the Director of the High Magnetic Field Laboratory for a roundtable discussion of his (Mr. Beckwith's) Force Model of the Universe, and his planned experiments in LTT (levitation, teleportation, and time travel), among other subjects.
   text: |-
     Bob Beckwith was invited to meet with the head of the Florida Academy of Sciences and the Director of the National High Magnetic Field Laboratory for a roundtable discussion of his Force Model of the Universe and his planned experiments in levitation, teleportation, and time travel.
+  entailment:
+    label: entails
+    score: 0.794
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 27dc18f0-c35d-41a8-bb8a-628d118bba6d
   type: administrative
   attestation: second_hand
@@ -953,6 +1099,11 @@ domain_claims:
     I would be willing to assist you and Hal with your ongoing research into UFO crash retrievals and the entities within the government (or outside of it) that are involved in that business, with the following caveats.
   text: |-
     Will Miller offered to assist Eric W. Davis and Hal Puthoff with their ongoing research into UFO crash retrievals and the entities within or outside government involved in that business, subject to caveats.
+  entailment:
+    label: entails
+    score: 0.873
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d04441ba-6292-498e-9d6e-1b33b1eb84b2
   type: administrative
   attestation: second_hand
@@ -975,6 +1126,11 @@ domain_claims:
     First, there must be absolutely NO mention or association of my name with your work or investigation. I have absolutely nothing to gain from such association at this time, and possibly much to lose.
   text: |-
     Will Miller required that there be no mention or association of his name with Eric W. Davis's and Hal Puthoff's work or investigation, stating he had nothing to gain from such association and possibly much to lose.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: beb43a1a-db33-441b-8449-832d6f0d5d17
   type: administrative
   attestation: second_hand
@@ -993,6 +1149,11 @@ domain_claims:
     I would charge you only for the actual time I spend in putting together materials, references, or contact lists for you to pursue. I would expect that time to be minimal, since that initial information would not take long to put together (probably less than 8 hours). My standard rate for such work is $180 per straight-time hour.
   text: |-
     Will Miller's standard rate for putting together materials, references, or contact lists was $180 per straight-time hour, and he expected the initial work to take less than eight hours.
+  entailment:
+    label: entails
+    score: 0.932
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f46e5a2c-ca2a-4391-a11a-58c41cc4dc9b
   type: administrative
   attestation: second_hand
@@ -1011,6 +1172,11 @@ domain_claims:
     Although I have held a Top Secret (TS) clearance with access to Special Compartmented Information (SCI), and other "special" clearances for "other" programs, I currently do not work in the classified realm, nor do I hold those clearances.
   text: |-
     Will Miller previously held a Top Secret (TS) clearance with access to Sensitive Compartmented Information (SCI) and other special clearances for other programmes, but no longer works in the classified realm and does not currently hold those clearances.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0f935c79-b8f5-4507-a1f9-91f1c14f5cc1
   type: administrative
   attestation: second_hand
@@ -1031,6 +1197,11 @@ domain_claims:
     Particulars on a "special team" involved (as a secondary mission) with recovering crashed "craft" including, but not limited to, the previously classified F-117 Stealth Fighter. This team or its successors, its parent sponsoring entity, and its two key officers may provide some of the information that you seek.
   text: |-
     Will Miller offered to provide particulars on a "special team" involved as a secondary mission with recovering crashed "craft", including the previously classified F-117 Nighthawk, along with its parent sponsoring entity and two key officers.
+  entailment:
+    label: entails
+    score: 0.877
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: be3d69de-51e6-448c-bd5f-1ddeaed25965
   type: opinion
   attestation: second_hand
@@ -1053,6 +1224,11 @@ domain_claims:
     The name and last location of a senior officer who I believe had first-hand knowledge U.S. government alien reproduction vehicles (ARVs) at Area-51 and associated locations.
   text: |-
     Will Miller offered to provide the name and last known location of a senior officer he believed had first-hand knowledge of US government alien reproduction vehicles (ARVs) at Area 51 and associated locations.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: aa19e904-0347-4fd5-8008-b577741eb985
   type: opinion
   attestation: second_hand
@@ -1073,6 +1249,11 @@ domain_claims:
     The name and current location of a retired senior (Flag-rank) officer who I believe was directly involved in government interaction with a significant UFO event on the east coast of the U.S., and I believe has, by virtue of his former leadership position, high military rank, and control of significant military forces, direct knowledge of USG involvement in this business.
   text: |-
     Will Miller offered to provide the name and current location of a retired senior flag-rank officer he believed was directly involved in government interaction with a significant UFO event on the east coast of the United States, with direct knowledge of US government involvement.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f180801f-58a0-453c-bfd9-dff01761037a
   type: opinion
   attestation: second_hand
@@ -1091,6 +1272,11 @@ domain_claims:
     A list of civilian government contractors who, by virtue of their past and current highly classified work, current capabilities, clearances, specialized personnel, and geographic areas of concern, most likely have current involvement in and knowledge of USG work in alien-derived technologies, crashes, landing, and associated events.
   text: |-
     Will Miller offered to provide a list of civilian government contractors who, by virtue of their classified work, current capabilities, clearances, specialised personnel and geographic areas, most likely have current involvement in and knowledge of US government work in alien-derived technologies, crashes, landings, and associated events.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cf8dfeaa-2b9c-412b-ac8c-51ea40c808fe
   type: administrative
   attestation: second_hand
@@ -1113,6 +1299,11 @@ domain_claims:
     Finally, I have a request: I am trying to locate a company in Las Vegas, NV which some years ago manufactured a specialized disabling "pepper spray" for the military and law enforcement. The company was called "1Mark, Inc." (2300 W. Sahara Ave. Ste. 500) and I knew its V.P., a Mr. Joe Zucharro.
   text: |-
     Will Miller was trying to locate a company in Las Vegas, Nevada called "1Mark, Inc." that had manufactured a specialised disabling pepper spray for the military and law enforcement, and its vice-president, Joe Zucharro.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: deedbd87-ad44-4eed-a6c7-dd1f77113453
   type: testimony
   attestation: first_hand
@@ -1134,6 +1325,11 @@ domain_claims:
   quote: 'TW: Told Oke it''s a bad time - time no good to talk to me (EWD) - too busy.'
   text: |-
     Thomas Wilson told Oke Shannon it was a bad time and he was too busy to talk to Eric W. Davis.
+  entailment:
+    label: entails
+    score: 0.459
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d7e36f53-c55d-452a-a934-7e2f6705c2e8
   type: testimony
   attestation: first_hand
@@ -1154,6 +1350,11 @@ domain_claims:
     Said Oke too difficult to contact anymore - heard he was in and out of hospital - extremely sensitive to stress/heart sick - bad news
   text: |-
     Thomas Wilson said Oke Shannon had become too difficult to contact, was in and out of hospital, and was extremely sensitive to stress and heart sick.
+  entailment:
+    label: entails
+    score: 0.932
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1b3f7d58-d169-4d94-8b92-e7d371ad840f
   type: testimony
   attestation: first_hand
@@ -1174,6 +1375,11 @@ domain_claims:
     tried calling: Linda takes messages but none returned, she doesn't want much on Oke's plate for fear...
   text: |-
     Thomas Wilson said that when he tried calling Oke Shannon, a person named Linda took messages that were not returned, because she did not want to add much to Oke's plate.
+  entailment:
+    label: entails
+    score: 0.565
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ab4fc362-c92f-40df-981c-31a45687dd88
   type: administrative
   attestation: first_hand
@@ -1196,6 +1402,11 @@ domain_claims:
   quote: Three years pass and retiring - left DIA July (2002) - replaced by Adm. Jacoby.
   text: |-
     Thomas Wilson left the Defense Intelligence Agency (DIA) in July 2002 and was replaced by Admiral Lowell Jacoby.
+  entailment:
+    label: entails
+    score: 0.556
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2435b735-8609-4396-9986-4ef45b3a5dad
   type: testimony
   attestation: first_hand
@@ -1217,6 +1428,11 @@ domain_claims:
     TW: Came to test site special area to wrap up projects (he began in '98) - successor can't be bothered with right now for lack of time and knowledge.
   text: |-
     Thomas Wilson came to the test site special area to wrap up projects that he had begun in 1998, since his successor could not be bothered with them for lack of time and knowledge.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6f6f5e1f-a4c5-4f7b-af02-f456c5a65a33
   type: testimony
   attestation: first_hand
@@ -1245,6 +1461,11 @@ domain_claims:
     Trip set up by NNSA (National Nuclear Security Agency) - Rich & Doug - you (EWD) know them - AFIO members
   text: |-
     Thomas Wilson's trip was set up by the National Nuclear Security Administration (NNSA), organised by Rich and Doug, who Wilson said Eric W. Davis knew, who are Association of Former Intelligence Officers (AFIO) members.
+  entailment:
+    label: entails
+    score: 0.659
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cb6fb0c1-74c5-46f3-94c2-9c14acb753d5
   type: testimony
   attestation: second_hand
@@ -1273,6 +1494,11 @@ domain_claims:
     told about how new Las Vegas chapter needed guest speakers for chapter/public venue - raise money/membership, etc.
   text: |-
     Rich and Doug told Thomas Wilson that the new Las Vegas chapter of the Association of Former Intelligence Officers (AFIO) needed guest speakers for chapter or public venue events to raise money and membership.
+  entailment:
+    label: entails
+    score: 0.971
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e978dc42-b953-4348-9b34-a00759c8d847
   type: testimony
   attestation: first_hand
@@ -1299,6 +1525,11 @@ domain_claims:
     Rich/Doug talked about you (EWD!) - phoned from DC - sent me copies of your NASA papers and other related - wormholes your thing.
   text: |-
     Rich and Doug talked to Thomas Wilson about Eric W. Davis by phone from Washington, D.C., and sent Wilson copies of Davis's NASA papers and other related material, including material about wormholes.
+  entailment:
+    label: entails
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cb3fc5cb-9ca6-42ea-b602-82e5e8facb51
   type: testimony
   attestation: first_hand
@@ -1324,6 +1555,11 @@ domain_claims:
   quote: Sent PACAF orders, US ID, Lockheed slides, some reports I wrote for NASA.
   text: |-
     Rich and Doug sent Thomas Wilson Eric W. Davis's PACAF orders, US ID, Lockheed slides, and some reports Davis wrote for NASA.
+  entailment:
+    label: contradicts
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ac052221-503c-4ae3-9704-bf40164edcb3
   type: testimony
   attestation: first_hand
@@ -1348,6 +1584,11 @@ domain_claims:
   quote: 'TW: Oh, Sept., after Labor Day.'
   text: |-
     Rich and Doug spoke to Thomas Wilson about Eric W. Davis in September 2002, after Labor Day.
+  entailment:
+    label: entails
+    score: 0.954
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: add5172d-aff8-408b-b357-6dcdd4ffa2d7
   type: testimony
   attestation: first_hand
@@ -1374,6 +1615,11 @@ domain_claims:
     Rich/Doug told me I should talk to you about DIA careers, discuss history, mission, my career in that, etc.
   text: |-
     Rich and Doug told Thomas Wilson he should talk to Eric W. Davis about Defense Intelligence Agency (DIA) careers and discuss Wilson's career history and mission there.
+  entailment:
+    label: entails
+    score: 0.97
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 590cde41-590c-4046-b413-1d17dae29d62
   type: testimony
   attestation: first_hand
@@ -1398,6 +1644,11 @@ domain_claims:
     TW: Had office do background checks. Doug/Rich offered to but wanted my own data to be sure.
   text: |-
     Thomas Wilson had his office do background checks on Eric W. Davis, wanting his own data even though Doug and Rich had offered to do so.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aca0f75f-7411-4220-aa8a-52e1e5bfe58b
   type: testimony
   attestation: first_hand
@@ -1419,6 +1670,11 @@ domain_claims:
   quote: AFIO vouched - AFIO people/DC people now in Vegas vouched.
   text: |-
     The Association of Former Intelligence Officers (AFIO) and its Washington, D.C. members now in Las Vegas vouched for Eric W. Davis.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a3e8b21f-26db-4d75-a6ef-0fcdc4117f08
   type: testimony
   attestation: first_hand
@@ -1442,6 +1698,11 @@ domain_claims:
     TW: Gave deep serious thought - recalled Oke's call in '99. Oke really supported me (EWD) - had good arguments.
   text: |-
     Thomas Wilson gave serious thought to meeting Eric W. Davis and recalled Oke Shannon's phone call from 1999, noting Shannon really supported Davis and had good arguments.
+  entailment:
+    label: contradicts
+    score: 0.758
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 52c5c388-dfac-4d1c-8ae6-148bdca55d60
   type: hearsay
   attestation: second_hand
@@ -1468,6 +1729,11 @@ domain_claims:
     TW: I (EWD) wouldn't talk to press, to groups (UFO or other such), no media connections, not talk to Miller or Greer or related folks - no vested interest in publicity/money/fame/notoriety, etc.
   text: |-
     Oke Shannon argued that Eric W. Davis would not talk to the press or to UFO or other such groups, had no media connections, and would not talk to Will Miller, Steven Greer, or related people, having no vested interest in publicity, money, fame, or notoriety.
+  entailment:
+    label: entails
+    score: 0.938
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 892cc30e-8ba7-4de6-b51e-17214e2c6acb
   type: observation
   attestation: first_hand
@@ -1491,6 +1757,11 @@ domain_claims:
     No mention of NIDS!! Oke mentioned JA, me, NIDS in '99, but that's all that was said
   text: |-
     Eric W. Davis noted that during the discussion of his background, there was no mention of the National Institute for Discovery Science (NIDS), and that Oke Shannon had mentioned NIDS, JA, and Davis together only in 1999.
+  entailment:
+    label: entails
+    score: 0.639
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 33b0402e-38e2-4600-83bd-82d58633a6d1
   type: observation
   attestation: first_hand
@@ -1511,6 +1782,11 @@ domain_claims:
     TW: Very furious - very angry about Miller (facial expression tense, angry voice)
   text: |-
     Thomas Wilson was very angry about Will Miller, showing a tense facial expression and angry voice.
+  entailment:
+    label: contradicts
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 12562420-45b9-4777-9916-02d408cd9c84
   type: opinion
   attestation: first_hand
@@ -1534,6 +1810,11 @@ domain_claims:
     - There's Navy camaraderie among officers - brotherhood
   text: |-
     Thomas Wilson considers that Will Miller violated personal and professional trust, especially among intelligence colleagues and Navy officers, and violated the Navy camaraderie and brotherhood among officers.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60bdf326-c23d-4319-b016-e78a06211b34
   type: testimony
   attestation: first_hand
@@ -1554,6 +1835,11 @@ domain_claims:
     name: Wilson, Thomas
   quote: 'TW: Miller told Greer their conversation'
   text: Will Miller told Steven Greer about his conversation with Thomas Wilson.
+  entailment:
+    label: entails
+    score: 0.808
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1e2d3bd5-de5d-4672-81fe-49ee6e97541b
   type: testimony
   attestation: second_hand
@@ -1578,6 +1864,11 @@ domain_claims:
   quote: (EWD note - Miller told Ed Mitchell who only told me in 1999)
   text: |-
     Will Miller told Edgar D. Mitchell about the conversation with Thomas Wilson, and Mitchell only told Eric W. Davis about it in 1999.
+  entailment:
+    label: entails
+    score: 0.46
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f667379a-0653-48c9-a3ba-3b807a133b4d
   type: testimony
   attestation: first_hand
@@ -1605,6 +1896,11 @@ domain_claims:
     - Not sure what he told Kean, but articles referenced me (TW)
   text: |-
     Will Miller talked to Leslie Kean, and Boston Globe articles about UFOs subsequently came out that referenced Thomas Wilson.
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fa7a2d8a-7a63-408a-813b-dd8a0240c36c
   type: testimony
   attestation: first_hand
@@ -1626,6 +1922,11 @@ domain_claims:
     - Got calls from all over
   text: |-
     Thomas Wilson said he received phone calls from all over after the Boston Globe articles referencing him came out, and he was furious.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 19fca337-741d-421c-b082-7ed744458741
   type: testimony
   attestation: first_hand
@@ -1644,6 +1945,11 @@ domain_claims:
     TW: Sarcastic, stupid jokes, stupid comments, comments of surprise and derision (that I would be talking to UFO nuts/nutty UFO groups, etc.)
   text: |-
     Thomas Wilson described the calls he received as sarcastic, containing stupid jokes and comments of surprise and derision at the idea he would be talking to UFO groups.
+  entailment:
+    label: entails
+    score: 0.926
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5285a997-21fd-4132-b394-1003a74efc9f
   type: testimony
   attestation: first_hand
@@ -1666,6 +1972,11 @@ domain_claims:
     TW: Co-workers (flag officers) in Pentagon, lower staff, civilian SES people, people in intell community I work with. Got calls about articles and didn't like it.
   text: |-
     The calls Thomas Wilson received about the Boston Globe articles came from co-workers who were flag officers in the Pentagon, lower staff, civilian Senior Executive Service (SES) people, and people in the intelligence community he worked with, who did not like the articles.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 60de4d37-4d58-4f1b-9e07-fe9b58806357
   type: testimony
   attestation: first_hand
@@ -1689,6 +2000,11 @@ domain_claims:
     - But trusts Oke's word and it is good with me.
   text: |-
     Thomas Wilson said he was taking a risk talking to Eric W. Davis, trusting Oke Shannon's word.
+  entailment:
+    label: entails
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fadf9347-0547-42fa-8ee0-3f0f365d32f9
   type: testimony
   attestation: first_hand
@@ -1711,6 +2027,11 @@ domain_claims:
     We should have met Oke together face-to-face but present health problems prevent that - too bad!
   text: |-
     Thomas Wilson said he and Oke Shannon should have met Eric W. Davis together face-to-face but Shannon's health problems prevented that.
+  entailment:
+    label: entails
+    score: 0.925
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6f3d5bb5-eec6-47fd-9fab-fc2b45b0178f
   type: testimony
   attestation: first_hand
@@ -1737,6 +2058,11 @@ domain_claims:
     TW: Rich & Doug vouch for you - say your word is good with them. AFIO connection important for trust - you (EWD) know how to be team player
   text: |-
     Rich and Doug vouched for Eric W. Davis, saying his word is good with them, and Thomas Wilson said the Association of Former Intelligence Officers (AFIO) connection is important for trust.
+  entailment:
+    label: entails
+    score: 0.653
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7a8c0733-8517-44f0-82eb-8aec31c24554
   type: testimony
   attestation: first_hand
@@ -1760,6 +2086,11 @@ domain_claims:
     - Korean record good and AF trusts you
   text: |-
     Eric W. Davis's background check came back clear, with no derogatory items found, a good Korean record, and Air Force trust.
+  entailment:
+    label: entails
+    score: 0.555
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6256c21a-1f98-49e6-9e5d-db7468b48731
   type: testimony
   attestation: first_hand
@@ -1780,6 +2111,11 @@ domain_claims:
     If you blow my trust I'll deny meeting you, deny everything said, won't meet with any more people (without clearances) to talk about this topic - too risky because of security violation just by mentioning it - very tightly held info - absurdly closely held subject matter - never seen anything like this program in black programs community
   text: |-
     Thomas Wilson said that if Eric W. Davis violated his trust, he would deny meeting him and deny everything said, and would not meet with any more people without clearances to talk about this topic, because it is a very tightly held and absurdly closely held subject matter unlike anything he has seen in the black programmes community.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0f2d1479-b28c-4be4-bd72-41b1d5340be1
   type: testimony
   attestation: first_hand
@@ -1803,6 +2139,11 @@ domain_claims:
     TW: After parting with Miller (week later, he thinks) - I made calls, knocked on a few doors, talked to people - went on for 45 days (thereabouts) on and off
   text: |-
     After parting with Will Miller, about a week later, Thomas Wilson made calls, knocked on a few doors, and talked to people, continuing on and off for about 45 days.
+  entailment:
+    label: entails
+    score: 0.851
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f5dac99f-3bd4-4aca-9490-5eba1345de3f
   type: testimony
   attestation: first_hand
@@ -1826,6 +2167,11 @@ domain_claims:
     Suggestion came from Ward (Gen. M. Ward) to go through the records groups files (like an index system) in OUSDAT (Office of the Under Secretary of Defense for Acquisition and Technology)
   text: |-
     General M. Ward suggested to Thomas Wilson that he go through the records group files in the Office of the Under Secretary of Defense for Acquisition, Technology and Logistics (OUSDAT).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 68c7a6ae-e100-4ba4-a871-8a208015dfbe
   type: testimony
   attestation: first_hand
@@ -1847,6 +2193,11 @@ domain_claims:
     Ran into Bill Perry in May '97 - talked about this quietly - he suggested the same thing
   text: |-
     Thomas Wilson ran into William Perry in May 1997 and discussed the matter quietly, and Perry suggested the same approach as General M. Ward.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6b81ff82-0030-43b5-bb9d-87ba44604433
   type: testimony
   attestation: first_hand
@@ -1870,6 +2221,11 @@ domain_claims:
     They told me of a special projects record group not belonging to usual SAP - a special subset of the unacknowledged/carve-outs/waived programs - not belonging to usual SAP divisions as organized in '94 by Perry himself - set apart from rest but buried/covered by conventional SAPs
   text: |-
     Thomas Wilson was told of a special projects record group that did not belong to the usual Special Access Programs (SAP), being a special subset of unacknowledged, carve-out, and waived programmes not belonging to the usual SAP divisions organised in 1994 by William Perry, set apart from and buried or covered by conventional SAPs.
+  entailment:
+    label: entails
+    score: 0.602
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4adf89e5-79f4-4a60-b311-da7c1a81b31a
   type: testimony
   attestation: first_hand
@@ -1892,6 +2248,11 @@ domain_claims:
     TW: Uh, was Paul Kaminski - talked to both Paul and Mike Kostelnik (a Brig. General)
   text: |-
     Paul Kaminski was the Under Secretary of Defense for Acquisition, Technology and Logistics (USDAT), and Thomas Wilson talked to both Kaminski and Brigadier General Michael Kostelnik.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a8d5ff50-17ee-4bf9-8ad8-fc4559ef64be
   type: administrative
   attestation: first_hand
@@ -1918,6 +2279,11 @@ domain_claims:
     In Paul's office (OUSDAT) - dir. of special programs in OUSDAT (Office of the Under Secretary of Defense for Acquisition, Technology, and Logistics) as organized (re-organized) by Perry in '94
   text: |-
     Michael Kostelnik was director of special programmes in the Office of the Under Secretary of Defense for Acquisition, Technology and Logistics (OUSDAT), as reorganised by William Perry in 1994.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 44811610-ac06-4274-bf09-8f7e908de76d
   type: administrative
   attestation: first_hand
@@ -1939,6 +2305,11 @@ domain_claims:
   quote: Mike is also director of SAPCO (Special Access Programs Coordination Office)
   text: |-
     Michael Kostelnik was also director of the Special Access Programs Coordination Office (SAPCO).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 091ec8ac-b0a2-4292-a51f-3dff76f273b1
   type: administrative
   attestation: first_hand
@@ -1963,6 +2334,11 @@ domain_claims:
     Mike is member and executive secretary to SAPOC (Special Access Programs Oversight Committee) in capacity as SAPCO director
   text: |-
     Michael Kostelnik was a member and executive secretary of the Special Access Programs Oversight Committee (SAPOC) in his capacity as Special Access Programs Coordination Office (SAPCO) director.
+  entailment:
+    label: entails
+    score: 0.731
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 90c1a80c-d642-4b54-b26e-8d2a60519f41
   type: administrative
   attestation: first_hand
@@ -1983,6 +2359,11 @@ domain_claims:
     name: Senior Review Group
   quote: Mike is a member of the Senior Review Group
   text: Michael Kostelnik was a member of the Senior Review Group.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 984824c5-a5bb-4f39-bee1-33946875563a
   type: administrative
   provenance_chain:
@@ -2002,6 +2383,11 @@ domain_claims:
     (TW was Deputy Director DIA/Assistant Joint Chief of Staff J-2 at time; boss was Director DIA Gen. Patrick Hughes)
   text: |-
     At the time of his 1997 investigation, Thomas Wilson was Deputy Director of the Defense Intelligence Agency (DIA) and Assistant Joint Chief of Staff for Intelligence (J-2), and his boss was Director of the Defense Intelligence Agency General Patrick Hughes.
+  entailment:
+    label: entails
+    score: 0.418
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 48f50bb4-95d0-4278-8fe8-5711a215a992
   type: testimony
   attestation: first_hand
@@ -2018,6 +2404,11 @@ domain_claims:
     name: Wilson, Thomas
   quote: 'TW: So found the unusual record group - read the index abstracts.'
   text: Thomas Wilson found the unusual record group and read the index abstracts.
+  entailment:
+    label: entails
+    score: 0.941
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 89cab456-3793-4d73-b089-d2ec1f7dee10
   type: testimony
   attestation: first_hand
@@ -2037,6 +2428,11 @@ domain_claims:
     - A security budget record is copied into a folder for "the program"
   text: |-
     Thomas Wilson found no budget information in the special record group, as that information is kept in separate records for audit purposes, with a security budget record copied into a folder for "the program".
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b96a9a92-b893-4903-a0f3-9db8fcfca529
   type: testimony
   attestation: second_hand
@@ -2061,6 +2457,11 @@ domain_claims:
     Talked to Mike who said it was like 2-3 times the program budget, but there were times when it went as high as 6-7 times core budget, thought it was absurdly high, said Perry wanted investigation on that but was told to drop it.
   text: |-
     Michael Kostelnik told Thomas Wilson the programme's security budget was typically two to three times the programme budget, but at times went as high as six to seven times the core budget, which Kostelnik thought was absurdly high; William Perry wanted an investigation into that but was told to drop it.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a3ed25a5-314d-4308-b163-3974187aebb6
   type: testimony
   attestation: first_hand
@@ -2086,6 +2487,11 @@ domain_claims:
     TW: He didn't want to answer my question on that - said I could find out something from Judy Daly (Judith Daly: Assistant Deputy Under Secretary of Defense for Advanced Development, OUSDAT).
   text: |-
     Michael Kostelnik declined to say who told him to drop the investigation into the programme's security budget, and instead told Thomas Wilson he could find out something from Judith Daly, Assistant Deputy Under Secretary of Defense for Advanced Development in the Office of the Under Secretary of Defense for Acquisition, Technology and Logistics (OUSDAT).
+  entailment:
+    label: entails
+    score: 0.567
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a4c0274f-c2cb-4c6c-b682-6fb789b8afe5
   type: testimony
   attestation: second_hand
@@ -2108,6 +2514,11 @@ domain_claims:
     TW: She said by phone call that security and other program budget records were being re-vamped and relocated to their own records groups. Security budgets were sometimes cumulative and not annual numbers, easy to see how misunderstanding occurs when comparing to annual program budget figures.
   text: |-
     Judith Daly told Thomas Wilson by phone that security and other programme budget records were being revamped and relocated to their own records groups, and that security budgets were sometimes cumulative rather than annual figures, which can produce misunderstanding when compared to annual programme budget figures.
+  entailment:
+    label: entails
+    score: 0.828
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 161d5ad0-c451-4f01-92c3-9313e7f35352
   type: testimony
   attestation: second_hand
@@ -2130,6 +2541,11 @@ domain_claims:
     6-7 times could be 2-5 years cumulative total - there have been errors in way security budgets reported.
   text: |-
     Judith Daly said the reported six-to-seven-times budget figure could represent two to five years of cumulative totals, and that there had been errors in the way security budgets were reported.
+  entailment:
+    label: contradicts
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 378c4c64-b883-478d-8589-4b921c78dba8
   type: testimony
   attestation: first_hand
@@ -2150,6 +2566,11 @@ domain_claims:
     TW: Perry ordered all these issues to be reorganized and straightened out to improve audit transparency.
   text: |-
     William Perry ordered the security budget reporting issues to be reorganised and straightened out to improve audit transparency.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b9d4e8fe-c4b6-4e40-a424-3dbef3b35506
   type: testimony
   attestation: first_hand
@@ -2172,6 +2593,11 @@ domain_claims:
     TW: Core secret - won't say
   text: |-
     Thomas Wilson declined to name the Special Access Program (SAP) compartment he found, calling it a core secret.
+  entailment:
+    label: entails
+    score: 0.87
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 151d08cc-a521-472b-99ff-4cd4445fe138
   type: testimony
   attestation: first_hand
@@ -2194,6 +2620,11 @@ domain_claims:
     TW: Again won't say - core secret
   text: |-
     Thomas Wilson declined to give the code name of the programme, calling it a core secret.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 75712e51-5c10-47db-b1e9-4f90136a1c2e
   type: testimony
   attestation: first_hand
@@ -2222,6 +2653,11 @@ domain_claims:
     TW: In their corporate portfolio
   text: |-
     The contractor that ran the reverse-engineering programme Thomas Wilson found was an aerospace technology contractor, one of the top ones in the United States, and the best defence contractor of them, with an intelligence portfolio in its corporate business.
+  entailment:
+    label: entails
+    score: 0.757
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f9736829-e823-4c7b-a7e3-5958371fd07a
   type: testimony
   attestation: first_hand
@@ -2251,6 +2687,11 @@ domain_claims:
     TW: Yes.
   text: |-
     Thomas Wilson made several calls at the end of May 1997, first to Paul Kaminski, Michael Kostelnik and William Perry, to confirm he had the right contractor and programme manager to talk to, and they confirmed it.
+  entailment:
+    label: entails
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 28293f65-b441-4a9c-96cf-bcdf2293d479
   type: testimony
   attestation: first_hand
@@ -2272,6 +2713,11 @@ domain_claims:
     - Very testy tone from all of them.
   text: |-
     At the end of May 1997, Thomas Wilson made three calls to the programme manager, one of them a conference call with the security director and the corporate attorney, and all three showed confusion and a very testy tone about why he was calling and what he wanted.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3622f20f-80b7-469a-a23a-d0f44d75ecbc
   type: testimony
   attestation: first_hand
@@ -2297,6 +2743,11 @@ domain_claims:
     TW: I told I read their program record in the OUSDAT special program records group and wanted to know about their crashed UFO program, what their role in that was, what they had, etc. Also asked if they heard of MJ-12 or some such organization code relating to crashed/recovered UFO craft.
   text: |-
     Thomas Wilson told the programme manager that he had read their programme record in the OUSDAT special programme records group and wanted to know about their crashed UFO programme and their role in it, and also asked if they had heard of Majestic 12 (MJ-12) or a similar organisation code relating to crashed or recovered UFO craft.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2cfc9df5-134f-459d-8895-36e57b5660a3
   type: testimony
   attestation: first_hand
@@ -2321,6 +2772,11 @@ domain_claims:
     TW: Oh, no! I didn't tell them I talked to those guys!
   text: |-
     The programme manager asked Thomas Wilson who he had talked to before calling them, and was unhappy with his answer, but Wilson did not tell them he had talked to William Perry and Paul Kaminski.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1400416e-7589-4313-b46a-75623658c3b1
   type: testimony
   attestation: first_hand
@@ -2339,6 +2795,11 @@ domain_claims:
     TW: 3 programs who said they weren't what/who I was looking for. 4 programs that referred me back to the present threesome.
   text: |-
     Thomas Wilson also called other programme managers, three of whom said they were not what he was looking for, and four of whom referred him back to the threesome he had already contacted.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 96a43284-04de-45c7-b81c-b478bc013267
   type: testimony
   attestation: first_hand
@@ -2357,6 +2818,11 @@ domain_claims:
     TW: Because they were part of it - in different compartments, placed in different layers of the compartments pyramid, split up to do different things or parts of it. They're all in same records group, but their connection to each other is not obvious (typical thing but unusual in records).
   text: |-
     Thomas Wilson said the four programmes referred him back to the threesome because they were part of the same programme, placed in different compartments and layers of the compartments pyramid, split up to do different parts of it, all within the same records group though their connection to each other was not obvious.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2cda52a0-09fc-468f-8cf0-5b538d9e5be5
   type: testimony
   attestation: first_hand
@@ -2377,6 +2843,11 @@ domain_claims:
     TW: I told threesome I wanted formal briefing, tour, etc. - was exploiting my regulatory authority as Deputy Director DIA/Assistant Joint Chief of Staff J-2 - Told them my not being briefed was oversight they needed to correct - I demanded!
   text: |-
     Thomas Wilson told the threesome he wanted a formal briefing and tour, exploiting his regulatory authority as Deputy Director of the Defense Intelligence Agency (DIA) and Assistant Joint Chief of Staff for Intelligence (J-2), telling them that his not being briefed was an oversight they needed to correct, and he demanded it.
+  entailment:
+    label: entails
+    score: 0.956
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 47e58a5f-14ba-4f10-a257-3f203e03ce00
   type: testimony
   attestation: first_hand
@@ -2395,6 +2866,11 @@ domain_claims:
     TW: They needed to discuss this (his demand) so hung up. Got called 2 days later and they said they don't want to talk on phone and arranged for face-to-face meeting at their facility.
   text: |-
     The threesome told Thomas Wilson they needed to discuss his demand, hung up, then called back two days later saying they did not want to talk on the phone and arranged a face-to-face meeting at their facility.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 96ce9937-d09c-4e7b-b509-628f9102ee62
   type: testimony
   attestation: first_hand
@@ -2418,6 +2894,11 @@ domain_claims:
     TW: Yes, same 3
   text: |-
     Thomas Wilson flew out ten days later, around mid-June 1997, to meet the same three people who had been on the telephone conference, in their conference room in their secure vault.
+  entailment:
+    label: neutral
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9de8dbae-e9af-47f9-9e75-d0937aa77193
   type: testimony
   attestation: first_hand
@@ -2441,6 +2922,11 @@ domain_claims:
     - Called themselves "the watch committee," or gate keepers.
   text: |-
     The three people who met Thomas Wilson at the facility were a security director who was a retired National Security Agency (NSA) counterintelligence (CI) expert, a programme director, and a corporate attorney, who called themselves "the watch committee" or gatekeepers.
+  entailment:
+    label: entails
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7cfff41a-bce3-42d5-be0e-074adc3f5fa8
   type: testimony
   attestation: second_hand
@@ -2465,6 +2951,11 @@ domain_claims:
     TW: I asked; they said they were formed out of necessity to protect themselves after a near disaster in the past almost blew their cover - something to do with an agreement that was reached with a couple of Pentagon SESs overseeing SAPs in those days - were vague about when that was.
   text: |-
     The Watch Committee told Thomas Wilson they were formed out of necessity to protect themselves after a near disaster in the past almost blew their cover, related to an agreement reached with a couple of Pentagon Senior Executive Service (SES) officials overseeing Special Access Programs (SAPs), though they were vague about when that was.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4ad25ed3-9a8b-4d65-bb9f-fe0cdec983ac
   type: testimony
   attestation: second_hand
@@ -2490,6 +2981,11 @@ domain_claims:
     - A battle, a nasty back 'n forth between them and the investigator and his Pentagon chief ensued - like a tug of war for program transparency, they told me - money was the issue - their hiding out became the other issue.
   text: |-
     The Watch Committee told Thomas Wilson that years ago, in the past, an audit investigation led to them and nearly outed them, and a nasty back-and-forth battle ensued between them and the investigator and his Pentagon chief, like a tug of war over programme transparency, with money and their hiding out being the issues.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e687203d-b792-4bcf-92e5-f0ccc4e06075
   type: testimony
   attestation: second_hand
@@ -2513,6 +3009,11 @@ domain_claims:
     - (They work very hard to keep program hidden)
   text: |-
     The Watch Committee told Thomas Wilson that some kind of threat was leveled to blow the lid off them, so they backed down and let the investigator in to complete his job; the Watch Committee works very hard to keep the programme hidden.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dac3bd86-6118-408a-9675-475b888d5fb3
   type: testimony
   attestation: second_hand
@@ -2539,6 +3040,11 @@ domain_claims:
     TW: Didn't say more about that.
   text: |-
     The prior investigator was officially briefed and given a tour and shown the programme, but Thomas Wilson said the Watch Committee did not say more about whether they showed him a craft or hardware described as "alien" or from a UFO.
+  entailment:
+    label: entails
+    score: 0.653
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e30cf449-f005-45e4-9138-763a5df4e65f
   type: testimony
   attestation: second_hand
@@ -2567,6 +3073,11 @@ domain_claims:
     - Literally their way or the highway
   text: |-
     After the prior investigator episode, a formal agreement was struck between the Watch Committee and the Special Access Programs Oversight Committee (SAPOC) establishing special access criteria, administered by the contractor committee (programme director, attorney, security director), requiring US government personnel to meet the criteria regardless of their tickets and position.
+  entailment:
+    label: entails
+    score: 0.764
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4a546055-d134-4734-b6e2-79e2b0346404
   type: opinion
   attestation: first_hand
@@ -2589,6 +3100,11 @@ domain_claims:
     TW: I asked for that and they refused to give answer. I was mad - implication is now - to me - they operate without official oversight or any justification - politically dangerous place to be!
   text: |-
     The Watch Committee refused to tell Thomas Wilson the special access criteria when he asked, which made him angry, leading him to conclude they operate without official oversight or justification, a politically dangerous position.
+  entailment:
+    label: entails
+    score: 0.76
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 45eb2a52-91f1-4541-a890-89f26c48f465
   type: observation
   attestation: second_hand
@@ -2613,6 +3129,11 @@ domain_claims:
     [Threesome concerned with who TW had talked to at Pentagon or elsewhere - by phone/FAX/email - wanted accounting of conversations - concerned about new exposure]
   text: |-
     The Watch Committee was concerned about who Thomas Wilson had talked to at the Pentagon or elsewhere by phone, fax, or email, wanting an accounting of his conversations because they were concerned about new exposure.
+  entailment:
+    label: entails
+    score: 0.809
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d393374f-291e-408a-8942-3013fd9a134b
   type: testimony
   attestation: second_hand
@@ -2639,6 +3160,11 @@ domain_claims:
     TW: That they weren't going to let me in the door
   text: |-
     The purpose of the Watch Committee's meeting with Thomas Wilson was to tell him they were not going to let him in the door.
+  entailment:
+    label: entails
+    score: 0.555
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c408147c-c2ba-4b8f-af1d-eaaec7d00b96
   type: testimony
   attestation: second_hand
@@ -2665,6 +3191,11 @@ domain_claims:
     - I didn't meet the special criteria so need to know authorization was not being granted
   text: |-
     The Watch Committee told Thomas Wilson that his tickets were all confirmed and valid, but that he was not on the bigot list, and that his tickets alone were not enough because he did not meet the special criteria, so need-to-know authorisation was not granted.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7fe48f97-1c02-4ff4-ae4b-44a713ebd4b4
   type: testimony
   attestation: first_hand
@@ -2689,6 +3220,11 @@ domain_claims:
     TW: Argued more - they wouldn't accept my arguments that they fell under my statutory oversight and regulatory authority as Deputy Director DIA - under purview for my right to have need to know (oversight, audit, justification issues, etc., etc.)
   text: |-
     Thomas Wilson went back and forth with the security director and attorney over the access-criteria issue, arguing that his statutory oversight and regulatory authority as Deputy Director of the Defense Intelligence Agency (DIA) gave him a right to have need to know.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 447c8fd9-9d25-497d-bb47-dce0dd9ba23c
   type: testimony
   attestation: second_hand
@@ -2717,6 +3253,11 @@ domain_claims:
     - Then they pulled out their bigot list to convince me otherwise - several pages long - dated 1990, updated 1993.
   text: |-
     The Watch Committee argued that Thomas Wilson's regulatory and statutory authority as Deputy Director of the Defense Intelligence Agency (DIA) was not relevant or pertinent to the nature of their programme, and pulled out their bigot list, dated 1990 and updated 1993 and several pages long, to convince him.
+  entailment:
+    label: entails
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 124c7fe7-4823-45ed-a68a-4c07b49f483b
   type: testimony
   attestation: first_hand
@@ -2736,6 +3277,11 @@ domain_claims:
   quote: Willing to say that most were program employees - names and titles (job titles)
   text: |-
     Most of the people on the Contractor bigot list were program employees identified by name and job title.
+  entailment:
+    label: neutral
+    score: 0.883
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5cfaea78-a3d2-42dd-b5bf-bf011f90a10c
   type: testimony
   attestation: first_hand
@@ -2754,6 +3300,11 @@ domain_claims:
     name: Wilson, Thomas
   quote: civilians - didn't recognize any military personnel - could be there.
   text: Most of the people on the Contractor bigot list were civilians.
+  entailment:
+    label: neutral
+    score: 0.816
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 214f8db3-f3a4-4647-8053-2bb00bbe3ae1
   type: testimony
   attestation: first_hand
@@ -2773,6 +3324,11 @@ domain_claims:
   quote: didn't recognize any military personnel - could be there.
   text: |-
     Thomas Wilson did not recognize any military personnel on the Contractor bigot list, though military personnel could have been included.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e51e3639-fc6e-4de0-a265-e3d2db554a9b
   type: testimony
   attestation: first_hand
@@ -2795,6 +3351,11 @@ domain_claims:
     EWD: Any politicians?
     TW: No
   text: No politicians appeared on the Contractor bigot list.
+  entailment:
+    label: neutral
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 203ea97a-6951-4a8c-bdac-e33b6e45595e
   type: testimony
   attestation: first_hand
@@ -2813,6 +3374,11 @@ domain_claims:
     name: Wilson, Thomas
   quote: No White House names, no President!
   text: No White House names or the President appeared on the Contractor bigot list.
+  entailment:
+    label: neutral
+    score: 0.734
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bebdc0e9-73f9-495a-afed-873d4bf78b39
   type: testimony
   attestation: first_hand
@@ -2831,6 +3397,11 @@ domain_claims:
     name: Wilson, Thomas
   quote: No Congressional people
   text: No Congressional people appeared on the Contractor bigot list.
+  entailment:
+    label: neutral
+    score: 0.904
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f2d3d1c6-6f86-462d-a0bd-119e43c59f5a
   type: testimony
   attestation: first_hand
@@ -2849,6 +3420,11 @@ domain_claims:
     name: Wilson, Thomas
   quote: No Congressional staffers
   text: No Congressional staffers appeared on the Contractor bigot list.
+  entailment:
+    label: neutral
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3143679e-89d9-4d7f-86a3-c0faf8de3a4f
   type: testimony
   attestation: first_hand
@@ -2872,6 +3448,11 @@ domain_claims:
     TW: No!
   text: |-
     No names on the Contractor bigot list were from the Clinton or Bush Sr. Administrations.
+  entailment:
+    label: entails
+    score: 0.725
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 96567474-7eb9-4721-a8f4-895ca1b51596
   type: testimony
   attestation: first_hand
@@ -2893,6 +3474,11 @@ domain_claims:
   quote: But handful of names were Pentagon individuals I recognized
   text: |-
     Thomas Wilson recognized a handful of Pentagon individuals on the Contractor bigot list.
+  entailment:
+    label: entails
+    score: 0.833
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a77ea14-dd48-48b3-99dd-7e7e539e710d
   type: testimony
   attestation: first_hand
@@ -2915,6 +3501,11 @@ domain_claims:
   quote: few from OUSDAT
   text: |-
     A few of the Pentagon individuals Thomas Wilson recognized on the Contractor bigot list were from the Office of the Under Secretary of Defense for Acquisition, Technology and Logistics (OUSDAT).
+  entailment:
+    label: entails
+    score: 0.565
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef028371-d2e6-43f7-b15d-576a87dda0e7
   type: testimony
   attestation: first_hand
@@ -2934,6 +3525,11 @@ domain_claims:
   quote: one from another department
   text: |-
     One recognized individual on the Contractor bigot list was from another Pentagon department.
+  entailment:
+    label: entails
+    score: 0.942
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1bc8dcce-bef6-4b5a-82d3-bdd77f297a7f
   type: testimony
   attestation: first_hand
@@ -2955,6 +3551,11 @@ domain_claims:
   quote: another at the NSC who is Pentagon SES employee.
   text: |-
     Another recognized individual on the Contractor bigot list was at the National Security Council (NSC) and was a Pentagon Senior Executive Service (SES) employee.
+  entailment:
+    label: entails
+    score: 0.495
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a5c9bd99-9d11-4e3f-9552-6f4412071b7d
   type: testimony
   attestation: second_hand
@@ -2976,6 +3577,11 @@ domain_claims:
   quote: Program Manager said they were - Not any weapons program
   text: |-
     The program manager of the reverse-engineering program of recovered technological hardware told Thomas Wilson it was not a weapons program.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f9afdf0d-076a-4f91-8ee3-d99dc5c06bd4
   type: testimony
   attestation: second_hand
@@ -2997,6 +3603,11 @@ domain_claims:
   quote: Not any intelligence program
   text: |-
     The program manager of the reverse-engineering program of recovered technological hardware told Thomas Wilson it was not an intelligence program.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56716d01-2736-49d4-b8f3-f362fdc564cb
   type: testimony
   attestation: second_hand
@@ -3018,6 +3629,11 @@ domain_claims:
   quote: Not any special ops or logistics program
   text: |-
     The program manager of the reverse-engineering program of recovered technological hardware told Thomas Wilson it was not a special operations or logistics program.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0e77a391-635a-4b33-9bb9-d5e64beff787
   type: testimony
   attestation: second_hand
@@ -3039,6 +3655,11 @@ domain_claims:
   quote: Doesn't fit these categories
   text: |-
     The program manager of the reverse-engineering program of recovered technological hardware told Thomas Wilson the programme did not fit standard special access program categories.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef1fee62-0d3e-4cd0-80c8-d783f9d9cb31
   type: testimony
   attestation: first_hand
@@ -3059,6 +3680,11 @@ domain_claims:
     They were a reverse engineering program - Something recovered years ago in the past - Technological hardware was recovered
   text: |-
     The reverse-engineering program of recovered technological hardware was described to Thomas Wilson as a programme built around technological hardware recovered years earlier.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f7c822a4-b3ae-4d85-bc5a-d36a21f7971c
   type: testimony
   attestation: first_hand
@@ -3082,6 +3708,11 @@ domain_claims:
     So I thought they meant recovered Soviet/Chinese, etc. hardware and reverse engineer it - like a missile or intell platform or aircraft
   text: |-
     Before the June 1997 meeting, Thomas Wilson expected the special access program to involve reverse engineering of recovered Soviet or Chinese hardware such as a missile, intelligence platform, or aircraft.
+  entailment:
+    label: entails
+    score: 0.929
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2e984b3-31bc-42ae-9323-5be94ba331e5
   type: opinion
   attestation: first_hand
@@ -3104,6 +3735,11 @@ domain_claims:
     actually came to meeting expecting to find a sensitive foreign collection and reverse engineering operation - thought "UFOs" used as a cover for that
   text: |-
     Thomas Wilson thought "UFOs" was being used as a cover story for a sensitive foreign hardware collection and reverse-engineering operation.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 30ab430a-0625-4288-b178-439c14235fba
   type: testimony
   attestation: second_hand
@@ -3125,6 +3761,11 @@ domain_claims:
   quote: So I said that and they said they weren't that either
   text: |-
     When Thomas Wilson suggested the reverse-engineering program of recovered technological hardware involved foreign hardware reverse engineering, the program's representatives told him that was not correct either.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0f7f3bef-b48a-4198-be1e-34a5b928063b
   type: testimony
   attestation: second_hand
@@ -3148,6 +3789,11 @@ domain_claims:
   quote: They responded that they would sustain the contractor on their access denial
   text: |-
     The Senior Review Group told Thomas Wilson they would sustain the denial of the contractor's access to the special access program.
+  entailment:
+    label: neutral
+    score: 0.817
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a25c779-d388-49a6-a2f2-32a0f53069d5
   type: testimony
   attestation: first_hand
@@ -3165,6 +3811,11 @@ domain_claims:
   quote: So I ended up arguing with them a while
   text: |-
     Thomas Wilson argued with the program's representatives during the meeting about the contractor's access denial.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5ba71f94-8941-4c15-acd6-6edbac2e50f7
   type: testimony
   attestation: first_hand
@@ -3182,6 +3833,11 @@ domain_claims:
   quote: Broke up in 20 minutes and they would meet me in 2-3 days
   text: |-
     The meeting broke up after approximately 20 minutes with an agreement to meet again in two to three days.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b948149f-79e3-45a2-b45d-ee983529b780
   type: testimony
   attestation: first_hand
@@ -3206,6 +3862,11 @@ domain_claims:
     Got the call 2 days later (near end of June) and met again with Senior Review Group members
   text: |-
     Thomas Wilson received a follow-up call two days later, near the end of June 1997, and met again with members of the Senior Review Group.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e00b851c-326b-4c1b-b713-3c4fca08387a
   type: testimony
   attestation: first_hand
@@ -3229,6 +3890,11 @@ domain_claims:
   quote: 'TW: Before last week of June (''97)'
   text: |-
     The second meeting between Thomas Wilson and the Senior Review Group occurred before the last week of June 1997.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d6c9f559-ce85-406b-9bca-742a3285d9e5
   type: testimony
   attestation: second_hand
@@ -3250,6 +3916,11 @@ domain_claims:
   quote: They told me (TW) that they were sustaining the contractor
   text: |-
     At the second meeting, the Senior Review Group told Thomas Wilson they were sustaining the contractor's access denial.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 298251dd-257c-4cb1-adf1-501409d9c677
   type: testimony
   attestation: second_hand
@@ -3272,6 +3943,11 @@ domain_claims:
     that I was to immediately drop the matter and let it go - forget about it as I did not have purview over their project, it didn't fall within my oversight, etc.
   text: |-
     The Senior Review Group told Thomas Wilson to immediately drop the matter because it did not fall within his oversight.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: de117bc8-f450-4f63-9382-008719814064
   type: observation
   attestation: first_hand
@@ -3291,6 +3967,11 @@ domain_claims:
   quote: I became very angry - started yelling when should have kept my mouth shut
   text: |-
     Thomas Wilson became very angry and started yelling during the meeting with the Senior Review Group.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d51ad4a3-e752-4f4e-b487-3462b8af9b78
   type: hearsay
   attestation: second_hand
@@ -3319,6 +4000,11 @@ domain_claims:
   quote: 'EWD: Miller and Greer said you nearly got busted.'
   text: |-
     Will Miller and Steven Greer said Thomas Wilson nearly "got busted" over his investigation into the reverse-engineering program.
+  entailment:
+    label: entails
+    score: 0.484
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b27f5d2f-ce7e-49de-a9ee-8983ad80f752
   type: testimony
   attestation: first_hand
@@ -3339,6 +4025,11 @@ domain_claims:
   quote: 'TW: Close to that!'
   text: |-
     Thomas Wilson confirmed he came close to being disciplined over his investigation into the reverse-engineering program.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d1f3d976-9ff0-4e77-8033-90c748bcf11f
   type: hearsay
   attestation: third_hand
@@ -3366,6 +4057,11 @@ domain_claims:
     Told Miller Senior Review Group chairman said if I didn't follow their suggestion that I would not see Director DIA promotion
   text: |-
     The chairman of the Senior Review Group told Thomas Wilson, via Will Miller, that if he did not follow their suggestion to drop the matter he would not see promotion to Director of the Defense Intelligence Agency (DIA).
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cf6366a4-16a7-406b-8491-916251a62227
   type: hearsay
   attestation: third_hand
@@ -3390,6 +4086,11 @@ domain_claims:
   quote: get early retirement
   text: |-
     The chairman of the Senior Review Group threatened Thomas Wilson with early retirement if he did not follow their suggestion to drop the matter.
+  entailment:
+    label: contradicts
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 165dddb1-ecf0-4e9e-b3d9-27295d7e0f89
   type: hearsay
   attestation: third_hand
@@ -3414,6 +4115,11 @@ domain_claims:
   quote: lose 1 or 2 stars along the way
   text: |-
     The chairman of the Senior Review Group threatened Thomas Wilson with losing one or two stars (a reduction in rank) if he did not follow their suggestion to drop the matter.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a273c9eb-af83-4c75-8447-7c3efd606e87
   type: observation
   attestation: first_hand
@@ -3432,6 +4138,11 @@ domain_claims:
     Really incredibly angry - upset over this - livid!!! - Why such a big deal over this considering the position of trust I have in the Pentagon - I do have relevant regulatory/statutory authority over their program - that's my position!!!
   text: |-
     Thomas Wilson was very angry, upset, and livid about the pressure placed on him over his investigation, given his position of regulatory and statutory authority over the program.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 67eac303-0465-413a-a202-6b40181d83dc
   type: administrative
   attestation: first_hand
@@ -3457,6 +4168,11 @@ domain_claims:
     TW: Core secret - can't answer
   text: |-
     Thomas Wilson declined to say whether funding for the reverse-engineering program came from him or through him, or through the Director of the Defense Intelligence Agency (DIA), citing it as core secret.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 91801f51-32d7-44a4-9de2-bd1af2c41f2c
   type: testimony
   attestation: first_hand
@@ -3477,6 +4193,11 @@ domain_claims:
     Corporate types - scientists and technicians - engineers, scientists, managers, etc.
   text: |-
     The people on the Contractor bigot list were corporate types including scientists, technicians, engineers, and managers.
+  entailment:
+    label: entails
+    score: 0.39
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0728909b-6aae-41af-921d-8edc589d722c
   type: testimony
   attestation: first_hand
@@ -3496,6 +4217,11 @@ domain_claims:
   quote: 'TW: None - just OUSDAT people - and two on SAPOC - one other Pentagon office'
   text: |-
     Thomas Wilson did not recognize any military organisations among the names on the Contractor bigot list.
+  entailment:
+    label: contradicts
+    score: 0.498
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 925bcf87-b5e1-4cad-a14b-27ca7132f536
   type: testimony
   attestation: first_hand
@@ -3520,6 +4246,11 @@ domain_claims:
   quote: just OUSDAT people - and two on SAPOC - one other Pentagon office
   text: |-
     The recognized individuals on the Contractor bigot list were from the Office of the Under Secretary of Defense for Acquisition, Technology and Logistics (OUSDAT), with two from the Special Access Programs Oversight Committee (SAPOC) and one from another Pentagon office.
+  entailment:
+    label: contradicts
+    score: 0.548
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a149708e-577f-453b-a1e9-f12e67a4cc79
   type: testimony
   attestation: first_hand
@@ -3543,6 +4274,11 @@ domain_claims:
   quote: In Dec. '97 Paul was out as USDAT, left gov't
   text: |-
     Paul Kaminski left his position as Under Secretary of Defense for Acquisition, Technology and Logistics and left government service in December 1997.
+  entailment:
+    label: entails
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e71ce602-023d-491d-b6a8-b7ec17416eca
   type: testimony
   attestation: first_hand
@@ -3562,6 +4298,11 @@ domain_claims:
     name: Kostelnik, Michael
   quote: so was Mike K., replaced too
   text: Michael Kostelnik was also replaced in December 1997.
+  entailment:
+    label: neutral
+    score: 0.896
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c50c795-71d8-458d-99ce-6e0f815ea690
   type: testimony
   attestation: first_hand
@@ -3585,6 +4326,11 @@ domain_claims:
   quote: Jacques Gansler was new USDAT, started Dec. '97
   text: |-
     Jacques Gansler became the new Under Secretary of Defense for Acquisition, Technology and Logistics (USDAT), starting December 1997.
+  entailment:
+    label: entails
+    score: 0.549
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9ec4be4c-d40d-4824-9f1f-804cea10c6fb
   type: testimony
   attestation: first_hand
@@ -3608,6 +4354,11 @@ domain_claims:
   quote: Mike K. was replaced by Brig. Gen. M. Ward (AF)
   text: |-
     Michael Kostelnik was replaced by Brigadier General M. Ward of the United States Air Force.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e63a7709-af98-47b4-a4e3-8a7a29220e19
   type: testimony
   attestation: first_hand
@@ -3631,6 +4382,11 @@ domain_claims:
   quote: Talked to Gansler in Jan '98 about my June '97 meetings.
   text: |-
     Thomas Wilson spoke with Jacques Gansler in January 1998 about his June 1997 meetings regarding the reverse-engineering program.
+  entailment:
+    label: entails
+    score: 0.441
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fb65f439-5319-4a0e-8ee3-4a59445fe020
   type: observation
   attestation: first_hand
@@ -3651,6 +4407,11 @@ domain_claims:
   quote: He was briefed by someone! Surprised me ...
   text: |-
     Jacques Gansler had already been briefed on the reverse-engineering program matter by someone else before speaking with Thomas Wilson in January 1998, which surprised Thomas Wilson.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e09649e1-8293-4f04-aad5-fd1ca66ae460
   type: hearsay
   attestation: second_hand
@@ -3673,6 +4434,11 @@ domain_claims:
     name: Unidentified Flying Object (UFO)
   quote: '"UFOs are real, so-called ''alien abductions'' not real" - Gansler said this'
   text: Jacques Gansler told Thomas Wilson that UFOs are real.
+  entailment:
+    label: entails
+    score: 0.804
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ff118382-8bea-49cf-b2ae-985f90ac8eaa
   type: hearsay
   attestation: second_hand
@@ -3694,6 +4460,11 @@ domain_claims:
   quote: '"UFOs are real, so-called ''alien abductions'' not real" - Gansler said this'
   text: |-
     Jacques Gansler told Thomas Wilson that so-called "alien abductions" are not real.
+  entailment:
+    label: entails
+    score: 0.784
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 022c014d-144b-43cc-aa5c-48ca693dda56
   type: hearsay
   attestation: second_hand
@@ -3717,6 +4488,11 @@ domain_claims:
   quote: Told to drop the matter - no more discussion about it.
   text: |-
     Jacques Gansler told Thomas Wilson to drop the matter of the reverse-engineering program and have no further discussion about it.
+  entailment:
+    label: entails
+    score: 0.563
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0f6b0857-7622-47bb-80fc-a1ef8f2b29cb
   type: testimony
   attestation: first_hand
@@ -3737,6 +4513,11 @@ domain_claims:
     name: Green, Kit
   quote: TW not familiar with names, heard about RV program in 1990.
   text: Thomas Wilson was not familiar with the names Hal Puthoff and Kit Green.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 64c2fa0e-8647-47c9-821e-8e6534819d3c
   type: testimony
   attestation: first_hand
@@ -3756,6 +4537,11 @@ domain_claims:
     name: Remote Viewing (RV) program
   quote: heard about RV program in 1990
   text: Thomas Wilson first heard about the Remote Viewing (RV) program in 1990.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec199b3d-6b49-4836-b7c3-b22ff4322f7d
   type: opinion
   attestation: first_hand
@@ -3775,6 +4561,11 @@ domain_claims:
   quote: Maybe/maybe not for Hal - would think about it.
   text: |-
     Thomas Wilson said he might be willing to talk to Hal Puthoff and would think about it.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 104c7f88-a91b-40de-8086-3761a57886fa
   type: observation
   attestation: first_hand
@@ -3793,6 +4584,11 @@ domain_claims:
     name: Green, Kit
   quote: No response on Kit Green.
   text: Thomas Wilson gave no response on whether he would talk to Kit Green.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 79b1e689-a084-4aed-abc8-b3bd25555c1e
   type: opinion
   attestation: first_hand
@@ -3811,6 +4607,11 @@ domain_claims:
     Prefers never to talk to anyone else about this again - risks exposure - better to stop talking, cut it off here.
   text: |-
     Thomas Wilson said he preferred never to talk to anyone else about this matter again because it risked exposure, and that it was better to stop talking about it.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7f39af2d-c618-4f6b-9f93-7779aa37e122
   type: opinion
   attestation: first_hand
@@ -3831,6 +4632,11 @@ domain_claims:
     Keep for private/personal research - data collection to track down the story and ascertain signal/noise in media and from gov't sources.
   text: |-
     Eric W. Davis intended to keep the information from his meetings with Thomas Wilson for private, personal research to track the UFO story and assess the signal-to-noise ratio in media and government sources.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 71ba8371-b25c-410a-9595-c3b42f35f43e
   type: testimony
   attestation: first_hand
@@ -3852,6 +4658,11 @@ domain_claims:
   quote: Told Wilson about Mary Elizabeth Elliot-TRW story
   text: |-
     Eric W. Davis told Thomas Wilson about Mary Elizabeth Elliot's story concerning TRW.
+  entailment:
+    label: entails
+    score: 0.777
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 721e1e48-e798-4c00-b8de-0bd911502e83
   type: testimony
   attestation: first_hand
@@ -3872,6 +4683,11 @@ domain_claims:
     name: Swann, Ingo
   quote: Ingo's story
   text: Eric W. Davis told Thomas Wilson about Ingo Swann's story.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6278fc45-22b9-4921-9eba-b7bf2d791d7f
   type: testimony
   attestation: first_hand
@@ -3894,6 +4710,11 @@ domain_claims:
   quote: 1974 RVer woman who went to WPAFB - trying to make connection.
   text: |-
     Eric W. Davis told Thomas Wilson about a 1974 remote viewer woman who went to Wright-Patterson Air Force Base, trying to make a connection to the reverse-engineering program.
+  entailment:
+    label: neutral
+    score: 0.588
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 91916836-4036-47cd-89d8-0794f8ee5765
   type: opinion
   attestation: first_hand
@@ -3916,6 +4737,11 @@ domain_claims:
     Feedback - Mary Elliot sounds like real deal based on her info and behavior with attorney (Jeffrey W. Griffith)
   text: |-
     Thomas Wilson considers Mary Elizabeth Elliot's account credible, based on her information and her behaviour with her attorney, Jeffrey W. Griffith.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6cd15f8c-75f8-463c-b8a6-25b1cbfdc9e8
   type: opinion
   attestation: first_hand
@@ -3935,6 +4761,11 @@ domain_claims:
   quote: Probably will only come totally clean on her deathbed 30 years from now.
   text: |-
     Thomas Wilson believes Mary Elizabeth Elliot will probably only fully disclose her account on her deathbed, roughly 30 years after 2002.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 923f7da0-03d8-44e9-b82a-6ce05154136c
   type: testimony
   attestation: first_hand
@@ -3955,6 +4786,11 @@ domain_claims:
     Don't know about Ingo, Axelrod, or RVer woman at WPAFB - doesn't have info on their stories from sources.
   text: |-
     Thomas Wilson had no information about Ingo Swann's story or about the 1974 remote viewer woman's story from his own sources.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ae829c0-aefc-49a6-9ec3-0a6177fed5bb
   type: administrative
   attestation: first_hand
@@ -3976,6 +4812,11 @@ domain_claims:
   quote: Given office address in D.C. to mail
   text: |-
     Eric W. Davis was given Thomas Wilson's office address in Washington, D.C. to mail materials.
+  entailment:
+    label: entails
+    score: 0.917
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e898d8fa-d1aa-4d20-89ea-381245791d68
   type: administrative
   attestation: first_hand
@@ -3993,6 +4834,11 @@ domain_claims:
     name: Wilson, Thomas
   quote: Will retire to Midwest and close office in 2003.
   text: Thomas Wilson planned to retire to the Midwest and close his office in 2003.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: e3f3b20c-137d-44af-9122-0ffc18d9e0e5
   type: administrative
@@ -4015,6 +4861,11 @@ infrastructure_claims:
   quote: Asks for Corso material (will send)
   text: |-
     Thomas Wilson asked Eric W. Davis for material from the book The Day After Roswell by Philip Corso.
+  entailment:
+    label: neutral
+    score: 0.918
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 50210eef-1a10-4d37-91bf-bf2b4a486262
   type: administrative
   attestation: first_hand
@@ -4039,3 +4890,8 @@ infrastructure_claims:
     TW asks for briefing book on my work (NASA/AFRL) - send other papers if I want to.
   text: |-
     Thomas Wilson asked Eric W. Davis for a briefing book on his NASA and Air Force Research Laboratory (AFRL) work.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

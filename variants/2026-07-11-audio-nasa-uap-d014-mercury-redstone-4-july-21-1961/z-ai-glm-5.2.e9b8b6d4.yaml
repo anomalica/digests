@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.8
 prompts:
 - pass: nodes
   id: nodes
@@ -81,3 +87,8 @@ domain_claims:
     Its about uh three quarters of a mile out Thought maybe a capsule uh after the liftoff, but [inaudible]
   text: |-
     A recovery team member during Mercury-Redstone 4 estimated the object or capsule was about three quarters of a mile (approximately 1.2 kilometres) out.
+  entailment:
+    label: neutral
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

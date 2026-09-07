@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.3
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.7
 prompts:
 - pass: nodes
   id: nodes
@@ -112,6 +118,11 @@ domain_claims:
     And I'm beginning to get the brilliant blue of sun rising in the east. Bright blue band underneath all this haze layer. I can see the haze layer. And the right band of light demarcation coming underneath it. Quite distinctive.
   text: |-
     During the Mercury Atlas 9 Mission, L. Gordon Cooper Jr. observed the brilliant blue of the sun rising in the east, with a bright blue band underneath a haze layer and a distinct right band of light demarcation beneath it.
+  entailment:
+    label: entails
+    score: 0.529
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b1821795-a934-4d46-9dd7-64a7cf9da8c0
   type: observation
   attestation: first_hand
@@ -133,6 +144,11 @@ domain_claims:
     These small luminescent particles drift away from you. Small in forward. In this light they appear brilliant white without seeing it all in them. They appear to move on out. Turn around back towards the flight path.
   text: |-
     During the Mercury Atlas 9 Mission, L. Gordon Cooper Jr. observed small luminescent particles drifting away from the spacecraft, appearing as brilliant white in the light and appearing to move away before turning back towards the flight path.
+  entailment:
+    label: entails
+    score: 0.862
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: facaa078-0363-472f-97ad-15c4ab06f227
   type: observation
   attestation: first_hand
@@ -153,6 +169,11 @@ domain_claims:
   quote: Negative, I still haven't seen the beacon.
   text: |-
     During the Mercury Atlas 9 Mission, L. Gordon Cooper Jr. had not yet seen the beacon.
+  entailment:
+    label: entails
+    score: 0.829
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2275a116-f07b-47f4-b3e9-20c65580a549
   type: observation
   attestation: first_hand
@@ -174,6 +195,11 @@ domain_claims:
     There was considerable noise as the little doors sounded like the little doors blowing open, so I assume the beacon has departed.
   text: |-
     During the Mercury Atlas 9 Mission, L. Gordon Cooper Jr. heard considerable noise resembling small doors blowing open, which he interpreted as indicating the beacon had departed.
+  entailment:
+    label: entails
+    score: 0.876
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a37d4471-3455-4482-bec0-edf2284604e1
   type: observation
   attestation: first_hand
@@ -196,6 +222,11 @@ domain_claims:
   quote: Roger. TV control is off.
   text: |-
     The Mercury-Atlas 9 (MA-9) Spacecraft's television (TV) control was turned off during the Mercury Atlas 9 Mission.
+  entailment:
+    label: entails
+    score: 0.544
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 56c13dd5-d7c2-451d-b1eb-35ffcd55a4d3
   type: measurement
   attestation: first_hand
@@ -218,6 +249,11 @@ domain_claims:
   quote: Main bus is 24. Isolated 28 and a half.
   text: |-
     During the Mercury Atlas 9 Mission, L. Gordon Cooper Jr. reported a direct current (DC) main bus voltage of 24 volts and an isolated bus voltage of 28.5 volts.
+  entailment:
+    label: entails
+    score: 0.684
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 45da6b5a-3793-4867-8837-54d418ba4b81
   type: testimony
   attestation: first_hand
@@ -240,6 +276,11 @@ domain_claims:
   quote: Uh Gordon, this is Wally. Did you have anything to eat?
   text: |-
     Wally Schirra asked L. Gordon Cooper Jr. whether he had eaten during the Mercury Atlas 9 Mission.
+  entailment:
+    label: entails
+    score: 0.783
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 58c201a7-d83b-4eed-a060-9dc1beeaac89
   type: testimony
   attestation: first_hand
@@ -260,6 +301,11 @@ domain_claims:
   quote: Negative, not yet. I'm planning to shortly here, though.
   text: |-
     L. Gordon Cooper Jr. had not yet eaten during the Mercury Atlas 9 Mission but was planning to eat shortly.
+  entailment:
+    label: entails
+    score: 0.903
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b1b119b3-5097-4888-bedc-a1d391d16669
   type: measurement
   attestation: second_hand
@@ -287,6 +333,11 @@ domain_claims:
     systems last computations on fuel at Hawaii gave you 88 auto 98 manual, which is somewhat better than you're indicating on board. On board, I'm indicating 9-6 and 1-0-2.
   text: |-
     During the Mercury Atlas 9 Mission, fuel computations performed at USA, Hawaii indicated approximately 88 to 98 units (automatic to manual readings), which Ground Control reported as somewhat better than L. Gordon Cooper Jr. was indicating with on-board readings of 96 to 102 units.
+  entailment:
+    label: neutral
+    score: 0.688
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 29f71568-3627-40fa-8d91-0ef25a0b4586
   type: observation
   attestation: first_hand
@@ -310,6 +361,11 @@ domain_claims:
     Ah, boy, what a beautiful shot of Florida. Roger. The whole state is clear. I can see I'm just about off. There's been a beautiful view coming over Florida.
   text: |-
     During the Mercury Atlas 9 Mission, L. Gordon Cooper Jr. observed a clear view of the entire state of USA, Florida while approaching over the state.
+  entailment:
+    label: neutral
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c2993839-e02f-49a1-acc1-b57a3ac12c99
   type: observation
   attestation: first_hand
@@ -331,6 +387,11 @@ domain_claims:
     There's been a beautiful view coming over Florida. Now on 180 yaw. I got here on manual proportional control. I'm at last daylight going in the dark. I've been looking for the flashing beacons.
   text: |-
     During the Mercury Atlas 9 Mission, L. Gordon Cooper Jr. was searching for flashing beacons whilst transitioning from daylight into darkness at a 180-degree yaw orientation using manual proportional control.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 57ed0c04-7d1f-41df-81c3-11f61e89598b
   type: observation
   attestation: first_hand
@@ -352,6 +413,11 @@ domain_claims:
     It's light in sight. It is below me. It's quite a brownish, reddish-brown. and considerable altitude above the ground. On my fiery pitch-down thruster, I get a shower of these little fireflies. It is flashing now. It is the light. It's quite bright, quite discernible. Must be about 10 to 12 miles away.
   text: |-
     During the Mercury Atlas 9 Mission, L. Gordon Cooper Jr. observed a bright, brownish-red light at considerable altitude above the ground that flashed and was approximately 16 to 19 kilometres away.
+  entailment:
+    label: entails
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e2a0d945-e44b-4b89-9bf4-d69bfe54c9f0
   type: observation
   attestation: first_hand
@@ -373,3 +439,8 @@ domain_claims:
     I'm keeping it directly in the window. At the order of a second magnitude star now.
   text: |-
     During the Mercury Atlas 9 Mission, L. Gordon Cooper Jr. kept a bright light directly in his spacecraft window that appeared to be of approximately one to two magnitude star brightness.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

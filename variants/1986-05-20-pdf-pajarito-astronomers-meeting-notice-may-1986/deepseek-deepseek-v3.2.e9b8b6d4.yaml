@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.9
 prompts:
 - pass: nodes
   id: nodes
@@ -87,6 +93,11 @@ domain_claims:
     name: Pajarito Astronomers
   quote: Our next meeting will be Thursday, May 29, 1986
   text: The Pajarito Astronomers' next meeting is scheduled for 1986-05-29.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8deaded2-a516-4a87-abb7-a0546caccdb2
   type: administrative
   attestation: first_hand
@@ -107,6 +118,11 @@ domain_claims:
   quote: Our next meeting will be ... in the Ranch Room at Fuller Lodge
   text: |-
     The Pajarito Astronomers' May 1986 meeting will be held in the Ranch Room at Fuller Lodge.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 68fc3177-52fd-4842-995a-7700047fcabd
   type: administrative
   attestation: first_hand
@@ -124,6 +140,11 @@ domain_claims:
     name: Pajarito Astronomers
   quote: Our next meeting will be ... at 7:30 p.m.
   text: The Pajarito Astronomers' May 1986 meeting will begin at 7:30 p.m.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dbb4e09c-2c50-48fe-989e-18d8e40937a0
   type: administrative
   attestation: first_hand
@@ -144,6 +165,11 @@ domain_claims:
   quote: Guest speaker will be Dr. John Warren
   text: |-
     Dr. John Warren will be the guest speaker at the Pajarito Astronomers' May 1986 meeting.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10caf286-a6f4-4216-91df-8af7fd8bbb33
   type: administrative
   attestation: first_hand
@@ -163,6 +189,11 @@ domain_claims:
     name: AT-6
   quote: Dr. John Warren of AT-6
   text: Dr. John Warren is from AT-6.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 966582c8-adca-4a66-9131-b27044d2857e
   type: administrative
   attestation: first_hand
@@ -183,6 +214,11 @@ domain_claims:
   quote: whose topic will be "Why Should a Scientist be Concerned about UFO's?"
   text: |-
     Dr. John Warren's presentation topic for the May 1986 meeting is "Why Should a Scientist be Concerned about UFO's?"
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 23fcb5aa-0815-474f-b419-40fcd59e445f
   type: administrative
   attestation: first_hand
@@ -203,6 +239,11 @@ domain_claims:
   quote: P.O. Box 1092, Los Alamos NM, 87544
   text: |-
     The Pajarito Astronomers' mailing address is P.O. Box 1092, Los Alamos NM, 87544.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b32215e1-ed58-4090-8275-d6ef9c6c1b41
   type: administrative
   attestation: first_hand
@@ -222,6 +263,11 @@ domain_claims:
     name: Club 1663
   quote: Sponsored by Club 1663
   text: The Pajarito Astronomers are sponsored by Club 1663.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 84ea99f3-c3c7-463a-a8f5-9efd1c5605e0
   type: administrative
   attestation: first_hand
@@ -239,3 +285,8 @@ domain_claims:
     name: Pajarito Astronomers
   quote: Tuesday, May 20, 1986
   text: The Pajarito Astronomers meeting notice is dated 1986-05-20.
+  entailment:
+    label: entails
+    score: 0.654
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

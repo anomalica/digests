@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.9
 prompts:
 - pass: nodes
   id: nodes
@@ -114,6 +120,11 @@ domain_claims:
   quote: And I'm beginning to get the brilliant blue of sun rising in the east.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. observed the brilliant blue of sunrise in the east from the Faith 7 spacecraft.
+  entailment:
+    label: neutral
+    score: 0.864
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9fac2fca-c9e9-4a26-8b0f-5854fab13387
   type: observation
   attestation: first_hand
@@ -134,6 +145,11 @@ domain_claims:
   quote: Bright blue band underneath all this haze layer. I can see the haze layer.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. saw a bright blue band underneath a haze layer.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 23aed07c-37ca-4253-b22f-cab1f22793fc
   type: observation
   attestation: first_hand
@@ -154,6 +170,11 @@ domain_claims:
   quote: And the right band of light demarcation coming underneath it. Quite distinctive.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. observed a quite distinctive band of light demarcation coming underneath the haze layer.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8fcab4be-251f-44ea-8e39-df2431d27912
   type: opinion
   attestation: first_hand
@@ -174,6 +195,11 @@ domain_claims:
   quote: because a faint face to it is where there are clouds apparently
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. attributed a fainter face in the observed light band to the apparent presence of clouds.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 755c6adf-8c37-4539-8419-ceb4577b80ff
   type: administrative
   provenance_chain:
@@ -190,6 +216,11 @@ domain_claims:
   quote: Roger, Hawaii, Phase 7 reading you loud and clear
   text: |-
     During the Mercury-Atlas 9 mission, the Hawaii ground station received the Faith 7 spacecraft loud and clear.
+  entailment:
+    label: neutral
+    score: 0.905
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4fd831ed-9298-4fed-a7d8-8020dc08b1db
   type: observation
   attestation: first_hand
@@ -212,6 +243,11 @@ domain_claims:
   quote: I'm just small end forward, 180 degree approaching sunrise.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. reported the Faith 7 spacecraft in a small-end-forward attitude at 180 degrees, approaching sunrise.
+  entailment:
+    label: neutral
+    score: 0.583
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1e305551-8ff0-434d-bc93-e4a4ffbaca15
   type: observation
   attestation: first_hand
@@ -236,6 +272,11 @@ domain_claims:
   quote: These small luminescent particles drift away from you.
   text: |-
     During the Mercury-Atlas 9 mission, small luminescent particles drifted away from the Faith 7 spacecraft.
+  entailment:
+    label: neutral
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 631b9c59-5bff-4e3c-9fe1-3a8f78769bc8
   type: observation
   attestation: first_hand
@@ -260,6 +301,11 @@ domain_claims:
   quote: In this light they appear brilliant white without seeing it all in them.
   text: |-
     During the Mercury-Atlas 9 mission, the small luminescent particles observed outside the Faith 7 spacecraft appeared brilliant white in the available light.
+  entailment:
+    label: neutral
+    score: 0.77
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4e84b0a1-d72f-4718-b0f1-ab492f1f0213
   type: observation
   attestation: first_hand
@@ -284,6 +330,11 @@ domain_claims:
   quote: They appear to move on out. Turn around back towards the flight path.
   text: |-
     During the Mercury-Atlas 9 mission, the small luminescent particles observed outside the Faith 7 spacecraft appeared to move outward and then turn back towards the flight path.
+  entailment:
+    label: neutral
+    score: 0.947
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 964a1597-c010-4e83-8caa-e5a2d69f6c14
   type: observation
   attestation: first_hand
@@ -305,6 +356,11 @@ domain_claims:
     Ground Control: Roger, you haven't seen the beacon at this time? L. Gordon Cooper Jr.: Negative, I still haven't seen the beacon.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. had not seen the beacon when asked by ground control.
+  entailment:
+    label: neutral
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 60df47f9-3249-46a9-b8a7-7c0ba8275576
   type: observation
   attestation: first_hand
@@ -327,6 +383,11 @@ domain_claims:
   quote: There was considerable noise, though, as if something were departing.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. heard considerable noise aboard the Faith 7 spacecraft, as if something were departing.
+  entailment:
+    label: entails
+    score: 0.619
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5d2c084b-d4ca-467e-9c0c-b8edaf416b93
   type: observation
   attestation: first_hand
@@ -350,6 +411,11 @@ domain_claims:
     There was considerable noise as the little doors sounded like the little doors blowing open, so I assume the beacon has departed.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. heard a noise resembling small doors blowing open and assumed from it that the beacon had departed the Faith 7 spacecraft.
+  entailment:
+    label: entails
+    score: 0.764
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 62b048dc-991a-40b6-8a91-ed30c7f50ce0
   type: measurement
   provenance_chain:
@@ -366,6 +432,11 @@ domain_claims:
   quote: TM looks real good on the ground
   text: |-
     During the Mercury-Atlas 9 mission, telemetry (TM) from the Faith 7 spacecraft looked good on the ground.
+  entailment:
+    label: entails
+    score: 0.488
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dd430478-4933-4168-abbb-1f5b523eacc2
   type: administrative
   attestation: first_hand
@@ -389,6 +460,11 @@ domain_claims:
     Ground Control: Okay, you confirm TV control switch to off. L. Gordon Cooper Jr.: Roger. TV control is off.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. confirmed the television control switch aboard the Faith 7 spacecraft was off.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0b570598-b5bf-48b2-8dc8-b1e5af719e7c
   type: measurement
   provenance_chain:
@@ -406,6 +482,11 @@ domain_claims:
     We had a slight decrease in the two links on DC current. Would you give us a readout?
   text: |-
     During the Mercury-Atlas 9 mission, ground control observed a slight decrease on two links of direct current (DC) from the Faith 7 spacecraft.
+  entailment:
+    label: entails
+    score: 0.468
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f665de4d-a73a-4011-93f7-a095076e6127
   type: measurement
   attestation: first_hand
@@ -428,6 +509,11 @@ domain_claims:
   quote: Main bus is 24.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. read out a main bus direct current (DC) value of 24 aboard the Faith 7 spacecraft.
+  entailment:
+    label: entails
+    score: 0.579
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 93795e90-9699-46a0-96cb-b477580d67aa
   type: measurement
   attestation: first_hand
@@ -450,6 +536,11 @@ domain_claims:
   quote: Isolated 28 and a half.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. read out an isolated direct current (DC) value of 28.5 aboard the Faith 7 spacecraft.
+  entailment:
+    label: entails
+    score: 0.792
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 49d4b01c-fe79-4145-bdb3-5d92173dfaab
   type: administrative
   attestation: first_hand
@@ -472,6 +563,11 @@ domain_claims:
   quote: Gordon, this is Wally.
   text: |-
     During the Mercury-Atlas 9 mission, Wally Schirra served as a ground control communicator speaking to L. Gordon Cooper Jr.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6cb58ba1-64aa-4eba-9569-acb256f4578e
   type: testimony
   attestation: first_hand
@@ -495,6 +591,11 @@ domain_claims:
     Wally Schirra: Did you have anything to eat? L. Gordon Cooper Jr.: Negative, not yet. I'm planning to shortly here, though.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. had not yet eaten but planned to do so shortly.
+  entailment:
+    label: neutral
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6674fd8c-2fa5-4c6d-986b-2257a6b42002
   type: measurement
   attestation: second_hand
@@ -519,6 +620,11 @@ domain_claims:
   quote: systems last computations on fuel at Hawaii gave you 88 auto 98 manual
   text: |-
     During the Mercury-Atlas 9 mission, the last systems computations on fuel made at Hawaii gave the Faith 7 spacecraft 88 automatic and 98 manual.
+  entailment:
+    label: neutral
+    score: 0.915
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 42ca4904-6c15-4956-8c4b-49dc48c42163
   type: measurement
   attestation: first_hand
@@ -541,6 +647,11 @@ domain_claims:
   quote: which is somewhat better than you're indicating on board
   text: |-
     During the Mercury-Atlas 9 mission, the ground fuel computations were somewhat better than the values indicated on board the Faith 7 spacecraft.
+  entailment:
+    label: neutral
+    score: 0.458
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 177f7bfe-388a-4ba9-8668-b2cacf928344
   type: measurement
   attestation: first_hand
@@ -563,6 +674,11 @@ domain_claims:
   quote: On board, I'm indicating 9-6 and 1-0-2.
   text: |-
     During the Mercury-Atlas 9 mission, the on-board fuel indications aboard the Faith 7 spacecraft read 96 and 102.
+  entailment:
+    label: contradicts
+    score: 0.73
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f0c817f2-d436-4ae3-8b1a-9d8edb196d2f
   type: observation
   attestation: first_hand
@@ -585,6 +701,11 @@ domain_claims:
   quote: Ah, boy, what a beautiful shot of Florida. ... The whole state is clear.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. had a clear view of the whole state of Florida from the Faith 7 spacecraft.
+  entailment:
+    label: entails
+    score: 0.81
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4696c6ae-941e-433b-8d51-836a28f2e219
   type: observation
   attestation: first_hand
@@ -607,6 +728,11 @@ domain_claims:
   quote: Now on 180 yaw. I got here on manual proportional control.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. flew the Faith 7 spacecraft at 180 degrees yaw using manual proportional control.
+  entailment:
+    label: entails
+    score: 0.835
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3eaf9417-a3b0-47ff-8e2e-f73a2e7c76ab
   type: observation
   attestation: first_hand
@@ -628,6 +754,11 @@ domain_claims:
     I'm at last daylight going in the dark. I've been looking for the flashing beacons.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. was at last daylight going into darkness and had been looking for the flashing beacons.
+  entailment:
+    label: neutral
+    score: 0.822
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8a37a0ae-e4e6-4a5a-80dc-48f0c0c3fd40
   type: observation
   attestation: first_hand
@@ -652,6 +783,11 @@ domain_claims:
   quote: It's light in sight. It is below me.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. had a light in sight below the Faith 7 spacecraft.
+  entailment:
+    label: neutral
+    score: 0.622
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a2cf6c3f-c384-4521-a7c3-dd99a9633019
   type: observation
   attestation: first_hand
@@ -674,6 +810,11 @@ domain_claims:
   quote: It's quite a brownish, reddish-brown.
   text: |-
     During the Mercury-Atlas 9 mission, the light observed below the Faith 7 spacecraft was a brownish, reddish-brown colour.
+  entailment:
+    label: neutral
+    score: 0.788
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 628afe51-1f02-4d2f-8bbf-494e19ff00c0
   type: observation
   attestation: first_hand
@@ -696,6 +837,11 @@ domain_claims:
   quote: and considerable altitude above the ground.
   text: |-
     During the Mercury-Atlas 9 mission, the light observed below the Faith 7 spacecraft was at considerable altitude above the ground.
+  entailment:
+    label: neutral
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 16c2db23-f8e3-4d43-8951-789da1e7ea5f
   type: observation
   attestation: first_hand
@@ -720,6 +866,11 @@ domain_claims:
   quote: On my fiery pitch-down thruster, I get a shower of these little fireflies.
   text: |-
     During the Mercury-Atlas 9 mission, firing a pitch-down thruster on the Faith 7 spacecraft produced a shower of the small luminescent particles observed outside the spacecraft.
+  entailment:
+    label: neutral
+    score: 0.564
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1b8ca9a5-f52b-4e8d-914b-ed2ae5da43e2
   type: observation
   attestation: first_hand
@@ -742,6 +893,11 @@ domain_claims:
   quote: It is flashing now. It is the light. It's quite bright, quite discernible.
   text: |-
     During the Mercury-Atlas 9 mission, the light observed below the Faith 7 spacecraft was flashing and was quite bright and quite discernible.
+  entailment:
+    label: entails
+    score: 0.573
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 885ee935-8666-486f-9974-94d51766de17
   type: measurement
   attestation: first_hand
@@ -764,6 +920,11 @@ domain_claims:
   quote: Must be about 10 to 12 miles away.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. estimated the flashing light observed below the Faith 7 spacecraft to be about 16 to 19 kilometres away.
+  entailment:
+    label: contradicts
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b2b42eb3-5c99-4395-96b3-3bac313a273a
   type: observation
   attestation: first_hand
@@ -788,6 +949,11 @@ domain_claims:
   quote: I'm keeping it directly in the window.
   text: |-
     During the Mercury-Atlas 9 mission, L. Gordon Cooper Jr. kept the flashing light directly in the window of the Faith 7 spacecraft.
+  entailment:
+    label: neutral
+    score: 0.707
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 657d0504-8f2d-42c8-bde9-b616eb644441
   type: measurement
   attestation: first_hand
@@ -810,3 +976,8 @@ domain_claims:
   quote: At the order of a second magnitude star now.
   text: |-
     During the Mercury-Atlas 9 mission, the flashing light observed from the Faith 7 spacecraft was of the order of a second magnitude star in brightness.
+  entailment:
+    label: neutral
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -15,6 +15,12 @@ ai_usage:
     calls: 3
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 7.3
 prompts:
 - pass: nodes
   id: nodes
@@ -175,6 +181,11 @@ domain_claims:
     name: Beatriz Villarroel
   quote: Dr. Beatriz Villarroel, the Swedish astronomer and physicist
   text: Beatriz Villarroel is a Swedish astronomer and physicist.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 141e3ee3-cafd-4c02-8f74-b70f9694f8c0
   type: administrative
   attestation: first_hand
@@ -194,6 +205,11 @@ domain_claims:
   quote: |-
     Dennis Åsberg, the renowned explorer who's responsible for the so-called Baltic Sea anomaly
   text: Dennis Åsberg is an explorer who discovered the Baltic Sea anomaly.
+  entailment:
+    label: entails
+    score: 0.849
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6f2eb573-9c11-46ea-8436-d166f22c857b
   type: observation
   attestation: first_hand
@@ -212,6 +228,11 @@ domain_claims:
     Beatriz has done groundbreaking work with so-called transient objects, highly reflective specular objects in outer space in geostationary orbit that are detected one moment on photographic plates that were pre-1957... and then in days, weeks, months following, those transient objects disappeared from those plates.
   text: |-
     Beatriz Villarroel's research identified highly reflective specular transient objects in geostationary orbit, detected on photographic plates from before 1957, that disappeared from later plates in the following days, weeks, or months.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7af8859d-9205-4dea-ad52-25b572ca474c
   type: administrative
   attestation: first_hand
@@ -229,6 +250,11 @@ domain_claims:
   quote: |-
     Dr. Beatriz Villarroel's transience theory, for which she has received peer-reviewed acclaim
   text: Beatriz Villarroel's transience theory has received peer-reviewed acclaim.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0ff0100c-a090-4a06-a1b0-db6ca7a0cc31
   type: administrative
   attestation: first_hand
@@ -250,6 +276,11 @@ domain_claims:
     name: Baltic Sea anomaly
   quote: he discovered the so-called Baltic anomaly in 2011
   text: Dennis Åsberg discovered the Baltic Sea anomaly in 2011.
+  entailment:
+    label: contradicts
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 10e780ac-09c1-47a2-9bcf-6ed0e5a3ddeb
   type: measurement
   attestation: first_hand
@@ -272,6 +303,11 @@ domain_claims:
     His OceanX diving team discovered this massive disc-shaped formation resting 90 metres underwater
   text: |-
     Dennis Åsberg's OceanX diving team discovered a massive disc-shaped formation resting approximately 90 metres underwater.
+  entailment:
+    label: contradicts
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fb1495f3-ed97-41d2-803d-6178eeffb0a5
   type: measurement
   attestation: first_hand
@@ -288,6 +324,11 @@ domain_claims:
     name: Baltic Sea anomaly
   quote: 60 metres wide, with curiously angular ridges, very symmetrical in structure
   text: The Baltic Sea anomaly is approximately 60 metres wide.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 35ee0e86-c933-4805-9f5d-88a8d95191e2
   type: observation
   attestation: first_hand
@@ -305,6 +346,11 @@ domain_claims:
   quote: with curiously angular ridges, very symmetrical in structure
   text: |-
     The Baltic Sea anomaly has curiously angular, very symmetrical ridges in its structure.
+  entailment:
+    label: entails
+    score: 0.959
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f94975c5-7222-4494-904a-9d66b4d78558
   type: observation
   attestation: second_hand
@@ -327,6 +373,11 @@ domain_claims:
     sensor instruments reportedly malfunction near the object echoing the tails from Merivälja
   text: |-
     Sensor instruments reportedly malfunction near the Baltic Sea anomaly, echoing similar effects reported at the Merivälja object.
+  entailment:
+    label: entails
+    score: 0.675
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 85be3829-1e82-4fc3-9819-a80e6b79e725
   type: administrative
   attestation: first_hand
@@ -350,6 +401,11 @@ domain_claims:
     we have this little group called the European Crash Retrieval Initiative that we started in 2023, in December 2023, together with Dennis and a few more people
   text: |-
     The European Crash Retrieval Initiative was started in December 2023 by Beatriz Villarroel, Dennis Åsberg, and a few other people.
+  entailment:
+    label: entails
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b83a69cf-a1f1-4518-a3ea-34d4ee19e62e
   type: administrative
   attestation: first_hand
@@ -368,6 +424,11 @@ domain_claims:
     that has the goal to collect all the known types of potential crash retrieval in Europe
   text: |-
     The European Crash Retrieval Initiative's goal is to collect all known types of potential crash retrieval cases in Europe.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 36075dfe-f741-4576-80a9-b1f62c841e15
   type: opinion
   attestation: first_hand
@@ -386,6 +447,11 @@ domain_claims:
     getting reverse engineering and like studies of the actual craft to the to the civilians that's something we want to achieve it shouldn't only be with the defense contractors
   text: |-
     Beatriz Villarroel wants non-human craft, if found, to be made available for civilian study and reverse engineering rather than only defence contractors.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5fc4a231-080b-46eb-960c-8bc77984b053
   type: testimony
   attestation: first_hand
@@ -408,6 +474,11 @@ domain_claims:
     So Darren contacted us after we had a show about the transients two years ago, and he brought this absolutely amazing case from Tallinn, the Mary Valley object, and he just made us aware.
   text: |-
     Darren, an Australian who requested anonymity, contacted Beatriz Villarroel's team after a show about the transient objects, bringing them the Merivälja object case from Tallinn.
+  entailment:
+    label: contradicts
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 82e872b8-ab53-4ce0-8410-9dbe0b1c611a
   type: testimony
   attestation: first_hand
@@ -430,6 +501,11 @@ domain_claims:
     we started reading everything we could find from like russian documents and like we also got a lot of help from darren especially with the estonian documents and like translating all this
   text: |-
     Beatriz Villarroel's team researched the Merivälja object using Russian documents and received help from Darren, especially with Estonian documents and translation.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad1718c6-a6e0-4fe4-bdea-fb1f50f281b2
   type: opinion
   attestation: first_hand
@@ -450,6 +526,11 @@ domain_claims:
     very few people are aware of this Estonian case of a very big saucer-like object underground
   text: |-
     The Merivälja object is described as a very big saucer-like object located underground in Estonia.
+  entailment:
+    label: entails
+    score: 0.599
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 17278e53-f02d-4949-95d1-fa65142e830f
   type: opinion
   attestation: first_hand
@@ -470,6 +551,11 @@ domain_claims:
     It's clearly been known a part and part of the local mythology in Tallinn in Estonia for quite some time.
   text: |-
     The Merivälja object has been part of local mythology in Tallinn, Estonia for a long time.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 449b1f66-e3d9-4d66-962b-92b871beb290
   type: observation
   attestation: first_hand
@@ -490,6 +576,11 @@ domain_claims:
     if you go there on the street and you stop anyone who is biking there or walking past, they all know everything. And they know so many things that you can't even find information about all this online.
   text: |-
     Local residents in the Merivälja area of Tallinn are widely aware of the story of the Merivälja object, including details not available online.
+  entailment:
+    label: entails
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1f96fb18-22d6-4660-9fa8-dbe4187ff41d
   type: observation
   attestation: second_hand
@@ -512,6 +603,11 @@ domain_claims:
     The documents show well that the Russians had a survey team there. They had somebody on site for quite a few years. I think over a span of possibly as much as 10 years they were investigating this object.
   text: |-
     Russian documents show that a Russian survey team investigated the Merivälja object and had personnel on site for possibly as much as ten years.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27f987f4-a571-434a-9e0c-61248dfe18d7
   type: administrative
   attestation: first_hand
@@ -534,6 +630,11 @@ domain_claims:
     you and Beatriz heroically, bravely crossed the ditch across from Sweden and came to Tallinn on our behalf to see what you could find
   text: |-
     Dennis Åsberg and Beatriz Villarroel travelled from Sweden to Tallinn, Estonia to investigate the Merivälja object.
+  entailment:
+    label: contradicts
+    score: 0.874
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 21eef662-5a0e-43f8-82aa-82ea334d25dd
   type: testimony
   attestation: first_hand
@@ -552,6 +653,11 @@ domain_claims:
     name: Estonia, Tallinn
   quote: It was the first time for me also in Tallinn.
   text: That trip to Tallinn was Dennis Åsberg's first visit to the city.
+  entailment:
+    label: entails
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a9484f73-d424-4750-8f02-2c541b0befb4
   type: testimony
   attestation: first_hand
@@ -574,6 +680,11 @@ domain_claims:
     I knocked on the door. I remember there and see if I can get any answer, but nobody answered. Nobody opened the door.
   text: |-
     Dennis Åsberg knocked on the door of the homeowner at the Merivälja site, but nobody answered.
+  entailment:
+    label: neutral
+    score: 0.888
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 731ead01-2d26-42cc-8026-16297618f602
   type: testimony
   attestation: first_hand
@@ -596,6 +707,11 @@ domain_claims:
     instead we decided to go over to the neighbor and talk to the neighbor. And the neighbors were very glad that we were there. He was so happy to talk with us about the story about this thing they have been working with
   text: |-
     After getting no answer at the homeowner's door, Dennis Åsberg and Beatriz Villarroel spoke with the neighbour, who was glad to talk to them about the Merivälja object.
+  entailment:
+    label: entails
+    score: 0.903
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 67be8206-56c7-4686-be06-be26bcdb15c4
   type: testimony
   attestation: second_hand
@@ -617,6 +733,11 @@ domain_claims:
   quote: They have been here for a long time with excavators. They have trucks there.
   text: |-
     According to the neighbour interviewed by Dennis Åsberg, excavators and trucks were present at the Merivälja site for a long time.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 13dde761-238f-4448-8e00-9b0fc27cfc10
   type: testimony
   attestation: second_hand
@@ -639,6 +760,11 @@ domain_claims:
     There have been lots of scientists, people and also military people and even journalists there.
   text: |-
     According to the neighbour interviewed by Dennis Åsberg, there had been many scientists, military personnel, and journalists at the Merivälja site.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ca8c9d0a-3782-4935-a7fd-7fdd140068a8
   type: testimony
   attestation: second_hand
@@ -660,6 +786,11 @@ domain_claims:
   quote: So he has seen from his window all the activity activities have been out there.
   text: |-
     The neighbour interviewed by Dennis Åsberg said he had seen all the activity at the Merivälja site from his window.
+  entailment:
+    label: neutral
+    score: 0.713
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c0269c28-e421-40c7-bad0-0db23bcb4b2e
   type: testimony
   attestation: first_hand
@@ -679,6 +810,11 @@ domain_claims:
   quote: We talked for almost one hour about this.
   text: |-
     Dennis Åsberg and Beatriz Villarroel spoke with the neighbour at the Merivälja site for almost one hour.
+  entailment:
+    label: neutral
+    score: 0.792
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 05d6e367-0d5e-4828-b8fa-106fd6ae74b1
   type: opinion
   attestation: first_hand
@@ -699,6 +835,11 @@ domain_claims:
     if the military have been there and they have excavators down and dig. And so I don't think it's still there, but perhaps we can find signs of that there have been something there.
   text: |-
     Dennis Åsberg does not think the Merivälja object is still present at the site, given that the military reportedly used excavators to dig there, but thinks signs of it might still be found.
+  entailment:
+    label: entails
+    score: 0.862
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3e2a27b6-95e3-499f-af25-762061cd7ece
   type: opinion
   attestation: first_hand
@@ -719,6 +860,11 @@ domain_claims:
     they were removing it with a lot of small parts. That means that something might still be underground. Maybe they didn't clean everything perfectly.
   text: |-
     Beatriz Villarroel believes it is possible that remnants of the Merivälja object remain underground because it was reportedly removed in many small parts and may not have been fully cleaned up.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4ae8567-6a09-45e9-969b-8a38237875d7
   type: observation
   attestation: second_hand
@@ -743,6 +889,11 @@ domain_claims:
     for several decades, the Russians were doing excavations, and there were military scientists, the KGB was involved.
   text: |-
     For several decades, the Russians conducted excavations at the Merivälja site, involving military scientists, and the Committee for State Security (KGB) was involved.
+  entailment:
+    label: neutral
+    score: 0.468
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef13f5ea-0e25-46b9-ba19-a6c281f8504f
   type: observation
   attestation: second_hand
@@ -765,6 +916,11 @@ domain_claims:
     They were taking samples and sending it to different universities. So it was a big project.
   text: |-
     During the Soviet excavation and investigation of the Merivälja object, samples were taken and sent to different universities.
+  entailment:
+    label: entails
+    score: 0.715
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9053dced-b69d-4890-92eb-25449f6f53bc
   type: administrative
   attestation: first_hand
@@ -785,6 +941,11 @@ domain_claims:
     there was no answer from the homeowner, but you've subsequently exchanged emails with the homeowner, haven't you?
   text: |-
     Beatriz Villarroel subsequently exchanged emails with the homeowner of the Merivälja object site after the initial visit where nobody answered the door.
+  entailment:
+    label: entails
+    score: 0.684
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 00e05b29-890a-4fa5-b7dd-02602fa88d3c
   type: testimony
   attestation: first_hand
@@ -806,6 +967,11 @@ domain_claims:
   quote: the day after, we went back to try again and he was home.
   text: |-
     The day after the initial unanswered visit, Dennis Åsberg returned to the Merivälja homeowner's house and found him at home.
+  entailment:
+    label: entails
+    score: 0.582
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2432016d-e745-4310-bbc1-1640794cdc52
   type: testimony
   attestation: first_hand
@@ -825,6 +991,11 @@ domain_claims:
   quote: no, I don't want to be involved in this and I don't believe in this and so on.
   text: |-
     The Merivälja homeowner told Dennis Åsberg that he did not want to be involved in discussing the object and did not believe in it.
+  entailment:
+    label: entails
+    score: 0.64
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 89247cd7-7a0c-400e-8b02-6dfd38da7a3a
   type: testimony
   attestation: first_hand
@@ -847,6 +1018,11 @@ domain_claims:
     I have not answered my mail either. But I have not given up. Beatriz and I will try again to see if we can get any connection with them and see if we can also use ground radar.
   text: |-
     The Merivälja homeowner has not responded to Dennis Åsberg's follow-up email, but Dennis Åsberg has not given up trying to obtain permission to conduct a ground-penetrating radar study of the site.
+  entailment:
+    label: entails
+    score: 0.888
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d5e6cd98-c456-4256-8f1d-be8f1b1e786d
   type: opinion
   attestation: first_hand
@@ -867,6 +1043,11 @@ domain_claims:
     We don't do it in a simple way instead with ground radar. Then you can see all the layers and we can also see if they have digged there. If they have taken up something, we're going to see that directly.
   text: |-
     Dennis Åsberg prefers to use ground-penetrating radar rather than excavators to investigate the Merivälja site, because ground-penetrating radar can reveal soil layers and whether digging or removal has occurred without physically disturbing the ground.
+  entailment:
+    label: entails
+    score: 0.944
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d3b3bb8b-5e0f-4d84-b9e8-3934c74637c5
   type: opinion
   attestation: first_hand
@@ -887,6 +1068,11 @@ domain_claims:
     if we can have it in space, why wouldn't they be able to also be on ground or in the oceans?
   text: |-
     Beatriz Villarroel believes that if artificial objects can exist in orbit around Earth, similar non-human artificial objects could also exist on the ground or in the oceans.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c52dca3-f2d7-441d-8841-20defb928bd3
   type: opinion
   attestation: first_hand
@@ -907,6 +1093,11 @@ domain_claims:
     Could this object be something non-human? Of course, it might also have some kind of mundane explanation. But if we just speculate that this might be something non-human, then maybe it's a beacon maybe some kind of maybe it's transmitting something
   text: |-
     Beatriz Villarroel considers it possible that the Merivälja object could be non-human, perhaps functioning as a beacon or transmitting something, though it might also have a mundane explanation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9fb3fab-5db5-4a31-90e4-e453f08daa3a
   type: testimony
   attestation: second_hand
@@ -933,6 +1124,11 @@ domain_claims:
     the Soviet researcher who occupied the site for quite a few years investigating the Merivälja object, I think his name was Alexander Deyev, he had done an analysis of this Nuremberg uh engraving
   text: |-
     According to Mart Sander's research, the Soviet researcher Alexander Deyev, who occupied the Merivälja site for several years investigating the object, analysed the Nuremberg celestial phenomenon engraving of 1566.
+  entailment:
+    label: neutral
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9d676d2a-5e61-4ef8-8bb1-21234578e7c2
   type: observation
   speaker:
@@ -951,6 +1147,11 @@ domain_claims:
     this engraving shows what appears to be some kind of aerial phenomenon and everybody thought it was over the city of nuremberg
   text: |-
     The Nuremberg celestial phenomenon engraving of 1566 shows what appears to be an aerial phenomenon, and it was traditionally believed to depict an event over the city of Nuremberg, Germany.
+  entailment:
+    label: neutral
+    score: 0.6
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 21724d09-a4b4-4ff7-b585-1beb3d5ab94f
   type: opinion
   attestation: third_hand
@@ -978,6 +1179,11 @@ domain_claims:
     he apparently had the theory that it was more likely because of the position of celestial objects somewhere over the Baltic Sea and possibly over Tallinn
   text: |-
     Alexander Deyev theorised, based on the position of celestial objects depicted, that the Nuremberg celestial phenomenon engraving of 1566 more likely depicted an event over the Baltic Sea, possibly over Tallinn, rather than over Nuremberg.
+  entailment:
+    label: contradicts
+    score: 0.866
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7d0d1580-c941-4516-b1bb-1b59311fdc12
   type: opinion
   attestation: third_hand
@@ -1003,6 +1209,11 @@ domain_claims:
     he hypothesized that Merivälja might be one of a group of objects that had fallen during this alleged aerial battle or perhaps orbital battle into the area
   text: |-
     Alexander Deyev hypothesised that the Merivälja object might be one of a group of objects that fell during an alleged aerial or orbital battle depicted in the Nuremberg celestial phenomenon engraving of 1566.
+  entailment:
+    label: contradicts
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e6dadd83-e7c1-40a0-a018-d3e9f7b097ef
   type: measurement
   attestation: first_hand
@@ -1024,6 +1235,11 @@ domain_claims:
   quote: we're talking about like 300 kilometers, not more than that.
   text: |-
     The Baltic Sea anomaly and the Merivälja object are located approximately 300 kilometres apart, near Tallinn.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bddf7098-d4e9-4e15-93eb-de88c12ba53e
   type: opinion
   attestation: second_hand
@@ -1044,6 +1260,11 @@ domain_claims:
     the scientists, people have been there, have said that this is probably something that is constructed. It looks like that. And it's also separated from the bottom. So it's not a bedrock
   text: |-
     Scientists who have visited the Baltic Sea anomaly have said it looks like it is constructed and is separated from the seabed rather than being bedrock.
+  entailment:
+    label: entails
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a655d06-eede-47ba-bd8c-0cb8ac8db53c
   type: hearsay
   speaker:
@@ -1066,6 +1287,11 @@ domain_claims:
     we have heard also about other anomalies in the Baltic. It's not only the Baltic Sea anomaly and Tallinn. We have one another one also
   text: |-
     There are other reported anomalies in the Baltic Sea beyond the Baltic Sea anomaly and the Merivälja object.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 65f401e4-d434-40c1-a0a4-093d7821201d
   type: testimony
   attestation: first_hand
@@ -1090,6 +1316,11 @@ domain_claims:
     there are at least five interesting cases that I can think about from the top of my mind. One in Sweden, another in Germany... Then there is this third case that is in between Merivälja and the Baltic Sea anomaly
   text: |-
     Beatriz Villarroel's team has identified at least five interesting cases of potential non-human craft crashes across Europe, including one in Sweden, one in Germany, and one located between the Merivälja object and the Baltic Sea anomaly.
+  entailment:
+    label: entails
+    score: 0.582
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7225bf86-899d-494e-a677-060019492ef7
   type: opinion
   attestation: second_hand
@@ -1114,6 +1345,11 @@ domain_claims:
     that third case has actually been investigated by some scientists. They think it's probably a natural object.
   text: |-
     A third object located near the Merivälja object and the Baltic Sea anomaly has been investigated by scientists who believe it is probably a natural object.
+  entailment:
+    label: contradicts
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1ee901c6-1526-4cce-badf-1cc1dadd5382
   type: administrative
   attestation: first_hand
@@ -1136,6 +1372,11 @@ domain_claims:
     Igor Volker, who's the ufologist who did a lot of work on Merivälja, and also the Soviet papers, the reports of the Soviet investigation team that did this work with the KGB
   text: |-
     Igor Volker is a ufologist who did extensive work researching the Merivälja object and the Soviet investigation reports.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3e1800c6-2783-4b98-8f02-0054080650af
   type: observation
   attestation: third_hand
@@ -1159,6 +1400,11 @@ domain_claims:
     they acknowledge some kind of electromagnetic interference that was suffered on site machines didn't work properly there
   text: |-
     Soviet investigation reports on the Merivälja object describe electromagnetic interference that affected machines on site.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f73a3f3-277f-4ba0-b418-ebaba1fd3ff1
   type: observation
   attestation: third_hand
@@ -1182,6 +1428,11 @@ domain_claims:
     there was um poltergeist alleged poltergeist activity where books were thrown across the room
   text: |-
     Soviet investigation reports on the Merivälja object describe alleged poltergeist activity, including books being thrown across the room.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad372980-1a64-4645-b399-0fdb21f7fac1
   type: observation
   attestation: first_hand
@@ -1204,6 +1455,11 @@ domain_claims:
     you've been reporting pretty much the same kind of anomalous phenomena in and around the baltic sea anomaly object haven't you
   text: |-
     Dennis Åsberg has reported anomalous phenomena around the Baltic Sea anomaly similar to those reported at the Merivälja object.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef1630b8-7e02-4356-a5e7-79aee5889e03
   type: observation
   attestation: first_hand
@@ -1224,6 +1480,11 @@ domain_claims:
     we have experience of that failure of equipment. And that's I mean, it's almost every time we were out there... we have problems with the GPS, the equipment, sonar system and so on.
   text: |-
     Dennis Åsberg has experienced equipment failures, including GPS, sonar, and other equipment problems, almost every time his team has visited the Baltic Sea anomaly.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c4ad547a-859f-4e23-9f1d-fad8a1497d77
   type: observation
   attestation: first_hand
@@ -1244,6 +1505,11 @@ domain_claims:
     even last year when we were out with scientists, people from Germany and to Germany, France and the US and even Swedish scientists. And they were skeptic... they saw it with their own eyes when they were out there. We had problems even last year.
   text: |-
     During a visit to the Baltic Sea anomaly, scientists from Germany, France, the US, and Sweden personally witnessed the equipment problems that occur there, despite initially being skeptical.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2dbf110-658b-40ff-934d-ad9b2bfa07bd
   type: observation
   attestation: second_hand
@@ -1266,6 +1532,11 @@ domain_claims:
     does appear from what the soviet documents say to have been some difficulty in attempting to retrieve the Merivälja object
   text: |-
     Soviet documents indicate there was some difficulty in attempting to retrieve the Merivälja object.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2c694265-1b0b-4ee8-8e50-122bb712c49b
   type: opinion
   attestation: second_hand
@@ -1288,6 +1559,11 @@ domain_claims:
     Mart Sander actually says to us in his interview that he thinks the object was never actually recovered by the soviets that they weren't able to get to it because somehow inexplicably... it moved through the soil away from the people attempting to retrieve it
   text: |-
     Mart Sander believes the Merivälja object was never actually recovered by the Soviets because it inexplicably moved through the soil away from those attempting to retrieve it.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f222ae6-0a3e-43db-8322-3f5972b4cfe8
   type: observation
   speaker:
@@ -1310,6 +1586,11 @@ domain_claims:
     there was allegedly a Japanese TV crew. And there is, in fact, a documentary that survives that you can find on YouTube where the Japanese TV crew is shown actually doing a ground penetrating radar study on the site.
   text: |-
     A Japanese TV crew reportedly conducted a ground-penetrating radar study at the Merivälja object site, documented in a surviving 1991 documentary available on YouTube.
+  entailment:
+    label: entails
+    score: 0.425
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c28a42b-ddf3-451a-aa32-7277a03d10e2
   type: hearsay
   attestation: second_hand
@@ -1338,6 +1619,11 @@ domain_claims:
     We read something online, which we don't know whether it's true or not, that they all allegedly died in the crude, because there was apparently a lot of deaths associated during these years between 1969 to 1990, when the Russians were thrown out from the excavations because of the Perestroika.
   text: |-
     Beatriz Villarroel read unverified online reports that the Japanese TV crew who investigated the Merivälja object all allegedly died, amid a number of deaths reportedly associated with the site between 1969 and 1990, around the time the Russians left the excavations due to Perestroika.
+  entailment:
+    label: entails
+    score: 0.62
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2a147d2d-5eb4-41e1-8466-8568c0f94a45
   type: observation
   attestation: first_hand
@@ -1358,6 +1644,11 @@ domain_claims:
     we don't know what they concluded in that GPR, the ground penetrating radar study.
   text: |-
     The conclusions of the Japanese ground-penetrating radar study of the Merivälja object are not known.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a8fa2600-dd5b-4534-8c7d-68be9efd9bd0
   type: opinion
   attestation: first_hand
@@ -1380,6 +1671,11 @@ domain_claims:
     my hope is that maybe some people... might have been part of the excavations, taking part of it either as a military or a scientist, and they might know much more about it than we do.
   text: |-
     Beatriz Villarroel hopes people who were involved as military personnel or scientists in the Merivälja excavations might see the interview and share further information.
+  entailment:
+    label: entails
+    score: 0.525
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2e95504c-9d3b-4f7e-8d7b-02200b8f224c
   type: testimony
   attestation: first_hand
@@ -1400,6 +1696,11 @@ domain_claims:
     that's the plan to go back and talk to him again... I'm going to take a chance again and see if it's OK for us just to go out in the garden and perhaps use ground penetrating radar.
   text: |-
     Dennis Åsberg plans to return to the Merivälja homeowner and ask again for permission to conduct a ground-penetrating radar study in the garden.
+  entailment:
+    label: entails
+    score: 0.648
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 973bb585-0d6d-461b-a4ef-7d1a1e40a487
   type: observation
   attestation: first_hand
@@ -1419,6 +1720,11 @@ domain_claims:
   quote: He was perhaps shocked when we were there. He was not prepared for it.
   text: |-
     The Merivälja homeowner appeared shocked and unprepared when Dennis Åsberg first visited him.
+  entailment:
+    label: entails
+    score: 0.885
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bd4fe52b-32a8-4083-8c23-e785a7529cfc
   type: observation
   attestation: second_hand
@@ -1444,6 +1750,11 @@ domain_claims:
     They took it so seriously. I mean, they have been there since 1969 until Perestroika happened in the 1990s... they were living in the house. They were borrowing it from the owners.
   text: |-
     The Soviets took the investigation of the Merivälja object very seriously, maintaining a presence at the site from 1969 until Perestroika in the 1990s, including living in the house borrowed from the owners.
+  entailment:
+    label: entails
+    score: 0.855
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a66ef21d-9418-46e5-b212-ffd8417447bf
   type: testimony
   attestation: second_hand
@@ -1468,6 +1779,11 @@ domain_claims:
     there were some scientists that in 2017 at Tallinn University or somewhere there, they got access to a sample that they didn't know if it was from the object or not. It was allegedly from the object, but they weren't sure.
   text: |-
     In 2017, scientists reportedly at Tallinn University obtained a sample allegedly from the Merivälja object, though they were not certain it actually came from the object.
+  entailment:
+    label: entails
+    score: 0.717
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 57062661-eb31-49a2-8b16-60ead7eba193
   type: testimony
   attestation: second_hand
@@ -1490,6 +1806,11 @@ domain_claims:
     They analyzed it and concluded this is some human artificial material, nothing interesting.
   text: |-
     The scientists who analysed the 2017 sample allegedly from the Merivälja object concluded it was human artificial material and nothing interesting.
+  entailment:
+    label: contradicts
+    score: 0.955
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9ec95642-3e07-4abe-9186-bea3279e9a88
   type: testimony
   attestation: first_hand
@@ -1512,6 +1833,11 @@ domain_claims:
     There was no report published. There was just statements directly to the media, and they were not willing to share any of the data. Or when I asked them, I was just met with silence.
   text: |-
     No report was ever published on the 2017 Tallinn University sample analysis of the Merivälja object; only statements were made directly to the media, and the researchers were not willing to share any of the underlying data.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8fd9948c-32e1-43b9-a228-20d0f58f3c85
   type: opinion
   attestation: first_hand
@@ -1532,6 +1858,11 @@ domain_claims:
     based on that, those kind of 2017 investigations, I wouldn't I wouldn't make any conclusions at all. It's like non-informative for me at the moment.
   text: |-
     Beatriz Villarroel does not consider the 2017 Tallinn University sample analysis of the Merivälja object informative and would not draw any conclusions from it.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c52b95de-bc81-49d0-a895-cd27b21ec272
   type: opinion
   attestation: first_hand
@@ -1552,6 +1883,11 @@ domain_claims:
     I think anything is possible is a hypothesis that is absolutely worth taking seriously.
   text: |-
     Beatriz Villarroel considers it worth taking seriously the hypothesis that the Baltic Sea anomaly or the Merivälja object could be evidence of a prior civilisation that was wiped out during the last ice age.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a5e155aa-a68c-48f8-89ba-beb702879c3a
   type: opinion
   attestation: first_hand
@@ -1572,6 +1908,11 @@ domain_claims:
     the Baltic Sea region is one of the most geologically stable regions in the world.
   text: |-
     Beatriz Villarroel considers the Baltic Sea region one of the most geologically stable regions in the world.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 56e40260-8ba9-4f0f-9951-05811028b20d
   type: opinion
   attestation: first_hand
@@ -1592,6 +1933,11 @@ domain_claims:
     I believe more and more that we probably have found something that build before the last ice age.
   text: |-
     Dennis Åsberg believes it increasingly likely that the Baltic Sea anomaly was built before the last ice age.
+  entailment:
+    label: entails
+    score: 0.628
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f2d0a0da-de60-4b12-b371-8d184893e85a
   type: opinion
   attestation: first_hand
@@ -1612,6 +1958,11 @@ domain_claims:
     after I've seen all the data, this looks more and more that it can be something that is built on the spot before the ice age when there was no water there in that area.
   text: |-
     Dennis Åsberg, after reviewing all the data, believes the Baltic Sea anomaly may have been built on the spot before the last ice age, at a time when there was no water in that area.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7a5d4dfd-943e-4d86-b64f-d7bd630fc776
   type: testimony
   attestation: first_hand
@@ -1635,6 +1986,11 @@ domain_claims:
     There are people in Merivälja, clearly, who were involved in the retrieval as recently as, I believe, 1991, when there was a Japanese investigation team there.
   text: |-
     There were people in Merivälja, Estonia, involved in the retrieval of the Merivälja object as recently as 1991, when a Japanese investigation team was present there.
+  entailment:
+    label: neutral
+    score: 0.766
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 183e1e59-88ab-487c-af11-cf460bfc6f1d
   type: opinion
   attestation: first_hand
@@ -1657,6 +2013,11 @@ domain_claims:
     Some question marks about whether that Japanese team were indeed all genuinely from Asahi TV.
   text: |-
     There is some question over whether the 1991 Japanese investigation team that examined the Merivälja object were genuinely all from Asahi TV.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7e065bfc-959b-441a-9bc6-23531e6cd4df
   type: opinion
   attestation: first_hand
@@ -1681,6 +2042,11 @@ domain_claims:
     or wherever they were cover perhaps for some U.S intelligence operation i i'm guessing that in the very early months of Perestroika uh it would have been sensitive for an american team to be on the ground so visibly in a place like talin a former eastern bloc uh soviet socialist republic so i i'm guessing maybe there's a possibility that the americans used that japanese team to investigate
   text: |-
     Ross Coulthart speculates that the 1991 Japanese investigation team examining the Merivälja object may have served as cover for a US intelligence operation, reasoning that an American team operating visibly in Tallinn, a former Eastern Bloc Soviet Socialist Republic, would have been sensitive in the early months of Perestroika.
+  entailment:
+    label: entails
+    score: 0.754
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2edb6dbb-2cde-4859-82bd-8b25c6868306
   type: administrative
   attestation: first_hand
@@ -1703,6 +2069,11 @@ domain_claims:
     i have a email address through stockholm university you can email me at beatriz.vrl@su.se so just let us know in case you know something about this or if you actually want to allow us to go there and do the study with a ground penetrating radar
   text: |-
     Beatriz Villarroel can be contacted by email at beatriz.vrl@su.se, an address through Stockholm University, regarding the Merivälja object or the European Crash Retrieval Initiative's research.
+  entailment:
+    label: entails
+    score: 0.73
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 667ee311-660b-486b-ab20-f1073c33e7fd
   type: testimony
   attestation: first_hand
@@ -1725,6 +2096,11 @@ domain_claims:
     I will knock on his door...We just want to use the radar to check if there have been or still something there.
   text: |-
     Dennis Åsberg plans to knock on the Merivälja homeowner's door again to seek permission to use ground-penetrating radar to check whether something has been or still is present at the site, without destroying anything.
+  entailment:
+    label: entails
+    score: 0.922
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ee3ffb08-b366-4419-bcea-613b46b7068f
   type: testimony
   attestation: second_hand
@@ -1750,6 +2126,11 @@ domain_claims:
     We have talked to the neighbors and they have ever seen everything that happened for a long time also.
   text: |-
     Dennis Åsberg and his team spoke to neighbours of the Merivälja property who confirmed that something has been happening there for a long time.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5d02655c-0fcf-4afb-8b80-cb59052d1df0
   type: testimony
   attestation: first_hand
@@ -1770,6 +2151,11 @@ domain_claims:
     They're pretty sick of being harassed by people knocking on their door wanting to talk about the Merivälja object.
   text: |-
     The homeowner of the Merivälja property has been harassed by people repeatedly knocking on their door wanting to talk about the Merivälja object.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27744aa5-6f5c-4f0f-82ea-c0c6320f7fea
   type: administrative
   attestation: second_hand
@@ -1794,6 +2180,11 @@ domain_claims:
     the other objects that we're aware of, five objects that Beatriz is referring to in and around Europe, Scandinavia
   text: |-
     Beatriz Villarroel's European Crash Retrieval Initiative is investigating around five objects in and around Europe and Scandinavia, including the Merivälja object.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1941bf65-9118-4da0-8849-8ffc91349c7d
   type: opinion
   attestation: first_hand
@@ -1814,6 +2205,11 @@ domain_claims:
     this uh old habit that has been around since the early like early 50s, when people have just decided to ridicule the whole UFO topic all the time in order to just try to debunk it and make sure that it doesn't in any way pull too much interest from the general audience.
   text: |-
     Beatriz Villarroel attributes a long-standing tendency, dating back to the early 1950s, of ridiculing the UFO topic in order to debunk it and prevent it from attracting too much public interest.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: 6778ac9d-1d92-4205-b27b-03b13e843411
   type: administrative
@@ -1835,6 +2231,11 @@ infrastructure_claims:
     name: Merivälja object
   quote: we've done interviews with Mark Sander, who's written this book about Merivälja
   text: Mart Sander wrote a book about the Merivälja object.
+  entailment:
+    label: entails
+    score: 0.896
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 66ebbbe5-3c49-4dee-a543-bc4702503165
   type: administrative
   attestation: first_hand
@@ -1857,6 +2258,11 @@ infrastructure_claims:
     our good friend Darren from Australia, and all credit to Darren, frankly, for putting us onto this story in the first place.
   text: |-
     Darren, a member of the European Crash Retrieval Initiative team from Australia, is credited with putting Ross Coulthart onto the Merivälja object story.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 34687de9-5132-4c04-9787-d7e689676b1d
   type: administrative
   attestation: first_hand
@@ -1879,3 +2285,8 @@ infrastructure_claims:
     There is obviously the book coming out now by Mark Sander which is only going to increase public attention.
   text: |-
     Mart Sander's book on the Merivälja object is due to be published and is expected to increase public attention on the case.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

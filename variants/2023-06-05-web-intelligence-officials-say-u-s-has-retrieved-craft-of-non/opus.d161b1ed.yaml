@@ -9,6 +9,12 @@ ai_usage:
     output: 62420
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 7.3
 prompts:
 - pass: nodes
   id: nodes
@@ -243,6 +249,11 @@ domain_claims:
     A former intelligence official turned whistleblower has given Congress and the Intelligence Community Inspector General extensive classified information about deeply covert programs that he says possess retrieved intact and partially intact craft of non-human origin.
   text: |-
     David Charles Grusch, a former intelligence official turned whistleblower, gave the United States Congress and the Intelligence Community Inspector General (ICIG) extensive classified information about deeply covert programmes that he says possess retrieved intact and partially intact craft of non-human origin.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fdf9d9db-1eb4-4a66-9e6e-ce225a4deb6b
   type: testimony
   attestation: first_hand
@@ -262,6 +273,11 @@ domain_claims:
   quote: The information, he says, has been illegally withheld from Congress
   text: |-
     David Charles Grusch says the classified information about the covert non-human craft programmes has been illegally withheld from the United States Congress.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6606affe-0ca3-440a-aec6-e49954f7fb9b
   type: administrative
   provenance_chain:
@@ -276,6 +292,11 @@ domain_claims:
     he filed a complaint alleging that he suffered illegal retaliation for his confidential disclosures, reported here for the first time.
   text: |-
     David Charles Grusch filed a complaint alleging that he suffered illegal retaliation for his confidential disclosures.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8c5e6034-5a75-4de6-9265-36ba1a11640f
   type: administrative
   provenance_chain:
@@ -290,6 +311,11 @@ domain_claims:
     Other intelligence officials, both active and retired, with knowledge of these programs through their work in various agencies, have independently provided similar, corroborating information, both on and off the record.
   text: |-
     Other intelligence officials, both active and retired, with knowledge of the covert non-human craft programmes through their work in various agencies, independently provided similar corroborating information both on and off the record.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6fd8a181-2d41-4c78-b8cb-276e6bd7013f
   type: administrative
   provenance_chain:
@@ -305,6 +331,11 @@ domain_claims:
   quote: David Charles Grusch, 36, a decorated former combat officer in Afghanistan
   text: |-
     David Charles Grusch was 36 years old and a decorated former combat officer in Afghanistan.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f61282c1-90a5-4680-9bc9-8074883a966b
   type: administrative
   provenance_chain:
@@ -323,6 +354,11 @@ domain_claims:
     is a veteran of the National Geospatial-Intelligence Agency (NGA) and the National Reconnaissance Office (NRO).
   text: |-
     David Charles Grusch is a veteran of the National Geospatial-Intelligence Agency (NGA) and the National Reconnaissance Office (NRO).
+  entailment:
+    label: entails
+    score: 0.555
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83283b22-9fbb-46fb-90c9-131837263ece
   type: administrative
   provenance_chain:
@@ -341,6 +377,11 @@ domain_claims:
     He served as the reconnaissance office’s representative to the Unidentified Aerial Phenomena Task Force from 2019-2021.
   text: |-
     David Charles Grusch served as the National Reconnaissance Office (NRO) representative to the Unidentified Aerial Phenomena Task Force from 2019 to 2021.
+  entailment:
+    label: entails
+    score: 0.889
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dd677435-5767-45ca-857e-fc2f05174038
   type: administrative
   provenance_chain:
@@ -361,6 +402,11 @@ domain_claims:
     From late 2021 to July 2022, he was the NGA’s co-lead for UAP analysis and its representative to the task force.
   text: |-
     From late 2021 to July 2022, David Charles Grusch was the National Geospatial-Intelligence Agency (NGA) co-lead for Unidentified Anomalous Phenomena (UAP) analysis and its representative to the Unidentified Aerial Phenomena Task Force.
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e9f53544-17b2-484f-a70a-a4750efa97c2
   type: administrative
   provenance_chain:
@@ -379,6 +425,11 @@ domain_claims:
     The task force was established to investigate what were once called “unidentified flying objects,” or UFOs, and are now officially called “unidentified anomalous phenomena,” or UAP.
   text: |-
     The Unidentified Aerial Phenomena Task Force was established to investigate what were once called unidentified flying objects (UFOs) and are now officially called unidentified anomalous phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.664
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a54d14c7-042a-4e9f-b13f-023e57b76810
   type: administrative
   provenance_chain:
@@ -397,6 +448,11 @@ domain_claims:
     The task force was led by the Department of the Navy under the Office of the Under Secretary of Defense for Intelligence and Security.
   text: |-
     The Unidentified Aerial Phenomena Task Force was led by the Department of the Navy under the Office of the Under Secretary of Defense for Intelligence and Security.
+  entailment:
+    label: entails
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7b82352b-cede-4080-bcf4-4a4be78a14b2
   type: administrative
   provenance_chain:
@@ -413,6 +469,11 @@ domain_claims:
     It has since been reorganized and expanded into the All-Domain Anomaly Resolution Office to include investigations of objects operating underwater.
   text: |-
     The Unidentified Aerial Phenomena Task Force has since been reorganised and expanded into the All-Domain Anomaly Resolution Office (AARO) to include investigations of objects operating underwater.
+  entailment:
+    label: entails
+    score: 0.975
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7a7e561b-b69a-47aa-9633-3face638f553
   type: testimony
   attestation: first_hand
@@ -431,6 +492,11 @@ domain_claims:
     Grusch said the recoveries of partial fragments through and up to intact vehicles [have been made for decades] through the present day by the government, its allies, and defense contractors.
   text: |-
     Recoveries of partial fragments through and up to intact vehicles of non-human origin have been made for decades and up to the present day by the United States government, its allies, and defence contractors.
+  entailment:
+    label: entails
+    score: 0.932
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4be1b80e-ca48-4330-91ac-0c4974ccac12
   type: testimony
   attestation: first_hand
@@ -451,6 +517,11 @@ domain_claims:
     Analysis has determined that the objects retrieved are “of exotic origin (non-human intelligence, whether extraterrestrial or unknown origin) based on the vehicle morphologies and material science testing and the possession of unique atomic arrangements and radiological signatures,” he said.
   text: |-
     Analysis has determined that the retrieved craft are of exotic origin — non-human intelligence, whether extraterrestrial or unknown origin — based on the vehicle morphologies, material science testing, and the possession of unique atomic arrangements and radiological signatures, according to David Charles Grusch.
+  entailment:
+    label: entails
+    score: 0.936
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1d6796a7-ce80-4270-be96-ea4332346830
   type: administrative
   provenance_chain:
@@ -467,6 +538,11 @@ domain_claims:
     In filing his complaint, Grusch is represented by a lawyer who served as the original Intelligence Community Inspector General (ICIG).
   text: |-
     David Charles Grusch, in filing his complaint, is represented by a lawyer who served as the original Intelligence Community Inspector General (ICIG).
+  entailment:
+    label: entails
+    score: 0.457
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aa78b122-490d-492e-b386-35ad92d0525b
   type: testimony
   attestation: first_hand
@@ -489,6 +565,11 @@ domain_claims:
     “We are not talking about prosaic origins or identities,” Grusch said, referencing information he provided Congress and the current ICIG. “The material includes intact and partially intact vehicles.”
   text: |-
     The recovered material includes intact and partially intact vehicles of non-human origin, and does not involve prosaic origins or identities, according to David Charles Grusch.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7da61260-ed99-4a81-ad94-58d785937422
   type: administrative
   provenance_chain:
@@ -507,6 +588,11 @@ domain_claims:
     In accordance with protocols, Grusch provided the Defense Office of Prepublication and Security Review at the Department of Defense with the information he intended to disclose to us.
   text: |-
     In accordance with protocols, David Charles Grusch provided the Defense Office of Prepublication and Security Review at the Department of Defense with the information he intended to disclose.
+  entailment:
+    label: entails
+    score: 0.418
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: adee15b5-b999-482e-a829-58615c460140
   type: administrative
   attestation: second_hand
@@ -525,6 +611,11 @@ domain_claims:
     His on-the-record statements were all “cleared for open publication” on April 4 and 6, 2023, in documents provided to us.
   text: |-
     David Charles Grusch's on-the-record statements were all cleared for open publication on 2023-04-04 and 2023-04-06.
+  entailment:
+    label: entails
+    score: 0.615
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd14718d-f7cd-413c-94f6-f460080a904d
   type: administrative
   provenance_chain:
@@ -541,6 +632,11 @@ domain_claims:
     For many decades, the Air Force carried out a disinformation campaign to discredit reported sightings of unexplained objects.
   text: |-
     For many decades the United States Air Force carried out a disinformation campaign to discredit reported sightings of unexplained objects.
+  entailment:
+    label: entails
+    score: 0.475
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d24eb3b0-8d80-41e3-95ed-d264f982eb1c
   type: administrative
   provenance_chain:
@@ -557,6 +653,11 @@ domain_claims:
     Now, with two public hearings and many classified briefings under its belt, Congress is pressing for answers.
   text: |-
     The United States Congress has held two public hearings and many classified briefings on unidentified anomalous phenomena (UAP) and is pressing for answers.
+  entailment:
+    label: entails
+    score: 0.446
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31b9ea80-9cdd-4b57-b7d1-80299261a3ea
   type: administrative
   provenance_chain:
@@ -577,6 +678,11 @@ domain_claims:
     Karl E. Nell, a recently retired Army Colonel and current aerospace executive who was the Army’s liaison for the UAP Task Force from 2021 to 2022 and worked with Grusch there
   text: |-
     Karl E. Nell is a recently retired Army Colonel and current aerospace executive who was the United States Army's liaison for the Unidentified Aerial Phenomena Task Force from 2021 to 2022 and worked with David Charles Grusch there.
+  entailment:
+    label: entails
+    score: 0.428
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2e29b29-3992-4249-afef-4a002e4c2718
   type: opinion
   attestation: first_hand
@@ -595,6 +701,11 @@ domain_claims:
     name: Grusch, David Charles
   quote: characterizes Grusch as “beyond reproach.”
   text: Karl E. Nell characterises David Charles Grusch as beyond reproach.
+  entailment:
+    label: entails
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: baad2c10-372b-4bb3-aac3-6b6e1773a58b
   type: administrative
   provenance_chain:
@@ -611,6 +722,11 @@ domain_claims:
     Christopher Mellon, who spent nearly twenty years in the U.S. Intelligence Community and served as the Deputy Assistant Secretary of Defense for Intelligence
   text: |-
     Christopher Mellon spent nearly twenty years in the United States Intelligence Community and served as the Deputy Assistant Secretary of Defense for Intelligence.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 624b5af6-b112-45fa-afef-0fc21ed0752c
   type: administrative
   provenance_chain:
@@ -628,6 +744,11 @@ domain_claims:
   quote: has worked with Congress for years on unidentified aerial phenomena.
   text: |-
     Christopher Mellon has worked with the United States Congress for years on unidentified aerial phenomena.
+  entailment:
+    label: entails
+    score: 0.47
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e826d197-6c8f-4da1-a635-7497276a6230
   type: testimony
   attestation: first_hand
@@ -646,6 +767,11 @@ domain_claims:
     “A number of well-placed current and former officials have shared detailed information with me regarding this alleged program, including insights into the history, governing documents and the location where a craft was allegedly abandoned and recovered,” Mellon said.
   text: |-
     A number of well-placed current and former officials shared detailed information with Christopher Mellon regarding the alleged non-human craft recovery programme, including insights into its history, governing documents, and the location where a craft was allegedly abandoned and recovered.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 09e91eaf-52ea-48bb-add2-e56c4798e7a0
   type: opinion
   attestation: first_hand
@@ -666,6 +792,11 @@ domain_claims:
     This is made harder by the fact that, rightly or wrongly, a number of potential sources do not trust the leadership of the All-Domain Anomaly Resolution Office established by Congress.
   text: |-
     A number of potential sources do not trust the leadership of the All-Domain Anomaly Resolution Office (AARO), which makes it harder to get the potentially explosive information validated, according to Christopher Mellon.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f2e1d0b-af58-4546-9c3a-04a7aa1f6546
   type: administrative
   provenance_chain:
@@ -686,6 +817,11 @@ domain_claims:
     Jonathan Grey is a generational officer of the United States Intelligence Community with a Top-Secret Clearance who currently works for the National Air and Space Intelligence Center (NASIC), where the analysis of UAP has been his focus.
   text: |-
     Jonathan Grey is a generational officer of the United States Intelligence Community with a Top-Secret Clearance who works for the National Air and Space Intelligence Center (NASIC), where the analysis of unidentified anomalous phenomena (UAP) has been his focus.
+  entailment:
+    label: entails
+    score: 0.459
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ca783b2a-eaf8-4213-8ebd-4c9b80880394
   type: opinion
   attestation: first_hand
@@ -705,6 +841,11 @@ domain_claims:
   quote: “The non-human intelligence phenomenon is real. We are not alone,” Grey said.
   text: |-
     The non-human intelligence phenomenon is real and we are not alone, according to Jonathan Grey.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 30785c80-92fb-4922-8ec2-59a9f83cc207
   type: testimony
   attestation: first_hand
@@ -723,6 +864,11 @@ domain_claims:
     “Retrievals of this kind are not limited to the United States. This is a global phenomenon, and yet a global solution continues to elude us.”
   text: |-
     Retrievals of non-human craft are not limited to the United States but are a global phenomenon, though a global solution continues to elude us, according to Jonathan Grey.
+  entailment:
+    label: entails
+    score: 0.779
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 66cb5331-192c-41d8-9609-e7157918e49e
   type: administrative
   provenance_chain:
@@ -741,6 +887,11 @@ domain_claims:
     At the National Geospatial-Intelligence Agency, Grusch served as a Senior Intelligence Capabilities Integration Officer, cleared at the Top Secret/Secret Compartmented Information level, and was the agency’s Senior Technical Advisor for Unidentified Aerial Phenomena analysis/Trans-Medium Issues.
   text: |-
     At the National Geospatial-Intelligence Agency (NGA), David Charles Grusch served as a Senior Intelligence Capabilities Integration Officer, cleared at the Top Secret/Sensitive Compartmented Information level, and was the agency's Senior Technical Advisor for Unidentified Aerial Phenomena analysis and Trans-Medium Issues.
+  entailment:
+    label: entails
+    score: 0.429
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1e8a241a-11aa-4520-a4eb-49a656de07fe
   type: administrative
   provenance_chain:
@@ -757,6 +908,11 @@ domain_claims:
     From 2016 to 2021, he served with the National Reconnaissance Office as Senior Intelligence Officer and led the production of the NRO director’s daily briefing.
   text: |-
     From 2016 to 2021, David Charles Grusch served with the National Reconnaissance Office (NRO) as Senior Intelligence Officer and led the production of the NRO director's daily briefing.
+  entailment:
+    label: entails
+    score: 0.468
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 025d8e80-23e6-4611-9271-5a446d38cdd7
   type: administrative
   provenance_chain:
@@ -769,6 +925,11 @@ domain_claims:
     name: Grusch, David Charles
   quote: Grusch was a GS-15 civilian, the military equivalent of a Colonel.
   text: David Charles Grusch was a GS-15 civilian, the military equivalent of a Colonel.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed39cecd-f980-43ac-9391-b1e7d432566d
   type: administrative
   provenance_chain:
@@ -785,6 +946,11 @@ domain_claims:
     Grusch has served as an Intelligence Officer for over fourteen years. A veteran of the Air Force, he has numerous awards and decorations for his participation in covert and clandestine operations to advance American security.
   text: |-
     David Charles Grusch has served as an Intelligence Officer for over fourteen years and is a veteran of the United States Air Force with numerous awards and decorations for his participation in covert and clandestine operations.
+  entailment:
+    label: entails
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ea8e0252-1c4e-45e0-b5e8-ea6b483ffeea
   type: administrative
   attestation: second_hand
@@ -805,6 +971,11 @@ domain_claims:
     According to a 2021 NRO Performance Report, Grusch was an intelligence strategist with multiple responsibilities who “analyzed unidentified aerial phenomena reports” and “boosted congressional leadership Intel gaps \[in] understanding.”
   text: |-
     According to a 2021 National Reconnaissance Office (NRO) Performance Report, David Charles Grusch was an intelligence strategist who analysed unidentified aerial phenomena reports and boosted congressional leadership intelligence gaps in understanding.
+  entailment:
+    label: entails
+    score: 0.521
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 21a0409f-0208-42f5-be31-d6a368ce155d
   type: administrative
   attestation: second_hand
@@ -822,6 +993,11 @@ domain_claims:
     He was assessed by the reconnaissance office’s Operations Center Deputy Director as an “adept staff officer and strategist” and “total force integrator with innovative solutions and actionable results.”
   text: |-
     David Charles Grusch was assessed by the National Reconnaissance Office (NRO) Operations Center Deputy Director as an adept staff officer and strategist and a total force integrator with innovative solutions and actionable results.
+  entailment:
+    label: entails
+    score: 0.475
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40d5b47c-2b2c-44e7-b95c-357cb38136a7
   type: administrative
   provenance_chain:
@@ -842,6 +1018,11 @@ domain_claims:
     Grusch prepared many briefs on unidentified aerial phenomena for Congress while in government and helped draft the language on UAP for the FY2023 National Defense Authorization Act
   text: |-
     David Charles Grusch prepared many briefs on unidentified aerial phenomena for the United States Congress while in government and helped draft the UAP language for the FY2023 National Defense Authorization Act.
+  entailment:
+    label: entails
+    score: 0.523
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 06ce7bf4-28e4-4f8e-8eb9-f55153552667
   type: administrative
   provenance_chain:
@@ -863,6 +1044,11 @@ domain_claims:
     spearheaded by Senators Kirsten Gillibrand and Marco Rubio and signed into law by President Biden in December 2022.
   text: |-
     The FY2023 National Defense Authorization Act was spearheaded by Senators Kirsten Gillibrand and Marco Rubio and signed into law by President Joseph Biden in December 2022.
+  entailment:
+    label: entails
+    score: 0.459
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 04b32c5a-36af-4e85-856e-16d7dc4e6340
   type: administrative
   attestation: second_hand
@@ -882,6 +1068,11 @@ domain_claims:
     The provision states that any person with relevant UAP information can inform Congress without retaliation, regardless of any previous non-disclosure agreements.
   text: |-
     The FY2023 National Defense Authorization Act provision states that any person with relevant unidentified anomalous phenomena (UAP) information can inform the United States Congress without retaliation, regardless of any previous non-disclosure agreements.
+  entailment:
+    label: entails
+    score: 0.821
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f4f20451-98b9-4329-b34f-eae113e83926
   type: testimony
   attestation: first_hand
@@ -905,6 +1096,11 @@ domain_claims:
     Grusch asserted that UFO “legacy programs” have long been concealed within “multiple agencies nesting UAP activities in conventional secret access programs without appropriate reporting to various oversight authorities.”
   text: |-
     UFO legacy programmes have long been concealed within multiple agencies nesting unidentified anomalous phenomena (UAP) activities in conventional secret access programmes without appropriate reporting to various oversight authorities, according to David Charles Grusch.
+  entailment:
+    label: entails
+    score: 0.697
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 96a9add4-c0c4-49e8-a3ec-5898b945d89f
   type: testimony
   attestation: first_hand
@@ -925,6 +1121,11 @@ domain_claims:
     a decades-long “publicly unknown Cold War for recovered and exploited physical material – a competition with near-peer adversaries over the years to identify UAP crashes/landings and retrieve the material for exploitation/reverse engineering to garner asymmetric national defense advantages.”
   text: |-
     There has been a decades-long, publicly unknown Cold War over recovered and exploited physical material — a competition with near-peer adversaries to identify unidentified anomalous phenomena (UAP) crashes and landings and retrieve the material for exploitation and reverse engineering to gain asymmetric national defence advantages, according to David Charles Grusch.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f67cde6c-4bca-4a5f-9262-16ac4a919d28
   type: administrative
   provenance_chain:
@@ -942,6 +1143,11 @@ domain_claims:
     Beginning in 2022, Grusch provided Congress with hours of recorded classified information transcribed into hundreds of pages which included specific data about the materials recovery program.
   text: |-
     Beginning in 2022, David Charles Grusch provided the United States Congress with hours of recorded classified information transcribed into hundreds of pages, which included specific data about the materials recovery programme.
+  entailment:
+    label: neutral
+    score: 0.924
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2e3b838e-6f01-42ec-ad35-40062c7a159a
   type: administrative
   provenance_chain:
@@ -956,6 +1162,11 @@ domain_claims:
     Congress has not been provided with any physical materials related to wreckage or other non-human objects.
   text: |-
     The United States Congress has not been provided with any physical materials related to wreckage or other non-human objects.
+  entailment:
+    label: entails
+    score: 0.488
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31550091-2266-484c-bfd0-26b5e842cb8d
   type: administrative
   provenance_chain:
@@ -970,6 +1181,11 @@ domain_claims:
     Grusch’s investigation was centered on extensive interviews with high-level intelligence officials, some of whom are directly involved with the program.
   text: |-
     David Charles Grusch's investigation was centred on extensive interviews with high-level intelligence officials, some of whom are directly involved with the non-human craft recovery programme.
+  entailment:
+    label: neutral
+    score: 0.889
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 19a4cf75-d22e-41c5-811f-e94d3d69beb0
   type: testimony
   attestation: first_hand
@@ -990,6 +1206,11 @@ domain_claims:
     He says the operation was illegally shielded from proper Congressional oversight and that he was targeted and harassed because of his investigation.
   text: |-
     The non-human craft recovery operation was illegally shielded from proper Congressional oversight, and David Charles Grusch was targeted and harassed because of his investigation.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1499269f-d44b-44d9-8694-448545e3a8c2
   type: testimony
   attestation: first_hand
@@ -1008,6 +1229,11 @@ domain_claims:
     Grusch said that the craft recovery operations are ongoing at various levels of activity and that he knows the specific individuals, current and former, who are involved.
   text: |-
     The craft recovery operations are ongoing at various levels of activity, and David Charles Grusch knows the specific individuals, current and former, who are involved.
+  entailment:
+    label: entails
+    score: 0.895
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 15c35bf4-8b8c-4d74-97f8-4fa6251a6c27
   type: testimony
   attestation: first_hand
@@ -1028,6 +1254,11 @@ domain_claims:
     “Individuals on these UAP programs approached me in my official capacity and disclosed their concerns regarding a multitude of wrongdoings, such as illegal contracting against the Federal Acquisition Regulations and other criminality and the suppression of information across a qualified industrial base and academia,” he stated.
   text: |-
     Individuals on the unidentified anomalous phenomena (UAP) programmes approached David Charles Grusch in his official capacity and disclosed concerns regarding wrongdoings such as illegal contracting against the Federal Acquisition Regulations, other criminality, and the suppression of information across a qualified industrial base and academia.
+  entailment:
+    label: entails
+    score: 0.655
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 59227116-7a53-4903-abaf-cc4041ebffc6
   type: hearsay
   attestation: second_hand
@@ -1046,6 +1277,11 @@ domain_claims:
     Associates who vouched for Grusch said his information was highly sensitive, providing evidence that materials from objects of non-human origin are in the possession of highly secret black programs.
   text: |-
     Associates who vouched for David Charles Grusch said his information was highly sensitive and provided evidence that materials from objects of non-human origin are in the possession of highly secret black programmes.
+  entailment:
+    label: neutral
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c819153-cde2-4607-aa2e-7c4d5c33c3ca
   type: administrative
   provenance_chain:
@@ -1062,6 +1298,11 @@ domain_claims:
     Although locations, program names, and other specific data remain classified, the Inspector General and intelligence committee staff were provided with these details.
   text: |-
     The Intelligence Community Inspector General (ICIG) and intelligence committee staff were provided with the classified locations, programme names, and other specific data underlying David Charles Grusch's disclosures.
+  entailment:
+    label: entails
+    score: 0.429
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: af692b3e-f7d3-4b0f-9921-a2e9f2bd2400
   type: administrative
   provenance_chain:
@@ -1078,6 +1319,11 @@ domain_claims:
     Several current members of the recovery program spoke to the Inspector General’s office and corroborated the information Grusch had provided for the classified complaint.
   text: |-
     Several current members of the non-human craft recovery programme spoke to the Intelligence Community Inspector General's office and corroborated the information David Charles Grusch had provided for the classified complaint.
+  entailment:
+    label: entails
+    score: 0.413
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d10d5aa6-2daf-44f3-8a58-f4fb148c21e0
   type: administrative
   provenance_chain:
@@ -1093,6 +1339,11 @@ domain_claims:
     Grusch left the government on April 7, 2023, in order, he said, to advance government accountability through public awareness.
   text: |-
     David Charles Grusch left the government on 2023-04-07, in order, he said, to advance government accountability through public awareness.
+  entailment:
+    label: entails
+    score: 0.446
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec452918-d978-4f9a-a7ca-fba8bdf2836f
   type: opinion
   attestation: first_hand
@@ -1115,6 +1366,11 @@ domain_claims:
     “His assertion concerning the existence of a terrestrial arms race occurring sub-rosa over the past eighty years focused on reverse engineering technologies of unknown origin is fundamentally correct, as is the indisputable realization that at least some of these technologies of unknown origin derive from non-human intelligence,” said Karl Nell
   text: |-
     David Charles Grusch's assertion concerning the existence of a terrestrial arms race occurring covertly over the past eighty years focused on reverse engineering technologies of unknown origin is fundamentally correct, and at least some of these technologies of unknown origin derive from non-human intelligence, according to Karl E. Nell.
+  entailment:
+    label: entails
+    score: 0.508
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9ec6c946-e41f-4bef-a7fe-b00f1657dcfa
   type: administrative
   attestation: second_hand
@@ -1135,6 +1391,11 @@ domain_claims:
     In a 2022 performance evaluation, Laura A. Potter, Deputy Chief of Staff for Intelligence, Headquarters, Department of the Army, described Nell as “an officer with the strongest possible moral compass.”
   text: |-
     In a 2022 performance evaluation, Karl E. Nell was described as an officer with the strongest possible moral compass by Laura A. Potter, Deputy Chief of Staff for Intelligence, Headquarters, Department of the Army.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 20f89708-d517-4672-af7f-a3425126b6e7
   type: administrative
   provenance_chain:
@@ -1160,6 +1421,11 @@ domain_claims:
     Grusch is represented by Charles McCullough III, senior partner of the Compass Rose Legal Group in Washington and the original Inspector General of the Intelligence Community, confirmed by the U.S. Senate in 2011.
   text: |-
     David Charles Grusch is represented by Charles McCullough III, senior partner of the Compass Rose Legal Group in Washington, D.C. and the original Inspector General of the Intelligence Community, confirmed by the United States Senate in 2011.
+  entailment:
+    label: entails
+    score: 0.438
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b50a48d2-f142-41a4-8f45-855a569bb295
   type: administrative
   provenance_chain:
@@ -1178,6 +1444,11 @@ domain_claims:
     At that time, McCullough reported directly to the then-Director of National Intelligence, James R. Clapper, and oversaw intelligence officers responsible for audits, inspections, and investigations.
   text: |-
     As Inspector General of the Intelligence Community, Charles McCullough III reported directly to the then-Director of National Intelligence, James R. Clapper, and oversaw intelligence officers responsible for audits, inspections, and investigations.
+  entailment:
+    label: entails
+    score: 0.606
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bfe59198-d256-45cd-a314-cd635eb6bebd
   type: administrative
   provenance_chain:
@@ -1201,6 +1472,11 @@ domain_claims:
     In May 2022, McCullough filed a Disclosure of Urgent Concern(s); Complaint of Reprisal on behalf of Grusch with the ICIG about detailed information that Grusch had gathered beginning in 2019 while working for the UAP Task Force.
   text: |-
     In May 2022, Charles McCullough III filed a Disclosure of Urgent Concern(s) and Complaint of Reprisal on behalf of David Charles Grusch with the Intelligence Community Inspector General (ICIG) about detailed information Grusch had gathered beginning in 2019 while working for the Unidentified Aerial Phenomena Task Force.
+  entailment:
+    label: entails
+    score: 0.617
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9638c8b2-2c93-4b78-b81c-2c660c2e1ba7
   type: testimony
   attestation: second_hand
@@ -1227,6 +1503,11 @@ domain_claims:
     An unclassified version of the complaint provided to us states that Grusch has direct knowledge that UAP-related classified information has been withheld and/or concealed from Congress by “elements” of the intelligence community “to purposely and intentionally thwart legitimate Congressional oversight of the UAP Program.”
   text: |-
     According to an unclassified version of the complaint, David Charles Grusch has direct knowledge that UAP-related classified information has been withheld or concealed from the United States Congress by elements of the intelligence community to purposely and intentionally thwart legitimate Congressional oversight of the UAP Program.
+  entailment:
+    label: entails
+    score: 0.905
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2726d900-4a7a-446b-8c15-74f4c4265f14
   type: administrative
   attestation: second_hand
@@ -1244,6 +1525,11 @@ domain_claims:
     All testimony Grusch provided for the classified complaint was provided under oath.
   text: |-
     All testimony David Charles Grusch provided for the classified complaint was provided under oath.
+  entailment:
+    label: entails
+    score: 0.442
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3ca72966-52e6-4c6b-8506-3c1f5813398d
   type: administrative
   attestation: second_hand
@@ -1268,6 +1554,11 @@ domain_claims:
     According to the unclassified complaint, in July 2021, Grusch had confidentially provided classified information to the Department of Defense Inspector General concerning the withholding of UAP-related information from Congress.
   text: |-
     According to the unclassified complaint, in July 2021 David Charles Grusch had confidentially provided classified information to the Department of Defense Inspector General concerning the withholding of UAP-related information from the United States Congress.
+  entailment:
+    label: entails
+    score: 0.418
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ecc536d3-4b05-42cf-990a-22154d415e91
   type: testimony
   attestation: second_hand
@@ -1290,6 +1581,11 @@ domain_claims:
     He believed that his identity, and the fact that he had provided testimony, were disclosed “to individuals and/or entities” within the Department of Defense and the Intelligence Community outside the IG’s office. He did not allege that this information was improperly disclosed by any member of that office.
   text: |-
     David Charles Grusch believed that his identity, and the fact that he had provided testimony, were disclosed to individuals or entities within the Department of Defense and the Intelligence Community outside the Inspector General's office, though he did not allege the information was improperly disclosed by any member of that office.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8c007843-eda8-4ead-b361-3f9e11a9748e
   type: testimony
   attestation: second_hand
@@ -1309,6 +1605,11 @@ domain_claims:
     As a result, Grusch suffered months of retaliation and reprisals related to these disclosures beginning in 2021.
   text: |-
     David Charles Grusch suffered months of retaliation and reprisals related to his disclosures beginning in 2021.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f56dd9ce-7197-4ebe-9652-bbd9fc3e49c9
   type: administrative
   provenance_chain:
@@ -1328,6 +1629,11 @@ domain_claims:
     The Intelligence Community Inspector General found his complaint “credible and urgent” in July 2022.
   text: |-
     The Intelligence Community Inspector General (ICIG) found David Charles Grusch's complaint credible and urgent in July 2022.
+  entailment:
+    label: entails
+    score: 0.885
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8b1193ca-2622-4de4-a54f-4377db92f326
   type: administrative
   attestation: first_hand
@@ -1352,6 +1658,11 @@ domain_claims:
     According to Grusch, a summary was immediately submitted to the Director of National Intelligence, Avril Haines; the Senate Select Committee on Intelligence; and the House Permanent Select Committee on Intelligence.
   text: |-
     A summary of David Charles Grusch's complaint was immediately submitted to the Director of National Intelligence Avril Haines, the Senate Select Committee on Intelligence, and the House Permanent Select Committee on Intelligence.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0f9355bd-8fe7-4050-b22f-deab3b3195cc
   type: administrative
   attestation: second_hand
@@ -1371,6 +1682,11 @@ domain_claims:
     The complaint was drafted and signed by McCullough and his managing partner. It ended with Grusch’s signature attached to his statement that “I do solemnly affirm under the penalties of perjury that the contents of the foregoing paper are true and correct to the best of my knowledge.”
   text: |-
     The Grusch ICIG whistleblower complaint was drafted and signed by Charles McCullough III and his managing partner and ended with David Charles Grusch's signed statement solemnly affirming under the penalties of perjury that the contents were true and correct to the best of his knowledge.
+  entailment:
+    label: entails
+    score: 0.442
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed0ed097-f7b6-4c26-b0b8-b548a1ba50de
   type: administrative
   provenance_chain:
@@ -1387,6 +1703,11 @@ domain_claims:
     A whistleblower reprisal investigation was launched, and Grusch began his communication with the staff of the Congressional intelligence committees in private closed-door sessions.
   text: |-
     A whistleblower reprisal investigation was launched, and David Charles Grusch began communicating with the staff of the Congressional intelligence committees in private closed-door sessions.
+  entailment:
+    label: entails
+    score: 0.425
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 07068d6f-fffe-4f5b-b012-23d5219b49a6
   type: testimony
   attestation: first_hand
@@ -1407,6 +1728,11 @@ domain_claims:
     According to Grusch, certain information which he obtained in his investigation could not be put before Congressional staffers because they did not have the necessary clearances or the appropriate investigative authority.
   text: |-
     Certain information David Charles Grusch obtained in his investigation could not be put before Congressional staffers because they did not have the necessary clearances or the appropriate investigative authority.
+  entailment:
+    label: entails
+    score: 0.979
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c02ebfea-4c5f-4ee1-acff-c920fe91b5dd
   type: administrative
   attestation: second_hand
@@ -1423,6 +1749,11 @@ domain_claims:
     A representative of the House Permanent Select Committee on Intelligence told us in March that the committee members are not able to comment on the content of a complaint or confirm the identity of a complainant.
   text: |-
     A representative of the House Permanent Select Committee on Intelligence said in March 2023 that committee members are not able to comment on the content of a complaint or confirm the identity of a complainant.
+  entailment:
+    label: entails
+    score: 0.401
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14c3305b-7835-49c9-9056-7f8d976b2098
   type: opinion
   attestation: first_hand
@@ -1443,6 +1774,11 @@ domain_claims:
     “When you have multiple agencies nesting UAP activities in conventional SAP/CAP programs, both as recipients of exploitation-related insights and for operational reasons, without appropriate reporting to various oversight authorities, you have a problem,” Grusch said, referencing the highly secret Special Access Programs and Controlled Access Programs.
   text: |-
     When multiple agencies nest unidentified anomalous phenomena (UAP) activities in conventional Special Access Programs (SAP) and Controlled Access Programs (CAP), both as recipients of exploitation-related insights and for operational reasons, without appropriate reporting to oversight authorities, there is a problem, according to David Charles Grusch.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 05a54df4-d773-4ae7-9c68-b2966fa799e9
   type: administrative
   provenance_chain:
@@ -1459,6 +1795,11 @@ domain_claims:
     Jonathan Grey, the intelligence officer specializing in UAP analysis at the National Air and Space Intelligence Center, is speaking publicly for the first time, identified here under the identity he uses inside the agency.
   text: |-
     Jonathan Grey is speaking publicly for the first time and is identified in the report under the identity he uses inside the National Air and Space Intelligence Center (NASIC).
+  entailment:
+    label: entails
+    score: 0.463
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a8a82f0c-dd5f-4275-81c0-068f40e7648e
   type: administrative
   provenance_chain:
@@ -1479,6 +1820,11 @@ domain_claims:
     NASIC, headquartered at Wright Patterson Air Force Base, is the Department of Defense’s primary Air Force source for foreign air and space threat analysis.
   text: |-
     The National Air and Space Intelligence Center (NASIC) is headquartered at Wright-Patterson Air Force Base and is the Department of Defense's primary Air Force source for foreign air and space threat analysis.
+  entailment:
+    label: entails
+    score: 0.649
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e9b746bc-3164-481e-a762-ae1edde53c2f
   type: administrative
   attestation: second_hand
@@ -1494,6 +1840,11 @@ domain_claims:
     Its mission is to “discover and characterize air, space, missile, and cyber threats,” according to the agency’s website.
   text: |-
     The mission of the National Air and Space Intelligence Center (NASIC) is to discover and characterise air, space, missile, and cyber threats.
+  entailment:
+    label: entails
+    score: 0.483
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4884c486-7912-42e5-ba7a-34a1f3b9ea49
   type: testimony
   attestation: first_hand
@@ -1512,6 +1863,11 @@ domain_claims:
     “The existence of complex historical programs involving the coordinated retrieval and study of exotic materials, dating back to the early 20th century, should no longer remain a secret,” he said.
   text: |-
     Complex historical programmes involving the coordinated retrieval and study of exotic materials, dating back to the early 20th century, exist and should no longer remain a secret, according to Jonathan Grey.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b9df73c7-9c54-4e13-a033-f8af6e64e7b0
   type: opinion
   attestation: first_hand
@@ -1530,6 +1886,11 @@ domain_claims:
     “The majority of retrieved, foreign exotic materials have a prosaic terrestrial explanation and origin – but not all, and any number higher than zero in this category represents an undeniably significant statistical percentage.”
   text: |-
     The majority of retrieved foreign exotic materials have a prosaic terrestrial explanation and origin, but not all, and any number higher than zero of non-prosaic cases represents a significant statistical percentage, according to Jonathan Grey.
+  entailment:
+    label: entails
+    score: 0.938
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ffb6198f-e266-4ab5-a665-8aa89667f6db
   type: administrative
   provenance_chain:
@@ -1546,6 +1907,11 @@ domain_claims:
     It is unusual for an Air Force insider to come forward, as the Air Force has been less forthcoming than other agencies with regard to UAP.
   text: |-
     The United States Air Force has been less forthcoming than other agencies with regard to unidentified anomalous phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.529
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 63f8b4f2-bf2a-4b5d-9453-b04f11bf29d7
   type: testimony
   attestation: first_hand
@@ -1566,6 +1932,11 @@ domain_claims:
     “A vast array of our most sophisticated sensors, including space-based platforms, have been utilized by different agencies, typically in triplicate, to observe and accurately identify the out-of-this-world nature, performance, and design of these anomalous machines, which are then determined not to be of earthly origin,” Grey said.
   text: |-
     A vast array of sophisticated sensors, including space-based platforms, have been utilised by different agencies, typically in triplicate, to observe and accurately identify the out-of-this-world nature, performance, and design of anomalous machines that are then determined not to be of earthly origin, according to Jonathan Grey.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ba9d2b31-1d72-4164-8cff-f147cf5f8946
   type: administrative
   provenance_chain:
@@ -1584,6 +1955,11 @@ domain_claims:
     Mellon, the former Deputy Assistant Secretary of Defense for Intelligence, has been instrumental in arranging classified briefings for members of Congress and other officials about UAP, which include references to exotic retrieved materials.
   text: |-
     Christopher Mellon has been instrumental in arranging classified briefings for members of the United States Congress and other officials about unidentified anomalous phenomena (UAP), which include references to exotic retrieved materials.
+  entailment:
+    label: entails
+    score: 0.444
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fb4db598-2583-46cd-bdd8-b38db1022d59
   type: administrative
   attestation: second_hand
@@ -1608,6 +1984,11 @@ domain_claims:
     The first briefing he facilitated on retrievals of unexplained objects was provided to staff members of the Senate Armed Services Committee on Oct. 21, 2019, and to staff members of the Senate Intelligence Committee two days later, as reported by The New York Times.
   text: |-
     The first briefing Christopher Mellon facilitated on retrievals of unexplained objects was provided to staff members of the Senate Armed Services Committee on 2019-10-21, and to staff members of the Senate Intelligence Committee two days later.
+  entailment:
+    label: contradicts
+    score: 0.553
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c470f29e-ab4c-4c8b-89ba-1aab93e1f1d0
   type: opinion
   attestation: first_hand
@@ -1628,6 +2009,11 @@ domain_claims:
     Mellon says that once the members of Congress gain greater awareness of the information provided to their staff and the Inspector General, they will be in a position to quickly determine the truth if they have the will to do so.
   text: |-
     Once members of the United States Congress gain greater awareness of the information provided to their staff and the Inspector General, they will be in a position to quickly determine the truth if they have the will to do so, according to Christopher Mellon.
+  entailment:
+    label: entails
+    score: 0.82
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8760ee60-73c0-48d6-ba6c-651fbdf1f543
   type: opinion
   attestation: first_hand
@@ -1648,6 +2034,11 @@ domain_claims:
     “This is an unprecedented oversight challenge for the committees, but I believe we have leaders in Congress who are up to the task,” Mellon said.
   text: |-
     The oversight challenge for the intelligence committees is unprecedented, but there are leaders in the United States Congress who are up to the task, according to Christopher Mellon.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc75d962-7f6d-41b7-a754-1bec418b2999
   type: testimony
   attestation: first_hand
@@ -1670,6 +2061,11 @@ domain_claims:
     “High-level, classified briefing materials exist in which real-world scenarios involving UAP, as evidenced by historical examples, are made available to Intelligence Personnel on a need-to-know basis,” he told us. “I have been the recipient of such briefings for almost a decade.”
   text: |-
     High-level classified briefing materials exist in which real-world scenarios involving unidentified anomalous phenomena (UAP), evidenced by historical examples, are made available to intelligence personnel on a need-to-know basis, and Jonathan Grey has been a recipient of such briefings for almost a decade.
+  entailment:
+    label: entails
+    score: 0.536
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b97f58d7-890a-4b19-8eca-08346c303c52
   type: administrative
   attestation: second_hand
@@ -1689,6 +2085,11 @@ domain_claims:
     The National Defense Authorization Act for FY2023 tasked the Secretary of Defense, in consultation with the Director of National Intelligence, with establishing for the first time a secure mechanism for the authorized reporting of sensitive information to defense channels.
   text: |-
     The FY2023 National Defense Authorization Act tasked the Secretary of Defense, in consultation with the Director of National Intelligence, with establishing for the first time a secure mechanism for the authorised reporting of sensitive information to defence channels.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: efc03f67-b0a2-4ab2-9ee2-0d4c5582cf86
   type: administrative
   attestation: second_hand
@@ -1706,6 +2107,11 @@ domain_claims:
     the legislation asks for reporting on “material retrieval, material analysis, reverse engineering, research, and development” involving unidentified anomalous phenomena currently and going back decades.
   text: |-
     The FY2023 National Defense Authorization Act asks for reporting on material retrieval, material analysis, reverse engineering, research, and development involving unidentified anomalous phenomena currently and going back decades.
+  entailment:
+    label: entails
+    score: 0.691
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d889ff5b-3366-4b8d-b8c5-ac806f510d0b
   type: administrative
   provenance_chain:
@@ -1722,6 +2128,11 @@ domain_claims:
     Dr. Garry Nolan, a Professor in the Department of Pathology at Stanford University and a renowned inventor and entrepreneur with more than three hundred published papers, has started over half a dozen companies based on technologies out of his laboratory.
   text: |-
     Garry Nolan is a Professor in the Department of Pathology at Stanford University and an inventor and entrepreneur with more than three hundred published papers who has started over half a dozen companies based on technologies out of his laboratory.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f7b7f5c9-b9f8-47f7-b2e1-de2aa624ede8
   type: administrative
   provenance_chain:
@@ -1736,6 +2147,11 @@ domain_claims:
     Nolan has previously applied some of those technologies to the analysis of exotic materials, publishing the first peer-reviewed paper examining such materials.
   text: |-
     Garry Nolan has applied some of his laboratory technologies to the analysis of exotic materials, publishing the first peer-reviewed paper examining such materials.
+  entailment:
+    label: entails
+    score: 0.483
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b216bbd3-eb0d-4ba6-a673-4ed99f5e6f67
   type: opinion
   attestation: first_hand
@@ -1754,6 +2170,11 @@ domain_claims:
     Studying even small samples of purported anomalous material could lead to currently inconceivable benefits for humanity, he said. “What might be represented here could be hundreds of technology revolutions ahead of us. It could be more transformative for humanity than what the microprocessor accomplished.
   text: |-
     Studying even small samples of purported anomalous material could lead to currently inconceivable benefits and technology revolutions for humanity, potentially more transformative than the microprocessor, according to Garry Nolan.
+  entailment:
+    label: entails
+    score: 0.958
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d944c705-dc8a-4e4d-8549-453888727ba3
   type: administrative
   attestation: second_hand
@@ -1769,6 +2190,11 @@ domain_claims:
     the whistleblower legislation forbids any federal employee from retaliating against anyone providing authorized disclosure.
   text: |-
     The whistleblower legislation forbids any federal employee from retaliating against anyone providing authorised disclosure.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 90c63703-ce8e-4c73-8363-7fc668e762ed
   type: opinion
   attestation: first_hand
@@ -1787,6 +2213,11 @@ domain_claims:
     “Whistleblowing is essential to the checks and balances of our government – and no federal employee should feel discouraged from stepping forward due to fear of retaliation,” Rep. Andre Carson told us.
   text: |-
     Whistleblowing is essential to the checks and balances of government, and no federal employee should feel discouraged from stepping forward due to fear of retaliation, according to Andre Carson.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a92a1dc7-2d80-4889-a768-2a71391c0e48
   type: administrative
   provenance_chain:
@@ -1808,6 +2239,11 @@ domain_claims:
     In May 2022, Carson presided over the first open Congressional hearing on UAP since 1968.
   text: |-
     In May 2022, Andre Carson presided over the first open Congressional hearing on unidentified anomalous phenomena (UAP) since 1968.
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d1b54fab-e8ee-49d5-93ba-674c98b5d806
   type: opinion
   attestation: first_hand
@@ -1830,6 +2266,11 @@ domain_claims:
     l technological advancements may be gleaned from non-human intelligence/UAP retrievals by any sufficiently advanced nation and then used to wage asymmetrical warfare, so, therefore, some secrecy must remain,” he says.
   text: |-
     Advanced technological advancements may be gleaned from Non-Human Intelligence (NHI) and Unidentified Anomalous Phenomena (UAP) retrievals by any sufficiently advanced nation and then used to wage asymmetrical warfare, so some secrecy must remain.
+  entailment:
+    label: entails
+    score: 0.448
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d51c8f0b-69ab-4bcb-b732-b95521c19cbb
   type: opinion
   attestation: first_hand
@@ -1850,6 +2291,11 @@ domain_claims:
     “However, it is no longer necessary to continue to deny that these advanced technologies derived from non-human intelligence exist at all or to deny that these technologies have landed, crashed, or fallen into the hands of human beings.”
   text: |-
     Jonathan Grey considers it no longer necessary to continue to deny that advanced technologies derived from Non-Human Intelligence (NHI) exist at all, or to deny that these technologies have landed, crashed, or fallen into the hands of human beings.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5f12a1be-c0aa-4363-90c8-46aa5a43cdb4
   type: opinion
   attestation: first_hand
@@ -1868,6 +2314,11 @@ domain_claims:
     Grey noted that the hypothesis that the United States alone has bullied the other nations into maintaining this secrecy for nearly a century continues to prevail as the primary consensus amongst the public at large.
   text: |-
     The hypothesis that the United States alone has bullied the other nations into maintaining secrecy about Non-Human Intelligence (NHI) for nearly a century continues to prevail as the primary consensus amongst the public at large.
+  entailment:
+    label: entails
+    score: 0.762
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9682cb4d-d280-4b4b-b9ba-0645fbeaf201
   type: opinion
   attestation: first_hand
@@ -1886,6 +2337,11 @@ domain_claims:
     “My hope is to dissuade the global populace from this archaic and preposterous notion, and to potentially pave the way for a much broader discussion,” he said.
   text: |-
     Jonathan Grey hopes to dissuade the global populace from the notion that the United States alone has bullied other nations into secrecy, and to potentially pave the way for a much broader discussion.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8d12444c-04cb-4255-8c33-2ba242e3022f
   type: opinion
   attestation: first_hand
@@ -1906,6 +2362,11 @@ domain_claims:
     Grusch said it was dangerous for this “eighty-year arms race” to continue in secrecy because it “further inhibits the world populace to be prepared for an unexpected, non-human intelligence contact scenario.”
   text: |-
     David Charles Grusch considers it dangerous for the eighty-year arms race over Non-Human Intelligence (NHI) technology to continue in secrecy because it further inhibits the world populace from being prepared for an unexpected non-human intelligence contact scenario.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4a1e5079-4a7b-459f-a610-15bdfb91b66f
   type: opinion
   attestation: first_hand
@@ -1926,6 +2387,11 @@ domain_claims:
     “I hope this revelation serves as an ontological shock sociologically and provides a generally uniting issue for nations of the world to re-assess their priorities,” Grusch said.
   text: |-
     David Charles Grusch hopes the revelation about Non-Human Intelligence (NHI) serves as an ontological shock sociologically and provides a generally uniting issue for nations of the world to re-assess their priorities.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 3e179c0d-1e1b-47c7-8ab4-f0d7d730d434
   type: administrative
@@ -1952,6 +2418,11 @@ infrastructure_claims:
     Leslie Kean and Ralph Blumenthal, with Helene Cooper, co-authored the Dec. 17, 2017, front-page article in The New York Times that disclosed the existence of a secret Pentagon program investigating UAP.
   text: |-
     Leslie Kean and Ralph Blumenthal, with Helene Cooper, co-authored the 2017-12-17 front-page article in The New York Times that disclosed the existence of a secret Pentagon program investigating Unidentified Anomalous Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.621
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dc7bfe0e-5b30-452c-b100-c7b9186676ec
   type: administrative
   provenance_chain:
@@ -1972,3 +2443,8 @@ infrastructure_claims:
     Tim McMillan, Micah Hanks, Craig Labadie ,and Sean Munger contributed to this article.
   text: |-
     Tim McMillan, Micah Hanks, Craig Labadie and Sean Munger contributed to the article on Non-Human Intelligence (NHI) craft retrieval.
+  entailment:
+    label: entails
+    score: 0.374
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

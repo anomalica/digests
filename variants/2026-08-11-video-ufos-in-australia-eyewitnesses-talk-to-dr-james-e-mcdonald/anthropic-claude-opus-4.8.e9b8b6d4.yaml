@@ -13,6 +13,12 @@ ai_usage:
     cache_write: 0
     calls: 4
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 11.1
 prompts:
 - pass: nodes
   id: nodes
@@ -201,6 +207,11 @@ domain_claims:
     I've been down here in Australia interviewing witnesses to find out for myself, in direct, face-to-face, or in some cases, phone interviewing, exactly what happened in individual cases and what the credibility of the witness is
   text: |-
     James E. MacDonald travelled to Australia to interview witnesses in direct face-to-face or telephone interviews to determine for himself what happened in individual Unidentified Flying Object (UFO) cases and to assess the credibility of the witnesses.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 11d26de0-3b29-426f-b552-100bc5bb6cfa
   type: opinion
   attestation: first_hand
@@ -220,6 +231,11 @@ domain_claims:
   quote: Certainly as a scientist, I am not entirely happy with taking hearsay evidence
   text: |-
     As a scientist, James E. MacDonald is not entirely happy taking hearsay evidence regarding Unidentified Flying Object (UFO) cases.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 42039add-6030-448c-9ad5-3eacff4d6b22
   type: observation
   attestation: second_hand
@@ -238,6 +254,11 @@ domain_claims:
     I saw a cigar-shaped object, approximately 1949 this would be... It was about 9 to 9:30 p.m. in the evening.
   text: |-
     A caller identified as Mrs. Smith from South Caulfield saw a cigar-shaped object at around 9:00 to 9:30 in the evening in approximately 1949.
+  entailment:
+    label: entails
+    score: 0.668
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e181e28c-7b72-462a-b08d-0e46f7f4b752
   type: observation
   attestation: second_hand
@@ -257,6 +278,11 @@ domain_claims:
     it was perfectly stationary. had a dull light inside and then as though it had an electric light globe going up and down from, you know, top to bottom continuously.
   text: |-
     The cigar-shaped object seen by Mrs. Smith over Hawthorn, Melbourne, was perfectly stationary and had a dull light inside that moved up and down from top to bottom continuously as though from an electric light globe.
+  entailment:
+    label: entails
+    score: 0.495
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 075f7cb8-eff5-4eb4-91f6-caf504ec9727
   type: testimony
   attestation: second_hand
@@ -271,6 +297,11 @@ domain_claims:
   quote: Yes, in Hawthorne. We were living in Hawthorne at the time.
   text: |-
     Mrs. Smith was living in Hawthorn, Melbourne, at the time she saw the cigar-shaped object.
+  entailment:
+    label: entails
+    score: 0.531
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad063a41-f445-4575-b479-aa9f47f1dbf6
   type: testimony
   attestation: second_hand
@@ -283,6 +314,11 @@ domain_claims:
     And I watched it for some time and I got one of my daughters out of bed to verify that it was there in case people thought I'd, you know.
   text: |-
     Mrs. Smith got one of her daughters out of bed to verify that the cigar-shaped object was there.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3995785f-d43a-480b-80a5-c28f8ea08d40
   type: observation
   attestation: second_hand
@@ -297,6 +333,11 @@ domain_claims:
   quote: it was clear and almost cloudless
   text: |-
     The weather at the time Mrs. Smith saw the cigar-shaped object over Hawthorn was clear and almost cloudless, with no thunderstorms anywhere in the area.
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2f4af538-fcfe-48a1-a40b-6363c193dcbd
   type: testimony
   attestation: second_hand
@@ -316,6 +357,11 @@ domain_claims:
     I rang The Sun and the chap on the switchboard said that he had also seen it and he was inundated with calls.
   text: |-
     Mrs. Smith telephoned The Sun newspaper to report the cigar-shaped object, and the person on the switchboard said he had also seen it and was inundated with calls.
+  entailment:
+    label: entails
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 782992b7-1006-4ee4-85cd-2014bea77f61
   type: observation
   attestation: second_hand
@@ -331,6 +377,11 @@ domain_claims:
     But I noticed there was nothing much in the paper the next morning about it. Just a tiny little paragraph.
   text: |-
     The Sun newspaper published only a tiny paragraph about the cigar-shaped object the morning after Mrs. Smith's sighting.
+  entailment:
+    label: entails
+    score: 0.48
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 473470a0-edf1-4957-bd48-d1d9ca62063d
   type: observation
   attestation: second_hand
@@ -346,6 +397,11 @@ domain_claims:
     when I came out from the phone, I suppose it would be a period of 10 minutes, there was a black cloud there... And I waited till the cloud went by and the object had gone.
   text: |-
     After Mrs. Smith returned from telephoning, about ten minutes later, a black cloud appeared and after the cloud passed the cigar-shaped object had gone.
+  entailment:
+    label: entails
+    score: 0.484
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6f93a008-c0ec-48b0-a25d-ce6eb7f99828
   type: opinion
   attestation: first_hand
@@ -367,6 +423,11 @@ domain_claims:
   quote: Yes, that rules out plasmoids of the ball lightning type.
   text: |-
     James E. MacDonald assessed that the clear, non-thundery conditions of Mrs. Smith's sighting rule out plasmoids of the ball lightning type.
+  entailment:
+    label: entails
+    score: 0.762
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6b0cb656-5c36-4f29-94b2-59de29ba2eae
   type: opinion
   attestation: first_hand
@@ -386,6 +447,11 @@ domain_claims:
   quote: The possibility that it's a meteoric fireball is ruled out...
   text: |-
     James E. MacDonald assessed that the stationary aspect of Mrs. Smith's sighting rules out the possibility that it was a meteoric fireball.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2ce68667-3eda-4584-9d24-2dc6a894bada
   type: observation
   attestation: second_hand
@@ -399,6 +465,11 @@ domain_claims:
     name: Unidentified Flying Object (UFO)
   quote: If there was no sound together... No, not at all.
   text: The cigar-shaped object seen by Mrs. Smith made no sound.
+  entailment:
+    label: entails
+    score: 0.473
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6fcc3dde-22e1-46ac-8fd5-a135bd6b71c3
   type: opinion
   attestation: first_hand
@@ -421,6 +492,11 @@ domain_claims:
     Soundless objects hovering stationary in conditions that do not imply ball lightning, rule out meteors. That's an interesting case, the type of case that if we had an opportunity I'd want to pursue further.
   text: |-
     James E. MacDonald characterised soundless objects hovering stationary in conditions that do not imply ball lightning and rule out meteors as an interesting type of case worth pursuing further.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7bbf7014-51b6-4f15-a02b-d01d468d9224
   type: administrative
   attestation: second_hand
@@ -440,6 +516,11 @@ domain_claims:
   quote: |-
     Professor James MacDonald, the University of Arizona, talking about unidentified flying objects.
   text: James E. MacDonald is affiliated with the University of Arizona.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 71fda24e-8fbe-42e5-8f8f-41064f6651ea
   type: observation
   attestation: second_hand
@@ -456,6 +537,11 @@ domain_claims:
     just before Christmas last December, I saw... It was a clear night. I saw what I thought at first was a shooting star... But instead of sort of going down, it went straight across the sky in a straight line... it stopped for a little while, for a few minutes, and then it sort of went, started moving towards the horizon again after that.
   text: |-
     A caller in Melbourne saw, on a clear night just before Christmas in December of the previous year, what she thought at first was a shooting star but which went straight across the sky in a straight line, stopped for a few minutes, and then moved towards the horizon.
+  entailment:
+    label: entails
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 541e7afc-364d-4898-9255-6676750afe16
   type: observation
   attestation: second_hand
@@ -472,6 +558,11 @@ domain_claims:
     in February, I saw, with my mother-in-law and sister-in-law, we saw two of them. And the first one sort of stopped. It sort of seemed to be hovering. And then we saw another one, and that came up towards the first one, and they appeared to be having some sort of rendezvous. And then the second one moved off into the horizon, and the first one just stayed there stationary.
   text: |-
     The same caller, together with her mother-in-law and sister-in-law, saw two objects in February, one of which appeared to hover while a second came up towards it in an apparent rendezvous, after which the second moved off into the horizon and the first stayed stationary.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 46081183-b518-4b6e-a89d-178941c65660
   type: opinion
   attestation: first_hand
@@ -492,6 +583,11 @@ domain_claims:
     this general category of observation in which it is simply a light in the sky is an extremely dangerous category with respect to misinterpretation
   text: |-
     James E. MacDonald considers observations that are simply a light in the sky an extremely dangerous category with respect to misinterpretation.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f0f3293b-9ede-401d-9e94-dbbedd6fd3e0
   type: opinion
   attestation: first_hand
@@ -512,6 +608,11 @@ domain_claims:
     lots of persons in the US and Australia and elsewhere are making reports just like that of lights that move across, hover, exhibit maneuvers that do not at all match meteors.
   text: |-
     Many people in the United States, Australia and elsewhere are reporting lights that move across, hover, and exhibit manoeuvres that do not match meteors.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6cc6908a-a2ba-43d3-b8fc-c339b369c412
   type: opinion
   attestation: first_hand
@@ -528,6 +629,11 @@ domain_claims:
     name: James E. MacDonald
   quote: I don't know of any hovering meteors in all history of mankind.
   text: James E. MacDonald knows of no hovering meteors in all the history of mankind.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c11b92ff-391a-4b36-b9bd-840e06235be6
   type: observation
   attestation: second_hand
@@ -546,6 +652,11 @@ domain_claims:
     I was driving a cab about five years ago... i was driving in with this fair uh in a westerly direction that began towards the city uh it was around about nine o'clock in the morning and um i i i saw this object... cylindrical in in um in shape and uh silvery color
   text: |-
     A caller who was driving a cab about five years earlier saw, at around 9:00 in the morning while driving in a westerly direction towards the city near a road running parallel with Victoria Street towards East Melbourne, a definite cylindrical silvery object hovering in the sky over the eastern hills.
+  entailment:
+    label: entails
+    score: 0.565
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8bf6b4b3-a2ae-41dc-a2cb-991ba0e8f605
   type: testimony
   attestation: second_hand
@@ -560,6 +671,11 @@ domain_claims:
     name: Unidentified Flying Object (UFO)
   quote: I brought it to the attention of the Fair. And she saw it also.
   text: The cab driver's passenger also saw the cylindrical silvery object.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8a7cb557-54c3-4394-a9e3-202f1be4f380
   type: testimony
   attestation: second_hand
@@ -578,6 +694,11 @@ domain_claims:
     I went to the Herald Office to report it. And uh fellas at the Herald Office. thought I was a bloomin' nut, I think.
   text: |-
     The cab driver went to the office of The Herald newspaper to report the cylindrical silvery object, and the staff there treated him as though he were a nut.
+  entailment:
+    label: entails
+    score: 0.535
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b831126a-3708-44a5-9729-478469af87bc
   type: observation
   attestation: second_hand
@@ -594,6 +715,11 @@ domain_claims:
     There was sun shining brightly and it was a clear sky, but there was definitely an object there in the sky.
   text: |-
     The cylindrical silvery object seen by the cab driver disappeared suddenly under a clear sky with the sun shining brightly.
+  entailment:
+    label: entails
+    score: 0.638
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 39b71602-1e0c-4b42-9c74-c56776a822e4
   type: observation
   attestation: second_hand
@@ -610,6 +736,11 @@ domain_claims:
     It was a cylindrical object... Stationary, yes. It was stationary. And then all of a sudden, it just took off in a just flashed off and that was the end of it
   text: |-
     The cylindrical silvery object seen by the cab driver had no wings and was stationary before it suddenly flashed off.
+  entailment:
+    label: entails
+    score: 0.564
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ccd95d00-c72b-4cf7-9fa2-2dd3d0172eb2
   type: observation
   attestation: second_hand
@@ -626,6 +757,11 @@ domain_claims:
     it was a clear, sunny morning... it was in the summertime. There was no haze or any description... there was absolutely no haze of any description of fog or anything at all like that around the city.
   text: |-
     The cab driver's sighting of the cylindrical silvery object occurred on a clear, sunny summer morning with no haze or fog of any description around the city.
+  entailment:
+    label: entails
+    score: 0.418
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 63cf5dab-cb89-4abf-a92e-07f45c2ef699
   type: opinion
   attestation: first_hand
@@ -646,6 +782,11 @@ domain_claims:
     Again and again, in interviewing witnesses, you hear about these cases... And a very common puzzlement arises then. The person says, well, no, that was one of the things that really bothered him... the answer is either, no, I didn't report it, fear of ridicule or a little reluctance to have it sensationalized
   text: |-
     James E. MacDonald found that when he asks witnesses whether other people saw an object, a common puzzlement arises because the witness would have expected many others to have seen it, and witnesses commonly did not report it out of fear of ridicule or reluctance to have it sensationalised.
+  entailment:
+    label: entails
+    score: 0.837
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 39a14d0b-ddf9-4525-99dd-ef3374084e74
   type: opinion
   attestation: first_hand
@@ -665,6 +806,11 @@ domain_claims:
   quote: there are cases where dozens of people have seen objects of unconventional sort
   text: |-
     James E. MacDonald referred to Unidentified Flying Object (UFO) cases where dozens of people have seen objects of an unconventional sort.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5047e82e-1e60-4182-b4e4-ac0daa026d23
   type: opinion
   attestation: first_hand
@@ -685,6 +831,11 @@ domain_claims:
     That's one of the many patterns that I find in my trip down here that's essentially the same in Australia as in the States. A general rejection of this by persons who usually have almost no knowledge of it... they tend to filter out a lot of the information that should be getting into scientific channels.
   text: |-
     James E. MacDonald found the same pattern of general rejection of Unidentified Flying Object (UFO) reports by people with almost no knowledge of the subject occurring in Australia as in the United States, with such people in press or radio filtering out information that should reach scientific channels.
+  entailment:
+    label: neutral
+    score: 0.562
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3724de10-3be4-4e2f-a807-fbc28cb8944d
   type: testimony
   attestation: first_hand
@@ -707,6 +858,11 @@ domain_claims:
     I hope we do get a chance to give you a ring sometime during the day before I head down to Tasmania.
   text: |-
     James E. MacDonald intended to head down to Tasmania after his time in Melbourne.
+  entailment:
+    label: neutral
+    score: 0.592
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed4d7d78-1183-4892-ba5c-5b8bff07c45f
   type: opinion
   attestation: first_hand
@@ -731,6 +887,11 @@ domain_claims:
     The main difficulty is Jung was not at all addressing himself to what is the real UFO problem. He is talking about psychotic types who have some kind of psychic needs to believe.
   text: |-
     James E. MacDonald considers that Carl Gustav Jung's theory of flying saucers did not address the real Unidentified Flying Object (UFO) problem but was about psychotic types who have psychic needs to believe.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 11a95744-b203-4f8f-954f-cdfc47dd5d23
   type: opinion
   attestation: first_hand
@@ -751,6 +912,11 @@ domain_claims:
     one does see this sort of thing emerging in the cult and crackpot fringe, which is unfortunately very visible, particularly in America, centered around the UFO problem. People who feel that there's a salvation message being brought from Venus and all that sort of rot.
   text: |-
     James E. MacDonald observed a cult and crackpot fringe centred around the Unidentified Flying Object (UFO) problem, particularly visible in America, involving people who feel there is a salvation message being brought from Venus.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 335fe26e-dabd-43c0-853c-464509f4b95b
   type: opinion
   attestation: first_hand
@@ -773,6 +939,11 @@ domain_claims:
     If you read the book carefully, you find him near the end of that book taking the problem seriously in terms of the possibility there may be something other than what he's talking about in the psychological art.
   text: |-
     James E. MacDonald read Carl Gustav Jung's book on flying saucers and stated that near the end of it Jung takes the problem seriously in terms of the possibility that there may be something other than the psychological explanation he describes.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1958628a-9184-4f32-8720-1401cd65193a
   type: opinion
   attestation: first_hand
@@ -797,6 +968,11 @@ domain_claims:
     There are lots of cases where animals are present, dogs, horses, cows, and so on. Jung says these are psychic projections of archetypal images... we have to make the assumption that canine, equine, feline, bovine archetypal images are identical with ours.
   text: |-
     James E. MacDonald noted there are many Unidentified Flying Object (UFO) cases where animals such as dogs, horses and cows are present, and argued that Carl Gustav Jung's explanation of these as psychic projections of archetypal images would require assuming that canine, equine, feline and bovine archetypal images are identical with human ones.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d12eb2f5-7ddd-4819-b7d6-85056130b74e
   type: testimony
   attestation: first_hand
@@ -821,6 +997,11 @@ domain_claims:
     we were down with the Melbourne UFO group, the Victorian Flying Saucer Society, very helpfully have been taking me around the countryside to some of the key witnesses.
   text: |-
     The Victorian Flying Saucer Society took James E. MacDonald around the countryside to some of the key Unidentified Flying Object (UFO) witnesses in the Melbourne area.
+  entailment:
+    label: entails
+    score: 0.665
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b171f9ac-dbce-495d-bb5c-ebbf314ae47f
   type: hearsay
   attestation: second_hand
@@ -848,6 +1029,11 @@ domain_claims:
     We were down in Mowi, in the Gippsland area, talking to a farmer named Brew, who was milking 0700 on February of 1963. All of a sudden, coming out of the overcast was a large disc-like object which hovered over a tree 100 yards away.
   text: |-
     A farmer named Brew at Moe in the Gippsland area was milking at about 07:00 in February 1963 when a large disc-like object came out of the overcast and hovered over a tree approximately 90 metres away.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a597c118-120b-49ff-bd07-f3ae16ab5a00
   type: testimony
   attestation: first_hand
@@ -869,6 +1055,11 @@ domain_claims:
   quote: I was on the spot a few days ago looking at it.
   text: |-
     James E. MacDonald visited the site of the Moe disc sighting a few days before this interview.
+  entailment:
+    label: neutral
+    score: 0.618
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 648efb37-7168-46ab-9017-1f962f80bac7
   type: hearsay
   attestation: second_hand
@@ -891,6 +1082,11 @@ domain_claims:
     The cattle, he was most impressed by the way in which the cattle jumped and stampeded, the dogs started barking, horses broke loose and so on.
   text: |-
     During the Moe disc sighting, farmer Brew was most impressed by how the cattle jumped and stampeded, the dogs started barking, and the horses broke loose.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 849cfcc5-cd0e-4f25-8c85-c6488bd762a8
   type: testimony
   attestation: first_hand
@@ -918,6 +1114,11 @@ domain_claims:
     On the 7th of June, I was at the United Nations speaking to the Outer Space Affairs Group about the UFO problem, submitted some formal statements to them, urging UN action on the UFO problem.
   text: |-
     On 7 June 1967, James E. MacDonald was at the United Nations speaking to the Outer Space Affairs Group about the Unidentified Flying Object (UFO) problem and submitted formal statements urging United Nations action on the problem.
+  entailment:
+    label: neutral
+    score: 0.464
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 200fbfeb-0869-4941-839f-3c7732ee7da5
   type: testimony
   attestation: first_hand
@@ -937,6 +1138,11 @@ domain_claims:
     name: U Thant
   quote: I had a date to see U Thant, but the Mideast crisis interfered.
   text: James E. MacDonald had a date to see U Thant, but the Mideast crisis interfered.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a767c087-35e5-4f6c-9288-95dd63c9b9d5
   type: hearsay
   attestation: third_hand
@@ -962,6 +1168,11 @@ domain_claims:
     in some kind of an exchange with Drew Pearson, U Thant made a statement now about four or five days ago, I guess six days ago, that the UFO problem is probably the most important international problem, with the present exception of the Vietnam War.
   text: |-
     In an exchange with Drew Pearson about five or six days before this interview, U Thant made a statement that the Unidentified Flying Object (UFO) problem is probably the most important international problem, with the present exception of the Vietnam War.
+  entailment:
+    label: entails
+    score: 0.589
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d37a3299-3460-4b89-97e3-79537d51dc48
   type: opinion
   attestation: first_hand
@@ -984,6 +1195,11 @@ domain_claims:
     I cabled U Thant a reply, endorsing the statement, but disagreeing to the extent of saying that, in my opinion, the UFO problem is probably even greater in international importance than the Vietnamese situation.
   text: |-
     James E. MacDonald cabled U Thant a reply endorsing his statement but disagreeing to the extent that in his opinion the Unidentified Flying Object (UFO) problem is probably even greater in international importance than the Vietnamese situation.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 18875459-22f7-4733-82d4-bb9fdba40bae
   type: testimony
   attestation: first_hand
@@ -1004,6 +1220,11 @@ domain_claims:
     He was, of course, the disciple of Freud, but he's neither the first or the last disciple to break away somewhat from the teachings of his master, which he did when he reached middle life.
   text: |-
     Carl Gustav Jung was a disciple of Sigmund Freud who later broke away somewhat from the teachings of his master when he reached middle life.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7212014f-902c-4f5f-91b9-9c365ce899c0
   type: testimony
   attestation: first_hand
@@ -1021,6 +1242,11 @@ domain_claims:
     I'm a civil engineer, and ten years ago I was employed by contractors building the first geothermal power station in Wairakei in New Zealand.
   text: |-
     Speaker 8 worked as a civil engineer employed by contractors building the first geothermal power station at Wairakei in New Zealand about ten years before the 1967 broadcast.
+  entailment:
+    label: entails
+    score: 0.417
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95883018-b600-406f-81fa-fac969e0c38e
   type: observation
   attestation: first_hand
@@ -1038,6 +1264,11 @@ domain_claims:
     One day I was surveying to set out the pipelines... I had a survey assistant at the time, a Maori, who was about 300 feet away... we both quite independently saw this grey object which for want of a better name I'll call a flying saucer
   text: |-
     While surveying to set out the pipelines in the area of the thermal bores at Wairakei, a civil engineer and his Maori survey assistant, positioned about 90 metres apart, independently saw a grey saucer-shaped object.
+  entailment:
+    label: entails
+    score: 0.506
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b5321842-ef17-4511-a1a5-86e0ebcbc6a6
   type: observation
   attestation: first_hand
@@ -1055,6 +1286,11 @@ domain_claims:
     which arose out of the steam board the way over on the horizon, went vertically upwards, it was saucer shaped, it traversed towards us and away from us
   text: |-
     The grey saucer-shaped object seen at Wairakei arose out of the steam board on the horizon, went vertically upwards, was saucer shaped, and traversed towards and away from the observers.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f1209206-3135-4002-8d36-df65d61ad50b
   type: observation
   attestation: first_hand
@@ -1072,6 +1308,11 @@ domain_claims:
     it arose in the east and went towards the northwest at a very high speed, faster than any plane we knew of at the time
   text: |-
     The saucer-shaped object seen at Wairakei arose in the east and travelled towards the northwest at a very high speed, faster than any plane the observers knew of at the time.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 74a12a3e-d823-4365-a113-66600024557e
   type: observation
   attestation: first_hand
@@ -1089,6 +1330,11 @@ domain_claims:
     there was broken cloud at the time, and we kept on seeing these things that would go behind clouds and reappear
   text: |-
     There was broken cloud at the time of the Wairakei sighting, and the observers kept seeing the object go behind clouds and reappear.
+  entailment:
+    label: neutral
+    score: 0.55
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ebd4eab8-695f-4f49-9894-9aec07e7eb04
   type: observation
   attestation: first_hand
@@ -1104,6 +1350,11 @@ domain_claims:
     in the field of steam boars, which put out a terrific roar... to make anyone else hear you, you have to almost shout in their ear.
   text: |-
     The field of steam bores at Wairakei put out a terrific roar such that one had to almost shout in another person's ear to be heard, preventing any sound from the object from being heard.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c601827-cb1e-417a-a1cb-9cdbea389771
   type: measurement
   attestation: first_hand
@@ -1121,6 +1372,11 @@ domain_claims:
     our horizon was a hill or ridge about, say, a mile and a half away. and I'd estimate the clouds appearing at at least 500 feet, so the height of the thing must have been more than 500 feet.
   text: |-
     The horizon at the Wairakei sighting was a hill or ridge about 2.4 kilometres away, the clouds were at least approximately 150 metres up, so the height of the object must have been more than approximately 150 metres.
+  entailment:
+    label: entails
+    score: 0.471
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 728f33e9-b957-419a-bb7c-fd2e4c5f2eff
   type: observation
   attestation: first_hand
@@ -1138,6 +1394,11 @@ domain_claims:
     It was only a dark grey saucer shaped object and I couldn't return any other detail of it.
   text: |-
     The object seen at Wairakei was only a dark grey saucer-shaped object and no other detail could be discerned.
+  entailment:
+    label: entails
+    score: 0.466
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fb158a5a-a817-401d-beb2-3cf72a63abd7
   type: testimony
   attestation: first_hand
@@ -1153,6 +1414,11 @@ domain_claims:
     We sort of both talked to my fellow engineers about it, who immediately rubbished us... No, none of them had seen it. It was only the two of us.
   text: |-
     When the two Wairakei observers reported their sighting to fellow engineers at the construction site, the engineers immediately ridiculed them and none of them had seen the object.
+  entailment:
+    label: entails
+    score: 0.499
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8b3f9c21-0e7a-4f1c-8ec4-106d1040932f
   type: testimony
   attestation: first_hand
@@ -1168,6 +1434,11 @@ domain_claims:
     the Maori chainman, of course, didn't like to be made fun of in such a way, so he immediately disclaimed he'd seen it.
   text: |-
     After being made fun of, the Maori chainman who had witnessed the Wairakei object disclaimed that he had seen it.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d2af20f5-8a1c-4748-a97e-c1a5eb004503
   type: testimony
   attestation: first_hand
@@ -1187,6 +1458,11 @@ domain_claims:
     James E. MacDonald: You never reported that to the RAF or the New Zealand Air Force? Speaker 8: No, not at all.
   text: |-
     The civil engineer who witnessed the Wairakei object never reported it to the Royal Australian Air Force (RAF) or the New Zealand Air Force.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 483eef29-7e34-431b-859a-40ca4467d819
   type: opinion
   attestation: first_hand
@@ -1202,6 +1478,11 @@ domain_claims:
     before I sighted this thing, I was extremely skeptical of flying saucers or UFOs myself... the result has been that since then, I do believe most, although I'm still skeptical of some.
   text: |-
     Before witnessing the Wairakei object the civil engineer was extremely skeptical of flying saucers or UFOs, and afterward he came to believe most reports although remaining skeptical of some.
+  entailment:
+    label: entails
+    score: 0.455
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 68440b9f-308d-46c3-a571-6405b6e572c1
   type: opinion
   attestation: first_hand
@@ -1222,6 +1503,11 @@ domain_claims:
     I was skeptical, too, until I began to look at the almost incredibly large volumes of good reports.
   text: |-
     James E. MacDonald was skeptical of UFOs until he began to look at the almost incredibly large volumes of good reports.
+  entailment:
+    label: entails
+    score: 0.673
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6685f894-586e-408d-8945-f4510b21cf84
   type: testimony
   attestation: first_hand
@@ -1242,6 +1528,11 @@ domain_claims:
     The official position is that it's a lot of nonsense, burdensome duty that the Air Force is unable to get away with.
   text: |-
     The official position of the United States Air Force is that the UFO problem is nonsense and a burdensome duty the Air Force is unable to get away with.
+  entailment:
+    label: entails
+    score: 0.682
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 47ad9a71-a4d3-4903-8329-e141175b1982
   type: testimony
   attestation: first_hand
@@ -1262,6 +1553,11 @@ domain_claims:
     There is expertise at the disposal of the American Air Force, but when you go digging, as I have, you find it just isn't being used and hasn't been used for 15 years.
   text: |-
     There is expertise at the disposal of the United States Air Force to look at UFO problems, but on investigation James E. MacDonald found it was not being used and had not been used for 15 years.
+  entailment:
+    label: entails
+    score: 0.918
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 15410334-d325-41ce-99af-991b14fa39f3
   type: testimony
   attestation: first_hand
@@ -1282,6 +1578,11 @@ domain_claims:
     Project Blue Book consists of three people at present. The American Air Force Investigatory Program is a major, a sergeant, and a secretary.
   text: |-
     Project Blue Book consisted of three people at present: a major, a sergeant, and a secretary.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 3b6a8aac-8330-46b0-a6b8-03510e0ec305
   type: observation
   attestation: first_hand
@@ -1302,6 +1603,11 @@ domain_claims:
     I was on a train actually that went from Christchurch over to the west coast of New Zealand... I was going to see the Fox Glacier actually and the day was the 17th of the 11th '55.
   text: |-
     Speaker 9 saw two flying saucers on 1955-11-17 while on a train travelling from Christchurch over to the west coast of New Zealand to see the Fox Glacier.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d72fa402-1bd6-4e96-a51f-4cae30e354d5
   type: observation
   attestation: second_hand
@@ -1320,6 +1626,11 @@ domain_claims:
     I saw two objects spinning in the sky. They were white in colour and disappeared after a while.
   text: |-
     Speaker 9 saw two objects spinning in the sky that were white in colour and disappeared after a while while on a train in New Zealand on 1955-11-17.
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f9661787-10e4-4381-80d0-eb44fddec588
   type: observation
   attestation: first_hand
@@ -1336,6 +1647,11 @@ domain_claims:
     I was going to call the other passengers in the train to see them, but we went through one of the many tunnels at this time and they disappeared when we came out the other side of the tunnel. They were gone.
   text: |-
     The two spinning objects seen from the train in New Zealand disappeared when the train went through one of many tunnels, and were gone when it emerged the other side.
+  entailment:
+    label: entails
+    score: 0.499
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f0019e7a-6e13-45fa-a478-563a83c9d5a7
   type: observation
   attestation: first_hand
@@ -1351,6 +1667,11 @@ domain_claims:
     Oh, they seem to be semi-circular... You couldn't really make out a shape. They just seemed to be spinning at such a terrific speed.
   text: |-
     The two objects seen from the train in New Zealand seemed to be semi-circular and were spinning at such a terrific speed that a shape could not really be made out.
+  entailment:
+    label: entails
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fa3285cf-6770-4087-af50-b856a6a92ef4
   type: observation
   attestation: first_hand
@@ -1366,6 +1687,11 @@ domain_claims:
     not terribly far, you know, because I could see them quite clearly... There wasn't a plane or helicopter or anything that I've ever seen before or since
   text: |-
     The two objects seen from the train in New Zealand were not terribly far away and could be seen quite clearly, and were unlike any plane or helicopter the witness had ever seen before or since.
+  entailment:
+    label: entails
+    score: 0.418
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f44696d6-02ca-472c-b144-74c844bcb9b2
   type: testimony
   attestation: first_hand
@@ -1388,6 +1714,11 @@ domain_claims:
     That date is interestingly close to the date of a sighting in New Zealand that I checked when I was over in Auckland, an airline pilot.
   text: |-
     The 1955-11-17 New Zealand train sighting date is interestingly close to the date of a New Zealand sighting by an airline pilot that James E. MacDonald checked when he was in Auckland.
+  entailment:
+    label: entails
+    score: 0.541
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7cb121b3-9446-4750-bbef-9e7a7f3cfd3c
   type: administrative
   attestation: first_hand
@@ -1407,6 +1738,11 @@ domain_claims:
   quote: |-
     If you get in touch with the society here at Box 43, that's the Flying Saucers Society at Box 43 Moorabbin.
   text: The Victorian Flying Saucer Society is located at Box 43, Moorabbin.
+  entailment:
+    label: contradicts
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2fc95db3-2fbf-4fcb-90d1-dc536237efc8
   type: observation
   attestation: first_hand
@@ -1425,6 +1761,11 @@ domain_claims:
     I was sitting at the front of my place in East Preston... On the 8th of March, 1965. And my daughter was with me, married daughter, and she turned around and she said, oh, there's something moving across the sky there, and it looked like a star, but it was moving, and all the other stars were standing still.
   text: |-
     Speaker 5 was sitting at the front of their place in East Preston on 1965-03-08 with their married daughter when the daughter pointed out something moving across the sky like a star while all the other stars stood still.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 71a7336d-e46b-4a05-97bf-cd7dcacafedb
   type: observation
   attestation: first_hand
@@ -1443,6 +1784,11 @@ domain_claims:
     it was a metallic blue object, iridescent blue, and it was like a spinning top, only the flat type of spinning top. And it was moving in the sky, in the eastern sky, from the south to the north.
   text: |-
     Through binoculars the object seen at East Preston on 1965-03-08 was a metallic iridescent blue object like a flat type of spinning top, moving in the eastern sky from south to north.
+  entailment:
+    label: entails
+    score: 0.519
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2f5cab36-7c5e-4b0b-9ed8-f354e671567a
   type: observation
   attestation: first_hand
@@ -1461,6 +1807,11 @@ domain_claims:
     uh well fairly rapid i didn't have time i just had time to go and get the binoculars and then pick it up and it disappeared from view
   text: |-
     The object seen at East Preston on 1965-03-08 moved fairly rapidly and disappeared from view shortly after the witness picked it up in the binoculars.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: becd39fe-2273-42db-bd64-3c833f3b2cbf
   type: observation
   attestation: first_hand
@@ -1479,6 +1830,11 @@ domain_claims:
     i guess it was about eight o'clock or half past eight at night... it was a lovely starry night it was a summer night
   text: |-
     The East Preston sighting on 1965-03-08 occurred at about eight o'clock or half past eight at night on a lovely starry summer night.
+  entailment:
+    label: entails
+    score: 0.444
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f56cf6eb-05d1-4967-a561-0e4660672dbf
   type: testimony
   attestation: first_hand
@@ -1499,6 +1855,11 @@ domain_claims:
     I'm going back on the 10th after getting down to Tasmania and then up to the northern part of the country.
   text: |-
     James E. MacDonald planned to return to the United States on the 10th after travelling down to Tasmania and then up to the northern part of Australia.
+  entailment:
+    label: contradicts
+    score: 0.951
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bc0e3bad-0301-4b57-9c0c-622cc7ab0d6a
   type: administrative
   provenance_chain:
@@ -1519,6 +1880,11 @@ domain_claims:
     Professor MacDonald recorded his talk in Sydney on a recent visit to Australia, New Zealand and Tasmania to investigate UFO sightings in this part of the world.
   text: |-
     James E. MacDonald recorded his talk in Sydney on a recent visit to Australia, New Zealand and Tasmania to investigate UFO sightings in that part of the world.
+  entailment:
+    label: entails
+    score: 0.838
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b839128c-e7e0-4290-8e56-f8ba175c7fd1
   type: testimony
   attestation: first_hand
@@ -1539,6 +1905,11 @@ domain_claims:
     I've spent about 12-13 months in the States in interviewing witnesses in key cases, attempting to unravel this very puzzling and very intriguing mystery.
   text: |-
     James E. MacDonald spent about 12 to 13 months in the United States interviewing witnesses in key UFO cases to attempt to unravel the mystery.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 890a4341-ac06-414b-bf82-ac6b491b3ce2
   type: testimony
   attestation: first_hand
@@ -1557,6 +1928,11 @@ domain_claims:
     there are large numbers of reports in the publications of various private UFO investigating groups in England, America, Australia, France, and so on
   text: |-
     Large numbers of UFO reports appear in the publications of various private UFO investigating groups in England, America, Australia, France and elsewhere.
+  entailment:
+    label: entails
+    score: 0.87
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a1341906-7f82-46f7-a638-25c5b3ea0fba
   type: testimony
   attestation: first_hand
@@ -1577,6 +1953,11 @@ domain_claims:
     I'm not entirely happy with taking hearsay evidence. And I've been down here in Australia interviewing witnesses to find out for myself, in direct, face-to-face, or in some cases, phone interviewing
   text: |-
     James E. MacDonald came to Australia to interview witnesses directly, face-to-face or by phone, because as a scientist he was not entirely happy taking hearsay evidence.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a128044c-1ee8-411c-b2e1-0bab65aa1405
   type: opinion
   attestation: first_hand
@@ -1597,6 +1978,11 @@ domain_claims:
     The picture in Australia, with respect to UFO sightings, observations of unconventional objects maneuvering, sometimes quite close to ground, sometimes within tens to hundreds of feet of very credible, reliable observers, is just not appreciably different in Australia, New Zealand, and Tasmania from what it is in the States. Very strong similarity.
   text: |-
     The picture of UFO sightings in Australia, New Zealand and Tasmania, involving observations of unconventional objects manoeuvring sometimes within tens to hundreds of feet of credible reliable observers, is not appreciably different from that in the United States, with very strong similarity.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 69adadf1-8020-4479-a431-11d718c03f60
   type: opinion
   attestation: first_hand
@@ -1617,6 +2003,11 @@ domain_claims:
     There's just a little bit of evidence that indicates to me there may even be a few more sightings per square mile or per capita here than in the States. But I wouldn't stand firmly on that feeling that I've gotten.
   text: |-
     James E. MacDonald felt there may be a few more UFO sightings per square mile or per capita in Australia, New Zealand and Tasmania than in the United States, but he would not stand firmly on that feeling.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ff3426af-6554-4448-930b-decbf8c6d3da
   type: testimony
   attestation: first_hand
@@ -1637,6 +2028,11 @@ domain_claims:
     lots of witnesses, after 15 or 20 or 30 minutes of interviewing them, bring up the point that several other friends of theirs have also seen objects at close range.
   text: |-
     Many witnesses interviewed by James E. MacDonald, after 15, 20 or 30 minutes of interviewing, brought up that several other friends of theirs had also seen objects at close range.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d07b9cba-2bd4-45fc-8656-8cd843a8b0fe
   type: testimony
   attestation: first_hand
@@ -1657,6 +2053,11 @@ domain_claims:
     I have about 10,000 feet of tape, I noticed, when I wound this thing up. And I've interviewed about 70 Australians or New Zealanders.
   text: |-
     James E. MacDonald recorded about 3,000 metres of tape and interviewed about 70 Australians or New Zealanders during his investigation.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3b6da506-4403-418b-9e8d-09cb374e8bf6
   type: testimony
   attestation: first_hand
@@ -1679,6 +2080,11 @@ domain_claims:
     I've been down to Hobart, Tasmania, some extremely interesting cases in Tasmania.
   text: |-
     James E. MacDonald travelled to Hobart, Tasmania, where he found some extremely interesting UFO cases.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 934fa691-6aeb-47cd-a105-dc5cbaf5d9ac
   type: opinion
   attestation: first_hand
@@ -1699,6 +2105,11 @@ domain_claims:
     There's a great deal of reluctance to report them. That's exactly the same in the States as it seems to be down here. People have been ridiculed and made fun of by official groups, by press and radio and television, and scientists too.
   text: |-
     There is a great deal of reluctance to report UFO sightings in Australia, the same as in the United States, because people have been ridiculed and made fun of by official groups, press, radio, television and scientists.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c95c3afa-6232-4046-a9ce-b7e2f2cdec9f
   type: testimony
   attestation: second_hand
@@ -1721,6 +2132,11 @@ domain_claims:
     One woman that I interviewed not so long ago pointed out that she described her case in some detail. The reporter asked her why she didn't use more water in what she's been drinking.
   text: |-
     A woman interviewed by James E. MacDonald described her UFO case in detail to a reporter, who asked her why she didn't use more water in what she had been drinking.
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 479ef19d-f9e1-41bf-a366-67306459b743
   type: testimony
   attestation: first_hand
@@ -1741,6 +2157,11 @@ domain_claims:
     the the American Air Force investigation Project Blue Book which has been in operation for about 14 years
   text: |-
     The United States Air Force Project Blue Book investigation had been in operation for about 14 years.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9b5f4ccc-1677-4892-a672-6d5733038873
   type: opinion
   attestation: first_hand
@@ -1761,6 +2182,11 @@ domain_claims:
     it's been done superficially and by persons of extremely low scientific competence. It has to be regarded as essentially zero. It is not a scientific investigation.
   text: |-
     James E. MacDonald considered the Project Blue Book investigation to have been done superficially and by persons of extremely low scientific competence, and regarded it as essentially zero and not a scientific investigation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4cb9746f-e5e9-4b72-8ece-52a7d44b74bc
   type: testimony
   attestation: first_hand
@@ -1781,6 +2207,11 @@ domain_claims:
     Project Blue Book, the American UFO investigation headquarters project, consists of a major, a sergeant, and a secretary.
   text: |-
     Project Blue Book, the American UFO investigation headquarters project, consisted of a major, a sergeant and a secretary.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a94c7a9-3029-408d-a234-5554cd90e7de
   type: testimony
   attestation: first_hand
@@ -1801,6 +2232,11 @@ domain_claims:
     the indication that there are only two or three percent of unknowns, and probably those would be explained, the Air Force insists, if they add a little more data.
   text: |-
     United States Air Force press releases indicated that only two or three percent of UFO cases were unknowns and that even those would probably be explained with a little more data.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5f7938e6-3305-4d16-969c-257b541c8138
   type: testimony
   attestation: first_hand
@@ -1819,6 +2255,11 @@ domain_claims:
     the type of sightings that are on record, thousands of cases in the U.S., involve cigar-shaped objects, disks, hovering sometimes at very low altitude.
   text: |-
     Thousands of UFO cases on record in the United States involve cigar-shaped objects and disks hovering sometimes at very low altitude.
+  entailment:
+    label: entails
+    score: 0.648
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 826501ea-509f-4981-a4fe-ec7eb7372c09
   type: opinion
   attestation: first_hand
@@ -1839,6 +2280,11 @@ domain_claims:
     Many inexplicable, scientifically inexplicable, baffling phenomena, very high accelerations. sometimes high-speed objects moving without any obvious sonic booms
   text: |-
     UFO reports involve many scientifically inexplicable baffling phenomena, very high accelerations and sometimes high-speed objects moving without any obvious sonic booms.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a418ab05-c1a7-4e02-94d7-46e20450e476
   type: opinion
   attestation: first_hand
@@ -1856,6 +2302,11 @@ domain_claims:
   quote: sometimes there are unexplained sonic booms that could be UFOs
   text: |-
     Some UFO sightings in the United States involve unexplained sonic booms that could be UFOs.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1a64f9d0-802d-47ef-9e82-8fb46f260a7d
   type: opinion
   attestation: first_hand
@@ -1876,6 +2327,11 @@ domain_claims:
     in the United States, there's a very annoyingly visible cultist crackpot fringe that's grown up around the problem, That discolors it and puts a lot of scientists off.
   text: |-
     In the United States a very visible cultist crackpot fringe has grown up around the UFO problem which discolours it and puts a lot of scientists off.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ccd8810e-a99b-4166-b833-fd511c6adbc4
   type: opinion
   attestation: first_hand
@@ -1896,6 +2352,11 @@ domain_claims:
     there are completely sincere misidentifications of planets and planets, and Balls, lightning, fireballs, luminous phenomena one time or another, even aircraft and so on.
   text: |-
     Some UFO reports are completely sincere misidentifications of planets, ball lightning, fireballs, luminous phenomena, and even aircraft.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1889a1dd-2d94-4868-a819-a5f8bd3ae7d5
   type: opinion
   attestation: first_hand
@@ -1920,6 +2381,11 @@ domain_claims:
     experienced investigators such as those that have been working in Sydney and Melbourne and Tasmania and in other parts of the world, these are private investigating groups, not the official groups. The official groups... they come out with such outrageously absurd explanations
   text: |-
     Experienced private UFO investigating groups working in Sydney, Melbourne and Tasmania, as distinct from the official groups, come out with more credible assessments, whereas the official groups produce outrageously absurd explanations.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8d52ab30-7772-46e2-b53d-3179b5c2d186
   type: opinion
   attestation: first_hand
@@ -1942,4 +2408,9 @@ domain_claims:
     these are sightings that are being investigated include a lot of quite unconventional phenomena that are not any product of our technology or Australia or Russian or English technology
   text: |-
     The unidentified flying object (UFO) sightings being investigated include unconventional phenomena that are not a product of United States, Australian, Russian or English technology.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 run_kind: comparison

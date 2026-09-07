@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.4
 prompts:
 - pass: nodes
   id: nodes
@@ -158,6 +164,11 @@ domain_claims:
   quote: Greetings, Chairwoman Mace
   text: |-
     Nancy Mace served as Chairwoman of the Unidentified Anomalous Phenomena: Exposing the Truth hearing on 2024-11-13.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 41131cf0-05c1-485a-87a2-de3477f32969
   type: administrative
   attestation: first_hand
@@ -178,6 +189,11 @@ domain_claims:
   quote: Chairman Grothman
   text: |-
     Glenn Grothman served as Chairman of the Unidentified Anomalous Phenomena: Exposing the Truth hearing on 2024-11-13.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4e880a93-32a7-41f1-9216-a5997bf5e436
   type: administrative
   attestation: first_hand
@@ -198,6 +214,11 @@ domain_claims:
   quote: Ranking Members Connolly
   text: |-
     Gerry Connolly served as Ranking Member of the Unidentified Anomalous Phenomena: Exposing the Truth hearing on 2024-11-13.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5193b0fc-317a-4a50-ad48-60b2005365f1
   type: administrative
   attestation: first_hand
@@ -218,6 +239,11 @@ domain_claims:
   quote: Ranking Members Connolly and Garcia
   text: |-
     Robert Garcia served as Ranking Member of the Unidentified Anomalous Phenomena: Exposing the Truth hearing on 2024-11-13.
+  entailment:
+    label: contradicts
+    score: 0.709
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c7ea0736-6008-46ef-8435-343c481f3232
   type: testimony
   attestation: first_hand
@@ -235,6 +261,11 @@ domain_claims:
     name: Unidentified Anomalous Phenomena (UAP)
   quote: 'Let me be clear: UAP are real.'
   text: Unidentified Anomalous Phenomena (UAP) are real.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 633f30e1-4289-49cc-a797-8438b1cf309d
   type: testimony
   attestation: first_hand
@@ -254,6 +285,11 @@ domain_claims:
     Advanced technologies not made by our Government - or any other government - are monitoring sensitive military installations around the globe.
   text: |-
     Advanced technologies not made by the United States Government or any other government are monitoring sensitive military installations around the globe.
+  entailment:
+    label: entails
+    score: 0.816
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fdbb0e0e-5723-4b76-9ee5-74d32d21dd99
   type: testimony
   attestation: first_hand
@@ -272,6 +308,11 @@ domain_claims:
   quote: the U.S. is in possession of UAP technologies
   text: |-
     The United States is in possession of Unidentified Anomalous Phenomena (UAP) technologies.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0994a062-a7c7-4bd7-9d8d-6b89a63388a0
   type: testimony
   attestation: first_hand
@@ -290,6 +331,11 @@ domain_claims:
   quote: as are some of our adversaries
   text: |-
     Some adversaries of the United States are in possession of Unidentified Anomalous Phenomena (UAP) technologies.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8cf3732f-6f01-411f-ac8f-7d97f6b2acf9
   type: opinion
   attestation: first_hand
@@ -309,6 +355,11 @@ domain_claims:
     I believe we are in the midst of a multi-decade, secretive arms race - one funded by misallocated taxpayer dollars and hidden from our elected representatives and oversight bodies.
   text: |-
     Luis Elizondo believes the United States is in the midst of a multi-decade, secretive arms race funded by misallocated taxpayer dollars and hidden from elected representatives and oversight bodies.
+  entailment:
+    label: entails
+    score: 0.612
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 671af25d-193a-454d-aad6-95526db73e98
   type: testimony
   attestation: first_hand
@@ -328,6 +379,11 @@ domain_claims:
     For many years, I was entrusted with protecting some of our nation's most sensitive programs.
   text: |-
     Luis Elizondo was entrusted with protecting some of the United States' most sensitive programmes for many years.
+  entailment:
+    label: entails
+    score: 0.708
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0b75a639-e8eb-4a2a-be3d-b67ded6ca27e
   type: testimony
   attestation: first_hand
@@ -351,6 +407,11 @@ domain_claims:
     In my last position, I managed a Special Access Program on behalf of the White House and the National Security Council.
   text: |-
     In his last position, Luis Elizondo managed a Special Access Programme on behalf of the White House and the National Security Council.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bb110863-db79-4595-b152-d1ad93910d04
   type: opinion
   attestation: first_hand
@@ -372,6 +433,11 @@ domain_claims:
     I also understand the consequences of excessive secrecy and stove-piping. Nowhere was this more apparent than in the aftermath of 9/11
   text: |-
     Luis Elizondo considers the consequences of excessive secrecy and stove-piping apparent in the aftermath of the September 11 attacks.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 09534c2a-b986-4dc5-992a-9d72e9ebbf6f
   type: opinion
   attestation: first_hand
@@ -397,6 +463,11 @@ domain_claims:
     * an informed public.
   text: |-
     Luis Elizondo believes America's greatness depends on a watchful Congress, a responsive Executive Branch, and an informed public.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bbbd7b17-714f-4038-87fa-9c42c1105516
   type: testimony
   attestation: first_hand
@@ -418,6 +489,11 @@ domain_claims:
     Over the last decade and a half, I learned that certain UAP programs were, and are, operating without any of these elements.
   text: |-
     Over the last decade and a half, Luis Elizondo learned that certain Unidentified Anomalous Phenomena (UAP) programmes were operating without a watchful Congress, a responsive Executive Branch, or an informed public.
+  entailment:
+    label: entails
+    score: 0.899
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f19689d-88eb-43ae-bc8e-cf1062d15fe6
   type: testimony
   attestation: first_hand
@@ -438,6 +514,11 @@ domain_claims:
   quote: Although much of my Government work on the UAP subject still remains classified
   text: |-
     Much of Luis Elizondo's Government work on the Unidentified Anomalous Phenomena (UAP) subject remains classified.
+  entailment:
+    label: entails
+    score: 0.923
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a8bf60be-eb69-4d44-910e-508e01db3910
   type: opinion
   attestation: first_hand
@@ -457,6 +538,11 @@ domain_claims:
     excessive secrecy has led to grave misdeeds against loyal civil servants, military personnel, and the public - all to hide the fact that we are not alone in the cosmos.
   text: |-
     Luis Elizondo considers that excessive secrecy has led to grave misdeeds against loyal civil servants, military personnel, and the public to hide the fact that humanity is not alone in the cosmos.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ec5ec608-ec32-4ef5-a0b5-85500ba35e37
   type: testimony
   attestation: first_hand
@@ -476,6 +562,11 @@ domain_claims:
     A small cadre within our own Government involved in the UAP topic has created a culture of suppression and intimidation
   text: |-
     A small cadre within the United States Government involved in the Unidentified Anomalous Phenomena (UAP) topic has created a culture of suppression and intimidation.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d2bdd958-09a4-443c-8b9c-b57be85180cf
   type: testimony
   attestation: first_hand
@@ -496,6 +587,11 @@ domain_claims:
   quote: a culture of suppression and intimidation that I have personally been victim to
   text: |-
     Luis Elizondo has personally been a victim of suppression and intimidation by a cadre within the United States Government involved in the Unidentified Anomalous Phenomena (UAP) topic.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d998894c-6bb4-4389-9e95-4ae96fa81b85
   type: testimony
   attestation: first_hand
@@ -515,6 +611,11 @@ domain_claims:
     This includes unwarranted criminal investigations, harassment, and efforts to destroy one's credibility.
   text: |-
     Suppression and intimidation by the cadre within the United States Government involved in the Unidentified Anomalous Phenomena (UAP) topic has included unwarranted criminal investigations, harassment, and efforts to destroy individuals' credibility.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ed052950-662c-4f81-b9bc-00387ab9b144
   type: testimony
   attestation: first_hand
@@ -536,6 +637,11 @@ domain_claims:
     the Pentagon's very own Public Affairs Office openly employs a professional psychological operations officer as the singular point of contact for any UAP-related inquiries from citizens and the media.
   text: |-
     The Pentagon's Public Affairs Office openly employs a professional psychological operations officer as the singular point of contact for any Unidentified Anomalous Phenomena (UAP)-related inquiries from citizens and the media.
+  entailment:
+    label: entails
+    score: 0.469
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b8434d03-7df2-4a5e-839a-52632d2284b0
   type: testimony
   attestation: first_hand
@@ -559,6 +665,11 @@ domain_claims:
     Many of my former colleagues and I have provided classified testimony to both the Department of Defense and the Intelligence Community Inspector General.
   text: |-
     Many of Luis Elizondo's former colleagues and Luis Elizondo have provided classified testimony to the Department of Defense (DoD) and the Intelligence Community Inspector General (ICIG).
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8872978f-11db-4c53-859c-8b86580e65c5
   type: testimony
   attestation: first_hand
@@ -578,6 +689,11 @@ domain_claims:
     Many of us have subsequently been targeted by this cabal with threats to our careers, our security clearances, and even our lives.
   text: |-
     Many of Luis Elizondo's former colleagues and Luis Elizondo have subsequently been targeted by a cabal with threats to their careers, security clearances, and even their lives after providing classified testimony.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a0b4f786-364c-4a2b-ab04-d288bd08863a
   type: opinion
   attestation: first_hand
@@ -601,6 +717,11 @@ domain_claims:
     First, Congress and the President should create a single point-of-contact responsible for a whole-of-government approach to the UAP issue.
   text: |-
     Luis Elizondo proposes that the United States Congress and the President create a single point-of-contact responsible for a whole-of-government approach to the Unidentified Anomalous Phenomena (UAP) issue.
+  entailment:
+    label: entails
+    score: 0.707
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 15e31db3-15fa-48dd-bee9-b44cc3c2b53a
   type: testimony
   attestation: first_hand
@@ -628,6 +749,11 @@ domain_claims:
     Currently, the White House, CIA, NASA, the Pentagon, Department of Energy, and others play a role, but no one seems to be in charge, leading to unchecked power and corruption.
   text: |-
     Currently, the White House, Central Intelligence Agency (CIA), National Aeronautics and Space Administration (NASA), the Pentagon, Department of Energy (DOE), and others play a role in the Unidentified Anomalous Phenomena (UAP) issue, but no one seems to be in charge, leading to unchecked power and corruption.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 051e39ba-07d6-44da-b4d9-45b7c65af7bb
   type: opinion
   attestation: first_hand
@@ -649,6 +775,11 @@ domain_claims:
     Second, we need a national UAP strategy that will promote transparency and help restore the American public's trust
   text: |-
     Luis Elizondo proposes a national Unidentified Anomalous Phenomena (UAP) strategy to promote transparency and help restore the American public's trust.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4eab79b3-241f-41fd-963a-7ee30278da43
   type: opinion
   attestation: first_hand
@@ -670,6 +801,11 @@ domain_claims:
     This strategy should include a whole-of-government approach, including the academic and scientific communities, the private sector, and our international partners and allies.
   text: |-
     Luis Elizondo proposes that the national Unidentified Anomalous Phenomena (UAP) strategy should include a whole-of-government approach, including the academic and scientific communities, the private sector, and international partners and allies.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fd8220b5-86bd-4900-8a13-1b07e8d980af
   type: opinion
   attestation: first_hand
@@ -693,6 +829,11 @@ domain_claims:
     Third, Congress should create a protected environment so whistleblowers, desperate to do the right thing, can come forward without fear.
   text: |-
     Luis Elizondo proposes that the United States Congress create a protected environment so whistleblowers can come forward without fear regarding the Unidentified Anomalous Phenomena (UAP) issue.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1872a344-a641-41ca-b6df-d41f3e21a7bb
   type: testimony
   attestation: first_hand
@@ -712,6 +853,11 @@ domain_claims:
     these whistleblowers suffer because of stigma, a code of silence, and concerns about retaliation.
   text: |-
     Unidentified Anomalous Phenomena (UAP) whistleblowers suffer because of stigma, a code of silence, and concerns about retaliation.
+  entailment:
+    label: entails
+    score: 0.587
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 88e87736-b644-43f9-a467-4cd9eae502e0
   type: opinion
   attestation: first_hand
@@ -735,6 +881,11 @@ domain_claims:
     it is up to the Members of this Committee and other lawmakers to wield their subpoena power against hostile witnesses
   text: |-
     Luis Elizondo proposes that members of the United States Congress wield their subpoena power against hostile witnesses who refuse to cooperate on Unidentified Anomalous Phenomena (UAP) matters.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: acdcd93d-0950-45f1-b6c3-e360a008f4b1
   type: opinion
   attestation: first_hand
@@ -758,6 +909,11 @@ domain_claims:
     prevent additional Government funding to those UAP efforts that remain hidden from Congressional oversight.
   text: |-
     Luis Elizondo proposes that the United States Congress prevent additional Government funding to Unidentified Anomalous Phenomena (UAP) efforts that remain hidden from Congressional oversight.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f95fb72d-6c0d-474e-af59-a09e49648506
   type: opinion
   attestation: first_hand
@@ -778,6 +934,11 @@ domain_claims:
   quote: I believe that we as Americans can handle the truth.
   text: |-
     Luis Elizondo believes that Americans can handle the truth about Unidentified Anomalous Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7023281a-df6c-46cc-8e1b-56b3ff12a6dc
   type: opinion
   attestation: first_hand
@@ -798,6 +959,11 @@ domain_claims:
   quote: I also believe the world deserves the truth.
   text: |-
     Luis Elizondo believes the world deserves the truth about Unidentified Anomalous Phenomena (UAP).
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40605057-65f7-433b-9471-ae747ba6849e
   type: administrative
   attestation: first_hand
@@ -818,6 +984,11 @@ domain_claims:
   quote: unidentified anomalous phenomena, formerly known as UFOs
   text: |-
     Unidentified Anomalous Phenomena (UAP) were formerly known as Unidentified Flying Objects (UFO).
+  entailment:
+    label: entails
+    score: 0.727
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c94db92b-d8f0-4a77-953f-d853602c3a4d
   type: opinion
   attestation: first_hand
@@ -841,6 +1012,11 @@ domain_claims:
     we need immediate public transparency, and this hearing is an important step on that journey.
   text: |-
     Luis Elizondo considers the hearing on Unidentified Anomalous Phenomena (UAP) an important step towards immediate public transparency.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ca7b3006-70df-46a6-8b55-38c97bf0ab37
   type: opinion
   attestation: first_hand
@@ -862,6 +1038,11 @@ domain_claims:
     If we approach the UAP topic in the same way we as Americans have met other challenges, we can restore our faith in our government institutions.
   text: |-
     Luis Elizondo believes that approaching the Unidentified Anomalous Phenomena (UAP) topic in the way Americans have met other challenges can restore faith in government institutions.
+  entailment:
+    label: entails
+    score: 0.526
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 infrastructure_claims:
 - id: f0da4aa1-236a-40b7-aa67-e3571b34a0b9
   type: administrative
@@ -886,6 +1067,11 @@ infrastructure_claims:
     It is my honor and privilege to testify before you on the issue of unidentified anomalous phenomena
   text: |-
     Luis Elizondo testified before the U.S. House Committee on Oversight and Accountability on 2024-11-13 at the hearing titled Unidentified Anomalous Phenomena: Exposing the Truth.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4216d5a1-da48-44d3-92a6-075efc0535b3
   type: administrative
   attestation: second_hand
@@ -910,6 +1096,11 @@ infrastructure_claims:
     **National Security, the Border, and Foreign Affairs**
   text: |-
     The Unidentified Anomalous Phenomena: Exposing the Truth hearing was held jointly before the U.S. House Subcommittee on Cybersecurity, Information Technology, and Government Innovation and the U.S. House Subcommittee on National Security, the Border, and Foreign Affairs.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: da2337cc-f69f-4a75-a955-4e43e18762bb
   type: administrative
   attestation: second_hand
@@ -924,3 +1115,8 @@ infrastructure_claims:
     name: Written Testimony of Luis Elizondo (2024-11-13)
   quote: '*Wednesday, November 13, 2024*'
   text: The Written Testimony of Luis Elizondo is dated 2024-11-13.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

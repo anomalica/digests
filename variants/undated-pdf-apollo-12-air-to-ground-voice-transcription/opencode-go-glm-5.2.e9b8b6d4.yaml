@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.9
 prompts:
 - pass: nodes
   id: nodes
@@ -157,6 +163,11 @@ domain_claims:
   quote: That's affirmative. We're ready for the E-MOD.
   text: |-
     During the Apollo 12 mission, at GET 05:19:14, the Apollo 12 Lunar Module Intrepid crew confirmed readiness for the Earth Module (E-MOD).
+  entailment:
+    label: entails
+    score: 0.976
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c19e9bc5-b0e8-44ba-80de-138a7d728304
   type: administrative
   attestation: first_hand
@@ -184,6 +195,11 @@ domain_claims:
     If you will give us P00 and ACCEPT, we'll give you a CSM state vector and RLS update.
   text: |-
     During the Apollo 12 mission, at GET 05:19:16, the National Aeronautics and Space Administration (NASA) Capcom instructed the Apollo 12 Lunar Module Intrepid crew to enter P00 and ACCEPT so that a Command Service Module (CSM) state vector and Reference to Landing Site update could be uplinked.
+  entailment:
+    label: entails
+    score: 0.755
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f71ece05-f408-4975-8646-9385d75d31c3
   type: observation
   attestation: first_hand
@@ -210,6 +226,11 @@ domain_claims:
   quote: Hello, Houston; Yankee Clipper. Yankee Clipper, Houston. Loud and clear.
   text: |-
     During the Apollo 12 mission, at GET 05:19:20, Dick Gordon aboard the Apollo 12 Command Service Module Yankee Clipper greeted the National Aeronautics and Space Administration (NASA) Capcom Jerry Carr, who replied loud and clear.
+  entailment:
+    label: entails
+    score: 0.836
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b1a15bf8-0470-45b6-8af2-1f4dd217641c
   type: opinion
   attestation: first_hand
@@ -236,6 +257,11 @@ domain_claims:
   quote: You got a couple of coal miners coming up to see you.
   text: |-
     During the Apollo 12 mission, the National Aeronautics and Space Administration (NASA) Capcom told Dick Gordon that a couple of coal miners were coming up to see him, referring to the Apollo 12 Lunar Module Intrepid crew's upcoming rendezvous.
+  entailment:
+    label: entails
+    score: 0.744
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd705d09-fc67-47eb-8bf2-5fbe287c5478
   type: administrative
   attestation: first_hand
@@ -260,6 +286,11 @@ domain_claims:
   quote: Intrepid, Houston. Your lift-off time is 142:03:47.
   text: |-
     During the Apollo 12 mission, at GET 05:19:23, the National Aeronautics and Space Administration (NASA) Capcom provided the Apollo 12 Lunar Module Intrepid lift-off time as 142:03:47 GET.
+  entailment:
+    label: entails
+    score: 0.826
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: db45ccbd-04d8-4593-a7a5-7099ccdd9479
   type: testimony
   attestation: first_hand
@@ -285,6 +316,11 @@ domain_claims:
     Okay. And Jerry, will you find out what they want to do about this battery charge, because I'm using the bus ties during the rendezvous?
   text: |-
     During the Apollo 12 mission, Dick Gordon requested that Jerry Carr find out what to do about a battery charge because he was using the bus ties during the rendezvous.
+  entailment:
+    label: neutral
+    score: 0.672
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7f701759-bc8b-47e2-a16b-e5b446aeb5c5
   type: administrative
   attestation: first_hand
@@ -312,6 +348,11 @@ domain_claims:
     Yankee Clipper, Houston. Why don't you figure on terminating the battery charge at LOS? Clipper, Houston. We prefer that you terminate at LOS on this pass.
   text: |-
     During the Apollo 12 mission, the National Aeronautics and Space Administration (NASA) Capcom instructed Dick Gordon to terminate the battery charge at Loss of Signal (LOS) on that pass.
+  entailment:
+    label: neutral
+    score: 0.706
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10e90a41-12b5-42bd-8e45-8b7a4a33b51f
   type: opinion
   attestation: first_hand
@@ -336,6 +377,11 @@ domain_claims:
   quote: That would be one less thing for us to keep track of prior to lift-off.
   text: |-
     During the Apollo 12 mission, the National Aeronautics and Space Administration (NASA) Capcom stated that terminating the battery charge at Loss of Signal (LOS) would be one less thing to keep track of prior to lift-off.
+  entailment:
+    label: neutral
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4b0dffb5-bc87-4696-ab5c-ee078f180cf4
   type: observation
   attestation: first_hand
@@ -361,6 +407,11 @@ domain_claims:
     When you look out the AOT in the dark quadrant? You can see these lights - particles of light, flashes of light just seem to come from - in this case, I'm looking in quadrant 1 which is the left one. It's coming from behind me, the left, and they're just sailing off in space. I was thinking they're dropping from my water boiler, but it looks like some of those things are escaping the Moon. They really haul out of here and just press off at the stars.
   text: |-
     During the Apollo 12 mission, Al Bean observed through the Alignment Optical Telescope (AOT) in the dark quadrant lights, flashes of light appearing to come from behind to the left, sailing off into space, and considered that some of those things appeared to be escaping the Moon.
+  entailment:
+    label: entails
+    score: 0.519
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2b3c57f2-f9fd-4395-9a28-a4166417a4b8
   type: opinion
   attestation: first_hand
@@ -384,6 +435,11 @@ domain_claims:
     I was thinking they're dropping from my water boiler, but it looks like some of those things are escaping the Moon.
   text: |-
     During the Apollo 12 mission, Al Bean initially thought the lights he observed through the Alignment Optical Telescope (AOT) were dropping from his water boiler.
+  entailment:
+    label: entails
+    score: 0.562
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 331cedc7-8b87-4608-9b11-b775516898f0
   type: administrative
   attestation: first_hand
@@ -413,6 +469,11 @@ domain_claims:
     Yankee Clipper, Houston with a P22 tracking PAD. Go ahead. Roger. Your target is LM; T1 is 139:57:39; T2 is 140:02:38; south 05; latitude is minus 3 - -
   text: |-
     During the Apollo 12 mission, at GET 05:19:28, the National Aeronautics and Space Administration (NASA) Capcom provided Dick Gordon with a P22 tracking PAD for the Apollo 12 Lunar Module Intrepid, with T1 at 139:57:39 and T2 at 140:02:38.
+  entailment:
+    label: neutral
+    score: 0.448
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c12e35c7-cdd9-43c8-8225-a6c54787f957
   type: observation
   attestation: first_hand
@@ -436,6 +497,11 @@ domain_claims:
     I'm getting an all 8's flash on both the address and the information registers at about one-fifth the brilliance of the normal numbers. And a - It's pulsing every second.
   text: |-
     During the Apollo 12 mission, Al Bean observed an all-8s flash on both the address and information registers of the Data Entry and Display Assembly (DEDA) of the Abort Guidance System (AGS) at about one-fifth the brilliance of normal numbers, pulsing every second.
+  entailment:
+    label: neutral
+    score: 0.96
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ee230155-44a4-4496-bd6f-0d5462d1c1c9
   type: observation
   attestation: first_hand
@@ -458,6 +524,11 @@ domain_claims:
   quote: If I turn down the illumination level just a little bit, it's not noticeable.
   text: |-
     During the Apollo 12 mission, Al Bean observed that turning down the illumination level of the Data Entry and Display Assembly (DEDA) made the all-8s flash not noticeable.
+  entailment:
+    label: entails
+    score: 0.603
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8e2ad97b-6fa0-440c-b60c-bb2ec2016c28
   type: testimony
   attestation: first_hand
@@ -487,6 +558,11 @@ domain_claims:
     Roger, Al. Fredo is here. He and I have both seen that phenomena on your DEDA during testing of most all the spacecrafts up at Bethpage, and it's probably an EMI.
   text: |-
     During the Apollo 12 mission, Fred Haise told Al Bean that he and Jerry Carr had both seen the same Data Entry and Display Assembly (DEDA) flashing phenomena during testing of most all the spacecraft at Bethpage, and that it was probably Electromagnetic Interference (EMI).
+  entailment:
+    label: neutral
+    score: 0.497
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6f320696-448d-4d9d-b019-7637fd6871ea
   type: administrative
   attestation: first_hand
@@ -511,6 +587,11 @@ domain_claims:
   quote: Roger. I think TRW's got a workup on this problem.
   text: |-
     During the Apollo 12 mission, the National Aeronautics and Space Administration (NASA) Capcom indicated that TRW Inc. had a workup on the Data Entry and Display Assembly (DEDA) flashing problem.
+  entailment:
+    label: entails
+    score: 0.506
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 59fbe89d-16be-4160-acda-cfaccc912a00
   type: observation
   attestation: first_hand
@@ -536,6 +617,11 @@ domain_claims:
     But I don't have you in the sextant. That's okay. Your blinking light's just not blinking, that's all.
   text: |-
     During the Apollo 12 mission, at GET 06:00:21, Dick Gordon told the Apollo 12 Lunar Module Intrepid crew that he did not have them in the sextant and that their blinking tracking light was not blinking.
+  entailment:
+    label: entails
+    score: 0.922
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5b98b379-9bf7-4fa0-9353-500838d5c8ec
   type: observation
   attestation: first_hand
@@ -563,6 +649,11 @@ domain_claims:
     Hey, Houston. It looks like our tracking light's burned out. Dick hasn't been able to find us in his sextant. And on the first nightside pass we had little bits and pieces floating along with us and we could tell that the tracking light was flashing on them. And we still have, I've presumed to think, bits and pieces floating along and nothing's flashing on them, so I'm pretty sure it burned out.
   text: |-
     During the Apollo 12 mission, Pete Conrad reported that the Apollo 12 Lunar Module Intrepid's tracking light appeared to have burned out, because on the first nightside pass bits and pieces floating along were illuminated by the flashing tracking light, but on a subsequent pass the bits and pieces were still floating along with nothing flashing on them.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d198dd46-413a-4216-82d6-2eecd7dbef27
   type: observation
   attestation: first_hand
@@ -586,6 +677,11 @@ domain_claims:
     on the first nightside pass we had little bits and pieces floating along with us and we could tell that the tracking light was flashing on them.
   text: |-
     During the Apollo 12 mission, Pete Conrad reported that the Apollo 12 Lunar Module Intrepid crew had noticed on the first nightside pass little bits and pieces of debris floating along with the spacecraft that were illuminated by the tracking light flashing on them.
+  entailment:
+    label: entails
+    score: 0.948
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fe3befe4-14c6-4b72-a664-58314446e4e0
   type: observation
   attestation: first_hand
@@ -609,6 +705,11 @@ domain_claims:
     It's getting much cleaner in here running this way; and, also, Yankee Clipper informs me he has the television all set up. When we come around the horn, we'll come around with the television on in VOX.
   text: |-
     During the Apollo 12 mission, Pete Conrad reported that the sweepdown of the Apollo 12 Lunar Module Intrepid was making the interior much cleaner.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2e649963-3048-41df-9ea0-ac83d9f71496
   type: observation
   attestation: first_hand
@@ -636,6 +737,11 @@ domain_claims:
     Yankee Clipper informs me he has the television all set up. When we come around the horn, we'll come around with the television on in VOX.
   text: |-
     During the Apollo 12 mission, Pete Conrad reported that Dick Gordon aboard the Apollo 12 Command Service Module Yankee Clipper had the television all set up, and that the Apollo 12 Lunar Module Intrepid crew would come around with the television on in Voice Operated Transmission (VOX).
+  entailment:
+    label: entails
+    score: 0.632
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6b0479b0-0f48-4b61-80a4-0adbd947510b
   type: testimony
   attestation: first_hand
@@ -661,6 +767,11 @@ domain_claims:
     Roger, Pete. Our electrical watchers say that the current indicates that your tracking light is on.
   text: |-
     During the Apollo 12 mission, the National Aeronautics and Space Administration (NASA) Capcom's electrical watchers indicated that the current showed that the Apollo 12 Lunar Module Intrepid's tracking light was on.
+  entailment:
+    label: entails
+    score: 0.5
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec70aeea-9da3-4376-9fe5-5864f60d5180
   type: observation
   attestation: first_hand
@@ -688,6 +799,11 @@ domain_claims:
     Okay. Now we just turned it off. How does the current show that? It - It sure does, Pete.
   text: |-
     During the Apollo 12 mission, Pete Conrad reported that after turning the tracking light off, the current still indicated the Apollo 12 Lunar Module Intrepid's tracking light was on, which the National Aeronautics and Space Administration (NASA) Capcom confirmed.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9a0317d5-aef6-4350-8944-dac664d94d4e
   type: opinion
   attestation: first_hand
@@ -715,6 +831,11 @@ domain_claims:
     You're - they're - You're flying through the air backwards, then, Pete, because I don't see it.
   text: |-
     During the Apollo 12 mission, Dick Gordon told Pete Conrad that he was flying through the air backwards because Dick Gordon could not see the tracking light from the Apollo 12 Lunar Module Intrepid.
+  entailment:
+    label: contradicts
+    score: 0.92
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bf9c2b86-d1d8-4bc8-a6c6-ff7bee7bad07
   type: observation
   attestation: first_hand
@@ -741,3 +862,8 @@ domain_claims:
   quote: Well, my ball tells me I'm pointed at you, Dick, and so does my radar.
   text: |-
     During the Apollo 12 mission, Pete Conrad reported that his ball and radar both indicated that the Apollo 12 Lunar Module Intrepid was pointed at Dick Gordon in the Apollo 12 Command Service Module Yankee Clipper.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

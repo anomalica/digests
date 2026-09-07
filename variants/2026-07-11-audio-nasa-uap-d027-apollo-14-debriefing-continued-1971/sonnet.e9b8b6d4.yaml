@@ -15,6 +15,12 @@ ai_usage:
     calls: 3
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 7.5
 prompts:
 - pass: nodes
   id: nodes
@@ -113,6 +119,11 @@ domain_claims:
   quote: Most of my streaks appeared to be on the periphery
   text: |-
     Stuart Roosa observed that most of the light-flash streaks he saw appeared on the periphery of his vision.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 272b238b-56bb-4ac1-bbf2-49520719dcc5
   type: opinion
   attestation: first_hand
@@ -133,6 +144,11 @@ domain_claims:
     for the first several days I got the impression that this direction was predominant. Later on it appeared that I don't think I could get that good a pattern
   text: |-
     Stuart Roosa initially had the impression during the first few days that the light flashes had a predominant direction, but on further observation he concluded he could not identify a consistent directional pattern.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d8cbe084-f2a0-4939-9404-a2aa8d27afc1
   type: opinion
   attestation: first_hand
@@ -153,6 +169,11 @@ domain_claims:
     in my case i couldn't really correlate a pattern out of it yeah i would think that the time period in which we tried to report them street by street flash by flash was representative and it was my feeling that it was generally random during that time period
   text: |-
     Alan Shepard felt that, during the period when the crew were doing a quantitative report of the light flashes, the flashes he observed appeared generally random in direction, without a consistent correlated pattern.
+  entailment:
+    label: entails
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a06eb4bd-c73e-47e7-b2b4-b167bdd7c9d1
   type: observation
   attestation: first_hand
@@ -173,6 +194,11 @@ domain_claims:
     what I saw, what I reported as a streak was simply that. Now, maybe the way we determined the direction subconsciously was that it was a ball of light moving in a direction leaving a tail. But I can't say that for sure.
   text: |-
     Edgar Mitchell reported a light-flash phenomenon he observed as a streak, and speculated it might subconsciously have been a ball of light moving in a direction and leaving a tail, though he was not certain of this.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 749f9efb-6fac-4b46-b626-0e05da9e82a6
   type: observation
   attestation: first_hand
@@ -192,6 +218,11 @@ domain_claims:
   quote: it started out and it definitely progressed across the field of view.
   text: |-
     Edgar Mitchell observed a light-flash streak progressing across his field of view, moving from one direction to another.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 24951f03-3a85-41df-b32e-cd48a08ace2c
   type: observation
   attestation: first_hand
@@ -210,6 +241,11 @@ domain_claims:
     name: cosmic ray visual phenomena (light flashes)
   quote: I never did see two simultaneously either.
   text: Alan Shepard never observed two light-flash streaks occurring simultaneously.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2c625c17-2ad9-48f0-bbc7-86e6c1aa1cea
   type: observation
   attestation: first_hand
@@ -229,6 +265,11 @@ domain_claims:
   quote: Neither did I.
   text: |-
     Edgar Mitchell also never observed two light-flash streaks occurring simultaneously.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5f46e887-1e74-4ba2-a3a6-8d1ca158659f
   type: testimony
   attestation: first_hand
@@ -251,6 +292,11 @@ domain_claims:
     we discussed the various shapes prior to flight, and I concentrated pretty hard on trying to see the shapes
   text: |-
     Before the Apollo 14 mission, the crew discussed the various possible shapes that the light-flash phenomenon might take.
+  entailment:
+    label: entails
+    score: 0.419
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3b79a423-471a-4408-9bbf-50ecd88d2cd9
   type: observation
   attestation: first_hand
@@ -271,6 +317,11 @@ domain_claims:
     as I reported, no, it was either a streak, and just a rather simple streak, or it was a flash, and rather a simple flash, nothing too exotic about it
   text: |-
     Stuart Roosa reported the light-flash phenomena he observed as either a simple streak or a simple flash, with nothing too exotic about their appearance.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c9d8a4aa-8ee8-4c79-90fe-4eeeabb259af
   type: observation
   attestation: first_hand
@@ -291,6 +342,11 @@ domain_claims:
     One would be maybe just a pinpoint of light for an instant rather than get the idea of a flash. There would just be a pinpoint for a second, and it would be gone. But that was more rare than the other two.
   text: |-
     On rarer occasions, Stuart Roosa observed a light flash as a pinpoint of light lasting for only an instant before disappearing.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 74e81a3b-19d8-4113-b0c2-6ef55d5de4ef
   type: observation
   attestation: first_hand
@@ -311,6 +367,11 @@ domain_claims:
     that to me would be the pinpoint that I'm describing. The eruption or the nova, as we call them, would be more of an explosion.
   text: |-
     Stuart Roosa distinguished light-flash pinpoints from what the crew termed a "nova," describing the nova as more of an explosion-like eruption.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 39322fed-adf7-43ce-ba30-090e0f4a989b
   type: observation
   attestation: first_hand
@@ -331,6 +392,11 @@ domain_claims:
     you've got a very, very bright center and a diffused edge... that's getting closer to what I would refer to as a NOVA or a flash.
   text: |-
     Stuart Roosa described a nova/flash light phenomenon as having a very bright centre with a diffused edge.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4255c275-b9b5-4893-9dc6-c11260a8be95
   type: observation
   attestation: first_hand
@@ -351,6 +417,11 @@ domain_claims:
     what I called a NOVA was more of a blob that seemed to start with that and kind of expand. More diffused. Yeah, more diffused as the time went on.
   text: |-
     Edgar Mitchell described what he called a "nova" light-flash phenomenon as a blob that started and then expanded, becoming more diffused as time went on.
+  entailment:
+    label: contradicts
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9812db94-98d5-4e2b-95f1-a2a20da56b9c
   type: observation
   attestation: first_hand
@@ -370,6 +441,11 @@ domain_claims:
   quote: your time frame that you're flashing, that's too long. It was faster than that.
   text: |-
     Edgar Mitchell observed that the light flashes he saw occurred faster than a comparison light being flashed by the interviewer during the demonstration.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95d2b7f0-1d85-4253-a70d-e4f7ca96664b
   type: opinion
   attestation: first_hand
@@ -392,6 +468,11 @@ domain_claims:
     Okay, I think what Stu was calling a pinpoint was about what I'd call a star or a flash, and a Nova, to me, was a much bigger, brighter thing.
   text: |-
     Edgar Mitchell considered what Stuart Roosa called a "pinpoint" to be equivalent to what he called a "star" or "flash," and considered a "nova" to be a much bigger, brighter phenomenon by comparison.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 066158f7-6418-415c-a854-9ade701ea5fc
   type: observation
   provenance_chain:
@@ -408,6 +489,11 @@ domain_claims:
   quote: Absolutely dark. Absolutely dark.
   text: |-
     During the quantitative light-flash observation period aboard Apollo 14, the spacecraft cabin lighting was completely dark.
+  entailment:
+    label: entails
+    score: 0.481
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 59cc4e9f-0392-4d86-ac99-8fd37cd090df
   type: observation
   attestation: first_hand
@@ -428,6 +514,11 @@ domain_claims:
     Even though we had the window shades on, when we'd roll around so the sun would hit some of the windows, there'd be some light seepage around.
   text: |-
     Alan Shepard noted that despite the window shades being in place, light could seep in around their edges when the spacecraft rolled so that the sun struck some of the windows.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 618d7c9f-a58a-49be-a580-8b1dc64a999c
   type: observation
   attestation: first_hand
@@ -451,6 +542,11 @@ domain_claims:
   quote: we closed our eyes when Ed flipped his flashlight on.
   text: |-
     The Apollo 14 crew closed their eyes when Edgar Mitchell turned on his flashlight during the light-flash observation sessions.
+  entailment:
+    label: entails
+    score: 0.763
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5cd10da0-769a-4b35-93e1-20eebb18f86a
   type: observation
   attestation: first_hand
@@ -471,6 +567,11 @@ domain_claims:
     During that time, at least I made the technique to keep my eyes closed, open otherwise... generally speaking, eyes were open.
   text: |-
     Alan Shepard generally kept his eyes open during the light-flash observation period, except when avoiding sunlight seepage.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 75036429-d582-4745-a316-b73e9c7d791a
   type: observation
   attestation: first_hand
@@ -490,6 +591,11 @@ domain_claims:
   quote: mine was almost closed all the time.
   text: |-
     Stuart Roosa kept his eyes almost completely closed throughout the light-flash observation period.
+  entailment:
+    label: entails
+    score: 0.887
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 49690530-48c1-4970-bfb0-d2b90525e4f2
   type: observation
   attestation: first_hand
@@ -510,6 +616,11 @@ domain_claims:
     I was floating down the corner of the LED, but I kept my eyes closed because I didn't know when we might roll into the sun and I didn't want to pick up any light at all.
   text: |-
     Stuart Roosa was floating near the corner of the Lunar Excursion Vehicle (LEV) and kept his eyes closed to avoid picking up light if the spacecraft rolled toward the sun.
+  entailment:
+    label: entails
+    score: 0.614
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 17fac835-1c4f-4ccd-9b8f-afff7d8ada10
   type: testimony
   attestation: first_hand
@@ -527,6 +638,11 @@ domain_claims:
   quote: I just kind of moved it across for, oh, five seconds or so. Five or six seconds.
   text: |-
     Edgar Mitchell shone a flashlight across his eyes for approximately five to six seconds during the debriefing demonstration.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 699a2772-0f9c-4f1a-8f34-f7a27dafd611
   type: observation
   attestation: first_hand
@@ -544,6 +660,11 @@ domain_claims:
   quote: It hurt. It was very bright.
   text: |-
     Edgar Mitchell found the flashlight painfully bright when shone in his eyes during the demonstration.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: eccb7920-3f7d-46cf-aa33-dc7544c82420
   type: observation
   attestation: first_hand
@@ -563,6 +684,11 @@ domain_claims:
   quote: I was oriented this way with my head looking face up down in this corner.
   text: |-
     Stuart Roosa was oriented with his head looking face-up, positioned in a corner of the spacecraft, during the light-flash observation sessions.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b81236c9-67ae-4d9a-a213-d62ad5571967
   type: opinion
   attestation: first_hand
@@ -582,6 +708,11 @@ domain_claims:
   quote: Yeah, I felt I was getting more on the left than the right for some reason.
   text: |-
     Edgar Mitchell had the impression that he was experiencing more light flashes in his left eye than in his right eye.
+  entailment:
+    label: entails
+    score: 0.949
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5f81748e-787b-4077-9b40-66143757e3cc
   type: measurement
   provenance_chain:
@@ -600,6 +731,11 @@ domain_claims:
   quote: You had 12 right and 6 left
   text: |-
     Edgar Mitchell reported 12 light flashes in his right eye and 6 in his left eye during Apollo 14.
+  entailment:
+    label: entails
+    score: 0.389
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c2506235-d73b-4fb5-bce9-8f701e942c67
   type: measurement
   provenance_chain:
@@ -618,6 +754,11 @@ domain_claims:
   quote: Al, you had 10 right and 4 left
   text: |-
     Alan Shepard reported 10 light flashes in his right eye and 4 in his left eye during Apollo 14.
+  entailment:
+    label: entails
+    score: 0.409
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: af4077e2-5867-43d4-9ce2-e11ad495f9fc
   type: measurement
   provenance_chain:
@@ -636,6 +777,11 @@ domain_claims:
   quote: of the ones you reported, Stu, you had 6 right and 2 left.
   text: |-
     Stuart Roosa reported 6 light flashes in his right eye and 2 in his left eye during Apollo 14.
+  entailment:
+    label: entails
+    score: 0.402
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d0c207be-f098-4fb8-b965-0218cbc34710
   type: measurement
   provenance_chain:
@@ -653,6 +799,11 @@ domain_claims:
     you're all heavily biased towards the right on your reports... Very heavily, like three or four to one.
   text: |-
     Overall, the Apollo 14 crew's light-flash reports were heavily biased toward the right eye, by a ratio of roughly three or four to one.
+  entailment:
+    label: entails
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c5507779-7a27-4008-9a5c-fd96f26c8595
   type: administrative
   provenance_chain:
@@ -674,6 +825,11 @@ domain_claims:
     There were three, from listening to the tapes, three events, and it occurred in cases where different pairs were involved, which were coincidences
   text: |-
     During Apollo 14, there were three recorded instances, found by the debriefing team reviewing the mission tapes, where different pairs of crew members reported light flashes simultaneously.
+  entailment:
+    label: entails
+    score: 0.442
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0380c85a-c8c2-47e8-81ce-5e0444bcff4c
   type: observation
   provenance_chain:
@@ -697,6 +853,11 @@ domain_claims:
     Ed, you said flash, and then Al, you said simultaneous with him, I had a flash in the whole right eye.
   text: |-
     In one instance during Apollo 14, Edgar Mitchell reported a light flash at the same time that Alan Shepard reported a flash in his right eye.
+  entailment:
+    label: entails
+    score: 0.42
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 85497976-3544-47be-a989-e4a9f2fff837
   type: opinion
   attestation: first_hand
@@ -718,6 +879,11 @@ domain_claims:
   quote: certainly within a fraction of a second, I think it was simultaneous.
   text: |-
     Alan Shepard considered the simultaneous light-flash reports with Edgar Mitchell to have occurred within a fraction of a second of each other.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 825deef7-396c-4b58-b435-f116d8c52a18
   type: observation
   attestation: first_hand
@@ -738,6 +904,11 @@ domain_claims:
     a couple of times it happened to me, it was his mark, or whoever's mark he was, was good enough.
   text: |-
     Edgar Mitchell experienced simultaneous light-flash coincidences with another crew member on a couple of occasions.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 55e80ac2-717e-4577-a567-9fe4dd94c402
   type: observation
   attestation: first_hand
@@ -757,6 +928,11 @@ domain_claims:
   quote: Only on what I call the nova or the supernova.
   text: |-
     Edgar Mitchell only noticed a halo or afterglow effect following light flashes that he classified as a "nova" or "supernova."
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a88e9f30-5dca-4dd5-956e-281af4ce2f56
   type: observation
   attestation: first_hand
@@ -776,6 +952,11 @@ domain_claims:
   quote: I haven't really noticed a halo effect myself.
   text: |-
     Alan Shepard did not notice a halo effect following the light flashes he observed.
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a7deb50d-f3d7-49d2-a7b8-b17a519c50a7
   type: observation
   attestation: first_hand
@@ -795,6 +976,11 @@ domain_claims:
   quote: Did I call any of those? I sure don't remember it.
   text: |-
     Stuart Roosa did not recall reporting any halo or afterglow effect associated with the light flashes.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b6e5e3a4-2d0c-4e30-b715-ea9ed5eca5e8
   type: observation
   attestation: first_hand
@@ -818,6 +1004,11 @@ domain_claims:
     I really don't remember seeing any flashes, but I didn't look for any either. So I guess the question would be I consciously did not see any... I wouldn't take that as a data point.
   text: |-
     Stuart Roosa did not recall seeing any light flashes during lunar orbit, noting he was very tired at the time and had not specifically looked for them, so he did not consider this a reliable data point.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b7c4778d-0c8e-4a61-936c-09732efb1465
   type: administrative
   provenance_chain:
@@ -837,6 +1028,11 @@ domain_claims:
     after our formal session, it was in about 191 GET, you then had a sleep period later on.
   text: |-
     The formal Apollo 14 light-flash observation session concluded at approximately 191 hours Ground Elapsed Time (GET), after which the crew had a sleep period.
+  entailment:
+    label: entails
+    score: 0.68
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 057ab682-3651-4293-9bf0-1b0fc2d95ca7
   type: observation
   attestation: first_hand
@@ -859,6 +1055,11 @@ domain_claims:
     I don't really recall that there was any night except on the lunar surface. that I didn't at some time or another say some.
   text: |-
     Edgar Mitchell believed there was hardly any night during the Apollo 14 mission when he did not see at least some light flashes, with the possible exception of time spent on the lunar surface.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 53f7dfff-a263-4ae1-900a-ffe0413c9542
   type: observation
   attestation: first_hand
@@ -880,6 +1081,11 @@ domain_claims:
   quote: I just, no, I don't remember about the lunar surface.
   text: |-
     Edgar Mitchell did not recall whether he saw light flashes while on the lunar surface.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e3cc2d13-dfd5-40b2-b4a0-03849eb4eb4a
   type: observation
   attestation: first_hand
@@ -898,6 +1104,11 @@ domain_claims:
     name: Apollo 14
   quote: There was precious little sleep at night anyhow.
   text: There was very little sleep at night during the Apollo 14 mission.
+  entailment:
+    label: entails
+    score: 0.431
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 277a4d0a-a3ca-439f-a3be-6c9a6b67d347
   type: observation
   provenance_chain:
@@ -914,6 +1125,11 @@ domain_claims:
     Did you get the impression that light flashes could have been within the cabin or definitely within your eye? Definitely within the eye.
   text: |-
     The Apollo 14 crew had the impression that the light flashes occurred definitely within the eye rather than within the spacecraft cabin.
+  entailment:
+    label: entails
+    score: 0.46
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c29e067-66ed-48f4-a1b7-ddff4e186722
   type: measurement
   attestation: first_hand
@@ -934,6 +1150,11 @@ domain_claims:
     the things, I would say, were three or four inches away from my plane, whatever that means, and were a couple inches long.
   text: |-
     Edgar Mitchell described the light-flash streaks he observed as appearing approximately 7.5 to 10 centimetres from his eye and about 5 centimetres long.
+  entailment:
+    label: contradicts
+    score: 0.79
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4a2ee552-f6e4-4039-9698-552921576424
   type: measurement
   attestation: first_hand
@@ -954,6 +1175,11 @@ domain_claims:
     take a radius of that, that I'd put a streak of about a half the radius would be the average streak.
   text: |-
     Stuart Roosa estimated the average light-flash streak length as roughly half the radius of the field of view of his right eye.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 80610988-a8d8-4c28-93ce-3f4f0bab5b9b
   type: measurement
   attestation: first_hand
@@ -973,6 +1199,11 @@ domain_claims:
   quote: Half or a little longer.
   text: |-
     Edgar Mitchell estimated the light-flash streak length as about half the radius of his field of view, or slightly longer.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 26d5ce52-2d0e-46b0-8386-c59e8b988fb2
   type: observation
   attestation: first_hand
@@ -993,6 +1224,11 @@ domain_claims:
     I think I had them from several directions and I reported them as moving from one direction to the other at that time. There were several of them though.
   text: |-
     Edgar Mitchell observed light flashes coming from several different directions, each moving from one direction to another.
+  entailment:
+    label: entails
+    score: 0.956
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 33a23a49-fc99-4f9f-a271-8b5885f245dc
   type: observation
   attestation: first_hand
@@ -1012,6 +1248,11 @@ domain_claims:
   quote: I didn't notice any preferred orientation.
   text: |-
     Alan Shepard did not notice a preferred orientation for the direction of the light flashes he observed.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 48648d32-1411-4577-b990-9c896be84939
   type: measurement
   attestation: first_hand
@@ -1030,6 +1271,11 @@ domain_claims:
     if you're talking about a horizontal peripheral field as being somewhere in the vicinity of 50 to 160 degrees
   text: |-
     Alan Shepard estimated his horizontal peripheral field of view as roughly 50 to 160 degrees.
+  entailment:
+    label: entails
+    score: 0.718
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e9b4550e-e04f-4ab6-8794-a6e7db6776f1
   type: measurement
   attestation: first_hand
@@ -1050,6 +1296,11 @@ domain_claims:
     in some cases the light flashes would go across as much as 50 or 60 degrees of that.
   text: |-
     Alan Shepard observed that some light flashes spanned as much as 50 to 60 degrees of his peripheral field of view.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: defb876b-ea98-42f2-b47c-70829469e98a
   type: observation
   attestation: first_hand
@@ -1070,6 +1321,11 @@ domain_claims:
     In some cases I had the feeling it was two dots one immediately following the other, giving the impression of right to left, or top to bottom, or bottom to top, or left to right.
   text: |-
     In some cases, Alan Shepard observed a light flash appearing broken in the centre, giving the impression of two dots, one immediately following the other.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5da3ff3f-c4fb-4ac3-a9c1-1f6da804bee4
   type: observation
   attestation: first_hand
@@ -1093,6 +1349,11 @@ domain_claims:
     I think it occurred, I reported it a couple of times... it was just a diffuse lighting.
   text: |-
     Edgar Mitchell reported observing a diffuse cloud-like lighting phenomenon on a couple of occasions during Apollo 14.
+  entailment:
+    label: neutral
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c7ec3f3-40dc-4b81-a2ef-bfa009df62d7
   type: observation
   attestation: first_hand
@@ -1112,6 +1373,11 @@ domain_claims:
   quote: it appeared, as I recall, to be down low on one eye or the other
   text: |-
     Edgar Mitchell observed the diffuse cloud-like lighting phenomenon appearing low in his field of view, in one eye or the other.
+  entailment:
+    label: entails
+    score: 0.956
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef4eaea9-8fed-4f84-9c85-ee534dbddd3c
   type: observation
   attestation: first_hand
@@ -1131,6 +1397,11 @@ domain_claims:
   quote: White, silver.
   text: |-
     Edgar Mitchell described the colour of the cloud-like lighting phenomenon as white or silver.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5d60d59b-70a6-4838-86db-569e4185a2c8
   type: observation
   attestation: first_hand
@@ -1151,6 +1422,11 @@ domain_claims:
     if you do that, you can see a streak behind the cloud. This, there was no streak. It was just a diffuse lighting.
   text: |-
     Unlike terrestrial lightning behind a cloud, which shows a visible streak, the cloud-like lighting phenomenon Edgar Mitchell observed showed no streak, only diffuse lighting.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 53348c60-3b67-465f-97ca-89663eb6fe6b
   type: observation
   attestation: first_hand
@@ -1170,6 +1446,11 @@ domain_claims:
   quote: No, not necessarily. It was just a blob of light.
   text: |-
     Edgar Mitchell did not observe any relief or structure to the cloud-like light phenomenon; it appeared to him as just a blob of light.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4598dc0e-7faa-4324-8300-8dc227efe010
   type: observation
   attestation: first_hand
@@ -1189,6 +1470,11 @@ domain_claims:
   quote: No. Never looked for it.
   text: |-
     Stuart Roosa did not notice any other physical sensation, such as tingling or twitching, associated with the light flashes, though he had not specifically looked for such sensations.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e1e79838-8da6-4682-8cb4-abf54720c9c6
   type: opinion
   provenance_chain:
@@ -1208,6 +1494,11 @@ domain_claims:
     I think I said to Ed yesterday that you really did provide an enormously improved amount of data on this phenomenon that we've had in any previous lives.
   text: |-
     The debriefing team considered that the Apollo 14 crew provided an enormously improved amount of data on the light-flash phenomenon compared to any previous mission.
+  entailment:
+    label: entails
+    score: 0.427
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83f33e96-7607-4576-8ede-90821747d7ee
   type: opinion
   attestation: first_hand
@@ -1228,6 +1519,11 @@ domain_claims:
     I think that's the way you really have to go is to take a definite period, set it aside and do it because otherwise it's so random and so many other things going through your mind that It's the only way you can't even quantitate it.
   text: |-
     Alan Shepard considered that setting aside a definite period of time for observation was necessary, since without doing so the presence of other distracting thoughts made the light-flash phenomenon too random to quantify.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dbd1cf67-4485-4e1f-8fab-77c342aaa9cf
   type: observation
   provenance_chain:
@@ -1245,6 +1541,11 @@ domain_claims:
     I know during the formal hour, 40 minutes, whatever it was, that Ed was shining the light. But I don't know whether you picked it up on air to ground or not, but I had done that prior to that during one of the sleep periods. And there's just, you do not have to be dark adapted to see these.
   text: |-
     Speaker 1 reported that during one of the Apollo 14 sleep periods, prior to the formal light-flash observation period, he saw light flashes without being dark-adapted.
+  entailment:
+    label: entails
+    score: 0.433
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 873ad309-586a-49ea-9740-74637c4244eb
   type: opinion
   provenance_chain:
@@ -1259,6 +1560,11 @@ domain_claims:
     That's a very significant data point because it almost certainly proves that it's not a real light in your eye, generated in your eye. It's actually an interaction.
   text: |-
     A crew member considered it a significant data point that light flashes can be seen without being dark-adapted, taking it as strong evidence that the phenomenon is not a real light generated in the eye but instead results from an interaction.
+  entailment:
+    label: entails
+    score: 0.533
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7587f413-f142-49e4-95be-55813fd1e3ba
   type: observation
   attestation: first_hand
@@ -1282,6 +1588,11 @@ domain_claims:
     I was going to make the comment that with respect to the flashes, putting the flashlight in my eyes did not seem to destroy my dark adaptation. Now, what that means, I don't know.
   text: |-
     Edgar Mitchell reported that shining a flashlight across his closed eyes during the Apollo 14 light-flash experiment did not appear to destroy his dark adaptation.
+  entailment:
+    label: neutral
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f3ce06f-d5d2-401a-84c7-f8309f1db037
   type: observation
   attestation: first_hand
@@ -1302,6 +1613,11 @@ domain_claims:
     When I did the flashlight across my eyes, they were still just as bright 30 seconds later as they had before I used the flashlight.
   text: |-
     Edgar Mitchell reported that he continued to see light flashes just as bright about 30 seconds after wiping a flashlight across his eyes as they had been before he used the flashlight.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 10e07359-c0d9-452c-8673-88ba5bbdd8d2
   type: observation
   attestation: first_hand
@@ -1322,6 +1638,11 @@ domain_claims:
     And yet when I wiped the light across my eyes within 30 or 40 seconds, there they were again.
   text: |-
     Edgar Mitchell reported that he began seeing light flashes again within approximately 30 to 40 seconds after wiping a flashlight across his eyes.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 57fe4305-44f3-49b8-91d3-dcef95f5549e
   type: measurement
   provenance_chain:
@@ -1338,6 +1659,11 @@ domain_claims:
   quote: 17 minutes. Pardon? 17 minutes. No response from me.
   text: |-
     During the formal Apollo 14 light-flash observation period, approximately 17 minutes elapsed before a flash was first recorded.
+  entailment:
+    label: entails
+    score: 0.445
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1959eeed-a772-4dbb-8e08-1e6a5f9748d5
   type: opinion
   attestation: first_hand
@@ -1358,6 +1684,11 @@ domain_claims:
     Either I didn't wipe the dark adaptation out, or there is something related to dark adaptation that influences the phenomenon. I don't understand it. It doesn't make sense.
   text: |-
     Edgar Mitchell found it puzzling that it took a long time to see the first flash at the start of the formal Apollo 14 light-flash experiment, yet after wiping a flashlight across his eyes flashes reappeared within 30 to 40 seconds, and did not know whether this meant his dark adaptation had not actually been wiped out or whether dark adaptation influences the phenomenon in some other way.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c5c47b8f-fb88-42b5-9ff4-f3fa774c3c3a
   type: observation
   provenance_chain:
@@ -1375,6 +1706,11 @@ domain_claims:
     That doggone time period that we did it and the few flashes we saw was very surprising to me... Boy, it seemed like, you know, you'd wake up during a sleep period and... They were all over the place... I was amazed when it took 17 minutes to see a flash.
   text: |-
     Speaker 1 reported that during a sleep-period wake-up on Apollo 14, he saw an abundance of light flashes that seemed to be all over the place, and was surprised that during the formal timed observation period only a few flashes were seen.
+  entailment:
+    label: entails
+    score: 0.78
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 064d6970-7104-40d2-9cce-240b8ffe0c77
   type: observation
   provenance_chain:
@@ -1392,6 +1728,11 @@ domain_claims:
     the flashes you see when you wake up in the middle of the night as a whole appear to be brighter than the flashes as a whole during that experiment that we did during the day.
   text: |-
     Speaker 1 reported that the light flashes seen upon waking during sleep periods on Apollo 14 appeared brighter overall than the flashes observed during the formal daytime observation experiment.
+  entailment:
+    label: entails
+    score: 0.511
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 038b0b5c-1ad6-4029-8d61-497109d838d9
   type: testimony
   provenance_chain:
@@ -1409,6 +1750,11 @@ domain_claims:
     I was a little reluctant to call anything except a very positive flash during that during that time frame, uh, you know, I want to make really sure that that was indeed a mark at the time that I called it.
   text: |-
     Speaker 1 reported being reluctant during the formal Apollo 14 light-flash observation period to report anything other than a very definite flash.
+  entailment:
+    label: entails
+    score: 0.482
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fc934658-370a-447c-8487-dece2cd38949
   type: observation
   attestation: first_hand
@@ -1430,6 +1776,11 @@ domain_claims:
     Ed saw one blue flash. Did anyone else see color? / No... No, that wasn't blue. It was a silver, a blue-white sort of thing. Like a blue diamond, you said. Like a blue diamond.
   text: |-
     Edgar Mitchell saw one flash during the Apollo 14 light-flash observations that was silver, blue-white in colour, described as like a blue diamond, rather than plain blue.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 27ae009e-3f68-4a94-a5ec-b23041ed590d
   type: testimony
   attestation: first_hand
@@ -1449,6 +1800,11 @@ domain_claims:
   quote: Was that the brightest that you saw? / I don't recall.
   text: |-
     Edgar Mitchell could not recall whether the blue-white flash he saw was the brightest flash he observed during the Apollo 14 light-flash observations.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cbfafc8c-2a92-4b58-adb8-f2c2fee7a03a
   type: observation
   provenance_chain:
@@ -1467,6 +1823,11 @@ domain_claims:
   quote: Ed saw one blue flash. Did anyone else see color? / No.
   text: |-
     No crew member other than Edgar Mitchell reported seeing colour in the light flashes observed during Apollo 14.
+  entailment:
+    label: neutral
+    score: 0.98
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f1da9cc0-a93e-4cf8-9fb1-4146e502a062
   type: opinion
   provenance_chain:
@@ -1483,6 +1844,11 @@ domain_claims:
     there definitely is a threshold effect of some sort because you saw twice as many during that period as the other two did... my guess was when you didn't see them and then you started to see them regularly, was that it was just that they seemed fainter than you expected.
   text: |-
     A researcher noted that during the formal quantitative Apollo 14 light-flash observation period, one crew member saw twice as many flashes as the other two crew members, and suggested this may reflect a threshold effect in which flashes seemed fainter than expected, requiring the observer to take time to attune to fainter flashes.
+  entailment:
+    label: entails
+    score: 0.556
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 668ad73f-732b-46b1-b355-3121c4d7fa5f
   type: observation
   attestation: first_hand
@@ -1503,6 +1869,11 @@ domain_claims:
     except they did indeed appear fainter in the beginning. And it wasn't a matter of looking for fainter objects. They were brighter after a while. And they didn't diminish in brightness.
   text: |-
     Edgar Mitchell reported that the light flashes he saw during the formal Apollo 14 experiment appeared fainter at the beginning, became brighter after a while, and did not diminish in brightness thereafter.
+  entailment:
+    label: entails
+    score: 0.814
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e2758198-ce01-4c4b-885f-30c846b43804
   type: observation
   provenance_chain:
@@ -1519,3 +1890,8 @@ domain_claims:
     your subjective impression is not necessarily right. Like you felt that you saw more of them in your left side than you're right and that wasn't true. It was wrong.
   text: |-
     A researcher observed that a crew member's subjective impression of seeing more light flashes on his left side than his right side during the formal Apollo 14 observation was not borne out by the recorded data.
+  entailment:
+    label: entails
+    score: 0.418
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

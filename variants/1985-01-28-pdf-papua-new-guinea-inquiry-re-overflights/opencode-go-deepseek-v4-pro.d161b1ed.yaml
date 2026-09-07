@@ -9,6 +9,12 @@ ai_usage:
     input: 16037
     output: 4096
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.9
 prompts:
 - pass: nodes
   id: nodes
@@ -150,6 +156,11 @@ domain_claims:
     EMBASSY JANUARY 28 RECEIVED INFORMAL INQUIRY FROM PNG NATIONAL INTELLIGENCE ORGANIZATION (NIO) CONCERNING REPORTED SIGHTINGS OF HIGH-ALTITUDE, HIGH-SPEED AIRCRAFT OVER PNG DURING EVENING JANUARY 24.
   text: |-
     The United States Embassy, Port Moresby received an informal inquiry from the Papua New Guinea National Intelligence Organization (NIO) on 1985-01-28 concerning reported sightings of high-altitude, high-speed aircraft over Papua New Guinea during the evening of 1985-01-24.
+  entailment:
+    label: entails
+    score: 0.528
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8096bf16-af47-4791-ab54-1c1e587f76bd
   type: hearsay
   attestation: second_hand
@@ -176,6 +187,11 @@ domain_claims:
     MATTER CAME TO NIO'S ATTENTION WHEN ITS OFFICER IN WEWAK REPORTED LOCAL RESIDENTS HAD BEEN FRIGHTENED BY OVERFLIGHTS
   text: |-
     An officer of the Papua New Guinea National Intelligence Organization (NIO) in Wewak reported that local residents had been frightened by the overflights on the evening of 1985-01-24.
+  entailment:
+    label: entails
+    score: 0.909
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6efec9b1-3e69-4f2d-a809-0514fe5753a2
   type: testimony
   attestation: second_hand
@@ -196,6 +212,11 @@ domain_claims:
   quote: WHICH LED TO THE PROVINCIAL PREMIER'S CALLING OF A PUBLIC MEETING ON THE SUBJECT
   text: |-
     The provincial premier of East Sepik called the 1985 Wewak Public Meeting on Overflights following reports that local residents had been frightened by the 1985-01-24 overflights.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8a1b0cda-3a4a-4797-9975-7bf6e473672b
   type: testimony
   attestation: second_hand
@@ -216,6 +237,11 @@ domain_claims:
   quote: ATTENDED BY THE PRIME MINISTER WHO WAS WEEKENDING IN HIS ELECTORAL DISTRICT
   text: |-
     The Prime Minister of Papua New Guinea attended the 1985 Wewak Public Meeting on Overflights because he was spending the weekend in his electoral district.
+  entailment:
+    label: entails
+    score: 0.501
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8265019b-4266-4b46-b64f-b8fbc7619dec
   type: hearsay
   attestation: second_hand
@@ -239,6 +265,11 @@ domain_claims:
     NIO SAID THERE HAVE BEEN VARIOUS REPORTS OF UNIDENTIFIED AERIAL PHENOMENA THE NIGHT OF JANUARY 24, INCLUDING FAST-MOVING OBJECTS WITH LIGHTS, CONTRAILS, AND NOISE.
   text: |-
     The Papua New Guinea National Intelligence Organization (NIO) reported various sightings of unidentified aerial phenomena on the night of 1985-01-24, including fast-moving objects with lights, contrails, and noise.
+  entailment:
+    label: neutral
+    score: 0.488
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1c319220-9723-4bdd-aaf7-6384be966882
   type: testimony
   attestation: second_hand
@@ -266,6 +297,11 @@ domain_claims:
     THE REPORT IN WHICH NIO PLACES SOME CREDENCE ORIGINATED WITH AN AIR NIUGINI PILOT WHO HAD JUST TAKEN OFF FROM WEWAK ENROUTE PORT MORESBY.
   text: |-
     The Papua New Guinea National Intelligence Organization (NIO) placed credence in a report that originated with an Air Niugini pilot who had just taken off from Wewak en route to Port Moresby on 1985-01-24.
+  entailment:
+    label: contradicts
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2bb6099e-2c0c-45ef-bb46-eeb437130080
   type: observation
   attestation: second_hand
@@ -294,6 +330,11 @@ domain_claims:
     PILOT SAID HIS RADAR PICKED UP AIRCRAFT FLYING SOUTH TO NORTH AT HIGH ALTITUDE AND HIGH SPEED WHEN HE WAS OVER ANGORAM (VIC 4 DEG S, 144 DEG E).
   text: |-
     An Air Niugini pilot, in a report relayed by the Papua New Guinea National Intelligence Organization (NIO), stated that his radar picked up an aircraft flying south to north at high altitude and high speed while he was over Angoram (in the vicinity of 4°S, 144°E) on 1985-01-24.
+  entailment:
+    label: entails
+    score: 0.521
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 041b6435-9e57-4a69-b1c6-ee50d2fa20b2
   type: hearsay
   attestation: second_hand
@@ -317,6 +358,11 @@ domain_claims:
     SEVERAL VISUAL SIGHTINGS OF CONTRAILS WERE ALSO REPORTED FROM VARIOUS POINTS AROUND PNG, OF ONE AIRCRAFT MOVING NORTH TO SOUTH AT 1900 LOCAL AND OF SIX-EIGHT AIRCRAFT TRAVELING SOUTH TO NORTH AT 2200 LOCAL.
   text: |-
     Unnamed witnesses in various locations around Papua New Guinea reported visual sightings of contrails on 1985-01-24, as relayed by the Papua New Guinea National Intelligence Organization (NIO), including one aircraft moving north to south at approximately 1900 local time and six to eight aircraft travelling south to north at approximately 2200 local time.
+  entailment:
+    label: entails
+    score: 0.526
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f529c03-6c8d-4cef-b5e1-2cf4a96e7f57
   type: testimony
   attestation: first_hand
@@ -344,6 +390,11 @@ domain_claims:
     BASED ON OUR RECORDS AND TELCON WITH 43SW, WE HAVE TOLD NIO WE KNEW OF NO B-52 OVERFLIGHTS AND NO U.S. AIRCRAFT IN PNG AIRSPACE ON JANUARY 24.
   text: |-
     The United States Embassy, Port Moresby, based on its records and a telephone conversation with the 43rd Strategic Wing (43SW), informed the Papua New Guinea National Intelligence Organization (NIO) that it knew of no B-52 Stratofortress overflights and no U.S. aircraft in Papua New Guinea airspace on 1985-01-24.
+  entailment:
+    label: neutral
+    score: 0.675
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c23164ae-014a-4c65-8e0a-f65ecb6eb4cd
   type: opinion
   attestation: first_hand
@@ -365,6 +416,11 @@ domain_claims:
     ALTHOUGH INFORMATION PROVIDED US ON THESE SIGHTINGS IS VERY SKETCHY AND SOURCES WERE UNSURE OF THE DIRECTIONS IN WHICH AIRCRAFT WERE FLYING
   text: |-
     The information provided to the United States Embassy, Port Moresby about the sightings of 1985-01-24 was sketchy, and the sources were unsure of the directions in which the aircraft were flying.
+  entailment:
+    label: entails
+    score: 0.696
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 872da1c6-1412-4397-a288-9f0217e0c207
   type: administrative
   attestation: first_hand
@@ -390,6 +446,11 @@ domain_claims:
     WE WOULD MOST APPRECIATE CONFIRMATION OF PARA 3 ABOVE AND ANY LIGHT YOU MIGHT THROW ON THESE REPORTS.
   text: |-
     Gardner requested confirmation from the United States Commander in Chief, Pacific Command (USCINCPAC) that there were no known B-52 Stratofortress overflights or U.S. aircraft in Papua New Guinea airspace on 1985-01-24, and any additional information on the sightings.
+  entailment:
+    label: entails
+    score: 0.517
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 399c4939-c404-4c99-a29b-a380a44e25d6
   type: administrative
@@ -411,6 +472,11 @@ infrastructure_claims:
     TO USCINCPAC HONOLULU HI IMMEDIATE
   text: |-
     The Papua New Guinea Inquiry Re Overflights Cable (1985-01-28) was sent on 1985-01-28 from the United States Embassy, Port Moresby to the United States Commander in Chief, Pacific Command (USCINCPAC).
+  entailment:
+    label: entails
+    score: 0.921
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5132366e-db68-4ffd-9a5e-a15997fbb717
   type: administrative
   attestation: second_hand
@@ -434,6 +500,11 @@ infrastructure_claims:
     2/25/2026
   text: |-
     The Papua New Guinea Inquiry Re Overflights Cable (1985-01-28) was released in full by John Powers, Acting-Director of the United States Department of State, on 2026-02-25.
+  entailment:
+    label: entails
+    score: 0.854
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fb8e0611-a3cb-40c8-b050-ae628cad01ae
   type: administrative
   provenance_chain:
@@ -462,3 +533,8 @@ infrastructure_claims:
     AMEMBASSY JAKARTA
   text: |-
     The Papua New Guinea Inquiry Re Overflights Cable (1985-01-28) was also sent to the 43rd Strategic Wing (43SW) at Andersen Air Force Base, the United States Embassy, Canberra, the United States Embassy, Jakarta, and the United States Department of State.
+  entailment:
+    label: neutral
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

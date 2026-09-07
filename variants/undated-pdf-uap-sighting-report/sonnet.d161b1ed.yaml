@@ -10,6 +10,12 @@ ai_usage:
     output: 1911
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 2.9
 prompts:
 - pass: nodes
   id: nodes
@@ -72,6 +78,11 @@ domain_claims:
     AT 1653Z, {{redacted: ~3 words}} OBS 2X ROUND WHITE HOT UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     At 1653Z, two round, white, thermally hot Unidentified Aerial Phenomena (UAP) were observed moving dynamically south at approximately 440 kilometres per hour in the vicinity of grid coordinate 35SQT3423692957.
+  entailment:
+    label: neutral
+    score: 0.409
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6e4c201a-bb1d-4ba0-b5e5-767c57da05be
   type: administrative
   attestation: second_hand
@@ -91,3 +102,8 @@ domain_claims:
     {{classification: "SECRET//REL TO USA, FIN, SWE, FVEY, NATO"}} AT 1653Z, {{redacted: ~3 words}} OBS 2X UAPS DYNAMIC SOUTH AT APPROX 240NM/HOUR IVO 35SQT3423692957.
   text: |-
     The sighting report of the two Unidentified Aerial Phenomena (UAP) moving south at approximately 440 kilometres per hour near grid coordinate 35SQT3423692957 was classified SECRET, releasable to the United States, Finland, Sweden, Five Eyes (FVEY), and North Atlantic Treaty Organization (NATO).
+  entailment:
+    label: entails
+    score: 0.681
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

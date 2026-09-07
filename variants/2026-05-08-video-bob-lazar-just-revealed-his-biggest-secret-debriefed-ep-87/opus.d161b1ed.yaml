@@ -9,6 +9,12 @@ ai_usage:
     output: 35483
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 8.5
 prompts:
 - pass: nodes
   id: nodes
@@ -174,6 +180,11 @@ domain_claims:
   quote: |-
     a few months after I hosted a podcast featuring the Area 51 whistleblower Bob Lazar
   text: Bob Lazar is the Area 51 whistleblower.
+  entailment:
+    label: entails
+    score: 0.899
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 86496eaa-d28f-4c8d-8254-f082aa1a7fe1
   type: testimony
   attestation: first_hand
@@ -194,6 +205,11 @@ domain_claims:
     there are several pieces of information that I keep to myself and that the main reason is, you know, in case somebody does claim to be involved with the project or been there, whatever, they should be able to tell me those.
   text: |-
     Bob Lazar intentionally keeps several pieces of information about the S4 project to himself so that he can test whether people who claim to have been involved with the project are telling the truth.
+  entailment:
+    label: entails
+    score: 0.723
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6bac39f3-c33c-44e3-a88e-596a4a06c86c
   type: testimony
   attestation: first_hand
@@ -214,6 +230,11 @@ domain_claims:
     i can tell you the person, the name of another person that no one has heard of that worked there. His name was Chuck Payne.
   text: |-
     A man named Chuck Payne, whom no one has heard of, worked at S4 (the Papoose Lake facility).
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 82a0c477-9d8c-4eee-8db5-7e7bb5417fc9
   type: testimony
   attestation: first_hand
@@ -234,6 +255,11 @@ domain_claims:
     Chuck Payne was a really well-known guy because he really stood out as this, I don't know, overt security person. He played the part well. He was one of the security guards there.
   text: |-
     Chuck Payne was one of the security guards at S4 (the Papoose Lake facility) and stood out as an overt, extroverted security person whom everyone at S4 knew.
+  entailment:
+    label: entails
+    score: 0.543
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ec9bf9f5-83fa-4187-bc5d-12d8eb4f84b8
   type: testimony
   attestation: first_hand
@@ -256,6 +282,11 @@ domain_claims:
     Have you ever mentioned this to George Knapp? / No, no. / So this is officially the first time. / No one has ever heard this, correct.
   text: |-
     Bob Lazar had never mentioned Chuck Payne to anybody before, including George Knapp, making the S4 documentary interview the first time he revealed the name.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fdf7f6fb-0c6a-40e5-84fe-cec37a087872
   type: testimony
   attestation: first_hand
@@ -278,6 +309,11 @@ domain_claims:
     I get so many comments, emails, or people saying, um, you know, my, my grandfather worked there or so-and-so worked there. And it's like, you want to just hold back a couple of minor details
   text: |-
     Bob Lazar deliberately withheld minor details such as the name Chuck Payne so he could challenge people who falsely claimed a relative or acquaintance had worked at S4.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 71d4ec0b-1181-43a8-b78a-141d4655c419
   type: hearsay
   attestation: second_hand
@@ -300,6 +336,11 @@ domain_claims:
     from those that did, it looked like Dennis Mariani died. / I had pictures of a gravestone and, you know, people seem to, this guy, it connects all the dots. This looks like it was the guy.
   text: |-
     Dennis Mariani appears to have died, based on photographs of a gravestone that people connected to him.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e6cb08e7-8add-45b1-9301-a899b7e0a7a6
   type: testimony
   attestation: first_hand
@@ -318,6 +359,11 @@ domain_claims:
     name: Lazar, Bob
   quote: Was he older than you or younger than you? / He was older than me.
   text: Chuck Payne was older than Bob Lazar.
+  entailment:
+    label: neutral
+    score: 0.676
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0a623327-24ba-4d0b-87a4-11056fe9f4a0
   type: testimony
   attestation: first_hand
@@ -338,6 +384,11 @@ domain_claims:
     i was surprised when he let that out with me in an interview this was ha this happened like over three years ago so i've been holding this you know we've been holding this to ourselves for a long time
   text: |-
     Luigi Venditelli's interview in which Bob Lazar revealed the name Chuck Payne took place over three years before the 2026-05-08 Debriefed episode, roughly around 2022 or 2023.
+  entailment:
+    label: entails
+    score: 0.599
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6a584f0d-4462-4cac-8918-9d58bf14c2f8
   type: administrative
   attestation: first_hand
@@ -358,6 +409,11 @@ domain_claims:
     the Chuck Payne that you are going to find should you Google this name is not the Chuck Payne as mentioned in the interview with Bob that worked at S4. it is a senator
   text: |-
     The Chuck Payne who appears when the name is searched on Google is a senator, and is not the Chuck Payne who worked at S4 mentioned by Bob Lazar.
+  entailment:
+    label: entails
+    score: 0.954
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1e4d4beb-8eea-47b0-ae90-81be9138e2d5
   type: testimony
   attestation: first_hand
@@ -384,6 +440,11 @@ domain_claims:
     all the footage that we have with Bob Lazar in the desert with a DeLorean time machine. That was the time that we went out to Las Vegas, the whole crew of Motivo, Art My Crew and Project Gravator crew basically, we went out and filmed with a DeLorean time machine in the desert.
   text: |-
     The Motivo crew and Project Gravator crew filmed Bob Lazar in the desert near Las Vegas with a DeLorean time machine.
+  entailment:
+    label: entails
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d829ebae-3d5c-4ff8-b77d-17a5dadfc181
   type: testimony
   attestation: first_hand
@@ -402,6 +463,11 @@ domain_claims:
     we had rented an airbnb in las vegas which is a giant mansion so that we could all sleep in the same house
   text: |-
     During the Las Vegas shoot, the crew rented a large mansion as an Airbnb so they could all stay in the same house.
+  entailment:
+    label: entails
+    score: 0.534
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 79a9c7f9-e061-4cea-b51c-559f036137b2
   type: testimony
   attestation: third_hand
@@ -429,6 +495,11 @@ domain_claims:
     a pilot had reached out to you... He was a co-pilot for EG&G flying the Janet flights into Groom Lake between 87 and 91, something like that.
   text: |-
     A pilot who was a co-pilot for EG&G, flying the Janet Airlines flights into Groom Lake roughly between 1987 and 1991, reached out to Chris Ramsay.
+  entailment:
+    label: contradicts
+    score: 0.576
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b8da5e8f-0c08-45b1-94c0-be9a7b6daeca
   type: opinion
   attestation: first_hand
@@ -453,6 +524,11 @@ domain_claims:
     between 87 and 91, something like that. And that's exactly when Bob would have been there.
   text: |-
     The period roughly 1987 to 1991, when the EG&G co-pilot flew Janet Airlines flights into Groom Lake, coincides with the time Bob Lazar says he worked there.
+  entailment:
+    label: entails
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7dc60c3e-8d36-47b4-8db9-723b9abbade2
   type: hearsay
   attestation: third_hand
@@ -479,6 +555,11 @@ domain_claims:
   quote: And he said he knew Dennis Mariani.
   text: |-
     The EG&G co-pilot who flew Janet Airlines flights into Groom Lake said he knew Dennis Mariani.
+  entailment:
+    label: entails
+    score: 0.789
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7e02e370-3421-4e0a-a7b3-26061f99eaac
   type: hearsay
   attestation: second_hand
@@ -503,6 +584,11 @@ domain_claims:
     I had reached out to a Janet Airlines co-pilot that knew Dennis and that, you know, was also informed of his passing and said that, you know, he'd met Dennis over a dozen times and had exchanged with him just sort of, you know, regular rapport.
   text: |-
     Chris Ramsay reached out to a Janet Airlines co-pilot who knew Dennis Mariani, was informed of Mariani's passing, and said he had met Dennis Mariani over a dozen times and had regular rapport with him.
+  entailment:
+    label: entails
+    score: 0.924
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bbeecc6a-f99d-4323-87bb-652641f77519
   type: opinion
   attestation: first_hand
@@ -524,6 +610,11 @@ domain_claims:
   quote: |-
     There is a Dennis Mariani did exist. There was a Dennis Mariani that was flying on Janet Jets going to Groom Lake.
   text: A Dennis Mariani did exist and flew on Janet Airlines jets going to Groom Lake.
+  entailment:
+    label: entails
+    score: 0.928
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e4d20780-12f9-46f0-8c7b-261cff52064a
   type: administrative
   speaker:
@@ -541,6 +632,11 @@ domain_claims:
     name: Mariani, Dennis
   quote: And Bob was the guy who mentioned Dennis Mariani.
   text: Bob Lazar was the person who originally named Dennis Mariani.
+  entailment:
+    label: entails
+    score: 0.476
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7d6b129f-9802-4065-b468-2623484a61d2
   type: testimony
   attestation: first_hand
@@ -565,6 +661,11 @@ domain_claims:
     he called to meet at the union plaza hotel... it was definitely relatively soon after
   text: |-
     After Bob Lazar went public through George Knapp on KLAS-TV, Dennis Mariani phoned him relatively soon afterwards to arrange a meeting at the Union Plaza Hotel in Las Vegas.
+  entailment:
+    label: contradicts
+    score: 0.632
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 36a9bc35-1386-404b-a457-bf24eea23f18
   type: testimony
   attestation: first_hand
@@ -587,6 +688,11 @@ domain_claims:
     I was kind of excited... he sounded different... It was a different tone of him... he might be sympathetic to my attitude or something like that
   text: |-
     Bob Lazar found Dennis Mariani's phone call to arrange the Union Plaza Hotel meeting exciting because Mariani's tone sounded different and possibly sympathetic to Bob Lazar's attitude.
+  entailment:
+    label: entails
+    score: 0.915
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c4bbdea3-d74a-46bd-9f53-f263543d7436
   type: testimony
   attestation: first_hand
@@ -611,6 +717,11 @@ domain_claims:
     this time i want witnesses had friends come with me... there he is Gene Huff i said that's Dennis Mariani right there so he had eyes on him too
   text: |-
     Bob Lazar brought friends as witnesses to the Union Plaza Hotel meeting, including Gene Huff, and pointed out Dennis Mariani to Gene Huff.
+  entailment:
+    label: neutral
+    score: 0.569
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8801605f-f2f3-4118-8c23-9928896c9250
   type: observation
   attestation: first_hand
@@ -633,6 +744,11 @@ domain_claims:
     as I walked in, I saw other faces that I've seen at S4 walk by me coming from his direction... They look like security from S4.
   text: |-
     At the Union Plaza Hotel meeting Bob Lazar saw faces he recognised as security personnel from S4 walking past, coming from Dennis Mariani's direction.
+  entailment:
+    label: entails
+    score: 0.434
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5b5d1934-9af1-4e30-b1fc-86b606a02777
   type: observation
   attestation: first_hand
@@ -655,6 +771,11 @@ domain_claims:
     when I went up to Dennis Marani, he wouldn't even look at me. I stood right next to him and he just like, I wasn't even there. I went Dennis and no response.
   text: |-
     At the Union Plaza Hotel meeting Dennis Mariani refused to look at or acknowledge Bob Lazar, ignoring him even when Bob Lazar stood next to him and said his name.
+  entailment:
+    label: neutral
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6f59941d-4ab4-4286-acfa-367ec9807875
   type: opinion
   attestation: first_hand
@@ -677,6 +798,11 @@ domain_claims:
     why hire Bob if he's... an acquaintance of John Lear, right? That's like the big thing that people have a hard time getting over.
   text: |-
     Bob Lazar was an acquaintance of John Lear, which some people find hard to reconcile with his being hired for a top-secret reverse-engineering job at S4.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 24f06501-8f32-40f4-94ca-9c2870c5a287
   type: hearsay
   attestation: second_hand
@@ -699,6 +825,11 @@ domain_claims:
     He said there is over a billion aliens living in the mountains outside of Las Vegas.
   text: |-
     John Lear, around the time Bob Lazar knew him, claimed there were over a billion aliens living in the mountains outside Las Vegas.
+  entailment:
+    label: contradicts
+    score: 0.857
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a8548b9e-c47e-4b14-905d-b5490161f339
   type: hearsay
   attestation: second_hand
@@ -719,6 +850,11 @@ domain_claims:
     that there is an entire civilization in the sun and that the sun isn't actually hot it's some special effect
   text: |-
     John Lear claimed there was an entire civilisation living in the sun and that the sun is not actually hot but is a special effect.
+  entailment:
+    label: contradicts
+    score: 0.5
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9fd3b695-7a56-43b9-a111-fae872509d04
   type: hearsay
   attestation: second_hand
@@ -737,6 +873,11 @@ domain_claims:
     name: Lear, John
   quote: and that you can breathe on venus
   text: John Lear claimed that a person can breathe on Venus.
+  entailment:
+    label: contradicts
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a8192a8b-b0e8-4d5a-a42d-13b3b5e51cba
   type: opinion
   attestation: first_hand
@@ -757,6 +898,11 @@ domain_claims:
     i tell john he was crazy to his face i said this is all you know absolute nonsense so i don't see... i don't see people taking john lear as serious at that time
   text: |-
     Bob Lazar told John Lear to his face that his claims were absolute nonsense and that he was crazy, and did not consider John Lear to be taken seriously at that time.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4dfca5de-7bc3-43c6-8f59-9565f2578995
   type: opinion
   attestation: first_hand
@@ -781,6 +927,11 @@ domain_claims:
     if anything it was it was teller... he obviously had weight... he said hey there's this kid in los alamos and uh to give him a shot or whatever
   text: |-
     Bob Lazar believes it was Edward Teller, who carried influence, who recommended him for the S4 job by telling them there was a young man in Los Alamos worth giving a shot.
+  entailment:
+    label: entails
+    score: 0.828
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: caf3de0c-d19d-407f-9dbc-81dbb21cc1c5
   type: opinion
   attestation: first_hand
@@ -801,6 +952,11 @@ domain_claims:
     if they're looking for somebody really outside the box that's not going to follow protocol and maybe that's what they were finally fed up with we're not getting anywhere with this and let's just get somebody a left field
   text: |-
     Bob Lazar speculates he may have been hired at S4 because they wanted someone unconventional and outside the box who would not follow protocol, after becoming fed up with a lack of progress.
+  entailment:
+    label: entails
+    score: 0.615
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ddf544ee-eac8-474c-bfb5-b5ead5c85f16
   type: testimony
   attestation: first_hand
@@ -823,6 +979,11 @@ domain_claims:
     this guy, Dennis, who, the same guy who'd stare at you for 20 minutes in that ride to S4 menacingly.
   text: |-
     During the roughly 20-minute bus ride to S4 (Sector Four, the Papoose Lake facility), Dennis Mariani would stare menacingly at Bob Lazar for the duration.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 113ff700-d661-4c1a-b8f7-402309b019ac
   type: testimony
   attestation: first_hand
@@ -843,6 +1004,11 @@ domain_claims:
     there's not even a window to look out of it. So you just look at the back of the driver's head.
   text: |-
     The bus used for the ride to S4 (Sector Four) had no window to look out of, leaving passengers only able to look at the back of the driver's head.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5408dd9c-a3e7-4b4d-885d-6c3e32f46384
   type: testimony
   attestation: first_hand
@@ -864,6 +1030,11 @@ domain_claims:
   quote: the craft was already outside and dennis came in come on you guys
   text: |-
     Dennis Mariani came into the facility and invited Bob Lazar to come outside to see a test flight of the craft, which was already positioned outside the hangar at S4 (Sector Four).
+  entailment:
+    label: entails
+    score: 0.968
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 159ade81-5a81-46ff-b28e-bfd5b24a282a
   type: testimony
   attestation: first_hand
@@ -885,6 +1056,11 @@ domain_claims:
   quote: we're back engineering power and propulsion and here's it in operation.
   text: |-
     The work at S4 (Sector Four) involved reverse-engineering the power and propulsion of the craft, and Bob Lazar was shown it in operation.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0620876b-681b-4be4-a6ab-163bca5053b8
   type: testimony
   attestation: first_hand
@@ -907,6 +1083,11 @@ domain_claims:
     nobody tried to care or track down Barry and, um, he'd be great for technical information... he was training me
   text: |-
     Barry, a scientist at S4 (Sector Four), was training Bob Lazar and would be a valuable source of technical information.
+  entailment:
+    label: contradicts
+    score: 0.621
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4e53af8f-8329-4e2f-8064-2b278fe92a68
   type: hearsay
   attestation: second_hand
@@ -925,6 +1106,11 @@ domain_claims:
     David Grush... gave up his pension and put his own credibility on the line by coming out and saying, hey, we've recovered non-human biologics and we have Kraft and we're working on them.
   text: |-
     David Grusch gave up his pension and put his own credibility on the line by coming out and saying the United States had recovered non-human biologics and craft and was working on them.
+  entailment:
+    label: entails
+    score: 0.44
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6ccba4c1-1d7e-4576-b634-a5e120a2bf6b
   type: testimony
   attestation: first_hand
@@ -943,6 +1129,11 @@ domain_claims:
     there is a governor, I believe, by the same name... we've gotten confirmation it's not him.
   text: |-
     There is a governor sharing the same name as Chuck Payne, but that governor has been confirmed not to be the Chuck Payne who worked security related to S4.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: baf98d7e-e6ec-43e5-ab90-1df39eaff4c6
   type: hearsay
   attestation: second_hand
@@ -964,6 +1155,11 @@ domain_claims:
   quote: I think Luigi told me that or something.
   text: |-
     Luigi Venditelli told Bob Lazar that there was a governor sharing Chuck Payne's name.
+  entailment:
+    label: neutral
+    score: 0.807
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f3ae7911-b39e-421b-b555-c5c438acfd3e
   type: opinion
   attestation: first_hand
@@ -983,6 +1179,11 @@ domain_claims:
   quote: Chuck Payne was doing his job... security guards are just being security guards.
   text: |-
     Chuck Payne was a security guard who was doing his job well, and Bob Lazar holds no ill will towards him or the other security guards.
+  entailment:
+    label: entails
+    score: 0.74
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ffa05de0-579d-428c-9e1c-580e06a10398
   type: testimony
   attestation: first_hand
@@ -1003,6 +1204,11 @@ domain_claims:
     the thing tasted more like vitamin B than anything... It was just an immune system booster because they had just done a whole... The grid for allergens.
   text: |-
     At S4 (Sector Four), Bob Lazar was given an opaque yellow fluid to drink that tasted more like vitamin B than anything, described as an immune system booster administered after allergen grid testing.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 284494eb-d615-421f-8244-9b81fbb4a27f
   type: testimony
   attestation: first_hand
@@ -1023,6 +1229,11 @@ domain_claims:
     there are just materials here. We have no clue as to what they are or what interactions they have with the human body.
   text: |-
     Bob Lazar was told at S4 (Sector Four) that there were materials present of which they had no clue as to what they were or what interactions they had with the human body.
+  entailment:
+    label: entails
+    score: 0.529
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c5bc07e3-1785-4d21-9280-92d1a0e14a0f
   type: testimony
   attestation: first_hand
@@ -1043,6 +1254,11 @@ domain_claims:
     No, they didn't mess with my head. It was a hundred percent clear every single time I was there. There is no doubt.
   text: |-
     Bob Lazar was clear-headed every single time he was at S4 (Sector Four) and his mind was not tampered with or drugged.
+  entailment:
+    label: entails
+    score: 0.58
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f9b3a07b-f61d-48e8-8c7f-35098032f643
   type: testimony
   attestation: first_hand
@@ -1063,6 +1279,11 @@ domain_claims:
     inserting incorrect and misleading information into what they're telling you... it's specific to each person so if they start hearing that from somewhere else they know exactly who said it
   text: |-
     At S4 (Sector Four) the programme deliberately inserted incorrect and misleading information into what they told personnel, specific to each individual, so that if that information later surfaced elsewhere they would know exactly who leaked it.
+  entailment:
+    label: entails
+    score: 0.568
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3a121be8-e2ec-4e4e-83af-ab3cec08738d
   type: opinion
   attestation: first_hand
@@ -1081,6 +1302,11 @@ domain_claims:
     this is why i draw such a hard line between what i work on what i saw what i touched and uh you know what i was told or read... unless it's backed up by by hands-on stuff
   text: |-
     Bob Lazar draws a hard line between what he personally worked on, saw and touched versus what he was told or read, holding that reading material and hearsay cannot be trusted as real unless backed up by hands-on work.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c027759e-130c-4266-bb94-f2644a3bb93c
   type: hearsay
   attestation: second_hand
@@ -1102,6 +1328,11 @@ domain_claims:
   quote: that's something even Barry mentioned.
   text: |-
     Barry, a scientist at S4 (Sector Four), also mentioned that the programme included misleading nonsense information.
+  entailment:
+    label: neutral
+    score: 0.547
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a0cbc04c-d89e-4db4-ae3f-199424e91c6a
   type: testimony
   attestation: first_hand
@@ -1124,6 +1355,11 @@ domain_claims:
     He was so what he was so excited to have somebody to work... he had a partner before that because he was so excited to show me.
   text: |-
     Barry, a scientist at S4 (Sector Four), was excited to have a partner to work with, having apparently had a partner before Bob Lazar, and was eager to show Bob the material.
+  entailment:
+    label: entails
+    score: 0.922
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9af83bb9-c6f6-4f9e-8cb4-d08f25f3c7c8
   type: testimony
   attestation: first_hand
@@ -1146,6 +1382,11 @@ domain_claims:
     directive one was be able to duplicate this with existing materials and directive to be able to disable this system from a distance with existing materials.
   text: |-
     Bob Lazar's work at S4 (Sector Four) had two directives: directive one was to be able to duplicate the power and propulsion system with existing materials, and directive two was to be able to disable the system from a distance with existing materials.
+  entailment:
+    label: entails
+    score: 0.797
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4eabff2f-4785-4e8e-b850-3ed067155e1c
   type: testimony
   attestation: first_hand
@@ -1165,6 +1406,11 @@ domain_claims:
   quote: No budget limits in either one. Just find a way to do it.
   text: |-
     Neither of the two directives given to Bob Lazar at S4 (Sector Four) had any budget limits.
+  entailment:
+    label: entails
+    score: 0.584
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 419e0a4d-9b30-40a7-9061-854a763bdf66
   type: testimony
   attestation: first_hand
@@ -1186,6 +1432,11 @@ domain_claims:
   quote: you had Galileo, which was propulsion using gravity.
   text: |-
     Among the three briefings Bob Lazar was allowed to read during his document readings, Galileo concerned propulsion using gravity.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e2e0bd1b-98a0-4ac5-b9de-c5f85c02717b
   type: testimony
   attestation: first_hand
@@ -1205,6 +1456,11 @@ domain_claims:
   quote: You had Sidekick, which was the weaponization of this technology.
   text: |-
     Among the three briefings Bob Lazar was allowed to read, Sidekick concerned the weaponisation of the craft's technology.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d7216551-3391-4693-8211-03474efcc44b
   type: testimony
   attestation: first_hand
@@ -1227,6 +1483,11 @@ domain_claims:
     you had looking glass, which was something to do with time dilation and peering into time somehow forward, backwards, what have you.
   text: |-
     Among the three briefings Bob Lazar was allowed to read, Looking Glass concerned time dilation and peering into time forward and backwards.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 312ba9ec-1ea5-4fa2-a894-1bdfd541ba49
   type: opinion
   attestation: first_hand
@@ -1249,6 +1510,11 @@ domain_claims:
     with gravity, you get time... if you've got the gravity propulsion and the power system... You got, you got the other two. Those will come in time
   text: |-
     Bob Lazar considers that with gravity propulsion you also obtain time manipulation, so he would remain working on the gravity propulsion and power system, from which weaponisation and time capabilities would follow.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bbb45bca-0cf9-42d4-846f-de983fb6145f
   type: hearsay
   attestation: second_hand
@@ -1274,6 +1540,11 @@ domain_claims:
     some weird interaction with a sphere that they called like looking glass. which was a sphere that they had to interact with consciously and could peer into time through consciousness-based interaction somehow.
   text: |-
     Chris Ramsay has heard from people who spoke to witnesses apparently in the programme about a sphere called Looking Glass that had to be interacted with consciously and could allow peering into time through consciousness-based interaction.
+  entailment:
+    label: entails
+    score: 0.702
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 304021b9-06a0-4414-8f47-b629ab838d90
   type: administrative
@@ -1295,6 +1566,11 @@ infrastructure_claims:
     a few months after I hosted a podcast featuring the Area 51 whistleblower Bob Lazar, I had met Bob again for a follow-up interview.
   text: |-
     Chris Ramsay previously hosted a podcast featuring Bob Lazar, then met Bob Lazar again for a follow-up interview.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 11283ace-0838-41b3-9c4b-c3cff3e5ca46
   type: administrative
   attestation: first_hand
@@ -1317,6 +1593,11 @@ infrastructure_claims:
     We've obtained this exclusive deleted scene from the documentary S4 The Bob Lazar Story, featuring a conversation between Bob Lazar and director Luigi Venditelli
   text: |-
     An exclusive deleted scene from the documentary S4: The Bob Lazar Story features a conversation between Bob Lazar and director Luigi Venditelli.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c9992838-d0a5-4d41-8ca4-3043fdbc5dd3
   type: administrative
   speaker:
@@ -1334,6 +1615,11 @@ infrastructure_claims:
     name: 'S4: The Bob Lazar Story (documentary)'
   quote: a conversation between Bob Lazar and director Luigi Venditelli
   text: 'Luigi Venditelli is the director of the documentary S4: The Bob Lazar Story.'
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3bfcc89f-9e30-42a6-8ab7-a01680eb39a6
   type: administrative
   attestation: first_hand
@@ -1354,6 +1640,11 @@ infrastructure_claims:
     We put, we created the first version, which you saw and it was in there and everybody liked it... we didn't expand on it in the film... So we decided to take it out.
   text: |-
     The segment in which Bob Lazar names Chuck Payne was included in the first version of the S4: The Bob Lazar Story documentary but was later removed from the final film because it was not expanded upon.
+  entailment:
+    label: entails
+    score: 0.696
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c5fadb30-d9d5-414c-be81-fc8250e7f6b6
   type: administrative
   attestation: first_hand
@@ -1376,3 +1667,8 @@ infrastructure_claims:
     getting your story out there through Project Gravator and S4, the Bob Lazar story.
   text: |-
     Bob Lazar's story is being released through Project Gravator and the documentary 'S4: The Bob Lazar Story'.
+  entailment:
+    label: contradicts
+    score: 0.81
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

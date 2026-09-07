@@ -15,6 +15,12 @@ ai_usage:
     calls: 2
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.0
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 4.7
 prompts:
 - pass: nodes
   id: nodes
@@ -118,6 +124,11 @@ domain_claims:
     Arthur Clarke is known for spinning elaborate, visionary tales of futures that might be, none more famous than *2001: A Space Odyssey*.
   text: |-
     Arthur Clarke is known for creating visionary science fiction narratives, most notably '2001: A Space Odyssey'.
+  entailment:
+    label: entails
+    score: 0.91
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ee0f02a2-2edf-4b97-9b24-0b0944b1afab
   type: opinion
   attestation: first_hand
@@ -138,6 +149,11 @@ domain_claims:
   quote: |-
     "I'm fairly convinced that we have discovered life on Mars," Clarke told *SPACE.com*
   text: Arthur Clarke is convinced that life has been discovered on Mars.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fcaabe9a-07b5-492d-8992-a3b34d86f2e9
   type: opinion
   attestation: first_hand
@@ -161,6 +177,11 @@ domain_claims:
     "There are some incredible photographs from [the Jet Propulsion Laboratory], which to me are pretty convincing proof of the existence of large forms of life on Mars!"
   text: |-
     Arthur Clarke considers photographs from the Jet Propulsion Laboratory (JPL) to be convincing evidence of large-scale life forms on Mars.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bb609330-ee9e-4f6c-8e3d-0b49f344fdfe
   type: observation
   provenance_chain:
@@ -176,6 +197,11 @@ domain_claims:
     so-called zero-point energy, theorized by some physicists as being a powerful energy source that exists in the vacuum of space
   text: |-
     Zero-point energy is theorised by physicists to be a powerful energy source existing in the vacuum of space.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f0c65b1f-f373-4b33-b105-0703dbdd674d
   type: opinion
   attestation: first_hand
@@ -199,6 +225,11 @@ domain_claims:
     "It may take 200, 300 or 400 years, but it's going to take zero-point energy to get us to Alpha Centauri."
   text: |-
     Buzz Aldrin believes that zero-point energy will be necessary to reach Alpha Centauri within 200 to 400 years.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fe386518-bb7a-4e26-a275-97993c8165c1
   type: opinion
   attestation: first_hand
@@ -220,6 +251,11 @@ domain_claims:
     "It started with this so-called cold fusion business, which everybody laughed out of court."
   text: |-
     Arthur Clarke believes that cold fusion research was initially dismissed by the scientific community.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 71513eec-ff14-4232-9e02-6df470a8ade3
   type: opinion
   attestation: first_hand
@@ -239,6 +275,11 @@ domain_claims:
     "But I'm now convinced that there are new forms of energy, which we are tapping, and they make even nuclear energy look trivial in comparison."
   text: |-
     Arthur Clarke is convinced that new forms of energy beyond cold fusion have been discovered that exceed nuclear energy in power.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 227b43dc-b40b-4a0a-b5cb-4072097ff7b7
   type: opinion
   attestation: first_hand
@@ -257,6 +298,11 @@ domain_claims:
   quote: '"And when we control those energy sources, the universe will open up."'
   text: |-
     Arthur Clarke believes that controlling new energy sources will enable humanity to explore the universe.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0fbf8af5-1e0b-4ba9-8f58-aa937ce57eb0
   type: opinion
   attestation: first_hand
@@ -280,6 +326,11 @@ domain_claims:
     "I can't imagine anybody being stupid enough to think that a program involving hundreds of thousands of people, carried out over a period of [more than a decade], in a blaze of publicity, could possibly be faked."
   text: |-
     Arthur Clarke rejects claims that the Apollo moon landings were faked, believing them to be well-documented and impossible to conceal given their scale and public visibility.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f90a479b-7f83-4d51-9d68-d61a810d156e
   type: hearsay
   attestation: third_hand
@@ -304,3 +355,8 @@ domain_claims:
     "Ben Franklin said, 'A conspiracy of three people can be kept secret, if two of them are dead!'"
   text: |-
     Benjamin Franklin, as quoted by Arthur Clarke during a SPACE.com discussion, stated that a conspiracy involving three people can be kept secret if two of the conspirators are dead.
+  entailment:
+    label: contradicts
+    score: 0.727
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

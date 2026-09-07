@@ -9,6 +9,12 @@ ai_usage:
     output: 30589
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.8
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 10.2
 prompts:
 - pass: nodes
   id: nodes
@@ -221,6 +227,11 @@ domain_claims:
     “A clandestine U.S. government program had been investigating UFOs. For eight years, the secret program was run by this man, Lue Elizondo.”
   text: |-
     According to the narrator of "Unidentified: Inside America's UFO Investigation", a clandestine United States government program had been investigating UFOs, and for eight years the secret program was run by Luis Elizondo.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4234db20-7608-4496-8e57-9678682932ea
   type: administrative
   provenance_chain:
@@ -234,6 +245,11 @@ domain_claims:
   quote: |-
     The camera then pans to a visual of the former military intelligence case officer
   text: Luis Elizondo is a former military intelligence case officer.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6efd1192-9d73-4222-9fe6-5174174c40eb
   type: administrative
   attestation: second_hand
@@ -255,6 +271,11 @@ domain_claims:
     goes on to follow Elizondo as he re-investigates strange UFO incidents he says he learned of when he was at the Pentagon running the Advanced Aerospace Threat Identification Program, known as AATIP.
   text: |-
     In "Unidentified: Inside America's UFO Investigation", Luis Elizondo re-investigates strange UFO incidents he says he learned of when he was at the Pentagon running the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.474
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d52828fd-4301-4ec7-a706-47d1fe93942c
   type: administrative
   attestation: second_hand
@@ -274,6 +295,11 @@ domain_claims:
     the narrator says that Elizondo quit the Pentagon because he was “frustrated by what he says was a cover-up.”
   text: |-
     The narrator of "Unidentified: Inside America's UFO Investigation" says Luis Elizondo quit the Pentagon because he was frustrated by what he says was a cover-up.
+  entailment:
+    label: entails
+    score: 0.811
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 903b6cd9-862d-4376-ae9f-15c90581d5bf
   type: opinion
   attestation: first_hand
@@ -292,6 +318,11 @@ domain_claims:
     There is no discernible evidence that he ever worked for a government UFO program, much less led one.
   text: |-
     There is no discernible evidence that Luis Elizondo ever worked for a government UFO program, much less led one.
+  entailment:
+    label: entails
+    score: 0.491
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6f0f379e-b132-4dfb-8341-d031b1df18eb
   type: testimony
   attestation: second_hand
@@ -313,6 +344,11 @@ domain_claims:
     Yes, AATIP existed, and it “did pursue research and investigation into unidentified aerial phenomena,” Pentagon spokesperson Christopher Sherwood told me.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) existed and did pursue research and investigation into unidentified aerial phenomena.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 89655ed4-c83c-454b-a71f-3aaee8d97fec
   type: administrative
   provenance_chain:
@@ -327,6 +363,11 @@ domain_claims:
     name: United States Department of Defense (DoD)
   quote: Pentagon spokesperson Christopher Sherwood told me.
   text: Christopher Sherwood is a Pentagon spokesperson.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 923498d3-660a-49ee-81c5-9a47ef311002
   type: testimony
   attestation: second_hand
@@ -350,6 +391,11 @@ domain_claims:
     “Mr. Elizondo had no responsibilities with regard to the AATIP program while he worked in OUSDI \[the Office of Under Secretary of Defense for Intelligence], up until the time he resigned effective 10/4/2017.”
   text: |-
     Luis Elizondo had no responsibilities with regard to the Advanced Aerospace Threat Identification Program (AATIP) while he worked in the Office of the Under Secretary of Defense for Intelligence (OUSDI), up until the time he resigned effective 2017-10-04.
+  entailment:
+    label: entails
+    score: 0.595
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2f2c5854-6063-4060-bd70-ba3f3c5b99eb
   type: administrative
   provenance_chain:
@@ -368,6 +414,11 @@ domain_claims:
     a spokesperson for To The Stars Academy of Arts & Science, a UFO research and entertainment company that Elizondo joined after he left the Defense Department.
   text: |-
     To The Stars Academy of Arts & Science is a UFO research and entertainment company that Luis Elizondo joined after he left the Department of Defense.
+  entailment:
+    label: entails
+    score: 0.721
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8d412668-3655-44ea-b335-6d63990ceafd
   type: administrative
   provenance_chain:
@@ -384,6 +435,11 @@ domain_claims:
     John Greenewald, a UFO researcher who runs an online archive of Freedom of Information Act-obtained government documents on a website called the Black Vault.
   text: |-
     John Greenewald is a UFO researcher who runs an online archive of Freedom of Information Act (FOIA)-obtained government documents on a website called the Black Vault.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 79d12578-fed8-4fcd-a578-3c9ea700590d
   type: administrative
   provenance_chain:
@@ -402,6 +458,11 @@ domain_claims:
     At the time, Greenewald had become frustrated at the lack of tangible information about AATIP and Elizondo’s role; additionally, Elizondo had spurned Greenewald’s interview requests.
   text: |-
     By the time of Kari DeLonge's email, John Greenewald had become frustrated at the lack of tangible information about the Advanced Aerospace Threat Identification Program (AATIP) and Luis Elizondo's role, and Elizondo had spurned Greenewald's interview requests.
+  entailment:
+    label: entails
+    score: 0.452
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6378f1c7-c08a-46cf-a2cd-61cf437f3c0b
   type: testimony
   attestation: second_hand
@@ -428,6 +489,11 @@ domain_claims:
     Greenewald told me that he had asked DeLonge specifically where Elizondo worked within the Department of Defense when he ran AATIP.
   text: |-
     John Greenewald had asked Kari DeLonge specifically where Luis Elizondo worked within the Department of Defense when he ran the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc254ea9-32ab-413c-b1ac-2ff1a69d3a3d
   type: testimony
   attestation: second_hand
@@ -455,6 +521,11 @@ domain_claims:
     “The program was initially run out of \[the Defense Intelligence Agency] but when Lue took it over in 2010 as Director, he ran it out of the Office for the Secretary of Defense (OSD) under the Under Secretary of Defense for Intelligence (USDI). Hope that clarifies.”
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) was initially run out of the Defense Intelligence Agency (DIA), but when Luis Elizondo took it over in 2010 as Director, he ran it out of the Office for the Secretary of Defense (OSD) under the Under Secretary of Defense for Intelligence (USDI).
+  entailment:
+    label: entails
+    score: 0.471
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6a8e967a-e681-4cd3-a65c-7fd61108f5a3
   type: testimony
   attestation: first_hand
@@ -475,6 +546,11 @@ domain_claims:
     I tried contacting Elizondo multiple times via email and his cellphone. He has not responded.
   text: |-
     Keith Kloor tried contacting Luis Elizondo multiple times via email and his cellphone, and Elizondo did not respond.
+  entailment:
+    label: entails
+    score: 0.61
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 167c1e76-f003-4424-9145-c914eea7b989
   type: administrative
   attestation: second_hand
@@ -489,6 +565,11 @@ domain_claims:
   quote: |-
     the self-described “career spy” is having another big moment in the media spotlight.
   text: Luis Elizondo has described himself as a "career spy."
+  entailment:
+    label: neutral
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cb9041a9-2fc3-4cd1-862e-16f1a3e69eda
   type: administrative
   provenance_chain:
@@ -503,6 +584,11 @@ domain_claims:
     name: Blink-182
   quote: DeLonge, a musician of Blink-182 fame and longtime UFO enthusiast,
   text: Tom DeLonge is a musician of Blink-182 fame and a longtime UFO enthusiast.
+  entailment:
+    label: entails
+    score: 0.884
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a1011f53-2306-4963-b5e9-33f838a3faeb
   type: administrative
   provenance_chain:
@@ -518,6 +604,11 @@ domain_claims:
   quote: is the co-founder and interim CEO of To the Stars,
   text: |-
     Tom DeLonge is the co-founder and interim CEO of To The Stars Academy of Arts & Science.
+  entailment:
+    label: entails
+    score: 0.546
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b31244ee-24c0-4446-9835-40d87a15009f
   type: administrative
   provenance_chain:
@@ -537,6 +628,11 @@ domain_claims:
     the company Elizondo joined in October 2017, several days after he resigned from the Department of Defense.
   text: |-
     Luis Elizondo joined To The Stars Academy of Arts & Science in October 2017, several days after he resigned from the Department of Defense.
+  entailment:
+    label: entails
+    score: 0.467
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ac782519-560f-497b-a6b5-9f8dab9d4708
   type: opinion
   attestation: first_hand
@@ -559,6 +655,11 @@ domain_claims:
     “We know that UFOs exist,” Chris Mellon ... pronounced on the show. “This is no longer an issue. The issue is why are they here? Where are they coming from? And what is the technology behind these devices that we are observing?”
   text: |-
     We know that UFOs exist; this is no longer an issue, the issue is why are they here, where are they coming from, and what is the technology behind these devices that we are observing.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6d0ee8c5-c8af-49ff-86d4-504b43cd2efc
   type: administrative
   provenance_chain:
@@ -575,6 +676,11 @@ domain_claims:
     Chris Mellon, a deputy assistant secretary of defense for intelligence in the Clinton and George W. Bush administrations,
   text: |-
     Chris Mellon was a deputy assistant secretary of defense for intelligence in the Clinton and George W. Bush administrations.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: add06088-d4e8-4e7b-b229-c50e087682ab
   type: administrative
   provenance_chain:
@@ -591,6 +697,11 @@ domain_claims:
     Mellon, like Elizondo, works for To the Stars (his title, according to the company’s website, is national security affairs adviser).
   text: |-
     Chris Mellon works for To The Stars Academy of Arts & Science, with the title of national security affairs adviser according to the company's website.
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 02b3155c-a029-4ae2-991e-383cf28b5980
   type: administrative
   provenance_chain:
@@ -613,6 +724,11 @@ domain_claims:
     along with the fact that the History Channel show was made by the company Elizondo and Mellon work for.
   text: |-
     The History Channel show "Unidentified: Inside America's UFO Investigation" was made by To The Stars Academy of Arts & Science, the company Luis Elizondo and Chris Mellon work for.
+  entailment:
+    label: entails
+    score: 0.439
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a037f21f-a9f9-44c0-abf9-b6fedc5bd452
   type: testimony
   attestation: first_hand
@@ -635,6 +751,11 @@ domain_claims:
     Amid the mountain of media coverage of Elizondo in the last two years, I have found only one story that provides official confirmation that he headed the government UFO program known as AATIP.
   text: |-
     In the two years before 2019-06-01, Keith Kloor found only one story providing official confirmation that Luis Elizondo headed the government UFO program known as the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.512
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 16f4bd1e-8874-4d15-b152-49a3addafff2
   type: administrative
   attestation: second_hand
@@ -664,6 +785,11 @@ domain_claims:
     “Pentagon spokeswoman Dana White confirmed to Politico that the program existed and was run by Elizondo,” Bryan Bender wrote in December 2017.
   text: |-
     In December 2017, Bryan Bender wrote in Politico that Pentagon spokeswoman Dana White confirmed to Politico that the Advanced Aerospace Threat Identification Program (AATIP) existed and was run by Luis Elizondo.
+  entailment:
+    label: entails
+    score: 0.501
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6d4f71a5-7032-4f8a-a6f8-3d3add639a27
   type: administrative
   provenance_chain:
@@ -678,6 +804,11 @@ domain_claims:
     Earlier this year, White, a Trump administration political appointee, resigned amid an internal probe into charges of misconduct.
   text: |-
     Dana White, a Trump administration political appointee, resigned earlier in 2019 amid an internal probe into charges of misconduct.
+  entailment:
+    label: entails
+    score: 0.406
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ebefb866-d266-41fc-9d15-5b5028c318a4
   type: testimony
   attestation: second_hand
@@ -702,6 +833,11 @@ domain_claims:
     But Pentagon spokesperson Christopher Sherwood told me that he “cannot confirm” White’s statement.
   text: |-
     Pentagon spokesperson Christopher Sherwood said he cannot confirm Dana White's statement that the Advanced Aerospace Threat Identification Program (AATIP) was run by Luis Elizondo.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6c997aa4-8849-406e-a630-e6a12881969d
   type: administrative
   provenance_chain:
@@ -716,6 +852,11 @@ domain_claims:
     name: Politico
   quote: Bender, who is Politico’s defense editor,
   text: Bryan Bender is Politico's defense editor.
+  entailment:
+    label: entails
+    score: 0.796
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 92695825-f986-4744-a79d-2d6e9f428c4b
   type: opinion
   attestation: first_hand
@@ -738,6 +879,11 @@ domain_claims:
     “Lue Elizondo, Chris Mellon — these guys still have security clearances, still have networks in Washington, still are in the business, if you will.”
   text: |-
     Luis Elizondo and Chris Mellon still have security clearances, still have networks in Washington, and are still in the business.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d0ebc008-c29f-4922-a6c7-3e561c6f4c56
   type: testimony
   attestation: first_hand
@@ -758,6 +904,11 @@ domain_claims:
     Elizondo confirmed to me earlier this year that he is, in fact, working as a government contractor, “but it’s not what you think it is,” he said.
   text: |-
     Luis Elizondo confirmed to Keith Kloor earlier in 2019 that he is working as a government contractor, saying "but it's not what you think it is."
+  entailment:
+    label: entails
+    score: 0.437
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: af79328b-4697-4950-9ef5-08c6e0b73a37
   type: opinion
   attestation: first_hand
@@ -774,6 +925,11 @@ domain_claims:
     name: DeLonge, Tom
   quote: DeLonge claims that he is the military’s chosen vessel for UFO disclosure.
   text: Tom DeLonge claims that he is the military's chosen vessel for UFO disclosure.
+  entailment:
+    label: entails
+    score: 0.917
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 34d34f8f-d76e-489a-aff1-11258ef5bcfc
   type: opinion
   attestation: first_hand
@@ -796,6 +952,11 @@ domain_claims:
     “Communication,” DeLong responded. “They don’t have a way to make a movie, a book. They don’t have a way to go on a show like this.”
   text: |-
     On Joe Rogan's podcast, Tom DeLonge said the military's role for him was communication, because they don't have a way to make a movie, a book, or to go on a show.
+  entailment:
+    label: entails
+    score: 0.537
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e0ceb63f-fbf4-4edb-bc27-5e599c8773c8
   type: administrative
   provenance_chain:
@@ -812,6 +973,11 @@ domain_claims:
     several years before DeLonge took on this momentous communications assignment, he created a website called Strange Times that was essentially a clearinghouse for UFO news and conspiracies.
   text: |-
     Several years before founding To The Stars Academy of Arts & Science, Tom DeLonge created a website called Strange Times that was essentially a clearinghouse for UFO news and conspiracies.
+  entailment:
+    label: entails
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d45b167e-2eb7-4303-a2c0-f5aa84165962
   type: administrative
   provenance_chain:
@@ -826,6 +992,11 @@ domain_claims:
     To the Stars, which raised more than $2 million from investors, was originally hyped as a UFO research company that would explore the “outer edges of science,”
   text: |-
     To The Stars Academy of Arts & Science raised more than 2 million United States dollars from investors and was originally hyped as a UFO research company that would explore the "outer edges of science."
+  entailment:
+    label: entails
+    score: 0.516
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8192a2b5-94ea-4477-b014-cb703d59df5a
   type: administrative
   attestation: second_hand
@@ -843,6 +1014,11 @@ domain_claims:
     its Security and Exchange Commission filing identifies it as a “Motion Picture & Video Tape Production” concern.
   text: |-
     The Securities and Exchange Commission (SEC) filing of To The Stars Academy of Arts & Science identifies it as a "Motion Picture & Video Tape Production" concern.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: bb08f341-04a2-4ab4-b332-5fc97cb0a23b
   type: administrative
   provenance_chain:
@@ -856,6 +1032,11 @@ domain_claims:
   quote: |-
     everyone who called him looney tunes for having chased after Bigfoot and flying saucers in the Nevada desert.
   text: Tom DeLonge chased after Bigfoot and flying saucers in the Nevada desert.
+  entailment:
+    label: neutral
+    score: 0.953
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 77858637-8835-4929-bab2-f3e89cc69cf4
   type: administrative
   provenance_chain:
@@ -872,6 +1053,11 @@ domain_claims:
     The Advanced Aerospace Threat Identification Program received widespread press coverage after Elizondo disclosed its existence almost two years ago.
   text: |-
     The Advanced Aerospace Threat Identification Program (AATIP) received widespread press coverage after Luis Elizondo disclosed its existence almost two years before 2019-06-01.
+  entailment:
+    label: entails
+    score: 0.465
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0a19e016-f6a8-44f4-be4e-d9f411f3128f
   type: opinion
   attestation: first_hand
@@ -894,6 +1080,11 @@ domain_claims:
     “You can laugh if you want, but a lot of people are taking this revelation seriously,” Brett Baer said on Fox News
   text: |-
     A lot of people are taking the revelation of the Advanced Aerospace Threat Identification Program (AATIP) seriously.
+  entailment:
+    label: entails
+    score: 0.481
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d4be5fcb-200b-40e1-a278-41d21b22481f
   type: opinion
   attestation: first_hand
@@ -914,6 +1105,11 @@ domain_claims:
     he talked gravely about hypersonic, gravity-defying “unidentified aerial vehicles” that, in recent years, had encroached on military training areas in restricted airspace.
   text: |-
     After disclosing the Advanced Aerospace Threat Identification Program (AATIP), Luis Elizondo talked on cable news about hypersonic, gravity-defying "unidentified aerial vehicles" that in recent years had encroached on military training areas in restricted airspace.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dfe1d5e1-a8f8-4816-9684-7540edaab898
   type: administrative
   provenance_chain:
@@ -932,6 +1128,11 @@ domain_claims:
     Many of these reports were conveniently illustrated with videos taken from cockpit cameras of F-18 fighter jets that Elizondo had arranged for the Pentagon to release just before he quit.
   text: |-
     Many reports of the unidentified aerial vehicles were illustrated with videos taken from cockpit cameras of F-18 fighter jets that Luis Elizondo had arranged for the Pentagon to release just before he quit.
+  entailment:
+    label: entails
+    score: 0.584
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: aeb50fa0-cccd-425e-b057-eca70c2e8bc8
   type: testimony
   attestation: second_hand
@@ -954,6 +1155,11 @@ domain_claims:
     Sherwood, the Pentagon spokesperson, said the videos were released “for research purposes … and not for general public release,”
   text: |-
     Pentagon spokesperson Christopher Sherwood said the F-18 cockpit videos were released for research purposes and not for general public release.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 459f014d-700a-45a6-bf2f-d8647fe05666
   type: opinion
   attestation: first_hand
@@ -973,6 +1179,11 @@ domain_claims:
     “People may have associated you with being fringe or out there,” he told one rapt audience of hundreds at a UFO conference last July. “All along, you were right.”
   text: |-
     At a UFO conference in July 2018, Luis Elizondo told an audience of hundreds, "People may have associated you with being fringe or out there. All along, you were right."
+  entailment:
+    label: entails
+    score: 0.441
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ef7ebb82-30a9-4908-b5e1-83da1b531d03
   type: administrative
   provenance_chain:
@@ -989,6 +1200,11 @@ domain_claims:
     longtime UFO researchers were having trouble finding out what the program exactly did, as well as the scope of Elizondo’s role. FOIA requests were turning up dry.
   text: |-
     Longtime UFO researchers were having trouble finding out what the Advanced Aerospace Threat Identification Program (AATIP) exactly did and the scope of Luis Elizondo's role, and Freedom of Information Act (FOIA) requests were turning up dry.
+  entailment:
+    label: entails
+    score: 0.898
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2e805559-b118-46b8-9c48-62ead672abce
   type: opinion
   attestation: first_hand
@@ -1011,6 +1227,11 @@ domain_claims:
     “In the Department of Defense, there’s always a paper trail,” he told the audience at the UFO conference. ... “You won’t find one for this program.”
   text: |-
     In the Department of Defense there is always a paper trail, but there is none to be found for the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.835
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b57b4091-5cd4-4d1f-a4ca-9c42d97dcf2c
   type: administrative
   provenance_chain:
@@ -1025,6 +1246,11 @@ domain_claims:
     Some dubious, unofficial documents leaked out to George Knapp, a Las Vegas TV journalist
   text: |-
     Some dubious, unofficial documents related to the Pentagon UFO study leaked out to George Knapp.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8989279a-5e67-48ca-ade3-ae66cbabfdc1
   type: administrative
   provenance_chain:
@@ -1041,6 +1267,11 @@ domain_claims:
     George Knapp, a Las Vegas TV journalist who, for decades, has been a fixture in the UFO media orbit.
   text: |-
     George Knapp is a Las Vegas TV journalist who for decades has been a fixture in the UFO media orbit.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 242830bc-99f5-4cfc-900b-ea892c56c91d
   type: administrative
   provenance_chain:
@@ -1061,6 +1292,11 @@ domain_claims:
     Knapp has been a vocal defender of Elizondo and DeLonge for the past two years, pushing back on critics who have raised thorny questions about To the Stars.
   text: |-
     George Knapp has been a vocal defender of Luis Elizondo and Tom DeLonge for the past two years, pushing back on critics who raised questions about To The Stars Academy of Arts & Science.
+  entailment:
+    label: entails
+    score: 0.487
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5b3077a4-ae77-4d3b-a6d4-1b626b6959c1
   type: administrative
   provenance_chain:
@@ -1077,6 +1313,11 @@ domain_claims:
     Knapp also purchased stock in the company, something he has not always revealed to readers and viewers in his reporting.
   text: |-
     George Knapp purchased stock in To The Stars Academy of Arts & Science, something he has not always revealed to readers and viewers in his reporting.
+  entailment:
+    label: entails
+    score: 0.433
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6ac3a731-fbf5-4b72-9367-b835a52f0986
   type: testimony
   attestation: second_hand
@@ -1102,6 +1343,11 @@ domain_claims:
     Knapp acknowledged buying 400 shares of the academy’s stock in 2018, “not as an investment, but as a way to support their fledgling company and their work.”
   text: |-
     George Knapp bought 400 shares of the To The Stars Academy of Arts & Science stock in 2018, not as an investment but as a way to support the fledgling company and their work.
+  entailment:
+    label: entails
+    score: 0.528
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 43af6677-b709-4976-b78e-db24631d40ed
   type: testimony
   attestation: second_hand
@@ -1128,6 +1374,11 @@ domain_claims:
     He wrote that he had “made that information public” and “informed” his employer” at KLAS-TV in Las Vegas.
   text: |-
     George Knapp said he had made public and informed his employer at KLAS-TV in Las Vegas about his purchase of To The Stars Academy of Arts & Science stock.
+  entailment:
+    label: neutral
+    score: 0.524
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: acc2238c-c2f0-42b6-8be0-cb2025a62d2a
   type: testimony
   attestation: second_hand
@@ -1150,6 +1401,11 @@ domain_claims:
     Knapp also said that he put the shares in a trust that “would be donated to a charity.” He believes that transaction has been completed and that he now owns “zero stock” in the company, he wrote.
   text: |-
     George Knapp said he put his To The Stars Academy of Arts & Science shares into a trust that would be donated to a charity, believes the transaction has been completed, and now owns zero stock in the company.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 958a03d6-21c5-4028-a884-71f879796b11
   type: administrative
   provenance_chain:
@@ -1168,6 +1424,11 @@ domain_claims:
     Greenewald, the FOIA researcher ... Initially enthusiastic about To the Stars, Greenewald became increasingly skeptical when he was unable to verify many of Elizondo’s claims about the government’s UFO program through FOIA requests and conversations with Pentagon representatives.
   text: |-
     John Greenewald is a Freedom of Information Act (FOIA) researcher, initially enthusiastic about To The Stars Academy of Arts & Science, who became increasingly skeptical when he was unable to verify many of Luis Elizondo's claims about the government's UFO program through FOIA requests and conversations with Pentagon representatives.
+  entailment:
+    label: entails
+    score: 0.492
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 220a80f0-c966-430c-9cd5-5b76d55c49ca
   type: administrative
   provenance_chain:
@@ -1193,6 +1454,11 @@ domain_claims:
     So last year, Greenewald reached out to To the Stars spokesperson Kari DeLonge (Tom’s sister) for more information about Elizondo’s involvement in AATIP.
   text: |-
     In 2018, John Greenewald reached out to To The Stars Academy of Arts & Science spokesperson Kari DeLonge, who is Tom DeLonge's sister, for more information about Luis Elizondo's involvement in the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.48
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f6cf8f21-d1b7-4514-a7fb-67b78ffb9c98
   type: administrative
   provenance_chain:
@@ -1207,6 +1473,11 @@ domain_claims:
     name: DeLonge, Tom
   quote: Kari DeLonge (Tom’s sister)
   text: Kari DeLonge is Tom DeLonge's sister.
+  entailment:
+    label: entails
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ee66fac0-542f-4b84-b445-24e9e26b8578
   type: testimony
   attestation: second_hand
@@ -1231,6 +1502,11 @@ domain_claims:
     Sherwood said he’d spoken with OUSDI leadership, including individuals who are “still there” from the time when Elizondo started working in the office.
   text: |-
     Pentagon spokesperson Christopher Sherwood knew Luis Elizondo hadn't worked for the Advanced Aerospace Threat Identification Program (AATIP) during his time at the Office of the Under Secretary of Defense for Intelligence (OUSDI) because he had spoken with OUSDI leadership, including individuals still there from the time Elizondo started working in the office.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a4686433-047d-497d-9a19-54c9c767db40
   type: administrative
   provenance_chain:
@@ -1247,6 +1523,11 @@ domain_claims:
     the Office of the Under Secretary of Defense for Intelligence, where he was based from 2008 until his retirement in 2017.
   text: |-
     Luis Elizondo was based at the Office of the Under Secretary of Defense for Intelligence (OUSDI) from 2008 until his retirement in 2017.
+  entailment:
+    label: entails
+    score: 0.772
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27b588d7-92f4-41e3-a19e-a12c3f863ea7
   type: testimony
   attestation: second_hand
@@ -1268,6 +1549,11 @@ domain_claims:
   quote: Sherwood acknowledged that Elizondo “worked for other organizations in DoD.”
   text: |-
     Pentagon spokesperson Christopher Sherwood acknowledged that Luis Elizondo worked for other organisations in the Department of Defense.
+  entailment:
+    label: entails
+    score: 0.622
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b1b27a31-b940-430c-b24b-f032e225963d
   type: administrative
   provenance_chain:
@@ -1280,6 +1566,11 @@ domain_claims:
     name: DeLonge, Kari
   quote: Kari DeLonge did not respond to multiple requests for comment.
   text: Kari DeLonge did not respond to multiple requests for comment.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: dea5748d-541f-476d-86d2-6c0c21d93d01
   type: administrative
   provenance_chain:
@@ -1296,6 +1587,11 @@ domain_claims:
     he does not appear to have supplied any materials that validate his connection to the government UFO program he insists he led. No memorandums, no emails discussing deliverables or findings, and no paperwork addressed to or from him that connects him to AATIP.
   text: |-
     Although Luis Elizondo has provided various documents to reporters to establish his bona fides, he does not appear to have supplied any materials validating his connection to the government UFO program he insists he led — no memorandums, no emails discussing deliverables or findings, and no paperwork connecting him to the Advanced Aerospace Threat Identification Program (AATIP).
+  entailment:
+    label: entails
+    score: 0.462
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95ff7acc-5b4c-41a2-8057-2848bf6cc57c
   type: administrative
   provenance_chain:
@@ -1319,6 +1615,11 @@ domain_claims:
     The documents he has provided include recent annual Defense Department performance evaluations and his October 4, 2017 resignation letter to then-Defense Secretary James Mattis, which bears the apparent seal of the Office of the Under Secretary of Defense.
   text: |-
     The documents Luis Elizondo has provided include recent annual Defense Department performance evaluations and his 2017-10-04 resignation letter to then-Defense Secretary James Mattis, which bears the apparent seal of the Office of the Under Secretary of Defense.
+  entailment:
+    label: entails
+    score: 0.394
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 990fc024-9b71-4a82-965e-287e15e9f97c
   type: opinion
   attestation: second_hand
@@ -1344,6 +1645,11 @@ domain_claims:
     In the letter, Elizondo alludes to internal opposition at the Pentagon to investigate UFOs that he wrote had menaced Navy Pilots and posed an “existential threat to our national security.”
   text: |-
     In his resignation letter, Luis Elizondo alludes to internal opposition at the Pentagon to investigating UFOs that he wrote had menaced Navy pilots and posed an existential threat to national security.
+  entailment:
+    label: entails
+    score: 0.875
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 574275fd-672b-43b6-89bb-3bd3f17e2472
   type: administrative
   attestation: second_hand
@@ -1363,6 +1669,11 @@ domain_claims:
   quote: The letter does not mention AATIP or Elizondo’s role as its director.
   text: |-
     Luis Elizondo's 2017-10-04 resignation letter does not mention the Advanced Aerospace Threat Identification Program (AATIP) or his role as its director.
+  entailment:
+    label: entails
+    score: 0.519
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9e640ff1-cc75-44e6-8cf2-d4bc1c2cd23f
   type: opinion
   attestation: first_hand
@@ -1385,6 +1696,11 @@ domain_claims:
     Bender describes Elizondo as “in many ways, an enigma. Here is a guy who spent decades in the intelligence community.”
   text: |-
     In "Unidentified: Inside America's UFO Investigation", Bryan Bender describes Luis Elizondo as in many ways an enigma, a guy who spent decades in the intelligence community.
+  entailment:
+    label: entails
+    score: 0.815
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4918f90-0490-4a8f-b10a-bd5550cba274
   type: administrative
   provenance_chain:
@@ -1401,6 +1717,11 @@ domain_claims:
     Elizondo retired as an official at the Office of the Under Secretary of Defense for Intelligence.
   text: |-
     Luis Elizondo retired as an official at the Office of the Under Secretary of Defense for Intelligence.
+  entailment:
+    label: entails
+    score: 0.532
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e14754b6-acd1-44b4-9dcf-e8ef2a71df94
   type: administrative
   provenance_chain:
@@ -1419,6 +1740,11 @@ domain_claims:
     A public records search also reveals a series of home addresses for Elizondo over the last two decades that are close to intelligence facilities in Toa Baja, Puerto Rico ... and in Grovetown, Georgia.
   text: |-
     A public records search reveals a series of home addresses for Luis Elizondo over the last two decades that are close to intelligence facilities in Toa Baja, Puerto Rico, and in Grovetown, Georgia.
+  entailment:
+    label: entails
+    score: 0.51
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c8d4a3c5-b585-4450-a908-80174cd7d12c
   type: administrative
   provenance_chain:
@@ -1435,6 +1761,11 @@ domain_claims:
     Toa Baja, Puerto Rico (the site of an unacknowledged government surveillance program called “Echelon”)
   text: |-
     Toa Baja, Puerto Rico, is the site of an unacknowledged government surveillance program called Echelon.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 32c48d71-31cb-45ed-b283-22212e2116f5
   type: opinion
   attestation: first_hand
@@ -1457,6 +1788,11 @@ domain_claims:
     “Being from Georgia, I can assure you, there is no reason anyone in their right mind would live in Grovetown unless they were working at Fort Gordon, home of the Army’s principle signals intelligence units and school,” Tim McMillan
   text: |-
     There is no reason anyone would live in Grovetown, Georgia, unless they were working at Fort Gordon, home of the Army's principal signals intelligence units and school.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a299474c-9a12-469f-8e53-cf77f1f58c7a
   type: administrative
   provenance_chain:
@@ -1475,6 +1811,11 @@ domain_claims:
     Tim McMillan, who, like Greenewald, has a longtime interest in UFOs but has come to doubt Elizondo’s involvement with any government UFO program.
   text: |-
     Tim McMillan, like John Greenewald, has a longtime interest in UFOs but has come to doubt Luis Elizondo's involvement with any government UFO program.
+  entailment:
+    label: entails
+    score: 0.52
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5629c138-d46c-4eb7-87c0-434679956d9f
   type: administrative
   provenance_chain:
@@ -1492,6 +1833,11 @@ domain_claims:
     In 2017, when Elizondo outed himself to the Times, he was portrayed as a reluctant whistleblower and a little paranoid.
   text: |-
     In 2017, when Luis Elizondo outed himself to the New York Times, he was portrayed as a reluctant whistleblower and a little paranoid.
+  entailment:
+    label: entails
+    score: 0.479
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 420e31a1-8a09-446f-9dc2-373b37a0b19b
   type: administrative
   provenance_chain:
@@ -1513,6 +1859,11 @@ domain_claims:
     The three reporters who shared bylines on the story, including freelancer Leslie Kean ... met Elizondo in a “nondescript Washington hotel where he sat with his back to the wall, keeping an eye on the door.”
   text: |-
     The three reporters who shared bylines on the 2017 New York Times story included freelancer Leslie Kean, and they met Luis Elizondo in a nondescript Washington hotel where he sat with his back to the wall, keeping an eye on the door.
+  entailment:
+    label: entails
+    score: 0.45
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: caf6215e-987d-4d1e-81d9-11ea8bb2b29d
   type: opinion
   attestation: first_hand
@@ -1533,6 +1884,11 @@ domain_claims:
     described Elizondo as a “spooky, secretive guy” but added that he was “completely credible.”
   text: |-
     Helene Cooper considered Luis Elizondo a spooky, secretive guy but completely credible.
+  entailment:
+    label: entails
+    score: 0.895
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ceb2d950-8c74-43b9-b561-b290150613e0
   type: testimony
   attestation: first_hand
@@ -1555,6 +1911,11 @@ domain_claims:
     He showed her documents, pictures, and military videos of potential UFOs, which appeared fantastic to her, but also persuasive.
   text: |-
     Luis Elizondo showed Helene Cooper documents, pictures, and military videos of potential UFOs, which appeared fantastic but also persuasive to her.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 04453708-eb30-4f87-a54b-475a2b99a781
   type: opinion
   attestation: first_hand
@@ -1575,6 +1936,11 @@ domain_claims:
     “I did believe him,” Cooper said on the podcast. “It seemed completely credible to me in the moment.”
   text: |-
     Helene Cooper believed Luis Elizondo and found him completely credible in the moment.
+  entailment:
+    label: entails
+    score: 0.494
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b66c920e-e56f-44d7-a277-9178d3f13446
   type: testimony
   attestation: first_hand
@@ -1594,6 +1960,11 @@ domain_claims:
   quote: after she left the hotel room, Cooper acknowledged that doubts crept in.
   text: |-
     After leaving Luis Elizondo's hotel room, Helene Cooper acknowledged that doubts crept in.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1302e085-d5ff-41d6-b4c3-65c57b530a1c
   type: opinion
   attestation: first_hand
@@ -1616,6 +1987,11 @@ domain_claims:
     she decided that what mattered most was whether the Pentagon’s UFO program was real. That, she said, was the focus of the story.
   text: |-
     Helene Cooper decided that what mattered most was whether the Pentagon's UFO program was real, and that was the focus of the New York Times story.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 infrastructure_claims:
 - id: 8ee882de-bba1-49ba-9efa-ecdc1a56fec4
   type: administrative
@@ -1638,6 +2014,11 @@ infrastructure_claims:
     One of the first images in the opening episode of the new History Channel show “Unidentified: Inside America’s UFO Investigation” is a 2017 headline from the New York Times projected on a flickering screen: “Glowing Auras and ‘Black Money’: The Pentagon’s Mysterious UFO Program.”
   text: |-
     The History Channel show "Unidentified: Inside America's UFO Investigation" opens its first episode with a 2017 New York Times headline projected on a flickering screen reading "Glowing Auras and 'Black Money': The Pentagon's Mysterious UFO Program."
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 0dde68a8-ac86-4f6f-9650-3087828f5908
   type: administrative
   provenance_chain:
@@ -1657,6 +2038,11 @@ infrastructure_claims:
     It’s the story that launched Luis Elizondo into the public eye, the article that “shocked the world,” the narrator of “Unidentified” declares
   text: |-
     The New York Times 2017 article "Glowing Auras and 'Black Money': The Pentagon's Mysterious UFO Program" launched Luis Elizondo into the public eye.
+  entailment:
+    label: neutral
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ecdfe100-9425-42ea-9758-31d01fe6979f
   type: administrative
   provenance_chain:
@@ -1673,6 +2059,11 @@ infrastructure_claims:
     the History Channel show, which premiered on Friday and is being promoted as “groundbreaking nonfiction,”
   text: |-
     The History Channel show "Unidentified: Inside America's UFO Investigation" premiered on a Friday and is being promoted as "groundbreaking nonfiction."
+  entailment:
+    label: entails
+    score: 0.518
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d691b9ad-a57a-4655-9d30-7655545d536c
   type: administrative
   provenance_chain:
@@ -1691,6 +2082,11 @@ infrastructure_claims:
     The email was sent over a year ago by Kari DeLonge, a public relations representative for To the Stars, to John Greenewald,
   text: |-
     Over a year before 2019-06-01, Kari DeLonge, a public relations representative for To The Stars Academy of Arts & Science, sent an email to John Greenewald.
+  entailment:
+    label: entails
+    score: 0.471
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b2656e12-c891-4ac2-bb6c-bbe53ee9084d
   type: administrative
   provenance_chain:
@@ -1709,6 +2105,11 @@ infrastructure_claims:
     in the run-up to his star turn on the new History Channel show, he has been speaking to everyone from the New York Times to UFO media personalities and military bloggers.
   text: |-
     In the run-up to the History Channel show, Luis Elizondo had been speaking to outlets ranging from the New York Times to UFO media personalities and military bloggers.
+  entailment:
+    label: entails
+    score: 0.973
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 251852c9-b80e-47f3-af65-15e70e59c354
   type: administrative
   provenance_chain:
@@ -1725,6 +2126,11 @@ infrastructure_claims:
     the relationship between its executive producer, Tom DeLonge, Elizondo, and other former Pentagon officials
   text: |-
     Tom DeLonge is the executive producer of "Unidentified: Inside America's UFO Investigation."
+  entailment:
+    label: entails
+    score: 0.454
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bc2e6f5f-1eca-4cd4-b182-b538abf7a8cc
   type: administrative
   provenance_chain:
@@ -1743,6 +2149,11 @@ infrastructure_claims:
     Another former Pentagon official with a prominent role in “Unidentified” appeared several days ago on “Fox & Friends.”
   text: |-
     Chris Mellon, another former Pentagon official with a prominent role in "Unidentified: Inside America's UFO Investigation", appeared on "Fox & Friends" several days before 2019-06-01.
+  entailment:
+    label: entails
+    score: 0.469
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 32f77fe7-fe01-4e07-80a5-5872863d8de8
   type: administrative
   provenance_chain:
@@ -1763,6 +2174,11 @@ infrastructure_claims:
     Bender ... had a recurring role in the first episode of “Unidentified.” He appeared on camera numerous times as a kind of authoritative character witness for Elizondo, Mellon, and their UFO investigations.
   text: |-
     Bryan Bender had a recurring role in the first episode of "Unidentified: Inside America's UFO Investigation", appearing on camera numerous times as a kind of authoritative character witness for Luis Elizondo, Chris Mellon, and their UFO investigations.
+  entailment:
+    label: entails
+    score: 0.447
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a8c21586-f661-4834-b5ff-68410f22c319
   type: administrative
   provenance_chain:
@@ -1784,6 +2200,11 @@ infrastructure_claims:
     the whole origin story of To the Stars, which DeLonge recapped in a bizarre public rollout in October 2017 and in an even more bizarre interview with podcast host Joe Rogan,
   text: |-
     Tom DeLonge recapped the origin story of To The Stars Academy of Arts & Science in a public rollout in October 2017 and in an interview with podcast host Joe Rogan.
+  entailment:
+    label: entails
+    score: 0.484
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27312b65-e873-49aa-abba-7ff88c266649
   type: administrative
   provenance_chain:
@@ -1800,6 +2221,11 @@ infrastructure_claims:
     the making of “Unidentified,” which lists DeLonge as executive producer. (He is also prominently featured in the show.)
   text: |-
     "Unidentified: Inside America's UFO Investigation" lists Tom DeLonge as executive producer, and he is also prominently featured in the show.
+  entailment:
+    label: entails
+    score: 0.692
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1f352347-b90e-4527-b559-585634140c44
   type: administrative
   provenance_chain:
@@ -1820,6 +2246,11 @@ infrastructure_claims:
     days after the New York Times broke the story with its lavish front-page Sunday spread on December 17, 2017.
   text: |-
     The New York Times broke the story of the Advanced Aerospace Threat Identification Program (AATIP) with a front-page Sunday spread on 2017-12-17.
+  entailment:
+    label: entails
+    score: 0.598
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6cf3ed43-cc91-45c4-aad9-d7f37ebd5e1b
   type: administrative
   provenance_chain:
@@ -1839,6 +2270,11 @@ infrastructure_claims:
     It was the first public forum in which Elizondo laid out the history and objectives of the AATIP; soundbites from his talk were sprinkled throughout the first episode of “Unidentified.”
   text: |-
     The July 2018 UFO conference was the first public forum in which Luis Elizondo laid out the history and objectives of the Advanced Aerospace Threat Identification Program (AATIP), and soundbites from his talk were sprinkled throughout the first episode of "Unidentified: Inside America's UFO Investigation."
+  entailment:
+    label: entails
+    score: 0.449
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: aaf379db-e72d-4fd8-b8e7-edd145c1dc07
   type: administrative
   provenance_chain:
@@ -1857,6 +2293,11 @@ infrastructure_claims:
     Knapp also appeared in the first episode of “Unidentified,” lauding DeLonge for his “unprecedented” efforts in advancing the UFO issue.
   text: |-
     George Knapp appeared in the first episode of "Unidentified: Inside America's UFO Investigation", lauding Tom DeLonge for his unprecedented efforts in advancing the UFO issue.
+  entailment:
+    label: entails
+    score: 0.497
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a459cbd7-3a0a-4b3a-ac83-c7aa9bbcd4f6
   type: administrative
   attestation: second_hand
@@ -1878,6 +2319,11 @@ infrastructure_claims:
     Leslie Kean (who wrote in 2016 that she was “privileged to welcome” Chris Mellon into the UFO organization to which she belonged)
   text: |-
     Leslie Kean wrote in 2016 that she was privileged to welcome Chris Mellon into the UFO organisation to which she belonged.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 887b9f76-6cfa-4ae1-92e0-bb6e1f6425ff
   type: administrative
   provenance_chain:
@@ -1896,3 +2342,8 @@ infrastructure_claims:
     On the Times’s podcast, “The Daily,” Helene Cooper, the newspaper’s Pentagon correspon
   text: |-
     Helene Cooper is the New York Times's Pentagon correspondent and appeared on the newspaper's podcast "The Daily."
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

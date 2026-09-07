@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.5
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.2
 prompts:
 - pass: nodes
   id: nodes
@@ -95,6 +101,11 @@ domain_claims:
   quote: I have some more of the white particles in view below the capsule.
   text: |-
     On 1962-05-24, during the Mercury Atlas 7 mission (1962), Scott Carpenter observed white particles below the capsule.
+  entailment:
+    label: neutral
+    score: 0.651
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5cb4f58a-5571-4d34-a0df-752425db69c7
   type: observation
   attestation: first_hand
@@ -117,6 +128,11 @@ domain_claims:
   quote: They appear to be traveling exactly my speed.
   text: |-
     The white particles Scott Carpenter observed below the capsule during the Mercury Atlas 7 mission (1962) on 1962-05-24 appeared to be travelling at the same speed as him.
+  entailment:
+    label: entails
+    score: 0.886
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e032268a-c84b-4356-b7de-00a0100b6667
   type: observation
   attestation: first_hand
@@ -139,6 +155,11 @@ domain_claims:
   quote: There is one drifting off.
   text: |-
     On 1962-05-24, during the Mercury Atlas 7 mission (1962), Scott Carpenter observed one of the white particles drifting away from the others.
+  entailment:
+    label: entails
+    score: 0.924
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2c590971-0818-4370-ac44-454c2f9da84d
   type: observation
   attestation: first_hand
@@ -161,6 +182,11 @@ domain_claims:
   quote: It's going faster than I am, as a matter of fact.
   text: |-
     The drifting particle Scott Carpenter observed during the Mercury Atlas 7 mission (1962) on 1962-05-24 was travelling faster than him.
+  entailment:
+    label: entails
+    score: 0.986
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3d570e00-16da-4908-a76b-5894b8cc31c0
   type: observation
   attestation: first_hand
@@ -184,6 +210,11 @@ domain_claims:
     I haven't seen the great numbers of these particles, but I've seen a few of them.
   text: |-
     During the Mercury Atlas 7 mission (1962) on 1962-05-24, Scott Carpenter had not seen large numbers of the white particles but had seen a few of them.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 334713f1-85ad-4ace-b3c6-de194cc3372c
   type: observation
   attestation: first_hand
@@ -206,6 +237,11 @@ domain_claims:
   quote: Their motion is random.
   text: |-
     The white particles Scott Carpenter observed during the Mercury Atlas 7 mission (1962) on 1962-05-24 exhibited random motion.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6020dd5c-00d4-456e-8789-7da3ed8c9cd1
   type: observation
   attestation: first_hand
@@ -228,6 +264,11 @@ domain_claims:
   quote: They look exactly like snowflakes to me.
   text: |-
     The white particles Scott Carpenter observed during the Mercury Atlas 7 mission (1962) on 1962-05-24 looked exactly like snowflakes to him.
+  entailment:
+    label: neutral
+    score: 0.837
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0ef676cd-46c4-49a8-8553-e483ae40debd
   type: testimony
   attestation: first_hand
@@ -253,6 +294,11 @@ domain_claims:
     Let me get within scanner limits first.
   text: |-
     During the Mercury Atlas 7 mission (1962) on 1962-05-24, National Aeronautics and Space Administration Ground Control asked Scott Carpenter whether he had attempted a return; Scott Carpenter responded that he had not and that he needed to get within scanner limits first.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1f2a7ebb-862f-4f41-93f6-e079b250a1af
   type: testimony
   attestation: first_hand
@@ -275,6 +321,11 @@ domain_claims:
     Scott Carpenter: I must adjust my attitude to within scanner limits first.
   text: |-
     During the Mercury Atlas 7 mission (1962) on 1962-05-24, Scott Carpenter clarified that he needed to adjust his attitude to within scanner limits before attempting a return.
+  entailment:
+    label: neutral
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: de3954f6-4ae1-44e1-8a35-6142cf1516d4
   type: observation
   attestation: first_hand
@@ -297,6 +348,11 @@ domain_claims:
   quote: There were some more of those little particles.
   text: |-
     On 1962-05-24, during the Mercury Atlas 7 mission (1962), Scott Carpenter observed additional small white particles.
+  entailment:
+    label: neutral
+    score: 0.897
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c0659b05-66c7-4df1-a712-1079547da202
   type: observation
   attestation: first_hand
@@ -319,6 +375,11 @@ domain_claims:
   quote: They definitely looked like snowflakes this time.
   text: |-
     The additional particles Scott Carpenter observed during the Mercury Atlas 7 mission (1962) on 1962-05-24 definitely looked like snowflakes.
+  entailment:
+    label: entails
+    score: 0.717
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5a317ea7-75f7-406e-ac0a-2e8a6f4935cd
   type: administrative
   attestation: second_hand
@@ -344,3 +405,8 @@ domain_claims:
     I understand your particles look like definite snowflakes.
   text: |-
     During the Mercury Atlas 7 mission (1962) on 1962-05-24, National Aeronautics and Space Administration Ground Control acknowledged that the particles Scott Carpenter had observed looked like definite snowflakes.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote

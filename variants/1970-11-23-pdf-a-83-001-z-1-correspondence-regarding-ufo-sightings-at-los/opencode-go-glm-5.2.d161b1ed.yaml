@@ -9,6 +9,12 @@ ai_usage:
     input: 14624
     output: 15709
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 5.4
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.8
 prompts:
 - pass: nodes
   id: nodes
@@ -122,6 +128,11 @@ domain_claims:
     I can however, tell you that during the years 1948 through 1951 several sightings of green lights were made at Los Alamos.
   text: |-
     An unnamed correspondent recalls that several sightings of green lights were made at Los Alamos during the years 1948 through 1951.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c3be6188-68bf-48de-9599-8bc0c7b87176
   type: testimony
   attestation: first_hand
@@ -137,6 +148,11 @@ domain_claims:
   quote: These usually occurred during the early part of the night, nine to eleven
   text: |-
     The green light sightings at Los Alamos during 1948-1951 usually occurred during the early part of the night, between 21:00 and 23:00.
+  entailment:
+    label: contradicts
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4720923e-3979-4133-836d-2d38423d2a8b
   type: testimony
   attestation: first_hand
@@ -154,6 +170,11 @@ domain_claims:
   quote: and were usually in the Jemez Mountains.
   text: |-
     The green light sightings at Los Alamos during 1948-1951 were usually located in the Jemez Mountains.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c3b517a1-694c-4324-b58e-fb24a1e14441
   type: observation
   attestation: first_hand
@@ -170,6 +191,11 @@ domain_claims:
     I can recall several instances of green lights weaving in and out of Mountain peaks.
   text: |-
     An unnamed correspondent recalls observing several instances of green lights weaving in and out of mountain peaks near Los Alamos during 1948-1951.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0e64f0ae-0473-462c-8d87-fb3debcce608
   type: testimony
   attestation: first_hand
@@ -188,6 +214,11 @@ domain_claims:
     This was all reported to the Protective Force Headquarters and should be a matter of record on their logs.
   text: |-
     The Los Alamos green light sightings (1948-1951) were reported to the Protective Force Headquarters.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f3d20ce2-4c78-4d88-bb1a-5cfd72d93d8b
   type: opinion
   attestation: first_hand
@@ -205,6 +236,11 @@ domain_claims:
   quote: should be a matter of record on their logs.
   text: |-
     The Los Alamos green light sightings (1948-1951) should be a matter of record in the Protective Force Headquarters logs.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e6c9a83f-2d9b-4b74-bbfa-fb5b7412f3e5
   type: observation
   attestation: first_hand
@@ -223,6 +259,11 @@ domain_claims:
     I also recall one instance of five objects flying over Los Alamos in the afternoon.
   text: |-
     An unnamed correspondent recalls one instance of five objects flying over Los Alamos in the afternoon during the early 1950s.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fad3859f-ea0f-4564-b099-6a02c438221a
   type: observation
   attestation: first_hand
@@ -239,6 +280,11 @@ domain_claims:
     They were flying from southeast to northwest and appeared to be flying in formation.
   text: |-
     The five objects in the Los Alamos formation flyover sighting (early 1950s) were flying from southeast to northwest and appeared to be flying in formation.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 96700353-84af-4d00-8017-5924a182b85b
   type: testimony
   attestation: first_hand
@@ -257,6 +303,11 @@ domain_claims:
     I believe {{redacted: ~2 words}} of the Protective Force was one of the five or six people that sighted these objects.
   text: |-
     The Los Alamos formation flyover sighting (early 1950s) was observed by five or six people.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 25d896bf-e069-4b55-8300-3e4920cea012
   type: opinion
   attestation: first_hand
@@ -275,6 +326,11 @@ domain_claims:
     I believe {{redacted: ~2 words}} of the Protective Force was one of the five or six people that sighted these objects.
   text: |-
     An unnamed correspondent believes that a member of the Protective Force was among the five or six people who sighted the objects in the Los Alamos formation flyover sighting (early 1950s).
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 95f49861-f035-4747-bd45-93b535d36751
   type: administrative
   attestation: first_hand
@@ -304,6 +360,11 @@ domain_claims:
     As agreed in our telephone conversation of today's date, I would like to have the recipe that was used for the simulated atomic bomb demonstrations.
   text: |-
     On 1970-12-16, Tuck, James L. wrote to the United States Army Engineering School at Fort Belvoir, Virginia, following a telephone conversation on the same date.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f92666d9-2bb6-4b5a-8b4b-c7ffc1a10e04
   type: administrative
   attestation: first_hand
@@ -325,6 +386,11 @@ domain_claims:
     I would like to have the recipe that was used for the simulated atomic bomb demonstrations.
   text: |-
     Tuck, James L. requested from the United States Army Engineering School the recipe used for simulated atomic bomb demonstrations.
+  entailment:
+    label: entails
+    score: 0.596
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: cb18fc16-885e-47a5-ab9c-9f63cf89c752
   type: testimony
   attestation: first_hand
@@ -348,6 +414,11 @@ domain_claims:
     We are interested in the large atmospheric vortices which are produced as reported in the book "Scientific Study of Unidentified Flying Objects" by Dr. Edward U. Condon.
   text: |-
     Tuck, James L. is interested in the large atmospheric vortices produced, as reported in "Scientific Study of Unidentified Flying Objects" by Edward U. Condon.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ab698797-1514-44a0-a808-22d3c6e63172
   type: administrative
   attestation: first_hand
@@ -364,6 +435,11 @@ domain_claims:
     name: Ball lightning
   quote: Mindful of your interesting report on ball lightning
   text: Tuck, James L. produced a report on ball lightning.
+  entailment:
+    label: contradicts
+    score: 0.751
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f71cbfee-bab2-47ba-b877-46d06d108c8a
   type: opinion
   attestation: first_hand
@@ -381,6 +457,11 @@ domain_claims:
   quote: a UFO believer, James M. McCampbell, in his UFOLOGY, 1976
   text: |-
     An unnamed correspondent describes James M. McCampbell as a Unidentified Flying Object (UFO) believer.
+  entailment:
+    label: entails
+    score: 0.819
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2098a28c-f1b5-4a11-83c2-cb4fdf74cc92
   type: administrative
   attestation: first_hand
@@ -400,6 +481,11 @@ domain_claims:
   quote: |-
     I am enclosing comments on same by a UFO believer, James M. McCampbell, in his UFOLOGY, 1976
   text: James M. McCampbell's UFOlogy (1976) contains comments on ball lightning.
+  entailment:
+    label: entails
+    score: 0.675
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 67c526c3-f882-498b-8853-009229bbcb19
   type: administrative
   attestation: first_hand
@@ -418,6 +504,11 @@ domain_claims:
     appearing on the new non-fiction shelf at the Mesa Library, call number 629.1338 M125u.
   text: |-
     UFOlogy is available on the new non-fiction shelf at the Mesa Library with call number 629.1338 M125u.
+  entailment:
+    label: entails
+    score: 0.982
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 13673a28-60d7-4380-ba13-fe701982f712
   type: administrative
   attestation: first_hand
@@ -432,6 +523,11 @@ domain_claims:
     name: UFOlogy
   quote: His chapter FLIGHT AND PROPULSION strengthens my conviction
   text: UFOlogy contains a chapter titled "FLIGHT AND PROPULSION".
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bfa9d596-fd88-4854-8446-14e79f263ed7
   type: opinion
   attestation: first_hand
@@ -448,6 +544,11 @@ domain_claims:
     Einstein, while seemingly straying from the main current of physical research in his later years
   text: |-
     An unnamed correspondent considers that Albert Einstein seemingly strayed from the main current of physical research in his later years.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 03f3fb5d-680a-4cbc-bc15-f9fdab68c236
   type: opinion
   attestation: first_hand
@@ -470,3 +571,8 @@ domain_claims:
     His chapter FLIGHT AND PROPULSION strengthens my conviction that Einstein, while seemingly straying from the main current of physical research in his later years, was on scent like a bloodhound when he persisted in trying to lock in on a unified field theory.
   text: |-
     An unnamed correspondent considers that Albert Einstein was on the right track when he persisted in trying to develop a unified field theory, as reinforced by James M. McCampbell's chapter "FLIGHT AND PROPULSION" in UFOlogy.
+  entailment:
+    label: entails
+    score: 0.943
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: opencode
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -113,6 +119,11 @@ domain_claims:
   quote: And now at one hour at this time, I now have one hour and 21 minutes
   text: |-
     At the time of this report during the Mercury Atlas 9 mission on 1963-05-15, the mission elapsed time was 1 hour 21 minutes.
+  entailment:
+    label: neutral
+    score: 0.935
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8135e567-21f8-4a55-a37c-a3c4499203fb
   type: observation
   attestation: first_hand
@@ -140,6 +151,11 @@ domain_claims:
     I am observing John's fireflies drifting away from me. I can observe them departing from the spacecraft. and drifting out to the rear.
   text: |-
     During the Mercury Atlas 9 mission on 1963-05-15, Gordon Cooper observed John Glenn's fireflies phenomenon drifting away from and departing the Mercury-Atlas 9 (Faith 7) spacecraft.
+  entailment:
+    label: neutral
+    score: 0.885
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6f7957b9-f2ca-4e4b-952f-68119a9ed7b8
   type: observation
   attestation: first_hand
@@ -166,6 +182,11 @@ domain_claims:
   quote: I can see some of them. A considerable distance out to the rear.
   text: |-
     During the Mercury Atlas 9 mission on 1963-05-15, Gordon Cooper could see some of the John Glenn's fireflies phenomenon at a considerable distance behind the Mercury-Atlas 9 (Faith 7) spacecraft.
+  entailment:
+    label: neutral
+    score: 0.619
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 56027086-3881-49ae-9566-286bc7112256
   type: observation
   attestation: first_hand
@@ -191,6 +212,11 @@ domain_claims:
     Fireflies appear to be white, very whitish, with almost a green like rail fireflies.
   text: |-
     During the Mercury Atlas 9 mission on 1963-05-15, the John Glenn's fireflies phenomenon appeared white, very whitish, with an almost green quality.
+  entailment:
+    label: entails
+    score: 0.887
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1ca58726-ed0c-466f-bfd2-a9f1574b2492
   type: observation
   attestation: first_hand
@@ -211,6 +237,11 @@ domain_claims:
   quote: The sun is coming up behind me. I'm beginning to get the glow on the clouds.
   text: |-
     During the Mercury Atlas 9 mission on 1963-05-15, the sun was coming up behind Gordon Cooper but was not yet fully above the horizon.
+  entailment:
+    label: entails
+    score: 0.939
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ba1a089-2b1b-41dd-a221-c97e110d11fa
   type: observation
   attestation: first_hand
@@ -231,6 +262,11 @@ domain_claims:
   quote: I'm beginning to get the glow on the clouds.
   text: |-
     During the Mercury Atlas 9 mission on 1963-05-15, Gordon Cooper was beginning to see a glow on the clouds.
+  entailment:
+    label: neutral
+    score: 0.992
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 522e2629-e9fd-4542-b4d8-be16dd06d505
   type: observation
   attestation: first_hand
@@ -251,6 +287,11 @@ domain_claims:
   quote: Clouds on the Earth below are changing color, are getting quite light.
   text: |-
     During the Mercury Atlas 9 mission on 1963-05-15, clouds on the Earth below were changing colour and getting quite light.
+  entailment:
+    label: neutral
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c6e0e974-fd3a-4f67-99dd-abaa3e9bb987
   type: observation
   attestation: first_hand
@@ -271,6 +312,11 @@ domain_claims:
   quote: I am now on the day side.
   text: |-
     During the Mercury Atlas 9 mission on 1963-05-15, Gordon Cooper was on the day side of Earth.
+  entailment:
+    label: neutral
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ad0342ae-b70e-473a-a8bb-c1a32d6907aa
   type: observation
   attestation: first_hand
@@ -294,6 +340,11 @@ domain_claims:
     The sun is not yet quite up, and I am observing stars. The sky looks dark above me, and I can see stars very distinctly.
   text: |-
     During the Mercury Atlas 9 mission on 1963-05-15, while the sun was not yet fully up, Gordon Cooper observed stars very distinctly in the dark sky above the Mercury-Atlas 9 (Faith 7) spacecraft.
+  entailment:
+    label: entails
+    score: 0.985
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 40727c3c-a217-4a37-a9a0-dffdcaaa150a
   type: observation
   attestation: first_hand
@@ -314,3 +365,8 @@ domain_claims:
   quote: The Earth is light below me.
   text: |-
     During the Mercury Atlas 9 mission on 1963-05-15, the Earth was light below Gordon Cooper.
+  entailment:
+    label: neutral
+    score: 0.981
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

@@ -14,6 +14,12 @@ ai_usage:
     cache_write: 0
     calls: 2
   route: openrouter
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 6.9
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 3.0
 prompts:
 - pass: nodes
   id: nodes
@@ -79,6 +85,11 @@ domain_claims:
   quote: Its about uh three quarters of a mile out
   text: |-
     During the Mercury-Redstone 4 mission, a recovery team member reported a distance of approximately 1.2 kilometres to an object they were observing.
+  entailment:
+    label: neutral
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e95acc82-d900-4330-aff5-6f06005f4dc1
   type: opinion
   attestation: first_hand
@@ -94,3 +105,8 @@ domain_claims:
   quote: Thought maybe a capsule uh after the liftoff
   text: |-
     A recovery team member initially thought the object they observed during the Mercury-Redstone 4 mission might have been the capsule after liftoff.
+  entailment:
+    label: neutral
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window

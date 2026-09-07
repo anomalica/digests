@@ -15,6 +15,12 @@ ai_usage:
     calls: 3
   route: cli
   effort: low
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  duration_s: 7.7
+- stage: check
+  model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  duration_s: 9.9
 prompts:
 - pass: nodes
   id: nodes
@@ -212,6 +218,11 @@ domain_claims:
     Okay, flight data file, the CSM. Generally, I have nothing but praise for the flight data file of both vehicles. There was very, very few things that one could have asked for to improve that data file for Apollo 17 at any rate.
   text: |-
     Harrison Schmitt considers the Apollo 17 Flight Data File for both the Command and Service Module (CSM) and the Lunar Module (LM) to have been excellent, with very few possible improvements.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 63b71956-fc81-4cf9-a086-151be7f64599
   type: opinion
   attestation: first_hand
@@ -232,6 +243,11 @@ domain_claims:
     One comment on the flight plan supplement, we had split pages for a number of the logging, medical and food logging, and that probably was a mistake.
   text: |-
     Harrison Schmitt considers splitting logging, medical and food logging pages in the Apollo 17 Flight Plan supplement to have been a mistake.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 59de21e1-a33b-4c54-a2fa-aa802100a4fd
   type: observation
   attestation: first_hand
@@ -252,6 +268,11 @@ domain_claims:
     And also the pages, if you had wanted them split, were too thin to maintain the split, and they tended to fall out of the book.
   text: |-
     Harrison Schmitt found that split pages in the Apollo 17 Flight Plan supplement were on paper too thin to maintain the split and tended to fall out of the book.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 83d2d2e1-708c-409a-afd5-1c8d21fbf23c
   type: opinion
   attestation: first_hand
@@ -272,6 +293,11 @@ domain_claims:
     I would recommend either not splitting or having heavier paper if you want them split.
   text: |-
     Harrison Schmitt recommends either not splitting the logging pages or using heavier paper if the pages are to be split.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 86489a1e-f26f-4e7f-9677-52a3f6a859ae
   type: observation
   attestation: first_hand
@@ -293,6 +319,11 @@ domain_claims:
   quote: I had an extra cue card built for panel 229.
   text: |-
     Harrison Schmitt had an extra cue card built for panel 229 in the Lunar Module during Apollo 17.
+  entailment:
+    label: neutral
+    score: 0.931
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3c830b78-07ac-499d-a22f-ba273c659e66
   type: opinion
   attestation: first_hand
@@ -311,6 +342,11 @@ domain_claims:
     I think it was an excellent card that summarized the circuit breaker functions both on 229 and on panel 8.
   text: |-
     Harrison Schmitt considers the extra cue card summarising circuit breaker functions on panels 229 and 8 to have been excellent.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 4486be78-ad2b-4b59-aa5d-5520816825ac
   type: observation
   attestation: first_hand
@@ -331,6 +367,11 @@ domain_claims:
     Because we had no systems anomalies of any significance that would relate to that card, it was not used.
   text: |-
     The extra circuit breaker cue card built for panels 229 and 8 during Apollo 17 was not used in flight because there were no systems anomalies of significance relating to it.
+  entailment:
+    label: entails
+    score: 0.478
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 11d77480-9949-42bf-9f5b-4ee9045b7298
   type: opinion
   attestation: first_hand
@@ -349,6 +390,11 @@ domain_claims:
     But I would strongly recommend its availability, if only for training. during the Endurance Sims.
   text: |-
     Harrison Schmitt recommends that the circuit breaker cue card for panels 229 and 8 remain available for training purposes, including during Endurance Sims.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d447a9f4-eda7-4e10-a289-2c88f9bb55fc
   type: observation
   attestation: first_hand
@@ -369,6 +415,11 @@ domain_claims:
     In the flight plan, I added some pen and ink cues along the margins for certain observational targets that I particularly wanted to look at. These were independent of any experiment, designated experiment, and I entered them as a function of time, and that seemed to work very well for me.
   text: |-
     Harrison Schmitt added pen and ink cues along the margins of the Apollo 17 Flight Plan for observational targets he wanted to look at, entered as a function of time, independent of any designated experiment.
+  entailment:
+    label: neutral
+    score: 0.945
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e18745b6-3cfa-4c95-aa5e-cd1029050bd4
   type: opinion
   attestation: first_hand
@@ -387,6 +438,11 @@ domain_claims:
     I think it had that kind of thing as an individual preference item, And if you have experiment, it ought to be flight planned. If you're just planning to use your spare time for specific observational targets or types of observations, then I think the Penn & Inc. is maybe the easiest way to go, since it shouldn't concern any large number of people.
   text: |-
     Harrison Schmitt recommends that pen-and-ink notation is the easiest way to flight-plan personal observational targets during spare time, since it does not require involving a large number of people, whereas a designated experiment ought to be formally flight planned.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5ff3fd95-b4ee-4f48-8d4e-395d6038ffb7
   type: observation
   attestation: first_hand
@@ -407,6 +463,11 @@ domain_claims:
     We, Gordie Fullerton, fixed up the circular orbital cue card for me with a similar designation of craters as a function of time.
   text: |-
     Gordon Fullerton fixed up a circular orbital cue card for Harrison Schmitt with craters designated as a function of time.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 64e2426d-bf48-43a4-b928-67818a73306d
   type: observation
   attestation: first_hand
@@ -425,6 +486,11 @@ domain_claims:
     I did not use that, not because it wasn't a good idea, but because of familiarity with the moon, which came very quickly after a couple orbits, and you could recognize your position on the moon fairly easily as a function of each rev, either the time in the rev, approximate time since sunset, or just because you could look out the window and tell where you were.
   text: |-
     Harrison Schmitt did not use the circular orbital cue card with crater designations because familiarity with the Moon, gained quickly after a couple of orbits, allowed him to recognise his position on the Moon easily by time in the revolution, time since sunset, or by looking out the window.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 62ee69d0-45a3-4134-8783-54429a83d59d
   type: opinion
   attestation: first_hand
@@ -447,6 +513,11 @@ domain_claims:
     In the LEM, we The same comments apply. I think all the flight data file items were excellent.
   text: |-
     Harrison Schmitt considers all the Apollo 17 Flight Data File items for the Lunar Module to have been excellent.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0e1070d7-8e0a-40a3-9e04-3cbcabe3dafc
   type: observation
   attestation: first_hand
@@ -469,6 +540,11 @@ domain_claims:
     I did not use the data card book to the extent that I know it was used on 15 and maybe on 16.
   text: |-
     Harrison Schmitt did not use the data card book to the extent he believes it was used on Apollo 15 and possibly on Apollo 16.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 78bdf876-21ec-4f33-8679-aa2f26d20c20
   type: observation
   attestation: first_hand
@@ -489,6 +565,11 @@ domain_claims:
     We logged most of our specific items such as alignment data and comparable kinds of things in the checklist at the point where they were collected rather than in the data book and had no this did not seem to raise any difficulty at any time.
   text: |-
     During Apollo 17, alignment data and comparable items were logged in the checklist at the point of collection rather than in the data book, without raising any difficulty.
+  entailment:
+    label: entails
+    score: 0.766
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 41413de4-4cea-4060-bffc-8cdf58b0590f
   type: opinion
   attestation: first_hand
@@ -507,6 +588,11 @@ domain_claims:
     name: Apollo 17 Cuff Checklist
   quote: I thought the cuff checklist was excellent.
   text: Harrison Schmitt thought the Apollo 17 Cuff Checklist was excellent.
+  entailment:
+    label: entails
+    score: 0.947
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b655af20-694f-4e3d-b1ce-e841ff994c3d
   type: observation
   attestation: first_hand
@@ -527,6 +613,11 @@ domain_claims:
     We had the right kind of photo maps in there that were useful for reference where we were around a given station.
   text: |-
     The Apollo 17 Cuff Checklist contained photo maps that were useful for reference regarding the crew's position at a given lunar surface station.
+  entailment:
+    label: entails
+    score: 0.572
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d8b2759-326b-4208-9b3a-6d47967991ea
   type: observation
   attestation: first_hand
@@ -547,6 +638,11 @@ domain_claims:
     I don't think we used them as much as I had anticipated using them. mainly because navigation was no problem and the points that we had selected pre-flight were excellent points for investigation and there was no need to try to decide on alternative points to try to study in the vicinity of a given station.
   text: |-
     Harrison Schmitt used the photo maps in the Apollo 17 Cuff Checklist less than he had anticipated, mainly because navigation was not a problem and the pre-flight selected points were already excellent for investigation.
+  entailment:
+    label: entails
+    score: 0.882
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f88b24d-d321-4a99-ae15-ea6774420dcc
   type: observation
   attestation: first_hand
@@ -567,6 +663,11 @@ domain_claims:
     The list of items to be accomplished at each station are to Really, they were mind joggers to read at each station. Again, not used as much as I thought they would be initially, but I think that was mainly because we both, at least I, had become so familiar with the items that each station was in itself easy to recall as a result of having created the checklist.
   text: |-
     Harrison Schmitt found the list of items to be accomplished at each lunar surface station in the Apollo 17 Cuff Checklist served mainly as mind-joggers rather than being used as much as initially anticipated, because he had become very familiar with the items through having helped create the checklist.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e533e191-072d-4bb0-80d5-f4069158b369
   type: opinion
   attestation: first_hand
@@ -587,6 +688,11 @@ domain_claims:
     So the checklist turned out to be more of a learning item rather than a reference item. for use on the surface.
   text: |-
     Harrison Schmitt considers that the Apollo 17 Cuff Checklist turned out to be more of a learning item than a reference item for use on the lunar surface.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7829018f-f715-4d79-9a9b-9cfb499c54d9
   type: opinion
   attestation: first_hand
@@ -608,6 +714,11 @@ domain_claims:
   quote: I particularly want to compliment the Chuck Lewis on the timeline book.
   text: |-
     Harrison Schmitt particularly wants to compliment Chuck Lewis on the Apollo 17 Timeline Book.
+  entailment:
+    label: neutral
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7c7b1a79-f9e7-4dc1-a260-0b609146d3aa
   type: opinion
   attestation: first_hand
@@ -628,6 +739,11 @@ domain_claims:
     I really can't sing all that, but the timeline book was very, very well done and very
   text: |-
     Harrison Schmitt considers the Apollo 17 Timeline Book to have been very well done.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c142904-ad75-43b4-bc07-448ba51acb45
   type: observation
   attestation: first_hand
@@ -646,6 +762,11 @@ domain_claims:
     name: Apollo 17 Timeline Book
   quote: We had no problems with the timeline book at all.
   text: There were no problems with the Apollo 17 Timeline Book at all.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7ca2c09d-b85b-487c-86aa-14646062e390
   type: observation
   attestation: first_hand
@@ -666,6 +787,11 @@ domain_claims:
     There were just no procedural errors that I recall in any of the books that we used.
   text: |-
     Harrison Schmitt does not recall any procedural errors in any of the checklist books used during Apollo 17.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d28ff00e-844e-4ff9-956a-8ab00e9e798f
   type: observation
   attestation: first_hand
@@ -684,6 +810,11 @@ domain_claims:
     name: Apollo 17
   quote: Fortunately, we didn't have to use a malfunction book.
   text: During Apollo 17 the crew did not have to use a malfunction book.
+  entailment:
+    label: entails
+    score: 0.849
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: eaaa8322-4a08-4040-937b-3d565893ec7a
   type: observation
   attestation: first_hand
@@ -706,6 +837,11 @@ domain_claims:
     Only once did I pull out the systems data book to check to check on a systems problem, and I right now can't remember what that was. I can't remember what it was. Well, I did use it once.
   text: |-
     Harrison Schmitt pulled out the Apollo 17 Systems Data Book only once during the mission to check on a systems problem, and could not recall what that problem was.
+  entailment:
+    label: entails
+    score: 0.978
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 37d8c6e2-3b64-497d-a10c-66086dd7f2cd
   type: observation
   attestation: first_hand
@@ -728,6 +864,11 @@ domain_claims:
     I thought in the CSM that I would use the orbit monitor charts. I guess that's what they're called. And I had an extra one put on so it wouldn't interfere with the planned activities of the CMP.
   text: |-
     Harrison Schmitt had an extra orbit monitor chart put on board the Command and Service Module during Apollo 17 so that it would not interfere with the Command Module Pilot's planned activities.
+  entailment:
+    label: entails
+    score: 0.836
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 59a628d9-f335-4f0b-9a20-aee599310b0a
   type: observation
   attestation: first_hand
@@ -747,6 +888,11 @@ domain_claims:
   quote: I did not use that very much.
   text: |-
     Harrison Schmitt did not use the extra orbit monitor chart on Apollo 17 very much.
+  entailment:
+    label: entails
+    score: 0.835
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bd9e365c-92ee-4906-adb7-130f9a92f1ba
   type: observation
   attestation: first_hand
@@ -767,6 +913,11 @@ domain_claims:
     I eventually did some sketching on it post-TEI. I think there are about five specific points that I labeled as areas, A, B, C, D, maybe E. And these are referenced on my crew notebook in my crew notebook for specific observations.
   text: |-
     Harrison Schmitt sketched about five specific areas, labelled A through E, on the orbit monitor chart after trans-Earth injection, referenced in his crew notebook for specific observations.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 05f09b9a-84a8-4fc0-bd4b-2c998a9dadaa
   type: observation
   attestation: first_hand
@@ -786,6 +937,11 @@ domain_claims:
   quote: But in general, I did not put that to as much use as I expected.
   text: |-
     Harrison Schmitt did not put the orbit monitor chart to as much use as he expected during Apollo 17.
+  entailment:
+    label: neutral
+    score: 0.807
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2128a6fa-43ab-4b98-b8de-3a605b77ebfe
   type: observation
   attestation: first_hand
@@ -804,6 +960,11 @@ domain_claims:
     One item is that that chart should have been identical to the CMP's chart, and there were a few pen and ink changes left off of it that caused some confusion at one point, pen and ink exposure settings for certain photo targets.
   text: |-
     Harrison Schmitt noted that his orbit monitor chart should have been identical to the Command Module Pilot's chart, and that some pen-and-ink changes, including photo exposure settings for certain targets, were left off it, causing some confusion.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: deebc0db-cebf-41e8-92d3-249d5f34981b
   type: observation
   attestation: first_hand
@@ -824,6 +985,11 @@ domain_claims:
     The CSM landmark maps that the LNP had added in the rear of that book, again, were not used.
   text: |-
     The Command and Service Module landmark maps added to the rear of a book by the Lunar Module Pilot were not used during Apollo 17.
+  entailment:
+    label: entails
+    score: 0.988
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 495e4a2a-2e6f-44b4-8976-06be06bd528a
   type: observation
   attestation: first_hand
@@ -846,6 +1012,11 @@ domain_claims:
     I really thought I would use those, but you became reluctant as you were observing a specific point or area target, say, such as Gagarin or something like that, to take time out to sketch on the photo.
   text: |-
     During Apollo 17, Harrison Schmitt observed a specific point or area target such as Gagarin on the Moon but became reluctant to take time to sketch on a photo while observing it.
+  entailment:
+    label: entails
+    score: 0.972
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 25d6a2a3-38e1-4029-a12a-a3d27ac1a497
   type: observation
   attestation: first_hand
@@ -866,6 +1037,11 @@ domain_claims:
     I tended for the two or three minutes that observation was possible of a given area, I tended to look and then at the first opportunity to take notes in the notebook rather than trying to sketch on the photograph.
   text: |-
     During the two- to three-minute observation window for a given lunar area, Harrison Schmitt tended to look and then take notes in his notebook at the first opportunity rather than sketching on the photograph.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 06fc326a-f528-409b-a47d-4bd63b239801
   type: opinion
   attestation: first_hand
@@ -884,6 +1060,11 @@ domain_claims:
     And I suspect that this was because I tended to look for generalizations about the target that I was trying to observe rather than checking out specific individual features, and there really did not seem to be any need to make notes about specific points on the pictures, and as a result, I did not use them.
   text: |-
     Harrison Schmitt suspects he looked for generalisations about lunar observation targets rather than checking specific individual features, so there seemed no need to make notes about specific points on photographs.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 513b9c06-acc2-40f2-8708-5f2d8d793cbd
   type: opinion
   attestation: first_hand
@@ -902,6 +1083,11 @@ domain_claims:
     Again, though, I think having selected them and studied them pre-flight made it worth having them around. The necessity for flying them was probably less than the necessity for having reviewed them and studied them.
   text: |-
     Harrison Schmitt considers that having selected and studied the landmark maps pre-flight was worthwhile even though flying them in-flight was not, and believes the necessity for having reviewed them exceeded the necessity for flying them.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6908e1b5-b758-4dd4-beb8-d7cf08bd9352
   type: opinion
   attestation: first_hand
@@ -922,6 +1108,11 @@ domain_claims:
     I think I still, if I had to do it again, I still would want to have that kind of data available in the spacecraft, even though on this particular mission it was not used.
   text: |-
     Harrison Schmitt would still want that kind of landmark map data available in the spacecraft on a future mission even though it was not used on Apollo 17.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 09be6b17-8a56-4c65-a350-4333acd01c62
   type: observation
   attestation: first_hand
@@ -941,6 +1132,11 @@ domain_claims:
   quote: I do think, though, that the CMP used his visual target maps considerably,
   text: |-
     Harrison Schmitt observed that the Command Module Pilot used his visual target maps considerably during Apollo 17.
+  entailment:
+    label: entails
+    score: 0.596
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d22748d3-d224-4d59-a159-ac6df854b422
   type: observation
   attestation: first_hand
@@ -959,6 +1155,11 @@ domain_claims:
     and I did on a couple occasions, used some of the ones that he had, but for the most part that was post-TEI, and I made some notes and sketches on some of those maps.
   text: |-
     Harrison Schmitt used some of the Command Module Pilot's visual target maps on a couple of occasions, mostly after trans-Earth injection, and made notes and sketches on some of those maps.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0b141c3c-12e1-4b8e-ac70-b6307729c1f4
   type: opinion
   attestation: first_hand
@@ -979,6 +1180,11 @@ domain_claims:
     And I think that just a function that there was a lot of time to look at the moon and make a sketch and then look back and fix it up post-EEI, where in orbit the time just did not exist.
   text: |-
     Harrison Schmitt attributes his post-trans-Earth-injection use of visual target maps to there being more time available to look at the Moon, sketch, and later revise the sketch, whereas in lunar orbit that time did not exist.
+  entailment:
+    label: entails
+    score: 0.971
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b226c0d5-16c7-45ff-b230-b4f2d162c281
   type: opinion
   attestation: second_hand
@@ -1000,6 +1206,11 @@ domain_claims:
   quote: |-
     As Dick Gordon said a couple years ago, once you start flying, the clock is relentless.
   text: Dick Gordon said that once you start flying, the clock is relentless.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 94365f47-d6ff-47d8-9c95-ad9c927fb759
   type: observation
   attestation: first_hand
@@ -1019,6 +1230,11 @@ domain_claims:
   quote: I was not very closely involved in the flight planning.
   text: |-
     Harrison Schmitt was not very closely involved in the general flight planning for Apollo 17.
+  entailment:
+    label: entails
+    score: 0.989
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d9686b1d-a568-4bf9-9229-d511a8f4890e
   type: observation
   attestation: first_hand
@@ -1042,6 +1258,11 @@ domain_claims:
   quote: Ron sort of carried the burden of that for both Gene and myself.
   text: |-
     Ronald Evans carried the burden of general flight planning for Apollo 17 on behalf of Eugene Cernan and Harrison Schmitt.
+  entailment:
+    label: entails
+    score: 0.443
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a4df525b-c6f9-441c-8c24-26df3e85a4a1
   type: opinion
   attestation: first_hand
@@ -1062,6 +1283,11 @@ domain_claims:
     The flight plan was excellent. We had no problems with it at all that I'm aware of.
   text: |-
     Harrison Schmitt considers the Apollo 17 Flight Plan to have been excellent, with no problems.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 94b1b184-aae3-4ba0-8d7c-b0faab2111da
   type: opinion
   attestation: first_hand
@@ -1083,6 +1309,11 @@ domain_claims:
   quote: Tommy Holloway and his people are to be complimented on that.
   text: |-
     Harrison Schmitt compliments Tommy Holloway and his people on the Apollo 17 Flight Plan.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 74876ebc-4f91-415d-8d8d-57c9d0f7f441
   type: opinion
   attestation: first_hand
@@ -1103,6 +1334,11 @@ domain_claims:
     A number of different requirements and experiments and general operational items that were required to be integrated one with the other was very, very high, and it was done in an extremely competent and usable way.
   text: |-
     Harrison Schmitt considers that the high number of different requirements and experiments integrated into the Apollo 17 Flight Plan was handled in an extremely competent and usable way.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8e22003f-4779-435c-83ac-f59e0170ee2f
   type: opinion
   attestation: first_hand
@@ -1123,6 +1359,11 @@ domain_claims:
     And I can't think of anything that I would change in the way the flight plan was written.
   text: |-
     Harrison Schmitt could not think of anything he would change about the way the Apollo 17 Flight Plan was written.
+  entailment:
+    label: entails
+    score: 0.889
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c77b9a9f-7ea6-4f68-bd35-47bb0b4616a8
   type: opinion
   attestation: first_hand
@@ -1142,6 +1383,11 @@ domain_claims:
   quote: Pre-flight support was excellent in the flight data file area.
   text: |-
     Harrison Schmitt considers pre-flight support to have been excellent in the Apollo 17 Flight Data File area.
+  entailment:
+    label: entails
+    score: 0.617
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2bed2a4f-b25e-487c-b9cc-f74278e684c5
   type: observation
   attestation: first_hand
@@ -1164,6 +1410,11 @@ domain_claims:
     I had two or three, I don't remember, two or three briefing sessions where in the portions of the lunar orbit flight plan that I was going to be during which I was going to be in the spacecraft, in the CSM, we went over in detail the attitudes and maneuvers and the window availability so that I was able to plan in a very short amount of time, with minimum effort on my part, my own personal observations of the lunar surface, which went very well as far as planning was concerned.
   text: |-
     Harrison Schmitt had two or three briefing sessions once the Apollo 17 Flight Plan was well established, covering attitudes, manoeuvres, and window availability for the portions of the lunar orbit flight plan he would spend in the Command and Service Module.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6d371017-65c9-4537-aad2-4de0c8c95d75
   type: opinion
   attestation: first_hand
@@ -1182,6 +1433,11 @@ domain_claims:
     That was extra above and beyond the call of duty on the part of the flight planners, and I appreciated their taking time out to do that for me.
   text: |-
     Harrison Schmitt considers the extra briefing sessions on lunar orbit attitudes and manoeuvres to have been above and beyond the call of duty by the flight planners, and appreciated the time they took for him.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 97d3fac8-a096-4611-82de-db92928b5f2a
   type: observation
   attestation: first_hand
@@ -1202,6 +1458,11 @@ domain_claims:
     I think it was useful to have the, I think it was a day-long session where The flight controllers and the crew and the flight planners sat around in one room and went over those portions of the flight plan which were not normally simulated.
   text: |-
     A day-long session was held in which flight controllers, the crew, and flight planners reviewed the portions of the Apollo 17 Flight Plan that were not normally simulated.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: c9ac4dde-cf74-4613-b568-ceb008073f81
   type: opinion
   attestation: first_hand
@@ -1222,6 +1483,11 @@ domain_claims:
     It turned out that the flight plan had been so well done that I doubt if there were any specific items that came up that we needed to change or there seemed to be a lack of coordination on.
   text: |-
     Harrison Schmitt considers the Apollo 17 Flight Plan to have been so well done that no specific items needed changing at the day-long flight plan review session.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a60127ce-6a88-4acd-9cc0-bcf05e0581cf
   type: opinion
   attestation: first_hand
@@ -1242,6 +1508,11 @@ domain_claims:
     This was in contrast to previous flights where I think we were still learning, all of us were learning on how to put together flight plans and integrate requirements. Apollo 17 flight plan apparently reached the peak of perfection.
   text: |-
     Harrison Schmitt considers that the Apollo 17 Flight Plan reached the peak of perfection, in contrast to previous flights where the crew and planners were still learning to integrate flight plan requirements.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f0d2e4a2-3c8d-43c3-b91d-0568dac06f5d
   type: opinion
   attestation: first_hand
@@ -1262,6 +1533,11 @@ domain_claims:
     I was a little bit disappointed in that briefing in that some of the people who would be eventually intimately involved in the mission were not at the flight plan review, and I think this was because of conflicts with other programs which were the center it was carrying out at the time.
   text: |-
     Harrison Schmitt was disappointed that some people eventually intimately involved in the Apollo 17 mission were not at the flight plan review, due to conflicts with other programmes at their centre.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 265263e7-bddd-43b2-953f-37869243d776
   type: observation
   attestation: first_hand
@@ -1282,6 +1558,11 @@ domain_claims:
     I don't know whether I recorded yet that although we had light flashes just about continuously during the whole flight when you were dark-adapted.
   text: |-
     Harrison Schmitt experienced light flashes almost continuously throughout the Apollo 17 flight when dark-adapted.
+  entailment:
+    label: entails
+    score: 0.967
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 1d4e0684-ba5b-4e66-acc1-3de386d82b3b
   type: observation
   attestation: first_hand
@@ -1302,6 +1583,11 @@ domain_claims:
     And I may have even had one which I thought was a flash on the lunar surface during the first rev.
   text: |-
     Harrison Schmitt may have seen a light flash on the lunar surface during the first revolution of Apollo 17.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e6a2adfc-4f11-4185-b85c-5d22d4ecedff
   type: observation
   attestation: first_hand
@@ -1322,6 +1608,11 @@ domain_claims:
     That one period of time when we had the blindfolds on for the ALPMET experiment, there just were no visible flashes.
   text: |-
     During the period when the crew wore blindfolds for the ALPMET experiment on Apollo 17, there were no visible light flashes.
+  entailment:
+    label: entails
+    score: 0.502
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3aedb2dd-34fe-4f9f-b0f3-aa18477ba570
   type: observation
   attestation: first_hand
@@ -1342,6 +1633,11 @@ domain_claims:
     Although that evening, that night, before I went to sleep, I noticed I was seeing the light flashes again.
   text: |-
     Harrison Schmitt noticed the light flashes returning that evening before he went to sleep, after the ALPMET blindfold period on Apollo 17.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 0c5448a4-d511-4589-8a43-80890ee159dd
   type: observation
   attestation: first_hand
@@ -1366,6 +1662,11 @@ domain_claims:
     So it just seemed to be that one interval on either side of it where the light flash phenomena was not visible to myself or to the other two crewmen.
   text: |-
     Harrison Schmitt observed that the light flash phenomena was not visible to himself or the other two crewmen during only that one interval around the ALPMET blindfold experiment.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 65eeb65e-0f5d-44f6-b476-166d71dc973f
   type: observation
   attestation: first_hand
@@ -1386,6 +1687,11 @@ domain_claims:
     although there were periods of some difficulty pre-flight, particularly in the area of medical requirements, and in some last-minute possible scientific requirements, particularly on the samples, everything seemed to get resolved, satisfactory, near as I could tell.
   text: |-
     There were periods of some difficulty pre-flight for Apollo 17, particularly regarding medical requirements and some last-minute scientific requirements on sample collection.
+  entailment:
+    label: entails
+    score: 0.448
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e51e6409-b4c8-4f8e-99d4-76e5bfabdca1
   type: observation
   attestation: first_hand
@@ -1412,6 +1718,11 @@ domain_claims:
     And occasionally, when the crew had to be involved, that was handled almost entirely by the support crew, Bob Parker in the science area and Cordy Fullerton and Bob Obermeyer in the operational areas.
   text: |-
     During Apollo 17 pre-flight training, crew-related requirement issues were handled almost entirely by the support crew: Bob Parker in the science area, Gordon Fullerton, and Bob Obermeyer in the operational areas.
+  entailment:
+    label: neutral
+    score: 0.888
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d4d0e5ec-e26b-4e40-ba66-ce0572852122
   type: observation
   attestation: first_hand
@@ -1432,6 +1743,11 @@ domain_claims:
     There were no significant spacecraft changes in the course of our training period.
   text: |-
     There were no significant spacecraft changes during the Apollo 17 crew's training period.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8d679ea3-f46f-4b76-bcbe-d5051ea52287
   type: observation
   attestation: first_hand
@@ -1456,6 +1772,11 @@ domain_claims:
     Ron, I guess the biggest single area that took time was one that Ron had to deal with, and that was Lunar Sounder.
   text: |-
     Ronald Evans dealt with the Lunar Sounder, which took the most training time of any single area for the Apollo 17 crew.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 14704e83-82a0-4a36-8feb-07a140d60cce
   type: observation
   attestation: first_hand
@@ -1478,6 +1799,11 @@ domain_claims:
     Most of our ALSEP changes were all taken care of prior to our training, and we had a few minor suggestions that were taken care of early in the training cycle and we essentially had an up-to-date ALSEP to train with
   text: |-
     Most changes to the Apollo Lunar Surface Experiments Package (ALSEP) for Apollo 17 were taken care of prior to crew training, with a few minor suggestions addressed early in the training cycle, resulting in an up-to-date ALSEP for training.
+  entailment:
+    label: entails
+    score: 0.649
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7fd1778d-2783-4f16-bf9e-617dfe73936e
   type: observation
   attestation: first_hand
@@ -1498,6 +1824,11 @@ domain_claims:
     and all other lunar surface gear was up-to-date for most of the 12-month training period, or the final 12 months of the training period.
   text: |-
     All other Apollo 17 lunar surface gear was up-to-date for most of the final twelve months of the training period.
+  entailment:
+    label: entails
+    score: 0.731
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 6adef4b0-890e-4be8-9675-713a721229f0
   type: observation
   attestation: first_hand
@@ -1522,6 +1853,11 @@ domain_claims:
     Mission rules and techniques, were fairly well defined very early by Phil Schafer and his crowd in the techniques area and the mission rules, certainly Jerry Griffin and people working on that.
   text: |-
     Mission rules and techniques for Apollo 17 were fairly well defined early on by Phil Schafer and his group in the techniques area, and by Jerry Griffin and others in mission rules.
+  entailment:
+    label: entails
+    score: 0.444
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e4d7f653-396c-43b8-806e-634500f853bd
   type: opinion
   attestation: first_hand
@@ -1542,6 +1878,11 @@ domain_claims:
     No major changes, and the only changes were all, I felt, in the right direction in that they enhanced the probability of making a landing in a successful mission.
   text: |-
     Harrison Schmitt considers that the only changes made to Apollo 17 mission rules were in the right direction, enhancing the probability of a successful landing and mission.
+  entailment:
+    label: entails
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 67949f3c-1a33-4497-8ba8-5fea2e5cd6ee
   type: observation
   attestation: first_hand
@@ -1562,6 +1903,11 @@ domain_claims:
     We really never had to exercise any significant—any of the mission rules in an abnormal way.
   text: |-
     During Apollo 17, the crew never had to exercise the mission rules in an abnormal way.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2384888a-6ac4-4f38-b4cb-4ab29593a5da
   type: observation
   attestation: first_hand
@@ -1584,6 +1930,11 @@ domain_claims:
     A mission rule tended to be fairly clearly a controlling factor was in the limitation on the work at Station 4, Shorty Crater, where we were up against the walkback constraints and terminated that work after only 35 minutes,
   text: |-
     A mission rule was a clearly controlling factor limiting the work at Station 4, Shorty Crater, where the crew were up against walkback constraints and terminated the work after only 35 minutes.
+  entailment:
+    label: entails
+    score: 0.971
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8e088748-da7a-476e-a3ff-d072d03d4ac3
   type: opinion
   attestation: first_hand
@@ -1604,6 +1955,11 @@ domain_claims:
     where another 30 minutes there I think would have been extremely valuable, although I hope that we got enough information that the phenomena exposed at that crater can be understood.
   text: |-
     Harrison Schmitt believes that another 30 minutes of work at Station 4, Shorty Crater, would have been extremely valuable.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 592fbb62-3340-4412-b515-af6dd0c904a3
   type: opinion
   attestation: first_hand
@@ -1623,6 +1979,11 @@ domain_claims:
   quote: Typically outstanding support for mission control.
   text: |-
     Harrison Schmitt considers the support from mission control during Apollo 17 to have been typically outstanding.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: dc6bb661-46ae-4d8d-ab52-32251e7a339d
   type: observation
   attestation: first_hand
@@ -1645,6 +2006,11 @@ domain_claims:
     I think this includes the number of extracurricular hours that the LIM people and the e-coms for the CSM in particular put in with me on Saturdays and other times, just generally talking over systems and techniques, mission rules, and that was a major factor in helping me understand and keep up to speed on those items.
   text: |-
     Lunar Module personnel and CSM electrical/communications officers put in significant extracurricular hours with Harrison Schmitt on Saturdays and other times discussing systems, techniques, and mission rules, which helped him stay up to speed.
+  entailment:
+    label: entails
+    score: 0.965
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 8e44b3b3-a732-468f-b52a-33a1cdc92562
   type: opinion
   attestation: first_hand
@@ -1667,6 +2033,11 @@ domain_claims:
     In fact, as they essentially did it, they did the design of the emergency cue cards that we did for Apollo 17 for the LEM was a major contribution.
   text: |-
     Mission control personnel designed the emergency cue cards used for the Apollo 17 Lunar Module, which Harrison Schmitt considers a major contribution.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 212032f0-51b9-47a7-a95f-ea2540aa367a
   type: observation
   attestation: first_hand
@@ -1689,6 +2060,11 @@ domain_claims:
     Although, fortunately, we did not use them, they still made it possible to understand very quickly systems problems and to solve those problems in the simulations.
   text: |-
     The Apollo 17 crew did not end up using the emergency cue cards for the Lunar Module, but they still helped the crew understand systems problems quickly and solve them in simulations.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: f8b76919-0399-403f-917e-021ac3215bbc
   type: observation
   attestation: first_hand
@@ -1715,6 +2091,11 @@ domain_claims:
     I particularly want to point out the help that Dick Thorson gave in organizing most of the limb sessions and even some of the joint CSM limb sessions that we had.
   text: |-
     Dick Thorson helped organise most of the Lunar Module sessions and some of the joint Command and Service Module/Lunar Module sessions for Apollo 17.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 71727d52-ed5f-465f-a86d-24e7956b88d0
   type: observation
   attestation: first_hand
@@ -1737,6 +2118,11 @@ domain_claims:
     and he also, Thorson also was a major organizer of the creation of and the updating of those emergency cue cards.
   text: |-
     Dick Thorson was a major organiser of the creation and updating of the Apollo 17 Lunar Module emergency cue cards.
+  entailment:
+    label: neutral
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 36796e2b-f3db-4b4a-85a0-85e7c0cc9f55
   type: observation
   attestation: first_hand
@@ -1757,6 +2143,11 @@ domain_claims:
     Post-flight, it's my understanding that some of the things I had hoped could be done during the flight were not possible because of real-time discussions in the mission control. Specifically, one of those things was to have some summary of the thinking of the science background given to me while in flight, and that would be the thinking based on the data that we had transmitted to them verbally and to, in a sense, visually through the television camera. I had hoped that I would have the benefit of their thinking, but apparently this was not possible to do.
   text: |-
     Harrison Schmitt had hoped to receive a real-time summary of the ground science team's thinking during the Apollo 17 flight, based on data transmitted verbally and via television camera, but this was not possible due to real-time discussions in mission control.
+  entailment:
+    label: entails
+    score: 0.933
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 516c0219-38b3-46cc-b908-f282065f8562
   type: opinion
   attestation: first_hand
@@ -1775,6 +2166,11 @@ domain_claims:
     I would like to think that in the future we can look at ways of using the team approach to science investigations in space rather than depending solely on the observational capability and the interpretive capability of the men who are performing the job. There's no reason that I can see to not use all the brain power that's available for any given task. Part of that brain power is on the ground.
   text: |-
     Harrison Schmitt would like future missions to use a team approach to science investigations in space, drawing on ground-based brain power, rather than relying solely on the crew's own observational and interpretive capability.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: cfbbbf7a-46f3-4c39-97aa-1abdf9256830
   type: observation
   attestation: first_hand
@@ -1799,6 +2195,11 @@ domain_claims:
     The brunt of the discussions and organization from the crew point of view of the Pre-Flight Health Stabilization Control Program was borne by the commander, and the LMP just sort of went along with whatever was decided.
   text: |-
     During Apollo 17, discussion and organisation of the Pre-Flight Health Stabilization Control Program from the crew's point of view was borne mainly by the commander, with the Lunar Module Pilot going along with whatever was decided.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: a9f8d662-d0e2-40c3-b136-bea3a2c20fd3
   type: observation
   attestation: first_hand
@@ -1819,6 +2220,11 @@ domain_claims:
     I personally did not find any great difficulty in working out adhering to the requirements of that program.
   text: |-
     Harrison Schmitt did not find any great difficulty adhering to the requirements of the Pre-Flight Health Stabilization Control Program.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: baa0d48c-f432-47b5-b178-a55a53e93a1d
   type: observation
   attestation: first_hand
@@ -1839,6 +2245,11 @@ domain_claims:
     A couple sinus infections I had reacted just like they always had, and we were able over a period of 10 days or two weeks to get those cleared up.
   text: |-
     Harrison Schmitt experienced a couple of sinus infections before Apollo 17 that reacted as they always had, and were cleared up over 10 days to two weeks.
+  entailment:
+    label: entails
+    score: 0.961
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 72e1f2cf-a0df-4e0f-9bba-c57bb8fdd34f
   type: observation
   attestation: first_hand
@@ -1859,6 +2270,11 @@ domain_claims:
     Time for exercise probably was less than it should have been, although I was able to get a good workout just about every other day, in addition to the workouts we got as a normal course of our EVA training.
   text: |-
     Harrison Schmitt was able to get a good workout about every other day during Apollo 17 pre-flight training, in addition to EVA training workouts.
+  entailment:
+    label: entails
+    score: 0.858
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 107ac6cd-2b83-4274-920d-ae4c82d07e56
   type: observation
   attestation: first_hand
@@ -1879,6 +2295,11 @@ domain_claims:
     Eventually, Techs started putting on the schedule time in the late afternoon for exercise, and that helped as a reminder. and buffer to see that that exercise was obtained.
   text: |-
     During Apollo 17 pre-flight training, technicians eventually scheduled exercise time in the late afternoon, which helped as a reminder and buffer to ensure exercise was obtained.
+  entailment:
+    label: entails
+    score: 0.787
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e301a0d4-3c2f-46f9-a323-38abf3df27af
   type: opinion
   attestation: first_hand
@@ -1899,6 +2320,11 @@ domain_claims:
     It is generally hard, at least in the lunar training program, to get exercise periods in during the day and quite frequently the exercise was done in the Cape Gym at night.
   text: |-
     Harrison Schmitt considers it generally hard, in the lunar training programme, to get exercise periods in during the day, so exercise was often done at the Cape Kennedy gym at night.
+  entailment:
+    label: entails
+    score: 0.977
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 781311a1-0882-4f1c-ae57-4a4d5318e91e
   type: opinion
   attestation: first_hand
@@ -1917,6 +2343,11 @@ domain_claims:
     I made a particular effort to always get as much as I possibly could and try never to get behind the power curve on rest because my personal experience is that that is when I tend to get colds and resulting sinus infections.
   text: |-
     Harrison Schmitt made a particular effort to get as much rest as possible and avoid falling behind on rest, because his personal experience is that lack of rest leads to colds and sinus infections.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6d210ad0-1aeb-4d7b-b165-7306321e6154
   type: opinion
   attestation: first_hand
@@ -1935,6 +2366,11 @@ domain_claims:
     The exams seemed to go very well in my estimation. They were as expeditious as possible under the circumstances.
   text: |-
     Harrison Schmitt considers the medical exams to have gone very well and to have been as expeditious as possible under the circumstances.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 9c7984fc-903a-41ef-b54f-b772bcf3e785
   type: opinion
   attestation: first_hand
@@ -1955,6 +2391,11 @@ domain_claims:
     And I think the operational medical personnel who carried out the exams are to be complimented in their efforts to see that the exam was as painless and as efficient as possible. and this should also include the post-flight exams on the Ticonderoga.
   text: |-
     Harrison Schmitt compliments the operational medical personnel, including those who carried out the post-flight exams on the USS Ticonderoga, for making the exams as painless and efficient as possible.
+  entailment:
+    label: entails
+    score: 0.677
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 1443fc2c-f6c7-45f2-89bb-c9c6d6751874
   type: observation
   attestation: first_hand
@@ -1973,6 +2414,11 @@ domain_claims:
     Eating habits and amount of food consumption were normal, except during those periods of time when we were on the in-flight food prior to launch, and those times there tended to be, in my case, a decrease of appetite
   text: |-
     Harrison Schmitt experienced a decrease in appetite during the periods when eating in-flight food prior to launch.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c79ada65-81d4-4fdd-a4f0-af3d952e6449
   type: observation
   attestation: first_hand
@@ -1991,6 +2437,11 @@ domain_claims:
     although the food was certainly palatable. My appetite did go down, and it certainly was not possible for me to eat the amount of food that was provided for me.
   text: |-
     Harrison Schmitt was not able to eat the amount of food provided to him during the pre-flight in-flight food testing, even though the food was palatable.
+  entailment:
+    label: entails
+    score: 0.756
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 29becc13-ba72-4361-bacf-faf442be3eb1
   type: observation
   attestation: first_hand
@@ -2011,6 +2462,11 @@ domain_claims:
     Although I did not eat everything that was available to me in my food packages, I apparently needed to if I had wanted to avoid losing weight.
   text: |-
     Harrison Schmitt did not eat everything available to him in his food packages during Apollo 17 in-flight eating, and believes he needed to in order to avoid losing weight.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b7f38b42-7ccf-4271-94f1-f9482c6d5555
   type: observation
   attestation: first_hand
@@ -2031,6 +2487,11 @@ domain_claims:
     My appetite was down, but also apparently, for some reason, I had a loss of weight. And at the time of this recording, my weight is still down. It has not gone up to pre-flight levels, which may have been a little high, by the way.
   text: |-
     Harrison Schmitt lost weight during Apollo 17 despite a low appetite, and at the time of this recording his weight had not returned to pre-flight levels.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3afb037f-dcf1-4876-8ad1-749a64f1752e
   type: observation
   attestation: first_hand
@@ -2051,6 +2512,11 @@ domain_claims:
     the appetite in-flight versus two-weeks pre-flight was less, again, except for when we were testing the pre-flight food, when I also had a low appetite.
   text: |-
     Harrison Schmitt's appetite was lower in-flight compared to two weeks pre-flight, except during pre-flight food testing when he also had a low appetite.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 848634ca-815a-460e-9333-ab03adeab447
   type: observation
   attestation: first_hand
@@ -2071,6 +2537,11 @@ domain_claims:
     No notable differences in the taste of food. I think the things I liked pre-flight I liked in space and the things I didn't like I also didn't like. I didn't notice any differences.
   text: |-
     Harrison Schmitt noticed no notable differences in the taste of food between pre-flight and in-flight; foods he liked pre-flight he liked in space, and foods he disliked pre-flight he also disliked in space.
+  entailment:
+    label: entails
+    score: 0.969
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a7fd8860-5882-44bd-9cdf-d145724ce6d3
   type: observation
   attestation: first_hand
@@ -2091,6 +2562,11 @@ domain_claims:
     Change in food preferences of flight progressed. I tended to start to prefer to eat the wet packs and would eat those in preference to any of the other solid foods.
   text: |-
     As the Apollo 17 flight progressed, Harrison Schmitt began to prefer eating wet-pack foods over other solid foods.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 20630884-97b1-4f9c-bfdf-52915e1cafcb
   type: opinion
   attestation: first_hand
@@ -2109,6 +2585,11 @@ domain_claims:
     I would strongly recommend, from my personal point of view at any rate, that the wet packs be used in preference to the rehydratable. I think that probably you get a different opinion from the other crewmen.
   text: |-
     Harrison Schmitt recommends that wet-pack foods be used in preference to rehydratable foods, based on his personal experience, while noting other crewmen may have a different opinion.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a982bef6-3d2e-4d8c-8313-7ae02a6d37f0
   type: opinion
   attestation: first_hand
@@ -2127,6 +2608,11 @@ domain_claims:
     name: Apollo 17
   quote: The juices were good.
   text: Harrison Schmitt considered the juices provided during Apollo 17 to be good.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 89d37558-64cc-443c-98c4-5273ab188670
   type: observation
   attestation: first_hand
@@ -2147,6 +2633,11 @@ domain_claims:
     After the first period of one and only period of difficulty with loose bowel movements, I did cut out the potassium-indicated foods. Although I can't say whether that had any effect or not, but I did not have any other bowel movements and certainly no more loose ones before the end of the flight.
   text: |-
     After one period of loose bowel movements during Apollo 17, Harrison Schmitt cut out potassium-indicated foods, and had no further loose bowel movements before the end of the flight.
+  entailment:
+    label: entails
+    score: 0.639
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: e6496b20-562f-441f-9bbf-ce6989057dea
   type: observation
   attestation: first_hand
@@ -2169,6 +2660,11 @@ domain_claims:
     The first bow moment after flight on the Ticonderoga was normal. The second was very loose. The third was normal. And the fourth and fifth very loose.
   text: |-
     Harrison Schmitt's first bowel movement after the Apollo 17 flight, aboard the USS Ticonderoga, was normal, the second was very loose, the third was normal, and the fourth and fifth were very loose.
+  entailment:
+    label: entails
+    score: 0.895
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 86cdb456-698f-405e-946b-f01ba790d74b
   type: observation
   attestation: first_hand
@@ -2189,6 +2685,11 @@ domain_claims:
     my appetite was very low the first day and gradually increased over the next two or three days and remained essentially the same after about the third day.
   text: |-
     Harrison Schmitt's appetite was very low on the first day after the Apollo 17 flight and gradually increased over the next two or three days, remaining essentially constant after about the third day.
+  entailment:
+    label: neutral
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 96c1cd13-2934-410e-a6d5-06813fa0b204
   type: opinion
   attestation: first_hand
@@ -2209,6 +2710,11 @@ domain_claims:
     The fruitcake I thought was good, although it was possible to eat too much or to get to a point wher
   text: |-
     Harrison Schmitt considers the fruitcake provided during Apollo 17 to have been good, although it was possible to eat too much of it.
+  entailment:
+    label: entails
+    score: 0.554
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 7e6f7757-5018-4402-a237-e014bc4f5211
   type: opinion
   attestation: first_hand
@@ -2225,6 +2731,11 @@ domain_claims:
     name: Harrison Schmitt
   quote: The chocolate was good.
   text: Harrison Schmitt found the chocolate food item good.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 43d66809-be03-4859-af7e-f320bbc751d1
   type: opinion
   attestation: first_hand
@@ -2243,6 +2754,11 @@ domain_claims:
     I think of the dry crackers or cookies or graham crackers were probably the most tasty
   text: |-
     Harrison Schmitt found the dry crackers, cookies, and graham crackers to be among the tastiest food items.
+  entailment:
+    label: entails
+    score: 0.966
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4ae9a4ea-bf47-4e26-954e-98d763dba55a
   type: opinion
   attestation: first_hand
@@ -2259,6 +2775,11 @@ domain_claims:
     name: Harrison Schmitt
   quote: peanut butter and jelly sandwiches were quite good.
   text: Harrison Schmitt found peanut butter and jelly sandwiches to be quite good.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 6eec3541-768f-4bfe-9ee2-cdbb3f0ee64a
   type: observation
   attestation: first_hand
@@ -2277,6 +2798,11 @@ domain_claims:
     name: Apollo 17
   quote: Rehydration went, I think, nominally, and the nominal gas was present.
   text: Food rehydration during Apollo 17 went nominally, with nominal gas present.
+  entailment:
+    label: neutral
+    score: 0.42
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 330fc721-4cc0-4662-b97e-b9adb02c26c0
   type: opinion
   attestation: first_hand
@@ -2295,6 +2821,11 @@ domain_claims:
     Food temperature is tended to prefer the foods that were warm or hot, and the hot water was quite adequate for warm foods.
   text: |-
     Harrison Schmitt preferred foods that were warm or hot, and found the hot water quite adequate for warm foods.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: ae608857-9f7f-4c74-900d-a1b057f50fd6
   type: observation
   attestation: first_hand
@@ -2315,6 +2846,11 @@ domain_claims:
     We actually, I think, missed the warm foods considerably in the limb where that hot water was not available.
   text: |-
     Harrison Schmitt missed warm foods considerably during the period on the Lunar Module when hot water was not available.
+  entailment:
+    label: neutral
+    score: 0.509
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 2bb0c860-1146-4fb4-8474-95e03bd9dce6
   type: observation
   attestation: first_hand
@@ -2332,6 +2868,11 @@ domain_claims:
   quote: I did not notice an effect of water flavor. Water was reasonably tasty.
   text: |-
     Harrison Schmitt did not notice an effect of water flavour and found the water reasonably tasty.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fd47f9eb-f855-4b32-99d3-311febb0dbfa
   type: observation
   attestation: first_hand
@@ -2350,6 +2891,11 @@ domain_claims:
     I never noticed a high chlorine taste of any kind, although the gas content did make it a little bit uncomfortable to eat at times.
   text: |-
     Harrison Schmitt never noticed a high chlorine taste in the water, although gas content made it somewhat uncomfortable to eat at times.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: be82620b-4f3b-47e5-90b3-ede4baa36a0d
   type: observation
   attestation: first_hand
@@ -2368,6 +2914,11 @@ domain_claims:
     Spoonbowl packages worked pretty well, although those that were finely divided, I tended to cut off the other end of the package, the water insertion end. and use them as a squeeze package.
   text: |-
     Harrison Schmitt found the spoonbowl food packages worked well, though he cut off the water-insertion end of the finely divided ones to use them as a squeeze package.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a6e55832-e9dc-4ac5-bdf9-38ce420703d5
   type: opinion
   attestation: first_hand
@@ -2384,6 +2935,11 @@ domain_claims:
     name: Harrison Schmitt
   quote: Spoons work perfectly adequate.
   text: Harrison Schmitt found the spoons perfectly adequate.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b723e8e5-25d6-4c9a-8ae4-cb4f28badbb4
   type: observation
   attestation: first_hand
@@ -2402,6 +2958,11 @@ domain_claims:
     I tended not to use the fruit in the cans because of just the messiness of opening those
   text: |-
     Harrison Schmitt tended not to use the canned fruit because of the messiness of opening the cans.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 62d16e4e-7cf2-40e6-aae4-609a1fb64b22
   type: opinion
   attestation: first_hand
@@ -2422,6 +2983,11 @@ domain_claims:
     the technique that Ron worked out of opening it in or near your mouth is a good one.
   text: |-
     Ronald Evans developed a technique of opening canned fruit in or near his mouth, which Harrison Schmitt considered a good approach.
+  entailment:
+    label: entails
+    score: 0.801
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 563b99fe-491d-4c49-a74f-bef6c3a24fdf
   type: opinion
   attestation: first_hand
@@ -2438,6 +3004,11 @@ domain_claims:
     name: Harrison Schmitt
   quote: Puddings and this kind of thing were very good.
   text: Harrison Schmitt found puddings very good.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 436eba52-9c8e-4c31-9deb-9c8903f54456
   type: observation
   attestation: first_hand
@@ -2456,6 +3027,11 @@ domain_claims:
     It was only the fruits, the canned fruits that I tended to avoid just because they were inconvenient to use.
   text: |-
     Harrison Schmitt tended to avoid canned fruits only because they were inconvenient to use, not because of taste.
+  entailment:
+    label: entails
+    score: 0.783
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 74ec21ec-2cb3-449b-9ccc-84b21e959d70
   type: observation
   attestation: first_hand
@@ -2474,6 +3050,11 @@ domain_claims:
     Food bars during EVAs I think were good to have, although I never ate more than half of one.
   text: |-
     Harrison Schmitt considered food bars good to have during extravehicular activities (EVAs), although he never ate more than half of one.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: a753009c-378c-4bf3-9794-874c546e1a94
   type: observation
   attestation: first_hand
@@ -2492,6 +3073,11 @@ domain_claims:
     It wasn't because it was untasty, it just because of maybe a lack of interest in eating and using that time during the EVAs.
   text: |-
     Harrison Schmitt did not eat more of the food bars during EVAs not because they were untasty, but because of a lack of interest in eating and using the time during EVAs.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b8030b98-6799-40de-adcb-f7d285941cb1
   type: observation
   attestation: first_hand
@@ -2511,6 +3097,11 @@ domain_claims:
   quote: We, I think, after the EVA, before and after EVAs, and the limb ate very well.
   text: |-
     Harrison Schmitt ate well before and after EVAs and during periods on the Lunar Module.
+  entailment:
+    label: entails
+    score: 0.821
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 3f7d2627-658f-4e6b-b48b-e33cf1bc7e91
   type: observation
   attestation: first_hand
@@ -2529,6 +3120,11 @@ domain_claims:
     having cord and chowder once, and that's simulating a major bowel movement, although not a loose one, I did not eat corn chowder.
   text: |-
     Harrison Schmitt avoided eating corn chowder after eating it once because it simulated a major bowel movement, though not a loose one.
+  entailment:
+    label: entails
+    score: 0.984
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 91376ede-26b3-4e38-9035-b9b6af623237
   type: observation
   attestation: first_hand
@@ -2547,6 +3143,11 @@ domain_claims:
     I did not eat the cocoa because I tended to feel like I got a little more gas from cocoa and an aftertaste.
   text: |-
     Harrison Schmitt did not eat cocoa because he felt he got more gas and an aftertaste from it.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b8fb8607-29c8-4bed-a620-0ac196f43b30
   type: observation
   attestation: first_hand
@@ -2565,6 +3166,11 @@ domain_claims:
     I did not eat the shrimp, the seafood items, shrimp and the lobster bisque and these sort of things because of pre-flight I had noticed that they tended to have a long aftertaste.
   text: |-
     Harrison Schmitt did not eat shrimp, seafood items, or lobster bisque because he had noticed pre-flight that they tended to have a long aftertaste.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 870572fe-7177-4634-8348-12c091f96566
   type: observation
   attestation: first_hand
@@ -2583,6 +3189,11 @@ domain_claims:
     many times I did not eat potato-based foods because of just, they were very filling.
   text: |-
     Harrison Schmitt often did not eat potato-based foods because he found them very filling.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: de500c2f-97a6-4d0c-9c4c-8e9239240434
   type: observation
   attestation: first_hand
@@ -2603,6 +3214,11 @@ domain_claims:
     We used the germicidal tablets. I did, at any rate, in all the juice bags and the food spoon bowl bags and the wet packs. I did not use them in the tea and coffee.
   text: |-
     During Apollo 17, germicidal tablets were used in all the juice bags, food spoon bowl bags, and wet packs, but not in the tea and coffee.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: fb68bdb9-1819-4723-a2f9-a341c1ba1889
   type: observation
   attestation: first_hand
@@ -2623,6 +3239,11 @@ domain_claims:
     Undesirable odors, really, except for the passing of gas occasionally, By the other crewmen and some occasionally by myself, undesirable odors were at a minimum.
   text: |-
     Undesirable odours in the spacecraft cabin during Apollo 17 were at a minimum, occurring occasionally from passing gas by crewmen including Harrison Schmitt.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 11c18550-0164-49a5-acfa-44459f16de3f
   type: observation
   attestation: first_hand
@@ -2642,6 +3263,11 @@ domain_claims:
   quote: I did not find that the atmosphere was unpleasant as a general rule.
   text: |-
     Harrison Schmitt did not find the cabin atmosphere unpleasant as a general rule during Apollo 17.
+  entailment:
+    label: entails
+    score: 0.809
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: b6f8daa2-21e9-42fb-837c-2dec07c0c557
   type: observation
   attestation: first_hand
@@ -2660,6 +3286,11 @@ domain_claims:
     I might say that I generally had a continuous, almost continuous passage of gas, most of which apparently was not with significant odor.
   text: |-
     Harrison Schmitt experienced an almost continuous passage of gas, most of which was apparently without significant odour.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 35dca904-3ba6-4594-8e73-9bbbe18af5e0
   type: opinion
   attestation: first_hand
@@ -2678,6 +3309,11 @@ domain_claims:
     And I think most of that was the water gas. And the reason I think that is that upon eating, upon starting to eat, there would be an increased desire to pass gas. The increased pressure in my stomach apparently was transmitted almost immediately into the bowels.
   text: |-
     Harrison Schmitt believed that most of his gas problem was caused by water gas, based on an increased desire to pass gas upon starting to eat and increased stomach pressure transmitted to the bowels.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 34645354-ac99-4e17-96ff-e6340503a52e
   type: observation
   attestation: first_hand
@@ -2696,6 +3332,11 @@ domain_claims:
     And after eating, it would pass gas for a couple hours to three hours. And just before eating the next time, the desire would have pretty well dissipated, and then it would start again immediately upon eating, before any digestion was possible, I'm sure.
   text: |-
     After eating, Harrison Schmitt would pass gas for two to three hours, with the desire dissipating by the time of the next meal.
+  entailment:
+    label: entails
+    score: 0.826
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 5e5f2bc9-77e7-4aab-8dbd-660fb22e335a
   type: opinion
   attestation: first_hand
@@ -2714,6 +3355,11 @@ domain_claims:
     So I suspect water gas was the main culprit in the LMP's gas problem, which were not significant.
   text: |-
     Harrison Schmitt, as Lunar Module Pilot, suspected that water gas was the main cause of his gas problem, which he did not consider significant.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 229b620a-11f1-4b73-939a-2120cf15ec5b
   type: observation
   attestation: first_hand
@@ -2734,6 +3380,11 @@ domain_claims:
     The quantity of food eaten on the lunar surface I think was high, although probably no more than half of that food that was available.
   text: |-
     During Apollo 17, the quantity of food eaten on the lunar surface was high, though probably no more than half of the food that was available.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8f1d252d-cc3d-4872-8e5d-26330162425a
   type: observation
   attestation: first_hand
@@ -2754,6 +3405,11 @@ domain_claims:
     We used a blue bag. The blue bag is not a bad way to to defecate unless the stool is loose.
   text: |-
     During Apollo 17, a blue bag was used for defecation, which Harrison Schmitt described as not a bad method unless the stool was loose.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: d0fdf386-b350-4a89-b2d3-4efd05265d3a
   type: opinion
   attestation: first_hand
@@ -2771,6 +3427,11 @@ domain_claims:
   quote: If it's loose, it's just about impossible to use.
   text: |-
     A loose stool is nearly impossible to manage using the blue bag defecation method.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8a7564f1-9854-4190-8450-3e860a34ed2b
   type: opinion
   attestation: first_hand
@@ -2789,6 +3450,11 @@ domain_claims:
     A loose stool is one of the major hygiene and sanitary and operational problems that you can have on a flight. I can't emphasize that more.
   text: |-
     Harrison Schmitt considers a loose stool one of the major hygiene, sanitary, and operational problems that can occur on a spaceflight.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 5038bbd9-fa64-4625-ae5b-cdd121a81ff8
   type: opinion
   attestation: first_hand
@@ -2807,6 +3473,11 @@ domain_claims:
     I think eventually cut the efficiency of the crew member with the problem by a significant percentage, possibly as much as 30%, depending on the magnitude of the problem.
   text: |-
     Harrison Schmitt estimated that a daily loose stool problem could eventually cut a crew member's efficiency by a significant percentage, possibly as much as 30 percent, depending on the magnitude of the problem.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 59823a5d-0bac-485b-adce-31eac3ddd183
   type: observation
   attestation: first_hand
@@ -2829,6 +3500,11 @@ domain_claims:
     I think it's important to try to understand why Apollo 17 was different than 16, and at least in the delay of a problem with loose stools until about the 11th or 12th day.
   text: |-
     On Apollo 17, the onset of a loose-stool problem was delayed until about the 11th or 12th day, unlike on Apollo 16.
+  entailment:
+    label: entails
+    score: 0.993
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: b2c46bfc-b128-404b-b83d-0218fcbf0e75
   type: observation
   attestation: first_hand
@@ -2848,6 +3524,11 @@ domain_claims:
   quote: And in the case of the commander, no problem with loose tools.
   text: |-
     Eugene Cernan, as commander of Apollo 17, had no problem with loose stools during the mission.
+  entailment:
+    label: entails
+    score: 0.46
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 31cfa078-9577-4437-b151-3abf534ab345
   type: opinion
   attestation: first_hand
@@ -2870,6 +3551,11 @@ domain_claims:
     And my personal opinion at this point, based on very little information other than observation in flight and thinking about levels of electrolyte intake, is that with the electrolyte quantity down from that imposed on Apollo 16 that we did not reach an electrolyte saturation level until the 11th or 12th day, in terms of the CMP and the LMP
   text: |-
     Harrison Schmitt's personal opinion, based on limited in-flight observation and consideration of electrolyte intake levels, was that the reduced electrolyte quantity compared to Apollo 16 meant electrolyte saturation was not reached until the 11th or 12th day for the Command Module Pilot and Lunar Module Pilot on Apollo 17.
+  entailment:
+    label: entails
+    score: 0.94
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 342b187d-e607-4e14-be68-1e80a8c4f19f
   type: opinion
   attestation: first_hand
@@ -2888,6 +3574,11 @@ domain_claims:
     in terms of the commander, because his electrolyte intake was generally less, I think, and that can be documented, he did not reach a saturation level at all.
   text: |-
     Eugene Cernan, whose electrolyte intake was generally less, did not reach an electrolyte saturation level at all during Apollo 17, according to Harrison Schmitt.
+  entailment:
+    label: entails
+    score: 0.964
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: bee8f466-e5df-4b8e-af9e-7a447e71a946
   type: opinion
   attestation: first_hand
@@ -2906,6 +3597,11 @@ domain_claims:
     I suspect that the electrolytes we were eating were dumped, in a sense, or concentrated in the intestines and tended to act pretty much as a laxity and as an Epsom salt type laxity, if you will, in concentrated water in the stool.
   text: |-
     Harrison Schmitt suspected that once electrolyte saturation was reached, excess electrolytes were concentrated in the intestines and acted as a laxative, similar to an Epsom salt-type laxative, in the stool.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: ecde8f45-d764-448d-904b-ff3534576543
   type: opinion
   attestation: first_hand
@@ -2926,6 +3622,11 @@ domain_claims:
     I think it's important for Skylab that, first of all, we probably reduce the electrolytes intake so that saturation is never reached.
   text: |-
     Harrison Schmitt recommended that for Skylab, electrolyte intake should be reduced so that saturation is never reached.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c1d1196c-adb8-40cf-847b-95a39b37723f
   type: opinion
   attestation: first_hand
@@ -2946,6 +3647,11 @@ domain_claims:
     secondly, that if a loose stool problem develops, it appears to be an electrolyte problem other than any other biological problem, that we decrease the intake of electrolytes.
   text: |-
     Harrison Schmitt recommended that if a loose stool problem develops on Skylab and appears to be an electrolyte-related issue, electrolyte intake should be decreased.
+  entailment:
+    label: entails
+    score: 0.999
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 086771d4-46e2-458d-8057-847a595f107d
   type: observation
   attestation: first_hand
@@ -2965,6 +3671,11 @@ domain_claims:
   quote: This is what I did on my own.
   text: |-
     Harrison Schmitt reduced his own electrolyte intake on his own initiative during Apollo 17.
+  entailment:
+    label: neutral
+    score: 0.991
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 080032a6-5896-4d14-93c6-5ad24c0641fb
   type: observation
   attestation: first_hand
@@ -2985,6 +3696,11 @@ domain_claims:
     whether or not it worked or not is hard to say because the flight was terminated before any other stools occurred.
   text: |-
     Whether reducing electrolyte intake worked to prevent further loose stools was hard to say because the Apollo 17 flight ended before any other stool problems occurred.
+  entailment:
+    label: entails
+    score: 0.962
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 8df81f17-c03c-43b4-ae71-22b6df58d47c
   type: observation
   attestation: first_hand
@@ -3002,6 +3718,11 @@ domain_claims:
   quote: Chlorientation odor was not apparent to me except during chlorination.
   text: |-
     Chlorination odour was not apparent to Harrison Schmitt except during chlorination itself.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 4be0b03f-5c90-4265-8d25-04ce95c06c92
   type: observation
   attestation: first_hand
@@ -3022,6 +3743,11 @@ domain_claims:
     Iodentation odor is very slight apparent in the limb water but not of any significance to the LMP.
   text: |-
     An iodine odour was slightly apparent to Harrison Schmitt in the Lunar Module's water but was not of any significance to him.
+  entailment:
+    label: entails
+    score: 0.998
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: be3a0c4c-f017-48ac-b724-8178d67dd36f
   type: observation
   attestation: first_hand
@@ -3040,6 +3766,11 @@ domain_claims:
     Physical discomfort, no physical discomfort for the LMP other than tiredness on occasion and in the case of the EVA work, sore muscles and the bruises under the fingernails.
   text: |-
     Harrison Schmitt experienced no physical discomfort other than occasional tiredness, sore muscles from extravehicular activity (EVA) work, and bruises under his fingernails.
+  entailment:
+    label: entails
+    score: 0.983
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: f57caec5-26f9-46be-81fd-c9944e69b43b
   type: observation
   attestation: first_hand
@@ -3059,6 +3790,11 @@ domain_claims:
   quote: |-
     Gas water separator didn't work very effectively, and I'm sure that's been discussed elsewhere.
   text: The gas-water separator did not work very effectively during Apollo 17.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 10259b7f-3e2e-4307-b82a-a47aceb9a927
   type: observation
   attestation: first_hand
@@ -3077,6 +3813,11 @@ domain_claims:
     Intensity of thirst during admission, never really thirsty, extensively thirsty, even during the EVAs, although I did stop to take a drink of water occasionally. But I never drank all the water in the in-flight drink bag, in-suit drink bag.
   text: |-
     Harrison Schmitt was never extensively thirsty during the mission, even during extravehicular activities (EVAs), though he stopped to drink water occasionally and never drank all the water in the in-suit drink bag.
+  entailment:
+    label: entails
+    score: 0.887
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: fc4964a8-6a18-4b48-9fa5-ce1088e33b30
   type: observation
   attestation: first_hand
@@ -3095,6 +3836,11 @@ domain_claims:
     The difficulty in going to sleep was variable. and when sequinol was used generally no difficulty in going to sleep
   text: |-
     Harrison Schmitt's difficulty in going to sleep was variable, and he generally had no difficulty going to sleep when Seconal was used.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d49a0bff-eee3-4da4-9f8f-bdb21ebbf86d
   type: observation
   attestation: first_hand
@@ -3113,6 +3859,11 @@ domain_claims:
     there was a tendency on a couple on several nights to go to sleep and then wake up fairly soon after going to sleep within an hour and then the second time took a little bit maybe sometimes took up to an hour to go back to sleep.
   text: |-
     On several nights, Harrison Schmitt would fall asleep and then wake up fairly soon after, taking up to an hour to fall back asleep the second time.
+  entailment:
+    label: entails
+    score: 0.99
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: e9166eb9-0272-4089-aa0e-31a7190ac249
   type: opinion
   attestation: first_hand
@@ -3131,6 +3882,11 @@ domain_claims:
     I feel that the medical log reports for the LMP were generally valid, that probably an average five and a half to six hours of sleep per night was good, and I don't think except for maybe one night somewhere in there did I go much below that.
   text: |-
     Harrison Schmitt believed the medical log reports for him were generally valid, showing an average of five and a half to six hours of sleep per night.
+  entailment:
+    label: entails
+    score: 0.987
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 9f29a076-abea-4083-8b9a-94589f992312
   type: observation
   attestation: first_hand
@@ -3149,6 +3905,11 @@ domain_claims:
     the sleep was rarely, probably never continuous for more than three hours without waking up.
   text: |-
     Harrison Schmitt's sleep was rarely, probably never, continuous for more than three hours without waking up.
+  entailment:
+    label: entails
+    score: 0.997
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: d1996cc4-38b0-4606-b0af-7ec192bd6fc3
   type: opinion
   attestation: first_hand
@@ -3167,6 +3928,11 @@ domain_claims:
     I feel that six hours is adequate sleep for the kind of work we were doing in space.
   text: |-
     Harrison Schmitt considers six hours of sleep adequate for the kind of work performed during the mission.
+  entailment:
+    label: entails
+    score: 0.963
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 2fc8b016-191c-425b-b4c4-046000d062b8
   type: opinion
   attestation: first_hand
@@ -3185,6 +3951,11 @@ domain_claims:
     However, the programming of eight hours is necessary in order to get six hours because of the periods of wakefulness during sleep periods, and for just the difficulty in getting the cabin organized and everybody to bed at the program time.
   text: |-
     Harrison Schmitt considers an eight-hour scheduled sleep period necessary to obtain six hours of actual sleep, due to periods of wakefulness and the time needed to organise the cabin and get everyone to bed.
+  entailment:
+    label: entails
+    score: 0.996
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 7851e002-5096-4794-842f-d4dd296f339d
   type: opinion
   attestation: first_hand
@@ -3203,6 +3974,11 @@ domain_claims:
     So maintaining an eight-hour sleep period is, I think, mandatory in order to obtain the six hours that is probably all that is required to perform the mission without getting tired or getting behind the power curve, as they say, with respect to sleep.
   text: |-
     Harrison Schmitt considers maintaining an eight-hour sleep period mandatory to obtain the six hours he believes is required to perform the mission without getting tired or falling behind schedule.
+  entailment:
+    label: entails
+    score: 0.974
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: c3097e08-2faa-4284-abed-70566af5190e
   type: observation
   attestation: first_hand
@@ -3221,6 +3997,11 @@ domain_claims:
     I had the feeling that I wanted to have my head and limbs restrained in order to get a good sleep, although I did sleep at times without that restraint.
   text: |-
     Harrison Schmitt wanted his head and limbs restrained in order to get a good sleep, although he did sleep at times without such restraint.
+  entailment:
+    label: entails
+    score: 0.995
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 268bf8aa-bc4d-49a7-a991-290b3a2fc099
   type: opinion
   attestation: first_hand
@@ -3239,6 +4020,11 @@ domain_claims:
     If I were rebuilding the sleep restraints for my personal use, I would make them smaller with a somewhat more feeling of restraint. They're a little bit large, I would say, for use.
   text: |-
     Harrison Schmitt recommended that sleep restraints be made smaller with a somewhat more pronounced feeling of restraint, as he found them a little too large for use.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 44b0b137-b06a-4e7d-8c3f-3f1bc44a7d4b
   type: observation
   attestation: first_hand
@@ -3257,6 +4043,11 @@ domain_claims:
     When I slept on the couch, I tended to put a shoulder strap over my head and cinch it down very lightly so that I had that feeling of head restraint.
   text: |-
     When Harrison Schmitt slept on the couch, he would put a shoulder strap over his head and cinch it down lightly to get a feeling of head restraint.
+  entailment:
+    label: entails
+    score: 0.994
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
 - id: 69be9a50-9997-4070-9b3d-b26da40afe29
   type: observation
   attestation: first_hand
@@ -3275,6 +4066,11 @@ domain_claims:
     Probably the biggest two things that made sleep difficult when it was difficult was the loss of sensory perception of limb position in zero gravity. ... when they were just static and in a rest position, there tended to be, for the LNP at any rate, a loss of sensory perception of the position of the list.
   text: |-
     Harrison Schmitt, as Lunar Module Pilot, experienced a loss of sensory perception of limb position in zero gravity when his limbs were static and in a rest position, which he considered one of the two biggest factors making sleep difficult.
+  entailment:
+    label: entails
+    score: 1.0
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    premise: window
 - id: 27ac7bce-0cc6-4788-bf92-3e961bb0dc0f
   type: observation
   attestation: first_hand
@@ -3293,3 +4089,8 @@ domain_claims:
     When they were not being moved, that perception came back immediately upon moving them.
   text: |-
     Harrison Schmitt found that sensory perception of limb position returned immediately upon moving the limbs.
+  entailment:
+    label: entails
+    score: 0.957
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    premise: quote
