@@ -1,0 +1,139 @@
+{
+  "configurations": {
+    "sha256:1b8fc480cc06cb932c353bc6410ffef2b642ee957b9b49af538995c300931dfb": {
+      "chunking": {
+        "claims_max_chars": 250000,
+        "hard_max_chars": 150000,
+        "max_chars": 250000,
+        "min_chars": 20000,
+        "strategy": "chapter_then_natural_boundary"
+      },
+      "configuration_schema": "anomalica/digest-extraction-config/1",
+      "decoding": {
+        "max_output_tokens": null,
+        "omitted_parameters_use_provider_defaults": true,
+        "reasoning_effort": "low",
+        "temperature": null,
+        "top_p": null
+      },
+      "implementation_sha256": "859230bde7c8071477609285e1d558d1c8f63e1aa3d283895ad1a0d8e5e7ea54",
+      "iteration": {
+        "maximum_rounds": 40,
+        "minimum_new_items": 2
+      },
+      "model": {
+        "requested": "sonnet",
+        "resolved": "claude-sonnet-5",
+        "route": "cli",
+        "version": "claude-sonnet-5"
+      },
+      "passes": [
+        {
+          "name": "nodes",
+          "prompt": {
+            "id": "nodes",
+            "sha256": "1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb",
+            "version": "v4"
+          },
+          "schema_sha256": "4c85e1fcc389b9588326230afd67dfab0918f8a8ba63317f3b38e4fdf2df4bf6"
+        },
+        {
+          "name": "claims",
+          "prompt": {
+            "id": "claims",
+            "sha256": "eb5ebf0a71831417028d57ae1099199fa3b9e8531970cdbb3c56770b0c0ec4dc",
+            "version": "v6"
+          },
+          "schema_sha256": "01865f407667d09519a69062cb8f0dc28acc732042366462850b4988460fe95c"
+        }
+      ],
+      "post_processing": {
+        "claim_deduplication": "proposition_type_attestation_speaker_anonymous_root",
+        "entailment": {
+          "available": true,
+          "enabled": true,
+          "max_tokens": 512,
+          "stage1_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+          "stage2_model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+          "window_chars": 800
+        },
+        "location_alignment": "timed_or_materialised_pre_digest"
+      },
+      "preparation": {
+        "prep_version": 8
+      },
+      "validation": {
+        "record_specific_claim_reference_enum": true,
+        "schema_enforcement": "native"
+      }
+    },
+    "sha256:98421d7b38f2750ca6ad4768c754c437f4d624e213be138b706f57065ddd4e0e": {
+      "chunking": {
+        "claims_max_chars": 250000,
+        "hard_max_chars": 150000,
+        "max_chars": 250000,
+        "min_chars": 20000,
+        "strategy": "chapter_then_natural_boundary"
+      },
+      "configuration_schema": "anomalica/digest-extraction-config/1",
+      "decoding": {
+        "max_output_tokens": null,
+        "omitted_parameters_use_provider_defaults": true,
+        "reasoning_effort": "low",
+        "temperature": null,
+        "top_p": null
+      },
+      "implementation_sha256": "859230bde7c8071477609285e1d558d1c8f63e1aa3d283895ad1a0d8e5e7ea54",
+      "iteration": {
+        "maximum_rounds": 40,
+        "minimum_new_items": 2
+      },
+      "model": {
+        "requested": "opus",
+        "resolved": "claude-opus-5",
+        "route": "cli",
+        "version": "claude-opus-5"
+      },
+      "passes": [
+        {
+          "name": "nodes",
+          "prompt": {
+            "id": "nodes",
+            "sha256": "1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb",
+            "version": "v4"
+          },
+          "schema_sha256": "4c85e1fcc389b9588326230afd67dfab0918f8a8ba63317f3b38e4fdf2df4bf6"
+        },
+        {
+          "name": "claims",
+          "prompt": {
+            "id": "claims",
+            "sha256": "eb5ebf0a71831417028d57ae1099199fa3b9e8531970cdbb3c56770b0c0ec4dc",
+            "version": "v6"
+          },
+          "schema_sha256": "01865f407667d09519a69062cb8f0dc28acc732042366462850b4988460fe95c"
+        }
+      ],
+      "post_processing": {
+        "claim_deduplication": "proposition_type_attestation_speaker_anonymous_root",
+        "entailment": {
+          "available": true,
+          "enabled": true,
+          "max_tokens": 512,
+          "stage1_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+          "stage2_model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+          "window_chars": 800
+        },
+        "location_alignment": "timed_or_materialised_pre_digest"
+      },
+      "preparation": {
+        "prep_version": 8
+      },
+      "validation": {
+        "record_specific_claim_reference_enum": true,
+        "schema_enforcement": "native"
+      }
+    }
+  },
+  "schema": "anomalica/digest-extraction-config-registry/1"
+}
