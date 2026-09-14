@@ -1,0 +1,554 @@
+run_kind: comparison
+schema: anomalica/digest/1
+extracted_at: '2026-09-14T21:20:13.983948+00:00'
+model: opus
+ai_usage:
+  - stage: digest
+    model: claude-opus-5
+    model_version: claude-opus-5
+    tokens:
+      input: 34072
+      output: 6047
+      real_input: 6
+      cache_read: 8831
+      cache_write: 25235
+      calls: 2
+    route: cli
+    effort: low
+  - stage: check
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    duration_s: 38.5
+  - stage: check
+    model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+    duration_s: 38.8
+prompts:
+  - pass: nodes
+    id: nodes
+    version: v4
+    sha256: 1ca968e2b28b26a9acea5fb8df00083fa61e690577899237bf6ea47a492dd7bb
+    file: nodes.txt
+  - pass: claims
+    id: claims
+    version: v6
+    sha256: eb5ebf0a71831417028d57ae1099199fa3b9e8531970cdbb3c56770b0c0ec4dc
+    file: claims.txt
+extraction_generation: 1
+extraction_config: sha256:0ff28ed38d1ecf58c53d188daab1b1381c1a3d2d7e3c69e823c8ff0da59d67b5
+pre_digest:
+  sha256: b131316c464bf91bdd448880a82e1b346a7eee924725c43c3f0893e82c81c720
+  prep_version: 8
+record:
+  id: 5d0bc8b8-5498-4b3a-a4ad-a631774428b9
+  title: Buzz Aldrin on Late Night with Conan O'Brien (2000)
+  date: '2000'
+  medium: video
+  duration: 163.65
+  content_hash: sha256:8eff735eed62465494c65808967b25024a1fc0f07be5074b8ece521c01d0c76a
+  processing_version: e4c04ad
+  reference: https://www.youtube.com/watch?v=AMU_84_Re3o
+  review:
+    state: human
+    sidecar: present
+    observed_coverage: 1.0
+  speakers:
+    - Buzz Aldrin
+    - Conan O'Brien
+  copyright_status: publicly_accessible
+terminology:
+  main_subject: Buzz Aldrin on Late Night with Conan O'Brien (2000)
+  codenames:
+    - codename: Tranquility Base
+      refers_to: Moon, Sea of Tranquility, Tranquility Base
+    - codename: Eagle
+      refers_to: Eagle (Apollo 11 Lunar Module)
+    - codename: Uncle Coney
+      refers_to: Conan O'Brien
+nodes:
+  - id: b46ad004-ce8d-4936-ae82-7c39f8830734
+    type: document
+    name: Buzz Aldrin on Late Night with Conan O'Brien (2000)
+    metadata:
+      date: '2000'
+      format: video
+  - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+    type: person
+    name: Buzz Aldrin
+  - id: 19523456-7440-4d9b-9f3b-1a89c695d9d9
+    type: person
+    name: Conan O'Brien
+  - id: cced5dc5-6459-45ec-a788-adeee0e85dbc
+    type: person
+    name: Neil Armstrong
+  - id: b42da7f5-160d-487f-bdc5-4fe5762394b9
+    type: document
+    name: Late Night with Conan O'Brien
+    metadata:
+      type: television programme
+  - id: 076739d4-1c59-43f4-a915-d6ac139f0ca7
+    type: event
+    name: Apollo 11 Moon landing
+    metadata:
+      date_start: '1969-07-20'
+  - id: 9676c269-e890-4e41-948c-ef0b54e57198
+    type: object
+    name: Eagle (Apollo 11 Lunar Module)
+  - id: de995ab5-2994-46a3-af8c-2641033d8439
+    type: place
+    name: Moon, Sea of Tranquility, Tranquility Base
+  - id: 0ed3c4b3-b7c7-45d1-8ee0-71e4aadb7027
+    type: place
+    name: USA, Texas, Houston
+domain_claims:
+  - id: ac7e3211-995b-410b-9a14-8cb2fb52bb8e
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:00:03.3-00:00:05.1
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+    quote: That's a legal name, passport, driver's license.
+    text: |-
+      "Buzz" is Buzz Aldrin's legal name, appearing on his passport and driver's licence.
+    entailment:
+      label: entails
+      score: 0.955
+      model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+      premise: quote
+  - id: 294f988c-782a-44d3-bfac-72462669270e
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 19523456-7440-4d9b-9f3b-1a89c695d9d9
+      name: Conan O'Brien
+    provenance_chain:
+      origin_kind: speaker
+      origin: Conan O'Brien
+    attribution_in_text: false
+    location: 00:00:13.3-00:00:18.0
+    date: '1969-07-20'
+    refs:
+      - id: 19523456-7440-4d9b-9f3b-1a89c695d9d9
+        name: Conan O'Brien
+        role: subject
+      - id: 076739d4-1c59-43f4-a915-d6ac139f0ca7
+        name: Apollo 11 Moon landing
+        role: participant
+    quote: |-
+      I remember my parents waking me up and we went down and we watched you guys land on the moon
+    text: |-
+      Conan O'Brien remembers his parents waking him so the family could watch the 1969-07-20 Apollo 11 Moon landing.
+    entailment:
+      label: entails
+      score: 0.876
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
+  - id: 59a39291-2c83-4662-8922-03df7a8710ad
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:00:20.2-00:00:24.4
+    date: '1969-07-20'
+    refs:
+      - id: 076739d4-1c59-43f4-a915-d6ac139f0ca7
+        name: Apollo 11 Moon landing
+        role: subject
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: participant
+    quote: |-
+      Because there wasn't any television. There wasn't anybody taking a picture. You watched animation.
+    text: |-
+      There was no television coverage or photography of the Apollo 11 lunar landing itself, and what viewers saw on 1969-07-20 was animation.
+    entailment:
+      label: entails
+      score: 0.934
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
+  - id: 54dc2d77-b03c-45d1-9a13-7d08b35ad5ef
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:00:34.9-00:00:38.6
+    date: '1969-07-20'
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+      - id: 9676c269-e890-4e41-948c-ef0b54e57198
+        name: Eagle (Apollo 11 Lunar Module)
+        role: participant
+      - id: 076739d4-1c59-43f4-a915-d6ac139f0ca7
+        name: Apollo 11 Moon landing
+        role: setting
+    quote: |-
+      You heard me talking about, you know, how many feet we're going to the left and right.
+    text: |-
+      During the Apollo 11 lunar descent, Buzz Aldrin called out the distances the Eagle (Apollo 11 Lunar Module) was moving to the left and right.
+    entailment:
+      label: entails
+      score: 0.765
+      model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+      premise: quote
+  - id: d6f85091-9394-47c6-bed6-7901122cee67
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:00:38.8-00:00:41.0
+    date: '1969-07-20'
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+      - id: 076739d4-1c59-43f4-a915-d6ac139f0ca7
+        name: Apollo 11 Moon landing
+        role: setting
+    quote: And then I said, contact light, engine stop.
+    text: |-
+      During the Apollo 11 lunar descent, Buzz Aldrin said "contact light, engine stop".
+    entailment:
+      label: entails
+      score: 0.999
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
+  - id: 9c1a3c80-7062-437d-be6b-7b78d85163b1
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: true
+    location: 00:00:43.5-00:00:47.6
+    date: '1969-07-20'
+    refs:
+      - id: cced5dc5-6459-45ec-a788-adeee0e85dbc
+        name: Neil Armstrong
+        role: subject
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: participant
+      - id: 9676c269-e890-4e41-948c-ef0b54e57198
+        name: Eagle (Apollo 11 Lunar Module)
+        role: mentioned
+      - id: de995ab5-2994-46a3-af8c-2641033d8439
+        name: Moon, Sea of Tranquility, Tranquility Base
+        role: setting
+      - id: 0ed3c4b3-b7c7-45d1-8ee0-71e4aadb7027
+        name: USA, Texas, Houston
+        role: mentioned
+    quote: and then Neil said, Houston, Tranquility Base, the eagle has landed.
+    text: |-
+      After the Apollo 11 landing, Neil Armstrong said "Houston, Tranquility Base, the Eagle has landed", as recounted by Buzz Aldrin.
+    entailment:
+      label: entails
+      score: 0.713
+      model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+      premise: quote
+  - id: ec2cdda8-40ad-4b7b-9a34-0d54a9632dd6
+    type: opinion
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: true
+    location: 00:00:48.6-00:00:49.4
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+      - id: cced5dc5-6459-45ec-a788-adeee0e85dbc
+        name: Neil Armstrong
+        role: mentioned
+    quote: Man, how about that? ... Not a bad line.
+    text: |-
+      Buzz Aldrin considers Neil Armstrong's line "Houston, Tranquility Base, the Eagle has landed" a good one.
+    entailment:
+      label: entails
+      score: 0.999
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
+  - id: c0bc74a8-b9a0-4feb-a378-b8ea5848c4d0
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:01:12.1-00:01:13.6
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: participant
+      - id: 076739d4-1c59-43f4-a915-d6ac139f0ca7
+        name: Apollo 11 Moon landing
+        role: setting
+    quote: You're worried then. We were focused.
+    text: |-
+      During the Apollo 11 mission the crew were focused rather than self-conscious about what they would say.
+    entailment:
+      label: entails
+      score: 0.692
+      model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+      premise: quote
+  - id: 1c6fb8d5-188b-43d8-9520-bc7ff9ccfe42
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:01:15.0-00:01:20.9
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+      - id: cced5dc5-6459-45ec-a788-adeee0e85dbc
+        name: Neil Armstrong
+        role: participant
+      - id: de995ab5-2994-46a3-af8c-2641033d8439
+        name: Moon, Sea of Tranquility, Tranquility Base
+        role: setting
+    quote: |-
+      I was afraid that Neil might say, hey, you better go out first and, you know, think up a couple of lines to say when you step on the moon.
+    text: |-
+      Buzz Aldrin was afraid that Neil Armstrong might tell him to step out onto the Moon first and think up lines to say.
+    entailment:
+      label: entails
+      score: 0.747
+      model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+      premise: quote
+  - id: 7c485979-2174-434c-85f4-6a489bcd6335
+    type: administrative
+    attestation: first_hand
+    speaker:
+      id: 19523456-7440-4d9b-9f3b-1a89c695d9d9
+      name: Conan O'Brien
+    provenance_chain:
+      origin_kind: speaker
+      origin: Conan O'Brien
+    attribution_in_text: false
+    location: 00:01:24.9-00:01:26.6
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+      - id: de995ab5-2994-46a3-af8c-2641033d8439
+        name: Moon, Sea of Tranquility, Tranquility Base
+        role: setting
+    quote: You were not the first man to walk on the moon
+    text: Buzz Aldrin was not the first man to walk on the Moon.
+    entailment:
+      label: entails
+      score: 0.927
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
+  - id: 7a79a61c-c086-4e2a-9b7e-86e94cf4f3ae
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:01:28.4-00:01:32.7
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+      - id: de995ab5-2994-46a3-af8c-2641033d8439
+        name: Moon, Sea of Tranquility, Tranquility Base
+        role: setting
+    quote: |-
+      Conan O'Brien: You were the first man to relieve himself on the moon. Is that true? Buzz Aldrin: That is correct.
+    text: Buzz Aldrin was the first man to relieve himself on the Moon.
+    entailment:
+      label: entails
+      score: 0.983
+      model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+      premise: quote
+  - id: 94396f2e-584f-4d94-bb5d-1d256a75d69b
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:01:41.3-00:01:46.1
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: participant
+      - id: de995ab5-2994-46a3-af8c-2641033d8439
+        name: Moon, Sea of Tranquility, Tranquility Base
+        role: setting
+      - id: 076739d4-1c59-43f4-a915-d6ac139f0ca7
+        name: Apollo 11 Moon landing
+        role: mentioned
+    quote: |-
+      But not on the moon, you know, you don't want to unzip. You do not want to unzip. ... But we got a little device.
+    text: |-
+      On the Moon an astronaut does not unzip the suit to relieve himself; the Apollo 11 crew used a device for the purpose.
+    entailment:
+      label: entails
+      score: 0.995
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
+  - id: cf297491-08f5-4b09-9cc6-83b98c8cd061
+    type: observation
+    attestation: first_hand
+    speaker:
+      id: 19523456-7440-4d9b-9f3b-1a89c695d9d9
+      name: Conan O'Brien
+    provenance_chain:
+      origin_kind: speaker
+      origin: Conan O'Brien
+    attribution_in_text: false
+    location: 00:01:55.0-00:01:59.9
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+      - id: 076739d4-1c59-43f4-a915-d6ac139f0ca7
+        name: Apollo 11 Moon landing
+        role: setting
+      - id: de995ab5-2994-46a3-af8c-2641033d8439
+        name: Moon, Sea of Tranquility, Tranquility Base
+        role: setting
+    quote: |-
+      actually in the footage, you're the one that's bunny hopping ... you were the astronaut that started jumping up and down on the moon
+    text: |-
+      Buzz Aldrin is the astronaut seen hopping up and down in the Apollo 11 lunar surface footage.
+    entailment:
+      label: entails
+      score: 0.993
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
+  - id: 955b9a88-b44f-420e-8e2c-5b4e83c1e37a
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:02:05.5-00:02:09.0
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+      - id: de995ab5-2994-46a3-af8c-2641033d8439
+        name: Moon, Sea of Tranquility, Tranquility Base
+        role: setting
+    quote: Not bunny hop, kangaroo hop. You know, two feet, feet at a time.
+    text: |-
+      The hopping Buzz Aldrin performed on the Moon during Apollo 11 is called a kangaroo hop, done with two feet at a time, rather than a bunny hop.
+    entailment:
+      label: entails
+      score: 0.997
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
+  - id: f290236f-fa78-4ab3-a5e0-a8a741a7e01d
+    type: testimony
+    attestation: first_hand
+    speaker:
+      id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+      name: Buzz Aldrin
+    provenance_chain:
+      origin_kind: speaker
+      origin: Buzz Aldrin
+    attribution_in_text: false
+    location: 00:02:25.8-00:02:33.8
+    refs:
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: subject
+      - id: de995ab5-2994-46a3-af8c-2641033d8439
+        name: Moon, Sea of Tranquility, Tranquility Base
+        role: setting
+      - id: 076739d4-1c59-43f4-a915-d6ac139f0ca7
+        name: Apollo 11 Moon landing
+        role: setting
+    quote: |-
+      I thought it was a good idea in front of the TV to bounce around and to demonstrate how easy a guy could move around or a gal could move around on the moon.
+    text: |-
+      Buzz Aldrin hopped about on the Moon during Apollo 11 because he thought it a good idea to demonstrate on television how easily a man or woman could move around on the Moon.
+    entailment:
+      label: entails
+      score: 0.995
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
+infrastructure_claims:
+  - id: 9b0d6b1d-b46a-4e57-8753-fe79b8d9ae23
+    type: administrative
+    attestation: second_hand
+    provenance_chain:
+      origin_kind: document
+      origin: Buzz Aldrin on Late Night with Conan O'Brien (2000)
+    attribution_in_text: false
+    location: 00:02:41.4-00:02:42.8
+    date: '2000'
+    refs:
+      - id: b46ad004-ce8d-4936-ae82-7c39f8830734
+        name: Buzz Aldrin on Late Night with Conan O'Brien (2000)
+        role: subject
+      - id: 13fd2b41-c07f-45a1-8c7c-da2775dcf87c
+        name: Buzz Aldrin
+        role: participant
+      - id: 19523456-7440-4d9b-9f3b-1a89c695d9d9
+        name: Conan O'Brien
+        role: participant
+      - id: b42da7f5-160d-487f-bdc5-4fe5762394b9
+        name: Late Night with Conan O'Brien
+        role: setting
+    quote: Buzz Aldrin, everybody. We'll take a break.
+    text: |-
+      Buzz Aldrin appeared as a guest on Late Night with Conan O'Brien, interviewed by Conan O'Brien.
+    entailment:
+      label: entails
+      score: 0.988
+      model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+      premise: window
